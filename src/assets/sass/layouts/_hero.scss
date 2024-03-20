@@ -1,0 +1,26 @@
+.hero{
+    .caption{
+        max-width: rem(900);
+        p{
+            max-width: rem(725);
+            margin-top: rem(50);
+        }
+    }
+    mark{
+        color: var(--c-primary);
+        background: none;
+    }
+    .btn-group{
+        margin-top: rem(60);
+        display: flex;
+        align-items: center;
+    }
+    .rating{
+        display: flex;
+        margin-left: rem(50);
+        .lbl{
+            max-width: rem(124);
+            font-size: rem(18);
+        }
+    }
+}

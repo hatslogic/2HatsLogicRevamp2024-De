@@ -6,21 +6,26 @@
 @import "./base/typography"; 
 @import "./base/global";
 @import "./base/grid";
+@import "./base/icons";
 
 // Layouts
+@import "./layouts/wrapper";
 @import "./layouts/header";
+@import "./layouts/menu";
 @import "./layouts/navigation";  
-@import "./layouts/footer";
 @import "./layouts/section";
-@import "./layouts/banner";
-@import "./layouts/block";
-@import "./layouts/cards";  
+@import "./layouts/hero"; 
+@import "./layouts/impact"; 
         
-
 // Components
+@import "./components/progress";
+@import "./components/title";
 @import "./components/forms";
-@import "./components/hero"; 
 @import "./components/buttons"; 
   
+// Layouts
+@import "./layouts/block";
+@import "./layouts/cards";  
+@import "./layouts/footer";
 
 // Pages 

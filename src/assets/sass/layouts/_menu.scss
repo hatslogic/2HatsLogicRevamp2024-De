@@ -1,0 +1,19 @@
+.top-menu{
+    padding: rem(40) 0;
+    ul{
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        font-family: $font-bold;
+        font-size: rem(14);
+        li + li{
+            margin-left: rem(60);
+        }
+        a{
+            color: var(--c-secondary);
+            &:hover{
+                color: var(--c-primary);
+            }
+        }
+    }
+}

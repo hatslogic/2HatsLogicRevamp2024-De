@@ -26,8 +26,10 @@ $mainlink-font-path: "../fonts";
 * Fonts
 */
 
-$font-header:  'TTFirsNeue-DmBd';
-$font-regular: 'TTFirsNeue-Rg'; 
+$font-header:  'TTFirsNeue-Nm', Arial, Helvetica, sans-serif;
+$font-bold:  'TTFirsNeue-Bd', Arial, Helvetica, sans-serif;
+$font-regular: 'TTFirsNeue-Rg', Arial, Helvetica, sans-serif; 
+$font-light: 'TTFirsNeue-Lt', Arial, Helvetica, sans-serif; 
 
 /*
  * Base colors
@@ -37,8 +39,13 @@ $font-regular: 'TTFirsNeue-Rg';
 :root {
     --c-primary: #31A9C7;
     --c-secondary: #060606;
+    --c-primary-hover: #2f8a9e;
+    --c-secondary-hover: #000000;
     --c-black: #000000;
     --c-white: #ffffff;
+    --c-grey: #707070;
+    --c-grey-border: #C6C6C6;
+    --c-light-grey: #FAF7F5;
     --swiper-navigation-size: 30px;
     --swiper-theme-color: var(--c-black);
     --swiper-navigation-color: var(--c-black);
