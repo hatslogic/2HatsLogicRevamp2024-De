@@ -1,0 +1,1 @@
+import '../.../../../../node_modules/bootstrap/js/dist/bootstrap.bundle.min.js';
