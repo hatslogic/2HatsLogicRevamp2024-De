@@ -1,4 +1,4 @@
-HTML Boilerplate 
+2hatslogic Revamp - 2024
 ===
 
 ## How to use :
