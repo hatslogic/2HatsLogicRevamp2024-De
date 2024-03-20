@@ -11,7 +11,7 @@
     "url": "git+https://github.com/yourusername/your-project.git"
   },
   "scripts": {
-    "dev": "gulp serve",
+    "dev": "cross-env NODE_ENV=dev gulp serve",
     "build": "cross-env NODE_ENV=prod gulp",
     "deploy": "npm run prod && gh-pages -d dist"
   },
