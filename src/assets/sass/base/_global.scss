@@ -36,21 +36,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-header;
+  font-family: $font-regular;
   line-height: 1;
+  margin: 0;
 }
 
 h1 {
   font-size: rem(75);
-  margin: 0;
 }
 
 h2{
-
+  font-size: rem(40);
 }
 
 h3{
-  margin: rem(30) 0;
+  font-size: rem(26);
 }
 
 p{

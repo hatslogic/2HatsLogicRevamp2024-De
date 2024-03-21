@@ -1,5 +1,9 @@
 .impact{
-    h3{
+    background-image: url('../img/worldbg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    .count{
         font-size: rem(55);
         font-family: $font-light;
         color: var(--c-primary);

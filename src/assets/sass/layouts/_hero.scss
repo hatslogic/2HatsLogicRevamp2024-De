@@ -1,26 +1,125 @@
-.hero{
-    .caption{
+.hero {
+    .caption {
         max-width: rem(900);
-        p{
+
+        p {
             max-width: rem(725);
             margin-top: rem(50);
         }
     }
-    mark{
+
+    mark {
         color: var(--c-primary);
         background: none;
     }
-    .btn-group{
+
+    .btn-group {
         margin-top: rem(60);
         display: flex;
         align-items: center;
     }
-    .rating{
+
+    .rating {
         display: flex;
         margin-left: rem(50);
-        .lbl{
+
+        .lbl {
             max-width: rem(124);
             font-size: rem(18);
+        }
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 30s linear infinite;
+    -moz-animation: rotating 30s linear infinite;
+    -ms-animation: rotating 30s linear infinite;
+    -o-animation: rotating 30s linear infinite;
+    animation: rotating 30s linear infinite;
+}
+
+.consultation {
+    width: rem(176);
+    height: rem(177);
+
+    .label text {
+        font-size: rem(11);
+        font-family: $font-medium;
+        line-height: 0.5;
+    }
+
+    .outer {
+        transform-origin: center;
+        animation: 30s infinite rotating;
+    }
+}
+
+.consultation-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .hover-wrap {
+        transition: 0.2s all ease-in-out;
+        transform-origin: center center;
+    }
+
+    .label, .outer, .inner{
+        transition: 0.3s all;
+    }
+
+    &:hover {
+        .hover-wrap {
+            // transform: rotate(-16deg);
+            transform: rotate(-16deg) scale(1.05);
+            .label{
+                fill: var(--c-secondary);
+            }
+            .inner{
+                // fill: var(--c-secondary);
+            }
+        }
+        .outer{
+            // fill: var(--c-primary);
+            // pause animation
+            fill: var(--c-grey-border);
+            // animation-play-state: paused;
         }
     }
 }
