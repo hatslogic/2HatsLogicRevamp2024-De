@@ -1,11 +1,13 @@
 // Utils
 @import "./util/mixins";
 @import "./util/variables";
+@import "./util/utils";
 
 // Base
 @import "./base/typography"; 
 @import "./base/global";
-@import "./base/grid";
+@import "./base/space";
+@import "./base/icons";
 @import "./base/icons";
 
 // Layouts
@@ -16,6 +18,8 @@
 @import "./layouts/section";
 @import "./layouts/hero"; 
 @import "./layouts/impact"; 
+@import "./layouts/technologies"; 
+@import "./layouts/service";
         
 // Components
 @import "./components/progress";

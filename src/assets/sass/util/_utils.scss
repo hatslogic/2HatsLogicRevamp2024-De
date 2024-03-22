@@ -1,0 +1,36 @@
+.flex{
+    display: flex;
+}
+
+.inline-flex{
+    display: inline-flex;
+}
+
+.block{
+    display: block;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.relative{
+    position: relative;
+
+    .sticky{
+        // stick offset from top
+        // top: 50%;
+        top: rem(120);
+        // transform: translateY(-50%);
+        position: sticky;
+        // top: 0;
+    }
+}

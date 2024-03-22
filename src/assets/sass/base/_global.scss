@@ -17,7 +17,7 @@ html,
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: $font-regular;
+  font-family: $font-light;
   // font-size: 0.834vw;
   // font-size: 1vw;
   font-size: 17px;
@@ -50,12 +50,13 @@ h2{
 }
 
 h3{
-  font-size: rem(26);
+  font-size: rem(30);
 }
 
 p{
-    font-size: rem(18);
-    line-height: 1.4;
+  // font-family: $font-light;
+  font-size: rem(18);
+  line-height: 1.4;
 }
 
 .container {

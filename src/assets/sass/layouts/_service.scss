@@ -1,0 +1,25 @@
+section.services{
+    .gap{
+        gap: rem(120);
+    }
+    .service{
+        counter-increment: service;
+        position: relative;
+        & > *{
+            position: relative;
+            z-index: 1;
+        }
+        &:before{
+            color: var(--c-grey-border);
+            opacity: 50%;
+            content: counter(service, decimal-leading-zero);
+            font-size: rem(280);
+            position: absolute;
+            font-family: $font-thin;
+            letter-spacing: -0.5px;
+            top: rem(-80);
+            left: rem(-50);
+            z-index: 0;
+        }
+    }
+}

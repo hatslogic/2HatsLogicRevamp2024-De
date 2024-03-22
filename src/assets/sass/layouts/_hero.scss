@@ -107,7 +107,7 @@
     &:hover {
         .hover-wrap {
             // transform: rotate(-16deg);
-            transform: rotate(-16deg) scale(1.05);
+            transform: rotate(-10deg) scale(1.085);
             .label{
                 fill: var(--c-secondary);
             }
@@ -120,6 +120,7 @@
             // pause animation
             fill: var(--c-grey-border);
             // animation-play-state: paused;
+            // transform: scale(0.5);
         }
     }
 }

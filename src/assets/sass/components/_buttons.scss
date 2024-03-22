@@ -6,15 +6,20 @@
     min-width: rem(170);
     min-height: rem(48);
     padding: rem(10) rem(40);
-    font-family: $font-bold;
+    font-family: $font-medium;
     font-size: rem(12);
     letter-spacing: 2px;
     display: inline-flex;
     align-items: center;
+
     &-primary{
         border-color: var(--c-primary);
         background: var(--c-primary);
         color: var(--c-white);
+
+        &-link{
+
+        }
         &:hover{
             background: var(--c-primary-hover);
             border-color: var(--c-primary-hover);
@@ -26,9 +31,9 @@
         background: var(--c-white);
         color: var(--c-primary);
         &:hover{
-            background: var(--c-white);
-            border-color: var(--c-primary-hover);
-            color: var(--c-primary-hover);
+            background: var(--c-primary);
+            border-color: var(--c-primary);
+            color: var(--c-white);
         }
     }
     &-secondary{
@@ -51,7 +56,33 @@
             color: var(--c-white);
         }
     }
+
     &:hover{
         box-shadow: 6px 10px 12.5px 0px rgba(0, 0, 0, 0.102);
     }
+}
+
+.link{
+    text-transform: uppercase;
+    font-family: $font-medium;
+    font-size: rem(14);
+    letter-spacing: 1px;
+
+    .icomoon{
+        margin-left: rem(5);
+        font-size: 80%;    
+    }
+
+    &-primary{
+        color: var(--c-primary);
+        &:hover{
+            color: var(--c-secondary);
+        }
+    }       
+    &-secondary{
+        color: var(--c-secondary);
+        &:hover{
+            color: var(--c-primary);
+        }
+    }       
 }

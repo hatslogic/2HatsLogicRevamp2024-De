@@ -1,5 +1,21 @@
 .title{
-    h2{
-        
+    h4{
+      color: var(--c-primary);  
+      font-family: $font-medium;
+      font-size: rem(14);
+      text-transform: uppercase;
+      & + h2{
+        margin-top: rem(20);
+      }
+    }
+    h2, h3{
+        max-width: 75%;
+    }
+}
+
+.content{
+    margin-top: rem(20);
+    p + .btn{
+        margin-top: rem(20);
     }
 }
