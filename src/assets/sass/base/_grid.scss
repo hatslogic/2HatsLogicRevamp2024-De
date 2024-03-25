@@ -1,0 +1,15 @@
+.flex{
+    display: flex;
+    &.nowrap{
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+    &.sm-wrap{
+        @include mobile-sm{
+            flex-wrap: wrap;
+        }
+    }
+    .col{
+        width: 100%;
+    }
+}

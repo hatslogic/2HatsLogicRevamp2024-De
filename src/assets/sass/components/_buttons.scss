@@ -28,7 +28,7 @@
     }
     &-primary-outline{
         border-color: var(--c-primary);
-        background: var(--c-white);
+        background: transparent;
         color: var(--c-primary);
         &:hover{
             background: var(--c-primary);
@@ -48,7 +48,7 @@
     }
     &-secondary-outline{
         border-color: var(--c-secondary);
-        background: var(--c-white);
+        background: transparent;
         color: var(--c-secondary);
         &:hover{
             background: var(--c-primary);

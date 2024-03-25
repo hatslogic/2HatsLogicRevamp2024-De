@@ -2,5 +2,7 @@ section.technologies{
     border-bottom: rem(1) solid var(--c-grey-border);
     a, img{
         display: block;
+        width: auto;
+        height: auto;
     }
 }

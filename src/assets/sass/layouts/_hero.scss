@@ -2,6 +2,14 @@
     .caption {
         max-width: rem(900);
 
+        h1{
+            hr{
+                @include mobile-sm{
+                    display: none;
+                }
+            }
+        }
+
         p {
             max-width: rem(725);
             margin-top: rem(50);
@@ -17,11 +25,21 @@
         margin-top: rem(60);
         display: flex;
         align-items: center;
+
+        @include mobile-sm{
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     .rating {
         display: flex;
         margin-left: rem(50);
+
+        @include mobile-sm{
+            margin-left: 0;
+            margin-top: rem(30);
+        }
 
         .lbl {
             max-width: rem(124);
@@ -77,6 +95,10 @@
 .consultation {
     width: rem(176);
     height: rem(177);
+
+    @include mobile-sm{
+        display: none;
+    }
 
     .label text {
         font-size: rem(11);

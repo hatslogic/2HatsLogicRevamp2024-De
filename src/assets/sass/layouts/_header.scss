@@ -11,9 +11,36 @@ header{
     justify-content: space-between;
     align-items: center;
     top: 0;
+
+    @include mobile-sm{
+        padding: rem(20);
+        flex-direction: row;
+        justify-content: flex-start;
+        position: relative;
+        height: rem(80);
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        a:first-child{
+            margin-right: auto;
+        }
+
+        a:last-child{
+            margin-left: rem(20);
+        }
+    }
+
+    
     .brand{
         width: rem(58);
         height: rem(42);
+
+        @include mobile-sm{
+            width: rem(40);
+            height: rem(30);
+        }
     }
 
     a{

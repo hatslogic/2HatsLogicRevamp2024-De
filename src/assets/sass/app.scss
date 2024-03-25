@@ -7,7 +7,7 @@
 @import "./base/typography"; 
 @import "./base/global";
 @import "./base/space";
-@import "./base/icons";
+@import "./base/grid";
 @import "./base/icons";
 
 // Layouts
@@ -19,6 +19,7 @@
 @import "./layouts/hero"; 
 @import "./layouts/impact"; 
 @import "./layouts/technologies"; 
+@import "./layouts/about";
 @import "./layouts/service";
         
 // Components
@@ -26,6 +27,7 @@
 @import "./components/title";
 @import "./components/forms";
 @import "./components/buttons"; 
+@import "./components/picture"; 
   
 // Layouts
 @import "./layouts/block";

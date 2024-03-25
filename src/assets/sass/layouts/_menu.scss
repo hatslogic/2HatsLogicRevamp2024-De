@@ -1,4 +1,7 @@
 .top-menu{
+    @include mobile-sm{
+        display: none;
+    }
     ul{
         display: flex;
         align-items: center;
@@ -7,6 +10,10 @@
         font-size: rem(14);
         li + li{
             margin-left: rem(60);
+
+            @include mobile-sm{
+                margin-left: rem(30);
+            }
         }
         a{
             color: var(--c-secondary);

@@ -43,6 +43,10 @@ h6 {
 
 h1 {
   font-size: rem(75);
+
+  @include mobile-sm{
+    font-size: rem(50);
+  }
 }
 
 h2{

@@ -1,6 +1,10 @@
 section.services{
     .gap{
         gap: rem(120);
+
+        @include mobile-sm{
+            gap: rem(0);
+        }
     }
     .service{
         counter-increment: service;
