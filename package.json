@@ -30,10 +30,12 @@
     "gulp-imagemin": "^9.0.0",
     "gulp-include": "^2.4.1",
     "gulp-js-import": "^1.0.6",
+    "gulp-purgecss": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^5.0.0",
+    "purgecss": "^5.0.0",
     "sass": "^1.70.0"
   },
   "bugs": {

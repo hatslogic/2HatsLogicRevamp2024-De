@@ -11,6 +11,7 @@ import htmlPartial from 'gulp-html-partial';
 import cleanGulp from 'gulp-clean';
 import include from 'gulp-include';
 import webp from 'gulp-webp';
+import purgecss from 'gulp-purgecss';
 
 const isProd = process.env.NODE_ENV === 'prod';
 const sass = gulpSass(dartSass);
@@ -59,6 +60,7 @@ function compileCSS(src, outputFileName) {
         .pipe(sass({ outputStyle: 'compressed', importer: dartSass }).on('error', sass.logError))
         .pipe(gulpIf(!isProd, sourcemaps.write()))
         .pipe(concat(outputFileName))
+        .pipe(gulpIf(isProd, purgecss({ content: ['src/**/*.html', 'src/**/*.js'] })))
         .pipe(gulp.dest(paths.dist.css))
         .pipe(browserSync.stream()); // Stream changes to BrowserSync
 }
