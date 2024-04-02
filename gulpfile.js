@@ -60,7 +60,12 @@ function compileCSS(src, outputFileName) {
         .pipe(sass({ outputStyle: 'compressed', importer: dartSass }).on('error', sass.logError))
         .pipe(gulpIf(!isProd, sourcemaps.write()))
         .pipe(concat(outputFileName))
-        .pipe(gulpIf(isProd, purgecss({ content: ['src/**/*.html', 'src/**/*.js'] })))
+        .pipe(gulpIf(isProd, purgecss(
+            { 
+                content: ['src/**/*.html', 'src/**/*.js'],
+                defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+            }
+        )))
         .pipe(gulp.dest(paths.dist.css))
         .pipe(browserSync.stream()); // Stream changes to BrowserSync
 }
