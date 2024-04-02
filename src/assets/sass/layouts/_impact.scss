@@ -6,6 +6,7 @@
         font-size: rem(55);
         font-family: $font-light;
         color: var(--c-primary);
+        min-width: rem(200);
     }
     p{
         font-size: rem(20);

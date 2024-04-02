@@ -81,6 +81,10 @@ p{
   padding-right: rem(20);
   margin: auto;
   max-width: 75%;
+
+  @include below($sm){
+    max-width: 100%;
+  }
 }
 
 .container-fluid {
@@ -92,6 +96,7 @@ p{
 
   @include below($sm){
     padding-right: rem(20);
+    max-width: 100%;
   }
 }
 
@@ -124,4 +129,8 @@ a {
 .transition{
   transition: 0.15s all ease-in-out;
   transform-origin: center center;
+}
+
+.x-scroll{
+  overflow-x: scroll;
 }

@@ -9,10 +9,18 @@ section.technologies {
     height: auto;
     max-width: rem(200);
     max-height: rem(50);
+
+    @include below($sm) {
+      max-width: rem(100);
+    }
   }
 
   a {
     margin-left: rem(150);
+
+    @include below($sm) {
+      margin-left: rem(30);
+    }
   }
 }
 
