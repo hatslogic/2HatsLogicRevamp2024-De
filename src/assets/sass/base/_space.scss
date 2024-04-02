@@ -1,6 +1,14 @@
 $spaceamounts: (0, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 180, 200); // Adjust this to include the pixel amounts you need.
 $sides: (top, bottom, left, right); // Leave this variable alone
 
+.p-0{
+  padding: 0;
+}
+
+.m-0{
+  margin: 0;
+}
+
 @each $space in $spaceamounts {
   @each $side in $sides {
     .m#{str-slice($side, 0, 1)}-#{$space} {
@@ -109,10 +117,6 @@ $sides: (top, bottom, left, right); // Leave this variable alone
   }
 }
 
-.m-0{
-  margin: 0;
-}
-
 @include below($xs){
   .xs\:m-0{
     margin: 0;
@@ -147,10 +151,6 @@ $sides: (top, bottom, left, right); // Leave this variable alone
   @include below($xxl){
     margin: 0;
   }
-}
-
-.p-0{
-  padding: 0;
 }
 
 @include below($xs){

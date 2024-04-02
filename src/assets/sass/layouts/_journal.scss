@@ -1,0 +1,27 @@
+.journal {
+  .item {
+    color: var(---c-black);
+
+    &:hover{
+      img{
+        transform: scale(1.1);
+      }
+      .info{
+        h4{
+          color: var(--c-primary);
+        }
+      }
+    }
+  }
+
+  .info {
+    h4 {
+      font-family: $font-medium;
+      line-height: rem(26);
+    }
+
+    p {
+      font-size: rem(14);
+    }
+  }
+}

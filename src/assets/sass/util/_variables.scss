@@ -25,6 +25,7 @@ $font-light: 'TTFirsNeueTrl-Light', Arial, Helvetica, sans-serif;
 $font-regular: 'TTFirsNeueTrl-Regular', Arial, Helvetica, sans-serif; 
 $font-medium: 'TTFirsNeueTrl-Medium', Arial, Helvetica, sans-serif; 
 $font-bold:  'TTFirsNeueTrl-Bold', Arial, Helvetica, sans-serif;
+$font-demibold:  'TTFirsNeueTrl-DemiBold', Arial, Helvetica, sans-serif;
 
 
 /*
@@ -33,9 +34,9 @@ $font-bold:  'TTFirsNeueTrl-Bold', Arial, Helvetica, sans-serif;
 
 // Theme colours
 :root {
-    --c-primary: #07607E;
+    --c-primary: #31A9C7;
     --c-secondary: #060606;
-    --c-primary-hover: #31A9C7;
+    --c-primary-hover: #1d93b1;
     --c-secondary-hover: #000000;
     --c-black: #000000;
     --c-white: #ffffff;

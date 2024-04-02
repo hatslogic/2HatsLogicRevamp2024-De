@@ -1,13 +1,4 @@
 .testimonials{
-    .testimonial{
-        border-right: rem(1) solid var(--c-grey-border);
-        padding-right: rem(120);
-        margin-right: rem(120);
-        blockquote{
-            margin: 0;
-        }
-    }
-
     .swiper-slide{
         width: 52vw;
         &:first-child{
@@ -20,5 +11,39 @@
                 border-right: 0;
             }
         }
+    }
+}
+
+.testimonial{
+    border-right: rem(2) solid var(--c-grey-border);
+    padding-right: rem(120);
+    margin-right: rem(120);
+    .top{
+        background-color: var(--c-light-grey);
+        img{
+            max-width: rem(50);
+            max-height: rem(50);
+            mix-blend-mode: multiply;
+            
+        }
+        .service{
+            color: var(--c-primary);  
+            font-family: $font-demibold;
+            font-size: rem(12);
+            text-transform: uppercase;
+        }
+    }
+    blockquote{
+        font-size: rem(25);
+        line-height: rem(30);
+    }
+
+    h6{
+        font-family: $font-demibold;
+    }
+
+    .designation{
+        font-family: $font-regular;
+        font-size: rem(15);
     }
 }
