@@ -1,5 +1,25 @@
 <footer></footer>  
-<script defer src="assets/js/plugins.min.js" defer></script>
-<script defer src="assets/js/app.min.js" defer></script>
+<script>
+    window.addEventListener('load', (event) => {
+
+        // embeded multiple js url only aftetr page load
+        const plugins = document.createElement('script');
+        plugins.src = 'assets/js/plugins.min.js';
+        document.body.appendChild(plugins);
+
+        //callback after embeded js url is loaded
+        plugins.addEventListener('load', (event) => {
+            const app = document.createElement('script');
+            app.src = 'assets/js/app.min.js';
+            document.body.appendChild(app);
+        });
+
+    });
+</script>
+
+<!--
+<script defer src="assets/js/plugins.min.js" async></script>
+<script defer src="assets/js/app.min.js" async></script>
+-->
 </body>
 </html>
