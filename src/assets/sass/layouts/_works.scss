@@ -1,0 +1,22 @@
+.works {
+  .item {
+    color: var(---c-black);
+    picture,
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .info {
+    h4 {
+      font-family: $font-regular;
+      font-weight: normal;
+      line-height: rem(22);
+
+      strong {
+        font-weight: $font-medium;
+      }
+    }
+  }
+}

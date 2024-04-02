@@ -1,15 +1,320 @@
-.flex{
-    display: flex;
-    &.nowrap{
-        flex-wrap: nowrap;
-        overflow-x: auto;
+.grid {
+    display: grid;
+}
+
+.grid-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@include below($xxl) {
+    .xxl\:grid-6 {
+        grid-template-columns: repeat(6, 1fr);
     }
-    &.sm-wrap{
-        @include mobile-sm{
-            flex-wrap: wrap;
+}
+
+@include below($xl) {
+    .xl\:grid-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@include below($lg) {
+    .lg\:grid-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@include below($md) {
+    .md\:grid-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@include below($sm) {
+    .sm\:grid-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@include below($xs) {
+    .xs\:grid-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@include below($xxl) {
+    .xxl\:grid-5 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@include below($xl) {
+    .xl\:grid-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@include below($lg) {
+    .lg\:grid-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@include below($md) {
+    .md\:grid-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@include below($sm) {
+    .sm\:grid-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@include below($xs) {
+    .xs\:grid-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@include below($xxl) {
+    .xxl\:grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@include below($xl) {
+    .xl\:grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@include below($lg) {
+    .lg\:grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@include below($md) {
+    .md\:grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@include below($sm) {
+    .sm\:grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@include below($xs) {
+    .xs\:grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@include below($xxl) {
+    .xxl\:grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include below($xl) {
+    .xl\:grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include below($lg) {
+    .lg\:grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include below($md) {
+    .md\:grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include below($sm) {
+    .sm\:grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include below($xs) {
+    .xs\:grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include below($xxl) {
+    .xxl\:grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include below($xl) {
+    .xl\:grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include below($lg) {
+    .lg\:grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include below($md) {
+    .md\:grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include below($sm) {
+    .sm\:grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include below($xs) {
+    .xs\:grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include below($xxl) {
+    .xxl\:grid-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@include below($xl) {
+    .xl\:grid-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@include below($lg) {
+    .lg\:grid-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@include below($md) {
+    .md\:grid-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@include below($sm) {
+    .sm\:grid-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@include below($xs) {
+    .xs\:grid-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+/* Grid gaps */
+$gaps: (
+    10,
+    15,
+    20,
+    30,
+    35,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150
+);
+
+@each $gap in $gaps {
+    .gap-#{$gap} {
+        grid-gap: rem($gap);
+    }
+}
+
+@each $gap in $gaps {
+    .xxl\:gap-#{$gap} {
+        @include below($xxl) {
+            grid-gap: rem($gap);
         }
     }
-    .col{
-        width: 100%;
+}
+
+@each $gap in $gaps {
+    .xl\:gap-#{$gap} {
+        @include below($xl) {
+            grid-gap: rem($gap);
+        }
+    }
+}
+
+@each $gap in $gaps {
+    .lg\:gap-#{$gap} {
+        @include below($lg) {
+            grid-gap: rem($gap);
+        }
+    }
+}
+
+@each $gap in $gaps {
+    .md\:gap-#{$gap} {
+        @include below($md) {
+            grid-gap: rem($gap);
+        }
+    }
+}
+
+@each $gap in $gaps {
+    .sm\:gap-#{$gap} {
+        @include below($sm) {
+            grid-gap: rem($gap);
+        }
+    }
+}
+
+@each $gap in $gaps {
+    .xs\:gap-#{$gap} {
+        @include below($xs) {
+            grid-gap: rem($gap);
+        }
     }
 }

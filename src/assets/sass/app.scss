@@ -8,6 +8,7 @@
 @import "./base/global";
 @import "./base/space";
 @import "./base/grid";
+@import "./base/flex";
 @import "./base/icons";
 
 // Layouts
@@ -21,6 +22,7 @@
 @import "./layouts/technologies"; 
 @import "./layouts/about";
 @import "./layouts/service";
+@import "./layouts/works";
         
 // Components
 @import "./components/progress";

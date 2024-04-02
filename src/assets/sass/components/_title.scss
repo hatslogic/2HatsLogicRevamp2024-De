@@ -5,16 +5,20 @@
       font-size: rem(14);
       text-transform: uppercase;
       & + h2{
-        margin-top: rem(20);
+        margin-top: rem(15);
       }
     }
     h2, h3{
         max-width: 75%;
     }
+    p{
+        max-width: 75%;
+        font-size: rem(17);
+        font-family: $font-regular;
+    }
 }
 
 .content{
-    margin-top: rem(20);
     p + .btn{
         margin-top: rem(20);
     }

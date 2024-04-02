@@ -1,5 +1,5 @@
 .top-menu{
-    @include mobile-sm{
+    @include below($sm){
         display: none;
     }
     ul{
@@ -11,7 +11,7 @@
         li + li{
             margin-left: rem(60);
 
-            @include mobile-sm{
+            @include below($sm){
                 margin-left: rem(30);
             }
         }

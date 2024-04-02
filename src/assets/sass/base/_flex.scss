@@ -1,0 +1,914 @@
+/* flex classes */
+.flex {
+    display: flex;
+
+    .col {
+        width: 100%;
+    }
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.column-reverse {
+    flex-direction: column-reverse;
+}
+
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.nowrap {
+    flex-wrap: nowrap;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.order-1 {
+    order: 1;
+}
+
+.order-2 {
+    order: 2;
+}
+
+
+/* flex classes */
+.xxl\:flex {
+    @include below($xxl) {
+        display: flex;
+    }
+}
+
+.xl\:flex {
+    @include below($xl) {
+        display: flex;
+    }
+}
+
+.lg\:flex {
+    @include below($lg) {
+        display: flex;
+    }
+}
+
+.md\:flex {
+    @include below($md) {
+        display: flex;
+    }
+}
+
+.sm\:flex {
+    @include below($sm) {
+        display: flex;
+    }
+}
+
+
+/* inline flex classes */
+.xxl\:inline-flex {
+    @include below($xxl) {
+        display: inline-flex;
+    }
+}
+
+.xl\:inline-flex {
+    @include below($xl) {
+        display: inline-flex;
+    }
+}
+
+.lg\:inline-flex {
+    @include below($lg) {
+        display: inline-flex;
+    }
+}
+
+.md\:inline-flex {
+    @include below($md) {
+        display: inline-flex;
+    }
+}
+
+.sm\:inline-flex {
+    @include below($sm) {
+        display: inline-flex;
+    }
+}
+
+.xs\:inline-flex {
+    @include below($xs) {
+        display: inline-flex;
+    }
+}
+
+/* flex display classes */
+.xxl\:inline {
+    @include below($xxl) {
+        display: inline;
+    }
+}
+
+.xl\:inline {
+    @include below($xl) {
+        display: inline;
+    }
+}
+
+.lg\:inline {
+    @include below($lg) {
+        display: inline;
+    }
+}
+
+.md\:inline {
+    @include below($md) {
+        display: inline;
+    }
+}
+
+.sm\:inline {
+    @include below($sm) {
+        display: inline;
+    }
+}
+
+.xs\:inline {
+    @include below($xs) {
+        display: inline;
+    }
+}
+
+/* block display classes */
+.xxl\:block {
+    @include below($xxl) {
+        display: block;
+    }
+}
+
+.xl\:block {
+    @include below($xl) {
+        display: block;
+    }
+}
+
+.lg\:block {
+    @include below($lg) {
+        display: block;
+    }
+}
+
+.md\:block {
+    @include below($md) {
+        display: block;
+    }
+}
+
+.sm\:block {
+    @include below($sm) {
+        display: block;
+    }
+}
+
+.xs\:block {
+    @include below($xs) {
+        display: block;
+    }
+}
+
+
+/* inline-block display classes */
+.xxl\:inline-block {
+    @include below($xxl) {
+        display: inline-block;
+    }
+}
+
+.xl\:inline-block {
+    @include below($xl) {
+        display: inline-block;
+    }
+}
+
+.lg\:inline-block {
+    @include below($lg) {
+        display: inline-block;
+    }
+}
+
+.md\:inline-block {
+    @include below($md) {
+        display: inline-block;
+    }
+}
+
+.sm\:inline-block {
+    @include below($sm) {
+        display: inline-block;
+    }
+}
+
+.xs\:inline-block {
+    @include below($xs) {
+        display: inline-block;
+    }
+}
+
+/* flex direction classes */
+
+.xxl\:row {
+    @include below($xxl) {
+        flex-direction: row;
+    }
+}
+
+.xl\:row {
+    @include below($xl) {
+        flex-direction: row;
+    }
+}
+
+.lg\:row {
+    @include below($lg) {
+        flex-direction: row;
+    }
+}
+
+.md\:row {
+    @include below($md) {
+        flex-direction: row;
+    }
+}
+
+.sm\:row {
+    @include below($sm) {
+        flex-direction: row;
+    }
+}
+
+.xs\:row {
+    @include below($xs) {
+        flex-direction: row;
+    }
+}
+
+
+/* flex direction classes */
+.xxl\:column {
+    @include below($xxl) {
+        flex-direction: column;
+    }
+}
+
+.xl\:column {
+    @include below($xl) {
+        flex-direction: column;
+    }
+}
+
+.lg\:column {
+    @include below($lg) {
+        flex-direction: column;
+    }
+}
+
+.md\:column {
+    @include below($md) {
+        flex-direction: column;
+    }
+}
+
+.sm\:column {
+    @include below($sm) {
+        flex-direction: column;
+    }
+}
+
+.xs\:column {
+    @include below($xs) {
+        flex-direction: column;
+    }
+}
+
+
+/* flex direction classes */
+.xxl\:row-reverse {
+    @include below($xxl) {
+        flex-direction: row-reverse;
+    }
+}
+
+.xl\:row-reverse {
+    @include below($xl) {
+        flex-direction: row-reverse;
+    }
+}
+
+.lg\:row-reverse {
+    @include below($lg) {
+        flex-direction: row-reverse;
+    }
+}
+
+.md\:row-reverse {
+    @include below($md) {
+        flex-direction: row-reverse;
+    }
+}
+
+.sm\:row-reverse {
+    @include below($sm) {
+        flex-direction: row-reverse;
+    }
+}
+
+.xs\:row-reverse {
+    @include below($xs) {
+        flex-direction: row-reverse;
+    }
+}
+
+
+/* flex direction classes */
+.xxl\:column-reverse {
+    @include below($xxl) {
+        flex-direction: column-reverse;
+    }
+}
+
+.xl\:column-reverse {
+    @include below($xl) {
+        flex-direction: column-reverse;
+    }
+}
+
+.lg\:column-reverse {
+    @include below($lg) {
+        flex-direction: column-reverse;
+    }
+}
+
+.md\:column-reverse {
+    @include below($md) {
+        flex-direction: column-reverse;
+    }
+}
+
+.sm\:column-reverse {
+    @include below($sm) {
+        flex-direction: column-reverse;
+    }
+}
+
+.xs\:column-reverse {
+    @include below($xs) {
+        flex-direction: column-reverse;
+    }
+}
+
+/* display none classes */
+.xxl\:hidden {
+    @include below($xxl) {
+        display: none;
+    }
+}
+
+.xl\:hidden {
+    @include below($xl) {
+        display: none;
+    }
+}
+
+.lg\:hidden {
+    @include below($lg) {
+        display: none;
+    }
+}
+
+.md\:hidden {
+    @include below($md) {
+        display: none;
+    }
+}
+
+.sm\:hidden {
+    @include below($sm) {
+        display: none;
+    }
+}
+
+.xs\:hidden {
+    @include below($xs) {
+        display: none;
+    }
+}
+
+
+/* display block classes */
+.xxl\:visible {
+    @include below($xxl) {
+        display: block;
+    }
+}
+
+.xl\:visible {
+    @include below($xl) {
+        display: block;
+    }
+}
+
+.lg\:visible {
+    @include below($lg) {
+        display: block;
+    }
+}
+
+.md\:visible {
+    @include below($md) {
+        display: block;
+    }
+}
+
+.sm\:visible {
+    @include below($sm) {
+        display: block;
+    }
+}
+
+.xs\:visible {
+    @include below($xs) {
+        display: block;
+    }
+}
+
+
+/* Flex wrap classes */
+.xxl\:wrap {
+    @include below($xxl) {
+        flex-wrap: wrap;
+    }
+}
+
+.xl\:wrap {
+    @include below($xl) {
+        flex-wrap: wrap;
+    }
+}
+
+.lg\:wrap {
+    @include below($lg) {
+        flex-wrap: wrap;
+    }
+}
+
+.md\:wrap {
+    @include below($md) {
+        flex-wrap: wrap;
+    }
+}
+
+.sm\:wrap {
+    @include below($sm) {
+        flex-wrap: wrap;
+    }
+}
+
+.xs\:wrap {
+    @include below($xs) {
+        flex-wrap: wrap;
+    }
+}
+
+/* No wrap classes */
+.xxl\:nowrap {
+    @include below($xxl) {
+        flex-wrap: nowrap;
+    }
+}
+
+.xl\:nowrap {
+    @include below($xl) {
+        flex-wrap: nowrap;
+    }
+}
+
+.lg\:nowrap {
+    @include below($lg) {
+        flex-wrap: nowrap;
+    }
+}
+
+.md\:nowrap {
+    @include below($md) {
+        flex-wrap: nowrap;
+    }
+}
+
+.sm\:nowrap {
+    @include below($sm) {
+        flex-wrap: nowrap;
+    }
+}
+
+.xs\:nowrap {
+    @include below($xs) {
+        flex-wrap: nowrap;
+    }
+}
+
+
+/* justify content classes */
+.xxl\:justify-start {
+    @include below($xxl) {
+        justify-content: flex-start;
+    }
+}
+
+.xl\:justify-start {
+    @include below($xl) {
+        justify-content: flex-start;
+    }
+}
+
+.lg\:justify-start {
+    @include below($lg) {
+        justify-content: flex-start;
+    }
+}
+
+.md\:justify-start {
+    @include below($md) {
+        justify-content: flex-start;
+    }
+}
+
+.sm\:justify-start {
+    @include below($sm) {
+        justify-content: flex-start;
+    }
+}
+
+.xs\:justify-start {
+    @include below($xs) {
+        justify-content: flex-start;
+    }
+}
+
+
+.xxl\:justify-end {
+    @include below($xxl) {
+        justify-content: flex-end;
+    }
+}
+
+.xl\:justify-end {
+    @include below($xl) {
+        justify-content: flex-end;
+    }
+}
+
+.lg\:justify-end {
+    @include below($lg) {
+        justify-content: flex-end;
+    }
+}
+
+.md\:justify-end {
+    @include below($md) {
+        justify-content: flex-end;
+    }
+}
+
+.sm\:justify-end {
+    @include below($sm) {
+        justify-content: flex-end;
+    }
+}
+
+
+.xxl\:justify-center {
+    @include below($xxl) {
+        justify-content: center;
+    }
+}
+
+.xl\:justify-center {
+    @include below($xl) {
+        justify-content: center;
+    }
+}
+
+.lg\:justify-center {
+    @include below($lg) {
+        justify-content: center;
+    }
+}
+
+.md\:justify-center {
+    @include below($md) {
+        justify-content: center;
+    }
+}
+
+.sm\:justify-center {
+    @include below($sm) {
+        justify-content: center;
+    }
+}
+
+.xs\:justify-center {
+    @include below($xs) {
+        justify-content: center;
+    }
+}
+
+
+.xxl\:justify-between {
+    @include below($xxl) {
+        justify-content: space-between;
+    }
+}
+
+.xl\:justify-between {
+    @include below($xl) {
+        justify-content: space-between;
+    }
+}
+
+.lg\:justify-between {
+    @include below($lg) {
+        justify-content: space-between;
+    }
+}
+
+.md\:justify-between {
+    @include below($md) {
+        justify-content: space-between;
+    }
+}
+
+.sm\:justify-between {
+    @include below($sm) {
+        justify-content: space-between;
+    }
+}
+
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.xxl\:justify-around {
+    @include below($xxl) {
+        justify-content: space-around;
+    }
+}
+
+.xl\:justify-around {
+    @include below($xl) {
+        justify-content: space-around;
+    }
+}
+
+.lg\:justify-around {
+    @include below($lg) {
+        justify-content: space-around;
+    }
+}
+
+.md\:justify-around {
+    @include below($md) {
+        justify-content: space-around;
+    }
+}
+
+.sm\:justify-around {
+    @include below($sm) {
+        justify-content: space-around;
+    }
+}
+
+/* align items classes */
+
+.xxl\:align-start {
+    @include below($xxl) {
+        align-items: flex-start;
+    }
+}
+
+.xl\:align-start {
+    @include below($xl) {
+        align-items: flex-start;
+    }
+}
+
+.lg\:align-start {
+    @include below($lg) {
+        align-items: flex-start;
+    }
+}
+
+.md\:align-start {
+    @include below($md) {
+        align-items: flex-start;
+    }
+}
+
+.sm\:align-start {
+    @include below($sm) {
+        align-items: flex-start;
+    }
+}
+
+.xxl\:align-end {
+    @include below($xxl) {
+        align-items: flex-end;
+    }
+}
+
+.xl\:align-end {
+    @include below($xl) {
+        align-items: flex-end;
+    }
+}
+
+.lg\:align-end {
+    @include below($lg) {
+        align-items: flex-end;
+    }
+}
+
+.md\:align-end {
+    @include below($md) {
+        align-items: flex-end;
+    }
+}
+
+.sm\:align-end {
+    @include below($sm) {
+        align-items: flex-end;
+    }
+}
+
+.xxl\:align-center {
+    @include below($xxl) {
+        align-items: center;
+    }
+}
+
+.xl\:align-center {
+    @include below($xl) {
+        align-items: center;
+    }
+}
+
+.lg\:align-center {
+    @include below($lg) {
+        align-items: center;
+    }
+}
+
+.md\:align-center {
+    @include below($md) {
+        align-items: center;
+    }
+}
+
+.sm\:align-center {
+    @include below($sm) {
+        align-items: center;
+    }
+}
+
+/* order classes */
+
+.xxl\:order-1 {
+    @include below($xxl) {
+        order: 1;
+    }
+}
+
+.xl\:order-1 {
+    @include below($xl) {
+        order: 1;
+    }
+}
+
+.lg\:order-1 {
+    @include below($lg) {
+        order: 1;
+    }
+}
+
+.md\:order-1 {
+    @include below($md) {
+        order: 1;
+    }
+}
+
+.sm\:order-1 {
+    @include below($sm) {
+        order: 1;
+    }
+}
+
+.xs\:order-1 {
+    @include below($xs) {
+        order: 1;
+    }
+}
+
+.xxl\:order-2 {
+    @include below($xxl) {
+        order: 2;
+    }
+}
+
+.xl\:order-2 {
+    @include below($xl) {
+        order: 2;
+    }
+}
+
+.lg\:order-2 {
+    @include below($lg) {
+        order: 2;
+    }
+}
+
+.md\:order-2 {
+    @include below($md) {
+        order: 2;
+    }
+}
+
+.sm\:order-2 {
+    @include below($sm) {
+        order: 2;
+    }
+}
+
+.xs\:order-2 {
+    @include below($xs) {
+        order: 2;
+    }
+}

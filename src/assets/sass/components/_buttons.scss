@@ -11,6 +11,7 @@
     letter-spacing: 2px;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
 
     &-primary{
         border-color: var(--c-primary);
@@ -85,4 +86,10 @@
             color: var(--c-primary);
         }
     }       
+}
+
+.btn-group{
+    &.center{
+        text-align: center;
+    }
 }

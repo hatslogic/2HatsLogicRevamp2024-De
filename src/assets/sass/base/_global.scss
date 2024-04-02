@@ -25,7 +25,7 @@ body {
   letter-spacing: 0px;
   margin: 0;
 
-  @include below($desktop-md){
+  @include below($xxl){
     font-size: 14px;
   }
 }
@@ -44,7 +44,7 @@ h6 {
 h1 {
   font-size: rem(75);
 
-  @include mobile-sm{
+  @include below($sm){
     font-size: rem(50);
   }
 }
