@@ -1,0 +1,17 @@
+.swiper{
+    &-prev, &-next{
+        cursor: pointer;
+        border: rem(1) solid var(--c-black);
+        width: rem(40);
+        height: rem(40);
+        border-radius: 50%;
+        transition: 0.3s all;
+        font-size: rem(14);
+        color: var(--c-black);
+        &:hover, &:focus {
+            background-color: var(--c-black);
+            border-color: var(--c-black);
+            color: var(--c-white);
+        }
+    }
+}

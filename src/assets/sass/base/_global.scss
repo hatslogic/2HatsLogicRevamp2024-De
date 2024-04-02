@@ -57,6 +57,10 @@ h3{
   font-size: rem(30);
 }
 
+h5{
+  font-size: rem(15);
+}
+
 p{
   // font-family: $font-light;
   font-size: rem(18);
@@ -64,10 +68,22 @@ p{
 }
 
 .container {
-  padding-left: rem(15);
-  padding-right: rem(15);
+  padding-left: rem(20);
+  padding-right: rem(20);
   margin: auto;
-  max-width: rem(1150);
+  max-width: 75%;
+}
+
+.container-fluid {
+  padding-left: rem(20);
+  padding-right: rem(0);
+  margin-left: auto;
+  margin-right: 0;
+  max-width: calc(100% - 12.5%);
+
+  @include below($sm){
+    padding-right: rem(20);
+  }
 }
 
 a,

@@ -30,7 +30,7 @@ const paths = {
         },
         fonts: 'src/assets/fonts/**/*',
         images: 'src/assets/img/**/*',
-        uploads: 'src/uploads/**/*.{jpg,png}'
+        uploads: 'src/uploads/**/*.{jpg,png,svg}'
     },
     dist: {
         base: 'dist/',

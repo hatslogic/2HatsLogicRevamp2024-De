@@ -1,53 +1,43 @@
-section.technologies{
-    border-bottom: rem(1) solid var(--c-grey-border);
-    overflow: hidden;
-    a, img{
-        display: block;
-        width: auto;
-        height: auto;
-        max-width: rem(200);
-        max-height: rem(50);
-    }
-    a + a{
-        margin-left: rem(150);
-    }
+section.technologies {
+  border-bottom: rem(1) solid var(--c-grey-border);
+  overflow: hidden;
+
+  a,
+  img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: rem(200);
+    max-height: rem(50);
+  }
+
+  a {
+    margin-left: rem(150);
+  }
 }
 
 .marquee {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    width: 100%;
-    overflow: hidden;
-    background: white;
-    white-space: nowrap;
-    height: rem(60);
-    &--inner {
-        display: flex;
-        width: 200%;
-        position: absolute;
-        flex-wrap: nowrap;
-        animation: marquee 10s linear infinite;
-        &:hover {
-          animation-play-state: paused;
-          color: red;
-        }
-      }
+  --gap: 1rem;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: var(--gap);
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
   }
-  
-  span {
-    min-width: 100%;
-    overflow: hidden;
-    display: flex;
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
   }
-  
-  @keyframes marquee {
-    0% {
-      left: 0;
-    }
-    100% {
-      left: -100%;
-    }
-  }
+}

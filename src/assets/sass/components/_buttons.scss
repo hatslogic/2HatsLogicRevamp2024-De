@@ -52,8 +52,8 @@
         background: transparent;
         color: var(--c-secondary);
         &:hover{
-            background: var(--c-primary);
-            border-color: var(--c-primary);
+            background: var(--c-black);
+            border-color: var(--c-black);
             color: var(--c-white);
         }
     }
