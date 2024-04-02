@@ -70,11 +70,11 @@
 }
 
 .rotating {
-    -webkit-animation: rotating 30s linear infinite;
-    -moz-animation: rotating 30s linear infinite;
-    -ms-animation: rotating 30s linear infinite;
-    -o-animation: rotating 30s linear infinite;
-    animation: rotating 30s linear infinite;
+    -webkit-animation: rotating 20s linear infinite;
+    -moz-animation: rotating 20s linear infinite;
+    -ms-animation: rotating 20s linear infinite;
+    -o-animation: rotating 20s linear infinite;
+    animation: rotating 20s linear infinite;
 }
 
 .consultation {
@@ -93,7 +93,7 @@
 
     .outer {
         transform-origin: center;
-        animation: 30s infinite rotating;
+        animation: 8s infinite rotating;
     }
 }
 
