@@ -1,0 +1,26 @@
+footer{
+    a{
+        color: var(--c-secondary);
+        &:hover{
+            color: var(--c-primary);
+        }
+    }
+
+    .social-media{
+        font-size: rem(22);
+    }
+
+    .menu{
+        ul{
+            line-height: 2.2;
+            font-size: rem(15);
+        }
+    }
+
+    .rating{
+        font-size: rem(16);
+        img{
+            width: rem(90);
+        }
+    }
+}

@@ -117,14 +117,14 @@ $sides: (top, bottom, left, right); // Leave this variable alone
   }
 }
 
-@include below($xs){
-  .xs\:m-0{
+.xs\:m-0{
+  @include below($xs){
     margin: 0;
   }
 }
 
-@include below($sm){
-  .sm\:m-0{
+.sm\:m-0{
+  @include below($sm){
     margin: 0;
   }
 }
@@ -153,14 +153,16 @@ $sides: (top, bottom, left, right); // Leave this variable alone
   }
 }
 
-@include below($xs){
-  .xs\:p-0{
+
+.xs\:p-0{
+  @include below($xs){
     padding: 0;
   }
 }
 
-@include below($sm){
-  .sm\:p-0{
+
+.sm\:p-0{
+  @include below($sm){
     padding: 0;
   }
 }

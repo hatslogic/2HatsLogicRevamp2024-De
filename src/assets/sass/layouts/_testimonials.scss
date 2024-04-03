@@ -20,7 +20,7 @@
 }
 
 .testimonial{
-    border-right: rem(2) solid var(--c-grey-border);
+    border-right: rem(2) solid var(--c-hash);
     padding-right: rem(120);
     margin-right: rem(120);
 
@@ -51,11 +51,11 @@
     }
 
     .author-name{
-        font-family: $font-demibold;
+        font-family: $font-medium;
     }
 
     .designation{
-        font-family: $font-regular;
+        font-family: $font-light;
         font-size: rem(15);
     }
 }

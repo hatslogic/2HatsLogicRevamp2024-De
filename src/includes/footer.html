@@ -1,13 +1,93 @@
-<footer></footer>  
+<footer class="pt-100 pb-40 sm:pt-60 sm:pb-20">
+    <div class="container">
+        <div class="footer-top flex nowrap space-between sm:wrap">
+            <div class="col col-60 sm:col-100">
+                <div class="menu flex align-start space-between sm:wrap sm:justify-start">
+                    <div class="col sm:col-50">
+                        <h4 class="font-medium">Others</h4>
+                        <ul class="no-bullets font-regular mt-20">
+                            <li><a href="#" aria-label="blog">Blog</a></li>
+                            <li><a href="#" aria-label="portfolio">Portfolio</a></li>
+                            <li><a href="#" aria-label="hire developer">Hire a Developer</a></li>
+                            <li><a href="#" aria-label="testimonials">Testimonials</a></li>
+                            <li><a href="#" aria-label="clients">Our Clients</a></li>
+                            <li><a href="#" aria-label="privacy policy">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col sm:col-50">
+                        <h4 class="font-medium">Company</h4>
+                        <ul class="no-bullets font-regular mt-20">
+                            <li><a href="#" area-label="about">About</a></li>
+                            <li><a href="#" area-label="team">Team</a></li>
+                            <li><a href="#" area-label="careers">Careers</a></li>
+                            <li><a href="#" area-label="contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col sm:col-100 sm:mt-40">
+                        <h4 class="font-medium">Services</h4>
+                        <ul class="no-bullets font-regular mt-20">
+                            <li><a href="#" area-label="ecommerce">E-Commerce Development</a></li>
+                            <li><a href="#" area-label="web">Custom Web Applications</a></li>
+                            <li><a href="#" area-label="cms">CMS Development</a></li>
+                            <li><a href="#" area-label="could">Could Services</a></li>
+                            <li><a href="#" area-label="erp">ERP and CRM Solutions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-10 b-0 br-2 sm:br-0 bc-hash solid sm:hidden"></div>
+            <div class="col col-30 sm:col-100 pl-40 sm:pl-0 ml-40 sm:ml-0 sm:mt-40 flex justify-end">
+                <div class="accreditation sm:col-100 b-0 sm:bt-2 sm:pt-40 bc-hash solid">
+                    <h4 class="font-medium">Accreditation</h4>
+                    <div class="rating  mt-20 flex align-center">
+                        <span class="lbl flex align-center mr-20">We have a 4.7 rating on</span>
+                        <img src="assets/img/rating/glassdoor.svg" alt="rating" width="97" height="40">
+                    </div>
+                    <div class="flex justify-start mt-30">
+                        <div class="col">
+                            <a href="#" target="_blank">
+                                <img src="assets/img/accreditation/shopware-partner.png" alt="shopware partner" width="100" height="100">
+                            </a>
+                        </div>
+                        <div class="col ml-10">
+                            <a href="#" target="_blank">
+                                <img src="assets/img/accreditation/clutch-logo.png" alt="shopware partner" width="100" height="100">
+                            </a>
+                        </div>
+                        <div class="col ml-10">
+                            <a href="#" target="_blank">
+                                <img src="assets/img/accreditation/vue-storefront.png" alt="shopware partner" width="100" height="100">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom mt-60 flex align-center space-between sm:wrap sm:column b-0 sm:bt-2 sm:pt-20 bc-hash solid">
+            <div class="copyright sm:order-2 sm:mt-20">&copy; <span id="year"></span>  2Hats Logic Solutions Private Limited</div>
+            <div class="social-media sm:order-1 flex align-center">
+                <a href="#" class="flex align-center" target="_blank" aria-label="facebook"><i class="icomoon icon-linkedin"></i></a>
+                <a href="#" class="flex align-center ml-20" target="_blank" aria-label="instagram"><i class="icomoon icon-instagram"></i></a>
+                <a href="#" class="flex align-center ml-20" target="_blank" aria-label="youtube"><i class="icomoon icon-youtube"></i></a>
+                <a href="#" class="flex align-center ml-20" target="_blank" aria-label="facebook"><i class="icomoon icon-facebook"></i></a>
+                <a href="#" class="flex align-center ml-20" target="_blank" aria-label="twitter"><i class="icomoon icon-twitter"></i></a>
+                <a href="#" class="flex align-center ml-20" target="_blank" aria-label="shopware"><i class="icomoon icon-shopware"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>  
+<!--
+<script defer src="assets/js/plugins.min.js" async></script>
+<script defer src="assets/js/app.min.js" async></script>
+-->
 <script>
+    // Load plugins & scripts
     window.addEventListener('load', (event) => {
-
-        // embeded multiple js url only aftetr page load
         const plugins = document.createElement('script');
         plugins.src = 'assets/js/plugins.min.js';
         document.body.appendChild(plugins);
 
-        //callback after embeded js url is loaded
+        //callback after plugins js url is loaded
         plugins.addEventListener('load', (event) => {
             const app = document.createElement('script');
             app.src = 'assets/js/app.min.js';
@@ -16,10 +96,5 @@
 
     });
 </script>
-
-<!--
-<script defer src="assets/js/plugins.min.js" async></script>
-<script defer src="assets/js/app.min.js" async></script>
--->
 </body>
 </html>

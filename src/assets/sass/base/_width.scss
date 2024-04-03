@@ -14,6 +14,10 @@
     width: 25%;
 }
 
+.col-30 {
+    width: 30%;
+}
+
 .col-33 {
     width: 33.33%;
 }
@@ -199,6 +203,42 @@
 @include below($xs) {
     .xs\:col-25{
         width: 25%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-30{
+        width: 30%;
+    }
+}
+
+@include below($xl) {
+    .xl\:col-30{
+        width: 30%;
+    }
+}
+
+@include below($lg) {
+    .lg\:col-30{
+        width: 30%;
+    }
+}
+
+@include below($md) {
+    .md\:col-30{
+        width: 30%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-30{
+        width: 30%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-30{
+        width: 30%;
     }
 }
 
