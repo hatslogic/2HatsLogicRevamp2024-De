@@ -1,531 +1,527 @@
-.flex{
+.col-10 {
+    width: 10%;
+}
 
-    .col-10 {
+.col-15 {
+    width: 15%;
+}
+
+.col-20 {
+    width: 20%;
+}
+
+.col-25 {
+    width: 25%;
+}
+
+.col-33 {
+    width: 33.33%;
+}
+
+.col-40 {
+    width: 40%;
+}
+
+.col-45 {
+    width: 45%;
+}
+
+.col-50 {
+    width: 50%;
+}
+
+.col-55 {
+    width: 55%;
+}
+
+.col-60 {
+    width: 60%;    
+}
+
+.col-70 {
+    width: 70%;
+}
+
+.col-75 {
+    width: 75%;
+}
+
+.col-80 {
+    width: 80%;
+}
+
+.col-90 {
+    width: 90%;
+}
+
+.col-100 {
+    width: 100%;
+}
+
+@include below($xxl) {
+    .xxl\:col-10{
         width: 10%;
     }
+}
 
-    .col-15 {
+@include below($xl) {
+    .xl\:col-10{
+        width: 10%;
+    }
+}
+
+@include below($lg) {
+    .lg\:col-10{
+        width: 10%;
+    }
+}
+
+@include below($md) {
+    .md\:col-10{
+        width: 10%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-10{
+        width: 10%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-10{
+        width: 10%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-15{
         width: 15%;
     }
+}
 
-    .col-20 {
+@include below($xl) {
+    .xl\:col-15{
+        width: 15%;
+    }
+}
+
+@include below($lg) {
+    .lg\:col-15{
+        width: 15%;
+    }
+}
+
+@include below($md) {
+    .md\:col-15{
+        width: 15%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-15{
+        width: 15%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-15{
+        width: 15%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-20{
         width: 20%;
     }
+}
 
-    .col-25 {
+@include below($xl) {
+    .xl\:col-20{
+        width: 20%;
+    }
+}
+
+@include below($lg) {
+    .lg\:col-20{
+        width: 20%;
+    }
+}
+
+@include below($md) {
+    .md\:col-20{
+        width: 20%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-20{
+        width: 20%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-20{
+        width: 20%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-25{
         width: 25%;
     }
+}
 
-    .col-33 {
+@include below($xl) {
+    .xl\:col-25{
+        width: 25%;
+    }
+}
+
+@include below($lg) {
+    .lg\:col-25{
+        width: 25%;
+    }
+}
+
+@include below($md) {
+    .md\:col-25{
+        width: 25%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-25{
+        width: 25%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-25{
+        width: 25%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-33{
         width: 33.33%;
     }
+}
 
-    .col-40 {
+@include below($xl) {
+    .xl\:col-33{
+        width: 33.33%;
+    }
+}
+
+@include below($lg) {
+    .lg\:col-33{
+        width: 33.33%;
+    }
+}
+
+@include below($md) {
+    .md\:col-33{
+        width: 33.33%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-33{
+        width: 33.33%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-33{
+        width: 33.33%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-40{
         width: 40%;
     }
+}
 
-    .col-45 {
+@include below($xl) {
+    .xl\:col-40{
+        width: 40%;
+    }
+}
+
+@include below($lg) {
+    .lg\:col-40{
+        width: 40%;
+    }
+}
+
+@include below($md) {
+    .md\:col-40{
+        width: 40%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-40{
+        width: 40%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-40{
+        width: 40%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-45{
         width: 45%;
     }
+}
 
-    .col-50 {
+@include below($xl) {
+    .xl\:col-45{
+        width: 45%;
+    }
+}
+
+@include below($lg) {
+    .lg\:col-45{
+        width: 45%;
+    }
+}
+
+@include below($md) {
+    .md\:col-45{
+        width: 45%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-45{
+        width: 45%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-45{
+        width: 45%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-50{
         width: 50%;
     }
+}
 
-    .col-55 {
+@include below($xl) {
+    .xl\:col-50{
+        width: 50%;
+    }
+}
+
+@include below($lg) {
+    .lg\:col-50{
+        width: 50%;
+    }
+}
+
+@include below($md) {
+    .md\:col-50{
+        width: 50%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-50{
+        width: 50%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-50{
+        width: 50%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-55{
         width: 55%;
     }
+}
 
-    .col-60 {
-        width: 60%;    
+@include below($xl) {
+    .xl\:col-55{
+        width: 55%;
     }
+}
 
-    .col-70 {
+@include below($lg) {
+    .lg\:col-55{
+        width: 55%;
+    }
+}
+
+@include below($md) {
+    .md\:col-55{
+        width: 55%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-55{
+        width: 55%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-55{
+        width: 55%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-60{
+        width: 60%;
+    }
+}
+
+@include below($xl) {
+    .xl\:col-60{
+        width: 60%;
+    }
+}
+
+@include below($lg) {
+    .lg\:col-60{
+        width: 60%;
+    }
+}
+
+@include below($md) {
+    .md\:col-60{
+        width: 60%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-60{
+        width: 60%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-60{
+        width: 60%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-70{
         width: 70%;
     }
+}
 
-    .col-75 {
+@include below($xl) {
+    .xl\:col-70{
+        width: 70%;
+    }
+}
+
+@include below($lg) {
+    .lg\:col-70{
+        width: 70%;
+    }
+}
+
+@include below($md) {
+    .md\:col-70{
+        width: 70%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-70{
+        width: 70%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-70{
+        width: 70%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-75{
         width: 75%;
     }
+}
 
-    .col-80 {
-        width: 80%;
+@include below($xl) {
+    .xl\:col-75{
+        width: 75%;
     }
+}   
 
-    .col-90 {
-        width: 90%;
+@include below($lg) {
+    .lg\:col-75{
+        width: 75%;
     }
+}
 
-    .col-100 {
+@include below($md) {
+    .md\:col-75{
+        width: 75%;
+    }
+}
+
+@include below($sm) {
+    .sm\:col-75{
+        width: 75%;
+    }
+}
+
+@include below($xs) {
+    .xs\:col-75{
+        width: 75%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:col-100{
         width: 100%;
     }
+}
 
-    @include below($xxl) {
-        .xxl\:col-10{
-            width: 10%;
-        }
+@include below($xl) {
+    .xl\:col-100{
+        width: 100%;
     }
+}
 
-    @include below($xl) {
-        .xl\:col-10{
-            width: 10%;
-        }
+@include below($lg) {
+    .lg\:col-100{
+        width: 100%;
     }
+}
 
-    @include below($lg) {
-        .lg\:col-10{
-            width: 10%;
-        }
+@include below($md) {
+    .md\:col-100{
+        width: 100%;
     }
+}
 
-    @include below($md) {
-        .md\:col-10{
-            width: 10%;
-        }
+@include below($sm) {
+    .sm\:col-100{
+        width: 100%;
     }
+}
 
-    @include below($sm) {
-        .sm\:col-10{
-            width: 10%;
-        }
+@include below($xs) {
+    .xs\:col-100{
+        width: 100%;
     }
-
-    @include below($xs) {
-        .xs\:col-10{
-            width: 10%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-15{
-            width: 15%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-15{
-            width: 15%;
-        }
-    }
-
-    @include below($lg) {
-        .lg\:col-15{
-            width: 15%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-15{
-            width: 15%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-15{
-            width: 15%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-15{
-            width: 15%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-20{
-            width: 20%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-20{
-            width: 20%;
-        }
-    }
-
-    @include below($lg) {
-        .lg\:col-20{
-            width: 20%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-20{
-            width: 20%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-20{
-            width: 20%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-20{
-            width: 20%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-25{
-            width: 25%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-25{
-            width: 25%;
-        }
-    }
-
-    @include below($lg) {
-        .lg\:col-25{
-            width: 25%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-25{
-            width: 25%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-25{
-            width: 25%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-25{
-            width: 25%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-33{
-            width: 33.33%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-33{
-            width: 33.33%;
-        }
-    }
-
-    @include below($lg) {
-        .lg\:col-33{
-            width: 33.33%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-33{
-            width: 33.33%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-33{
-            width: 33.33%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-33{
-            width: 33.33%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-40{
-            width: 40%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-40{
-            width: 40%;
-        }
-    }
-
-    @include below($lg) {
-        .lg\:col-40{
-            width: 40%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-40{
-            width: 40%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-40{
-            width: 40%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-40{
-            width: 40%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-45{
-            width: 45%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-45{
-            width: 45%;
-        }
-    }
-
-    @include below($lg) {
-        .lg\:col-45{
-            width: 45%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-45{
-            width: 45%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-45{
-            width: 45%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-45{
-            width: 45%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-50{
-            width: 50%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-50{
-            width: 50%;
-        }
-    }
-
-    @include below($lg) {
-        .lg\:col-50{
-            width: 50%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-50{
-            width: 50%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-50{
-            width: 50%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-50{
-            width: 50%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-55{
-            width: 55%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-55{
-            width: 55%;
-        }
-    }
-
-    @include below($lg) {
-        .lg\:col-55{
-            width: 55%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-55{
-            width: 55%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-55{
-            width: 55%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-55{
-            width: 55%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-60{
-            width: 60%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-60{
-            width: 60%;
-        }
-    }
-
-    @include below($lg) {
-        .lg\:col-60{
-            width: 60%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-60{
-            width: 60%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-60{
-            width: 60%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-60{
-            width: 60%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-70{
-            width: 70%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-70{
-            width: 70%;
-        }
-    }
-
-    @include below($lg) {
-        .lg\:col-70{
-            width: 70%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-70{
-            width: 70%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-70{
-            width: 70%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-70{
-            width: 70%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-75{
-            width: 75%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-75{
-            width: 75%;
-        }
-    }   
-
-    @include below($lg) {
-        .lg\:col-75{
-            width: 75%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-75{
-            width: 75%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-75{
-            width: 75%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-75{
-            width: 75%;
-        }
-    }
-
-    @include below($xxl) {
-        .xxl\:col-100{
-            width: 100%;
-        }
-    }
-
-    @include below($xl) {
-        .xl\:col-100{
-            width: 100%;
-        }
-    }
-
-    @include below($lg) {
-        .lg\:col-100{
-            width: 100%;
-        }
-    }
-
-    @include below($md) {
-        .md\:col-100{
-            width: 100%;
-        }
-    }
-
-    @include below($sm) {
-        .sm\:col-100{
-            width: 100%;
-        }
-    }
-
-    @include below($xs) {
-        .xs\:col-100{
-            width: 100%;
-        }
-    }
-
 }
