@@ -1,14 +1,14 @@
 .btn{
     outline: none;
-    border-width: rem(1);
+    border-width: 1px;
     border-style: solid;
     text-transform: uppercase;
-    min-width: rem(170);
-    min-height: rem(48);
-    padding: rem(10) rem(40);
-    font-family: $font-medium;
-    font-size: rem(12);
-    letter-spacing: 2px;
+    min-width: 160px;
+    min-height: 48px;
+    padding: 10px 40px;
+    font-family: $font-demibold;
+    font-size: 12px;
+    letter-spacing: 1px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -66,7 +66,7 @@
 .link{
     text-transform: uppercase;
     font-family: $font-medium;
-    font-size: rem(14);
+    font-size: 14px;
     letter-spacing: 1px;
 
     .icomoon{
