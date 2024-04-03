@@ -4,7 +4,43 @@
 @include font-face("TTFirsNeueTrl", "Light", 300, normal);
 @include font-face("TTFirsNeueTrl", "Medium", 400, normal);
 @include font-face("TTFirsNeueTrl", "Regular", 500, normal);
-@include font-face("TTFirsNeueTrl", "Bold", 600, normal);
-// @include font-face("TTFirsNeueTrl", "ExtraBold", 700, normal);
-@include font-face("TTFirsNeueTrl", "DemiBold", 800, normal);
+@include font-face("TTFirsNeueTrl", "DemiBold", 600, normal);
+@include font-face("TTFirsNeueTrl", "Bold", 700, normal);
+// @include font-face("TTFirsNeueTrl", "ExtraBold", 800, normal);
 // @include font-face("TTFirsNeueTrl", "Black", 900, normal);
+
+/*
+* Fonts
+*/
+
+$font-thin: 'TTFirsNeueTrl-Thin', Arial, Helvetica, sans-serif;
+$font-light: 'TTFirsNeueTrl-Light', Arial, Helvetica, sans-serif;
+$font-regular: 'TTFirsNeueTrl-Regular', Arial, Helvetica, sans-serif; 
+$font-medium: 'TTFirsNeueTrl-Medium', Arial, Helvetica, sans-serif; 
+$font-demibold:  'TTFirsNeueTrl-DemiBold', Arial, Helvetica, sans-serif;
+$font-bold:  'TTFirsNeueTrl-Bold', Arial, Helvetica, sans-serif;
+
+
+.font-thin {
+    font-family: $font-thin;
+}
+
+.font-light {
+    font-family: $font-light;
+}
+
+.font-regular {
+    font-family: $font-regular;
+}
+
+.font-medium {
+    font-family: $font-medium;
+}
+
+.font-demibold {
+    font-family: $font-demibold;
+}
+
+.font-bold {
+    font-family: $font-bold;
+}

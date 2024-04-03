@@ -16,17 +16,6 @@ $xxl: rem(1536);
 $mainlink-assets-path: "/dist";
 $mainlink-font-path: "../fonts";
 
-/*
-* Fonts
-*/
-
-$font-thin: 'TTFirsNeueTrl-Thin', Arial, Helvetica, sans-serif;
-$font-light: 'TTFirsNeueTrl-Light', Arial, Helvetica, sans-serif;
-$font-regular: 'TTFirsNeueTrl-Regular', Arial, Helvetica, sans-serif; 
-$font-medium: 'TTFirsNeueTrl-Medium', Arial, Helvetica, sans-serif; 
-$font-bold:  'TTFirsNeueTrl-Bold', Arial, Helvetica, sans-serif;
-$font-demibold:  'TTFirsNeueTrl-DemiBold', Arial, Helvetica, sans-serif;
-
 
 /*
  * Base colors
@@ -34,7 +23,7 @@ $font-demibold:  'TTFirsNeueTrl-DemiBold', Arial, Helvetica, sans-serif;
 
 // Theme colours
 :root {
-    --c-primary: #31A9C7;
+    --c-primary: #137F9A;
     --c-secondary: #060606;
     --c-primary-hover: #1d93b1;
     --c-secondary-hover: #000000;

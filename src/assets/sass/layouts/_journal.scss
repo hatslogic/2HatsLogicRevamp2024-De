@@ -7,7 +7,7 @@
         transform: scale(1.1);
       }
       .info{
-        h4{
+        .h4{
           color: var(--c-primary);
         }
       }
@@ -15,7 +15,7 @@
   }
 
   .info {
-    h4 {
+    .h4 {
       font-family: $font-medium;
       line-height: rem(26);
     }

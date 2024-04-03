@@ -42,7 +42,7 @@ h6 {
   margin: 0;
 }
 
-h1 {
+h1, .h1 {
   font-size: rem(75);
 
   @include below($sm){
@@ -50,23 +50,23 @@ h1 {
   }
 }
 
-h2{
+h2, .h2{
   font-size: rem(40);
 }
 
-h3{
+h3, .h3{
   font-size: rem(30);
 }
 
-h4{
+h4, .h4{
   font-size: rem(21);
 }
 
-h5{
+h5, .h5{
   font-size: rem(17);
 }
 
-h6{
+h6, .h6{
   font-size: rem(15);
 }
 
@@ -133,4 +133,7 @@ a {
 
 .x-scroll{
   overflow-x: scroll;
+  // hide scrollbar
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
