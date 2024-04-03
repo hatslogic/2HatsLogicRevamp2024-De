@@ -26,7 +26,7 @@ body {
   margin: 0;
 
   @include below($xxl){
-    font-size: 14px;
+    font-size: rem(14);
   }
 }
 

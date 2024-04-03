@@ -2,7 +2,7 @@
     .headline{
       color: var(--c-primary);  
       font-family: $font-demibold;
-      font-size: 14px;
+      font-size: rem(14);
       text-transform: uppercase;
       & + h2{
         margin-top: rem(15);

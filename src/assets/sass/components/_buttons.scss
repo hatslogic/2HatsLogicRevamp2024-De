@@ -3,11 +3,11 @@
     border-width: 1px;
     border-style: solid;
     text-transform: uppercase;
-    min-width: 160px;
-    min-height: 48px;
-    padding: 10px 40px;
+    min-width: rem(160);
+    min-height: rem(48);
+    padding: rem(10) rem(40);
     font-family: $font-demibold;
-    font-size: 12px;
+    font-size: rem(13);
     letter-spacing: 1px;
     display: inline-flex;
     align-items: center;
@@ -17,10 +17,6 @@
         border-color: var(--c-primary);
         background: var(--c-primary);
         color: var(--c-white);
-
-        &-link{
-
-        }
         &:hover{
             background: var(--c-primary-hover);
             border-color: var(--c-primary-hover);
@@ -66,7 +62,7 @@
 .link{
     text-transform: uppercase;
     font-family: $font-medium;
-    font-size: 14px;
+    font-size: rem(14);
     letter-spacing: 1px;
 
     .icomoon{
