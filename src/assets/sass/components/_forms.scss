@@ -1,0 +1,35 @@
+.form-control{
+    display: block;
+    width: 100%;
+    padding: rem(10) rem(12);
+    font-family: $font-regular;
+    font-size: rem(16);
+    &:focus{
+        outline: none;
+    }
+}
+
+textarea{
+    resize: none;
+}
+
+
+.form-group{
+    width: 100%;
+}
+
+.form-lined{
+    .form-control{
+        border: 0;
+        border-bottom: 1px solid var(--c-grey-border);
+        background-color: transparent;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.bg-fill-dark{
+    .form-control{
+        color: var(--c-white);
+    }
+}

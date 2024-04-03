@@ -122,8 +122,12 @@ a {
   padding: 0;
 }
 
-.bg-fill{
+.bg-fill-light{
   background-color: var(--c-light-grey);
+}
+
+.bg-fill-dark{
+  background-color: var(--c-dark-grey);
 }
 
 .transition{

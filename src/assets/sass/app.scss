@@ -6,9 +6,11 @@
 // Base
 @import "./base/typography"; 
 @import "./base/global";
+@import "./base/colors";
 @import "./base/space";
 @import "./base/grid";
 @import "./base/flex";
+@import "./base/width";
 @import "./base/icons";
 @import "./base/text";
 
@@ -26,6 +28,7 @@
 @import "./layouts/works";
 @import "./layouts/testimonials";
 @import "./layouts/journal";
+@import "./layouts/get-started";
         
 // Components
 @import "./components/progress";

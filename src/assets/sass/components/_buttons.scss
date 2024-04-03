@@ -12,6 +12,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+
+    &:disabled{
+        cursor: not-allowed;
+    }
 
     &-primary{
         border-color: var(--c-primary);
@@ -54,12 +59,34 @@
         }
     }
 
+    &-light{
+        background: var(--c-white);
+        border-color: var(--c-white);
+        color: var(--c-black);
+        &:hover{
+            background: var(--c-black);
+            border-color: var(--c-black);
+            color: var(--c-white);
+        }
+    }
+    &-light-outline{
+        border-color: var(--c-white);
+        background: transparent;
+        color: var(--c-white);
+        &:hover{
+            background: var(--c-white);
+            border-color: var(--c-white);
+            color: var(--c-black);
+        }
+    }
+
     &:hover{
         box-shadow: 6px 10px 12.5px 0px rgba(0, 0, 0, 0.102);
     }
 }
 
 .link{
+    cursor: pointer;
     text-transform: uppercase;
     font-family: $font-medium;
     font-size: rem(14);
