@@ -1,4 +1,7 @@
 .card {
+     @include below($md) {
+        min-width: 85%;
+     }
     .item {
       color: var(---c-black);
   

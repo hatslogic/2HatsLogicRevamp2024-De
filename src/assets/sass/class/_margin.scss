@@ -71,6 +71,9 @@ $sides: (
     .m#{str-slice($side, 0, 1)}-#{$space} {
       margin-#{$side}: rem($space);
     }
+    .-m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: rem(-$space);
+    }
   }
 }
 
@@ -79,6 +82,11 @@ $sides: (
     .xxl\:m#{str-slice($side, 0, 1)}-#{$space} {
       @include below($xxl) {
         margin-#{$side}: rem($space);
+      }
+    }
+    .xxl\:-m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xxl) {
+        margin-#{$side}: rem(-$space);
       }
     }
   }
@@ -91,6 +99,11 @@ $sides: (
         margin-#{$side}: rem($space);
       }
     }
+    .xl\:-m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xl) {
+        margin-#{$side}: rem(-$space);
+      }
+    }
   }
 }
 
@@ -99,6 +112,11 @@ $sides: (
     .lg\:m#{str-slice($side, 0, 1)}-#{$space} {
       @include below($lg) {
         margin-#{$side}: rem($space);
+      }
+    }
+    .lg\:-m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($lg) {
+        margin-#{$side}: rem(-$space);
       }
     }
   }
@@ -111,6 +129,11 @@ $sides: (
         margin-#{$side}: rem($space);
       }
     }
+    .md\:-m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($md) {
+        margin-#{$side}: rem(-$space);
+      }
+    }
   }
 }
 
@@ -121,6 +144,11 @@ $sides: (
         margin-#{$side}: rem($space);
       }
     }
+    .sm\:-m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($sm) {
+        margin-#{$side}: rem(-$space);
+      }
+    }
   }
 }
 
@@ -129,6 +157,11 @@ $sides: (
     .xs\:m#{str-slice($side, 0, 1)}-#{$space} {
       @include below($xs) {
         margin-#{$side}: rem($space);
+      }
+    }
+    .xs\:-m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xs) {
+        margin-#{$side}: rem(-$space);
       }
     }
   }

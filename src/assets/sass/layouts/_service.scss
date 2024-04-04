@@ -17,6 +17,12 @@ section.services{
             top: rem(-80);
             left: rem(-50);
             z-index: 0;
+
+            @include below($sm){
+                font-size: rem(80);
+                left: rem(-10);
+                top: rem(-40);
+            }
         }
     }
 }
