@@ -41,22 +41,22 @@
                     <h4 class="font-medium">Accreditation</h4>
                     <div class="rating  mt-20 flex align-center">
                         <span class="lbl flex align-center mr-20">We have a 4.7 rating on</span>
-                        <img src="assets/img/rating/glassdoor.svg" alt="rating" width="97" height="40">
+                        <img src="assets/img/rating/glassdoor.svg" alt="rating" loading="lazy" width="97" height="40">
                     </div>
                     <div class="flex justify-start mt-30">
                         <div class="col">
                             <a href="#" target="_blank">
-                                <img src="assets/img/accreditation/shopware-partner.png" alt="shopware partner" width="100" height="100">
+                                <img src="assets/img/accreditation/shopware-partner.png" alt="shopware partner" loading="lazy" width="100" height="100">
                             </a>
                         </div>
                         <div class="col ml-10">
                             <a href="#" target="_blank">
-                                <img src="assets/img/accreditation/clutch-logo.png" alt="shopware partner" width="100" height="100">
+                                <img src="assets/img/accreditation/clutch-logo.png" alt="shopware partner" loading="lazy" width="100" height="100">
                             </a>
                         </div>
                         <div class="col ml-10">
                             <a href="#" target="_blank">
-                                <img src="assets/img/accreditation/vue-storefront.png" alt="shopware partner" width="100" height="100">
+                                <img src="assets/img/accreditation/vue-storefront.png" alt="shopware partner" loading="lazy" width="100" height="100">
                             </a>
                         </div>
                     </div>
@@ -75,25 +75,17 @@
             </div>
         </div>
     </div>
-</footer>  
+</footer>
 <!--
-<script defer src="assets/js/plugins.min.js" async></script>
-<script defer src="assets/js/app.min.js" async></script>
+<script src="assets/js/plugins.min.js" async></script>
+<script src="assets/js/app.min.js" async></script>
 -->
 <script>
-    // Load plugins & scripts
+    const plugins = document.createElement('script');
+    const app = document.createElement('script');
     window.addEventListener('load', (event) => {
-        const plugins = document.createElement('script');
-        plugins.src = 'assets/js/plugins.min.js';
-        document.body.appendChild(plugins);
-
-        //callback after plugins js url is loaded
-        plugins.addEventListener('load', (event) => {
-            const app = document.createElement('script');
-            app.src = 'assets/js/app.min.js';
-            document.body.appendChild(app);
-        });
-
+        plugins.src = 'assets/js/plugins.min.js'; document.body.appendChild(plugins);
+        plugins.addEventListener('load', (event) => { app.src = 'assets/js/app.min.js'; document.body.appendChild(app); });
     });
 </script>
 </body>
