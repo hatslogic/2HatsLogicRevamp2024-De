@@ -15,6 +15,12 @@
     .rating {
         display: flex;
         margin-left: rem(50);
+        
+        .logo-wrap, .rating-item{
+            min-height: rem(56);
+            max-height: rem(56);
+            overflow: hidden;
+        }
 
         @include below($sm){
             margin-left: 0;

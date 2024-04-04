@@ -39,7 +39,7 @@
   }
 }
 
-/*
+
 .marquee--vertical {
   --mask-direction: to bottom;
 }
@@ -51,8 +51,11 @@
 
 .marquee--vertical .marquee__group {
   animation-name: scroll-y;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
 }
 
+/*
 .marquee--reverse .marquee__group {
   animation-direction: reverse;
   animation-delay: -3s;
