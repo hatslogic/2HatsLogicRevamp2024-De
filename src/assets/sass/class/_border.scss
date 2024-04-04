@@ -5,6 +5,10 @@ $sides: (top, bottom, left, right);
     border-width: 0;
 }
 
+.solid{
+  border-style: solid;
+}
+
 @each $space in $spaceamounts {
   @each $side in $sides {
     .b#{str-slice($side, 0, 1)}-#{$space} {

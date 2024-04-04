@@ -12,7 +12,7 @@ section.services{
             content: counter(service, decimal-leading-zero);
             font-size: rem(280);
             position: absolute;
-            font-family: $font-thin;
+            font-family: var(--font-thin);
             letter-spacing: -0.5px;
             top: rem(-80);
             left: rem(-50);

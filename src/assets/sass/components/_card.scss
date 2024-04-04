@@ -1,0 +1,23 @@
+.card {
+    .item {
+      color: var(---c-black);
+  
+      &:hover{
+        box-shadow: 6px 10px 12.5px 0px rgba(0, 0, 0, 0.102);
+        img{
+          transform: scale(1.1);
+        }
+        .info{
+          .h4{
+            color: var(--c-primary);
+          }
+
+          .h5 strong{
+            color: var(--c-primary);
+          }
+        }
+      }
+    }
+  
+    .info {}
+  }

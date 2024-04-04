@@ -1,0 +1,136 @@
+$spaceamounts: (
+    0,
+    10,
+    15,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    180,
+    200
+); // Adjust this to include the pixel amounts you need.
+$sides: (
+    top,
+    bottom,
+    left,
+    right
+); // Leave this variable alone
+
+.p-0 {
+    padding: 0;
+}
+
+.xs\:p-0 {
+    @include below($xs) {
+        padding: 0;
+    }
+}
+
+
+.sm\:p-0 {
+    @include below($sm) {
+        padding: 0;
+    }
+}
+
+.md\:p-0 {
+    @include below($md) {
+        padding: 0;
+    }
+}
+
+.lg\:p-0 {
+    @include below($lg) {
+        padding: 0;
+    }
+}
+
+.xl\:p-0 {
+    @include below($xl) {
+        padding: 0;
+    }
+}
+
+.xxl\:p-0 {
+    @include below($xxl) {
+        padding: 0;
+    }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .p#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .xxl\:p#{str-slice($side, 0, 1)}-#{$space} {
+            @include below($xxl) {
+                padding-#{$side}: rem($space);
+            }
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .xl\:p#{str-slice($side, 0, 1)}-#{$space} {
+            @include below($xl) {
+                padding-#{$side}: rem($space);
+            }
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .lg\:p#{str-slice($side, 0, 1)}-#{$space} {
+            @include below($lg) {
+                padding-#{$side}: rem($space);
+            }
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .md\:p#{str-slice($side, 0, 1)}-#{$space} {
+            @include below($md) {
+                padding-#{$side}: rem($space);
+            }
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .sm\:p#{str-slice($side, 0, 1)}-#{$space} {
+            @include below($sm) {
+                padding-#{$side}: rem($space);
+            }
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .xs\:p#{str-slice($side, 0, 1)}-#{$space} {
+            @include below($xs) {
+                padding-#{$side}: rem($space);
+            }
+        }
+    }
+}

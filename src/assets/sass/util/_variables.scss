@@ -13,15 +13,12 @@ $xxl: rem(1536);
 /*
 * Paths
 */
-$mainlink-assets-path: "/dist";
-$mainlink-font-path: "../fonts";
-
+$assets-path: "/dist";
+$font-path: "../fonts";
 
 /*
- * Base colors
+ * Base fonts, colors
 */
-
-// Theme colours
 :root {
     --c-primary: #137F9A;
     --c-secondary: #060606;
@@ -33,8 +30,10 @@ $mainlink-font-path: "../fonts";
     --c-grey: #707070;
     --c-dark-grey: #393939;
     --c-light-grey: #FAF7F5;
-    --swiper-navigation-size: 30px;
-    --swiper-theme-color: var(--c-black);
-    --swiper-navigation-color: var(--c-black);
-    --swiper-pagination-color: var(--c-black);
+    --font-thin: 'TTFirsNeueTrl-Thin', Arial, Helvetica, sans-serif;
+    --font-light: 'TTFirsNeueTrl-Light', Arial, Helvetica, sans-serif;
+    --font-regular: 'TTFirsNeueTrl-Regular', Arial, Helvetica, sans-serif;
+    --font-medium: 'TTFirsNeueTrl-Medium', Arial, Helvetica, sans-serif; 
+    --font-demibold:  'TTFirsNeueTrl-DemiBold', Arial, Helvetica, sans-serif;
+    --font-bold:  'TTFirsNeueTrl-Bold', Arial, Helvetica, sans-serif;
 }

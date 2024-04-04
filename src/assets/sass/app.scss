@@ -2,18 +2,22 @@
 @import "./util/mixins";
 @import "./util/variables";
 @import "./util/utils";
+@import "./util/typography";
 
 // Base
-@import "./base/typography"; 
 @import "./base/global";
-@import "./base/colors";
-@import "./base/space";
-@import "./base/grid";
-@import "./base/flex";
-@import "./base/width";
-@import "./base/icons";
-@import "./base/text";
-@import "./base/border";
+@import "./base/icon";
+
+// Classes
+@import "./class/fonts";
+@import "./class/color";
+@import "./class/margin";
+@import "./class/padding";
+@import "./class/grid";
+@import "./class/flex";
+@import "./class/width";
+@import "./class/text-align";
+@import "./class/border";
 
 // Layouts
 @import "./layouts/wrapper";
@@ -32,6 +36,7 @@
 @import "./layouts/get-started";
         
 // Components
+@import "./components/card";
 @import "./components/progress";
 @import "./components/title";
 @import "./components/forms";

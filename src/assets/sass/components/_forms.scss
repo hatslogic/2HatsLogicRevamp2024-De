@@ -2,7 +2,7 @@
     display: block;
     width: 100%;
     padding: rem(10) rem(12);
-    font-family: $font-regular;
+    font-family: var(--font-regular);
     font-size: rem(16);
     &:focus{
         outline: none;
@@ -21,6 +21,7 @@ textarea{
 .form-lined{
     .form-control{
         border: 0;
+        border-radius: 0;
         border-bottom: 1px solid var(--c-hash);
         background-color: transparent;
         padding-left: 0;
@@ -28,7 +29,7 @@ textarea{
     }
 }
 
-.bg-fill-dark{
+.bc-dark-grey{
     .form-control{
         color: var(--c-white);
     }

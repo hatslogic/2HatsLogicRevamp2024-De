@@ -17,7 +17,7 @@ html,
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: $font-light;
+  font-family: var(--font-light);
   // font-size: 0.834vw;
   // font-size: 1vw;
   font-size: 17px;
@@ -36,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-regular;
+  font-family: var(--font-regular);
   font-weight: normal;
   line-height: 1;
   margin: 0;
@@ -60,10 +60,12 @@ h3, .h3{
 
 h4, .h4{
   font-size: rem(21);
+  line-height: rem(26);
 }
 
 h5, .h5{
   font-size: rem(17);
+  line-height: rem(22);
 }
 
 h6, .h6{
@@ -71,7 +73,7 @@ h6, .h6{
 }
 
 p{
-  // font-family: $font-light;
+  // font-family: var(--font-light);
   font-size: rem(16);
   line-height: 1.4;
 }
@@ -128,21 +130,9 @@ a {
   padding: 0;
 }
 
-.bg-fill-light{
-  background-color: var(--c-light-grey);
-}
-
-.bg-fill-dark{
-  background-color: var(--c-dark-grey);
-}
-
 .x-scroll{
   overflow-x: scroll;
   // hide scrollbar
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-.solid{
-  border-style: solid;
 }

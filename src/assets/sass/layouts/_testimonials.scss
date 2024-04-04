@@ -31,7 +31,6 @@
     }
 
     .top{
-        background-color: var(--c-light-grey);
         img{
             max-width: rem(50);
             max-height: rem(50);
@@ -40,7 +39,7 @@
         }
         .service{
             color: var(--c-primary);  
-            font-family: $font-demibold;
+            font-family: var(--font-demibold);
             font-size: rem(14);
             text-transform: uppercase;
         }
@@ -51,11 +50,11 @@
     }
 
     .author-name{
-        font-family: $font-medium;
+        font-family: var(--font-medium);
     }
 
     .designation{
-        font-family: $font-light;
+        font-family: var(--font-light);
         font-size: rem(15);
     }
 }

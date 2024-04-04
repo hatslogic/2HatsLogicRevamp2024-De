@@ -1,0 +1,135 @@
+$spaceamounts: (
+  0,
+  10,
+  15,
+  20,
+  30,
+  40,
+  50,
+  60,
+  70,
+  80,
+  90,
+  100,
+  110,
+  120,
+  130,
+  140,
+  150,
+  180,
+  200
+); // Adjust this to include the pixel amounts you need.
+$sides: (
+  top,
+  bottom,
+  left,
+  right
+); // Leave this variable alone
+
+.m-0 {
+  margin: 0;
+}
+
+.xs\:m-0 {
+  @include below($xs) {
+    margin: 0;
+  }
+}
+
+.sm\:m-0 {
+  @include below($sm) {
+    margin: 0;
+  }
+}
+
+.md\:m-0 {
+  @include below($md) {
+    margin: 0;
+  }
+}
+
+.lg\:m-0 {
+  @include below($lg) {
+    margin: 0;
+  }
+}
+
+.xl\:m-0 {
+  @include below($xl) {
+    margin: 0;
+  }
+}
+
+.xxl\:m-0 {
+  @include below($xxl) {
+    margin: 0;
+  }
+}
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: rem($space);
+    }
+  }
+}
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .xxl\:m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xxl) {
+        margin-#{$side}: rem($space);
+      }
+    }
+  }
+}
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .xl\:m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xl) {
+        margin-#{$side}: rem($space);
+      }
+    }
+  }
+}
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .lg\:m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($lg) {
+        margin-#{$side}: rem($space);
+      }
+    }
+  }
+}
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .md\:m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($md) {
+        margin-#{$side}: rem($space);
+      }
+    }
+  }
+}
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .sm\:m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($sm) {
+        margin-#{$side}: rem($space);
+      }
+    }
+  }
+}
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .xs\:m#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xs) {
+        margin-#{$side}: rem($space);
+      }
+    }
+  }
+}

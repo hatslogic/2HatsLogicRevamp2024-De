@@ -1,7 +1,7 @@
 .title{
     .headline{
       color: var(--c-primary);  
-      font-family: $font-demibold;
+      font-family: var(--font-demibold);
       font-size: rem(14);
       text-transform: uppercase;
       & + h2{
@@ -17,7 +17,7 @@
     p{
         max-width: 75%;
         font-size: rem(17);
-        font-family: $font-regular;
+        font-family: var(--font-regular);
 
         @include below($md){
             max-width: 100%;

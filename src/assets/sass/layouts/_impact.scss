@@ -4,7 +4,7 @@
     background-size: contain;
     .count{
         font-size: rem(55);
-        font-family: $font-light;
+        font-family: var(--font-light);
         color: var(--c-primary);
         min-width: rem(120);
     }
