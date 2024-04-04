@@ -1,6 +1,4 @@
 header{
-    border-right: var(--c-hash) 1px solid;
-    background-color: var(--c-white);
     position: fixed;
     width: rem(120);
     z-index: 10;
@@ -36,11 +34,6 @@ header{
     .brand{
         width: rem(58);
         height: rem(42);
-
-        @include below($sm){
-            width: rem(40);
-            height: rem(30);
-        }
     }
 
     a{
@@ -53,6 +46,5 @@ header{
 
     [class^="icon-"], [class*=" icon-"] {
         font-size: rem(32);
-        
     }
 }

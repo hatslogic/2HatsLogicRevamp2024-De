@@ -102,6 +102,19 @@ p{
   }
 }
 
+.container-full{
+  padding-left: rem(20);
+  padding-right: rem(20);
+  margin-left: auto;
+  margin-right: 0;
+  max-width: calc(100% - rem(100));
+
+  @include below($sm){
+    max-width: 100%;
+  }
+}
+
+// 94%
 .transition{
   transition: 0.15s all ease-in-out;
   transform-origin: center center;

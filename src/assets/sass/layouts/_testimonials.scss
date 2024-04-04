@@ -20,16 +20,6 @@
 }
 
 .testimonial{
-    border-right: rem(2) solid var(--c-hash);
-    padding-right: rem(120);
-    margin-right: rem(120);
-
-    @include below($md){
-        padding-right: 0;
-        margin-right: 0;
-        border-right: 0;
-    }
-
     .top{
         img{
             max-width: rem(50);
@@ -38,8 +28,6 @@
             
         }
         .service{
-            color: var(--c-primary);  
-            font-family: var(--font-demibold);
             font-size: rem(14);
             text-transform: uppercase;
         }
@@ -49,12 +37,7 @@
         line-height: rem(30);
     }
 
-    .author-name{
-        font-family: var(--font-medium);
-    }
-
     .designation{
-        font-family: var(--font-light);
         font-size: rem(15);
     }
 }

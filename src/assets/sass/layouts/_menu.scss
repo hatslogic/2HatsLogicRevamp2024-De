@@ -1,20 +1,7 @@
 .top-menu{
-    @include below($sm){
-        display: none;
-    }
     ul{
-        display: flex;
-        align-items: center;
         text-transform: uppercase;
-        font-family: var(--font-demibold);
         font-size: rem(13);
-        li + li{
-            margin-left: rem(60);
-
-            @include below($sm){
-                margin-left: rem(30);
-            }
-        }
         a{
             color: var(--c-secondary);
             &:hover{
