@@ -16,6 +16,14 @@
     }
 }
 
+.scroll-snap{
+    scroll-snap-type: x mandatory;
+}
+
+.snap-center{
+    scroll-snap-align: center;
+}
+
 .xxl\:scroll-x{
     @include below($xxl) {
         overflow-x: scroll;
