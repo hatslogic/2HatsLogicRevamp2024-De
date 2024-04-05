@@ -1,7 +1,11 @@
 .rating {
-    .logo-wrap{
-        width: rem(120);
-        height: rem(60);
+    cursor: default;
+    pointer-events: none;
+    .logo-wrap, .hats-slider__slide{
+        min-width: rem(120);
+        min-height: rem(45);
+        max-height: rem(45);
+        max-width: rem(120);
     }
     .lbl {
         max-width: rem(120);
