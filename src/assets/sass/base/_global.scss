@@ -18,15 +18,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-light);
-  // font-size: 0.834vw;
-  // font-size: 1vw;
   font-size: 17px;
+  color: var(--c-secondary);
   min-height: 100%;
   letter-spacing: 0px;
   margin: 0;
 
   @include below($xxl){
-    font-size: rem(14);
+    font-size: rem(15);
   }
 }
 

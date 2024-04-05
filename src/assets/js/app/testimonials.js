@@ -1,37 +1,37 @@
-function navigation(slider) {
-    let wrapper = slider.container.parentNode;
+function navigation(testimonialSlider) {
+    let wrapper = testimonialSlider.container.parentNode;
 
     const arrowLeft = wrapper.querySelector('.btn-wrap .testimonial-button-prev');
     const arrowRight = wrapper.querySelector('.btn-wrap .testimonial-button-next');
 
-    arrowLeft.addEventListener("click", () => slider.prev());
-    arrowRight.addEventListener("click", () => slider.next());
+    arrowLeft.addEventListener("click", () => testimonialSlider.prev());
+    arrowRight.addEventListener("click", () => testimonialSlider.next());
 
     function updateClasses() {
-        var slide = slider.track.details.rel
+        var slide = testimonialSlider.track.details.rel
         slide === 0 ?
             arrowLeft.classList.add("disabled") :
             arrowLeft.classList.remove("disabled")
-        slide === slider.track.details.slides.length - 1 ?
+        slide === testimonialSlider.track.details.slides.length - 1 ?
             arrowRight.classList.add("disabled") :
             arrowRight.classList.remove("disabled")
     }
 
-    slider.on("created", () => {
+    testimonialSlider.on("created", () => {
         updateClasses()
     })
-    slider.on("optionsChanged", () => {
+    testimonialSlider.on("optionsChanged", () => {
         updateClasses()
     })
-    slider.on("slideChanged", () => {
+    testimonialSlider.on("slideChanged", () => {
         updateClasses()
     })
-    slider.on("destroyed", () => {
+    testimonialSlider.on("destroyed", () => {
         // markup(true)
     })
 }
 
-var slider = new HatsSlider("#testimonials", {
+var testimonialSlider = new HatsSlider("#testimonials", {
         loop: true,
         mode: "snap",
         rtl: false,
