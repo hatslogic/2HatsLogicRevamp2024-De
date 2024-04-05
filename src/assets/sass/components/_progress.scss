@@ -3,4 +3,7 @@
     width: 100%;
     background-color: var(--c-primary-hover);
     display: block;
+    @include below($sm){
+        height: rem(5);
+    }
 }
