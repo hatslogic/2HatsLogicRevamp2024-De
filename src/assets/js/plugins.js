@@ -1,2 +1,2 @@
-//=require plugins/swiper-bundle.js
+//=require plugins/hats-slider.js
 //=require plugins/smooth-scroll.js

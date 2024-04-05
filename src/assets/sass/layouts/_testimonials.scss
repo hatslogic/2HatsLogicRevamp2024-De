@@ -1,6 +1,6 @@
 .testimonials{
-    .swiper-slide{
-        width: 52vw;
+    .hats-slider__slide{
+        min-width: 52vw;
 
         @include below($md){
             width: 100%;
@@ -9,11 +9,6 @@
         &:first-child{
             .testimonial{
                 padding-left: 0;
-            }
-        }
-        &:last-child{
-            .testimonial{
-                border-right: 0;
             }
         }
     }
@@ -35,6 +30,11 @@
     blockquote{
         font-size: rem(25);
         line-height: rem(30);
+
+        @include below($sm) {
+            font-size: rem(18);
+            line-height: rem(24);
+        }
     }
 
     .designation{

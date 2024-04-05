@@ -28,6 +28,11 @@ footer{
         img{
             max-width: rem(100);
             max-height: rem(100);
+
+            @include below($sm){
+                max-width: rem(80);
+                max-height: rem(80);
+            }
         }
     }
 }
