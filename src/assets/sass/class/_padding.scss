@@ -68,6 +68,12 @@ $sides: (
 }
 
 @each $space in $spaceamounts {
+    .p-#{$space} {
+        padding: rem($space);
+    }
+}
+
+@each $space in $spaceamounts {
     @each $side in $sides {
         .p#{str-slice($side, 0, 1)}-#{$space} {
             padding-#{$side}: rem($space);
@@ -131,6 +137,54 @@ $sides: (
             @include below($xs) {
                 padding-#{$side}: rem($space);
             }
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .xxl\:p-#{$space} {
+        @include below($xxl) {
+            padding: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .xl\:p-#{$space} {
+        @include below($xl) {
+            padding: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .lg\:p-#{$space} {
+        @include below($lg) {
+            padding: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .md\:p-#{$space} {
+        @include below($md) {
+            padding: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .sm\:p-#{$space} {
+        @include below($sm) {
+            padding: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .xs\:p-#{$space} {
+        @include below($xs) {
+            padding: rem($space);
         }
     }
 }

@@ -1,15 +1,15 @@
 :root {
   --size: clamp(1rem, 1rem + 16vmin, 16rem);
   --gap: calc(var(--size) / 50);
-  --duration: 40s;
+  --duration: 30s;
   --scroll-start: 0;
   --scroll-end: calc(-100% - var(--gap));
 }
 
 @include below($sm) {
   :root {
-    --size: clamp(20px, 20px + 100px, 80px);
-    --gap: 30px;
+    --size: clamp(20px, 20px + 120px, 100px);
+    --gap: 35px;
   }
 }
 
@@ -33,27 +33,20 @@
   animation: scroll-x var(--duration) linear infinite;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .marquee__group {
-    animation-play-state: paused;
-  }
-}
+// .marquee--vertical {
+//   --mask-direction: to bottom;
+// }
 
+// .marquee--vertical,
+// .marquee--vertical .marquee__group {
+//   flex-direction: column;
+// }
 
-.marquee--vertical {
-  --mask-direction: to bottom;
-}
-
-.marquee--vertical,
-.marquee--vertical .marquee__group {
-  flex-direction: column;
-}
-
-.marquee--vertical .marquee__group {
-  animation-name: scroll-y;
-  animation-duration: 3s;
-  animation-timing-function: ease-in-out;
-}
+// .marquee--vertical .marquee__group {
+//   animation-name: scroll-y;
+//   animation-duration: 3s;
+//   animation-timing-function: ease-in-out;
+// }
 
 /*
 .marquee--reverse .marquee__group {
@@ -71,21 +64,25 @@
   }
 }
 
-@keyframes scroll-y {
-  from {
-    transform: translateY(var(--scroll-start));
-  }
-  to {
-    transform: translateY(var(--scroll-end));
-  }
-}
+// @keyframes scroll-y {
+//   from {
+//     transform: translateY(var(--scroll-start));
+//   }
+//   to {
+//     transform: translateY(var(--scroll-end));
+//   }
+// }
 
 /* Element styles */
 .marquee a {
   display: grid;
   place-items: center;
-  width: var(--size);
-  aspect-ratio: 16/9;
+  width: rem(160);
+  // aspect-ratio: 16/9;
+
+  @include below($sm) {
+    width: rem(125);
+  }
 }
 
 /*
