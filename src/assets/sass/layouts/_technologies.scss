@@ -16,7 +16,7 @@
 .marquee {
   overflow: hidden;
   user-select: none;
-  gap: var(--gap);
+  gap: rem(50);
   mask-image: linear-gradient(
     var(--mask-direction, to right),
     hsl(0 0% 0% / 0),
@@ -28,7 +28,7 @@
 
 .marquee__group {
   flex-shrink: 0;
-  gap: var(--gap);
+  gap: rem(50);
   min-width: 100%;
   animation: scroll-x var(--duration) linear infinite;
 }

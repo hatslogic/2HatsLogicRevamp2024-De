@@ -9,7 +9,7 @@ header{
     align-items: center;
     top: 0;
 
-    @include below($sm){
+    @include below($md){
         flex-direction: row;
         justify-content: flex-start;
         position: relative;

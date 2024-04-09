@@ -87,8 +87,10 @@ p{
   margin: auto;
   max-width: 75%;
 
-  @include below($sm){
+  @include below($md){
     max-width: 100%;
+    padding-left: rem(30);
+    padding-right: rem(30);
   }
 }
 
@@ -99,8 +101,9 @@ p{
   margin-right: 0;
   max-width: calc(100% - 12.5%);
 
-  @include below($sm){
-    padding-right: rem(20);
+  @include below($md){
+    padding-left: rem(30);
+    padding-right: rem(30);
     max-width: 100%;
   }
 }
@@ -112,7 +115,9 @@ p{
   margin-right: 0;
   max-width: calc(100% - rem(100));
 
-  @include below($sm){
+  @include below($md){
+    padding-left: rem(30);
+    padding-right: rem(30);
     max-width: 100%;
   }
 }
