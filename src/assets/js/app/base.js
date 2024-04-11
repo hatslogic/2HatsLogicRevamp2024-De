@@ -9,21 +9,12 @@ if (marqueeGroup != null) {
 document.getElementById("year").innerHTML = new Date().getFullYear();
 
 // Progress bar effect
-document.addEventListener("DOMContentLoaded", function() {
-    var progressBar = document.getElementById("progress");
-    var startTime = new Date().getTime();
-    
-    var interval = setInterval(function() {
-      var currentTime = new Date().getTime();
-      var elapsedTime = currentTime - startTime;
-      var progress = Math.min((elapsedTime / 800) * 100, 100); // Adjust the 3000 to your desired page load time in milliseconds
-      progressBar.style.width = progress + "%";
-      
-      if (progress >= 100) {
-        clearInterval(interval);
-      }
-    }, 10);
-  });
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scrollTop / scrollHeight) * 100;
+    document.getElementById('progress').style.width = `${scrolled}%`;
+});
 
 // set timer of 1 sec after page load then add a class on body
 document.addEventListener("DOMContentLoaded", function() {
