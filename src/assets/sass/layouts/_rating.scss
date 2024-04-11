@@ -1,10 +1,8 @@
 .rating {
-    cursor: default;
-    pointer-events: none;
     .lbl {
         max-width: rem(100);
-        line-height: 1.2;
-        font-size: rem(18);
+        line-height: 1.25;
+        font-size: rem(16);
 
         @include below($sm) {
             max-width: 100%;
