@@ -12,15 +12,11 @@ footer{
 
     .menu{
         ul{
-            line-height: 2.2;
+            line-height: 1.25;
             font-size: rem(15);
-        }
-    }
-
-    .rating{
-        font-size: rem(16);
-        img{
-            width: rem(90);
+            li{
+                margin-bottom: rem(12);
+            }
         }
     }
 
