@@ -1,9 +1,8 @@
 .progress{
-    height: rem(10);
-    width: 100%;
-    background-color: var(--c-primary-hover);
-    display: block;
-    @include below($sm){
-        height: rem(5);
+    &-bar{
+        height: rem(8);
+        @include below($sm) {
+            height: rem(5);
+        }
     }
 }
