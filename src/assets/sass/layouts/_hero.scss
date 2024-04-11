@@ -8,12 +8,62 @@
     }
 
     mark {
-        color: var(--c-primary);
         background: none;
+        display: inline-block;
+        color: var(--c-primary);
+        text-decoration: none;
+        position: relative;
+        text-align: center;
+
+        span{
+            position: relative;
+            z-index: 2;
+        }
+
+        .stroke{
+            display: block;
+            width: calc(100% - rem(-40));
+            height: rem(20);
+            transform: rotate(-1deg);
+            stroke: var(--c-white);
+            position: absolute;
+            left: 0;
+            bottom: rem(-10);
+            stroke-width: 1;
+            // opacity: 0.5;
+            z-index: 0;
+
+            @include below($md){
+                left: rem(-25);
+                transform-origin: center center;
+                transform: scale(0.4);
+            }
+            
+            &:nth-child(2) {
+                stroke-dasharray: rem(660);
+                stroke-dashoffset: rem(660);
+                stroke: var(--c-primary);
+                stroke-width: 5;
+                transition: stroke-dashoffset 0.5s ease-out;
+                z-index: 1;
+            }
+        }
+
+        &.loaded{
+            .stroke:nth-child(2){
+                stroke-dashoffset: 0;
+            }
+        }
     }
 
     .container {
         position: relative;
+    }
+}
+
+@keyframes highlight {
+    to {
+        background-position: 0 0;
     }
 }
 
@@ -61,7 +111,7 @@
     width: rem(176);
     height: rem(177);
 
-    @include below($sm){
+    @include below($sm) {
         display: none;
     }
 
@@ -79,7 +129,7 @@
 
 .consultation-btn {
     position: absolute;
-    right: 0;
+    right: rem(-30);
     top: 0;
 
     .hover-wrap {
@@ -90,14 +140,17 @@
         .hover-wrap {
             // transform: rotate(-16deg);
             transform: rotate(-10deg) scale(1.085);
-            .label{
+
+            .label {
                 fill: var(--c-secondary);
             }
-            .inner{
+
+            .inner {
                 // fill: var(--c-secondary);
             }
         }
-        .outer{
+
+        .outer {
             // fill: var(--c-primary);
             // pause animation
             fill: var(--c-hash);
