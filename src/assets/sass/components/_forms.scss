@@ -10,7 +10,8 @@
 }
 
 textarea{
-    resize: none;
+    resize: vertical;
+    min-height: rem(100);
 }
 
 .form-group{
@@ -28,8 +29,23 @@ textarea{
     }
 }
 
-.bc-dark-grey{
+.bg-dark-grey, .bg-dark-primary{
     .form-control{
         color: var(--c-white);
     }
+}
+
+::placeholder{
+    opacity: 1;
+    color: var(--c-white);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 0px 0px transparent;
 }

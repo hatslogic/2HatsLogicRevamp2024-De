@@ -4,6 +4,9 @@
         z-index: 1;
         max-width: calc(100% - 8%);
         right: 0;
+        @include below($sm) {
+            max-width: 100%;
+        }
     }
     &-bar{
         height: rem(8);
