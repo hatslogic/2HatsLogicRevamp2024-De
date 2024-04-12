@@ -87,6 +87,10 @@ p{
   margin: auto;
   max-width: 75%;
 
+  @include below($xxl){
+    max-width: 80%;
+  }
+
   @include below($md){
     max-width: 100%;
     padding-left: rem(30);
@@ -101,6 +105,10 @@ p{
   margin-right: 0;
   max-width: calc(100% - 12.5%);
 
+  @include below($xxl){
+    max-width: calc(100% - 10%);
+  }
+
   @include below($md){
     padding-left: rem(30);
     padding-right: rem(30);
@@ -113,7 +121,7 @@ p{
   padding-right: rem(20);
   margin-left: auto;
   margin-right: 0;
-  max-width: calc(100% - rem(100));
+  max-width: 100%;
 
   @include below($md){
     padding-left: rem(30);
