@@ -26,6 +26,44 @@
     right: 0;
 }
 
+.xxl\:relative {
+    @include below($xxl){
+        position: relative;
+    }
+}
+
+.xl\:relative {
+    @include below($xl){
+        position: relative;
+    }
+}
+
+.lg\:relative {
+    @include below($lg){
+        position: relative;
+    }
+}
+
+.md\:relative {
+    @include below($md){
+        position: relative;
+    }
+}
+
+.sm\:relative {
+    @include below($sm){
+        position: relative;
+    }
+}
+
+.xs\:relative {
+    @include below($xs){
+        position: relative;
+    }
+}
+
+
+
 
 // right
 .xxl\:right-0 {
@@ -194,7 +232,7 @@ $spaceamounts: (
 );
 
 @each $space in $spaceamounts {
-    .z-index-#{$space}{
+    .z-#{$space}{
         z-index: #{$space};
     }
 }

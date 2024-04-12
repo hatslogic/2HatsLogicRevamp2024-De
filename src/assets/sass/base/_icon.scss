@@ -23,6 +23,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-agency:before {
+  content: "\e90b";
+}
+
+.icon-consultation:before {
+  content: "\e90c";
+}
+
 .icon-read-more:before {
   content: "\e902";
 }
