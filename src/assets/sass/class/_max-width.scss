@@ -1,0 +1,616 @@
+.mw-auto{
+    width: auto;
+}
+
+.mw-0{
+    width: 0;
+}
+
+.mw-5 {
+    width: 5%;
+}
+
+.mw-10 {
+    width: 10%;
+}
+
+.mw-15 {
+    width: 15%;
+}
+
+.mw-20 {
+    width: 20%;
+}
+
+.mw-25 {
+    width: 25%;
+}
+
+.mw-30 {
+    width: 30%;
+}
+
+.mw-33 {
+    width: 33.33%;
+}
+
+.mw-40 {
+    width: 40%;
+}
+
+.mw-45 {
+    width: 45%;
+}
+
+.mw-50 {
+    width: 50%;
+}
+
+.mw-55 {
+    width: 55%;
+}
+
+.mw-60 {
+    width: 60%;    
+}
+
+.mw-70 {
+    width: 70%;
+}
+
+.mw-75 {
+    width: 75%;
+}
+
+.mw-80 {
+    width: 80%;
+}
+
+.mw-90 {
+    width: 90%;
+}
+
+.mw-100 {
+    width: 100%;
+}
+
+@include below($xxl) {
+    .xxl\:mw-5{
+        width: 5%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-5{
+        width: 5%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-5{
+        width: 5%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-5{
+        width: 5%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-5{
+        width: 5%;
+    }
+}
+
+@include below($xs) {
+    .sm\:mw-5{
+        width: 5%;
+    }
+}
+
+
+@include below($xxl) {
+    .xxl\:mw-10{
+        width: 10%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-10{
+        width: 10%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-10{
+        width: 10%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-10{
+        width: 10%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-10{
+        width: 10%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-10{
+        width: 10%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-15{
+        width: 15%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-15{
+        width: 15%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-15{
+        width: 15%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-15{
+        width: 15%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-15{
+        width: 15%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-15{
+        width: 15%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-20{
+        width: 20%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-20{
+        width: 20%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-20{
+        width: 20%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-20{
+        width: 20%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-20{
+        width: 20%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-20{
+        width: 20%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-25{
+        width: 25%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-25{
+        width: 25%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-25{
+        width: 25%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-25{
+        width: 25%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-25{
+        width: 25%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-25{
+        width: 25%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-30{
+        width: 30%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-30{
+        width: 30%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-30{
+        width: 30%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-30{
+        width: 30%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-30{
+        width: 30%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-30{
+        width: 30%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-33{
+        width: 33.33%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-33{
+        width: 33.33%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-33{
+        width: 33.33%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-33{
+        width: 33.33%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-33{
+        width: 33.33%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-33{
+        width: 33.33%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-40{
+        width: 40%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-40{
+        width: 40%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-40{
+        width: 40%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-40{
+        width: 40%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-40{
+        width: 40%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-40{
+        width: 40%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-45{
+        width: 45%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-45{
+        width: 45%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-45{
+        width: 45%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-45{
+        width: 45%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-45{
+        width: 45%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-45{
+        width: 45%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-50{
+        width: 50%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-50{
+        width: 50%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-50{
+        width: 50%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-50{
+        width: 50%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-50{
+        width: 50%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-50{
+        width: 50%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-55{
+        width: 55%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-55{
+        width: 55%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-55{
+        width: 55%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-55{
+        width: 55%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-55{
+        width: 55%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-55{
+        width: 55%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-60{
+        width: 60%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-60{
+        width: 60%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-60{
+        width: 60%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-60{
+        width: 60%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-60{
+        width: 60%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-60{
+        width: 60%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-70{
+        width: 70%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-70{
+        width: 70%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-70{
+        width: 70%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-70{
+        width: 70%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-70{
+        width: 70%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-70{
+        width: 70%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-75{
+        width: 75%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-75{
+        width: 75%;
+    }
+}   
+
+@include below($lg) {
+    .lg\:mw-75{
+        width: 75%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-75{
+        width: 75%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-75{
+        width: 75%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-75{
+        width: 75%;
+    }
+}
+
+@include below($xxl) {
+    .xxl\:mw-100{
+        width: 100%;
+    }
+}
+
+@include below($xl) {
+    .xl\:mw-100{
+        width: 100%;
+    }
+}
+
+@include below($lg) {
+    .lg\:mw-100{
+        width: 100%;
+    }
+}
+
+@include below($md) {
+    .md\:mw-100{
+        width: 100%;
+    }
+}
+
+@include below($sm) {
+    .sm\:mw-100{
+        width: 100%;
+    }
+}
+
+@include below($xs) {
+    .xs\:mw-100{
+        width: 100%;
+    }
+}
