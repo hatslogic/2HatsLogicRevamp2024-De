@@ -1,5 +1,37 @@
-.grid {
-    display: grid;
+@include below($xxl) {
+    .xxl\:grid{
+        display: grid;
+    }
+}
+
+@include below($xl) {
+    .xl\:grid{
+        display: grid;
+    }
+}
+
+@include below($lg) {
+    .lg\:grid{
+        display: grid;
+    }
+}
+
+@include below($md) {
+    .md\:grid{
+        display: grid;
+    }
+}
+
+@include below($sm) {
+    .sm\:grid{
+        display: grid;
+    }
+}
+
+@include below($xs) {
+    .xs\:grid{
+        display: grid;
+    }
 }
 
 .grid-6 {

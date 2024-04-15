@@ -44,7 +44,11 @@ h6 {
 h1, .h1 {
   font-size: rem(75);
 
-  @include below($sm){
+  @include below($xl){
+    font-size: rem(60);
+  }
+
+  @include below($xs){
     font-size: rem(40);
   }
 }
@@ -91,6 +95,10 @@ p{
     max-width: 80%;
   }
 
+  @include below($lg){
+    max-width: 90%;
+  }
+
   @include below($md){
     max-width: 100%;
     padding-left: rem(30);
@@ -107,6 +115,10 @@ p{
 
   @include below($xxl){
     max-width: calc(100% - 10%);
+  }
+
+  @include below($lg){
+    max-width: calc(100% - 6%);
   }
 
   @include below($md){

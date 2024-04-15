@@ -1,24 +1,4 @@
 /* flex classes */
-.flex {
-    display: flex;
-}
-
-.inline-flex {
-    display: inline-flex;
-}
-
-.inline {
-    display: inline;
-}
-
-.block {
-    display: block;
-}
-
-.inline-block {
-    display: inline-block;
-}
-
 .row {
     flex-direction: row;
 }
@@ -123,6 +103,11 @@
     }
 }
 
+.xs\:flex {
+    @include below($xs) {
+        display: flex;
+    }
+}
 
 /* inline flex classes */
 .xxl\:inline-flex {

@@ -18,7 +18,7 @@ section.services{
             left: rem(-50);
             z-index: 0;
 
-            @include below($sm){
+            @include below($xs){
                 font-size: rem(80);
                 left: rem(-10);
                 top: rem(-40);
