@@ -176,9 +176,111 @@ $sides: (
 }
 
 @each $space in $spaceamounts {
+    .xxl\:px-#{$space} {
+        @include below($xs) {
+            padding: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .xl\:px-#{$space} {
+        @include below($xl) {
+            padding: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .lg\:px-#{$space} {
+        @include below($lg) {
+            padding: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .md\:px-#{$space} {
+        @include below($md) {
+            padding: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .sm\:px-#{$space} {
+        @include below($sm) {
+            padding: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .xs\:px-#{$space} {
+        @include below($xs) {
+            padding: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
     .py-#{$space} {
         padding-top: rem($space);
         padding-bottom: rem($space);
+    }
+}
+
+@each $space in $spaceamounts {
+    .xxl\:py-#{$space} {
+        @include below($xxl) {
+            padding-top: rem($space);
+            padding-bottom: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .xl\:py-#{$space} {
+        @include below($xl) {
+            padding-top: rem($space);
+            padding-bottom: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .lg\:py-#{$space} {
+        @include below($lg) {
+            padding-top: rem($space);
+            padding-bottom: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .md\:py-#{$space} {
+        @include below($md) {
+            padding-top: rem($space);
+            padding-bottom: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .sm\:py-#{$space} {
+        @include below($sm) {
+            padding-top: rem($space);
+            padding-bottom: rem($space);
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    .xs\:py-#{$space} {
+        @include below($xs) {
+            padding-top: rem($space);
+            padding-bottom: rem($space);
+        }
     }
 }
 

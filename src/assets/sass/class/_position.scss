@@ -26,6 +26,155 @@
     right: 0;
 }
 
+.xxl\:top-0 {
+    @include below($xxl){
+        top: 0;
+    }
+}
+
+.xl\:top-0 {
+    @include below($xl){
+        top: 0;
+    }
+}
+
+.lg\:top-0 {
+    @include below($lg){
+        top: 0;
+    }
+}
+
+.md\:top-0 {
+    @include below($md){
+        top: 0;
+    }
+}
+
+.sm\:top-0 {
+    @include below($sm){
+        top: 0;
+    }
+}
+
+.xs\:top-0 {
+    @include below($xs){
+        top: 0;
+    }
+}
+
+
+// bottom
+.xxl\:bottom-0 {
+    @include below($xxl){
+        bottom: 0;
+    }
+}
+
+.xl\:bottom-0 {
+    @include below($xl){
+        bottom: 0;
+    }
+}
+
+.lg\:bottom-0 {
+    @include below($lg){
+        bottom: 0;
+    }
+}
+
+.md\:bottom-0 {
+    @include below($md){
+        bottom: 0;
+    }
+}
+
+.sm\:bottom-0 {
+    @include below($sm){
+        bottom: 0;
+    }
+}
+
+.xs\:bottom-0 {
+    @include below($xs){
+        bottom: 0;
+    }
+}
+
+// left
+.xxl\:left-0 {
+    @include below($xxl){
+        left: 0;
+    }
+}
+
+.xl\:left-0 {
+    @include below($xl){
+        left: 0;
+    }
+}
+
+.lg\:left-0 {
+    @include below($lg){
+        left: 0;
+    }
+}
+
+.md\:left-0 {
+    @include below($md){
+        left: 0;
+    }
+}
+
+.sm\:left-0 {
+    @include below($sm){
+        left: 0;
+    }
+}
+
+.xs\:left-0 {
+    @include below($xs){
+        left: 0;
+    }
+}
+
+// right
+.xxl\:right-0 {
+    @include below($xxl){
+        right: 0;
+    }
+}
+
+.xl\:right-0 {
+    @include below($xl){
+        right: 0;
+    }
+}
+
+.lg\:right-0 {
+    @include below($lg){
+        right: 0;
+    }
+}
+
+.md\:right-0 {
+    @include below($md){
+        right: 0;
+    }
+}
+
+.sm\:right-0 {
+    @include below($sm){
+        right: 0;
+    }
+}
+
+.xs\:right-0 {
+    @include below($xs){
+        right: 0;
+    }
+}
+
+// relative
 .xxl\:relative {
     @include below($xxl){
         position: relative;
