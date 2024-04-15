@@ -1,7 +1,6 @@
 section.services{
     .service{
         counter-increment: service;
-        position: relative;
         & > *{
             position: relative;
             z-index: 1;
@@ -24,8 +23,5 @@ section.services{
                 top: rem(-40);
             }
         }
-    }
-    .sticky{
-        top: rem(200);
     }
 }

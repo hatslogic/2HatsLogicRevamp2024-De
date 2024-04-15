@@ -1,24 +1,4 @@
 header{
-    z-index: 10;
-
-    @include below($md){
-        flex-direction: row;
-        justify-content: flex-start;
-        position: relative;
-        height: rem(80);
-        width: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-
-        a:first-child{
-            margin-right: auto;
-        }
-
-        a:last-child{
-            margin-left: rem(20);
-        }
-    }
 
     .brand, .brand img{
         max-width: rem(106);

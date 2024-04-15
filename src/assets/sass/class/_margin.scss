@@ -188,3 +188,75 @@ $sides: (
     }
   }
 }
+
+.xxl\:ml-auto{
+  @include below($xxl){
+    margin-left: auto;
+  }
+}
+
+.xl\:ml-auto{
+  @include below($xl){
+    margin-left: auto;
+  }
+}
+
+.lg\:ml-auto{
+  @include below($lg){
+    margin-left: auto;
+  }
+}
+
+.md\:ml-auto{
+  @include below($md){
+    margin-left: auto;
+  }
+}
+
+.sm\:ml-auto{
+  @include below($sm){
+    margin-left: auto;
+  }
+}
+
+.xs\:ml-auto{
+  @include below($xs){
+    margin-left: auto;
+  }
+}
+
+.xxl\:mr-auto{
+  @include below($xxl){
+    margin-right: auto;
+  }
+}
+
+.xl\:mr-auto{
+  @include below($xl){
+    margin-right: auto;
+  }
+}
+
+.lg\:mr-auto{
+  @include below($lg){
+    margin-right: auto;
+  }
+}
+
+.md\:mr-auto{
+  @include below($md){
+    margin-right: auto;
+  }
+}
+
+.sm\:mr-auto{
+  @include below($sm){
+    margin-right: auto;
+  }
+}
+
+.xs\:mr-auto{
+  @include below($xs){
+    margin-right: auto;
+  }
+}

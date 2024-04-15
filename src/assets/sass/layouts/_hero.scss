@@ -9,28 +9,16 @@
 
     mark {
         background: none;
-        display: inline-block;
-        color: var(--c-primary);
         text-decoration: none;
-        position: relative;
-        text-align: center;
-
-        span{
-            position: relative;
-            z-index: 2;
-        }
 
         .stroke{
-            display: block;
             width: calc(100% - rem(-40));
             height: rem(20);
             transform: rotate(-1deg);
             stroke: var(--c-white);
-            position: absolute;
             left: 0;
             bottom: rem(-10);
             stroke-width: 1;
-            // opacity: 0.5;
             z-index: 0;
 
             @include below($md){
@@ -55,55 +43,9 @@
             }
         }
     }
-
-    .container {
-        position: relative;
-    }
-}
-
-@keyframes highlight {
-    to {
-        background-position: 0 0;
-    }
-}
-
-@-webkit-keyframes rotating {
-    from {
-        -webkit-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    to {
-        -webkit-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes rotating {
-    from {
-        -ms-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    to {
-        -ms-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
 }
 
 .rotating {
-    -webkit-animation: rotating 20s linear infinite;
-    -moz-animation: rotating 20s linear infinite;
-    -ms-animation: rotating 20s linear infinite;
-    -o-animation: rotating 20s linear infinite;
     animation: rotating 20s linear infinite;
 }
 
@@ -111,13 +53,8 @@
     width: rem(176);
     height: rem(177);
 
-    @include below($sm) {
-        display: none;
-    }
-
     .label text {
         font-size: rem(11);
-        font-family: var(--font-medium);
         line-height: 0.5;
     }
 
@@ -128,9 +65,6 @@
 }
 
 .consultation-btn {
-    position: absolute;
-    right: rem(20);
-    top: 0;
 
     .hover-wrap {
         transform-origin: center center;
@@ -157,5 +91,15 @@
             // animation-play-state: paused;
             // transform: scale(0.5);
         }
+    }
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }
