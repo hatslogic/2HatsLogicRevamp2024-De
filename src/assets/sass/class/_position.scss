@@ -1,0 +1,238 @@
+.fixed{
+    position: fixed;
+}
+
+.relative{
+    position: relative;
+}
+
+.sticky{
+    position: sticky;
+}
+
+.top-0{
+    top: 0;
+}
+
+.bottom-0{
+    bottom: 0;
+}
+
+.left-0{
+    left: 0;
+}
+
+.right-0{
+    right: 0;
+}
+
+.xxl\:relative {
+    @include below($xxl){
+        position: relative;
+    }
+}
+
+.xl\:relative {
+    @include below($xl){
+        position: relative;
+    }
+}
+
+.lg\:relative {
+    @include below($lg){
+        position: relative;
+    }
+}
+
+.md\:relative {
+    @include below($md){
+        position: relative;
+    }
+}
+
+.sm\:relative {
+    @include below($sm){
+        position: relative;
+    }
+}
+
+.xs\:relative {
+    @include below($xs){
+        position: relative;
+    }
+}
+
+
+
+
+// right
+.xxl\:right-0 {
+    @include below($xxl){
+        right: 0;
+    }
+}
+
+.xl\:right-0 {
+    @include below($xl){
+        right: 0;
+    }
+}
+
+.lg\:right-0 {
+    @include below($lg){
+        right: 0;
+    }
+}
+
+.md\:right-0 {
+    @include below($md){
+        right: 0;
+    }
+}
+
+.sm\:right-0 {
+    @include below($sm){
+        right: 0;
+    }
+}
+
+.xs\:right-0 {
+    @include below($xs){
+        right: 0;
+    }
+}
+
+
+// left
+.xxl\:left-0 {
+    @include below($xxl){
+        left: 0;
+    }
+}
+
+.xl\:left-0 {
+    @include below($xl){
+        left: 0;
+    }
+}
+
+.lg\:left-0 {
+    @include below($lg){
+        left: 0;
+    }
+}
+
+.md\:left-0 {
+    @include below($md){
+        left: 0;
+    }
+}
+
+.sm\:left-0 {
+    @include below($sm){
+        left: 0;
+    }
+}
+
+.xs\:left-0 {
+    @include below($xs){
+        left: 0;
+    }
+}
+
+// top
+.xxl\:top-0 {
+    @include below($xxl){
+        top: 0;
+    }
+}
+
+.xl\:top-0 {
+    @include below($xl){
+        top: 0;
+    }
+}
+
+.lg\:top-0 {
+    @include below($lg){
+        top: 0;
+    }
+}
+
+.md\:top-0 {
+    @include below($md){
+        top: 0;
+    }
+}
+
+.sm\:top-0 {
+    @include below($sm){
+        top: 0;
+    }
+}
+
+.xs\:top-0 {
+    @include below($xs){
+        top: 0;
+    }
+}
+
+// bottom
+.xxl\:bottom-0 {
+    @include below($xxl){
+        bottom: 0;
+    }
+}
+
+.xl\:bottom-0 {
+    @include below($xl){
+        bottom: 0;
+    }
+}
+
+.lg\:bottom-0 {
+    @include below($lg){
+        bottom: 0;
+    }
+}
+
+.md\:bottom-0 {
+    @include below($md){
+        bottom: 0;
+    }
+}
+
+.sm\:bottom-0 {
+    @include below($sm){
+        bottom: 0;
+    }
+}
+
+.xs\:bottom-0 {
+    @include below($xs){
+        bottom: 0;
+    }
+}
+
+
+// z-index
+$spaceamounts: (
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+);
+
+@each $space in $spaceamounts {
+    .z-#{$space}{
+        z-index: #{$space};
+    }
+}

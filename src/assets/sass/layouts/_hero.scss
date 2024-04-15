@@ -44,7 +44,7 @@
                 stroke-dashoffset: rem(660);
                 stroke: var(--c-primary);
                 stroke-width: 5;
-                transition: stroke-dashoffset 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+                transition: stroke-dashoffset 0.75s cubic-bezier(.4,.68,.92,1.03);
                 z-index: 1;
             }
         }
@@ -129,7 +129,7 @@
 
 .consultation-btn {
     position: absolute;
-    right: rem(-30);
+    right: rem(20);
     top: 0;
 
     .hover-wrap {

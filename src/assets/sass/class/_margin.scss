@@ -30,6 +30,28 @@ $sides: (
   margin: 0;
 }
 
+.ml-auto{
+  margin-left: auto;
+}
+
+.mr-auto{
+  margin-right: auto;
+}
+
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.m-auto{
+  margin: auto;
+}
+
 .xs\:m-0 {
   @include below($xs) {
     margin: 0;
