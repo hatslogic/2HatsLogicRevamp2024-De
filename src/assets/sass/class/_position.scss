@@ -238,6 +238,48 @@
 
 
 
+$spaceamounts: (
+    0,
+    10,
+    15,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    180,
+    200,
+    250,
+    300
+);
+
+// Adjust this to include the pixel amounts you need.
+$sides: (
+    top,
+    bottom,
+    left,
+    right
+);
+
+// Leave this variable alone
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .#{$side}-#{$space} {
+            #{$side}: rem($space);
+        }
+    }
+}
+
+
 // right
 .xxl\:right-0 {
     @include below($xxl){
@@ -387,38 +429,62 @@
     }
 }
 
-$spaceamounts: (
-    0,
-    10,
-    15,
-    20,
-    30,
-    40,
-    50,
-    60,
-    70,
-    80,
-    90,
-    100,
-    110,
-    120,
-    130,
-    140,
-    150,
-    180,
-    200
-); // Adjust this to include the pixel amounts you need.
-$sides: (
-    top,
-    bottom,
-    left,
-    right
-); // Leave this variable alone
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .xxl\:#{$side}-#{$space} {
+            @include below($xxl){
+                #{$side}: rem($space);
+            }
+        }
+    }
+}
 
 @each $space in $spaceamounts {
     @each $side in $sides {
-        .#{$side}-#{$space} {
-            #{$side}: rem($space);
+        .xl\:#{$side}-#{$space} {
+            @include below($xl){
+                #{$side}: rem($space);
+            }
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .lg\:#{$side}-#{$space} {
+            @include below($lg){
+                #{$side}: rem($space);
+            }
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .md\:#{$side}-#{$space} {
+            @include below($md){
+                #{$side}: rem($space);
+            }
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .sm\:#{$side}-#{$space} {
+            @include below($sm){
+                #{$side}: rem($space);
+            }
+        }
+    }
+}
+
+@each $space in $spaceamounts {
+    @each $side in $sides {
+        .xs\:#{$side}-#{$space} {
+            @include below($xs){
+                #{$side}: rem($space);
+            }
         }
     }
 }
