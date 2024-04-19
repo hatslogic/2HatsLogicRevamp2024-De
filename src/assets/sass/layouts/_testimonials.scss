@@ -31,8 +31,9 @@
         }
     }
     blockquote{
-        font-size: rem(25);
-        line-height: rem(30);
+        font-size: rem(24);
+        line-height: 1.25;
+        font-family: var(--font-light);
 
         @include below($sm) {
             font-size: rem(18);

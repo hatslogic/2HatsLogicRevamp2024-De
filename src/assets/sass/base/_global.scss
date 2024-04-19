@@ -17,15 +17,16 @@ html,
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: var(--font-light);
-  font-size: 17px;
+  font-family: var(--font-regular);
+  font-size: 18px;
+  line-height: 1;
   color: var(--c-secondary);
   min-height: 100%;
   letter-spacing: 0px;
   margin: 0;
 
   @include below($xxl){
-    font-size: rem(15);
+    font-size: rem(17);
   }
 }
 
@@ -35,9 +36,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-regular);
+  font-family: var(--font-bold);
+  line-height: 1;
   font-weight: normal;
-  line-height: 1.1;
   margin: 0;
 }
 
@@ -55,15 +56,18 @@ h1, .h1 {
 
 h2, .h2{
   font-size: rem(40);
+  line-height: 1.1;
 }
 
 h3, .h3{
   font-size: rem(30);
+  line-height: 1.1;
 }
 
 h4, .h4{
   font-size: rem(21);
   line-height: rem(26);
+  line-height: 1.1;
 }
 
 h5, .h5{
@@ -73,16 +77,11 @@ h5, .h5{
 
 h6, .h6{
   font-size: rem(15);
+  line-height: 1.1;
 }
 
-p{
-  // font-family: var(--font-light);
-  font-size: rem(16);
+p, ul, ol{
   line-height: 1.4;
-
-  @include below($sm){
-    font-size: 16px;
-  }
 }
 
 .container {
@@ -92,7 +91,7 @@ p{
   max-width: 75%;
 
   @include below($xxl){
-    max-width: 80%;
+    max-width: 85%;
   }
 
   @include below($lg){
@@ -114,11 +113,11 @@ p{
   max-width: calc(100% - 12.5%);
 
   @include below($xxl){
-    max-width: calc(100% - 10%);
+    max-width: calc(100% - 8%);
   }
 
   @include below($lg){
-    max-width: calc(100% - 6%);
+    max-width: calc(100% - 5.5%);
   }
 
   @include below($md){
@@ -169,4 +168,8 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+strong, b{
+  font-weight: normal;
 }

@@ -7,7 +7,7 @@ section.services{
         }
         &:before{
             color: var(--c-hash);
-            opacity: 50%;
+            opacity: 25%;
             content: counter(service, decimal-leading-zero);
             font-size: rem(280);
             position: absolute;

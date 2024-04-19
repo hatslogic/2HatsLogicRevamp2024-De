@@ -1,0 +1,159 @@
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package 2HatsLogic
+ */
+
+?>
+
+<footer class="pt-100 pb-40 sm:pt-60 sm:pb-120">
+  <div class="container">
+    <div class="footer-top flex nowrap justify-between sm:wrap">
+      <div class="col w-75 sm:w-100">
+        <div class="menu flex align-start justify-between sm:wrap sm:justify-start">
+          <div class="col sm:w-50"> <a href="#" class="h4 font-bold">Others</a>
+
+            <ul class="no-bullets font-regular mt-20 sm:mt-15">
+              <li><a href="#" aria-label="blog">Blog</a>
+
+              </li>
+              <li><a href="#" aria-label="portfolio">Portfolio</a>
+
+              </li>
+              <li><a href="#" aria-label="hire developer">Hire a Developer</a>
+
+              </li>
+              <li><a href="#" aria-label="testimonials">Testimonials</a>
+
+              </li>
+              <li><a href="#" aria-label="clients">Our Clients</a>
+
+              </li>
+              <li><a href="#" aria-label="privacy policy">Privacy Policy</a>
+
+              </li>
+            </ul>
+          </div>
+          <div class="col sm:w-50 sm:pl-10"> <a href="#" class="h4 font-bold">Company</a>
+
+            <ul class="no-bullets font-regular mt-20 sm:mt-15">
+              <li><a href="#" aria-label="about">About</a>
+
+              </li>
+              <li><a href="#" aria-label="team">Team</a>
+
+              </li>
+              <li><a href="#" aria-label="careers">Careers</a>
+
+              </li>
+              <li><a href="#" aria-label="contact">Contact Us</a>
+
+              </li>
+            </ul>
+          </div>
+          <div class="col sm:w-100 sm:mt-30"> <a href="#" class="h4 font-bold">Services</a>
+
+            <div class="flex">
+              <ul class="no-bullets font-regular mt-20 sm:mt-15">
+                <li><a href="#" aria-label="ecommerce">E-Commerce Development</a>
+
+                </li>
+                <li><a href="#" aria-label="web">Custom Web Applications</a>
+
+                </li>
+                <li><a href="#" aria-label="cms">CMS Development</a>
+
+                </li>
+                <li><a href="#" aria-label="could">Could Services</a>
+
+                </li>
+                <li><a href="#" aria-label="erp">ERP and CRM Solutions</a>
+
+                </li>
+              </ul>
+              <ul class="no-bullets font-regular ml-40 mt-20 sm:mt-15 sm:ml-20">
+                <li><a href="#" aria-label="ecommerce">E-Commerce Development</a>
+
+                </li>
+                <li><a href="#" aria-label="web">Custom Web Applications</a>
+
+                </li>
+                <li><a href="#" aria-label="cms">CMS Development</a>
+
+                </li>
+                <li><a href="#" aria-label="could">Could Services</a>
+
+                </li>
+                <li><a href="#" aria-label="erp">ERP and CRM Solutions</a>
+
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col w-5 b-0 br-2 ml-50 mr-50 sm:br-0 bc-hash solid sm:hidden"></div>
+      <div class="col w-20 sm:w-100 sm:mt-40 flex justify-end">
+        <div class="accreditation sm:w-100 b-0 sm:bt-2 sm:pt-40 bc-hash solid sm:text-center">
+          <div class="h4 font-bold">Accreditation</div>
+          <div class="flex justify-start mt-30 sm:justify-center">
+            <div class="col"> <a href="#" target="_blank">
+                <img
+                  src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/accreditation/shopware-partner.svg"
+                  alt="shopware partner" loading="lazy" width="100" height="100">
+              </a>
+
+            </div>
+            <div class="col ml-20"> <a href="#" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/accreditation/clutch-logo.svg"
+                  alt="shopware partner" loading="lazy" width="100" height="100">
+              </a>
+
+            </div>
+            <div class="col ml-20"> <a href="#" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/accreditation/vue-storefront.svg"
+                  alt="shopware partner" loading="lazy" width="100" height="100">
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="footer-bottom mt-60 flex align-center justify-between sm:wrap sm:column b-0 sm:bt-2 sm:pt-40 bc-hash solid">
+      <div class="copyright sm:order-2 sm:mt-20">&copy; <span id="year"></span> 2Hats Logic Solutions Private
+        Limited</div>
+      <div class="social-media sm:order-1 flex align-center"> <a href="#" class="flex align-center" target="_blank"
+          aria-label="facebook"><i class="icomoon icon-linkedin"></i></a>
+
+        <a href="#" class="flex align-center ml-20" target="_blank" aria-label="instagram"><i
+            class="icomoon icon-instagram"></i>
+
+        </a> <a href="#" class="flex align-center ml-20" target="_blank" aria-label="youtube"><i
+            class="icomoon icon-youtube"></i></a>
+
+        <a href="#" class="flex align-center ml-20" target="_blank" aria-label="facebook"><i
+            class="icomoon icon-facebook"></i>
+
+        </a> <a href="#" class="flex align-center ml-20" target="_blank" aria-label="twitter"><i
+            class="icomoon icon-twitter"></i></a>
+
+        <a href="#" class="flex align-center ml-20" target="_blank" aria-label="shopware"><i
+            class="icomoon icon-shopware"></i>
+
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<?php wp_footer(); ?>
+</body>
+
+</html>

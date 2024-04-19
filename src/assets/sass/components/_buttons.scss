@@ -6,8 +6,8 @@
     min-width: rem(160);
     min-height: rem(48);
     padding: rem(10) rem(30);
-    font-family: var(--font-demibold);
-    font-size: rem(13);
+    font-family: var(--font-button);
+    font-size: rem(14);
     letter-spacing: 1px;
     display: inline-flex;
     align-items: center;
@@ -88,7 +88,7 @@
 .link{
     cursor: pointer;
     text-transform: uppercase;
-    font-family: var(--font-medium);
+    font-family: var(--font-bold);
     font-size: rem(14);
     letter-spacing: 1px;
 

@@ -21,7 +21,7 @@ $font-path: "../fonts";
 */
 :root {
     --c-primary: #14759C;
-    --c-secondary: #060606;
+    --c-secondary: #2f2f2f;
     --c-primary-hover: #31A9C7;
     --c-secondary-hover: #2f2f2f;
     --c-black: #2f2f2f;
@@ -32,9 +32,8 @@ $font-path: "../fonts";
     --c-dark-grey: #393939;
     --c-light-grey: #FAF7F5;
     --font-thin: 'TTFirsNeueTrl-Thin', Arial, Helvetica, sans-serif;
-    --font-light: 'TTFirsNeueTrl-Light', Arial, Helvetica, sans-serif;
-    --font-regular: 'TTFirsNeueTrl-Regular', Arial, Helvetica, sans-serif;
-    --font-medium: 'TTFirsNeueTrl-Medium', Arial, Helvetica, sans-serif; 
-    --font-demibold:  'TTFirsNeueTrl-DemiBold', Arial, Helvetica, sans-serif;
-    --font-bold:  'TTFirsNeueTrl-Bold', Arial, Helvetica, sans-serif;
+    --font-light: 'BasisGrotesquePro-Light', Arial, Helvetica, sans-serif;
+    --font-regular: 'BasisGrotesquePro-Regular', Arial, Helvetica, sans-serif;
+    --font-button: 'BasisGrotesquePro-Bold', Arial, Helvetica, sans-serif;
+    --font-bold: 'TTFirsNeueTrl-Medium', Arial, Helvetica, sans-serif;
 }
