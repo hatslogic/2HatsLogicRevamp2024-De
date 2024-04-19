@@ -21,6 +21,7 @@
                     setup_postdata($post);
                     $title = get_the_title($post->ID);
                     $url = get_the_permalink($post->ID);
+                    $description = get_the_excerpt($post->ID);
                     $client_location = get_field('client_location', $post->ID);
                     $featured_image = get_the_post_thumbnail_url($post->ID, 'img_450x350');
                     $featured_image_id = get_post_thumbnail_id($post->ID);
@@ -44,7 +45,7 @@
                                 <?php if($title): ?>
                                 <strong class="transition font-bold"><?php echo $title; ?></strong>
                                 <?php endif; ?>
-                                <?php echo ($client_location) ? ' - ' . $client_location : ''; ?>
+                                <?php echo ($client_location) ? ' - ' . $description : ''; ?>
                             </h3>
                         </div>
                     </a>

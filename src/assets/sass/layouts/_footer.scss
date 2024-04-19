@@ -33,8 +33,6 @@ footer{
     }
 
     .copyright{
-        @include below($sm){
-            font-size: rem(14);
-        }
+        font-size: rem(14);
     }
 }

@@ -142,10 +142,22 @@ function hatslogic_scripts() {
 	wp_enqueue_style( 'hatslogic-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'hatslogic-plugins', get_template_directory_uri() . '/dist/assets/css/plugins.min.css', array(), _S_VERSION );
 	wp_enqueue_style( 'hatslogic-app-main', get_template_directory_uri() . '/dist/assets/css/app.min.css', array(), _S_VERSION );
-	wp_style_add_data( 'hatslogic-style', 'rtl', 'replace' );
+	wp_enqueue_script( 'hatslogic-main', get_template_directory_uri() . '/dist/assets/js/main.min.js', array(), _S_VERSION, array(
+        'in_footer' => true,
+        'strategy'  => 'async',
+    ));
 
-	wp_enqueue_script( 'hatslogic-plugins', get_template_directory_uri() . '/dist/assets/js/plugins.min.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'hatslogic-app', get_template_directory_uri() . '/dist/assets/js/app.min.js', array(), _S_VERSION, true );
+	/*
+	wp_enqueue_script( 'hatslogic-plugins', get_template_directory_uri() . '/dist/assets/js/plugins.min.js', array(), _S_VERSION, array(
+        'in_footer' => true,
+        'strategy'  => 'async',
+    ));
+
+	wp_enqueue_script( 'hatslogic-app', get_template_directory_uri() . '/dist/assets/js/app.min.js', array(), _S_VERSION, array(
+        'in_footer' => true,
+        'strategy'  => 'async',
+    ));
+	*/
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -201,7 +213,7 @@ function app_excerpt_more() {
 }
 
 function app_excerpt_length() {
-	return 55;
+	return 10;
 }
 
 
@@ -281,7 +293,7 @@ if ( ! function_exists( 'app_setup_theme' ) ) {
 		add_filter( 'excerpt_more', 'app_excerpt_more' );
 		add_filter( 'excerpt_length', 'app_excerpt_length', 999 );
 		add_filter( 'app_theme_favicon_uri', function() {
-			return get_template_directory_uri() . '/dist/images/favicon.ico';
+			return get_template_directory_uri() . '/dist/assets/img/cropped-favicon-32x32.png';
 		} );
 
 		# Image sizes
@@ -290,6 +302,7 @@ if ( ! function_exists( 'app_setup_theme' ) ) {
 		add_image_size( 'img_360x280', 360, 280, true );
 		add_image_size( 'img_304x218', 304, 218, true );
 		add_image_size( 'img_350x250', 350, 250, true );
+		add_image_size( 'img_450x235', 450, 235, true );
 	}
 }
 

@@ -46,7 +46,7 @@
                     fill-rule="evenodd">
                     <g id="hover-wrap" class="hover-wrap transition">
                         <g id="label" class="label transition" transform="translate(-30, -64)" fill="var(--c-primary)">
-                            <text id="text" class="font-medium"
+                            <text id="text" class="font-button"
                                 transform="translate(149, 149) rotate(10) translate(-133, -111)">
                                 <tspan x="90" y="108">FREE</tspan>
                                 <tspan x="57" y="122">CONSULTATION</tspan>

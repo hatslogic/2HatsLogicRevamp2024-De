@@ -25,7 +25,8 @@ const paths = {
             ie: 'src/assets/sass/ie.scss'
         },
         js: {
-            main: 'src/assets/js/app.js',
+            main: 'src/assets/js/main.js',
+            app: 'src/assets/js/app.js',
             plugins: 'src/assets/js/plugins.js'
         },
         fonts: 'src/assets/fonts/**/*',
@@ -124,8 +125,9 @@ const cssTask = gulp.parallel(
     compileCSS.bind(null, paths.src.sass.ie, 'ie.min.css')
 );
 const jsTask = gulp.parallel(
-    compileJS.bind(null, paths.src.js.main, 'app.min.js'),
-    compileJS.bind(null, paths.src.js.plugins, 'plugins.min.js')
+    compileJS.bind(null, paths.src.js.main, 'main.min.js')
+    // compileJS.bind(null, paths.src.js.main, 'app.min.js'),
+    // compileJS.bind(null, paths.src.js.plugins, 'plugins.min.js')
 );
 const fontsTask = moveFiles.bind(null, paths.src.fonts, paths.dist.fonts);
 const imagesTask = gulp.series(

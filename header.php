@@ -34,16 +34,12 @@
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/cropped-favicon-32x32.png" sizes="32x32">
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/cropped-favicon-192x192.png" sizes="192x192">
 	<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/cropped-favicon-180x180.png">
-	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/background/world-map-dot.svg" fetchpriority="high" as="image" type="image/svg">
+	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/background/world-map-dot.svg" fetchpriority="high" as="image">
 	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Medium.woff2" fetchpriority="high" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Regular.woff2" fetchpriority="high" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Bold.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/fonts/2HatsIcons/icomoon.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/brand/logo-wide.svg" as="image" type="image/svg">
-	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/trimed/google.svg" as="image" type="image/svg">
-	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/trimed/glassdoor.svg" as="image" type="image/svg">
-	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/trimed/trustpilot.svg" as="image" type="image/svg">
-	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/trimed/clutch.svg" as="image" type="image/svg">
+	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/brand/logo-wide.svg" as="image">
 	<?php wp_head(); ?>
 </head>
 

@@ -21,9 +21,9 @@
                     $description = get_the_excerpt($post->ID);
                     $url = get_the_permalink($post->ID);
                     $client_location = get_field('client_location', $post->ID);
-                    $featured_image = get_the_post_thumbnail_url($post->ID, 'img_450x350');
+                    $featured_image = get_the_post_thumbnail_url($post->ID, 'img_450x235');
                     $featured_image_id = get_post_thumbnail_id($post->ID);
-                    $attachment = wp_get_attachment_image_src( $featured_image_id, 'img_450x350' );
+                    $attachment = wp_get_attachment_image_src( $featured_image_id, 'img_450x235' );
                     $featured_image = $attachment[0];
                     $featured_image_width = $attachment[1];
                     $featured_image_height = $attachment[2];
