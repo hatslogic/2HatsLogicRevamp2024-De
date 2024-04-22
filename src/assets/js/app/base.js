@@ -5,9 +5,6 @@ if (marqueeGroup != null) {
     parentElement.insertBefore(marqueeGroup.cloneNode(true), marqueeGroup.nextSibling);
 }
 
-// Dynamic date for copyright
-document.getElementById("year").innerHTML = new Date().getFullYear();
-
 // Progress bar effect
 window.addEventListener('scroll', () => {
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -17,13 +14,11 @@ window.addEventListener('scroll', () => {
 });
 
 // set timer of 1 sec after page load then add a class on body
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(function () {
-        document.querySelector('.hero mark').classList.add('loaded');
-    }, 800);
-})
+setTimeout(function () {
+  document.querySelector('.hero mark').classList.add('loaded');
+}, 800);
 
-// 
+// Mobile sticky menu
 let lastScrollTop = 0;
 let ticking = false;
 let isScrollingStopped = false;

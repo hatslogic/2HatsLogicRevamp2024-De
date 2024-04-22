@@ -7,6 +7,15 @@
             <?php if (!empty($title)) : ?>
             <h1 class="font-bold">
                 <?php echo $title ?>
+                <mark class="relative inline-block text-center c-primary">
+                    <span class="relative z-2">Your Brand.</span>
+                    <svg class="stroke block absolute" viewBox="0 0 154 13">
+                        <use href="#line"></use>
+                    </svg>
+                    <svg class="stroke block absolute" viewBox="0 0 154 13">
+                        <use href="#line"></use>
+                    </svg>
+                </mark>
             </h1>
             <?php endif ?>
 

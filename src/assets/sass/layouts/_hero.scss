@@ -17,14 +17,18 @@
             transform: rotate(-1deg);
             stroke: var(--c-white);
             left: 0;
-            bottom: rem(-10);
+            bottom: rem(-15);
             stroke-width: 1;
             z-index: 0;
 
-            @include below($md){
+            @include below($xl){
                 left: rem(-25);
                 transform-origin: center center;
-                transform: scale(0.4);
+                transform: scale(0.75);
+            }
+
+            @include below($md){
+                transform: scale(0.5);
             }
             
             &:nth-child(2) {
