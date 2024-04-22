@@ -144,3 +144,101 @@ function register_case_study() {
 }
 
 add_action( 'init', 'register_case_study', 0 );
+
+function register_service() {
+  
+	// Set UI labels for Custom Post Type
+	$labels = array(
+		'name'                => _x( 'Services', 'Post Type General Name', 'twentythirteen' ),
+		'singular_name'       => _x( 'Service', 'Post Type Singular Name', 'twentythirteen' ),
+		'menu_name'           => __( 'Services', 'twentythirteen' ),
+		'parent_item_colon'   => __( 'Parent Service', 'twentythirteen' ),
+		'all_items'           => __( 'Services', 'twentythirteen' ),
+		'view_item'           => __( 'View Service', 'twentythirteen' ),
+		'add_new_item'        => __( 'Add New Service', 'twentythirteen' ),
+		'add_new'             => __( 'Add New', 'twentythirteen' ),
+		'edit_item'           => __( 'Edit Service', 'twentythirteen' ),
+		'update_item'         => __( 'Update Service', 'twentythirteen' ),
+		'search_items'        => __( 'Search Service', 'twentythirteen' ),
+		'not_found'           => __( 'Not Found', 'twentythirteen' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'twentythirteen' ),
+	);
+		  
+	// Set other options for Custom Post Type
+	$args = array(
+		'label'               => __( 'service', 'twentythirteen' ),
+		'description'         => __( 'Showcase of services', 'twentythirteen' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		// 'menu_position'       => 30,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'show_in_rest'        => true,
+		'menu_icon' => 'dashicons-screenoptions',
+		'taxonomies' => array( 'category' ),
+	);
+		
+	// Registering your Custom Post Type
+	register_post_type( 'service', $args );
+	
+}
+
+add_action( 'init', 'register_service', 0 );
+
+function register_hire_developer() {
+  
+	// Set UI labels for Custom Post Type
+	$labels = array(
+		'name'                => _x( 'Hire Developers', 'Post Type General Name', 'twentythirteen' ),
+		'singular_name'       => _x( 'Hire a developer', 'Post Type Singular Name', 'twentythirteen' ),
+		'menu_name'           => __( 'Hire Developers', 'twentythirteen' ),
+		'parent_item_colon'   => __( 'Parent Hire a developer', 'twentythirteen' ),
+		'all_items'           => __( 'Hire Developers', 'twentythirteen' ),
+		'view_item'           => __( 'View Hire a developer', 'twentythirteen' ),
+		'add_new_item'        => __( 'Add New Hire a developer', 'twentythirteen' ),
+		'add_new'             => __( 'Add New', 'twentythirteen' ),
+		'edit_item'           => __( 'Edit Hire a developer', 'twentythirteen' ),
+		'update_item'         => __( 'Update Hire a developer', 'twentythirteen' ),
+		'search_items'        => __( 'Search Hire a developer', 'twentythirteen' ),
+		'not_found'           => __( 'Not Found', 'twentythirteen' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'twentythirteen' ),
+	);
+		  
+	// Set other options for Custom Post Type
+	$args = array(
+		'label'               => __( 'hide-developer', 'twentythirteen' ),
+		'description'         => __( 'Showcase of services', 'twentythirteen' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		// 'menu_position'       => 30,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'show_in_rest'        => true,
+		'menu_icon' => 'dashicons-shortcode',
+		'taxonomies' => array( 'category' ),
+	);
+		
+	// Registering your Custom Post Type
+	register_post_type( 'hide-developer', $args );
+	
+}
+
+add_action( 'init', 'register_hire_developer', 0 );

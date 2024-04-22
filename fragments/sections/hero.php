@@ -48,7 +48,7 @@
 
         </div> 
         
-        <a href="#" aria-label="consultation" class="consultation-btn absolute top-0 right-20 md:hidden">
+        <a href="#get-started" id="get-start-trigger" offset="100" style="scroll-margin-top: 2rem;" aria-label="consultation" class="consultation-btn absolute top-0 right-20 md:hidden">
             <svg width="176px" height="177px" viewBox="0 0 176 177" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="consultation" class="consultation sm:hidden" stroke="none" stroke-width="1" fill="none"
