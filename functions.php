@@ -280,7 +280,12 @@ if ( ! function_exists( 'app_setup_theme' ) ) {
 
 		# Register Theme Menu Locations
 		register_nav_menus( array(
-			'main-menu' => __( 'Main Menu', 'app' )
+			'main-menu' => __( 'Main Menu', 'app' ),
+			'service-menu' => __( 'Services', 'app' ),
+			'web-ecommerce-menu' => __( 'Web & E-commerce Development', 'app' ),
+			'hide-developer-menu' => __( 'Hire a Developer', 'app' ),
+			'company-menu' => __( 'Company', 'app' ),
+			'quick-links-menu' => __( 'Quick Links', 'app' ),
 		) );
 
 		# Attach custom shortcodes
@@ -330,13 +335,15 @@ function wps_deregister_styles() {
     wp_dequeue_style( 'wp-block-library' );
 }
 
-class AWP_Menu_Walker extends Walker_Nav_Menu {
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+class MAIN_Menu_Walker extends Walker_Nav_Menu {
 	function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
 		$active_class = $item->current ? ' active' : '';
 		$output .= "<li class='ml-40 sm:ml-30" . $active_class . "'>";
 
 		if ($item->url && $item->url != '#') {
-			$output .= '<a href="' . $item->url . '">';
+			$output .= '<a href="' . $item->url . '" aria-label="' . strtolower($item->title) . '">';
 		} else {
 			$output .= '<span>';
 		}
@@ -355,7 +362,27 @@ class AWP_Menu_Walker extends Walker_Nav_Menu {
 	}
 }
 
-// function get_mime_type($src) {
-// 	$type = mime_content_type($src);
-// 	return $type;
-// }
+class FOOTER_Menu_Walker extends Walker_Nav_Menu {
+	function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
+		$active_class = $item->current ? ' active' : '';
+		$output .= "<li class='" . $active_class . "'>";
+
+		if ($item->url && $item->url != '#') {
+			$output .= '<a href="' . $item->url . '" aria-label="' . strtolower($item->title) . '">';
+		} else {
+			$output .= '<span>';
+		}
+
+		$output .= $item->title;
+
+		if ($item->url && $item->url != '#') {
+			$output .= '</a>';
+		} else {
+			$output .= '</span>';
+		}
+
+		if ($args->walker->has_children) {
+			$output .= '<i class="caret fa fa-angle-down"></i>';
+		}
+	}
+}

@@ -66,7 +66,7 @@
 					'container_class' => 'top-menu inline-flex ml-auto mr-0 md:hidden',
 					'menu_class' => 'no-bullets font-button flex align-center',
 					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-					'walker' => new \AWP_Menu_Walker(),
+					'walker' => new \MAIN_Menu_Walker(),
 				) );
 				?>
 				
