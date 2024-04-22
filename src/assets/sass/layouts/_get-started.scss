@@ -1,1 +1,11 @@
-.get-started{}
+.get-started{
+    .form{
+        max-width: rem(570);
+        @include below($xxl){
+            max-width: rem(470);
+        }
+        @include below($sm){
+            max-width: 100%;
+        }
+    }
+}
