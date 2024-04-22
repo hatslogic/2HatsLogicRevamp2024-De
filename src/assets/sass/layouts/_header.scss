@@ -6,6 +6,10 @@ header{
         display: inline-block;
     }
 
+    .menu-btn{
+        color: var(--c-secondary);
+    }
+
     a{
         text-decoration: none;
         color: var(--c-grey);
