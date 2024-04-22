@@ -9,6 +9,7 @@
             </div>
             <div class="col w-55 sm:w-100">
                 <div class="form">
+                    <?php // echo do_shortcode('[gravityform id="3" title="true" description="true" ajax="true"]'); ?>
                     <div class="title">
                         <h2>Get a free 1 Hour Consultation Now!</h2>
 

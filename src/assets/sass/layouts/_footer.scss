@@ -16,6 +16,10 @@ footer{
             font-size: rem(15);
             li{
                 margin-bottom: rem(12);
+                
+                &:last-child{
+                    margin-bottom: rem(0);
+                }
             }
         }
     }
@@ -32,7 +36,7 @@ footer{
         }
     }
 
-    .copyright{
+    .footer-bottom{
         font-size: rem(14);
     }
 }
