@@ -70,9 +70,11 @@
 				) );
 				?>
 				
-				<a href="#" class="menu-btn inline-flex align-center column hidden sm:visible" aria-label="menu">
+				<a href="#" class="menu-btn inline-flex align-center column hidden md:visible" aria-label="menu">
 					<i class="icomoon icon-hamburger"></i> 
 				</a>
+
+				<a href="#" class="btn btn-primary ml-40 sm:inline-flex md:hidden">Hire a developer</a>
 			</div>
 		</div>
 	</header>
