@@ -310,6 +310,7 @@ if ( ! function_exists( 'app_setup_theme' ) ) {
 		add_image_size( 'img_350x250', 350, 250, true );
 		add_image_size( 'img_450x235', 450, 235, true );
 
+		add_image_size( 'img_1200x862', 1200, 862, true );
 		add_image_size( 'img_1060x762', 1060, 762, true );
 		add_image_size( 'img_812x744', 812, 744, true );
 		add_image_size( 'img_1075x716', 1075, 716, true );
