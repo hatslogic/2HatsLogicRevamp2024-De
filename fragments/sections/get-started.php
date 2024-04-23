@@ -14,6 +14,8 @@
         <img src="<?php echo $get_started_image['sizes']['img_580x580']; ?>" loading="lazy" class="h-100 cover" alt="get-started" width="<?php echo $get_started_image['sizes']['img_580x580-width']; ?>" height="<?php echo $get_started_image['sizes']['img_580x580-height']; ?>">
     </picture>
     <?php endif; ?>
+
+    <?php if($form_shortcode): ?>
     <div class="flex align-center relative z-1">
         <div class="col w-50 sm:hidden"></div>
         <div class="col w-50 sm:w-100 p-80 sm:px-30 sm:py-60">
@@ -22,4 +24,5 @@
             </div>
         </div>
     </div>
+    <?php endif; ?>
 </section>
