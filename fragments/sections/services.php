@@ -9,16 +9,16 @@
                     <div class="title">
                         <?php if($sticky['headline']['sub_title']): ?>
                             <span class="headline c-primary font-bold">
-                                <?php echo esc_html($sticky['headline']['sub_title']); ?>
+                                <?php echo $sticky['headline']['sub_title']; ?>
                             </span>
                         <?php endif; ?>
                         <?php if($sticky['headline']['title']): ?>
-                            <h2><?php echo esc_html($sticky['headline']['title']); ?></h2>
+                            <h2><?php echo $sticky['headline']['title']; ?></h2>
                         <?php endif; ?>
                     </div>
                     <div class="content">
                         <?php if($sticky['content']): ?>
-                            <p><?php echo esc_html($sticky['content']); ?></p>
+                            <p><?php echo $sticky['content']; ?></p>
                         <?php endif; ?>
                         <?php if($sticky['link']): ?>
                             <a href="<?php echo $sticky['link']['url']; ?>" target="<?php echo ($sticky['link']['target'])? $sticky['link']['target'] : '_self'; ?>" aria-label="<?php echo $sticky['link']['title']; ?>" class="btn btn-primary-outline"><?php echo $sticky['link']['title']; ?></a>
@@ -37,7 +37,7 @@
                     <div class="service relative pt-150 <?php echo $classes; ?>">
                         <?php if($item['title']): ?>
                         <div class="title">
-                            <h3><?php echo esc_html($item['title']); ?></h3>
+                            <h3><?php echo $item['title']; ?></h3>
                         </div>
                         <?php endif; ?>
                         

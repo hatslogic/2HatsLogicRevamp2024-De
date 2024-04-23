@@ -19,6 +19,10 @@
 
         @include below($md){
             max-width: 100%;
+
+            br{
+                display: none;
+            }
         }
     }
     @include below($sm){
