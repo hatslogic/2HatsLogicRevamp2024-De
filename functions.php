@@ -335,6 +335,7 @@ function webp($url) {
  * Image Compression Adjustments in WordPress
 */
 
+add_filter( 'big_image_size_threshold', '__return_false' );
 add_filter('jpeg_quality', function($arg){return 100;});
 
 add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
