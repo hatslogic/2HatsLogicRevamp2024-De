@@ -22,7 +22,7 @@ const paths = {
         sass: {
             main: 'src/assets/sass/app.scss',
             plugins: 'src/assets/sass/plugins.scss',
-            ie: 'src/assets/sass/ie.scss'
+            wp: 'src/assets/sass/wp.scss'
         },
         js: {
             main: 'src/assets/js/main.js',
@@ -61,7 +61,7 @@ function compileCSS(src, outputFileName) {
         .pipe(sass({ outputStyle: 'compressed', importer: dartSass }).on('error', sass.logError))
         .pipe(gulpIf(!isProd, sourcemaps.write()))
         .pipe(concat(outputFileName))
-        .pipe(gulpIf(isProd, purgecss(
+        .pipe(gulpIf(isProd && outputFileName != 'wp.min.css', purgecss(
             { 
                 content: ['src/**/*.html', 'src/**/*.js'],
                 defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
@@ -122,7 +122,7 @@ const htmlTask = compileHTML;
 const cssTask = gulp.parallel(
     compileCSS.bind(null, paths.src.sass.plugins, 'plugins.min.css'),
     compileCSS.bind(null, paths.src.sass.main, 'app.min.css'),
-    compileCSS.bind(null, paths.src.sass.ie, 'ie.min.css')
+    compileCSS.bind(null, paths.src.sass.wp, 'wp.min.css')
 );
 const jsTask = gulp.parallel(
     compileJS.bind(null, paths.src.js.main, 'main.min.js')

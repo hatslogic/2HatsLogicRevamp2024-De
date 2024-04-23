@@ -49,34 +49,3 @@ input:-webkit-autofill:active{
     transition: background-color 5000s ease-in-out 0s;
     box-shadow: inset 0 0 0px 0px transparent;
 }
-
-.wpcf7-not-valid-tip{
-    font-size: rem(14);
-    margin: rem(10) 0;
-}
-
-.wpcf7-response-output{
-    padding: rem(10) rem(20) !important;
-    border: 0 !important;
-    margin: 0 !important;
-    margin-top: rem(30) !important;
-}
-
-.wpcf7 form.sent .wpcf7-response-output{
-    background: var(--c-success);
-}
-
-.wpcf7 form.invalid .wpcf7-response-output, 
-.wpcf7 form.unaccepted .wpcf7-response-output, 
-.wpcf7 form.payment-required .wpcf7-response-output {
-    background: var(--c-danger);
-}
-
-.wpcf7-form.sent .content{
-    display: none;
-}
-
-.wpcf7-spinner{
-    margin-left: rem(15);
-    top: rem(6);
-}
