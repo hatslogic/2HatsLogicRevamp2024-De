@@ -21,7 +21,7 @@
     <div class="flex align-center relative z-1">
         <div class="col w-50 sm:hidden"></div>
         <div class="col w-50 sm:w-100 p-80 sm:px-30 sm:py-60">
-            <div class="form">
+            <div class="form-wrap">
                 <?php echo do_shortcode($form_shortcode); ?>
             </div>
         </div>

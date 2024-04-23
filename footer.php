@@ -16,7 +16,7 @@
     <div class="footer-top py-80 flex nowrap justify-between sm:wrap xs:py-60">
       <div class="col w-60 sm:w-100">
         <div class="menu flex align-start justify-between sm:wrap sm:justify-start">
-          <div class="col sm:w-35 xs:w-100">
+          <div class="col xl:w-40 xs:w-100">
             <div class="menu-group mt-0">
               <a href="#" class="h4 font-bold">Services</a>
               <?php 
@@ -44,7 +44,7 @@
               ?>
             </div>
           </div>
-          <div class="col sm:w-35 xs:w-100">
+          <div class="col xl:w-40 xs:w-100">
             <div class="menu-group mt-0 xs:mt-40">
               <a href="#" class="h4 font-bold">Hire a Developer</a>
               <?php 
@@ -72,7 +72,7 @@
               ?>
             </div>
           </div>
-          <div class="col sm:w-30 xs:w-100">
+          <div class="col xl:w-20 xs:w-100">
             <div class="menu-group mt-0 xs:mt-40">
               <a href="#" class="h4 font-bold">Quick Links</a>
               <?php 

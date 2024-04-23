@@ -74,7 +74,7 @@
 					<i class="icomoon icon-hamburger"></i> 
 				</a>
 
-				<a href="#" class="btn btn-primary ml-40 sm:inline-flex md:hidden">Hire a developer</a>
+				<a href="#" class="btn btn-primary ml-40 xl:ml-30 sm:inline-flex md:hidden">Hire a developer</a>
 			</div>
 		</div>
 	</header>

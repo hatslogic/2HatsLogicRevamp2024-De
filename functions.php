@@ -349,7 +349,7 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 class MAIN_Menu_Walker extends Walker_Nav_Menu {
 	function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
 		$active_class = $item->current ? ' active' : '';
-		$output .= "<li class='ml-40 sm:ml-30" . $active_class . "'>";
+		$output .= "<li class='ml-40 xl:ml-30" . $active_class . "'>";
 
 		if ($item->url && $item->url != '#') {
 			$output .= '<a href="' . $item->url . '" aria-label="' . strtolower($item->title) . '">';

@@ -1,15 +1,13 @@
 <?php extract($section); ?>
 
 <section class="testimonials pt-100 pb-100 xs:pt-80 xs:pb-80 bg-light-grey">
-    <?php if($title): ?>
-    <div class="container">
-        <div class="title">
-            <h2><?php echo $title; ?></h2>
-        </div>
-    </div>
-    <?php endif; ?>
+    <div class="container extend">
+        <?php if($title): ?>
+            <div class="title">
+                <h2><?php echo $title; ?></h2>
+            </div>
+        <?php endif; ?>
 
-    <div class="container-fluid">
         <div class="content mt-80 gap-40 xs:mt-30">
             <?php if( $posts ): ?>
                 <div class="slider-wrapper">

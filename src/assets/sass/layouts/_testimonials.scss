@@ -3,7 +3,7 @@
         cursor: grab;
     }
     .hats-slider__slide{
-        min-width: 52vw;
+        // min-width: 52vw;
 
         @include below($md){
             width: 100%;
@@ -18,6 +18,24 @@
 }
 
 .testimonial{
+    width: rem(860);
+
+    @include below($xxl){
+        width: rem(680);
+    }
+
+    @include below($lg){
+        width: rem(560);
+    }
+
+    @include below($sm){
+        width: rem(420);
+    }
+
+    @include below($xs){
+        width: 100%;
+    }
+
     .top{
         img{
             max-width: rem(50);

@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: rem(100);
+  scroll-padding-top: rem(90);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -89,69 +89,82 @@ p, ul, ol{
   line-height: 1.4;
 }
 
+// Container
+$container-max-width: 1400px;
+$container-max-width-xxl: 1200px;
+$container-max-width-xl: 1024px;
+$container-max-width-lg: 991px;
+$container-max-width-md: 768px;
+$container-max-width-sm: 100%;
+
 .container {
   padding-left: rem(20);
   padding-right: rem(20);
   margin: auto;
-  max-width: 75%;
+  max-width: $container-max-width;
 
   @include below($xxl){
-    max-width: 85%;
+    max-width: $container-max-width-xxl;
   }
 
-  @include below($lg){
-    max-width: 90%;
+  @include below($xl){
+    max-width: $container-max-width-xl;
   }
 
   @include below($md){
-    max-width: 100%;
+    max-width: $container-max-width-md;
     padding-left: rem(30);
     padding-right: rem(30);
   }
-}
 
-.container-fluid {
-  padding-left: rem(20);
-  padding-right: rem(0);
-  margin-left: auto;
-  margin-right: 0;
-  max-width: calc(100% - 12.5%);
-
-  @include below($xxl){
-    max-width: calc(100% - 8%);
+  @include below($xs){
+    max-width: $container-max-width-sm;
   }
 
-  @include below($lg){
-    max-width: calc(100% - 5.5%);
-  }
+  &.extend {
+    .content{
+      width: calc(($container-max-width - rem(30)) + (100vw - $container-max-width) / 2);
 
-  @include below($md){
-    padding-left: rem(30);
-    padding-right: rem(30);
-    max-width: 100%;
+      @include below($xxl){
+        width: calc(($container-max-width-xxl - rem(30)) + (100vw - $container-max-width-xxl) / 2);
+      }
+
+      @include below($xl){
+        width: calc(($container-max-width-xl - rem(30)) + (100vw - $container-max-width-xl) / 2);
+      }
+
+      @include below($lg){
+        width: calc(($container-max-width-lg - rem(30)) + (100vw - $container-max-width-lg) / 2);
+      }
+
+      @include below($md){
+        width: calc(($container-max-width-md - rem(30)) + (100vw - $container-max-width-md) / 2);
+      }
+
+      @include below($sm){
+        width: $container-max-width-sm;
+      }
+    }
   }
 }
 
 .container-full{
   padding-left: rem(20);
   padding-right: rem(20);
-  margin-left: auto;
+  margin-left: 0;
   margin-right: 0;
   max-width: 100%;
 
   @include below($md){
     padding-left: rem(30);
     padding-right: rem(30);
-    max-width: 100%;
   }
 }
 
-// 94%
 .transition{
   transition: 0.15s all ease-in-out;
   transform-origin: center center;
 }
-
 
 a,
 .btn,

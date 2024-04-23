@@ -2,7 +2,7 @@
 
 <section class="about pt-100 pb-100 xs:pt-80 xs:pb-80">
     <div class="container">
-        <div class="content flex xs:wrap align-center">
+        <div class="content flex sm:wrap align-center">
             <?php if($image): ?>
             <div class="col w-100">
                 <picture>
@@ -12,7 +12,7 @@
                 </picture>
             </div>
             <?php endif; ?>
-            <div class="col w-100 ml-120 xxl:ml-80 xl:ml-60 xs:ml-0 xs:mt-40">
+            <div class="col w-100 ml-120 xxl:ml-80 xl:ml-60 sm:ml-0 sm:mt-40">
                 <?php if($headline): ?>
                 <div class="title">
                     <span class="headline c-primary font-bold"><?php echo $headline['sub_title']; ?></span>
