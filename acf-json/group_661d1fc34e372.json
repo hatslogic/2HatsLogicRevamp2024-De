@@ -1,6 +1,6 @@
 {
     "key": "group_661d1fc34e372",
-    "title": "Field Group",
+    "title": "Page Builder",
     "fields": [
         {
             "key": "field_661d1fc3e4a36",
@@ -1029,7 +1029,53 @@
                     "name": "get-started",
                     "label": "Get started",
                     "display": "table",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_66274cf780b4a",
+                            "label": "Get started Image",
+                            "name": "get_started_image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_66274d1380b4b",
+                            "label": "Form Shortcode",
+                            "name": "form_shortcode",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 }

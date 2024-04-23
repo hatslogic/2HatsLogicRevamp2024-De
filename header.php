@@ -52,7 +52,7 @@
 
 	<header class="header z-10 sticky top-0 w-100 h-auto md:bb-0 bg-white pt-20 pb-20 md:pb-0 md:pt-30 md:relative">
 		<div class="container">
-			<div class="header-inner flex w-100">
+			<div class="header-inner flex w-100 justify-between align-center">
 				<a href="<?php echo home_url(); ?>" class="brand" aria-label="<?php echo get_bloginfo('name'); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/brand/logo-wide.svg"
 						alt="<?php echo get_bloginfo('name'); ?>" width="106" height="48">
@@ -70,40 +70,26 @@
 				) );
 				?>
 				
-				<a href="#" class="btn btn-primary ml-40 sm:inline-flex md:hidden">Hire a developer</a>
-				<a href="#" class="btn btn-secondary ml-40 hidden md:ml-auto md:mr-0">Get a free quote</a>
+				<a href="#" class="menu-btn inline-flex align-center column hidden sm:visible" aria-label="menu">
+					<i class="icomoon icon-hamburger"></i> 
+				</a>
 			</div>
 		</div>
 	</header>
 
 	<div class="sticky-menu show transition z-10 hidden md:block w-100 bg-white fixed bottom-0 left-0 right-0">
 		<ul class="no-bullets flex align-center justify-center">
-			<li> <a href="#" class="menu-btn px-10 py-15 inline-flex align-center column" aria-label="menu">
-					<i class="icomoon icon-hamburger"></i>
-					<span>Menu</span>
+			<li class="h-100 w-100">
+				<a href="#get-started" class="menu-btn h-100 bg-primary px-30 py-10 w-100 inline-flex align-center row" aria-label="consultation">
+					<i class="icomoon icon-consultation"></i> 
+					<span class="ml-10">Get a free Consultation</span>
 				</a>
-
 			</li>
-			<li class="b-0 bl-0 solid bc-hash"> <a href="#" class="menu-btn px-10 py-15 inline-flex align-center column"
-					aria-label="consultation">
-					<i class="icomoon icon-consultation"></i>
-					<span>Consultation</span>
+			<li class="h-100 w-100">
+				<a href="#" class="menu-btn h-100 bg-secondary px-30 py-10 w-100 inline-flex align-center row" aria-label="agency">
+					<i class="icomoon icon-agency"></i> 
+					<span class="ml-10">For Agency Requests</span>
 				</a>
-
-			</li>
-			<li class="b-0 bl-0 solid bc-hash"> <a href="#" class="menu-btn px-10 py-15 inline-flex align-center column"
-					aria-label="agency">
-					<i class="icomoon icon-agency"></i>
-					<span>For agency</span>
-				</a>
-
-			</li>
-			<li class="b-0 bl-0 solid bc-hash"> <a href="#" class="menu-btn px-10 py-15 inline-flex align-center column"
-					aria-label="contact">
-					<i class="icomoon icon-mail"></i>
-					<span>Contact</span>
-				</a>
-
 			</li>
 		</ul>
 	</div>

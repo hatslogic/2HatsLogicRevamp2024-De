@@ -309,6 +309,12 @@ if ( ! function_exists( 'app_setup_theme' ) ) {
 		add_image_size( 'img_304x218', 304, 218, true );
 		add_image_size( 'img_350x250', 350, 250, true );
 		add_image_size( 'img_450x235', 450, 235, true );
+
+		add_image_size( 'img_960x690', 960, 690, true );
+		add_image_size( 'img_712x652', 712, 922, true );
+		add_image_size( 'img_975x650', 975, 650, true );
+		add_image_size( 'img_765x510', 765, 510, true );
+		add_image_size( 'img_580x580', 580, 580, true );
 	}
 }
 
@@ -329,7 +335,7 @@ function webp($url) {
  * Image Compression Adjustments in WordPress
 */
 
-add_filter('jpeg_quality', function($arg){return 90;});
+add_filter('jpeg_quality', function($arg){return 100;});
 
 add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
 function wps_deregister_styles() {
