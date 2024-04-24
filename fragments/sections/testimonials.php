@@ -37,7 +37,7 @@
                                     <?php endif; ?>
                                 </div>
                                 <?php if($quote): ?>
-                                    <blockquote class="m-0 mt-15"><?php echo $quote; ?></blockquote>
+                                    <blockquote class="font-light m-0 mt-15"><?php echo $quote; ?></blockquote>
                                 <?php endif; ?>
                                 <?php if($name || $designation): ?>
                                 <div class="author mt-30">

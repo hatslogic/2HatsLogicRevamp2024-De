@@ -55,8 +55,8 @@
                 wp_reset_postdata();
                 ?>
             </div>
-            <div class="btn-group center mt-80 xs:mt-40"> <a href="#" class="btn btn-primary">view all</a>
-
+            <div class="btn-group center mt-80 xs:mt-40">
+                <a href="#" class="btn btn-primary">view all</a>
             </div>
         </div>
         <?php endif; ?>
