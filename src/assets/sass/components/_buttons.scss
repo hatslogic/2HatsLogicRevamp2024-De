@@ -83,6 +83,15 @@
     &:hover{
         box-shadow: 6px 10px 12.5px 0px rgba(0, 0, 0, 0.102);
     }
+
+    &.close{
+        height: rem(55);
+        width: rem(55);
+        min-width: auto;
+        min-height: auto;
+        font-size: rem(30);
+        padding: rem(10);
+    } 
 }
 
 .link{
@@ -108,7 +117,7 @@
         &:hover{
             color: var(--c-primary);
         }
-    }       
+    }      
 }
 
 .btn-group{

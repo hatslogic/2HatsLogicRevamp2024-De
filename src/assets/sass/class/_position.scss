@@ -18,32 +18,16 @@
     inset: 0;
 }
 
-.top-0{
-    top: 0;
-}
-
 .top-auto{
     top: auto;
-}
-
-.bottom-0{
-    bottom: 0;
 }
 
 .bottom-auto{
     bottom: auto;
 }
 
-.left-0{
-    left: 0;
-}
-
 .left-auto{
     left: auto;
-}
-
-.right-0{
-    right: 0;
 }
 
 .right-auto{
@@ -197,6 +181,84 @@
         right: 0;
     }
 }
+
+
+// absolute
+.xxl\:absolute {
+    @include below($xxl){
+        position: absolute;
+    }
+}
+
+.xl\:absolute {
+    @include below($xl){
+        position: absolute;
+    }
+}
+
+.lg\:absolute {
+    @include below($lg){
+        position: absolute;
+    }
+}
+
+.md\:absolute {
+    @include below($md){
+        position: absolute;
+    }
+}
+
+.sm\:absolute {
+    @include below($sm){
+        position: absolute;
+    }
+}
+
+.xs\:absolute {
+    @include below($xs){
+        position: absolute;
+    }
+}
+
+
+
+// fixed
+.xxl\:fixed {
+    @include below($xxl){
+        position: fixed;
+    }
+}
+
+.xl\:fixed {
+    @include below($xl){
+        position: fixed;
+    }
+}
+
+.lg\:fixed {
+    @include below($lg){
+        position: fixed;
+    }
+}
+
+.md\:fixed {
+    @include below($md){
+        position: fixed;
+    }
+}
+
+.sm\:fixed {
+    @include below($sm){
+        position: fixed;
+    }
+}
+
+.xs\:fixed {
+    @include below($xs){
+        position: fixed;
+    }
+}
+
 
 // relative
 .xxl\:relative {
