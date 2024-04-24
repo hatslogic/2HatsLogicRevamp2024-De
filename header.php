@@ -51,7 +51,7 @@
 	</div>
 
 	<header class="header z-10 sticky top-0 w-100 h-auto md:bb-0 bg-white pt-20 pb-20 md:pb-0 md:pt-30 md:relative">
-		<div class="container">
+		<div class="container-wide">
 			<div class="header-inner flex w-100 justify-between align-center">
 				<a href="<?php echo home_url(); ?>" class="brand" aria-label="<?php echo get_bloginfo('name'); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/brand/logo-wide.svg"

@@ -43,7 +43,7 @@
                                 <h3 class="h4 transition font-bold"><?php echo $title; ?></h3>
                             <?php endif; ?>
                             <?php if($description): ?>
-                                <p><?php echo $description; ?></p>
+                                <p class="font-light"><?php echo $description; ?></p>
                             <?php endif; ?>
                         </div>
                     </a>
