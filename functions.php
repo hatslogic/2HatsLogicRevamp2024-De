@@ -258,7 +258,7 @@ if ( ! function_exists( 'app_setup_theme' ) ) {
 		include_once( APP_THEME_DIR . 'includes/acf.php' );
 
 		// Custom Blocks
-		include_once( APP_THEME_DIR . 'options/acf-blocks.php' );
+		// include_once( APP_THEME_DIR . 'options/acf-blocks.php' );
 
 		// Custom Post Types
 		include_once( APP_THEME_DIR . 'options/post-types.php' );
@@ -309,6 +309,7 @@ if ( ! function_exists( 'app_setup_theme' ) ) {
 		add_image_size( 'img_304x218', 304, 218, true );
 		add_image_size( 'img_350x250', 350, 250, true );
 		add_image_size( 'img_450x235', 450, 235, true );
+		add_image_size( 'img_652x874', 652, 874, true );
 
 		add_image_size( 'img_1200x862', 1200, 862, true );
 		add_image_size( 'img_1060x762', 1060, 762, true );
@@ -316,6 +317,7 @@ if ( ! function_exists( 'app_setup_theme' ) ) {
 		add_image_size( 'img_1075x716', 1075, 716, true );
 		add_image_size( 'img_865x576', 865, 576, true );
 		add_image_size( 'img_580x580', 580, 580, true );
+		add_image_size( 'img_580x540', 580, 540, true );
 	}
 }
 

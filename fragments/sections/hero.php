@@ -22,7 +22,7 @@
             <p class="mt-50 sm:mt-30"> <?php echo ($description ? $description : ''); ?> <br> <?php echo ($links ? $links : ''); ?> </p>
 
             <div class="btn-group flex align-center mt-60 md:mt-40 md:wrap md:column md:align-start">
-                <a href="" aria-label="get a quote" class="btn btn-secondary">Get a Free Quote</a>
+                <button onclick="openModal('free-consultation')" aria-label="get a quote" class="btn btn-secondary">Get a Free Quote</button>
 
                 <?php if($rating) : ?>
                 <div class="rating flex align-center row ml-60 md:ml-0 md:mt-40 sm:column sm:align-start">
