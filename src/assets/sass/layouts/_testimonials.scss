@@ -18,7 +18,11 @@
 }
 
 .testimonial{
-    width: rem(860);
+    width: rem(770);
+
+    @include above($xxxl){
+        width: rem(740);
+    }
 
     @include below($xxl){
         width: rem(680);

@@ -1,8 +1,11 @@
 header{
-    box-shadow: 1px 1px 8px rgba(0,0,0,.05);
 
-    @include below($sm){
-        box-shadow: none;
+    &.scrolled{
+        box-shadow: 1px 1px 8px rgba(0,0,0,.05);
+
+        @include below($md){
+            box-shadow: none;
+        }   
     }
     
     .brand, .brand img{

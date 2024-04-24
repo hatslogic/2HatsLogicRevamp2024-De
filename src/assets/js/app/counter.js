@@ -9,7 +9,7 @@ const options = {
 
 const animationDuration = 800; // Overall animation duration (all counters)
 
-const observer = new IntersectionObserver((entries, observer) => {
+const counterObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const counter = entry.target;
@@ -43,4 +43,4 @@ function animateCountUp(element, target, startTime, endTime) {
     }
 }
 
-counters.forEach(counter => observer.observe(counter));
+counters.forEach(counter => counterObserver.observe(counter));
