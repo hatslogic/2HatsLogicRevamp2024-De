@@ -214,7 +214,7 @@ function app_excerpt_more() {
 }
 
 function app_excerpt_length() {
-	return 10;
+	return 55;
 }
 
 
@@ -396,4 +396,11 @@ class FOOTER_Menu_Walker extends Walker_Nav_Menu {
 			$output .= '<i class="caret fa fa-angle-down"></i>';
 		}
 	}
+}
+
+function truncate_text($text, $max = 50, $append = '...') {
+	if (strlen($text) <= $max) return $text;
+	$return = substr($text, 0, $max);
+	if (strpos($text, ' ') === false) return $return . $append;
+	return preg_replace('/\w+$/', '', $return) . $append;
 }
