@@ -29,15 +29,17 @@ textarea{
     }
 }
 
+input::placeholder, textarea::placeholder, select::placeholder {
+    color: var(--c-grey);
+}
+
 .bg-dark-grey, .bg-dark-primary{
     .form-control{
         color: var(--c-white);
     }
-}
-
-::placeholder{
-    opacity: 1;
-    color: var(--c-white);
+    input::placeholder, textarea::placeholder, select::placeholder {
+        color: var(--c-white);
+    }
 }
 
 input:-webkit-autofill,

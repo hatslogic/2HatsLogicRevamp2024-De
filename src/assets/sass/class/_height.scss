@@ -573,3 +573,39 @@
         height: 100%;
     }
 }
+
+@include below($xxl) {
+    .xxl\:h-auto{
+        height: auto;
+    }
+}
+
+@include below($xl) {
+    .xl\:h-auto{
+        height: auto;
+    }
+}
+
+@include below($lg) {
+    .lg\:h-auto{
+        height: auto;
+    }
+}
+
+@include below($md) {
+    .md\:h-auto{
+        height: auto;
+    }
+}
+
+@include below($sm) {
+    .sm\:h-auto{
+        height: auto;
+    }
+}
+
+@include below($xs) {
+    .xs\:h-auto{
+        height: auto;
+    }
+}

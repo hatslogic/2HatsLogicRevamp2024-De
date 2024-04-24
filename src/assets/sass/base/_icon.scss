@@ -23,6 +23,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-close:before {
+  content: "\e90d";
+}
+
 .icon-agency:before {
   content: "\e90b";
 }
