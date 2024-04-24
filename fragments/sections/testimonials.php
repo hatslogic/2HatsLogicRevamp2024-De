@@ -22,7 +22,7 @@
                             $quote = get_field('quote', $post->ID);
                         ?>
                         <div class="hats-slider__slide">
-                            <div class="testimonial b-0 br-2 solid bc-hash pr-120 mr-120 xxl:pr-80 xxl:mr-80 xl:pr-60 xl:mr-60 xs:pr-0 xs:mr-0 xs:br-0">
+                            <div class="testimonial h-100 b-0 br-2 solid bc-hash pr-120 mr-120 xxl:pr-80 xxl:mr-80 xl:pr-60 xl:mr-60 xs:pr-0 xs:mr-0 xs:br-0">
                                 <div class="top flex justify-between align-center bg-light-grey">
                                     <?php if($brand): ?>
                                         <img class="order-2" src="<?php echo $brand['url']; ?>" alt="<?php echo $brand['alt']; ?>" loading="lazy" width="100" height="100">
