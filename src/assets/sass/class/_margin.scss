@@ -103,6 +103,19 @@ $sides: (
   }
 }
 
+
+@for $space from 1 through 9 {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: rem($space);
+    }
+    .-m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: rem(-$space);
+    }
+  }
+}
+
+
 @each $space in $spaceamounts {
   @each $side in $sides {
     .xxl\:m#{str-slice($side, 0, 1)}-#{$space} {
@@ -264,3 +277,7 @@ $sides: (
     margin-right: auto;
   }
 }
+
+
+
+
