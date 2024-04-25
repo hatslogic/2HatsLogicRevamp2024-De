@@ -55,7 +55,7 @@
 			<div class="header-inner flex w-100 justify-between align-center">
 				<a href="<?php echo home_url(); ?>" class="brand" aria-label="<?php echo get_bloginfo('name'); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/brand/logo-wide.svg"
-						alt="<?php echo get_bloginfo('name'); ?>" width="106" height="48">
+						alt="<?php echo get_bloginfo('name'); ?>" class="w-100" width="106" height="48">
 				</a>
 
 				<?php 

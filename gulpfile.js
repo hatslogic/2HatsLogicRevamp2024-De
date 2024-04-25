@@ -20,7 +20,8 @@ const paths = {
     src: {
         html: 'src/*.html',
         sass: {
-            main: 'src/assets/sass/app.scss',
+            app: 'src/assets/sass/app.scss',
+            main: 'src/assets/sass/main.scss',
             plugins: 'src/assets/sass/plugins.scss',
             wp: 'src/assets/sass/wp.scss'
         },
@@ -120,8 +121,9 @@ function cleanDist() {
 // Define tasks
 const htmlTask = compileHTML;
 const cssTask = gulp.parallel(
-    compileCSS.bind(null, paths.src.sass.plugins, 'plugins.min.css'),
-    compileCSS.bind(null, paths.src.sass.main, 'app.min.css'),
+    // compileCSS.bind(null, paths.src.sass.plugins, 'plugins.min.css'),
+    // compileCSS.bind(null, paths.src.sass.app, 'app.min.css'),
+    compileCSS.bind(null, paths.src.sass.main, 'main.min.css'),
     compileCSS.bind(null, paths.src.sass.wp, 'wp.min.css')
 );
 const jsTask = gulp.parallel(

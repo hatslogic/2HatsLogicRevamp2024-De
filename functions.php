@@ -140,8 +140,9 @@ add_action( 'widgets_init', 'hatslogic_widgets_init' );
  */
 function hatslogic_scripts() {
 	wp_enqueue_style( 'hatslogic-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style( 'hatslogic-plugins', get_template_directory_uri() . '/dist/assets/css/plugins.min.css', array(), _S_VERSION );
-	wp_enqueue_style( 'hatslogic-app-main', get_template_directory_uri() . '/dist/assets/css/app.min.css', array(), _S_VERSION );
+	// wp_enqueue_style( 'hatslogic-plugins', get_template_directory_uri() . '/dist/assets/css/plugins.min.css', array(), _S_VERSION );
+	// wp_enqueue_style( 'hatslogic-app-app', get_template_directory_uri() . '/dist/assets/css/app.min.css', array(), _S_VERSION );
+	wp_enqueue_style( 'hatslogic-app-main', get_template_directory_uri() . '/dist/assets/css/main.min.css', array(), _S_VERSION );
 	wp_enqueue_style( 'hatslogic-wp-main', get_template_directory_uri() . '/dist/assets/css/wp.min.css', array(), _S_VERSION );
 	wp_enqueue_script( 'hatslogic-main', get_template_directory_uri() . '/dist/assets/js/main.min.js', array(), _S_VERSION, array(
         'in_footer' => true,
