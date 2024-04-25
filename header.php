@@ -9,6 +9,7 @@
  * @package 2HatsLogic
  */
 
+  $get_dir = $get_dir;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -23,23 +24,24 @@
 	<meta property="og:description" content="Experience excellence in Web and E-Commerce development services with 2HatsLogic. Our dedicated programmers deliver top-notch solutions for your success.">
 	<meta property="og:url" content="https://www.2hatslogic.com/">
 	<meta property="og:site_name" content="2Hats Logic Solutions - Laravel, Shopware, Magento experts, UX consultants">
-	<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/dist/assets/img/2hats-thumbnail.png">
+	<meta property="og:image" content="<?php echo $get_dir; ?>/dist/assets/img/2hats-thumbnail.png">
 	<meta property="og:image:width" content="484">
 	<meta property="og:image:height" content="283">
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:description" content="Experience excellence in Web and E-Commerce development services with 2HatsLogic. Our dedicated programmers deliver top-notch solutions for your success.">
 	<meta name="twitter:title" content="Custom Web &amp; E-Commerce Development Services | 2Hats Logic">
-	<meta name="twitter:image" content="<?php echo get_template_directory_uri(); ?>/dist/assets/img/2hats-thumbnail.png">
-	<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/dist/assets/img/cropped-favicon-270x270.png">
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/cropped-favicon-32x32.png" sizes="32x32">
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/cropped-favicon-192x192.png" sizes="192x192">
-	<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/cropped-favicon-180x180.png">
-	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Medium.woff2" fetchpriority="high" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Regular.woff2" fetchpriority="high" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Bold.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/background/world-map-dot.svg" fetchpriority="high" as="image">
-	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/fonts/2HatsIcons/icomoon.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/brand/logo-wide.svg" as="image">
+	<meta name="twitter:image" content="<?php echo $get_dir; ?>/dist/assets/img/2hats-thumbnail.png">
+	<meta name="msapplication-TileImage" content="<?php echo $get_dir; ?>/dist/assets/img/cropped-favicon-270x270.png">
+	<link rel="icon" href="<?php echo $get_dir; ?>/dist/assets/img/cropped-favicon-32x32.png" sizes="32x32">
+	<link rel="icon" href="<?php echo $get_dir; ?>/dist/assets/img/cropped-favicon-192x192.png" sizes="192x192">
+	<link rel="apple-touch-icon-precomposed" href="<?php echo $get_dir; ?>/dist/assets/img/cropped-favicon-180x180.png">
+	<link rel="preload" href="<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Medium.woff2" fetchpriority="high" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Regular.woff2" fetchpriority="high" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Bold.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="<?php echo $get_dir; ?>/dist/assets/img/background/world-map-dot.svg" fetchpriority="high" as="image">
+	<link rel="preload" href="<?php echo $get_dir; ?>/dist/assets/fonts/2HatsIcons/icomoon.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="<?php echo $get_dir; ?>/dist/assets/img/brand/logo-wide.svg" as="image">
+	<style>@font-face {font-family: "TTFirsNeueTrl-Thin";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Thin.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Thin.woff") format("woff");font-display: swap }@font-face {font-family: "TTFirsNeueTrl-Medium";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Medium.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Medium.woff") format("woff");font-display: swap }@font-face {font-family: "BasisGrotesquePro-Light";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Light.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Light.woff") format("woff");font-display: swap }@font-face {font-family: "BasisGrotesquePro-Regular";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Regular.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Regular.woff") format("woff");font-display: swap }@font-face {font-family: "BasisGrotesquePro-Bold";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Bold.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Bold.woff") format("woff");font-display: swap }@font-face {font-family: "PTSerif-Regular";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/PTSerif/PTSerif-Regular.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/PTSerif/PTSerif-Regular.woff") format("woff");font-display: swap }@font-face {font-family: 'icomoon';src: url('assets/fonts/2HatsIcons/icomoon.woff2') format('woff2'), url('assets/fonts/2HatsIcons/icomoon.woff') format('woff');font-weight: normal;font-style: normal;font-display: block;}</style>
 	<?php wp_head(); ?>
 </head>
 
@@ -54,7 +56,7 @@
 		<div class="container-wide">
 			<div class="header-inner flex w-100 justify-between align-center">
 				<a href="<?php echo home_url(); ?>" class="brand" aria-label="<?php echo get_bloginfo('name'); ?>">
-					<img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/brand/logo-wide.svg"
+					<img src="<?php echo $get_dir; ?>/dist/assets/img/brand/logo-wide.svg"
 						alt="<?php echo get_bloginfo('name'); ?>" class="w-100" width="106" height="48">
 				</a>
 
