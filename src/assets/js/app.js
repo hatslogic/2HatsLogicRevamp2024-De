@@ -1,5 +1,9 @@
 //=require app/base.js
+//=require app/hero.js
+//=require app/progress.js
+//=require app/header.js
+//=require app/sticky.js
+//=require app/marquee.js
 //=require app/counter.js
 //=require app/testimonials.js
-//=require app/hero.js
 //=require app/modal.js

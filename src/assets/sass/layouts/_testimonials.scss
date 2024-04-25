@@ -18,7 +18,11 @@
 }
 
 .testimonial{
-    width: rem(860);
+    width: rem(770);
+
+    @include above($xxxl){
+        width: rem(740);
+    }
 
     @include below($xxl){
         width: rem(680);
@@ -51,7 +55,6 @@
     blockquote{
         font-size: rem(24);
         line-height: 1.25;
-        font-family: var(--font-light);
 
         @include below($sm) {
             font-size: rem(18);
@@ -61,5 +64,6 @@
 
     .designation{
         font-size: rem(15);
+        line-height: 1.6;
     }
 }

@@ -40,10 +40,10 @@
                         </picture>
                         <div class="info mt-30 xs:pl-20 xs:pr-20">
                             <?php if($title): ?>
-                                <h3 class="h4 transition font-bold"><?php echo $title; ?></h3>
+                                <h3 class="h5 transition font-bold"><?php echo truncate_text($title, 60, '...'); ?></h3>
                             <?php endif; ?>
                             <?php if($description): ?>
-                                <p><?php echo $description; ?></p>
+                                <p class="font-light"><?php echo truncate_text($description, 90, '...'); ?></p>
                             <?php endif; ?>
                         </div>
                     </a>

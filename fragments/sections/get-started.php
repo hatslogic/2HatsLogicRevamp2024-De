@@ -13,7 +13,7 @@
         <source media="(min-width: 1024px)" srcset="<?php echo $get_started_image['sizes']['img_1075x716']; ?>" type="<?php echo $get_started_image['mime_type']; ?>">
         <source media="(min-width: 991px)" srcset="<?php echo webp($get_started_image['sizes']['img_865x576']); ?>" type="image/webp">
         <source media="(min-width: 991px)" srcset="<?php echo $get_started_image['sizes']['img_865x576']; ?>" type="<?php echo $get_started_image['mime_type']; ?>">
-        <img src="<?php echo $get_started_image['sizes']['img_580x580']; ?>" loading="lazy" class="h-100 cover" alt="get-started" width="<?php echo $get_started_image['sizes']['img_580x580-width']; ?>" height="<?php echo $get_started_image['sizes']['img_580x580-height']; ?>">
+        <img src="<?php echo ($get_started_image_mobile['sizes']['img_580x580']) ? $get_started_image_mobile['sizes']['img_580x580'] : $get_started_image['sizes']['img_580x580']; ?>" loading="lazy" class="h-100 cover" alt="get-started" width="<?php echo $get_started_image['sizes']['img_580x580-width']; ?>" height="<?php echo $get_started_image['sizes']['img_580x580-height']; ?>">
     </picture>
     <?php endif; ?>
 

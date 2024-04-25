@@ -43,9 +43,9 @@
                         <div class="info mt-20 xs:pl-20 xs:pr-20">
                             <h3 class="h5 transition font-regular">
                                 <?php if($title): ?>
-                                <strong class="transition font-bold"><?php echo $title; ?></strong>
+                                <strong class="transition font-bold"><?php echo truncate_text($title, 60, '...'); ?></strong>
                                 <?php endif; ?>
-                                <?php echo ($client_location) ? ' - ' . $description : ''; ?>
+                                <?php echo ($description) ? '- ' . truncate_text($description, 90) : ''; ?>
                             </h3>
                         </div>
                     </a>
@@ -55,8 +55,8 @@
                 wp_reset_postdata();
                 ?>
             </div>
-            <div class="btn-group center mt-80 xs:mt-40"> <a href="#" class="btn btn-primary">view all</a>
-
+            <div class="btn-group center mt-80 xs:mt-40">
+                <a href="#" class="btn btn-primary">view all</a>
             </div>
         </div>
         <?php endif; ?>

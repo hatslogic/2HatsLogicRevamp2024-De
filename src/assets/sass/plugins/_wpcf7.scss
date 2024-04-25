@@ -1,6 +1,6 @@
 .wpcf7-not-valid-tip{
     font-size: rem(14);
-    margin: rem(10) 0;
+    margin-top: rem(5);
 }
 
 .wpcf7-response-output{
@@ -8,6 +8,8 @@
     border: 0 !important;
     margin: 0 !important;
     margin-top: rem(30) !important;
+    color: var(--c-white);
+    font-size: rem(14);
 }
 
 .wpcf7 form.sent .wpcf7-response-output{
