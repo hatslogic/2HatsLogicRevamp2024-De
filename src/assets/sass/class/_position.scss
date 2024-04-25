@@ -1,575 +1,229 @@
-.fixed{
-    position: fixed;
-}
-
-.absolute{
-    position: absolute;
-}
-
-.relative{
-    position: relative;
-}
-
-.sticky{
-    position: sticky;
-}
-
-.inset-0{
+.inset-0 {
     inset: 0;
 }
 
-.top-auto{
-    top: auto;
-}
-
-.bottom-auto{
-    bottom: auto;
-}
-
-.left-auto{
-    left: auto;
-}
-
-.right-auto{
-    right: auto;
-}
-
-.xxl\:top-0 {
-    @include below($xxl){
-        top: 0;
-    }
-}
-
-.xl\:top-0 {
-    @include below($xl){
-        top: 0;
-    }
-}
-
-.lg\:top-0 {
-    @include below($lg){
-        top: 0;
-    }
-}
-
-.md\:top-0 {
-    @include below($md){
-        top: 0;
-    }
-}
-
-.sm\:top-0 {
-    @include below($sm){
-        top: 0;
-    }
-}
-
-.xs\:top-0 {
-    @include below($xs){
-        top: 0;
-    }
-}
-
-
-// bottom
-.xxl\:bottom-0 {
-    @include below($xxl){
-        bottom: 0;
-    }
-}
-
-.xl\:bottom-0 {
-    @include below($xl){
-        bottom: 0;
-    }
-}
-
-.lg\:bottom-0 {
-    @include below($lg){
-        bottom: 0;
-    }
-}
-
-.md\:bottom-0 {
-    @include below($md){
-        bottom: 0;
-    }
-}
-
-.sm\:bottom-0 {
-    @include below($sm){
-        bottom: 0;
-    }
-}
-
-.xs\:bottom-0 {
-    @include below($xs){
-        bottom: 0;
-    }
-}
-
-// left
-.xxl\:left-0 {
-    @include below($xxl){
-        left: 0;
-    }
-}
-
-.xl\:left-0 {
-    @include below($xl){
-        left: 0;
-    }
-}
-
-.lg\:left-0 {
-    @include below($lg){
-        left: 0;
-    }
-}
-
-.md\:left-0 {
-    @include below($md){
-        left: 0;
-    }
-}
-
-.sm\:left-0 {
-    @include below($sm){
-        left: 0;
-    }
-}
-
-.xs\:left-0 {
-    @include below($xs){
-        left: 0;
-    }
-}
-
-// right
-.xxl\:right-0 {
-    @include below($xxl){
-        right: 0;
-    }
-}
-
-.xl\:right-0 {
-    @include below($xl){
-        right: 0;
-    }
-}
-
-.lg\:right-0 {
-    @include below($lg){
-        right: 0;
-    }
-}
-
-.md\:right-0 {
-    @include below($md){
-        right: 0;
-    }
-}
-
-.sm\:right-0 {
-    @include below($sm){
-        right: 0;
-    }
-}
-
-.xs\:right-0 {
-    @include below($xs){
-        right: 0;
-    }
-}
-
-
-// absolute
-.xxl\:absolute {
-    @include below($xxl){
-        position: absolute;
-    }
-}
-
-.xl\:absolute {
-    @include below($xl){
-        position: absolute;
-    }
-}
-
-.lg\:absolute {
-    @include below($lg){
-        position: absolute;
-    }
-}
-
-.md\:absolute {
-    @include below($md){
-        position: absolute;
-    }
-}
-
-.sm\:absolute {
-    @include below($sm){
-        position: absolute;
-    }
-}
-
-.xs\:absolute {
-    @include below($xs){
-        position: absolute;
-    }
-}
-
-
-
-// fixed
-.xxl\:fixed {
-    @include below($xxl){
-        position: fixed;
-    }
-}
-
-.xl\:fixed {
-    @include below($xl){
-        position: fixed;
-    }
-}
-
-.lg\:fixed {
-    @include below($lg){
-        position: fixed;
-    }
-}
-
-.md\:fixed {
-    @include below($md){
-        position: fixed;
-    }
-}
-
-.sm\:fixed {
-    @include below($sm){
-        position: fixed;
-    }
-}
-
-.xs\:fixed {
-    @include below($xs){
-        position: fixed;
-    }
-}
-
-
-// relative
-.xxl\:relative {
-    @include below($xxl){
-        position: relative;
-    }
-}
-
-.xl\:relative {
-    @include below($xl){
-        position: relative;
-    }
-}
-
-.lg\:relative {
-    @include below($lg){
-        position: relative;
-    }
-}
-
-.md\:relative {
-    @include below($md){
-        position: relative;
-    }
-}
-
-.sm\:relative {
-    @include below($sm){
-        position: relative;
-    }
-}
-
-.xs\:relative {
-    @include below($xs){
-        position: relative;
-    }
-}
-
-
-
-
-$spaceamounts: (
-    0,
-    10,
-    15,
-    20,
-    30,
-    40,
-    50,
-    60,
-    70,
-    80,
-    90,
-    100,
-    110,
-    120,
-    130,
-    140,
-    150,
-    180,
-    200,
-    250,
-    300
+//positions
+$positions: (
+    fixed: fixed,
+    absolute: absolute,
+    relative: relative,
+    sticky: sticky
 );
 
-// Adjust this to include the pixel amounts you need.
-$sides: (
-    top,
-    bottom,
-    left,
-    right
+@each $class, $position in $positions {
+    .#{$class} {
+        position: $position;
+    }
+}
+
+//auto
+$sets: top, right, bottom, left;
+
+@each $set in $sets {
+    .#{$set}-auto {
+        #{$set}: auto;
+    }
+}
+
+//breakpoints
+$breakpoints: (
+    xs: $xs,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl,
+    xxl: $xxl
 );
 
-// Leave this variable alone
-@each $space in $spaceamounts {
+//fixed
+@mixin generate-fixed($breakpoint) {
+    @include below(map-get($breakpoints, $breakpoint)) {
+        position: fixed;
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    .#{$breakpoint}\:fixed {
+        @include generate-fixed($breakpoint);
+    }
+}
+
+//relative
+@mixin generate-relative($breakpoint) {
+    @include below(map-get($breakpoints, $breakpoint)) {
+        position: relative;
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    .#{$breakpoint}\:relative {
+        @include generate-relative($breakpoint);
+    }
+}
+
+//absolute
+@mixin generate-absolute($breakpoint) {
+    @include below(map-get($breakpoints, $breakpoint)) {
+        position: absolute;
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    .#{$breakpoint}\:absolute {
+        @include generate-absolute($breakpoint);
+    }
+}
+
+$sides: top, right, bottom, left; // Define the sides
+
+@for $space from 0 through 300 {
     @each $side in $sides {
         .#{$side}-#{$space} {
             #{$side}: rem($space);
         }
+        .-#{$side}-#{$space} {
+            #{$side}: rem(-$space);
+        }
     }
 }
+//positions for xl screen
 
-
-// right
-.xxl\:right-0 {
-    @include below($xxl){
-        right: 0;
-    }
-}
-
-.xl\:right-0 {
-    @include below($xl){
-        right: 0;
-    }
-}
-
-.lg\:right-0 {
-    @include below($lg){
-        right: 0;
-    }
-}
-
-.md\:right-0 {
-    @include below($md){
-        right: 0;
-    }
-}
-
-.sm\:right-0 {
-    @include below($sm){
-        right: 0;
-    }
-}
-
-.xs\:right-0 {
-    @include below($xs){
-        right: 0;
-    }
-}
-
-
-// left
-.xxl\:left-0 {
-    @include below($xxl){
-        left: 0;
-    }
-}
-
-.xl\:left-0 {
-    @include below($xl){
-        left: 0;
-    }
-}
-
-.lg\:left-0 {
-    @include below($lg){
-        left: 0;
-    }
-}
-
-.md\:left-0 {
-    @include below($md){
-        left: 0;
-    }
-}
-
-.sm\:left-0 {
-    @include below($sm){
-        left: 0;
-    }
-}
-
-.xs\:left-0 {
-    @include below($xs){
-        left: 0;
-    }
-}
-
-// top
-.xxl\:top-0 {
-    @include below($xxl){
-        top: 0;
-    }
-}
-
-.xl\:top-0 {
-    @include below($xl){
-        top: 0;
-    }
-}
-
-.lg\:top-0 {
-    @include below($lg){
-        top: 0;
-    }
-}
-
-.md\:top-0 {
-    @include below($md){
-        top: 0;
-    }
-}
-
-.sm\:top-0 {
-    @include below($sm){
-        top: 0;
-    }
-}
-
-.xs\:top-0 {
-    @include below($xs){
-        top: 0;
-    }
-}
-
-// bottom
-.xxl\:bottom-0 {
-    @include below($xxl){
-        bottom: 0;
-    }
-}
-
-.xl\:bottom-0 {
-    @include below($xl){
-        bottom: 0;
-    }
-}
-
-.lg\:bottom-0 {
-    @include below($lg){
-        bottom: 0;
-    }
-}
-
-.md\:bottom-0 {
-    @include below($md){
-        bottom: 0;
-    }
-}
-
-.sm\:bottom-0 {
-    @include below($sm){
-        bottom: 0;
-    }
-}
-
-.xs\:bottom-0 {
-    @include below($xs){
-        bottom: 0;
-    }
-}
-
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .xxl\:#{$side}-#{$space} {
-            @include below($xxl){
+@include below($xxl) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .xxl\:#{$side}-#{$space} {
                 #{$side}: rem($space);
+            }
+            .xxl\:-#{$side}-#{$space} {
+                #{$side}: rem(-$space);
             }
         }
     }
 }
 
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .xl\:#{$side}-#{$space} {
-            @include below($xl){
+//positions for xl screen
+@include below($xl) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .xl\:#{$side}-#{$space} {
                 #{$side}: rem($space);
+            }
+            .xl\:-#{$side}-#{$space} {
+                #{$side}: rem(-$space);
             }
         }
     }
 }
 
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .lg\:#{$side}-#{$space} {
-            @include below($lg){
+//positions for lg screen
+@include below($lg) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .lg\:#{$side}-#{$space} {
                 #{$side}: rem($space);
+            }
+            .lg\:-#{$side}-#{$space} {
+                #{$side}: rem(-$space);
             }
         }
     }
 }
 
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .md\:#{$side}-#{$space} {
-            @include below($md){
+//positions for md screen
+@include below($md) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .md\:#{$side}-#{$space} {
                 #{$side}: rem($space);
+            }
+            .md\:-#{$side}-#{$space} {
+                #{$side}: rem(-$space);
             }
         }
     }
 }
 
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .sm\:#{$side}-#{$space} {
-            @include below($sm){
+//positions for sm screen
+@include below($sm) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .sm\:#{$side}-#{$space} {
                 #{$side}: rem($space);
+            }
+            .sm\:-#{$side}-#{$space} {
+                #{$side}: rem(-$space);
             }
         }
     }
 }
 
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .xs\:#{$side}-#{$space} {
-            @include below($xs){
+//positions for xs screen
+@include below($xs) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .xs\:#{$side}-#{$space} {
                 #{$side}: rem($space);
+            }
+            .xs\:-#{$side}-#{$space} {
+                #{$side}: rem(-$space);
             }
         }
     }
 }
-
 
 // z-index
-$spaceamounts: (
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  10,
-  11,
-  12,
-);
 
-@each $space in $spaceamounts {
-    .z-#{$space}{
-        z-index: #{$space};
+@for $zindex from 1 through 12 {
+    .z-#{$zindex} {
+        z-index: #{$zindex};
     }
 }
+
+// z-index for xxl screen
+@include below($xxl) {
+    @for $zindex from 1 through 12 {
+        .xxl\:z-#{$zindex} {
+            z-index: #{$zindex};
+        }
+    }
+}
+// z-index for xl screen
+@include below($xl) {
+    @for $zindex from 1 through 12 {
+        .xl\:z-#{$zindex} {
+            z-index: #{$zindex};
+        }
+    }
+}
+// z-index for lg screen
+@include below($lg) {
+    @for $zindex from 1 through 12 {
+        .lg\:z-#{$zindex} {
+            z-index: #{$zindex};
+        }
+    }
+}
+// z-index for md screen
+@include below($md) {
+    @for $zindex from 1 through 12 {
+        .md\:z-#{$zindex} {
+            z-index: #{$zindex};
+        }
+    }
+}
+// z-index for sm screen
+@include below($sm) {
+    @for $zindex from 1 through 12 {
+        .sm\:z-#{$zindex} {
+            z-index: #{$zindex};
+        }
+    }
+}
+// z-index for xs screen
+@include below($xs) {
+    @for $zindex from 1 through 12 {
+        .xs\:z-#{$zindex} {
+            z-index: #{$zindex};
+        }
+    }
+}   

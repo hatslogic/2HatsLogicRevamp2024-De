@@ -21,6 +21,7 @@
 @import "./layouts/technologies"; 
 @import "./layouts/about";
 @import "./layouts/service";
+@import "./layouts/service-list";
 @import "./layouts/works";
 @import "./layouts/testimonials";
 @import "./layouts/journal";
@@ -38,10 +39,13 @@
 @import "./components/slider"; 
 
 // Classes
-@import "./class/fonts";
+@import "./class/font-family";
+@import "./class/font-size";
+@import "./class/line-height";
 @import "./class/color";
 @import "./class/margin";
 @import "./class/padding";
+@import "./class/opacity";
 @import "./class/layout";
 @import "./class/grid";
 @import "./class/flex";
