@@ -1,4 +1,9 @@
 header{
+    height: rem(90);
+
+    @include below($md){
+        height: rem(80);
+    }
 
     &.scrolled{
         box-shadow: 1px 1px 8px rgba(0,0,0,.05);
