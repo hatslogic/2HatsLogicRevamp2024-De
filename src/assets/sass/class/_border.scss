@@ -10,6 +10,12 @@ $sides: (top, bottom, left, right);
 }
 
 @each $space in $spaceamounts {
+  .b-#{$space} {
+    border-width: rem($space);
+  }
+}
+
+@each $space in $spaceamounts {
   @each $side in $sides {
     .b#{str-slice($side, 0, 1)}-#{$space} {
       border-#{$side}-width: rem($space);

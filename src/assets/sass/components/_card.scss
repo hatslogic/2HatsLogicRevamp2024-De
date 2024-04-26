@@ -4,6 +4,12 @@
      }
     .item {
       color: var(---c-black);
+
+      p{
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
   
       &:hover{
         box-shadow: 6px 10px 12.5px 0px rgba(0, 0, 0, 0.102);
