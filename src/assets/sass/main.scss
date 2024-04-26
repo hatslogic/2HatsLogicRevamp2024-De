@@ -21,7 +21,6 @@
 @import "./layouts/technologies"; 
 @import "./layouts/about";
 @import "./layouts/service";
-@import "./layouts/service-list";
 @import "./layouts/works";
 @import "./layouts/testimonials";
 @import "./layouts/journal";
@@ -61,3 +60,7 @@
 
 // Plugins
 @import "./plugins/hats-slider";
+
+// Pages
+@import "./pages/service-list";
+@import "./pages/service-detail";
