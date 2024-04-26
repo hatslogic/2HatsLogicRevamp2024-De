@@ -42,7 +42,7 @@
                                 <?php if($name || $designation): ?>
                                 <div class="author mt-30">
                                     <div class="author-name font-bold"><?php echo $name; ?></div>
-                                    <span class="designation font-light"><?php echo $designation; ?></span>
+                                    <span class="designation font-light fs-15 lh-1-2 mt-5 inline-block"><?php echo $designation; ?></span>
                                 </div>
                                 <?php endif; ?>
                             </div>

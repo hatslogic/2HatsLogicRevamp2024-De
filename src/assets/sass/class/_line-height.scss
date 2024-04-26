@@ -1,65 +1,60 @@
-
-$lineheights: (
-    1,
-    2,
-    3
+$line-heights: (
+  1: 1,
+  1.05: 1.05,
+  1.1: 1.1,
+  1.125: 1.125,
+  1.14: 1.14,
+  1.15: 1.15,
+  1.25: 1.25,
+  1.5: 1.5,
+  1.6: 1.6,
+  2: 2,
+  2.25: 2.25,
+  2.5: 2.5,
+  2.75: 2.75,
+  3: 3
 );
 
-@each $lineheight in $lineheights {
-    .leading-#{$lineheight} {
-        line-height: $lineheight;
-    }
-}
+@each $lh, $value in $line-heights {
+  .#{str-replace("lh-#{$lh}", ".", "-")} {
+    line-height: $value;
+  }
 
-//line height for xxl screen
-@include below($xxl) {
-    @each $lineheight in $lineheights {
-        .xxl\:leading-#{$lineheight} {
-            line-height: $lineheight;
-        }
+  @include below($xxl) {
+    .xxl\:#{str-replace("lh-#{$lh}", ".", "-")} {
+      line-height: $value;
     }
   }
 
-    //line height for xl screen
-    @include below($xl) {
-        @each $lineheight in $lineheights {
-            .xl\:leading-#{$lineheight} {
-                line-height: $lineheight;
-            }
-        }
-    }       
-    //line height for lg screen 
-    @include below($lg) {
-        @each $lineheight in $lineheights {
-            .lg\:leading-#{$lineheight} {   
-                line-height: $lineheight;
-            }
-        }
-    }   
-
-    //line height for md screen
-    @include below($md) {
-        @each $lineheight in $lineheights {
-            .md\:leading-#{$lineheight} {
-                line-height: $lineheight;
-            }
-        }
+  @include below($xl) {
+    .xl\:#{str-replace("lh-#{$lh}", ".", "-")} {
+      line-height: $value;
     }
+  }
 
-    //line height for sm screen
-    @include below($sm) {
-        @each $lineheight in $lineheights {
-            .sm\:leading-#{$lineheight} {
-                line-height: $lineheight;
-            }
-        }
+  @include below($lg) {
+    .lg\:#{str-replace("lh-#{$lh}", ".", "-")} {
+      line-height: $value;
     }
+  }
 
-    //line height for xs screen
-    @include below($xs) {
-        @each $lineheight in $lineheights {
-            .xs\:leading-#{$lineheight} {
-                line-height: $lineheight;
-            }
-        }
+  @include below($md) {
+    .md\:#{str-replace("lh-#{$lh}", ".", "-")} {
+      line-height: $value;
     }
+  }
+
+  @include below($sm) {
+    .sm\:#{str-replace("lh-#{$lh}", ".", "-")} {
+      line-height: $value;
+    }
+  }
+
+  @include below($xs) {
+    .xs\:#{str-replace("lh-#{$lh}", ".", "-")} {
+      line-height: $value;
+    }
+  }
+
+}
+
