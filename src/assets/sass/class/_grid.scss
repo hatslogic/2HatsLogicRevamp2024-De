@@ -276,6 +276,160 @@
 
 
 
+//grid row-gap
+@for $rowgap from 1 through 150 {
+    @each $side in $sides {
+      .rg-#{$rowgap} {
+        row-gap: rem($rowgap);
+      }
+    }
+  }
+
+
+  //xxl screen 
+  @include below($xxl) {
+    @for $rowgap from 1 through 150 {
+      @each $side in $sides {
+        .xxl\:rg-#{$rowgap} {
+          row-gap: rem($rowgap);
+        }
+      }
+    }
+  }
+
+  //xl screen
+  @include below($xl) {
+    @for $rowgap from 1 through 150 {
+      @each $side in $sides {
+        .xl\:rg-#{$rowgap} {
+          row-gap: rem($rowgap);
+        }
+      }
+    }
+  }
+
+  //lg screen
+  @include below($lg) {
+    @for $rowgap from 1 through 150 {
+      @each $side in $sides {
+        .lg\:rg-#{$rowgap} {
+          row-gap: rem($rowgap);
+        }
+      }
+    }
+  }
+
+  //md screen
+  @include below($md) {
+    @for $rowgap from 1 through 150 {
+      @each $side in $sides {
+        .md\:rg-#{$rowgap} {
+          row-gap: rem($rowgap);
+        }
+      }
+    }
+  }
+
+  //sm screen
+  @include below($sm) {
+    @for $rowgap from 1 through 150 {
+      @each $side in $sides {
+        .sm\:rg-#{$rowgap} {
+          row-gap: rem($rowgap);
+        }
+      }
+    }
+  }
+
+  //xs screen
+  @include below($xs) {
+    @for $rowgap from 1 through 150 {
+      @each $side in $sides {
+        .xs\:rg-#{$rowgap} {
+          row-gap: rem($rowgap);
+        }
+      }
+    }
+  }
+  
+
+  //grid column-gap
+  @for $colgap from 1 through 150 {
+    @each $side in $sides {
+      .cg-#{$colgap} {
+        column-gap: rem($colgap);
+      }
+    }
+  } 
+
+  //xxl screen 
+  @include below($xxl) {
+    @for $colgap from 1 through 150 {
+      @each $side in $sides {
+        .xxl\:cg-#{$colgap} {
+          column-gap: rem($colgap);
+        }
+      }
+    }
+  }
+
+  //xl screen
+  @include below($xl) {
+    @for $colgap from 1 through 150 {
+      @each $side in $sides {
+        .xl\:cg-#{$colgap} {
+          column-gap: rem($colgap);
+        }
+      }
+    }
+  }
+
+  //lg screen
+  @include below($lg) {
+    @for $colgap from 1 through 150 {
+      @each $side in $sides {
+        .lg\:cg-#{$colgap} {
+          column-gap: rem($colgap);
+        }
+      }
+    }
+  }
+
+  //md screen
+  @include below($md) {
+    @for $colgap from 1 through 150 {
+      @each $side in $sides {
+        .md\:cg-#{$colgap} {
+          column-gap: rem($colgap);
+        }
+      }
+    }
+  }
+
+  //sm screen
+  @include below($sm) {
+    @for $colgap from 1 through 150 {
+      @each $side in $sides {
+        .sm\:cg-#{$colgap} {
+          column-gap: rem($colgap);
+        }
+      }
+    }
+  }
+
+  //xs screen
+  @include below($xs) {
+    @for $colgap from 1 through 150 {
+      @each $side in $sides {
+        .xs\:cg-#{$colgap} {
+          column-gap: rem($colgap);
+        }
+      }
+    }
+  }
+
+
+
 /* Grid gaps */
 $gaps: (
     10,
