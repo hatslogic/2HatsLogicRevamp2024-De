@@ -71,13 +71,13 @@
 .consultation-btn {
 
     svg{
-        font-size: rem(11);
+        font-size: 12px;
         height: rem(176);
         width: rem(176);
 
-        @include above($xxxl){
-            font-size: rem(10);
-        }
+        // @include above($xxxl){
+        //     font-size: rem(10);
+        // }
     }
 
     .hover-wrap {

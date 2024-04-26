@@ -23,13 +23,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-regular);
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 1;
   color: var(--c-secondary);
   // min-height: 100%;
   letter-spacing: 0px;
   margin: 0;
 
+  /*
   @include above($xxxl){
     font-size: rem(18.5);
   }
@@ -37,6 +38,7 @@ body {
   @include below($xxl){
     font-size: rem(17);
   }
+  */
 }
 
 h1,
@@ -52,8 +54,9 @@ h6 {
 }
 
 h1, .h1 {
-  font-size: rem(75);
+  font-size: rem(76);
 
+  /*
   @include above($xxxl){
     font-size: rem(80);
   }
@@ -69,11 +72,13 @@ h1, .h1 {
   @include below($xs){
     font-size: rem(40);
   }
+  */
 }
 
 .h1-sml {
   font-size: rem(55);
 
+  /*
   @include above($xxxl){
     font-size: rem(60);
   }
@@ -89,6 +94,7 @@ h1, .h1 {
   @include below($xs){
     font-size: rem(20);
   }
+  */
 }
 
 h2, .h2{
@@ -118,16 +124,17 @@ h6, .h6{
 }
 
 p, ul, ol{
+  font-size: rem(17);
   line-height: 1.4;
 }
 
 // Container
-$container-max-width: 1320px;
-$container-max-width-xxxl: 1460px;
-$container-max-width-xxl: 1160px;
-$container-max-width-xl: 1024px;
-$container-max-width-lg: 991px;
-$container-max-width-md: 768px;
+$container-max-width: 82.5vw;
+// $container-max-width-xxxl: 1460px;
+// $container-max-width-xxl: 1160px;
+// $container-max-width-xl: 1024px;
+// $container-max-width-lg: 991px;
+// $container-max-width-md: 768px;
 $container-max-width-sm: 100%;
 
 .container {
@@ -136,6 +143,7 @@ $container-max-width-sm: 100%;
   margin: auto;
   max-width: $container-max-width;
 
+  /*
   @include above($xxxl){
     max-width: $container-max-width-xxxl;
   }
@@ -153,6 +161,7 @@ $container-max-width-sm: 100%;
     padding-left: rem(30);
     padding-right: rem(30);
   }
+  */
 
   @include below($xs){
     max-width: $container-max-width-sm;
@@ -162,6 +171,7 @@ $container-max-width-sm: 100%;
     .content{
       width: calc(($container-max-width - rem(30)) + (100vw - $container-max-width) / 2);
 
+      /*
       @include above($xxxl){
         width: calc(($container-max-width-xxxl - rem(30)) + (100vw - $container-max-width-xxxl) / 2);
       }
@@ -181,6 +191,7 @@ $container-max-width-sm: 100%;
       @include below($md){
         width: calc(($container-max-width-md - rem(30)) + (100vw - $container-max-width-md) / 2);
       }
+      */
 
       @include below($sm){
         width: $container-max-width-sm;
@@ -209,6 +220,7 @@ $container-max-width-sm: 100%;
   max-width: 85%;
   // max-width: rem(1320);
 
+  /*
   @include above($xxxl){
     max-width: rem(1580);
   }
@@ -226,6 +238,7 @@ $container-max-width-sm: 100%;
     padding-left: rem(30);
     padding-right: rem(30);
   }
+  */
 
   @include below($xs){
     max-width: $container-max-width-sm;
