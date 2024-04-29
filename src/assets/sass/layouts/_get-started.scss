@@ -6,7 +6,7 @@
             max-width: rem(470);
         }
         @include below($sm){
-            max-width: $container-max-width-md;
+            // max-width: $container-max-width-md;
             padding-left: rem(30);
             padding-right: rem(30);
             margin-left: auto;
