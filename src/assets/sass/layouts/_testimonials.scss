@@ -5,7 +5,7 @@
     .hats-slider__slide{
         // min-width: 52vw;
 
-        @include below($md){
+        @include below($xs){
             width: 100%;
         }
 

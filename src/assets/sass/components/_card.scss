@@ -2,6 +2,7 @@
      @include below($md) {
         min-width: 85%;
      }
+
     .item {
       color: var(---c-black);
 
@@ -10,20 +11,20 @@
           margin-bottom: 0;
         }
       }
-  
-      &:hover{
-        box-shadow: 6px 10px 12.5px 0px rgba(0, 0, 0, 0.102);
-        img{
-          transform: scale(1.1);
-        }
-        .info{
-          .h4{
-            color: var(--c-primary);
-          }
+    }
 
-          .h5 strong{
-            color: var(--c-primary);
-          }
+    a.item:hover{
+      box-shadow: 6px 10px 12.5px 0px rgba(0, 0, 0, 0.102);
+      img{
+        transform: scale(1.1);
+      }
+      .info{
+        .h4{
+          color: var(--c-primary);
+        }
+
+        .h5 strong{
+          color: var(--c-primary);
         }
       }
     }
