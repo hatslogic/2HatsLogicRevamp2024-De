@@ -1,6 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var accordionToggles = document.querySelectorAll('.acc-item');
-
+const accordionToggles = document.querySelectorAll('.acc-item');
+if(accordionToggles !== null) {
   accordionToggles.forEach(function(toggle) {
     toggle.addEventListener('click', function() {
       var acc = this.querySelector('.acc-content');
@@ -15,4 +14,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-});
+}
