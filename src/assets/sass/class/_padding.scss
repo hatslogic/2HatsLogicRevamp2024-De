@@ -1,407 +1,106 @@
-$spaceamounts: (
-    0,
-    10,
-    15,
-    20,
-    25,
-    35,
-    30,
-    40,
-    50,
-    60,
-    70,
-    80,
-    90,
-    100,
-    110,
-    120,
-    130,
-    140,
-    150,
-    180,
-    200,
-    250,
-    300
+$breakpoints: (
+    xxl: $xxl,
+    xl: $xl,
+    lg: $lg,
+    md: $md,
+    sm: $sm,
+    xs: $xs
 );
 
-// Adjust this to include the pixel amounts you need.
-$sides: (
-    top,
-    bottom,
-    left,
-    right
-); // Leave this variable alone
+$sides: top, right, bottom, left; // Define the sides
+
+
+@for $space from 0 through 300 {
+    .p-#{$space} {
+      padding: rem($space);
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $space from 0 through 300 {
+            .#{$breakpoint}\:p-#{$space} {
+                padding: rem($space);
+            }
+        }
+    }
+}
+
+@for $space from 0 through 300 {
+    @each $side in $sides {
+        .p#{str-slice($side, 0, 1)}-#{$space} {
+          padding-#{$side}: rem($space);
+        }
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $space from 0 through 300 {
+            @each $side in $sides {
+                .#{$breakpoint}\:p#{str-slice($side, 0, 1)}-#{$space} {
+                    padding-#{$side}: rem($space);
+                }
+            }
+        }
+    }
+}
 
 .p-0 {
     padding: 0;
 }
 
-.px-0 {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.py-0 {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.xs\:p-0 {
-    @include below($xs) {
-        padding: 0;
-    }
-}
-
-
-.sm\:p-0 {
-    @include below($sm) {
-        padding: 0;
-    }
-}
-
-.md\:p-0 {
-    @include below($md) {
-        padding: 0;
-    }
-}
-
-.lg\:p-0 {
-    @include below($lg) {
-        padding: 0;
-    }
-}
-
-.xl\:p-0 {
-    @include below($xl) {
-        padding: 0;
-    }
-}
-
-.xxl\:p-0 {
-    @include below($xxl) {
-        padding: 0;
-    }
-}
-
-.xxl\:px-0 {
-    @include below($xxl) {
+@each $breakpoint, $size in $breakpoints  {
+    .#{$breakpoint}\:px-0 {
+      @include below($breakpoint) {
         padding-left: 0;
         padding-right: 0;
+      }
     }
-}
+  }
 
-.xl\:px-0 {
-    @include below($xl) {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-.lg\:px-0 {
-    @include below($lg) {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-.md\:px-0 {
-    @include below($md) {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-.sm\:px-0 {
-    @include below($sm) {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-.xs\:px-0 {
-    @include below($xs) {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-.xxl\:py-0 {
-    @include below($xxl) {
+  @each $breakpoint, $size in $breakpoints  {
+    .#{$breakpoint}\:py-0 {
+      @include below($breakpoint) {
         padding-top: 0;
         padding-bottom: 0;
+      }
     }
-}
+  
+  }
 
-.xl\:py-0 {
-    @include below($xl) {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-}
-
-.lg\:py-0 {
-    @include below($lg) {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-}
-
-.md\:py-0 {
-    @include below($md) {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-}
-
-.sm\:py-0 {
-    @include below($sm) {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-}
-
-.xs\:py-0 {
-    @include below($xs) {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-}
-
-
-@each $space in $spaceamounts {
-    .p-#{$space} {
-        padding: rem($space);
-    }
-}
-
-@each $space in $spaceamounts {
+  //padding-x value 1 to 300
+  @for $space from 1 through 300 {
     .px-#{$space} {
-        padding-left: rem($space);
-        padding-right: rem($space);
+      padding-left: rem($space);
+      padding-right: rem($space);
     }
-}
-
-@each $space in $spaceamounts {
-    .xxl\:px-#{$space} {
-        @include below($xs) {
-            padding: rem($space);
+  }
+  @each $breakpoint, $size in $breakpoints  {
+    @include below($breakpoint) {
+      @for $space from 1 through 300 {
+        .#{$breakpoint}\:px-#{$space} {
+          padding-left: rem($space);
+          padding-right: rem($space);
         }
+      }
     }
-}
+  }
 
-@each $space in $spaceamounts {
-    .xl\:px-#{$space} {
-        @include below($xl) {
-            padding: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .lg\:px-#{$space} {
-        @include below($lg) {
-            padding: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .md\:px-#{$space} {
-        @include below($md) {
-            padding: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .sm\:px-#{$space} {
-        @include below($sm) {
-            padding: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .xs\:px-#{$space} {
-        @include below($xs) {
-            padding: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
+  //padding-y value 1 to 300
+  @for $space from 1 through 300 {
     .py-#{$space} {
-        padding-top: rem($space);
-        padding-bottom: rem($space);
+      padding-top: rem($space);
+      padding-bottom: rem($space);
     }
-}
-
-@each $space in $spaceamounts {
-    .xxl\:py-#{$space} {
-        @include below($xxl) {
-            padding-top: rem($space);
-            padding-bottom: rem($space);
+  }
+  @each $breakpoint, $size in $breakpoints  {
+    @include below($breakpoint) {
+      @for $space from 1 through 300 {
+        .#{$breakpoint}\:py-#{$space} {
+          padding-top: rem($space);
+          padding-bottom: rem($space);
         }
+      }
     }
-}
-
-@each $space in $spaceamounts {
-    .xl\:py-#{$space} {
-        @include below($xl) {
-            padding-top: rem($space);
-            padding-bottom: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .lg\:py-#{$space} {
-        @include below($lg) {
-            padding-top: rem($space);
-            padding-bottom: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .md\:py-#{$space} {
-        @include below($md) {
-            padding-top: rem($space);
-            padding-bottom: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .sm\:py-#{$space} {
-        @include below($sm) {
-            padding-top: rem($space);
-            padding-bottom: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .xs\:py-#{$space} {
-        @include below($xs) {
-            padding-top: rem($space);
-            padding-bottom: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .p#{str-slice($side, 0, 1)}-#{$space} {
-            padding-#{$side}: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .xxl\:p#{str-slice($side, 0, 1)}-#{$space} {
-            @include below($xxl) {
-                padding-#{$side}: rem($space);
-            }
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .xl\:p#{str-slice($side, 0, 1)}-#{$space} {
-            @include below($xl) {
-                padding-#{$side}: rem($space);
-            }
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .lg\:p#{str-slice($side, 0, 1)}-#{$space} {
-            @include below($lg) {
-                padding-#{$side}: rem($space);
-            }
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .md\:p#{str-slice($side, 0, 1)}-#{$space} {
-            @include below($md) {
-                padding-#{$side}: rem($space);
-            }
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .sm\:p#{str-slice($side, 0, 1)}-#{$space} {
-            @include below($sm) {
-                padding-#{$side}: rem($space);
-            }
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    @each $side in $sides {
-        .xs\:p#{str-slice($side, 0, 1)}-#{$space} {
-            @include below($xs) {
-                padding-#{$side}: rem($space);
-            }
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .xxl\:p-#{$space} {
-        @include below($xxl) {
-            padding: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .xl\:p-#{$space} {
-        @include below($xl) {
-            padding: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .lg\:p-#{$space} {
-        @include below($lg) {
-            padding: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .md\:p-#{$space} {
-        @include below($md) {
-            padding: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .sm\:p-#{$space} {
-        @include below($sm) {
-            padding: rem($space);
-        }
-    }
-}
-
-@each $space in $spaceamounts {
-    .xs\:p-#{$space} {
-        @include below($xs) {
-            padding: rem($space);
-        }
-    }
-}
+  }
