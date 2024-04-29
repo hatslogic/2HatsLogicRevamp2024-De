@@ -102,7 +102,7 @@ function convertToWebP(src, dest) {
 
 function serve() {
     browserSync.init({
-        open: true,
+        open: false,
         server: paths.dist.base
     });
 
