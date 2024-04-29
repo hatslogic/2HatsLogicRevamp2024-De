@@ -1,280 +1,217 @@
-$spaceamounts: (
-  0,
-  10,
-  15,
-  20,
-  30,
-  40,
-  50,
-  60,
-  70,
-  80,
-  90,
-  100,
-  110,
-  120,
-  130,
-  140,
-  150,
-  180,
-  200,
-  250,
-  300
-);
 
-// Adjust this to include the pixel amounts you need.
-$sides: (
-  top,
-  bottom,
-  left,
-  right
-); // Leave this variable alone
+$sides: top, right, bottom, left; // Define the sides
 
+@for $space from 0 through 300 {
+    @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}-#{$space} {
+          margin-#{$side}: rem($space);
+        }
+        .-m#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: rem(-$space);
+        }
+    }
+}
+
+//xxl screen 
+@include below($xxl) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .xxl\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .xxl\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+
+//xl screen
+@include below($xl) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .xl\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .xl\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+
+//lg screen
+@include below($lg) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .lg\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .lg\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+
+//md screen
+@include below($md) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .md\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .md\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+
+//sm screen
+@include below($sm) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .sm\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .sm\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+//xs screen
+@include below($xs) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .xs\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .xs\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+
+
+$sets: left, right, top, bottom;
+
+@each $set in $sets {
+  .m#{str-slice($set, 0, 1)}-auto {
+    margin-#{$set}: auto;
+  }
+}
+
+//xxl screen
+@include below($xxl) {
+  @each $set in $sets {
+    .xxl\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+
+//xl screen
+@include below($xl) {
+  @each $set in $sets {
+    .xl\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+
+//lg screen
+@include below($lg) {
+  @each $set in $sets {
+    .lg\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+
+//md screen
+@include below($md) {
+  @each $set in $sets {
+    .md\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+
+//sm screen
+@include below($sm) {
+  @each $set in $sets {
+    .sm\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+//xs screen
+@include below($xs) {
+  @each $set in $sets {
+    .xs\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+
+
+// Margin 0 
 .m-0 {
   margin: 0;
 }
 
-.ml-auto{
-  margin-left: auto;
+$breakpoints: (
+    xs: $xs,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl,
+    xxl: $xxl
+);
+
+@each $size, $breakpoint in $breakpoints {
+  .#{$size}\:m-0 {
+    @include below($breakpoint) {
+      margin: 0;
+    }
+  }
 }
 
-.mr-auto{
-  margin-right: auto;
-}
 
-.mx-auto{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.my-auto{
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.m-auto{
+// Margin auto
+.m-auto {
   margin: auto;
 }
 
-.xs\:m-0 {
-  @include below($xs) {
-    margin: 0;
-  }
-}
 
-.sm\:m-0 {
-  @include below($sm) {
-    margin: 0;
-  }
-}
-
-.md\:m-0 {
-  @include below($md) {
-    margin: 0;
-  }
-}
-
-.lg\:m-0 {
-  @include below($lg) {
-    margin: 0;
-  }
-}
-
-.xl\:m-0 {
-  @include below($xl) {
-    margin: 0;
-  }
-}
-
-.xxl\:m-0 {
-  @include below($xxl) {
-    margin: 0;
-  }
-}
-
-@each $space in $spaceamounts {
-  @each $side in $sides {
-    .m#{str-slice($side, 0, 1)}-#{$space} {
-      margin-#{$side}: rem($space);
-    }
-    .-m#{str-slice($side, 0, 1)}-#{$space} {
-      margin-#{$side}: rem(-$space);
+@each $size, $breakpoint in $breakpoints {
+  .#{$size}\:ml-auto {
+    @include below($breakpoint) {
+      margin-left: auto;
     }
   }
-}
 
-
-@for $space from 1 through 9 {
-  @each $side in $sides {
-    .m#{str-slice($side, 0, 1)}-#{$space} {
-      margin-#{$side}: rem($space);
-    }
-    .-m#{str-slice($side, 0, 1)}-#{$space} {
-      margin-#{$side}: rem(-$space);
+  .#{$size}\:mr-auto {
+    @include below($breakpoint) {
+      margin-right: auto;
     }
   }
-}
 
-
-@each $space in $spaceamounts {
-  @each $side in $sides {
-    .xxl\:m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($xxl) {
-        margin-#{$side}: rem($space);
-      }
-    }
-    .xxl\:-m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($xxl) {
-        margin-#{$side}: rem(-$space);
-      }
+  .#{$size}\:mx-auto {
+    @include below($breakpoint) {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
-}
 
-@each $space in $spaceamounts {
-  @each $side in $sides {
-    .xl\:m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($xl) {
-        margin-#{$side}: rem($space);
-      }
+  .#{$size}\:my-auto {
+    @include below($breakpoint) {
+      margin-top: auto;
+      margin-bottom: auto;
     }
-    .xl\:-m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($xl) {
-        margin-#{$side}: rem(-$space);
-      }
-    }
-  }
-}
-
-@each $space in $spaceamounts {
-  @each $side in $sides {
-    .lg\:m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($lg) {
-        margin-#{$side}: rem($space);
-      }
-    }
-    .lg\:-m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($lg) {
-        margin-#{$side}: rem(-$space);
-      }
-    }
-  }
-}
-
-@each $space in $spaceamounts {
-  @each $side in $sides {
-    .md\:m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($md) {
-        margin-#{$side}: rem($space);
-      }
-    }
-    .md\:-m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($md) {
-        margin-#{$side}: rem(-$space);
-      }
-    }
-  }
-}
-
-@each $space in $spaceamounts {
-  @each $side in $sides {
-    .sm\:m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($sm) {
-        margin-#{$side}: rem($space);
-      }
-    }
-    .sm\:-m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($sm) {
-        margin-#{$side}: rem(-$space);
-      }
-    }
-  }
-}
-
-@each $space in $spaceamounts {
-  @each $side in $sides {
-    .xs\:m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($xs) {
-        margin-#{$side}: rem($space);
-      }
-    }
-    .xs\:-m#{str-slice($side, 0, 1)}-#{$space} {
-      @include below($xs) {
-        margin-#{$side}: rem(-$space);
-      }
-    }
-  }
-}
-
-.xxl\:ml-auto{
-  @include below($xxl){
-    margin-left: auto;
-  }
-}
-
-.xl\:ml-auto{
-  @include below($xl){
-    margin-left: auto;
-  }
-}
-
-.lg\:ml-auto{
-  @include below($lg){
-    margin-left: auto;
-  }
-}
-
-.md\:ml-auto{
-  @include below($md){
-    margin-left: auto;
-  }
-}
-
-.sm\:ml-auto{
-  @include below($sm){
-    margin-left: auto;
-  }
-}
-
-.xs\:ml-auto{
-  @include below($xs){
-    margin-left: auto;
-  }
-}
-
-.xxl\:mr-auto{
-  @include below($xxl){
-    margin-right: auto;
-  }
-}
-
-.xl\:mr-auto{
-  @include below($xl){
-    margin-right: auto;
-  }
-}
-
-.lg\:mr-auto{
-  @include below($lg){
-    margin-right: auto;
-  }
-}
-
-.md\:mr-auto{
-  @include below($md){
-    margin-right: auto;
-  }
-}
-
-.sm\:mr-auto{
-  @include below($sm){
-    margin-right: auto;
-  }
-}
-
-.xs\:mr-auto{
-  @include below($xs){
-    margin-right: auto;
   }
 }
 
