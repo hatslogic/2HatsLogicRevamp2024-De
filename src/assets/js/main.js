@@ -9,3 +9,4 @@
 //=require app/counter.js
 //=require app/testimonials.js
 //=require app/modal.js
+//=require app/accordian.js
