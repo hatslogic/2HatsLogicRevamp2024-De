@@ -39,6 +39,10 @@ body {
     font-size: rem(17);
   }
   */
+
+  @include below($xl){
+    font-size: rem(17);
+  }
 }
 
 h1,
@@ -64,6 +68,7 @@ h1, .h1 {
   @include below($xxl){
     font-size: rem(70);
   }
+  */
 
   @include below($xl){
     font-size: rem(60);
@@ -72,7 +77,7 @@ h1, .h1 {
   @include below($xs){
     font-size: rem(40);
   }
-  */
+  
 }
 
 .h1-sml {
@@ -86,6 +91,7 @@ h1, .h1 {
   @include below($xxl){
     font-size: rem(50);
   }
+  */
 
   @include below($xl){
     font-size: rem(40);
@@ -94,7 +100,7 @@ h1, .h1 {
   @include below($xs){
     font-size: rem(20);
   }
-  */
+  
 }
 
 h2, .h2{
@@ -130,11 +136,11 @@ p, ul, ol{
 
 // Container
 $container-max-width: 82.5vw;
-// $container-max-width-xxxl: 1460px;
-// $container-max-width-xxl: 1160px;
-// $container-max-width-xl: 1024px;
-// $container-max-width-lg: 991px;
-// $container-max-width-md: 768px;
+$container-max-width-xxxl: 1460px;
+$container-max-width-xxl: 1160px;
+$container-max-width-xl: 1024px;
+$container-max-width-lg: 991px;
+$container-max-width-md: 768px;
 $container-max-width-sm: 100%;
 
 .container {
@@ -151,6 +157,7 @@ $container-max-width-sm: 100%;
   @include below($xxl){
     max-width: $container-max-width-xxl;
   }
+  */
 
   @include below($xl){
     max-width: $container-max-width-xl;
@@ -161,7 +168,6 @@ $container-max-width-sm: 100%;
     padding-left: rem(30);
     padding-right: rem(30);
   }
-  */
 
   @include below($xs){
     max-width: $container-max-width-sm;
@@ -179,7 +185,8 @@ $container-max-width-sm: 100%;
       @include below($xxl){
         width: calc(($container-max-width-xxl - rem(30)) + (100vw - $container-max-width-xxl) / 2);
       }
-
+      */
+      
       @include below($xl){
         width: calc(($container-max-width-xl - rem(30)) + (100vw - $container-max-width-xl) / 2);
       }
@@ -191,7 +198,6 @@ $container-max-width-sm: 100%;
       @include below($md){
         width: calc(($container-max-width-md - rem(30)) + (100vw - $container-max-width-md) / 2);
       }
-      */
 
       @include below($sm){
         width: $container-max-width-sm;
@@ -228,7 +234,8 @@ $container-max-width-sm: 100%;
   @include below($xxl){
     max-width: 90%;
   }
-
+  */
+  
   @include below($xl){
     max-width: $container-max-width-xl;
   }
@@ -238,7 +245,6 @@ $container-max-width-sm: 100%;
     padding-left: rem(30);
     padding-right: rem(30);
   }
-  */
 
   @include below($xs){
     max-width: $container-max-width-sm;
