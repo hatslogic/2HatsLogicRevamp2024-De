@@ -1,19 +1,11 @@
 $spaceamounts: (0, 1, 2, 3, 4, 5);
 $sides: (top, bottom, left, right);
-$breakpoints: (
-  xs: $xs,
-  sm: $sm,
-  md: $md,
-  lg: $lg,
-  xl: $xl,
-  xxl: $xxl
-);
 
-.b-0 {
-  border-width: 0;
+.b-0{
+    border-width: 0;
 }
 
-.solid {
+.solid{
   border-style: solid;
 }
 
@@ -21,19 +13,51 @@ $breakpoints: (
   .b-#{$space} {
     border-width: rem($space);
   }
-  
+}
+
+@each $space in $spaceamounts {
   @each $side in $sides {
     .b#{str-slice($side, 0, 1)}-#{$space} {
       border-#{$side}-width: rem($space);
     }
   }
-  
-  @each $breakpoint, $breakpoint-value in $breakpoints {
-    @each $side in $sides {
-      .#{$breakpoint}\:b#{str-slice($side, 0, 1)}-#{$space} {
-        @include below($breakpoint-value) {
-          border-#{$side}-width: rem($space);
-        }
+}
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .xxl\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xxl){
+        border-#{$side}-width: rem($space);
+      }
+    }
+
+    .xl\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xl){
+        border-#{$side}-width: rem($space);
+      }
+    }
+
+    .lg\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($lg){
+        border-#{$side}-width: rem($space);
+      }
+    }
+    
+    .md\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($md){
+        border-#{$side}-width: rem($space);
+      }
+    }
+
+    .sm\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($sm){
+        border-#{$side}-width: rem($space);
+      }
+    }
+
+    .xs\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xs){
+        border-#{$side}-width: rem($space);
       }
     }
   }
