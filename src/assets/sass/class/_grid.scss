@@ -1,10 +1,10 @@
 $breakpoints: (
-  xs: $xs,
-  sm: $sm,
-  md: $md,
-  lg: $lg,
+  xxl: $xxl,
   xl: $xl,
-  xxl: $xxl
+  lg: $lg,
+  md: $md,
+  sm: $sm,
+  xs: $xs
 );
 
 @each $size, $breakpoint in $breakpoints {

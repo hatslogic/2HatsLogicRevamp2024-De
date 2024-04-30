@@ -4,7 +4,7 @@
 
 @for $i from 0 through 100 {
     .mh-#{$i} {
-        height: $i * 1%;
+        max-height: $i * 1%;
     }
 }
 $breakpoints: (
