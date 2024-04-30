@@ -1,3 +1,5 @@
+const testimonials = document.querySelector("#testimonials");
+
 function navigation(testimonialSlider) {
     let wrapper = testimonialSlider.container.parentNode;
 
@@ -31,21 +33,23 @@ function navigation(testimonialSlider) {
     })
 }
 
-var testimonialSlider = new HatsSlider("#testimonials", {
-        loop: true,
-        mode: "snap",
-        rtl: false,
-        breakpoints: {
-            "(max-width: 768px)": {
-                slides: {
-                    perView: 1,
-                    spacing: 0
-                },
-            }
+if(testimonials !== null){
+    var testimonialSlider = new HatsSlider("#testimonials", {
+            loop: true,
+            mode: "snap",
+            rtl: false,
+            breakpoints: {
+                "(max-width: 768px)": {
+                    slides: {
+                        perView: 1,
+                        spacing: 0
+                    },
+                }
+            },
+            slides: {
+                perView: "auto"
+            },
         },
-        slides: {
-            perView: "auto"
-        },
-    },
-    [navigation]
-)
+        [navigation]
+    )
+}
