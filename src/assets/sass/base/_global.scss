@@ -160,8 +160,12 @@ h6, .h6{
 }
 
 p, ul, ol{
-  font-size: rem(18);
+  font-size: rem(16);
   line-height: 1.4;
+
+  @include below($xxxl){
+    font-size: rem(18);
+  }
 }
 
 // Container
