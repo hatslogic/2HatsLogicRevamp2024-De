@@ -115,8 +115,8 @@ h2,
   @include below($xl) {
     font-size: rem(30);
   }
-  @include below($xs) {
-    font-size: rem(28);
+  @include below($xs){
+    font-size: rem(26);
   }
 }
 
@@ -130,8 +130,8 @@ h3,
   @include below($xl) {
     font-size: rem(30);
   }
-  @include below($xs) {
-    font-size: rem(26);
+  @include below($xs){
+    font-size: rem(24);
   }
 }
 
@@ -146,8 +146,8 @@ h4,
   @include below($xl) {
     font-size: rem(22);
   }
-  @include below($xs) {
-    font-size: rem(17);
+  @include below($xs){
+    font-size: rem(18);
   }
 }
 
@@ -171,6 +171,10 @@ ol {
 
   @include below($xxxl) {
     font-size: rem(18);
+  }
+
+  @include below($xs){
+    font-size: rem(16);
   }
 }
 
