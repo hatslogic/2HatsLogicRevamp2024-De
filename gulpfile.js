@@ -50,7 +50,8 @@ function compileHTML() {
             basePath: 'src/includes/'
         }))
         .pipe(gulpIf(isProd, htmlmin({
-            collapseWhitespace: true
+            collapseWhitespace: true,
+            removeComments: true
         })))
         .pipe(gulp.dest(paths.dist.base))
         .pipe(browserSync.stream()); // Stream changes to BrowserSync
