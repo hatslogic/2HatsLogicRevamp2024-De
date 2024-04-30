@@ -1,3 +1,4 @@
+/* Color */
 .c-primary{
     color: var(--c-primary);
 }
@@ -30,6 +31,15 @@
     color: var(--c-dark-grey);
 }
 
+.c-moonstone{
+    color: var(--c-moonstone);
+}
+
+.c-pigment{
+    color: var(--c-pigment);
+}
+
+/* Border Color */
 .bc-primary{
     border-color: var(--c-primary);
 }
@@ -62,6 +72,7 @@
     border-color: var(--c-dark-grey);
 }
 
+/* Background Color */
 .bg-primary{
     background-color: var(--c-primary);
 }

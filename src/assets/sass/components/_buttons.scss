@@ -28,6 +28,29 @@
             color: var(--c-white);
         }
     }
+
+    &-moonstone{
+        border-color: var(--c-moonstone);
+        background: var(--c-moonstone);
+        color: var(--c-white);
+        &:hover{
+            background: var(--c-secondary-hover);
+            border-color: var(--c-secondary-hover);
+            color: var(--c-white);
+        }
+    }
+
+    &-pigment{
+        border-color: var(--c-pigment);
+        background: var(--c-pigment);
+        color: var(--c-white);
+        &:hover{
+            background: var(--c-secondary-hover);
+            border-color: var(--c-secondary-hover);
+            color: var(--c-white);
+        }
+    }
+
     &-primary-outline{
         border-color: var(--c-primary);
         background: transparent;
