@@ -311,8 +311,27 @@ a {
   margin: 0;
   padding: 0;
 }
+.no-decoration{
+  color: var(--c-secondary);
+  &:hover{
+    color: var(--c-primary);
+  }
+}
+
+.white-space-nowrap{
+  white-space: nowrap;}
 
 strong, b{
   font-weight: normal;
   font-family: var(--font-button);
+}
+
+.shadow{
+  box-shadow:var(--c-hash) 0px 0px 15px  ;
+}
+.border-radius-100{
+  border-radius: 100%;
+}
+.overflow-hidden{
+  overflow: hidden;
 }
