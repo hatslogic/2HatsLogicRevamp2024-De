@@ -72,6 +72,14 @@
     border-color: var(--c-dark-grey);
 }
 
+.bc-moonstone{
+    border-color: var(--c-moonstone);
+}
+
+.bc-pigment{
+    border-color: var(--c-pigment);
+}
+
 /* Background Color */
 .bg-primary{
     background-color: var(--c-primary);
@@ -111,4 +119,12 @@
 
 .bg-overlay{
     background-color: var(--c-overlay);
+}
+
+.bg-moonstone{
+    background-color: var(--c-moonstone);
+}
+
+.bg-pigment{
+    background-color: var(--c-pigment);
 }
