@@ -87,7 +87,7 @@ $grid-columns: (
 
 
 //grid row-gap
-@for $rowgap from 1 through 150 {
+@for $rowgap from 0 through 150 {
     @each $side in $sides {
       .rg-#{$rowgap} {
         row-gap: rem($rowgap);
@@ -98,7 +98,7 @@ $grid-columns: (
 
   //xxl screen 
   @include below($xxl) {
-    @for $rowgap from 1 through 150 {
+    @for $rowgap from 0 through 150 {
       @each $side in $sides {
         .xxl\:rg-#{$rowgap} {
           row-gap: rem($rowgap);
@@ -109,7 +109,7 @@ $grid-columns: (
 
   //xl screen
   @include below($xl) {
-    @for $rowgap from 1 through 150 {
+    @for $rowgap from 0 through 150 {
       @each $side in $sides {
         .xl\:rg-#{$rowgap} {
           row-gap: rem($rowgap);
@@ -120,7 +120,7 @@ $grid-columns: (
 
   //lg screen
   @include below($lg) {
-    @for $rowgap from 1 through 150 {
+    @for $rowgap from 0 through 150 {
       @each $side in $sides {
         .lg\:rg-#{$rowgap} {
           row-gap: rem($rowgap);
@@ -131,7 +131,7 @@ $grid-columns: (
 
   //md screen
   @include below($md) {
-    @for $rowgap from 1 through 150 {
+    @for $rowgap from 0 through 150 {
       @each $side in $sides {
         .md\:rg-#{$rowgap} {
           row-gap: rem($rowgap);
@@ -142,7 +142,7 @@ $grid-columns: (
 
   //sm screen
   @include below($sm) {
-    @for $rowgap from 1 through 150 {
+    @for $rowgap from 0 through 150 {
       @each $side in $sides {
         .sm\:rg-#{$rowgap} {
           row-gap: rem($rowgap);
@@ -153,7 +153,7 @@ $grid-columns: (
 
   //xs screen
   @include below($xs) {
-    @for $rowgap from 1 through 150 {
+    @for $rowgap from 0 through 150 {
       @each $side in $sides {
         .xs\:rg-#{$rowgap} {
           row-gap: rem($rowgap);
@@ -164,7 +164,7 @@ $grid-columns: (
   
 
   //grid column-gap
-  @for $colgap from 1 through 150 {
+  @for $colgap from 0 through 150 {
     @each $side in $sides {
       .cg-#{$colgap} {
         column-gap: rem($colgap);
@@ -174,7 +174,7 @@ $grid-columns: (
 
   //xxl screen 
   @include below($xxl) {
-    @for $colgap from 1 through 150 {
+    @for $colgap from 0 through 150 {
       @each $side in $sides {
         .xxl\:cg-#{$colgap} {
           column-gap: rem($colgap);
@@ -185,7 +185,7 @@ $grid-columns: (
 
   //xl screen
   @include below($xl) {
-    @for $colgap from 1 through 150 {
+    @for $colgap from 0 through 150 {
       @each $side in $sides {
         .xl\:cg-#{$colgap} {
           column-gap: rem($colgap);
@@ -196,7 +196,7 @@ $grid-columns: (
 
   //lg screen
   @include below($lg) {
-    @for $colgap from 1 through 150 {
+    @for $colgap from 0 through 150 {
       @each $side in $sides {
         .lg\:cg-#{$colgap} {
           column-gap: rem($colgap);
@@ -207,7 +207,7 @@ $grid-columns: (
 
   //md screen
   @include below($md) {
-    @for $colgap from 1 through 150 {
+    @for $colgap from 0 through 150 {
       @each $side in $sides {
         .md\:cg-#{$colgap} {
           column-gap: rem($colgap);
@@ -218,7 +218,7 @@ $grid-columns: (
 
   //sm screen
   @include below($sm) {
-    @for $colgap from 1 through 150 {
+    @for $colgap from 0 through 150 {
       @each $side in $sides {
         .sm\:cg-#{$colgap} {
           column-gap: rem($colgap);
@@ -229,7 +229,7 @@ $grid-columns: (
 
   //xs screen
   @include below($xs) {
-    @for $colgap from 1 through 150 {
+    @for $colgap from 0 through 150 {
       @each $side in $sides {
         .xs\:cg-#{$colgap} {
           column-gap: rem($colgap);
@@ -240,7 +240,7 @@ $grid-columns: (
 
 //grid gap
 
-  @for $gaps from 1 through 150 {
+  @for $gaps from 0 through 150 {
     .gap-#{$gaps} {
         gap: rem($gaps);
     }
@@ -248,7 +248,7 @@ $grid-columns: (
 
 //xxl screen 
 @include below($xxl) {
-    @for $gaps from 1 through 150 {
+    @for $gaps from 0 through 150 {
         .xxl\:gap-#{$gaps} {
             gap: rem($gaps);
         }
@@ -257,7 +257,7 @@ $grid-columns: (
 
 //xl screen
 @include below($xl) {
-    @for $gaps from 1 through 150 {
+    @for $gaps from 0 through 150 {
         .xl\:gap-#{$gaps} {
             gap: rem($gaps);
         }
@@ -266,7 +266,7 @@ $grid-columns: (
 
 //lg screen
 @include below($lg) {
-    @for $gaps from 1 through 150 {
+    @for $gaps from 0 through 150 {
         .lg\:gap-#{$gaps} {
             gap: rem($gaps);
         }
@@ -275,7 +275,7 @@ $grid-columns: (
 
 //md screen
 @include below($md) {
-    @for $gaps from 1 through 150 {
+    @for $gaps from 0 through 150 {
         .md\:gap-#{$gaps} {
             gap: rem($gaps);
         }
@@ -284,7 +284,7 @@ $grid-columns: (
 
 //sm screen
 @include below($sm) {
-    @for $gaps from 1 through 150 {
+    @for $gaps from 0 through 150 {
         .sm\:gap-#{$gaps} {
             gap: rem($gaps);
         }
@@ -293,7 +293,7 @@ $grid-columns: (
 
 //xs screen
 @include below($xs) {
-    @for $gaps from 1 through 150 {
+    @for $gaps from 0 through 150 {
         .xs\:gap-#{$gaps} {
             gap: rem($gaps);
         }
