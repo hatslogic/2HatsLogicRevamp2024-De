@@ -71,7 +71,6 @@
     order: 2;
 }
 
-
 /* flex classes */
 .xxl\:flex {
     @include below($xxl) {
@@ -220,7 +219,6 @@
     }
 }
 
-
 /* inline-block display classes */
 .xxl\:inline-block {
     @include below($xxl) {
@@ -296,7 +294,6 @@
     }
 }
 
-
 /* flex direction classes */
 .xxl\:column {
     @include below($xxl) {
@@ -334,7 +331,6 @@
     }
 }
 
-
 /* flex direction classes */
 .xxl\:row-reverse {
     @include below($xxl) {
@@ -371,7 +367,6 @@
         flex-direction: row-reverse;
     }
 }
-
 
 /* flex direction classes */
 .xxl\:column-reverse {
@@ -447,7 +442,6 @@
     }
 }
 
-
 /* display block classes */
 .xxl\:visible {
     @include below($xxl) {
@@ -484,7 +478,6 @@
         display: block;
     }
 }
-
 
 /* Flex wrap classes */
 .xxl\:wrap {
@@ -560,7 +553,6 @@
     }
 }
 
-
 /* justify content classes */
 .xxl\:justify-start {
     @include below($xxl) {
@@ -598,7 +590,6 @@
     }
 }
 
-
 .xxl\:justify-end {
     @include below($xxl) {
         justify-content: flex-end;
@@ -628,8 +619,11 @@
         justify-content: flex-end;
     }
 }
-
-
+.xs\:justify-end {
+    @include below($xs) {
+        justify-content: flex-end;
+    }
+}
 .xxl\:justify-center {
     @include below($xxl) {
         justify-content: center;
@@ -665,7 +659,6 @@
         justify-content: center;
     }
 }
-
 
 .xxl\:justify-between {
     @include below($xxl) {
