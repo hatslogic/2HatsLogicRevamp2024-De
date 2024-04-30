@@ -116,7 +116,7 @@ h2, .h2{
     font-size: rem(30);
   }
   @include below($xs){
-    font-size: rem(28);
+    font-size: rem(26);
   }
 }
 
@@ -130,7 +130,7 @@ h3, .h3{
     font-size: rem(30);
   }
   @include below($xs){
-    font-size: rem(26);
+    font-size: rem(24);
   }
 }
 
@@ -145,7 +145,7 @@ h4, .h4{
     font-size: rem(22);
   }
   @include below($xs){
-    font-size: rem(17);
+    font-size: rem(18);
   }
 }
 
@@ -165,6 +165,10 @@ p, ul, ol{
 
   @include below($xxxl){
     font-size: rem(18);
+  }
+
+  @include below($xs){
+    font-size: rem(16);
   }
 }
 

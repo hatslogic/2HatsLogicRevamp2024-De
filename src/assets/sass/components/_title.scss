@@ -24,6 +24,10 @@
                 display: none;
             }
         }
+
+        &:last-child{
+            margin-bottom: 0;
+        }
     }
     @include below($sm){
         h2{
