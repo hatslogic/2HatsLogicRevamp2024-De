@@ -31,7 +31,7 @@ $grid-columns: (
   }
 }
 
-//xxl screen 
+//xxl screen
 @include below($xxl) {
   @each $cols, $value in $grid-columns {
     .xxl\:grid-#{$cols} {
@@ -84,218 +84,65 @@ $grid-columns: (
   }
 }
 
-
-
 //grid row-gap
 @for $rowgap from 0 through 150 {
-    @each $side in $sides {
-      .rg-#{$rowgap} {
+  .rg-#{$rowgap} {
+    row-gap: rem($rowgap);
+  }
+}
+
+//column-gap
+@for $colgap from 0 through 150 {
+  .cg-#{$colgap} {
+    column-gap: rem($colgap);
+  }
+}
+
+//breakpoints
+
+$breakpoints: (
+  xxl: $xxl,
+  xl: $xl,
+  lg: $lg,
+  md: $md,
+  sm: $sm,
+  xs: $xs
+);
+
+@each $value, $breakpoint in $breakpoints {
+  @include below($breakpoint) {
+    @for $rowgap from 0 through 150 {
+      .#{$value}\:rg-#{$rowgap} {
         row-gap: rem($rowgap);
       }
     }
   }
+}
 
-
-  //xxl screen 
-  @include below($xxl) {
-    @for $rowgap from 0 through 150 {
-      @each $side in $sides {
-        .xxl\:rg-#{$rowgap} {
-          row-gap: rem($rowgap);
-        }
-      }
-    }
-  }
-
-  //xl screen
-  @include below($xl) {
-    @for $rowgap from 0 through 150 {
-      @each $side in $sides {
-        .xl\:rg-#{$rowgap} {
-          row-gap: rem($rowgap);
-        }
-      }
-    }
-  }
-
-  //lg screen
-  @include below($lg) {
-    @for $rowgap from 0 through 150 {
-      @each $side in $sides {
-        .lg\:rg-#{$rowgap} {
-          row-gap: rem($rowgap);
-        }
-      }
-    }
-  }
-
-  //md screen
-  @include below($md) {
-    @for $rowgap from 0 through 150 {
-      @each $side in $sides {
-        .md\:rg-#{$rowgap} {
-          row-gap: rem($rowgap);
-        }
-      }
-    }
-  }
-
-  //sm screen
-  @include below($sm) {
-    @for $rowgap from 0 through 150 {
-      @each $side in $sides {
-        .sm\:rg-#{$rowgap} {
-          row-gap: rem($rowgap);
-        }
-      }
-    }
-  }
-
-  //xs screen
-  @include below($xs) {
-    @for $rowgap from 0 through 150 {
-      @each $side in $sides {
-        .xs\:rg-#{$rowgap} {
-          row-gap: rem($rowgap);
-        }
-      }
-    }
-  }
-  
-
-  //grid column-gap
-  @for $colgap from 0 through 150 {
-    @each $side in $sides {
-      .cg-#{$colgap} {
+@each $value, $breakpoint in $breakpoints {
+  @include below($breakpoint) {
+    @for $colgap from 0 through 150 {
+      .#{$value}\:cg-#{$colgap} {
         column-gap: rem($colgap);
       }
     }
-  } 
-
-  //xxl screen 
-  @include below($xxl) {
-    @for $colgap from 0 through 150 {
-      @each $side in $sides {
-        .xxl\:cg-#{$colgap} {
-          column-gap: rem($colgap);
-        }
-      }
-    }
   }
-
-  //xl screen
-  @include below($xl) {
-    @for $colgap from 0 through 150 {
-      @each $side in $sides {
-        .xl\:cg-#{$colgap} {
-          column-gap: rem($colgap);
-        }
-      }
-    }
-  }
-
-  //lg screen
-  @include below($lg) {
-    @for $colgap from 0 through 150 {
-      @each $side in $sides {
-        .lg\:cg-#{$colgap} {
-          column-gap: rem($colgap);
-        }
-      }
-    }
-  }
-
-  //md screen
-  @include below($md) {
-    @for $colgap from 0 through 150 {
-      @each $side in $sides {
-        .md\:cg-#{$colgap} {
-          column-gap: rem($colgap);
-        }
-      }
-    }
-  }
-
-  //sm screen
-  @include below($sm) {
-    @for $colgap from 0 through 150 {
-      @each $side in $sides {
-        .sm\:cg-#{$colgap} {
-          column-gap: rem($colgap);
-        }
-      }
-    }
-  }
-
-  //xs screen
-  @include below($xs) {
-    @for $colgap from 0 through 150 {
-      @each $side in $sides {
-        .xs\:cg-#{$colgap} {
-          column-gap: rem($colgap);
-        }
-      }
-    }
-  }
+}
 
 //grid gap
 
-  @for $gaps from 0 through 150 {
-    .gap-#{$gaps} {
+@for $gaps from 0 through 150 {
+  .gap-#{$gaps} {
+    gap: rem($gaps);
+  }
+}
+
+@each $value, $breakpoint in $breakpoints {
+  @include below($breakpoint) {
+    @for $gaps from 0 through 150 {
+      .#{$value}\:gap-#{$gaps} {
         gap: rem($gaps);
+      }
     }
-}
-
-//xxl screen 
-@include below($xxl) {
-    @for $gaps from 0 through 150 {
-        .xxl\:gap-#{$gaps} {
-            gap: rem($gaps);
-        }
-    }
-}
-
-//xl screen
-@include below($xl) {
-    @for $gaps from 0 through 150 {
-        .xl\:gap-#{$gaps} {
-            gap: rem($gaps);
-        }
-    }
-}
-
-//lg screen
-@include below($lg) {
-    @for $gaps from 0 through 150 {
-        .lg\:gap-#{$gaps} {
-            gap: rem($gaps);
-        }
-    }
-}
-
-//md screen
-@include below($md) {
-    @for $gaps from 0 through 150 {
-        .md\:gap-#{$gaps} {
-            gap: rem($gaps);
-        }
-    }
-}
-
-//sm screen
-@include below($sm) {
-    @for $gaps from 0 through 150 {
-        .sm\:gap-#{$gaps} {
-            gap: rem($gaps);
-        }
-    }
-}
-
-//xs screen
-@include below($xs) {
-    @for $gaps from 0 through 150 {
-        .xs\:gap-#{$gaps} {
-            gap: rem($gaps);
-        }
-    }
+  }
 }
