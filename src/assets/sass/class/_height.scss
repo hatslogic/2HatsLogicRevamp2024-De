@@ -1,4 +1,4 @@
-.h-auto{
+.h-auto {
     height: auto;
 }
 @for $i from 0 through 100 {
@@ -6,6 +6,13 @@
         height: $i * 1%;
     }
 }
+
+@for $i from 0 through 300 {
+    .h-px-#{$i} {
+        height: rem($i);
+    }
+}
+
 $breakpoints: (
     xxl: $xxl,
     xl: $xl,
@@ -25,3 +32,12 @@ $breakpoints: (
     }
 }
 
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $i from 1 through 300 {
+            .#{$breakpoint}\:h-px-#{$i} {
+                height: rem($i);
+            }
+        }
+    }
+}

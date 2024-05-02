@@ -10,111 +10,24 @@
     text-align: right;
 }
 
-.xxl\:text-center{
-    @include below($xxl){
-        text-align: center;
+$breakpoints: (
+  xxl: $xxl,
+  xl: $xl,
+  lg: $lg,
+  md: $md,
+  sm: $sm,
+  xs: $xs
+);
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        .#{$breakpoint}\:text-center {
+            text-align: center;
+        }
+        .#{$breakpoint}\:text-left {
+            text-align: left;
+        }
+        .#{$breakpoint}\:text-right {
+            text-align: right;
+        }
     }
 }
-
-.xl\:text-center{
-    @include below($xl){
-        text-align: center;
-    }
-}
-
-.lg\:text-center{
-    @include below($lg){
-        text-align: center;
-    }
-}
-
-.md\:text-center{
-    @include below($md){
-        text-align: center;
-    }
-}
-
-.sm\:text-center{
-    @include below($sm){
-        text-align: center;
-    }
-}
-
-.xs\:text-center{
-    @include below($xs){
-        text-align: center;
-    }
-}
-
-.xxl\:text-left{
-    @include below($xxl){
-        text-align: left;
-    }
-}
-
-.xl\:text-left{
-    @include below($xl){
-        text-align: left;
-    }
-}
-
-.lg\:text-left{
-    @include below($lg){
-        text-align: left;
-    }
-}
-
-.md\:text-left{
-    @include below($md){
-        text-align: left;
-    }
-}
-
-.sm\:text-left{
-    @include below($sm){
-        text-align: left;
-    }
-}
-
-.xs\:text-left{
-    @include below($xs){
-        text-align: left;
-    }
-}
-
-.xxl\:text-right{
-    @include below($xxl){
-        text-align: right;
-    }
-}
-
-.xl\:text-right{
-    @include below($xl){
-        text-align: right;
-    }
-}
-
-.lg\:text-right{
-    @include below($lg){
-        text-align: right;
-    }
-}
-
-.md\:text-right{
-    @include below($md){
-        text-align: right;
-    }
-}
-
-.sm\:text-right{
-    @include below($sm){
-        text-align: right;
-    }
-}
-
-.xs\:text-right{
-    @include below($xs){
-        text-align: right;
-    }
-}
-

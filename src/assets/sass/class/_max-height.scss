@@ -1,4 +1,4 @@
-.mh-auto{
+.mh-auto {
     max-height: auto;
 }
 
@@ -7,6 +7,13 @@
         max-height: $i * 1%;
     }
 }
+
+@for $i from 0 through 300 {
+    .mh-px-#{$i} {
+        max-height: rem($i);
+    }
+}
+
 $breakpoints: (
     xxl: $xxl,
     xl: $xl,
@@ -21,6 +28,16 @@ $breakpoints: (
         @for $i from 1 through 100 {
             .#{$breakpoint}\:mh-#{$i} {
                 max-height: $i * 1%;
+            }
+        }
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $i from 1 through 300 {
+            .#{$breakpoint}\:mh-px-#{$i} {
+                max-height: rem($i);
             }
         }
     }
