@@ -4,9 +4,12 @@
 <partial src="general/header.html"></partial>
 <partial src="general/sticky-menu.html"></partial>
 
-
 <main class="page-wrap inline-block w-100">
-  <partial src="blog/blog-detail.html"></partial>
+  <partial src="blog/blog-details/blogs-title.html"></partial>
+  <div class="container flex gap-40 md:gap-10 align-start md:wrap">
+    <partial src="blog/blog-details/blogs-left-column.html"></partial>
+    <partial src="blog/blog-details/blogs-right-column.html"></partial>
+  </div>
   <partial src="consultation/greetings-from-ceo.html"></partial>
   <partial src="blog/blogs.html"></partial>
   <partial src="general/newsletter.html"></partial>
