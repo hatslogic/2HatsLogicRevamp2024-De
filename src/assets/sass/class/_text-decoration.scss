@@ -1,0 +1,32 @@
+$text-decoration-values: (
+  none: none,
+  underline: underline,
+  overline: overline,
+  line-through: line-through,
+  blink: blink
+);
+
+@each $name, $value in $text-decoration-values {
+  .text-decoration-#{$name} {
+    text-decoration: $value;
+  }
+}
+
+//breakpoints
+$breakpoints: (
+  xxl: $xxl,
+  xl: $xl,
+  lg: $lg,
+  md: $md,
+  sm: $sm,
+  xs: $xs
+);
+@each $breakpoint, $size in $breakpoints {
+  @include below($size) {
+    @each $name, $value in $text-decoration-values {
+      .#{$breakpoint}\:text-decoration-#{$name} {
+        text-decoration: $value;
+      }
+    }
+  }
+}

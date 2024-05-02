@@ -1,61 +1,67 @@
 $line-heights: (
-  1: 1,
-  1.05: 1.05,
-  1.1: 1.1,
-  1.125: 1.125,
-  1.14: 1.14,
-  1.15: 1.15,
-  1.24: 1.24,
-  1.25: 1.25,
-  1.5: 1.5,
-  1.6: 1.6,
-  2: 2,
-  2.25: 2.25,
-  2.5: 2.5,
-  2.75: 2.75,
+  1: '1',
+  1.05: '1.05',
+  1.1: '1.1',
+  1.125: '1.125',
+  1.14: '1.14',
+  1.15: '1.15',
+  1.24: '1.24',
+  1.25: '1.25',
+  1.5: '1.5',
+  1.6: '1.6',
+  2: '2',
+  2.25: '2.25',
+  2.5: '2.5',
+  2.75: '2.75',
   3: 3
 );
 
 @each $lh, $value in $line-heights {
-  .#{str-replace("lh-#{$lh}", ".", "-")} {
-    line-height: $value;
+  .#{str-replace("lh-#{$value}", ".", "-")} {
+    line-height: $lh;
   }
-
+}
+@each $lh, $value in $line-heights {
   @include below($xxl) {
-    .xxl\:#{str-replace("lh-#{$lh}", ".", "-")} {
-      line-height: $value;
+    .xxl\:#{str-replace("lh-#{$value}", ".", "-")} {
+      line-height: $lh;
     }
   }
-
+}
+@each $lh, $value in $line-heights {
   @include below($xl) {
-    .xl\:#{str-replace("lh-#{$lh}", ".", "-")} {
-      line-height: $value;
+    .xl\:#{str-replace("lh-#{$value}", ".", "-")} {
+      line-height: $lh;
     }
   }
-
+}
+@each $lh, $value in $line-heights {
   @include below($lg) {
-    .lg\:#{str-replace("lh-#{$lh}", ".", "-")} {
-      line-height: $value;
+    .lg\:#{str-replace("lh-#{$value}", ".", "-")} {
+      line-height: $lh;
     }
   }
-
+}
+  @each $lh, $value in $line-heights {
   @include below($md) {
-    .md\:#{str-replace("lh-#{$lh}", ".", "-")} {
-      line-height: $value;
+    .md\:#{str-replace("lh-#{$value}", ".", "-")} {
+      line-height: $lh;
     }
   }
-
+}
+@each $lh, $value in $line-heights {
   @include below($sm) {
-    .sm\:#{str-replace("lh-#{$lh}", ".", "-")} {
-      line-height: $value;
+    .sm\:#{str-replace("lh-#{$value}", ".", "-")} {
+      line-height: $lh;
     }
   }
-
+}
+@each $lh, $value in $line-heights {
   @include below($xs) {
     .xs\:#{str-replace("lh-#{$lh}", ".", "-")} {
       line-height: $value;
     }
   }
-
 }
+
 

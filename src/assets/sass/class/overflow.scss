@@ -45,3 +45,63 @@
   .overflow-y-auto {
     overflow-y: auto;
   }
+  $breakpoints: (
+    xxl: $xxl,
+    xl: $xl,
+    lg: $lg,
+    md: $md,
+    sm: $sm,
+    xs: $xs
+  );
+  
+  @each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+      .#{$breakpoint}\:overflow-hidden {
+        overflow: hidden;
+      }
+  
+      .#{$breakpoint}\:overflow-visible {
+        overflow: visible;
+      }
+  
+      .#{$breakpoint}\:overflow-scroll {
+        overflow: scroll;
+      }
+  
+      .#{$breakpoint}\:overflow-auto {
+        overflow: auto;
+      }
+  
+      .#{$breakpoint}\:overflow-x-hidden {
+        overflow-x: hidden;
+      }
+  
+      .#{$breakpoint}\:overflow-x-visible {
+        overflow-x: visible;
+      }
+  
+      .#{$breakpoint}\:overflow-x-scroll {
+        overflow-x: scroll;
+      }
+  
+      .#{$breakpoint}\:overflow-x-auto {
+        overflow-x: auto;
+      }
+  
+      .#{$breakpoint}\:overflow-y-hidden {
+        overflow-y: hidden;
+      }
+  
+      .#{$breakpoint}\:overflow-y-visible {
+        overflow-y: visible;
+      }
+  
+      .#{$breakpoint}\:overflow-y-scroll {
+        overflow-y: scroll;
+      }
+  
+      .#{$breakpoint}\:overflow-y-auto {
+        overflow-y: auto;
+      }
+    }
+  }
