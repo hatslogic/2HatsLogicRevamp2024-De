@@ -15,3 +15,31 @@
 .line-through{
     text-decoration: line-through;
 }
+
+$breakpoints: (
+  xxl: $xxl,
+  xl: $xl,
+  lg: $lg,
+  md: $md,
+  sm: $sm,
+  xs: $xs
+);
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+            .#{$breakpoint}\:uppercase {
+                text-transform: uppercase;
+            }
+            .#{$breakpoint}\:lowercase {
+                text-transform: lowercase;
+            }
+            .#{$breakpoint}\:capitalize {
+                text-transform: capitalize;
+            }
+            .#{$breakpoint}\:underline {
+                text-decoration: underline;
+            }
+            .#{$breakpoint}\:line-through {
+                text-decoration: line-through;
+            }
+    }
+}
