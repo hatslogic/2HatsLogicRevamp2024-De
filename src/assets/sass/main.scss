@@ -38,7 +38,6 @@
 @import "./components/picture"; 
 @import "./components/slider"; 
 @import "./components/accordian"; 
-@import "./components/avatar-wrap"; 
 
 // Classes
 @import "./class/font-family";
@@ -54,7 +53,9 @@
 @import "./class/width";
 @import "./class/height";
 @import "./class/max-width";
+@import "./class/min-width";
 @import "./class/max-height";
+@import "./class/min-height";
 @import "./class/text-align";
 @import "./class/border";
 @import "./class/scroll";

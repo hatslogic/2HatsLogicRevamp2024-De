@@ -1,16 +1,16 @@
-.max-h-auto {
-    max-height: auto;
+.min-h-auto {
+    min-height: auto;
 }
 
 @for $i from 0 through 100 {
-    .max-h-#{$i} {
-        max-height: $i * 1%;
+    .min-h-#{$i} {
+        min-height: $i * 1%;
     }
 }
 
 @for $i from 0 through 300 {
-    .max-h-px-#{$i} {
-        max-height: rem($i);
+    .min-h-px-#{$i} {
+        min-height: rem($i);
     }
 }
 
@@ -26,8 +26,8 @@ $breakpoints: (
 @each $breakpoint, $size in $breakpoints {
     @include below($size) {
         @for $i from 1 through 100 {
-            .#{$breakpoint}\:max-h-#{$i} {
-                max-height: $i * 1%;
+            .#{$breakpoint}\:min-h-#{$i} {
+                min-height: $i * 1%;
             }
         }
     }
@@ -36,8 +36,8 @@ $breakpoints: (
 @each $breakpoint, $size in $breakpoints {
     @include below($size) {
         @for $i from 1 through 300 {
-            .#{$breakpoint}\:max-h-px-#{$i} {
-                max-height: rem($i);
+            .#{$breakpoint}\:min-h-px-#{$i} {
+                min-height: rem($i);
             }
         }
     }
