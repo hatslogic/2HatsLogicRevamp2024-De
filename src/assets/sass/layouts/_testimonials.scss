@@ -52,14 +52,4 @@
             text-transform: uppercase;
         }
     }
-    blockquote{
-        font-size: rem(22);
-        line-height: 1.25;
-        margin-top: rem(20);
-
-        @include below($sm) {
-            font-size: rem(18);
-            line-height: rem(24);
-        }
-    }
 }
