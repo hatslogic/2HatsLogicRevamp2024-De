@@ -55,10 +55,10 @@
                     <?php if(count($posts) > 1): ?>
                         <div class="btn-wrap flex align-center justify-start mt-80 xs:mt-40">
                             <div class="slider-prev testimonial-button-prev flex align-center justify-center transition">
-                                <i class="icomoon icon-arrow-left"></i>
+                                <i class="icomoon icon-chevron_left"></i>
                             </div>
                             <div class="slider-next testimonial-button-next ml-10 flex align-center justify-center transition">
-                                <i class="icomoon icon-arrow-right"></i>
+                                <i class="icomoon icon-chevron_right"></i>
                             </div>
                         </div>
                     <?php endif; ?>
