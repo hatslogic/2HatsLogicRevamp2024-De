@@ -73,7 +73,7 @@
 				?>
 				
 				<a href="#" class="menu-btn inline-flex align-center column hidden md:visible" aria-label="menu">
-					<i class="icomoon icon-hamburger"></i> 
+					<i class="icomoon icon-menu"></i> 
 				</a>
 
 				<a href="#" class="btn btn-primary ml-40 xl:ml-30 sm:inline-flex md:hidden">Hire a developer</a>
@@ -85,13 +85,13 @@
 		<ul class="no-bullets flex align-center justify-center">
 			<li class="h-100 w-100">
 				<a href="#get-started" class="menu-btn h-100 bg-primary px-30 py-10 w-100 inline-flex align-center row" aria-label="consultation">
-					<i class="icomoon icon-consultation"></i> 
+					<i class="icomoon icon-call"></i> 
 					<span class="ml-10">Get a free Consultation</span>
 				</a>
 			</li>
 			<li class="h-100 w-100">
 				<a href="#" class="menu-btn h-100 bg-secondary px-30 py-10 w-100 inline-flex align-center row" aria-label="agency">
-					<i class="icomoon icon-agency"></i> 
+					<i class="icomoon icon-handshake"></i> 
 					<span class="ml-10">For Agency Requests</span>
 				</a>
 			</li>

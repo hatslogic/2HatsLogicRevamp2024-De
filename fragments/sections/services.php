@@ -46,7 +46,7 @@
                             <?php echo apply_filters('the_content', $item['content']); ?>
                             <?php if($item['link']): ?>
                                 <a href="<?php echo $item['link']['url']; ?>" target="<?php echo ($item['link']['target'])? $item['link']['target'] : '_self'; ?>" aria-label="<?php echo $item['link']['title']; ?>" class="link link-primary">
-                                    <?php echo $item['link']['title']; ?> <i class="icomoon icon-arrow-right"></i>
+                                    <?php echo $item['link']['title']; ?> <i class="icomoon icon-chevron_right"></i>
                                 </a>
                             <?php endif; ?>
                         </div>
