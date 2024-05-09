@@ -4,20 +4,10 @@
     background-size: contain;
 
     .count {
-        font-size: rem(55);
         min-width: rem(120);
-
-        @include below($sm) {
-            font-size: rem(44);
-        }
     }
 
     p {
-        line-height: 1.25;
         max-width: 95%;
-
-        @include below($sm) {
-            font-size: rem(18);
-        }
     }
 }

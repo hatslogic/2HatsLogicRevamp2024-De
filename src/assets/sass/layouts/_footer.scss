@@ -6,14 +6,8 @@ footer{
         }
     }
 
-    .social-media{
-        font-size: rem(22);
-    }
-
     .menu{
         ul{
-            line-height: 1.25;
-            font-size: rem(15);
             li{
                 margin-bottom: rem(12);
                 
@@ -34,9 +28,5 @@ footer{
                 max-height: rem(80);
             }
         }
-    }
-
-    .footer-bottom{
-        font-size: rem(14);
     }
 }
