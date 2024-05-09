@@ -1,15 +1,4 @@
 .rating {
-    .lbl {
-        max-width: rem(100);
-        line-height: 1.25;
-        font-size: rem(16);
-
-        @include below($sm) {
-            max-width: 100%;
-            font-size: rem(14);
-        }
-    }
-
     img{
         width: auto;
         height: rem(45);

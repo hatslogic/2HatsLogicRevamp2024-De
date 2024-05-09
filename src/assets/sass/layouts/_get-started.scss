@@ -7,8 +7,6 @@
         }
         @include below($sm){
             // max-width: $container-max-width-md;
-            padding-left: rem(30);
-            padding-right: rem(30);
             margin-left: auto;
             margin-right: auto;
         }
