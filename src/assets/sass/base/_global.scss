@@ -115,7 +115,7 @@ h2,
   @include below($xl) {
     font-size: rem(30);
   }
-  @include below($xs){
+  @include below($xs) {
     font-size: rem(26);
   }
 }
@@ -130,7 +130,7 @@ h3,
   @include below($xl) {
     font-size: rem(30);
   }
-  @include below($xs){
+  @include below($xs) {
     font-size: rem(24);
   }
 }
@@ -146,7 +146,7 @@ h4,
   @include below($xl) {
     font-size: rem(22);
   }
-  @include below($xs){
+  @include below($xs) {
     font-size: rem(18);
   }
 }
@@ -173,7 +173,7 @@ ol {
     font-size: rem(18);
   }
 
-  @include below($xs){
+  @include below($xs) {
     font-size: rem(16);
   }
 }
@@ -339,7 +339,7 @@ b {
 }
 
 .shadow {
-  box-shadow: rgba(0,0,0,.05) 0px 0px 15px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 15px;
 }
 .border-radius-100 {
   border-radius: 100%;
@@ -351,16 +351,11 @@ mark {
   background: none;
   text-decoration: none;
 }
-.hover-text-primary{color: var(--c-primary);
+.hover-text-primary {
+  color: var(--c-primary);
 
   &:hover,
   &:focus {
     color: var(--c-primary);
-  }}
-  .ol {list-style: none; counter-reset: li;
-    li {counter-increment: li;
-  &::before {content: counter(li); color: red;
-    display: inline-block; width: 1em;
-    margin-left: -1em}
   }
-  }
+}
