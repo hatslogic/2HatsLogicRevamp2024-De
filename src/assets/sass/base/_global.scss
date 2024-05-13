@@ -351,3 +351,16 @@ mark {
   background: none;
   text-decoration: none;
 }
+.hover-text-primary{color: var(--c-primary);
+
+  &:hover,
+  &:focus {
+    color: var(--c-primary);
+  }}
+  .ol {list-style: none; counter-reset: li;
+    li {counter-increment: li;
+  &::before {content: counter(li); color: red;
+    display: inline-block; width: 1em;
+    margin-left: -1em}
+  }
+  }
