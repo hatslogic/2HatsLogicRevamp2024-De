@@ -53,7 +53,7 @@
 	</div>
 
 	<header class="header z-10 sticky top-0 w-100 md:bb-0 bg-white pt-20 pb-20 md:pb-0 md:pt-30 md:relative">
-		<div class="container-wide">
+		<div class="container">
 			<div class="header-inner flex w-100 justify-between align-center">
 				<a href="<?php echo home_url(); ?>" class="brand" aria-label="<?php echo get_bloginfo('name'); ?>">
 					<img src="<?php echo $get_dir; ?>/dist/assets/img/brand/logo-wide.svg"
@@ -66,7 +66,7 @@
 					'theme_location' => 'main-menu',
 					'container' => 'nav',
 					'container_class' => 'top-menu inline-flex ml-auto mr-0 md:hidden',
-					'menu_class' => 'no-bullets font-button flex align-center',
+					'menu_class' => 'no-bullets font-button flex align-center fs-14',
 					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 					'walker' => new \MAIN_Menu_Walker(),
 				) );
