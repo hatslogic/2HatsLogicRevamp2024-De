@@ -4,15 +4,14 @@
     <div class="container-full">
         <div class="flex justify-between align-center">
             <div class="marquee technology-list w-100 flex">
-                <?php if ($items): ?>
-                    <span class="marquee__group flex align-center justify-around">
-                        <?php foreach ($items as $key => $item): ?>
-                            <a href="<?php echo $item['url']; ?>" aria-label="<?php echo $item['label']; ?>">
-                                <img src="<?php echo $item['image']['url']; ?>" loading="lazy"
-                                    alt="<?php echo $item['label']; ?>" width="100px" height="50px">
-                            </a>
+            <?php if ($items): ?>
+                <span class="marquee__group flex align-center justify-around">
+                <?php foreach ($items as $key => $item): ?>
+                    <a href="<?php echo $item['url']; ?>" aria-label="<?php echo $item['label']; ?>">
+                        <img src="<?php echo $item['image']['url']; ?>" loading="lazy" alt="<?php echo $item['label']; ?>" width="100px" height="50px">
+                    </a>
                         <?php endforeach ?>
-                    </span>
+                </span>
                 <?php endif; ?>
             </div>
         </div>
