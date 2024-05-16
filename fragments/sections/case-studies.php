@@ -3,20 +3,20 @@
 <section class="works pt-100 pb-100 xs:pt-80 xs:pb-80">
     <div class="container">
         <div class="title">
-            <?php if($headline['sub_title']): ?>
-                <span class="headline c-primary font-bold"><?php echo $headline['sub_title']; ?></span>
+        <?php if($headline['sub_title']): ?>
+            <span class="headline c-primary font-bold"><?php echo $headline['sub_title']; ?></span>
             <?php endif; ?>
             <?php if($headline['title']): ?>
-                <h2><?php echo $headline['title']; ?></h2>
+            <h2> <?php echo $headline['title'] ?></h2>
             <?php endif; ?>
             <?php if($headline['description']): ?>
-                <p><?php echo $headline['description']; ?></p>
+            <p><?php echo $headline['description']; ?></p>
             <?php endif; ?>
         </div>
         <?php if( $posts ): ?>
         <div class="content mt-50 xs:mt-30">
             <div class="grid grid-3 xl:grid-2 xs:grid-1 gap-35 xs:gap-20 xs:flex xs:nowrap xs:scroll-x xs:-ml-30 xs:-mr-30 scroll-snap">
-                <?php
+            <?php
                 foreach( $posts as $post ):
                     setup_postdata($post);
                     $title = get_the_title($post->ID);
@@ -33,7 +33,7 @@
                 ?>
                 <div class="col card snap-center">
                     <a href="<?php echo esc_url($url); ?>" class="item">
-                        <?php if($featured_image): ?>
+                    <?php if($featured_image): ?>
                         <picture>
                             <source srcset="<?php echo webp($featured_image); ?>" type="image/webp">
                             <source srcset="<?php echo $featured_image; ?>" type="image/jpg">
@@ -42,22 +42,25 @@
                         <?php endif; ?>
                         <div class="info mt-20 xs:pl-20 xs:pr-20">
                             <h3 class="h5 transition font-regular">
-                                <?php if($title): ?>
-                                <strong class="transition font-bold"><?php echo truncate_text($title, 60, '...'); ?></strong>
+                            <?php if($title): ?>
+                                <strong class="transition font-bold"><?php echo truncate_text($title, 60, '...'); ?></strong> 
                                 <?php endif; ?>
                                 <?php echo ($description) ? '- ' . truncate_text($description, 90) : ''; ?>
                             </h3>
                         </div>
                     </a>
-                </div>
+                </div>    
                 <?php
                 endforeach;
                 wp_reset_postdata();
                 ?>
+        
             </div>
+            <?php if($view_all): ?>
             <div class="btn-group center mt-80 xs:mt-40">
-                <a href="#" class="btn btn-primary">view all</a>
+                <a href="<?php echo $view_all['url']; ?>" class="btn btn-primary"><?php echo $view_all['title']; ?></a>
             </div>
+            <?php endif; ?>
         </div>
         <?php endif; ?>
     </div>
