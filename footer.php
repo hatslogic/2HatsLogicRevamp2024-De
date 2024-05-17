@@ -24,7 +24,7 @@
                               'menu'   => 'service-menu',
                               'theme_location' => 'service-menu',
                               'container' => false,
-                              'menu_class' => 'no-bullets font-regular mt-20 sm:mt-15 fs-15 lh-1-25',
+                              'menu_class' => 'no-bullets font-regular mt-20 sm:mt-15',
                               'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                               'walker' => new \FOOTER_Menu_Walker(),
                             ) );
@@ -34,8 +34,8 @@
                             <a href="#" class="h4 font-bold">Web and E-commerce<br/> Services</a>
                             <?php 
                             wp_nav_menu( array(
-                              'menu'   => 'company-menu',
-                              'theme_location' => 'company-menu',
+                              'menu'   => 'web-ecommerce-menu',
+                              'theme_location' => 'web-ecommerce-menu',
                               'container' => false,
                               'menu_class' => 'no-bullets font-regular mt-20 sm:mt-15',
                               'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
