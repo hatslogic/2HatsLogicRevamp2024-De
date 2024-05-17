@@ -37,7 +37,7 @@ function app_render_page_case_studies() {
 	foreach ( $sections as $section_index => $section ) {
 		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
 
-		app_render_fragment( 'sections' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
+		app_render_fragment( 'case_studies' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
 	}
 }
 

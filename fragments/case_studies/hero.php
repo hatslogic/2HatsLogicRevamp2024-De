@@ -1,4 +1,4 @@
-<?php extract($case_studies); ?>
+<?php extract($section); ?>
 
 <section class="hero py-100 xs:py-80 b-0 bb-1 bc-hash solid">
     <div class="container">
@@ -7,7 +7,7 @@
                 <div class="service-header">
                     <div class="title"> <span class="headline c-primary font-bold">E-commerce</span>
 
-                            <h1 class="h1-sml"><?php $title; ?></h1>
+                            <h1 class="h1-sml"><?php echo $section['title']; ?></h1>
 
                         <p class="mt-30">We are a web development and outsourcing agency based in Kochi, India.</p>
                     </div>
