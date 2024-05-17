@@ -7,7 +7,7 @@
                 <div class="service-header">
                     <div class="title"> <span class="headline c-primary font-bold">E-commerce</span>
 
-                            <h1 class="h1-sml"><?php echo $section['title']; ?></h1>
+                            <h1 class="h1-sml"><?php echo $title; ?></h1>
 
                         <p class="mt-30">We are a web development and outsourcing agency based in Kochi, India.</p>
                     </div>
