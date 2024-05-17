@@ -29,6 +29,18 @@ function app_render_page_sections() {
 	}
 }
 
+function app_render_page_case_studies() {
+	if ( ! $sections = get_field( 'case_studies' ) ) {
+		return;
+	}
+
+	foreach ( $sections as $section_index => $section ) {
+		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
+
+		app_render_fragment( 'sections' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
+	}
+}
+
 function app_render_resource_page_sections() {
 	if ( ! $sections = get_field( 'resource_sections' ) ) {
 		return;
