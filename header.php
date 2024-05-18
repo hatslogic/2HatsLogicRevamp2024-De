@@ -52,7 +52,7 @@
 		<span class="progress-bar bg-primary w-0 block" id="progress"></span>
 	</div>
 
-	<header class="header z-10 sticky top-0 w-100 md:bb-0 bg-white pt-20 pb-20 md:pb-0 md:pt-30 md:relative">
+	<header class="header z-12 sticky top-0 w-100 md:bb-0 bg-white md:pb-0 md:pt-30 md:relative">
 		<div class="container">
 			<div class="header-inner flex w-100 justify-between align-center">
 				<a href="<?php echo home_url(); ?>" class="brand" aria-label="<?php echo get_bloginfo('name'); ?>">
@@ -65,8 +65,8 @@
 					'menu'   => 'main-menu',
 					'theme_location' => 'main-menu',
 					'container' => 'nav',
-					'container_class' => 'top-menu inline-flex ml-auto mr-0 md:hidden',
-					'menu_class' => 'no-bullets font-button flex align-center fs-14',
+					'container_class' => 'top-menu inline-flex ml-auto mr-0 h-px-82 md:hidden md:fixed md:z-12 md:h-100 md:w-100 md:left-0 md:top-0 md:pt-40 md:pb-100 md:pl-30 md:pr-30',
+					'menu_class' => 'main-menu no-bullets font-button flex md:column align-center fs-14 md:fs-18',
 					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 					'walker' => new \MAIN_Menu_Walker(),
 				) );

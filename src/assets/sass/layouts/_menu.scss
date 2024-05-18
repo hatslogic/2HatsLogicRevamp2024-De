@@ -1,11 +1,69 @@
-.top-menu{
-    ul{
-        text-transform: uppercase;
-        a{
-            color: var(--c-secondary);
+.main-menu{
+    
+    a{
+        text-decoration: none;
+        color: var(--c-secondary);
+    }
+
+    @include above($md){
+        & > li{
+            & > a{
+                border-color: transparent;
+            }
+            & > ul{
+                box-shadow: 0px 8px 8px rgba(0,0,0,.05);
+                visibility: hidden;
+                opacity: 0;
+            }
+            &.active, &:hover{
+                & > a{
+                    border-color: var(--c-primary);
+                    color: var(--c-primary);
+                }
+                & > ul{
+                    // visibility: visible;
+                    // opacity: 1;
+
+                    a{
+                        &:hover{
+                            color: var(--c-primary);
+                        }
+                    }
+                }
+            }
             &:hover{
-                color: var(--c-primary);
+                & > ul{
+                    visibility: visible;
+                    opacity: 1;
+                }
             }
         }
+    }
+
+    @include below($md){
+        & > .has-child{
+            & > ul{
+                display: none;
+            }
+            &.active{
+                & > a{
+                    color: var(--c-primary);
+                }
+                & > ul{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.top-menu{
+    @include below($md){
+        background-color: var(--c-white);
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+    &.active{
+        display: block;
     }
 }
