@@ -385,12 +385,25 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 
         if ($depth === 0) {
             $li_classes = 'ml-40 xl:ml-30 md:ml-0 inline-flex md:inline-block md:w-100';
+			if ($args->walker->has_children) {
+				$li_classes .= ' has-child';
+			}
+
             $a_classes = 'pt-30 pb-30 md:pt-10 md:pb-10 b-0 bb-3 solid md:bb-0 md:w-100 uppercase block';
+			
         } elseif ($depth === 1) {
             $li_classes = 'depth-1';
+			if ($args->walker->has_children) {
+				$li_classes .= ' has-child';
+			}
+
             $a_classes = 'h4 inline-block font-bold b-0 bb-1 bc-hash solid pb-20 md:bb-0 md:pb-0';
         } elseif ($depth === 2) {
             $li_classes = 'depth-2';
+			if ($args->walker->has_children) {
+				$li_classes .= ' has-child';
+			}
+			
             $a_classes = 'depth-2 a';
         }
 

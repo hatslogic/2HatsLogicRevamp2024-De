@@ -2,12 +2,14 @@ const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.top-menu');
 const hasChild = document.querySelector('.main-menu .has-child');
 
-menuBtn.addEventListener('click', () => {
+menuBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     menuBtn.classList.toggle('active');
     menu.classList.toggle('active');
 });
 
 hasChild.addEventListener('click', (e) => {
+    e.preventDefault();
     e.target.parentNode.classList.toggle('active');
 });
 
