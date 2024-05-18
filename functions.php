@@ -319,6 +319,8 @@ if ( ! function_exists( 'app_setup_theme' ) ) {
 		add_image_size( 'img_865x576', 865, 576, true );
 		add_image_size( 'img_580x580', 580, 580, true );
 		add_image_size( 'img_580x540', 580, 540, true );
+		add_image_size( 'img_548x348', 548, 348, true );
+		add_image_size( 'img_730x466', 730, 466, true );
 	}
 }
 
