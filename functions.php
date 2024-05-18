@@ -355,28 +355,76 @@ add_action( 'wp_enqueue_scripts', function() {
 add_filter('wpcf7_autop_or_not', '__return_false');
 
 class MAIN_Menu_Walker extends Walker_Nav_Menu {
-	function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
-		$active_class = $item->current ? ' active' : '';
-		$output .= "<li class='ml-40 xl:ml-30" . $active_class . "'>";
+    function start_lvl( &$output, $depth = 0, $args = null ) {
+        // Add classes to <ul> based on depth
+        $indent = str_repeat( "\t", $depth );
+        $ul_classes = '';
 
-		if ($item->url && $item->url != '#') {
-			$output .= '<a href="' . $item->url . '" aria-label="' . strtolower($item->title) . '">';
+        if ($depth === 0) {
+            $ul_classes = 'no-bullets fixed md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-hash md:bt-0';
+        } elseif ($depth === 1) {
+            $ul_classes = 'no-bullets font-regular mt-20 md:mt-5 lh-2';
+        } elseif ($depth === 2) {
+            $ul_classes = 'submenu-level-2';
+        }
+        
+		if ($depth === 0) {
+        	$output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex justify-between md:column gap-30 md:gap-20 py-60 md:pt-20 md:pb-20 md:pl-0 md:pr-0\">\n";
+		} else {	
+			$output .= "\n$indent<ul class=\"$ul_classes\">\n";
+		}
+    }
+
+    function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
+        // Add classes to <li> and <a>
+        $active_class = $item->current ? ' active' : '';
+        $li_classes = '';
+        $a_classes = '';
+
+        if ($depth === 0) {
+            $li_classes = 'ml-40 xl:ml-30 md:ml-0 inline-flex md:inline-block md:w-100';
+            $a_classes = 'pt-30 pb-30 md:pt-10 md:pb-10 b-0 bb-3 solid md:bb-0 md:w-100 uppercase block';
+        } elseif ($depth === 1) {
+            $li_classes = 'depth-1';
+            $a_classes = 'h4 inline-block font-bold b-0 bb-1 bc-hash solid pb-20 md:bb-0 md:pb-0';
+        } elseif ($depth === 2) {
+            $li_classes = 'depth-2';
+            $a_classes = 'depth-2 a';
+        }
+
+        $output .= "<li class=\"$li_classes$active_class\">";
+
+        if ($item->url && $item->url != '#') {
+            $output .= '<a class="' . $a_classes . '" href="' . $item->url . '" aria-label="' . strtolower($item->title) . '">';
+        } else {
+            $output .= '<span>';
+        }
+
+        $output .= $item->title;
+
+        if ($item->url && $item->url != '#') {
+            if ($args->walker->has_children) {
+                $output .= '<i class="icomoon icon-expand_more ml-5 fs-12"></i>';
+            }
+
+            $output .= '</a>';
+        } else {
+            $output .= '</span>';
+        }
+    }
+
+    function end_lvl( &$output, $depth = 0, $args = null ) {
+        // End <li> and <ul> elements.
+        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+        $output .= "$indent\t</li>\n";
+        // $output .= "$indent</div></ul>\n";
+
+		if ($depth === 0) {
+        	$output .= "$indent</div></ul>\n";
 		} else {
-			$output .= '<span>';
+			$output .= "$indent</ul>\n";
 		}
-
-		$output .= $item->title;
-
-		if ($item->url && $item->url != '#') {
-			$output .= '</a>';
-		} else {
-			$output .= '</span>';
-		}
-
-		if ($args->walker->has_children) {
-			$output .= '<i class="caret fa fa-angle-down"></i>';
-		}
-	}
+    }
 }
 
 class FOOTER_Menu_Walker extends Walker_Nav_Menu {
