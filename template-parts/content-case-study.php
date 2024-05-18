@@ -13,7 +13,7 @@
                 <?php
                 $args = array(
                     'post_type' => 'case-study',
-                    'posts_per_page' => -1, // -1 will retrieve all posts
+                    'posts_per_page' => -1, 
                 );
                 $case_studies_query = new WP_Query($args);
                 ?>
@@ -93,15 +93,12 @@
                                                 alt="<?php the_title_attribute(); ?>"
                                                 width="<?php echo esc_attr($featured_image_width); ?>"
                                                 height="<?php echo esc_attr($featured_image_height); ?>" class="transition">
-                                        </picture>
-                                    <?php else: ?>
-                                        <picture>
-                                            <source srcset="<?php echo get_template_directory_uri(); ?>/images/placeholder.webp"
-                                                type="image/webp">
-                                            <source srcset="<?php echo get_template_directory_uri(); ?>/images/placeholder.jpg"
-                                                type="image/jpeg">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/images/placeholder.jpg"
-                                                loading="lazy" alt="Placeholder" width="548px" height="349px" class="transition">
+                                       
+                                    <?php else:
+                                      $placeholder_image_url = get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
+
+                                      ?>
+                                            <img src="<?php echo esc_url($placeholder_image_url); ?>" loading="lazy" alt="Placeholder" width="548px" height="349px" class="transition">
                                         </picture>
                                     <?php endif; ?>
                                     <div class="info mt-30">

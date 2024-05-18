@@ -37,7 +37,7 @@
                         <picture>
                             <source srcset="<?php echo webp($featured_image); ?>" type="image/webp">
                             <source srcset="<?php echo $featured_image; ?>" type="image/jpg">
-                            <img src="<?php echo $featured_image; ?>" loading="lazy" alt="<?php¸ ?>" width="<?php echo $featured_image_width; ?>" height="<?php echo $featured_image_height; ?>" class="transition">
+                            <img src="<?php echo $featured_image; ?>" loading="lazy" alt="<?php echo $featured_image_alt; ?>" width="<?php echo $featured_image_width; ?>" height="<?php echo $featured_image_height; ?>" class="transition">
                         </picture>
                         <?php endif; ?>
                         <div class="info mt-20 xs:pl-20 xs:pr-20">

@@ -14,7 +14,7 @@
             <div class="flex nowrap sm:wrap justify-between scroll-x">
             <?php foreach ($items as $key => $item) : ?>
                 <div class="col sm:w-50 pr-40 sm:pr-20">
-                    <div class="count font-light c-primary fs-55 sm:fs-44"><span class="digit transition" data-target="<?php echo $item['count']; ?>">0</span><?php echo $item['suffix']; ?></div>
+                    <div class="count font-light c-primary fs-55 sm:fs-44"><span class="digit transition" data-target="<?php echo $item['count']; ?>"><?php echo $item['count']; ?></span><?php echo $item['suffix']; ?></div>
                     <p class="mt-10 lh-1-25"><small><?php echo $item['label']; ?></small> </p>
                 </div>
                 <?php endforeach ?>

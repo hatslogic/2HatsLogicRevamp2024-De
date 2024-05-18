@@ -1,0 +1,27 @@
+<?php extract($section); ?>
+
+
+<section class="journal pt-100 pb-100 xs:pt-80 xs:pb-80">
+    <div class="container">
+        <?php if ($image): ?>
+            <picture>
+                <source srcset="<?php echo webp($image['sizes']['img_730x466']); ?>" type="image/webp">
+                <source srcset="<?php echo $image['sizes']['img_730x466']; ?>" type="image/jpg">
+                <img src="<?php echo $image['sizes']['img_730x466']; ?>" alt="Featured case study" width="731px"
+                    height="466px" class="h-auto w-100">
+            </picture>
+        <?php endif; ?>
+        <div class="title mt-60">
+            <?php if ($client_location): ?>
+                <div class="font-bold capitalize mb-15">Client location: <span
+                        class="c-primary"><?php echo $client_location; ?></span>
+                <?php endif; ?>
+            </div>
+            <h2><?php echo $title; ?></h2>
+
+        </div>
+        <div class="content mt-40 xs:mt-30">
+            <p><?php echo $content; ?></p>
+        </div>¯
+    </div>
+</section>

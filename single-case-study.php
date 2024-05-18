@@ -15,6 +15,10 @@ get_header();
 </main>
 
 <?php
-if ( get_field( 'show_callout' ) ) {
-    app_render_fragment( 'global-callout' );
+if (get_field('show_callout')) {
+    app_render_fragment('global-callout');
 }
+?>
+
+<?php get_template_part('template-parts/start-project'); ?>
+<?php get_template_part('template-parts/related-case-studies'); ?>

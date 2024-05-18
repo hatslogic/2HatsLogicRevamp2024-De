@@ -41,6 +41,18 @@ function app_render_page_case_studies() {
 	}
 }
 
+function app_render_page_single_blog() {
+	if ( ! $sections = get_field( 'single_blog' ) ) {
+		return;
+	}
+
+	foreach ( $sections as $section_index => $section ) {
+		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
+
+		app_render_fragment( 'single_blog' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
+	}
+}
+
 function app_render_resource_page_sections() {
 	if ( ! $sections = get_field( 'resource_sections' ) ) {
 		return;
