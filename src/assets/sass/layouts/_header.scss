@@ -1,9 +1,9 @@
 header{
-    height: rem(90);
+    // height: rem(90);
 
-    @include below($md){
-        height: rem(80);
-    }
+    // @include below($md){
+    //     height: rem(80);
+    // }
 
     &.scrolled{
         box-shadow: 1px 1px 8px rgba(0,0,0,.05);
@@ -22,17 +22,5 @@ header{
 
     .menu-btn{
         color: var(--c-secondary);
-    }
-
-    a{
-        text-decoration: none;
-        color: var(--c-grey);
-        &:hover{
-            color: var(--c-primary);
-        }
-    }
-
-    [class^="icon-"], [class*=" icon-"] {
-        font-size: rem(32);
     }
 }

@@ -2,6 +2,7 @@
 //=require plugins/smooth-scroll.js
 //=require app/base.js
 //=require app/hero.js
+//=require app/menu.js
 //=require app/progress.js
 //=require app/header.js
 //=require app/sticky.js

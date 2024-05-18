@@ -141,10 +141,10 @@ h4,
   line-height: rem(26);
   line-height: 1.1;
   @include below($xxl) {
-    font-size: rem(24);
+    font-size: rem(22);
   }
   @include below($xl) {
-    font-size: rem(22);
+    font-size: rem(20);
   }
   @include below($xs) {
     font-size: rem(18);
