@@ -10,6 +10,12 @@ $text-decoration-values: (
   .text-decoration-#{$name} {
     text-decoration: $value;
   }
+
+  .hover\:text-decoration-#{$name} {
+    &:hover, &:focus {
+      text-decoration: $value;
+    }
+  }
 }
 
 //breakpoints
@@ -26,6 +32,11 @@ $breakpoints: (
     @each $name, $value in $text-decoration-values {
       .#{$breakpoint}\:text-decoration-#{$name} {
         text-decoration: $value;
+      }
+      .hover\:#{$breakpoint}\:text-decoration-#{$name} {
+        &:hover, &:focus {
+          text-decoration: $value;
+        }
       }
     }
   }

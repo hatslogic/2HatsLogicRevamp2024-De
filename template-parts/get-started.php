@@ -24,7 +24,7 @@ $form_shortcode =  get_field('form_shortcode','option');
     <div class="flex align-center relative z-1">
         <div class="col w-50 sm:hidden"></div>
         <div class="col w-50 sm:w-100 p-80 sm:px-30 sm:py-60">
-            <div class="form-wrap sm:px-30">
+            <div class="form-wrap">
             <?php echo do_shortcode($form_shortcode); ?>
             </div>
         </div>

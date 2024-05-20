@@ -140,3 +140,28 @@
 .bg-transparent{
     background-color: transparent;
 }
+
+// Hover colors
+.hover\:c-primary{
+    &:hover{
+        color: var(--c-primary-hover);
+    }
+}
+
+.hover\:c-secondary{
+    &:hover{
+        color: var(--c-secondary-hover);
+    }
+}
+
+.hover\:c-white{
+    &:hover{
+        color: var(--c-white-hover);
+    }
+}
+
+.hover\:c-black{
+    &:hover{
+        color: var(--c-black-hover);
+    }
+}
