@@ -2,6 +2,11 @@
 <section class="casestudy-list pt-100 pb-100 xs:pt-80 xs:pb-80">
         <div class="container">
             <div class="title w-70 md:w-100">
+                <?php
+
+                $title = get_field('case_studies_page_title','option');
+                $desc =  get_field('case_studies_page_description','option');
+                ?>
                 <?php if ($title): ?>
                     <h1 class="h1-sml"><?php echo $title; ?></h1>
                 <?php endif; ?>
