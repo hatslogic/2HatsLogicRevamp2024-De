@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 if (get_field('enable_faq')): ?>
 <section class="blogs_faq">
     <div class="content">
@@ -32,87 +32,4 @@ if (get_field('enable_faq')): ?>
     </div>
 </section>
   
-<?php endif; ?> -->
-
-<section class="blogs_faq">
-    <div class="content">
-        <div class="title">
-            <h3>FAQ's</h3>
-        </div>
-        <div class="content mt-20 gap-40 xs:mt-10">
-            <div class="acc">
-                <div class="acc-item py-20 b-0 bb-1 bc-hash solid">
-                    <div class="acc-toggle flex justify-between relative">
-                        <h4 class="max-w-80">What is the hourly rate of a Laravel Developer?</h4 class="max-w-80">
-                        <div class="wrap-icon absolute right-0 flex fs-30 xs:fs-20">
-                            <div class="icomoon icon-expand_circle_down add"></div>
-                            <div class="icomoon icon-expand_circle_up minus"></div>
-                        </div>
-                    </div>
-                    <div class="acc-content">
-                        <div class="inner w-100">
-                            <p>Shopware 6 offers a more modern, sreamlined interface and provides new features and flexibility that can help drive more sales and improve the overal user experience.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="acc-item py-20 b-0 bb-1 bc-hash solid">
-                    <div class="acc-toggle flex justify-between relative">
-                        <h4 class="max-w-80">What are the roles and responsibilities of a Laravel developer?</h4 class="max-w-80">
-                        <div class="wrap-icon absolute right-0 flex fs-30 xs:fs-20">
-                            <div class="icomoon icon-expand_circle_down add"></div>
-                            <div class="icomoon icon-expand_circle_up minus"></div>
-                        </div>
-                    </div>
-                    <div class="acc-content">
-                        <div class="inner w-100">
-                            <p>Shopware 6 offers a more modern, sreamlined interface and provides new features and flexibility that can help drive more sales and improve the overal user experience.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="acc-item py-20 b-0 bb-1 bc-hash solid">
-                    <div class="acc-toggle flex justify-between relative">
-                        <h4 class="max-w-80">What steps are involved in the recruitment process for hiring a Laravel developer?</h4 class="max-w-80">
-                        <div class="wrap-icon absolute right-0 flex fs-30 xs:fs-20">
-                            <div class="icomoon icon-expand_circle_down add"></div>
-                            <div class="icomoon icon-expand_circle_up minus"></div>
-                        </div>
-                    </div>
-                    <div class="acc-content">
-                        <div class="inner w-100">
-                            <p>Shopware 6 offers a more modern, sreamlined interface and provides new features and flexibility that can help drive more sales and improve the overal user experience.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="acc-item py-20 b-0 bb-1 bc-hash solid">
-                    <div class="acc-toggle flex justify-between relative">
-                        <h4 class="max-w-80">What skills should I look for in a Laravel developer?</h4 class="max-w-80">
-                        <div class="wrap-icon absolute right-0 flex fs-30 xs:fs-20">
-                            <div class="icomoon icon-expand_circle_down add"></div>
-                            <div class="icomoon icon-expand_circle_up minus"></div>
-                        </div>
-                    </div>
-                    <div class="acc-content">
-                        <div class="inner w-100">
-                            <p>Shopware 6 offers a more modern, sreamlined interface and provides new features and flexibility that can help drive more sales and improve the overal user experience.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="acc-item py-20 b-0 bb-1 bc-hash solid">
-                    <div class="acc-toggle flex justify-between relative">
-                        <h4 class="max-w-80">Why should I consider hiring Laravel developers from 2Hats Logic Solutions?</h4 class="max-w-80">
-                        <div class="wrap-icon absolute right-0 flex fs-30 xs:fs-20">
-                            <div class="icomoon icon-expand_circle_down add"></div>
-                            <div class="icomoon icon-expand_circle_up minus"></div>
-                        </div>
-                    </div>
-                    <div class="acc-content">
-                        <div class="inner w-100">
-                            <p>Shopware 6 offers a more modern, sreamlined interface and provides new features and flexibility that can help drive more sales and improve the overal user experience.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-  
+<?php endif; ?>
