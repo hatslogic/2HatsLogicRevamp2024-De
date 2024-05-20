@@ -1,16 +1,17 @@
 <?php 
-$quote = get_field('quote');
-$name = get_field('author');
-$desig = get_field('author_designation');
-$avatar = get_field('author_avatar');
+$quote = get_field('quote','option');
+$name = get_field('author','option');
+$desig = get_field('author_designation','option');
+$avatar = get_field('author_avatar','option');
+$cta = get_field('quote_cta','option');
 
 
 ?>
+<?php if ($quote) : ?>
 <section class="about pt-100 pb-100 md:pt-60 md:pb-60">
     <div class="container xs:p-0">
         <div class="content">
-            <div
-                class="w-100 shadow max-w-90 md:max-w-100 px-100 py-60 md:px-30 md:py-30 m-auto b-1 solid bc-light-grey xs:pt-40">
+            <div class="w-100 shadow max-w-90 md:max-w-100 px-100 py-60 md:px-30 md:py-30 m-auto b-1 solid bc-light-grey xs:pt-40">
                 <blockquote class="font-quote w-100 m-0 fs-20 lh-1-5"><?php echo $quote?></blockquote>
                 <div
                     class="flex justify-between align-end md:wrap md:justify-end">
@@ -27,11 +28,13 @@ $avatar = get_field('author_avatar');
                                 class="designation font-light fs-15 lh-1-2 mt-5 inline-block"><?php echo $desig ?></span>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary">Get A Free
-                        Consultation</a>
+                    <?php if ($cta) : ?>
+                    <a href="<?php echo $cta['url']?>" class="btn btn-primary"><?php echo $cta['title'] ?></a>
+                    <?php endif; ?>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+<?php endif; ?>

@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 if (get_field('enable_faq')): ?>
     <section class="faqs pt-100 pb-100 xs:pt-80 xs:pb-80 @@bg">
         <div class="container">
@@ -28,9 +28,10 @@ if (get_field('enable_faq')): ?>
 
                         <?php endwhile; ?>
                     </div>
-                    <?php
-            endif; ?>
             </div>
+
+            <?php
+            endif; ?>
         </div>
     </section>
-<?php endif; ?>
+<?php endif; ?> -->
