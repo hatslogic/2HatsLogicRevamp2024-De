@@ -414,7 +414,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
             $a_classes = 'pt-30 pb-30 md:pt-10 md:pb-10 b-0 bb-3 solid md:bb-0 md:w-100 uppercase block';
 			
         } elseif ($depth === 1) {
-            $li_classes = 'depth-1';
+            $li_classes = 'depth-1 w-100';
 			if ($args->walker->has_children) {
 				$li_classes .= ' has-child';
 			}
@@ -457,7 +457,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
         // $output .= "$indent</div></ul>\n";
 
 		if ($depth === 0) {
-        	$output .= "$indent</div></ul>\n";
+        	$output .= "$indent</div><div class=\"container flex md:hidden\"> <ul class=\"sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100\"><li class=\"mt-30 mb-30\"> <a href=\"#\" class=\"inline-block\" aria-label=\"blog\">Blog</a></li><li class=\"mt-30 mb-30 ml-30 pl-30 b-0 bl-1 solid bc-hash\"> <a href=\"#\" class=\"inline-block\" aria-label=\"contact\">Contact</a></li></ul></div></ul>\n";
 		} else {
 			$output .= "$indent</ul>\n";
 		}

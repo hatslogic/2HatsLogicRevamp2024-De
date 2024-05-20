@@ -67,9 +67,16 @@
 					'container' => 'nav',
 					'container_class' => 'top-menu inline-flex ml-auto mr-0 h-px-82 md:hidden md:fixed md:z-12 md:h-100 md:w-100 md:left-0 md:top-0 md:pt-40 md:pb-100 md:pl-30 md:pr-30',
 					'menu_class' => 'main-menu no-bullets font-button flex md:column align-center fs-14 md:fs-18',
-					'items_wrap' => '<button class="btn btn-secondary hidden md:visible absolute md:fixed z-3 top-0 right-0 close" onclick="closeMenu()"> <i class="icomoon icon-close"></i>
-
-					</button><ul id="%1$s" class="%2$s">%3$s</ul>',
+					'items_wrap' => '<button class="btn btn-secondary hidden md:visible absolute md:fixed z-3 top-0 right-0 close" onclick="closeMenu()"> <i class="icomoon icon-close"></i></button><ul id="%1$s" class="%2$s">%3$s</ul> <div class="flex bg-white hidden md:visible md:mt-30 md:fixed bottom-1 w-100 left-0 right-0 px-30">
+									<ul class="sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100">
+										<li class="md:mt-20 md:mb-20">
+											<a href="#" class="inline-block" aria-label="blog">Blog</a>
+										</li>
+										<li class="md:mt-20 md:mb-20 ml-30 pl-30 b-0 bl-1 solid bc-hash">
+											<a href="#" class="inline-block" aria-label="contact">Contact</a>
+										</li>
+									</ul>
+								</div>',
 					'walker' => new \MAIN_Menu_Walker(),
 				) );
 				?>
