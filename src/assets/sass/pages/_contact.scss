@@ -1,0 +1,16 @@
+.contact-wrap{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    &.show{
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.switch-form-actions{
+    button{
+        cursor: pointer;
+    }
+}

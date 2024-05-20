@@ -74,7 +74,7 @@
 				) );
 				?>
 				
-				<a href="#" class="menu-btn fs-35 inline-flex align-center column hidden md:visible" aria-label="menu">
+				<a href="#" class="menu-btn fs-32 inline-flex align-center column hidden md:visible" aria-label="menu">
 					<i class="icomoon icon-menu"></i> 
 				</a>
 

@@ -41,11 +41,11 @@ $sides: top, right, bottom, left; // Define the sides
 }
 
 //padding-x value 1 to 300
-@for $space from 1 through 300 {
-.px-#{$space} {
-  padding-left: rem($space);
-  padding-right: rem($space);
-}
+@for $space from 0 through 300 {
+  .px-#{$space} {
+    padding-left: rem($space);
+    padding-right: rem($space);
+  }
 }
 
 @each $breakpoint, $size in $breakpoints  {
@@ -60,21 +60,22 @@ $sides: top, right, bottom, left; // Define the sides
 }
 
 //padding-y value 1 to 300
-@for $space from 1 through 300 {
-.py-#{$space} {
-  padding-top: rem($space);
-  padding-bottom: rem($space);
-}
-}
-@each $breakpoint, $size in $breakpoints  {
-@for $space from 1 through 300 {
-  .#{$breakpoint}\:py-#{$space} {
-    @include below($size) {
-      padding-top: rem($space);
-      padding-bottom: rem($space);
-    }
+@for $space from 0 through 300 {
+  .py-#{$space} {
+    padding-top: rem($space);
+    padding-bottom: rem($space);
   }
 }
+
+@each $breakpoint, $size in $breakpoints  {
+  @for $space from 0 through 300 {
+    .#{$breakpoint}\:py-#{$space} {
+      @include below($size) {
+        padding-top: rem($space);
+        padding-bottom: rem($space);
+      }
+    }
+  }
 }
 
 @each $breakpoint, $size in $breakpoints {

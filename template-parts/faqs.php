@@ -6,7 +6,7 @@ if (get_field('enable_faq')): ?>
                 <h2><?php the_field('faq_title'); ?></h2>
             </div>
             <?php if (have_rows('faq_group')): ?>
-                <div class="content mt-80 gap-40 xs:mt-30">
+                <div class="content mt-60 gap-40 xs:mt-30">
                     <div class="acc">
                         <?php
                         while (have_rows('faq_group')):

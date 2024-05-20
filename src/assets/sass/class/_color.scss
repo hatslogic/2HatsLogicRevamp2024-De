@@ -39,6 +39,10 @@
     color: var(--c-pigment);
 }
 
+.c-transparent{
+    color: transparent;
+}
+
 /* Border Color */
 .bc-primary{
     border-color: var(--c-primary);
@@ -78,6 +82,10 @@
 
 .bc-pigment{
     border-color: var(--c-pigment);
+}
+
+.bc-transparent{
+    border-color: transparent;
 }
 
 /* Background Color */
@@ -127,4 +135,8 @@
 
 .bg-pigment{
     background-color: var(--c-pigment);
+}
+
+.bg-transparent{
+    background-color: transparent;
 }
