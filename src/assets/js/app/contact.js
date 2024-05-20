@@ -36,7 +36,7 @@ function makeRequest(method, url, callback) {
 
 // Get user's IP address
 if(input) {
-    makeRequest('GET', 'http://ip-api.com/json/', function(response) {
+    makeRequest('GET', 'https://ip-api.com/json/', function(response) {
         var data = JSON.parse(response);
         var countryCode = data.countryCode; // Extract the country code from the response
 
