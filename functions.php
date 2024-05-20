@@ -440,7 +440,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
         $output .= $item->title;
 
         if ($item->url && $item->url != '#') {
-            if ($args->walker->has_children) {
+            if ($args->walker->has_children && $depth === 0) {
                 $output .= '<i class="icomoon icon-expand_more ml-5 fs-12"></i>';
             }
 

@@ -4,9 +4,10 @@ $get_started_image_mobile = get_field('get_started_image_mobile','option');
 $form_shortcode =  get_field('form_shortcode','option');    
 ?>
 <section id="get-started" class="get-started bg-dark-primary c-white relative" id="get-started">
-<?php if($get_started_image): ?>
+    
+    <?php if($get_started_image): ?>
     <picture class="h-100 w-50 absolute top-0 sm:w-100 sm:relative">
-    <source media="(min-width: 1680px)" srcset="<?php echo webp($get_started_image['sizes']['img_1200x862']); ?>" type="image/webp">
+        <source media="(min-width: 1680px)" srcset="<?php echo webp($get_started_image['sizes']['img_1200x862']); ?>" type="image/webp">
         <source media="(min-width: 1680px)" srcset="<?php echo $get_started_image['sizes']['img_1200x862']; ?>" type="<?php echo $get_started_image['mime_type']; ?>">
         <source media="(min-width: 1536px)" srcset="<?php echo webp($get_started_image['sizes']['img_1060x762']); ?>" type="image/webp">
         <source media="(min-width: 1536px)" srcset="<?php echo $get_started_image['sizes']['img_1060x762']; ?>" type="<?php echo $get_started_image['mime_type']; ?>">
