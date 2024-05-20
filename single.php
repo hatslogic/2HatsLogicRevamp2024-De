@@ -43,7 +43,7 @@ get_header();
 					</picture>
 					<div class="info mt-15">
 						<div class="w-100 flex justify-between mb-15 md:mb-10">
-							<span class="c-dark-grey fs-14"><?php the_field('author'); ?> &bull; <?php echo esc_html($reading_time_text); ?></span>
+							<span class="c-dark-grey fs-14"><?php the_field('author'); ?> &period; <?php echo esc_html($reading_time_text); ?></span>
 							<span class="c-dark-grey fs-14"><?php echo get_the_date(); ?></span>
 						</div>
 						<h2><?php the_title(); ?></h2>
@@ -54,7 +54,7 @@ get_header();
 			<!-- Content -->
 			<div class="content w-100 xs:mt-30 mt-60">
 			   <?php app_render_page_single_blog(); ?>
-			   <?php get_template_part('template-parts/faqs'); ?>
+			   <?php get_template_part('template-parts/blog-faqs'); ?>
 		    </div>
 		</div>
 		<?php get_template_part('template-parts/blog-sidebar'); ?>
@@ -64,5 +64,9 @@ if (get_field('show_callout')) {
     app_render_fragment('global-callout');
 }
 ?>
+
+<?php get_template_part('template-parts/blockquote'); ?>
+<?php get_template_part('template-parts/relative-resources'); ?>
+<?php get_template_part('template-parts/newsletter-form'); ?>
 <?php
 get_footer();
