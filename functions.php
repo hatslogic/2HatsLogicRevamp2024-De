@@ -602,7 +602,7 @@ function get_related_case_studies($post_id, $taxonomy = 'category', $post_type =
     $args = [
         'post_type' => $post_type,
         'posts_per_page' => $posts_per_page,
-        'post__not_in' => [$post_id], // Ensure the current post is excluded
+        'post__not_in' => [$post_id], 
         'tax_query' => [
             [
                 'taxonomy' => $taxonomy,
@@ -617,4 +617,33 @@ function get_related_case_studies($post_id, $taxonomy = 'category', $post_type =
     return $query->posts;
 }
 
+
+// Related Resources
+
+function get_related_resources($post_id, $taxonomy = 'category', $post_type = 'post', $posts_per_page = 4) {
+    $categories = wp_get_post_terms($post_id, $taxonomy);
+
+    if (empty($categories) || is_wp_error($categories)) {
+        return [];
+    }
+
+    $category_ids = wp_list_pluck($categories, 'term_id');
+
+    $args = [
+        'post_type' => $post_type,
+        'posts_per_page' => $posts_per_page,
+        'post__not_in' => [$post_id], 
+        'tax_query' => [
+            [
+                'taxonomy' => $taxonomy,
+                'field' => 'term_id',
+                'terms' => $category_ids,
+            ],
+        ],
+    ];
+
+    $query = new WP_Query($args);
+
+    return $query->posts;
+}
 

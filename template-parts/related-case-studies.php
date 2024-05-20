@@ -14,22 +14,19 @@
                     <div class="col card snap-center"> <a href="<?php the_permalink(); ?>" class="item">
 
                             <?php if (has_post_thumbnail()):
-                                $featured_image = get_the_post_thumbnail_url($post->ID, 'medium');
-                                $featured_image_webp = str_replace('.jpg', '.webp', $featured_image);
+                                $featured_image = get_the_post_thumbnail_url($post->ID, 'img_450x350');
+                                 $placeholder_image_url = get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
                                 ?>
                                 <picture>
-                                    <source srcset="<?php echo esc_url($featured_image_webp); ?>" type="image/webp">
+                                    <source srcset="<?php echo esc_url($featured_image); ?>" type="image/webp">
                                     <source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
                                     <img src="<?php echo esc_url($featured_image); ?>" loading="lazy"
                                         alt="<?php the_title_attribute(); ?>" width="360px" height="280px" class="transition">
-                                <?php else:
-                                $placeholder_image_url = get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
-                                ?>
-                                    <source srcset="<?php echo $placeholder_image_url ?>" type="image/svg+xml">
-                                    <img src="<?php echo $placeholder_image_url ?>" loading="lazy" alt="No Image" width="360px"
-                                        height="280px" class="transition">
+                                
+                           </picture>
+                                <?php else: ?>
+                                    <img src="<?php echo esc_url($placeholder_image); ?>" loading="lazy" alt="Blog" width="498" height="260" class="transition">
                                 <?php endif; ?>
-                            </picture>
                             <div class="info mt-20 xs:pl-20 xs:pr-20">
                                 <h3 class="h5 transition font-regular"><strong
                                         class="transition font-bold"><?php the_title(); ?>&colon;</strong>
