@@ -93,8 +93,10 @@ get_header();
                 'format' => '?paged=%#%',
                 'current' => max(1, get_query_var('paged')),
                 'total' => $blog_query->max_num_pages,
-                'prev_text' => '<i class="icomoon icon-arrow_circle_left fs-20"></i>',
-                'next_text' => '<i class="icomoon icon-arrow_circle_right fs-20"></i>',
+                'prev_class' => 'prev',
+                'next_class' => 'nexts',
+                'prev_text' => '<i class="icomoon icon-chevron_left"></i>',
+                'next_text' => '<i class="icomoon icon-chevron_right"></i>',
                 'type' => 'array',
             )
         );
@@ -104,7 +106,19 @@ get_header();
             <nav class="pagination w-100 flex justify-center">
                 <ul class="mx-auto no-bullets flex fs-16 align-center">
                     <?php foreach ($paginate_links as $link): ?>
-                        <li class="px-10"><?php echo $link; ?></li>
+                        <!--Add new classes for links -->
+                        <li class="px-10">
+                            <?php
+                            $paginate_link = '';
+                            if (strpos($link, 'prev') !== false || strpos($link, 'next') !== false) {
+                                $paginate_link = str_replace('page-numbers', 'page-link slider-prev flex align-center justify-center transition no-decoration', $link );
+                            } else {
+                                $paginate_link = str_replace('page-numbers', 'page-link no-decoration', $link );
+                            }
+                            // $paginate_link = str_replace( 'page-numbers', 'page-link slider-next flex align-center justify-center transition no-decoration', $link );
+                            echo $paginate_link;
+                            ?>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </nav>
