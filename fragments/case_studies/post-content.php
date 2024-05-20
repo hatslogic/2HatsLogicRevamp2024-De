@@ -22,6 +22,6 @@
         </div>
         <div class="content mt-40 xs:mt-30">
             <p><?php echo $content; ?></p>
-        </div>¯
+        </div>
     </div>
 </section>
