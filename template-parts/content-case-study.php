@@ -27,20 +27,18 @@
                                 $featured_image_id = get_post_thumbnail_id();
                                 $attachment = wp_get_attachment_image_src($featured_image_id, 'img_730x466');
                                 $featured_image = $attachment[0];
-                                $featured_image_width = $attachment[1];
-                                $featured_image_height = $attachment[2];
+                                
                                 ?>
                                 <picture>
-                                    <source srcset="<?php echo esc_url($featured_image); ?>" type="image/webp">
+                                    <source srcset="<?php echo webp(esc_url($featured_image)); ?>" type="image/webp">
                                     <source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
-                                    <img src="<?php echo esc_url($featured_image); ?>" alt="<?php the_title_attribute(); ?>"
-                                        width="<?php echo esc_attr($featured_image_width); ?>"
-                                        height="<?php echo esc_attr($featured_image_height); ?>" class="h-auto w-100">
+                                    <img src="<?php echo esc_url($featured_image); ?>" alt="<?php the_title_attribute(); ?>" width="731px" height="466px" class="h-auto w-100">
                                 </picture>
                             <?php
                             else: 
-                             $placeholder_image_url = get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
-                          
+                                $placeholder_image_id = attachment_url_to_postid(get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
+                                $placeholder_image_url = wp_get_attachment_image_src($placeholder_image_id, 'img_730x466')[0];
+                         
                             ?>
                                 <picture>
                                     <source srcset="<?php echo $placeholder_image_url?>"
@@ -48,7 +46,7 @@
                                     <source srcset="<?php echo $placeholder_image_url?>"
                                         type="image/jpeg">
                                     <img src="<?php echo $placeholder_image_url?>" loading="lazy"
-                                        alt="Placeholder" width="548px" height="349px" class="transition">
+                                        alt="Placeholder" width="731px" height="466px" class="transition">
                                 </picture>
                             <?php endif; ?>
                         </div>
