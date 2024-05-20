@@ -12,6 +12,8 @@
                              $flag = get_sub_field('country_flag')
                              ?>
                              <div class="col w-100 pr-40 sm:pr-0">
+                                <div class="col w-100 pr-40 sm:pr-0 sm:mt-30">
+                                   
                                  <div class="card w-100 flex align-start">
                                      <div class="wrap-icon min-w-px-50 xs:min-w-px-30 max-w-px-50 xs:max-w-px-30 mt-5">
                                          <img src="<?php echo $flag['url']; ?>" alt="2hatslogic" loading="lazy" height="100px" width="100px">
@@ -21,8 +23,10 @@
                                      </div>
                                  </div>
                              </div>
-                             <?php endwhile;
-                             endif; ?>
+                             </div>
+                             <?php endwhile; ?>
+                             <?php endif; ?>
+
                          </div>
                      </div>
                  </div>

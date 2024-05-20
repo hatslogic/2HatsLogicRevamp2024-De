@@ -90,7 +90,7 @@ $call2 = get_field('call_two_button');
                                           <h3 class="h5 transition font-regular opacity-50 mb-5">Office</h3>
                                 <?php if(have_rows('office_phone')): 
                                     while(have_rows('office_phone')): the_row(); ?>
-                                         <p class="mt-0 mb-0 fs-16 font-regular"><span class="font-bold"><?php the_sub_field('country') ?></span> : <a class="c-secondary hover:c-primary hover:text-decoration-underline" href="tel:+<?php the_sub_field('phone');?>">+<?php the_sub_field('phone');?></a>
+                                         <p class="mt-0 mb-0 fs-16 font-regular"><span class="font-bold"><?php the_sub_field('country') ?></span> : <a class="c-secondary hover:c-primary hover:text-decoration-underline" href="tel:+<?php the_sub_field('phone');?>"><?php the_sub_field('phone');?></a>
  
                                          </p>
                                 <?php endwhile; 
