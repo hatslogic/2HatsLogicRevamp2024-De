@@ -1,13 +1,19 @@
-<?php if (get_field('enable_faq')): ?>
+<?php
+$enable_faq = get_field('enable_faq');
+$faq_title = get_field('faq_title');
+?>
+<?php if ($enable_faq): ?>
 <section class="blogs_faq">
-    <div class="title">
-        <h3><?php the_field('faq_title'); ?></h3>
-    </div>
+    <?php if($faq_title): ?>
+        <div class="title">
+            <h3><?php $faq_title; ?></h3>
+        </div>
+    <?php endif; ?>
+
     <?php if (have_rows('faq_group')): ?>
     <div class="content mt-20 gap-40 xs:mt-10">
         <div class="acc">
-        <?php while (have_rows('faq_group')):
-                        the_row(); ?>
+            <?php while (have_rows('faq_group')): the_row(); ?>
             <div class="acc-item py-20 b-0 bb-1 bc-hash solid">
                 <div class="acc-toggle flex justify-between relative">
                     <h4 class="max-w-80"><?php the_sub_field('faq_question');?></h4 class="max-w-80">

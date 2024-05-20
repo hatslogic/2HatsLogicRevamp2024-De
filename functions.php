@@ -170,6 +170,13 @@ function hatslogic_scripts()
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
+	if (is_page('contact')) {
+        wp_enqueue_style('hatslogic-contact', 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css');
+        wp_enqueue_style('hatslogic-contact-theme', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css');
+        wp_enqueue_script('hatslogic-contact-intlTelInput', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js');
+        wp_enqueue_script('hatslogic-contact-utils', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js');
+    }
+
 }
 add_action('wp_enqueue_scripts', 'hatslogic_scripts');
 
@@ -339,6 +346,7 @@ if (!function_exists('app_setup_theme')) {
 		add_image_size('img_2000x1334', 2000, 1334, true);
 		add_image_size('img_749x379', 749, 379, true);
 		add_image_size('img_1139x340', 1139, 340, true);
+		add_image_size('img_606x749', 606, 749, true);
 		
 	}
 }
