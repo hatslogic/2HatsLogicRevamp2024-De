@@ -5,9 +5,9 @@
     <div class="container">
         <?php if ($image): ?>
             <picture>
-                <source srcset="<?php echo webp($image['sizes']['img_730x466']); ?>" type="image/webp">
-                <source srcset="<?php echo $image['sizes']['img_730x466']; ?>" type="image/jpg">
-                <img src="<?php echo $image['sizes']['img_730x466']; ?>" alt="Featured case study" width="731px"
+                <source srcset="<?php echo webp($image['sizes']['img_1139x340']); ?>" type="image/webp">
+                <source srcset="<?php echo $image['sizes']['img_1139x340']; ?>" type="image/jpg">
+                <img src="<?php echo $image['sizes']['img_1139x340']; ?>" alt="Featured case study" width="731px"
                     height="466px" class="h-auto w-100">
             </picture>
         <?php endif; ?>
@@ -22,6 +22,6 @@
         </div>
         <div class="content mt-40 xs:mt-30">
             <p><?php echo $content; ?></p>
-        </div>¯
+        </div>
     </div>
 </section>
