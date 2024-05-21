@@ -8,16 +8,12 @@ $contact_form_desc = get_field('contact_form_description', 'option');
 <section id="contact" class="contact bg-dark-primary c-white relative" id="contact">
 <?php if($contact_form_image): ?>
     <picture class="h-100 w-50 absolute top-0 sm:w-100 sm:relative">
-        <source media="(min-width: 1680px)" srcset="<?php echo webp($contact_form_image['sizes']['img_1200x862']); ?>" type="image/webp">
-        <source media="(min-width: 1680px)" srcset="<?php echo $contact_form_image['sizes']['img_1200x862']; ?>" type="<?php echo $contact_form_image['mime_type']; ?>">
-        <source media="(min-width: 1536px)" srcset="<?php echo webp($contact_form_image['sizes']['img_1060x762']); ?>" type="image/webp">
-        <source media="(min-width: 1536px)" srcset="<?php echo $contact_form_image['sizes']['img_1060x762']; ?>" type="<?php echo $contact_form_image['mime_type']; ?>">
-        <source media="(min-width: 1320px)" srcset="<?php echo webp($contact_form_image['sizes']['img_812x744']); ?>" type="image/webp">
-        <source media="(min-width: 1320px)" srcset="<?php echo $contact_form_image['sizes']['img_812x744']; ?>" type="<?php echo $contact_form_image['mime_type']; ?>">
-        <source media="(min-width: 1024px)" srcset="<?php echo webp($contact_form_image['sizes']['img_1075x716']); ?>" type="image/webp">
-        <source media="(min-width: 1024px)" srcset="<?php echo $contact_form_image['sizes']['img_1075x716']; ?>" type="<?php echo $contact_form_image['mime_type']; ?>">
-        <source media="(min-width: 991px)" srcset="<?php echo webp($contact_form_image['sizes']['img_865x576']); ?>" type="image/webp">
-        <source media="(min-width: 991px)" srcset="<?php echo $contact_form_image['sizes']['img_865x576']; ?>" type="<?php echo $contact_form_image['mime_type']; ?>">
+        <source media="(min-width: 1400px)" srcset="<?php echo webp($contact_form_image['sizes']['img_1650x1334']); ?>" type="image/webp">
+        <source media="(min-width: 1400px)" srcset="<?php echo $contact_form_image['sizes']['img_1650x1334']; ?>" type="<?php echo $contact_form_image['mime_type']; ?>">
+        <source media="(min-width: 1024px)" srcset="<?php echo webp($contact_form_image['sizes']['img_1200x862']); ?>" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="<?php echo $contact_form_image['sizes']['img_1200x862']; ?>" type="<?php echo $contact_form_image['mime_type']; ?>">
+        <source media="(min-width: 991px)" srcset="<?php echo webp($contact_form_image['sizes']['img_1075x716']); ?>" type="image/webp">
+        <source media="(min-width: 991px)" srcset="<?php echo $contact_form_image['sizes']['img_1075x716']; ?>" type="<?php echo $contact_form_image['mime_type']; ?>">
         <img src="<?php echo ($contact_form_image_mobile['sizes']['img_580x580']) ? $contact_form_image_mobile['sizes']['img_580x580'] : $contact_form_image['sizes']['img_580x580']; ?>" loading="lazy" class="h-100 cover" alt="contact" width="<?php echo $contact_form_image['sizes']['img_580x580-width']; ?>" height="<?php echo $contact_form_image['sizes']['img_580x580-height']; ?>">
     </picture>
    <?php endif; ?>

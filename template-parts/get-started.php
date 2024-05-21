@@ -7,12 +7,8 @@ $form_shortcode =  get_field('form_shortcode','option');
     
     <?php if($get_started_image): ?>
     <picture class="h-100 w-50 absolute top-0 sm:w-100 sm:relative">
-        <source media="(min-width: 1680px)" srcset="<?php echo webp($get_started_image['sizes']['img_1650x1334']); ?>" type="image/webp">
-        <source media="(min-width: 1680px)" srcset="<?php echo $get_started_image['sizes']['img_1650x1334']; ?>" type="<?php echo $get_started_image['mime_type']; ?>">
-        <source media="(min-width: 1536px)" srcset="<?php echo webp($get_started_image['sizes']['img_1650x1334']); ?>" type="image/webp">
-        <source media="(min-width: 1536px)" srcset="<?php echo $get_started_image['sizes']['img_1650x1334']; ?>" type="<?php echo $get_started_image['mime_type']; ?>">
-        <source media="(min-width: 1320px)" srcset="<?php echo webp($get_started_image['sizes']['img_1200x862']); ?>" type="image/webp">
-        <source media="(min-width: 1320px)" srcset="<?php echo $get_started_image['sizes']['img_1200x862']; ?>" type="<?php echo $get_started_image['mime_type']; ?>">
+        <source media="(min-width: 1400px)" srcset="<?php echo webp($get_started_image['sizes']['img_1650x1334']); ?>" type="image/webp">
+        <source media="(min-width: 1400px)" srcset="<?php echo $get_started_image['sizes']['img_1650x1334']; ?>" type="<?php echo $get_started_image['mime_type']; ?>">
         <source media="(min-width: 1024px)" srcset="<?php echo webp($get_started_image['sizes']['img_1200x862']); ?>" type="image/webp">
         <source media="(min-width: 1024px)" srcset="<?php echo $get_started_image['sizes']['img_1200x862']; ?>" type="<?php echo $get_started_image['mime_type']; ?>">
         <source media="(min-width: 991px)" srcset="<?php echo webp($get_started_image['sizes']['img_1075x716']); ?>" type="image/webp">
