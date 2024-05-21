@@ -348,7 +348,10 @@ if (!function_exists('app_setup_theme')) {
 		add_image_size('img_648x445', 648, 445, true);
 		add_image_size('img_987x689', 987, 689, true);
 		add_image_size('img_1140x348', 1140, 348, true);
-		add_image_size('img_2000x1334', 2000, 1334, true);
+
+		add_image_size('img_1650x1334', 1650, 1334, true);
+		add_image_size('img_1530x934', 1530, 934, true);
+		add_image_size('img_780x780', 780, 780, true);
 		
 	}
 }
