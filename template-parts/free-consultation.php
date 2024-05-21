@@ -4,7 +4,7 @@ $free_consultation_image_mobile = get_field('free_consultation_image_mobile', 'o
 $form_shortcode = get_field('form_shortcode', 'option');
 ?>
 
-<div id="free-consultation" class="modal fixed free-consultation bg-overlay inset-0 z-10 h-100 transition">
+<div id="free-consultation" class="modal fixed free-consultation bg-overlay inset-0 z-14 h-100 transition">
     <div class="container h-100 xs:p-0">
         <div class="flex align-center h-100">
             <div class="flex xs:wrap w-100 h-90 xs:h-100 align-center relative bg-white z-1 xs:scroll-y">

@@ -43,6 +43,10 @@
     color: transparent;
 }
 
+.c-light-blue{
+    color: var(--c-light-blue);
+}
+
 /* Border Color */
 .bc-primary{
     border-color: var(--c-primary);
@@ -86,6 +90,10 @@
 
 .bc-transparent{
     border-color: transparent;
+}
+
+.bc-light-blue{
+    border-color: var(--c-light-blue);
 }
 
 /* Background Color */
@@ -139,6 +147,10 @@
 
 .bg-transparent{
     background-color: transparent;
+}
+
+.bg-light-blue{
+    background-color: var(--c-light-blue);
 }
 
 // Hover colors
