@@ -10,8 +10,8 @@
 get_header();
 ?>
 <main class="page-wrap inline-block w-100">
-    <section class="blog-list pt-100 xs:pt-60 pb-100 md:pb-60">
-        <div class="container">
+    <section class="blog-list relative pt-100 xs:pt-60 pb-100 md:pb-60">
+        <div class="container relative z-1">
             <div class="title w-100 flex justify-between sm:wrap">
                 <h1 class="h1-sml w-100 sm:mb-20">Blogs</h1>
                 <div class="flex w-100 justify-end gap-20 align-end">
@@ -177,6 +177,9 @@ get_header();
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="background-shape absolute z-0 right-0 top-0 w-60 md:w-80">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png" srcset="assets/img/shape-012x.png 2x" class="shape w-100" alt="shopware" width="100" height="100">
         </div>
     </section>
 
