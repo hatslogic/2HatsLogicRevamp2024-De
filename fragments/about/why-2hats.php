@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 
-<section class="why-select pt-40 pb-100 xs:pt-20 xs:pb-80">
+<section class="why-work-with-us pt-40 pb-100 xs:pt-20 xs:pb-80">
     <div class="container">
         <?php if ($title || $description): ?>
             <div class="title w-70 xl:w-100">
