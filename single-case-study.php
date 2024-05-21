@@ -24,3 +24,6 @@ if (get_field('show_callout')) {
 <?php get_template_part('template-parts/get-started'); ?>
 
 </main>
+
+<?php
+get_footer();
