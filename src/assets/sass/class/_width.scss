@@ -2,7 +2,7 @@
     width: auto;
 }
 
-@for $i from 0 through 100 {
+@for $i from 0 through 300 {
     .w-#{$i} {
         width: $i * 1%;
     }
@@ -25,7 +25,7 @@ $breakpoints: (
 
 @each $breakpoint, $size in $breakpoints {
     @include below($size) {
-        @for $i from 1 through 100 {
+        @for $i from 1 through 300 {
             .#{$breakpoint}\:w-#{$i} {
                 width: $i * 1%;
             }
