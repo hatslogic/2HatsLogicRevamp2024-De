@@ -1,5 +1,5 @@
 
-<section class="casestudy-list pt-100 pb-100 xs:pt-80 xs:pb-80">
+<section class="casestudy-list pt-100 pb-100 xs:pt-60 xs:pb-80">
         <div class="container">
             <div class="title w-70 md:w-100">
                 <?php

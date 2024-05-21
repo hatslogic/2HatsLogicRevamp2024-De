@@ -13,7 +13,7 @@ $form_2_description = get_field('form_2_description');
     <div class="container">
         <div class="contact-wrap transition show" id="get-a-quote">
             <div class="flex align-start justify-between md:wrap">
-                <div class="col w-50 mr-50 xl:mr-30 md:mr-0 md:w-100 md:mt-40">
+                <div class="col w-50 mr-50 xl:mr-30 md:mr-0 md:w-100 md:mt-0">
                     <picture>
                         <source srcset="<?php echo esc_url($contact_form_image_1['sizes']['img_606x749']); ?>" type="image/webp">
                         <source srcset="<?php echo esc_url($contact_form_image_1['sizes']['img_606x749']); ?>" type="image/jpg">

@@ -10,7 +10,7 @@
 get_header();
 ?>
 <main class="page-wrap inline-block w-100">
-    <section class="blog-list pt-100 xs:pt-80 pb-100 md:pb-60">
+    <section class="blog-list pt-100 xs:pt-60 pb-100 md:pb-60">
         <div class="container">
             <div class="title w-100 flex justify-between sm:wrap">
                 <h1 class="h1-sml w-100 sm:mb-20">Blogs</h1>
