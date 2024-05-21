@@ -1,0 +1,20 @@
+.iti{
+    width: 100%;
+    display: flex !important;
+    border-bottom: 1px solid var(--c-hash);
+    .iti__country-list{
+        max-width: rem(250);
+    }
+    .iti__flag-container{
+        padding: 0;
+    }
+    .iti__selected-flag{
+        background-color: transparent !important;
+        padding: 0;
+    }
+    .form-control{
+        border-bottom: 0;
+        margin-left: rem(10);
+        padding-left: rem(50);
+    }
+}
