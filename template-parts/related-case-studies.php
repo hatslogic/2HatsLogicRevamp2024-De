@@ -11,6 +11,8 @@
             <div class="content mt-50 xs:mt-30">
                 <div
                     class="grid grid-3 xl:grid-2 xs:grid-1 gap-35 xs:gap-20 xs:flex xs:nowrap xs:scroll-x xs:-ml-30 xs:-mr-30 scroll-snap">
+                    <?php foreach ($related_posts as $post):
+                        setup_postdata($post); ?>
                     <div class="col card snap-center"> <a href="<?php the_permalink(); ?>" class="item">
 
                             <?php if (has_post_thumbnail()):
@@ -37,6 +39,8 @@
                     </div>
 
 
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); ?>
                 </div>
                 <div class="btn-group center mt-80 xs:mt-40"> <a
                         href="<?php echo get_post_type_archive_link('case-study'); ?>" class="btn btn-primary">view all</a>
