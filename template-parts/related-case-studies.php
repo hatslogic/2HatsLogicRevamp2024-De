@@ -32,7 +32,7 @@
                             <div class="info mt-20 xs:pl-20 xs:pr-20">
                                 <h3 class="h5 transition font-regular"><strong
                                         class="transition font-bold"><?php the_title(); ?>&colon;</strong>
-                                    <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></h3>
+                                    <?php echo truncate_text(get_the_excerpt(), 90, '...'); ?></h3>
                             </div>
                         </a>
 
