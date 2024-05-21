@@ -464,8 +464,11 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
         $output .= "$indent\t</li>\n";
         // $output .= "$indent</div></ul>\n";
 
+		$blog_url = home_url().'/blogs';
+		$contact_url = home_url().'/contact';
+
 		if ($depth === 0) {
-        	$output .= "$indent</div><div class=\"container flex md:hidden\"> <ul class=\"sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100\"><li class=\"mt-30 mb-30\"> <a href=\"#\" class=\"inline-block\" aria-label=\"blog\">Blog</a></li><li class=\"mt-30 mb-30 ml-30 pl-30 b-0 bl-1 solid bc-hash\"> <a href=\"#\" class=\"inline-block\" aria-label=\"contact\">Contact</a></li></ul></div></ul>\n";
+        	$output .= "$indent</div><div class=\"container flex md:hidden\"> <ul class=\"sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100\"><li class=\"mt-30 mb-30\"> <a href=\"$blog_url\" class=\"inline-block\" aria-label=\"blog\">Blog</a></li><li class=\"mt-30 mb-30 ml-30 pl-30 b-0 bl-1 solid bc-hash\"> <a href=\"$contact_url\" class=\"inline-block\" aria-label=\"contact\">Contact</a></li></ul></div></ul>\n";
 		} else {
 			$output .= "$indent</ul>\n";
 		}
