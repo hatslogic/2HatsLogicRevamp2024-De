@@ -1,7 +1,7 @@
 <?php extract($section); ?>
 
 <?php if ($title && $cta): ?>
-    <div class="info py-60 px-130 md:py-20 md:px-20 bg-light-grey mb-40">
+    <div class="info font-bold py-60 px-130 md:py-20 md:px-20 bg-light-grey mb-40">
         <?php if($title): ?>
         <span class="w-100 fs-26 lh-1-25 tr text-center mb-30 block md:mb-20">
             <?php echo $title;?>

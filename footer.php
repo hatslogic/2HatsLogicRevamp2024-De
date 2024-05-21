@@ -13,8 +13,8 @@
 
 <footer class="footer sm:mb-80 xs:mb-0">
     <div class="container">
-        <div class="footer-top py-80 flex nowrap justify-between sm:wrap xs:py-60">
-            <div class="col w-60 sm:w-100">
+        <div class="footer-top py-80 flex nowrap justify-between md:wrap xs:py-60">
+            <div class="col w-60 md:w-100">
                 <div class="menu flex align-start justify-between sm:wrap sm:justify-start">
                     <div class="col xl:w-40 xs:w-100">
                         <div class="menu-group mt-0">
@@ -44,7 +44,7 @@
                             ?>
                         </div>
                     </div>
-                    <div class="col xl:w-40 xs:w-100">
+                    <div class="col px-20 xs:pl-0 xs:pr-0 xl:w-40 xs:w-100">
                         <div class="menu-group mt-0 xs:mt-40">
                             <a href="#" class="h4 font-bold">Hire a Developer</a>
                             <?php 
@@ -89,11 +89,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col w-40 sm:w-100 sm:mt-40 flex justify-end">
+            <div class="col w-40 md:w-100 md:mt-40 flex justify-end md:justify-start sm:justify-center">
                 <div class="flex justify-between column sm:w-100 b-0 sm:bt-1 sm:pt-40 bc-hash solid xs:text-center">
                     <div class="accreditation sm:w-50 xs:w-100">
                         <div class="h4 font-bold">Accreditation</div>
-                        <div class="block sm:flex">
+                        <div class="block sm:flex sm:justify-center">
                             <div class="flex justify-start mt-30 sm:justify-center">
                                 <div class="col">
                                     <a href="#" target="_blank">

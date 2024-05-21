@@ -7,7 +7,7 @@
             <h2><?php echo $title; ?></h2>
         </div>
         <?php endif; ?>
-        <div class="content mt-60 gap-40 xs:mt-30">
+        <div class="content mt-60 xs:mt-30">
         <?php if( $posts ): ?>
             <div class="slider-wrapper">
                 <div id="testimonials" class="hats-slider horizontal">
