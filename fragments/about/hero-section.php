@@ -25,8 +25,8 @@
                         <div class="col w-40 md:w-100 md:mt-40">
                             <picture>
                                 <source srcset="<?php echo webp($image['sizes']['img_648x445']); ?>" type="image/webp">
-                                    <source srcset="<?php $image['sizes']['img_648x445'] ; ?>" type="image/jpg">
-                                        <img src="<?php $image['sizes']['img_648x445'] ; ?>" loading="lazy" alt="about" width="648px" height="445px" class="transition">
+                                    <source srcset="<?php echo $image['sizes']['img_648x445'] ; ?>" type="image/jpg">
+                                        <img src="<?php echo $image['sizes']['img_648x445'] ; ?>" loading="lazy" alt="about" width="648px" height="445px" class="transition">
                             </picture>
                         </div>
                         <?php endif; ?>
