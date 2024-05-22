@@ -30,6 +30,9 @@ $breakpoints: (
                 max-height: $i * 1%;
             }
         }
+        .#{$breakpoint}\:max-h-auto {
+            max-height: auto;
+        }
     }
 }
 

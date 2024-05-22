@@ -50,7 +50,7 @@ function compileHTML() {
             basePath: 'src/includes/'
         }))
         .pipe(gulpIf(isProd, htmlmin({
-            collapseWhitespace: false,
+            collapseWhitespace: true,
             removeComments: true
         })))
         .pipe(gulp.dest(paths.dist.base))
