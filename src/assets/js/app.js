@@ -9,4 +9,5 @@
 //=require app/testimonials.js
 //=require app/modal.js
 //=require app/accordian.js
+//=require app/plugins.js
 //=require app/contact.js
