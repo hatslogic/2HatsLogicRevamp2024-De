@@ -30,6 +30,9 @@ $breakpoints: (
                 min-height: $i * 1%;
             }
         }
+        .#{$breakpoint}\:min-h-auto {
+            min-height: auto;
+        }
     }
 }
 
