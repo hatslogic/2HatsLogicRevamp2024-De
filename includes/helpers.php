@@ -61,7 +61,20 @@ function app_render_page_services() {
 	foreach ( $sections as $section_index => $section ) {
 		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
 
-		app_render_fragment( 'services' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
+		app_render_fragment( 'services/listing' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
+	}
+}
+
+
+function app_render_page_service_shopware_development() {
+	if ( ! $sections = get_field( 'service_shopware' ) ) {
+		return;
+	}
+
+	foreach ( $sections as $section_index => $section ) {
+		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
+
+		app_render_fragment( 'services/detail/shopware-development' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
 	}
 }
 
