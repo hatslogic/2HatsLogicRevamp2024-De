@@ -15,52 +15,13 @@ formToggle.forEach((toggle) => {
 });
 
 
-var input = document.querySelector("#phone");
-
-
-function getUserCountryCode() {
-  return new Promise((resolve, reject) => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
-
-          // Use an external service like IPify or MaxMind to get country code based on geolocation
-          fetch(`https://api.ipify.org?lat=${latitude}&lon=${longitude}`)
-            .then(response => response.json())
-            .then(data => resolve(data.country_code))
-            .catch(error => {
-              console.error("Error fetching geolocation data from external service:", error);
-              resolve(''); // Empty string fallback
-              // Alternatively, use a default country code: resolve('us');
-            });
-        },
-        (error) => {
-          console.error("Error getting geolocation:", error);
-          resolve(''); // Empty string fallback
-          // Alternatively, use a default country code: resolve('us');
-        }
-      );
-    } else {
-      console.warn("Geolocation is not supported by this browser.");
-      resolve(''); // Fallback to empty string if geolocation is unavailable
-    }
-  });
-}
-
-async function initializeIntlTelInput() {
-  const countryCode = await getUserCountryCode();
-  var iti = window.intlTelInput(input, {
+var phoneInput = document.querySelector("#phone");
+if (phoneInput) {
+  var iti = window.intlTelInput(phoneInput, {
     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
     separateDialCode: true,
     autoHideDialCode: false,
     preferredCountries: ['us', 'gb', 'in'],
-    initialCountry: countryCode || '', // Fallback to empty string if countryCode is not available
+    initialCountry: 'in',
   });
-}
-
-
-if (input) {
-  initializeIntlTelInput();
 }
