@@ -10,7 +10,7 @@ if(menuBtn !== null) {
     });   
 }
 
-if(hasChild !== null) {
+if(hasChild !== null && window.matchMedia('(max-width: 1024px)').matches) {
     hasChild.addEventListener('click', (e) => {
         e.preventDefault();
         e.target.parentNode.classList.toggle('active');

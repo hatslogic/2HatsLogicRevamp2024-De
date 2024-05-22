@@ -9,7 +9,7 @@
             </div>
             <div class="content mt-50 xs:mt-30">
                 <div
-                    class="grid grid-4 xl:grid-3 md:grid-2 xs:grid-1 gap-15 xs:flex xs:nowrap xs:scroll-x xs:-ml-30 xs:-mr-30 scroll-snap">
+                    class="grid grid-4 xl:grid-3 md:grid-2 xs:grid-1 gap-15 xs:flex xs:nowrap xs:scroll-x xs:-ml-20 xs:-mr-20 scroll-snap">
                     <?php foreach ($related_posts as $post):
                         setup_postdata($post); ?>
                         <div class="col card snap-center">

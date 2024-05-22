@@ -1,6 +1,7 @@
 .h-auto {
     height: auto;
 }
+
 @for $i from 0 through 100 {
     .h-#{$i} {
         height: $i * 1%;
@@ -39,5 +40,41 @@ $breakpoints: (
                 height: rem($i);
             }
         }
+    }
+}
+
+.xxl\:h-auto {
+    @include below($xxl) {
+        height: auto;
+    }
+}   
+
+.xl\:h-auto {
+    @include below($xl) {
+        height: auto;
+    }
+}
+
+.lg\:h-auto {
+    @include below($lg) {
+        height: auto;
+    }
+}
+
+.md\:h-auto {
+    @include below($md) {
+        height: auto;
+    }
+}
+
+.sm\:h-auto {
+    @include below($sm) {
+        height: auto;
+    }
+}
+
+.xs\:h-auto {
+    @include below($xs) {
+        height: auto;
     }
 }

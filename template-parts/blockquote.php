@@ -11,7 +11,7 @@ $cta = get_field('quote_cta','option');
     <div class="container">
         <div class="content">
             <div
-                class="w-100 shadow max-w-90 md:max-w-100 px-100 py-60 md:px-30 md:py-30 m-auto b-1 solid bc-light-grey xs:pt-40">
+                class="w-100 shadow max-w-90 md:max-w-100 px-100 py-60 md:px-20 md:py-30 m-auto b-1 solid bc-light-grey xs:pt-40">
                 <?php if($quote): ?>
                 <blockquote class="font-quote w-100 m-0 fs-20 lh-1-5"><?php echo $quote; ?></blockquote>
                 <?php endif; ?>

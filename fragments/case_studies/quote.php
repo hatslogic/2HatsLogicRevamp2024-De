@@ -2,7 +2,7 @@
 <section class="quote pb-100 xs:pb-80">
                 <div class="container">
                     <div class="content">
-                        <div class="w-100 shadow max-w-90 md:max-w-100 px-100 py-60 md:px-30 md:py-30 m-auto b-1 solid bc-light-grey xs:pt-40">
+                        <div class="w-100 shadow max-w-90 md:max-w-100 px-100 py-60 md:px-20 md:py-30 m-auto b-1 solid bc-light-grey xs:pt-40">
                             <blockquote class="font-quote w-100 m-0 fs-20 lh-1-5"><?php echo $quote;?></blockquote>
                             <div class="flex justify-between align-end md:wrap md:justify-end">
                                 <div class="avatar-wrap flex mt-30 align-center md:w-100 md:mb-20">

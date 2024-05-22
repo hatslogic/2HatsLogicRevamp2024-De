@@ -209,8 +209,8 @@ $container-max-width-sm: 100%;
 
   @include below($md) {
     max-width: $container-max-width-md;
-    padding-left: rem(23.05);
-    padding-right: rem(23.05);
+    padding-left: rem(20);
+    padding-right: rem(20);
   }
 
   @include below($xs) {
@@ -258,8 +258,8 @@ $container-max-width-sm: 100%;
   max-width: 100%;
 
   @include below($md) {
-    padding-left: rem(23.05);
-    padding-right: rem(23.05);
+    padding-left: rem(20);
+    padding-right: rem(20);
   }
 }
 
@@ -286,8 +286,8 @@ $container-max-width-sm: 100%;
 
   @include below($md) {
     max-width: $container-max-width-md;
-    padding-left: rem(23.05);
-    padding-right: rem(23.05);
+    padding-left: rem(20);
+    padding-right: rem(20);
   }
 
   @include below($xs) {
@@ -358,4 +358,9 @@ mark {
   &:focus {
     color: var(--c-primary);
   }
+}
+
+
+.progress-container, .modal, .sticky-menu{
+  max-width: 100vw;
 }

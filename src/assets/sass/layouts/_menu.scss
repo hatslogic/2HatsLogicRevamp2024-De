@@ -52,6 +52,9 @@
                 & > ul{
                     display: block;
                 }
+                .icon-expand_more{
+                    transform: rotate(180deg);
+                }
             }
         }
     }

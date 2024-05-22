@@ -424,7 +424,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 				$li_classes .= ' has-child';
 			}
 
-            $a_classes = 'pt-30 pb-30 md:pt-10 md:pb-10 b-0 bb-3 solid md:bb-0 md:w-100 uppercase block';
+            $a_classes = 'pt-30 pb-30 md:pt-8 md:pb-8 b-0 bb-3 solid md:bb-0 md:w-100 uppercase md:capitalize md:fs-26 block md:flex md:justify-between md:align-center';
 			
         } elseif ($depth === 1) {
             $li_classes = 'depth-1 w-100';
@@ -454,7 +454,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 
         if ($item->url && $item->url != '#') {
             if ($args->walker->has_children && $depth === 0) {
-                $output .= '<i class="icomoon icon-expand_more ml-5 fs-12"></i>';
+                $output .= '<i class="icomoon icon-expand_more ml-5 fs-12 md:fs-20"></i>';
             }
 
             $output .= '</a>';
