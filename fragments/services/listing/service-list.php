@@ -34,7 +34,7 @@
                     </div>
                     <?php endif; ?>
                 </div>
-                <div class="background-shape absolute z-0 right-0 top-0 w-60 md:w-80">
+                <div class="bg-shape absolute z-0 right-0 top-0 w-60 md:w-80">
                     <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png" srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-012x.png 2x" class="shape w-100" alt="shopware" width="100" height="100">
                 </div>
             </section>

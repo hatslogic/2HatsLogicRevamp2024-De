@@ -5,6 +5,7 @@
 
     .item {
       color: var(---c-black);
+      transition-delay: 0ms;
 
       p{
         &:last-child{

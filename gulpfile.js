@@ -22,6 +22,7 @@ const paths = {
         sass: {
             app: 'src/assets/sass/app.scss',
             main: 'src/assets/sass/main.scss',
+            transition: 'src/assets/sass/transition.scss',
             plugins: 'src/assets/sass/plugins.scss',
             wp: 'src/assets/sass/wp.scss'
         },
@@ -125,6 +126,7 @@ const cssTask = gulp.parallel(
     // compileCSS.bind(null, paths.src.sass.plugins, 'plugins.min.css'),
     // compileCSS.bind(null, paths.src.sass.app, 'app.min.css'),
     compileCSS.bind(null, paths.src.sass.main, 'main.min.css'),
+    compileCSS.bind(null, paths.src.sass.transition, 'transition.min.css'),
     compileCSS.bind(null, paths.src.sass.wp, 'wp.min.css')
 );
 const jsTask = gulp.parallel(

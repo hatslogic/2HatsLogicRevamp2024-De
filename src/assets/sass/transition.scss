@@ -1,0 +1,66 @@
+$delay-step: 0.15s; // Define the step for delay
+$duration: 0.5s;
+$elements_count: 10;
+$traslateY: 3px;
+
+// Define the mixin to generate transition delay for nth child
+@mixin transition-delay($num) {
+    transition-delay: $num * $delay-step;
+}
+
+section{
+    *:not(a, a *, button, .hats-slider__slide, .technologies *, .container, picture, img, .container + *, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content) {
+        opacity: 0;
+        transition: transform $duration, opacity $duration;
+        transition-timing-function: ease-in-out;
+        
+        @for $i from 1 through $elements_count {
+            &:nth-child(#{$i}) {
+                @include transition-delay($i);
+                transform: translateY($traslateY);
+            }
+        }
+    }
+
+    &.animate{
+        *:not(a, a *, button, .hats-slider__slide, .technologies *, .container, picture, img, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content) {
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+        }
+    }
+}
+
+footer{
+    .col, li {
+        opacity: 0;
+        transition: transform $duration, opacity $duration;
+        transition-timing-function: ease-in-out;
+        
+        @for $i from 1 through 20 {
+            &:nth-child(#{$i}) {
+                @include transition-delay($i);
+                transform: translateY($traslateY);
+            }
+        }
+    }
+
+    &.animate{
+        .col, li {
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+        }
+    }
+}
+
+header {
+    *{
+        opacity: 0;
+        transition: opacity $duration;
+        transition-timing-function: ease-in-out;
+    }
+    &.animate{
+        * {
+            opacity: 1;
+        }
+    }
+}
