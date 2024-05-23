@@ -27,9 +27,9 @@
                     $featured_image_width = $attachment[1];
                     $featured_image_height = $attachment[2];
                     $featured_image_alt = get_the_title($featured_image_id);
-                    $classes = ($key == count($posts) - 1) ? 'col card snap-center' : 'col card snap-center xl:hidden lg:visible';
-                ?>    
-            <div class="col card snap-center">
+                    $classes = ($key == count($posts) - 1) ? 'col card snap-center xl:hidden lg:visible': 'col card snap-center' ;
+                    ?>    
+            <div class="<?php echo $classes; ?>">
                     <a href="<?php echo $url; ?>" class="item">
                         <picture>
                             <source srcset="<?php echo webp($featured_image); ?>" type="image/webp">
