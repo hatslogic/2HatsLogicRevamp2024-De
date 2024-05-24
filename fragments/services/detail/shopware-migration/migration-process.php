@@ -15,7 +15,7 @@
                         <h4 class="h4 mt-15"><?php echo $step['title'] ?></h4>
                         <?php if($step['items']): ?>
                             <?php  foreach ($step['items'] as $item): ?>
-                        <p><strong><?php echo $item['label'] ?>&colon;</strong> <?php echo $item['content'] ?></p>
+                        <p><?php if($item['label']): ?><strong><?php echo $item['label'] ?>&colon;</strong><?php endif; ?> <?php echo $item['content'] ?></p>
                         <?php endforeach; ?>
                         <?php endif; ?>
                     </div>

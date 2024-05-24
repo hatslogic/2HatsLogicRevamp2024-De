@@ -65,6 +65,17 @@ function app_render_page_services() {
 	}
 }
 
+function app_render_page_service_hire_developer() {
+	if ( ! $sections = get_field( 'hire_developer' ) ) {
+		return;
+	}
+
+	foreach ( $sections as $section_index => $section ) {
+		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
+
+		app_render_fragment( 'services/detail/hire-developer/laravel' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
+	}
+}
 
 function app_render_page_service_shopware_development() {
 	if ( ! $sections = get_field( 'service_shopware' ) ) {
