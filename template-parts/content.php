@@ -9,55 +9,27 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				hatslogic_posted_on();
-				hatslogic_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php hatslogic_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'hatslogic' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hatslogic' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php hatslogic_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+<div class="col card" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <a href="<?php the_permalink(); ?>" class="item">
+        <?php 
+        if (has_post_thumbnail()):
+			
+            $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'img_498x260');
+        ?>
+            <picture>
+                <source srcset="<?php echo esc_url($featured_image); ?>" type="image/webp">
+                <source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
+                <img src="<?php echo esc_url($featured_image); ?>" loading="lazy" alt="<?php the_title_attribute(); ?>" width="498" height="260" class="transition">
+            </picture>
+        <?php else: ?>
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/blog-listing.svg'); ?>" loading="lazy" alt="<?php the_title_attribute(); ?>" width="498" height="260" class="transition">
+        <?php endif; ?>
+        <div class="info mt-15">
+            <div class="w-100 flex justify-between mb-15 md:mb-10">
+                <span class="c-dark-grey fs-14"><?php echo esc_html($reading_time_text); ?></span>
+                <span class="c-dark-grey fs-14"><?php echo get_the_date(); ?></span>
+            </div>
+            <h2 class="h4 transition font-bold"><?php the_title(); ?></h2>
+        </div>
+    </a>
+</div><!-- #post-<?php the_ID(); ?> -->

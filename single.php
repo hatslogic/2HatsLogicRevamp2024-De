@@ -12,7 +12,7 @@ get_header();
 
 <main class="page-wrap inline-block w-100">
     <section class="blog-detail pt-100 xs:pt-60 pb-100 md:pb-60">
-      <div class="container">
+      <div class="container relative z-1">
         <div class="title w-100 flex justify-between sm:wrap">
           <h1 class="h1-sml w-100 sm:mb-20">Blogs</h1>
           <div class="flex w-100 justify-end gap-20 align-end">
@@ -57,6 +57,9 @@ get_header();
           <?php get_template_part('template-parts/blog-sidebar'); ?>
         </div>
       </div>
+	  <div class="bg-shape absolute z-0 right-0 top-0 w-60 md:w-80">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg2x.jpg 2x" class="shape w-100" alt="shopware" width="100" height="100">
+        </div>
     </section>
     
 	<?php get_template_part('template-parts/blockquote'); ?>

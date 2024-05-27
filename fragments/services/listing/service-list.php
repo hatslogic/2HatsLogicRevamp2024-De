@@ -36,9 +36,9 @@
         <?php endif; ?>
     </div>
     <div class="bg-shape absolute z-0 right-0 top-0 w-60 md:w-80">
-        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png"
-            srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png 1x, 
-            <?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-012x.png 2x"
+        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/service-bg.jpg"
+            srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/service-bg.jpg 1x, 
+            <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/service-bg2x.jpg 2x"
             class="shape w-100" alt="shopware" width="100" height="100">
     </div>
 </section>
