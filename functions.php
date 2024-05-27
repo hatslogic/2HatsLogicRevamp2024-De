@@ -271,7 +271,7 @@ if (!function_exists('app_setup_theme')) {
 		include_once (APP_THEME_DIR . 'includes/admin-login.php');
 		include_once (APP_THEME_DIR . 'includes/comments.php');
 		include_once (APP_THEME_DIR . 'includes/title.php');
-		include_once (APP_THEME_DIR . 'includes/gravity-forms.php');
+		// include_once (APP_THEME_DIR . 'includes/gravity-forms.php');
 		include_once (APP_THEME_DIR . 'includes/helpers.php');
 		include_once (APP_THEME_DIR . 'includes/hooks.php');
 		include_once (APP_THEME_DIR . 'includes/acf.php');
