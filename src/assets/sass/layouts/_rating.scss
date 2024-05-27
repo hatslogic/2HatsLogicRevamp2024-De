@@ -2,9 +2,5 @@
     img{
         width: auto;
         height: rem(45);
-
-        @include below($sm) {
-            height: rem(30);
-        }
     }
 }

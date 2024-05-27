@@ -1,6 +1,6 @@
 $delay-step: 0.15s; // Define the step for delay
 $duration: 0.5s;
-$elements_count: 10;
+$elements-count: 10;
 $traslateY: 3px;
 
 // Define the mixin to generate transition delay for nth child
@@ -9,12 +9,12 @@ $traslateY: 3px;
 }
 
 section{
-    *:not(a, a *, button, .hats-slider__slide, .technologies *, .container, picture, img, .container + *, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content) {
+    *:not(a, .btn, svg, .font-button, .link, button, polygon, .hats-slider__slide, .technologies *, .container, picture, img, .container + *, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content), .bg-shape {
         opacity: 0;
         transition: transform $duration, opacity $duration;
         transition-timing-function: ease-in-out;
         
-        @for $i from 1 through $elements_count {
+        @for $i from 1 through $elements-count {
             &:nth-child(#{$i}) {
                 @include transition-delay($i);
                 transform: translateY($traslateY);
@@ -23,7 +23,7 @@ section{
     }
 
     &.animate{
-        *:not(a, a *, button, .hats-slider__slide, .technologies *, .container, picture, img, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content) {
+        *:not(a, .btn, svg, .font-button, .link, button, polygon, .hats-slider__slide, .technologies *, .container, picture, img, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content), .bg-shape {
             transform: translateY(0) !important;
             opacity: 1 !important;
         }
@@ -31,7 +31,7 @@ section{
 }
 
 footer{
-    .col, li {
+    .col {
         opacity: 0;
         transition: transform $duration, opacity $duration;
         transition-timing-function: ease-in-out;
@@ -45,7 +45,7 @@ footer{
     }
 
     &.animate{
-        .col, li {
+        .col {
             transform: translateY(0) !important;
             opacity: 1 !important;
         }

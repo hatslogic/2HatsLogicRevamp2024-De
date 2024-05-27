@@ -134,7 +134,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom flex align-center justify-between xs:wrap xs:column b-0 bt-1 py-30 xs:pb-50 bc-hash solid fs-14">
+        <div class="footer-bottom flex align-center justify-between xs:wrap xs:column b-0 bt-1 py-30 xs:pb-50 bc-hash solid fs-14 xxl:fs-16">
             <div class="copyright sm:order-2 xs:mt-10">&copy; <span id="year"></span>  2Hats Logic Solutions Private Limited</div>
             <div class="terms sm:order-1 sm:mt-20"><a href="#" aria-label="terms">Terms & Conditions</a> | <a href="#" aria-label="privacy">Privacy Policy</a></div>
         </div>

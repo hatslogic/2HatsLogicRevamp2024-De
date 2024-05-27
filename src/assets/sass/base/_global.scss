@@ -41,7 +41,7 @@ body {
   */
 
   @include below($xl) {
-    font-size: rem(17);
+    font-size: rem(16);
   }
 }
 
@@ -178,15 +178,6 @@ ol {
   }
 }
 
-// Container
-$container-max-width: 82.5vw;
-$container-max-width-xxxl: 1460px;
-$container-max-width-xxl: 1160px;
-$container-max-width-xl: 1024px;
-$container-max-width-lg: 991px;
-$container-max-width-md: 768px;
-$container-max-width-sm: 100%;
-
 .container {
   padding-left: rem(20);
   padding-right: rem(20);
@@ -202,6 +193,10 @@ $container-max-width-sm: 100%;
     max-width: $container-max-width-xxl;
   }
   */
+
+  @include below($lg) {
+    max-width: $container-max-width-lg;
+  }
 
   @include below($xl) {
     max-width: $container-max-width-xl;

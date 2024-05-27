@@ -1,6 +1,6 @@
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.top-menu');
-const hasChild = document.querySelector('.main-menu .has-child');
+const hasChild = document.querySelector('.main-menu > li.has-child > a');
 
 if(menuBtn !== null) {
     menuBtn.addEventListener('click', (e) => {
