@@ -11,7 +11,7 @@
                         <div class="col card">
                             <div class="item">
                                 <div class="info">
-                                    <h3 class="h4 transition font-bold"><?php echo $items['title']; ?></h3>
+                                    <h3 class="h4 transition font-bold"><?php echo $item['title']; ?></h3>
                                     <p><?php echo $item['content']; ?></p>
                                 </div>
                             </div>

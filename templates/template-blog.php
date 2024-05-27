@@ -27,8 +27,7 @@ get_header();
             </div>
             <div class="content mt-60 sm:mt-40 xs:mt-30 align-start md:wrap flex gap-40">
                 <div class="w-70 md:w-100 md:w-100">
-                    <div
-                        class="grid grid-2 md:grid-2 xs:grid-1 cg-30 rg-50 md:rg-30 w-100 grid grid-2 md:grid-2 xs:grid-1 cg-40 rg-60 md:rg-40">
+                    <div class="grid grid-2 md:grid-2 xs:grid-1 cg-30 rg-50 md:rg-30 w-100 grid grid-2 md:grid-2 xs:grid-1 cg-40 rg-60 md:rg-40">
 
                         <?php
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -126,8 +125,7 @@ get_header();
                         </nav>
                     <?php endif; ?>
                 </div>
-                <div
-                    class="w-30 md:w-100 pl-30 b-0 bl-1 solid bc-hash md:pl-20 md:b-1 solid bc-hash md:p-30 sticky top-120 md:mt-30">
+                <div class="w-30 md:w-100 pl-30 b-0 bl-1 solid bc-hash md:pl-20 md:b-1 solid bc-hash md:p-30 sticky top-120 md:mt-30">
                     <div class="w-100 mb-60 md:mb-30">
                         <div class="title mb-20">
                             <h2 class="h4">Most popular</h2>
@@ -179,7 +177,7 @@ get_header();
             </div>
         </div>
         <div class="bg-shape absolute z-0 right-0 top-0 w-60 md:w-80">
-            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png" srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-012x.png 2x" class="shape w-100" alt="shopware" width="100" height="100">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg2x.jpg 2x" class="shape w-100" alt="shopware" width="100" height="100">
         </div>
     </section>
 

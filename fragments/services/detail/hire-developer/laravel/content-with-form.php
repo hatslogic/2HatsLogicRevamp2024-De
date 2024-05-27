@@ -25,7 +25,7 @@
                         <p class="mt-30"><?php echo $description; ?></p>
                     </div>
                     <div class="btn-group mt-40"> <a href="<?php echo $cta['url']; ?>"
-                            class="btn btn-moonstone"><?php echo $cta['title']; ?></a>
+                            class="btn btn-pigment"><?php echo $cta['title']; ?></a>
 
                     </div>
                 </div>
