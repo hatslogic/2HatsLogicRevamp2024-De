@@ -669,3 +669,16 @@ function get_related_resources($post_id, $taxonomy = 'category', $post_type = 'p
     return $query->posts;
 }
 
+//remove a ton of script from non-woocommerce pages
+function deregister_polyfill(){
+	wp_deregister_script( 'regenerator-runtime' );
+}
+add_action( 'wp_enqueue_scripts', 'deregister_polyfill');
+
+
+// add_action( 'wp_enqueue_scripts', function() {
+	// recaptcha
+	// wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js', array(), 'null', true );
+	// wp_script_add_data( 'recaptcha', 'strategy', 'async' );
+// } );
+  
