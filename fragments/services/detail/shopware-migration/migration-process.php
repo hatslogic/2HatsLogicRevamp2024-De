@@ -5,7 +5,7 @@
                     <div class="title">
                          <h2><?php echo $title ?> </h2></div>
         <div class="content mt-60 md:mt-50 xs:mt-30">
-            <div class="grid grid-3 md:grid-2 xs:grid-1 gap-100 mt-60 md:gap-40 xs:gap-20">
+            <div class="grid grid-3 md:grid-2 xs:grid-1 cg-100 rg-50 mt-60 md:gap-40 xs:gap-20">
                 <?php foreach ($steps as $key => $step): 
                 $formatted_key = sprintf("%02d", $key + 1);    
                 ?>
