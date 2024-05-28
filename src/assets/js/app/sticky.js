@@ -1,4 +1,3 @@
-// Mobile sticky menu
 let lastScrollTop = 0;
 let ticking = false;
 let isScrollingStopped = false;
@@ -17,8 +16,8 @@ function updateScrollPosition() {
   if (currentScroll > lastScrollTop) {
     hideStickyMenu();
   } else {
+    showStickyMenu();
     if (isScrollingStopped) {
-      showStickyMenu();
       isScrollingStopped = false;
     }
   }
@@ -26,14 +25,21 @@ function updateScrollPosition() {
   ticking = false;
 }
 
-window.addEventListener('scroll', function() {
+function handleScroll() {
   if (!ticking) {
     window.requestAnimationFrame(updateScrollPosition);
     ticking = true;
   }
-  
+
   clearTimeout(isScrollingStopped);
   isScrollingStopped = setTimeout(function() {
     isScrollingStopped = true;
   }, 200); // Adjust this value as needed
-});
+}
+
+function handlePageLoad() {
+  setTimeout(showStickyMenu(), 700)
+}
+
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', handlePageLoad);

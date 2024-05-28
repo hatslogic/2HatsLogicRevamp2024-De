@@ -156,24 +156,114 @@
 // Hover colors
 .hover\:c-primary{
     &:hover{
-        color: var(--c-primary-hover);
+        color: var(--c-primary);
     }
 }
 
 .hover\:c-secondary{
     &:hover{
-        color: var(--c-secondary-hover);
+        color: var(--c-secondary);
     }
 }
 
 .hover\:c-white{
     &:hover{
-        color: var(--c-white-hover);
+        color: var(--c-white);
     }
 }
 
 .hover\:c-black{
     &:hover{
-        color: var(--c-black-hover);
+        color: var(--c-black);
+    }
+}
+
+.hover\:c-grey{
+    &:hover{
+        color: var(--c-grey);
+    }
+}
+
+.hover\:c-light-grey{
+    &:hover{
+        color: var(--c-light-grey);
+    }
+}
+
+.hover\:c-dark-grey{
+    &:hover{
+        color: var(--c-dark-grey-hover);
+    }
+}
+
+.hover\:c-hash{
+    &:hover{
+        color: var(--c-hash-hover);
+    }
+}
+
+.hover\:c-light-blue{
+    &:hover{
+        color: var(--c-light-blue);
+    }
+}
+
+.hover\:bc-primary{
+    &:hover{
+        border-color: var(--c-primary);
+    }
+}
+
+.hover\:bc-secondary{
+    &:hover{
+        border-color: var(--c-secondary);
+    }
+}
+
+.hover\:bc-white{
+    &:hover{
+        border-color: var(--c-white);
+    }
+}
+
+.hover\:bc-black{
+    &:hover{
+        border-color: var(--c-black);
+    }
+}
+
+.hover\:bc-grey{
+    &:hover{
+        border-color: var(--c-grey);
+    }
+}
+
+.hover\:bc-light-grey{
+    &:hover{
+        border-color: var(--c-light-grey);
+    }
+}   
+
+.hover\:bc-dark-grey{
+    &:hover{
+        border-color: var(--c-dark-grey);
+    }
+}
+
+.hover\:bc-hash{
+    &:hover{
+        border-color: var(--c-hash);
+    }
+}   
+
+.hover\:bc-moonstone{
+    &:hover{
+        border-color: var(--c-moonstone);
+    }
+}
+
+.hover\:bc-pigment{
+    &:hover{
+        border-color: var(--c-pigment);
     }
 }

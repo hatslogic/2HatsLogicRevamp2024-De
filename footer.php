@@ -142,6 +142,24 @@
 </footer>
 
 <?php wp_footer(); ?>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elements = document.querySelectorAll('section, header, footer, .service, .col, .content .info');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.intersectionRatio > 0) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        });
+    
+        elements.forEach(function(element) {
+            observer.observe(element);
+        });
+    });
+</script>
+
 </body>
 
 </html>

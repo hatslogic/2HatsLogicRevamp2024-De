@@ -149,6 +149,7 @@ function hatslogic_scripts()
 	// wp_enqueue_style( 'hatslogic-app-app', get_template_directory_uri() . '/dist/assets/css/app.min.css', array(), _S_VERSION );
 	wp_enqueue_style('hatslogic-app-main', get_template_directory_uri() . '/dist/assets/css/main.min.css', array(), _S_VERSION);
 	wp_enqueue_style('hatslogic-wp-main', get_template_directory_uri() . '/dist/assets/css/wp.min.css', array(), _S_VERSION);
+	wp_enqueue_style('hatslogic-transition-main', get_template_directory_uri() . '/dist/assets/css/transition.min.css', array(), _S_VERSION);
 	wp_enqueue_script('hatslogic-main', get_template_directory_uri() . '/dist/assets/js/main.min.js', array(), _S_VERSION, array(
 		'in_footer' => true,
 		'strategy' => 'async',

@@ -95,7 +95,7 @@
 	 ?>
 
 	 <?php if( $sticky_cta_1 || $sticky_cta_2 ): ?>
-	<div class="sticky-menu show transition z-10 hidden md:block w-100 bg-white fixed bottom-0 left-0 right-0">
+	<div class="sticky-menu transition z-10 hidden md:block w-100 bg-white fixed bottom-0 left-0 right-0">
     <ul class="no-bullets flex align-center justify-center">
 		<?php if( $sticky_cta_1 ): ?>
         <li class="h-100 w-100">

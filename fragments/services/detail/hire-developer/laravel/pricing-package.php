@@ -9,13 +9,9 @@
             </div>
             <div class="content mt-60 xs:mt-30">
                 <div class="grid grid-4 xl:grid-2 xs:grid-1 gap-20">
-                    <?php foreach ($items as $key => $item):
-
-                        $classes = ($key  == 1) ? 'solid bc-pigment' : 'solid bc-hash';
-
-                        ?>
+                    <?php foreach ($items as $key => $item): ?>
                         <div class="col">
-                            <div class="card w-100 py-40 px-30 b-1 <?php echo $classes ?> flex text-center">
+                            <div class="card w-100 py-40 px-30 b-1 solid bc-hash hover:bc-pigment transition flex text-center">
                                 <div class="card-inner">
                                     <h3 class="h4 fs-24 min-h-px-90 md:min-h-auto"><?php echo $item['heading'] ?></h3>
 

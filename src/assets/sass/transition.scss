@@ -1,4 +1,4 @@
-$delay-step: 0.12s; // Define the step for delay
+$delay-step: 0.1s; // Define the step for delay
 $transform-duration: 0.6s;
 $opacity-duration: 0.5s;
 $elements-count: 10;
@@ -11,28 +11,63 @@ $transition-timing-function: ease-in-out;
 }
 
 section{
-    *:not(a, .btn, svg, svg .hover-wrap *, .font-button, .link, button, polygon, .service, .hats-slider__slide, .technologies *, .container, picture, img, .container + *, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content), .bg-shape {
+    .consultation-btn, .bg-shape{
+        opacity: 0;
+        transition: opacity $opacity-duration;
+        transition-delay: 0.3s;
+    }
+
+    .col {
         opacity: 0;
         transition: transform $transform-duration, opacity $opacity-duration;
         transition-timing-function: $transition-timing-function;
+        transform: translateY($traslate-y);
         
         @for $i from 1 through $elements-count {
             &:nth-child(#{$i}) {
                 @include transition-delay($i);
+            }
+        }
+    }
+
+    .caption, .title, .content, .btn-group {
+        opacity: 0;
+        transition: transform $transform-duration, opacity $opacity-duration;
+        transition-timing-function: $transition-timing-function;
+        transform: translateY($traslate-y);
+
+        @for $i from 1 through $elements-count {
+            & > *{
+                opacity: 0;
+                transition: transform $transform-duration, opacity $opacity-duration;
+                transition-timing-function: $transition-timing-function;
                 transform: translateY($traslate-y);
+            }
+
+            & > *:nth-child(#{$i}) {
+                @include transition-delay($i);
             }
         }
     }
 
     &.animate{
-        *:not(a, .btn, svg, svg .hover-wrap *, .font-button, .link, button, polygon, .service, .hats-slider__slide, .technologies *, .container, picture, img, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content), .bg-shape {
+        .consultation-btn, .bg-shape{
+            opacity: 1;
+        }
+
+        .caption, .title, .content, .btn-group{
             transform: translateY(0) !important;
             opacity: 1 !important;
+
+            & > * {
+                transform: translateY(0) !important;
+                opacity: 1 !important;
+            }
         }
     }
 }
 
-.service{
+.service, .col{
     opacity: 0;
     transform: translateY($traslate-y);
     transition: transform $transform-duration, opacity $opacity-duration;
