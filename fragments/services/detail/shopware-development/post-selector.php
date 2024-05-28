@@ -23,7 +23,7 @@
                     $attachment = wp_get_attachment_image_src( $featured_image_id, 'img_360x280' );
                     $featured_image = $attachment[0];?>
 
-                <div class="col card snap-center"> <a href="#" class="item">
+                <div class="col card snap-center"> <a href="<?php echo esc_url($url); ?>" class="item">
                         <picture>
                             <source srcset="<?php echo webp($featured_image); ?>" type="image/webp">
                             <source srcset="<?php echo $featured_image; ?>" type="image/jpg">

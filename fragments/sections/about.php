@@ -12,7 +12,7 @@
             </div>
             <?php endif; ?>
             <div class="col w-100 ml-120 xxl:ml-80 xl:ml-60 sm:ml-0 sm:mt-40">
-            <?php if($headline): ?>
+            <?php if($headline['title']): ?>
                 <div class="title">
                     <span class="headline c-primary font-bold"><?php echo $headline['sub_title']; ?></span>
                     <h2><?php echo $headline['title']; ?></h2>

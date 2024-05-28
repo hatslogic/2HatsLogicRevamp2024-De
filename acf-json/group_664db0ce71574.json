@@ -1717,6 +1717,22 @@
                             "elements": "",
                             "bidirectional": 0,
                             "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_6655b6be4ff6c",
+                            "label": "Cta",
+                            "name": "cta",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
                         }
                     ],
                     "min": "",
@@ -1746,5 +1762,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716462786
+    "modified": 1716893381
 }
