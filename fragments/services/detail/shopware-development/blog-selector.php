@@ -26,9 +26,9 @@
                         $attachment = wp_get_attachment_image_src($featured_image_id, 'img_450x235');
                         $featured_image = $attachment[0];
                         $featured_image_alt = get_the_title($featured_image_id);
-                        $classes = ($key == count($posts) - 1) ? 'col card snap-center xl:hidden lg:visible': 'col card snap-center' ;
+                        $classes = ($key == count($posts) - 1) ? 'col card snap-center xl:hidden lg:visible' : 'col card snap-center';
                         ?>
-                        <div class="<?php echo $classes; ?>"> <a href="#" class="item">
+                        <div class="<?php echo $classes; ?>"> <a href="<?php echo $url; ?>" class="item">
                                 <picture>
                                     <source srcset="<?php echo webp($featured_image); ?>" type="image/webp">
                                     <source srcset="<?php echo $featured_image; ?>" type="image/jpg">
@@ -51,9 +51,12 @@
                     wp_reset_postdata(); ?>
 
                 </div>
-                <div class="btn-group center mt-80 xs:mt-40"> <a href="#" class="btn btn-primary">view all</a>
+                <?php if ($cta['url']): ?>
+                    <div class="btn-group center mt-80 xs:mt-40"> <a href="<?php echo $cta['url'] ?>"
+                            class="btn btn-primary"><?php echo $cta['title']; ?></a>
 
-                </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>

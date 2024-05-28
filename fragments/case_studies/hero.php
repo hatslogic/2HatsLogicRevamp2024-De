@@ -9,8 +9,8 @@
                         $categories = get_the_terms(get_the_ID(), 'category');
                         if ($categories && !is_wp_error($categories)):
 
-                            ?>
-                            <span class="headline c-primary font-bold"><?php echo esc_html($categories[0]->name); ?></span>
+                        ?>
+                        <span class="headline c-primary font-bold"><?php echo esc_html($categories[0]->name); ?></span>
                         <?php endif; ?>
                         <h1 class="h1-sml"><?php
                         if ($title):
@@ -51,6 +51,5 @@
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
-
     </div>
 </section>
