@@ -1,7 +1,9 @@
-$delay-step: 0.15s; // Define the step for delay
-$duration: 0.5s;
+$delay-step: 0.12s; // Define the step for delay
+$transform-duration: 0.6s;
+$opacity-duration: 0.5s;
 $elements-count: 10;
-$traslateY: 3px;
+$traslate-y: 10px;
+$transition-timing-function: ease-in-out;
 
 // Define the mixin to generate transition delay for nth child
 @mixin transition-delay($num) {
@@ -9,37 +11,48 @@ $traslateY: 3px;
 }
 
 section{
-    *:not(a, .btn, svg, .font-button, .link, button, polygon, .hats-slider__slide, .technologies *, .container, picture, img, .container + *, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content), .bg-shape {
+    *:not(a, .btn, svg, svg .hover-wrap *, .font-button, .link, button, polygon, .service, .hats-slider__slide, .technologies *, .container, picture, img, .container + *, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content), .bg-shape {
         opacity: 0;
-        transition: transform $duration, opacity $duration;
-        transition-timing-function: ease-in-out;
+        transition: transform $transform-duration, opacity $opacity-duration;
+        transition-timing-function: $transition-timing-function;
         
         @for $i from 1 through $elements-count {
             &:nth-child(#{$i}) {
                 @include transition-delay($i);
-                transform: translateY($traslateY);
+                transform: translateY($traslate-y);
             }
         }
     }
 
     &.animate{
-        *:not(a, .btn, svg, .font-button, .link, button, polygon, .hats-slider__slide, .technologies *, .container, picture, img, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content), .bg-shape {
+        *:not(a, .btn, svg, svg .hover-wrap *, .font-button, .link, button, polygon, .service, .hats-slider__slide, .technologies *, .container, picture, img, [class^="opacity-"], [class*=" opacity-"], .transition, .acc-content), .bg-shape {
             transform: translateY(0) !important;
             opacity: 1 !important;
         }
     }
 }
 
+.service{
+    opacity: 0;
+    transform: translateY($traslate-y);
+    transition: transform $transform-duration, opacity $opacity-duration;
+    transition-timing-function: $transition-timing-function;
+    &.animate{
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+}
+
 footer{
     .col {
         opacity: 0;
-        transition: transform $duration, opacity $duration;
-        transition-timing-function: ease-in-out;
+        transition: transform $transform-duration, opacity $opacity-duration;
+        transition-timing-function: $transition-timing-function;
         
         @for $i from 1 through 20 {
             &:nth-child(#{$i}) {
                 @include transition-delay($i);
-                transform: translateY($traslateY);
+                transform: translateY($traslate-y);
             }
         }
     }
@@ -55,8 +68,8 @@ footer{
 header {
     *{
         opacity: 0;
-        transition: opacity $duration;
-        transition-timing-function: ease-in-out;
+        transition: opacity $opacity-duration;
+        transition-timing-function: $transition-timing-function;
     }
     &.animate{
         * {
