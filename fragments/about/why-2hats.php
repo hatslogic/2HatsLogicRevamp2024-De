@@ -16,13 +16,11 @@
                             <div class="card xs:w-100 flex align-start">
                                 <div class="wrap-icon min-w-px-60 xs:min-w-px-40">
                                     <?php if ($item['icon']['url']): ?>
-                                        <img src="<?php echo $item['icon']['url']; ?>" alt="2hatslogic" loading="lazy"
-                                            height="100px" width="100px">
+                                        <img src="<?php echo $item['icon']['url']; ?>" alt="2hatslogic" loading="lazy" height="100px" width="100px">
                                     <?php endif; ?>
                                 </div>
                                 <div class="info ml-20">
                                     <h3 class="h4 transition font-bold"><?php echo $item['heading']; ?></h3>
-
                                     <p class="mt-10"><?php echo $item['content']; ?></p>
                                 </div>
                             </div>

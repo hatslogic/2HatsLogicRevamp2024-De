@@ -10,7 +10,6 @@
             </div>
             <div class="col ml-60 sm:ml-0 w-60 md:w-100 md:mt-60 xs:mt-40">
                 <h2><?php echo $title ?></h2>
-
                 <p><?php echo $description ?></p>
 
                 <ul class="no-bullets split-2 sm:split-1 fs-20 lh-1-2 mt-40 sm:fs-16">
@@ -19,7 +18,6 @@
                                 class="icomoon icon-priority fs-15 absolute left-0 top-6"></i>
                             <span class="inline-block ml-30"><?php echo $list['list_item'] ?></span>
                         </li>
-
                     <?php endforeach; ?>
 
                 </ul>

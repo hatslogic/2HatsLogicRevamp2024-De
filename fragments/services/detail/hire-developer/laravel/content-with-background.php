@@ -6,7 +6,6 @@
     <div class="container">
         <div class="title">
             <h2 class="b-0 solid bl-5 bc-pigment pl-20 mb-40"><?php echo $title; ?></h2>
-
             <p><?php echo $description; ?></p>
         </div>
     </div>

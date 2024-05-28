@@ -14,7 +14,6 @@
                             <div class="card w-100 py-40 px-30 b-1 solid bc-hash hover:bc-pigment transition flex text-center">
                                 <div class="card-inner">
                                     <h3 class="h4 fs-24 min-h-px-90 md:min-h-auto"><?php echo $item['heading'] ?></h3>
-
                                     <div class="content">
                                         <div class="price-wrap mt-40 mb-30 md:mt-30">
                                             <div class="label">Starting from</div>

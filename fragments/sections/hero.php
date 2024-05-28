@@ -2,47 +2,42 @@
 <section class="hero pt-80 pb-100 md:pt-60 md:pb-80">
     <div class="container relative">
         <div class="caption">
-        <?php if (!empty($title)) : ?>
-            <h1 class="font-bold">
-                <?php echo $title ?>
-                <mark class="relative inline-block text-center c-primary">
-                    <span class="relative z-2">Your Brand.</span>
-                    <svg class="stroke block absolute" viewBox="0 0 154 13">
-                        <use href="#line"></use>
-                    </svg>
-                    <svg class="stroke block absolute" viewBox="0 0 154 13">
-                        <use href="#line"></use>
-                    </svg>
-                </mark>
-            </h1>
+            <?php if (!empty($title)): ?>
+                <h1 class="font-bold">
+                    <?php echo $title ?>
+                    <mark class="relative inline-block text-center c-primary">
+                        <span class="relative z-2">Your Brand.</span>
+                        <svg class="stroke block absolute" viewBox="0 0 154 13">
+                            <use href="#line"></use>
+                        </svg>
+                        <svg class="stroke block absolute" viewBox="0 0 154 13">
+                            <use href="#line"></use>
+                        </svg>
+                    </mark>
+                </h1>
             <?php endif ?>
             <p class="mt-50 sm:mt-30"> <?php echo ($description ? $description : ''); ?> <br>
                 <?php echo ($links ? $links : ''); ?> </p>
-
-
-            <div class="btn-group flex align-center mt-60 md:mt-40 md:wrap md:column md:align-start">
-                <button onclick="openModal('free-consultation')" aria-label="get a quote" class="btn btn-secondary">Get
-                    a Free Quote</button>
+                <div class="btn-group flex align-center mt-60 md:mt-40 md:wrap md:column md:align-start">
+                <button onclick="openModal('free-consultation')" aria-label="get a quote" class="btn btn-secondary">Get a Free Quote</button>
 
                 <!-- rating -->
-                <?php if($rating) : ?>
-                <div class="rating flex align-center row ml-60 md:ml-0 md:mt-40 sm:column sm:align-start">
+                <?php if ($rating): ?>
+                    <div class="rating flex align-center row ml-60 md:ml-0 md:mt-40 sm:column sm:align-start">
 
-                <?php //if($rating['label']): ?>
-                    <!--<span class="lbl flex align-center">Customers Love Us</span>-->
-                <?php //endif ?>
-
-                <?php if($rating['items']): ?>
-                    <div id="rating" class="logo-wrap grid grid-4 gap-20 sm:gap-25 ml-10 sm:ml-0 sm:mt-10 sm:flex sm:wrap sm:justify-start">
-                    <?php foreach($rating['items'] as $item): ?>
-                        <a href="<?php echo $item['url']; ?>" aria-label="<?php echo $item['logo']['alt']; ?>" target="_blank" rel="noopener"
-                            class="rating-item flex align-center justify-center nowrap">
-                            <img src="<?php echo $item['logo']['url']; ?>" alt="<?php echo $item['logo']['alt']; ?>" width="120" height="60">
-                        </a>
-                        <?php endforeach; ?>
+                        <?php if ($rating['items']): ?>
+                            <div id="rating"
+                                class="logo-wrap grid grid-4 gap-20 sm:gap-25 ml-10 sm:ml-0 sm:mt-10 sm:flex sm:wrap sm:justify-start">
+                                <?php foreach ($rating['items'] as $item): ?>
+                                    <a href="<?php echo $item['url']; ?>" aria-label="<?php echo $item['logo']['alt']; ?>"
+                                        target="_blank" rel="noopener" class="rating-item flex align-center justify-center nowrap">
+                                        <img src="<?php echo $item['logo']['url']; ?>" alt="<?php echo $item['logo']['alt']; ?>"
+                                            width="120" height="60">
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif ?>
                     </div>
-                    <?php endif ?>
-                </div>
                 <?php endif; ?>
             </div>
         </div>
