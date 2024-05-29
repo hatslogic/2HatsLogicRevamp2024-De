@@ -20,7 +20,7 @@
                                     aria-hidden="true"><?php echo $formatted_key; ?></span>
                                 <h4 class="h4 mt-15"><?php echo $item['title']; ?></h4>
                                 <p><?php echo $item['content']; ?></p>
-                                <?php if ($item['button']['url']): ?>
+                                <?php if ($item['button']): ?>
                                 <a href="<?php echo $item['button']['url']; ?>" class="link link-primary"><?php echo $item['button']['title']; ?> <i class="icomoon icon-chevron_right"></i> </a>
                                 <?php endif; ?>
                             </div>

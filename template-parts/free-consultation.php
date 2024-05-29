@@ -24,8 +24,8 @@ $form_shortcode = get_field('form_shortcode', 'option');
                 </div>
                 <div class="col w-50 h-100 xs:h-auto md:w-100 md:h-auto p-60 md:px-20 xs:py-60 flex align-center">
                     <div class="form-wrap">
-                        <?php echo do_shortcode($form_shortcode); ?>
-                    </div>
+                    <?php echo do_shortcode('[contact-form-7 id="' . $form_shortcode->ID . '"]'); ?>
+                  </div>
                 </div>
             </div>
         </div>
