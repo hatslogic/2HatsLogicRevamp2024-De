@@ -3,18 +3,27 @@
 <section class="hero py-60 relative">
     <div class="container relative z-1">
         <div class="flex align-center md:wrap">
-            <div class="col w-60 md:w-100">
-                <div class="service-rating flex align-center gap-20 xs:wrap xs:gap-10">
+            <div class="col w-60 md:w-100"> 
+                <?php if ($rating || $score): ?>
+                    <div class="service-rating flex align-center gap-20 xs:wrap xs:gap-10">
+                    <?php if (!empty($rating['url'])): ?>    
                     <div class="logo flex gap-10">
-                        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/google-logo.svg"
-                            class="w-px-100" alt="google" width="100" height="100">
-                        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/star.svg"
-                            alt="star" class="w-px-80" width="100" height="100">
-                    </div>
-                    <div class="label fs-20 xs:fs-14 xs:w-100">4.6 based on <span class="c-primary">70 reviews</span>
-
-                    </div>
-                </div>
+                            <img src="<?php echo $platform['url'] ?>" class="w-px-100" alt="google" width="100"
+                                height="100">
+                            <img src="<?php echo $rating['url'] ?>" alt="star" class="w-px-80" width="100"
+                                height="100">
+                        </div>
+                        <?php endif; ?>
+                        <?php if (!empty($score)): ?>
+                            <div class="label fs-20 xs:fs-14 xs:w-100">
+                                <?php echo esc_html($score); ?>
+                                <?php if (!empty($total)): ?>
+                                    based on <span class="c-primary"><?php echo esc_html($total); ?> reviews</span>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                 </div>
+                <?php endif; ?>
                 <?php if ($headline['heading'] || $description): ?>
                     <div class="service-header mt-30">
                         <div class="title">
@@ -56,34 +65,34 @@
                 <?php endif; ?>
             </div>
             <?php if ($consultant['name'] || $form_selector): ?>
-            <div class="col w-40 md:w-100 md:mt-40">
-                <div class="consultation-wrap b-1 bc-hash solid bg-white p-50 xs:p-30">
-                    <h3 class="uppercase h4"><?php echo $form_title; ?></h3>
+                <div class="col w-40 md:w-100 md:mt-40">
+                    <div class="consultation-wrap b-1 bc-hash solid bg-white p-50 xs:p-30">
+                        <h3 class="uppercase h4"><?php echo $form_title; ?></h3>
 
-                    <p><?php echo $form_description; ?></p>
-                    <div class="avatar-wrap flex mt-30">
-                        <?php if ($consultant['image']): ?>
-                            <div
-                                class="img-wrap w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50">
-                                <img src="<?php echo $consultant['image']['url']; ?>" alt="avatar" width="75" height="75">
-                            </div>
-                        <?php endif; ?>
-                        <?php if ($consultant['name'] || $consultant['desig']): ?>
-                            <div class="author ml-30">
-                                <div class="author-name font-bold"><?php echo $consultant['name'] ?></div>
-                                <span
-                                    class="designation font-light fs-15 lh-1-25 mt-5 inline-block"><?php echo $consultant['desig']; ?></span>
+                        <p><?php echo $form_description; ?></p>
+                        <div class="avatar-wrap flex mt-30">
+                            <?php if ($consultant['image']): ?>
+                                <div
+                                    class="img-wrap w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50">
+                                    <img src="<?php echo $consultant['image']['url']; ?>" alt="avatar" width="75" height="75">
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($consultant['name'] || $consultant['desig']): ?>
+                                <div class="author ml-30">
+                                    <div class="author-name font-bold"><?php echo $consultant['name'] ?></div>
+                                    <span
+                                        class="designation font-light fs-15 lh-1-25 mt-5 inline-block"><?php echo $consultant['desig']; ?></span>
 
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                        <?php if ($form_selector): ?>
+                            <div class="form-wrap mt-20">
+                                <?php echo do_shortcode('[contact-form-7 id="' . $form_selector->ID . '"]'); ?>
                             </div>
                         <?php endif; ?>
                     </div>
-                    <?php if ($form_selector): ?>
-                        <div class="form-wrap mt-20">
-                            <?php echo do_shortcode('[contact-form-7 id="' . $form_selector->ID . '"]'); ?>
-                        </div>
-                    <?php endif; ?>
                 </div>
-            </div>
             <?php endif; ?>
         </div>
     </div>

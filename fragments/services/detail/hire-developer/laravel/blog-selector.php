@@ -50,7 +50,7 @@
                     wp_reset_postdata(); ?>
 
                 </div>
-                <?php if ($cta['url']): ?>
+                <?php if ($cta): ?>
                 <div class="btn-group center mt-80 xs:mt-40"> <a href="<?php echo $cta['url']?>" class="btn btn-primary"><?php echo $cta['title']; ?></a>
 
                 </div>
