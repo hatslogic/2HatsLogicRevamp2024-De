@@ -21,8 +21,9 @@
 
                             <?php endforeach; ?>
                         <?php endif; ?>
-                        <?php if ($button['url']): ?>
-                            <div class="btn-group mt-30"> <a href="<?php echo $button['url']; ?>"
+                        <?php if ($button): ?>
+                            <div class="btn-group mt-30"> 
+                                <a href="<?php echo $button['url']; ?>"
                                     class="btn btn-primary"><?php echo $button['title']; ?></a>
                             </div>
                         <?php endif; ?>

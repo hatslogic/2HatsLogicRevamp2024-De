@@ -35,8 +35,8 @@
                         <?php echo $cta_block['text']; ?>
                     </span>
 
-                    <div class="w-100 flex justify-center"> <a href="<?php echo $cta_block['button']['url']; ?>"
-                            class="btn btn-primary"><?php echo $cta_block['button']['title']; ?></a>
+                    <div class="w-100 flex justify-center"> 
+                        <a href="<?php echo $cta_block['button']['url']; ?>" class="btn btn-primary"><?php echo $cta_block['button']['title']; ?></a>
 
                     </div>
                 </div>

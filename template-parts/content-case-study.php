@@ -1,11 +1,10 @@
-
 <section class="casestudy-list relative pt-100 pb-100 xs:pt-60 xs:pb-80">
     <div class="container relative z-1">
         <div class="title w-70 md:w-100">
             <?php
 
-            $title = get_field('case_studies_page_title','option');
-            $desc =  get_field('case_studies_page_description','option');
+            $title = get_field('case_studies_page_title', 'option');
+            $desc = get_field('case_studies_page_description', 'option');
             ?>
             <?php if ($title): ?>
                 <h1 class="h1-sml"><?php echo $title; ?></h1>
@@ -18,7 +17,7 @@
             <?php
             $args = array(
                 'post_type' => 'case-study',
-                'posts_per_page' => -1, 
+                'posts_per_page' => -1,
             );
             $case_studies_query = new WP_Query($args);
             ?>
@@ -32,26 +31,25 @@
                             $featured_image_id = get_post_thumbnail_id();
                             $attachment = wp_get_attachment_image_src($featured_image_id, 'img_730x466');
                             $featured_image = $attachment[0];
-                            
+
                             ?>
                             <picture>
                                 <source srcset="<?php echo webp(esc_url($featured_image)); ?>" type="image/webp">
                                 <source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
-                                <img src="<?php echo esc_url($featured_image); ?>" alt="<?php the_title_attribute(); ?>" width="731px" height="466px" class="h-auto w-100">
+                                <img src="<?php echo esc_url($featured_image); ?>" alt="<?php the_title_attribute(); ?>"
+                                    width="731px" height="466px" class="h-auto w-100">
                             </picture>
-                        <?php
-                        else: 
+                            <?php
+                        else:
                             $placeholder_image_id = attachment_url_to_postid(get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
                             $placeholder_image_url = wp_get_attachment_image_src($placeholder_image_id, 'img_730x466')[0];
-                        
-                        ?>
+
+                            ?>
                             <picture>
-                                <source srcset="<?php echo $placeholder_image_url?>"
-                                    type="image/webp">
-                                <source srcset="<?php echo $placeholder_image_url?>"
-                                    type="image/jpeg">
-                                <img src="<?php echo $placeholder_image_url?>" loading="lazy"
-                                    alt="Placeholder" width="731px" height="466px" class="transition">
+                                <source srcset="<?php echo $placeholder_image_url ?>" type="image/webp">
+                                <source srcset="<?php echo $placeholder_image_url ?>" type="image/jpeg">
+                                <img src="<?php echo $placeholder_image_url ?>" loading="lazy" alt="Placeholder" width="731px"
+                                    height="466px" class="transition">
                             </picture>
                         <?php endif; ?>
                     </div>
@@ -59,7 +57,7 @@
                         <div class="title">
                             <span class="c-primary font-bold mb-6 block fs-14">
                                 <?php $categories = get_the_terms(get_the_ID(), 'category');
-                                if (!empty($categories) && !is_wp_error($categories)) :
+                                if (!empty($categories) && !is_wp_error($categories)):
                                     echo esc_html($categories[0]->name);
                                 endif;
                                 ?>
@@ -96,12 +94,13 @@
                                             alt="<?php the_title_attribute(); ?>"
                                             width="<?php echo esc_attr($featured_image_width); ?>"
                                             height="<?php echo esc_attr($featured_image_height); ?>" class="transition">
-                                    
-                                <?php else:
+
+                                    <?php else:
                                     $placeholder_image_url = get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
 
                                     ?>
-                                        <img src="<?php echo esc_url($placeholder_image_url); ?>" loading="lazy" alt="Placeholder" width="548px" height="349px" class="transition">
+                                        <img src="<?php echo esc_url($placeholder_image_url); ?>" loading="lazy" alt="Placeholder"
+                                            width="548px" height="349px" class="transition">
                                     </picture>
                                 <?php endif; ?>
                                 <div class="info mt-30">
@@ -129,6 +128,8 @@
         </div>
     </div>
     <div class="bg-shape absolute z-0 right-0 top-0 w-60 md:w-80">
-        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg2x.jpg 2x" class="shape w-100" alt="shopware" width="100" height="100">
+        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg.jpg"
+            srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg2x.jpg 2x"
+            class="shape w-100" alt="shopware" width="100" height="100">
     </div>
 </section>

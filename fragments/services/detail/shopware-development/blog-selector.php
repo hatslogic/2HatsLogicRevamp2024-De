@@ -28,7 +28,8 @@
                         $featured_image_alt = get_the_title($featured_image_id);
                         $classes = ($key == count($posts) - 1) ? 'col card snap-center xl:hidden lg:visible' : 'col card snap-center';
                         ?>
-                        <div class="<?php echo $classes; ?>"> <a href="<?php echo $url; ?>" class="item">
+                        <div class="<?php echo $classes; ?>">
+                         <a href="<?php echo $url; ?>" class="item">
                                 <picture>
                                     <source srcset="<?php echo webp($featured_image); ?>" type="image/webp">
                                     <source srcset="<?php echo $featured_image; ?>" type="image/jpg">
