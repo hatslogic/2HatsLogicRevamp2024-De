@@ -10,6 +10,8 @@ $transition-timing-function: ease-in-out;
     transition-delay: $num * $delay-step;
 }
 
+
+
 section{
     .consultation-btn, .bg-shape{
         opacity: 0;
@@ -78,37 +80,41 @@ section{
     }
 }
 
-footer{
-    .col {
-        opacity: 0;
-        transition: transform $transform-duration, opacity $opacity-duration;
-        transition-timing-function: $transition-timing-function;
-        
-        @for $i from 1 through 20 {
-            &:nth-child(#{$i}) {
-                @include transition-delay($i);
-                transform: translateY($traslate-y);
+@media (min-width: 768px){
+
+    footer{
+        .col {
+            opacity: 0;
+            transition: transform $transform-duration, opacity $opacity-duration;
+            transition-timing-function: $transition-timing-function;
+            
+            @for $i from 1 through 20 {
+                &:nth-child(#{$i}) {
+                    @include transition-delay($i);
+                    transform: translateY($traslate-y);
+                }
+            }
+        }
+
+        &.animate{
+            .col {
+                transform: translateY(0) !important;
+                opacity: 1 !important;
             }
         }
     }
 
-    &.animate{
-        .col {
-            transform: translateY(0) !important;
-            opacity: 1 !important;
+    header {
+        *{
+            opacity: 0;
+            transition: opacity $opacity-duration;
+            transition-timing-function: $transition-timing-function;
+        }
+        &.animate{
+            * {
+                opacity: 1;
+            }
         }
     }
-}
 
-header {
-    *{
-        opacity: 0;
-        transition: opacity $opacity-duration;
-        transition-timing-function: $transition-timing-function;
-    }
-    &.animate{
-        * {
-            opacity: 1;
-        }
-    }
 }

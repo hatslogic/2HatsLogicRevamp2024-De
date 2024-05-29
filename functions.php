@@ -673,13 +673,17 @@ function get_related_resources($post_id, $taxonomy = 'category', $post_type = 'p
 //remove a ton of script from non-woocommerce pages
 function deregister_polyfill(){
 	wp_deregister_script( 'regenerator-runtime' );
+	// wp_deregister_script( 'cfturnstile' );
 }
 add_action( 'wp_enqueue_scripts', 'deregister_polyfill');
 
+// function deregister_plugin_styles() {
+// 	wp_deregister_style( 'cfturnstile-js' );
+// }
+// add_action( 'wp_print_styles', 'deregister_plugin_styles', 100 );
 
 // add_action( 'wp_enqueue_scripts', function() {
-	// recaptcha
-	// wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js', array(), 'null', true );
-	// wp_script_add_data( 'recaptcha', 'strategy', 'async' );
+// 	wp_enqueue_script( 'cfturnstile-js', 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit', array(), 'null', true );
+// 	wp_script_add_data( 'cfturnstile-js', 'strategy', 'async' );
 // } );
   
