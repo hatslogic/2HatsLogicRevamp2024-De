@@ -18,7 +18,7 @@
                             <?php if ($sticky['content']): ?>
                                 <p><?php echo $sticky['content']; ?></p>
                             <?php endif; ?>
-                            <?php if ($sticky['link']): ?>
+                            <?php if ($sticky): ?>
                                 <a href="<?php echo $sticky['link']['url']; ?>"
                                     aria-label="<?php echo $sticky['link']['title']; ?>"
                                     class="btn btn-primary-outline"><?php echo $sticky['link']['title']; ?></a>
@@ -44,7 +44,7 @@
                             <?php if ($item['content'] || $item['link']): ?>
                                 <div class="content">
                                     <?php echo apply_filters('the_content', $item['content']); ?>
-                                    <?php if ($item['link']): ?>
+                                    <?php if ($item): ?>
                                         <a href="<?php echo $item['link']['url']; ?>" aria-label="<?php echo $item['link']['title']; ?>" class="link link-primary"><?php echo $item['link']['title']; ?> 
                                          <i class="icomoon icon-chevron_right"></i>
                                         </a>

@@ -25,7 +25,7 @@
                 <?php if ($rating): ?>
                     <div class="rating flex align-center row ml-60 md:ml-0 md:mt-40 sm:column sm:align-start">
 
-                        <?php if ($rating['items']): ?>
+                        <?php if ($rating): ?>
                             <div id="rating"
                                 class="logo-wrap grid grid-4 gap-20 sm:gap-25 ml-10 sm:ml-0 sm:mt-10 sm:flex sm:wrap sm:justify-start">
                                 <?php foreach ($rating['items'] as $item): ?>

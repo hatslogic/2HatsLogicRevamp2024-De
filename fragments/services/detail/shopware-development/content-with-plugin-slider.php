@@ -12,8 +12,8 @@
                     <div class="content">
                         <p class="mt-30"><?php echo $content ?></p>
                         <?php if ($cta): ?>
-                        <div class="btn-group mt-30"> <a href="<?php echo $cta['url']; ?>"
-                                class="btn btn-primary"><?php echo $cta['title']; ?></a>
+                        <div class="btn-group mt-30"> 
+                            <a href="<?php echo $cta['url']; ?>" class="btn btn-primary"><?php echo $cta['title']; ?></a>
 
                         </div>
                         <?php endif; ?>
@@ -52,7 +52,8 @@
             </div>
             <div id="plugins" class="hats-slider horizontal ml-40 xl:ml-0 xl:mt-40">
               <?php  foreach ($plugin['slider'] as $plugin): ?>
-                <div class="hats-slider__slide h-100"> <a href="<?php echo $plugin['url']; ?>" target="_blank" class="plugin c-secondary hover:c-primary min-w-px-340 sm:min-w-100 inline-flex h-100 mr-40 sm:mr-0 align-center b-1 bc-hash solid p-30 sm:p-20">
+                <div class="hats-slider__slide h-100"> 
+                    <a href="<?php echo $plugin['url']; ?>" target="_blank" class="plugin c-secondary hover:c-primary min-w-px-340 sm:min-w-100 inline-flex h-100 mr-40 sm:mr-0 align-center b-1 bc-hash solid p-30 sm:p-20">
                         <div class="icon-wrap w-px-100">
                             <img src="<?php echo $plugin['logo']['url']; ?>" class="max-w-px-80 max-h-px-80 w-100" alt="logo" loading="lazy" width="100px" height="100px">
                         </div>

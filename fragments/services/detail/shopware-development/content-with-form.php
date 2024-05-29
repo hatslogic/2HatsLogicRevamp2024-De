@@ -34,8 +34,8 @@
                             <p class="mt-30"><?php echo $description; ?></p>
                         </div>
                         <?php if ($cta): ?>
-                            <div class="btn-group mt-30"> <a href="<?php echo $cta['url']; ?>"
-                                    class="btn btn-primary"><?php echo $cta['title']; ?></a>
+                            <div class="btn-group mt-30"> 
+                                <a href="<?php echo $cta['url']; ?>" class="btn btn-primary"><?php echo $cta['title']; ?></a>
                             </div>
                         <?php endif; ?>
                     </div>

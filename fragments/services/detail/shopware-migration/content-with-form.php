@@ -34,10 +34,12 @@
 
                         <p class="mt-30"><?php echo $description; ?></p>
                     </div>
-                    <div class="btn-group mt-40"> <a href="<?php echo $cta['url']; ?>"
-                            class="btn btn-moonstone"><?php echo $cta['title']; ?></a>
+                    <?php if ($cta): ?>
+                    <div class="btn-group mt-40"> 
+                        <a href="<?php echo $cta['url']; ?>" class="btn btn-moonstone"><?php echo $cta['title']; ?></a>
 
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <?php if ($consultant['name'] || $form_selector): ?>

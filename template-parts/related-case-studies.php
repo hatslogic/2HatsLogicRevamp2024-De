@@ -13,30 +13,32 @@
                     class="grid grid-3 xl:grid-2 xs:grid-1 gap-35 xs:gap-20 xs:flex xs:nowrap xs:scroll-x xs:-ml-20 xs:-mr-20 scroll-snap">
                     <?php foreach ($related_posts as $post):
                         setup_postdata($post); ?>
-                    <div class="col card snap-center"> <a href="<?php the_permalink(); ?>" class="item">
+                        <div class="col card snap-center"> 
+                            <a href="<?php the_permalink(); ?>" class="item">
 
-                            <?php if (has_post_thumbnail()):
-                                $featured_image = get_the_post_thumbnail_url($post->ID, 'img_450x350');
-                                 $placeholder_image_url = get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
-                                ?>
-                                <picture>
-                                    <source srcset="<?php echo esc_url($featured_image); ?>" type="image/webp">
-                                    <source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
-                                    <img src="<?php echo esc_url($featured_image); ?>" loading="lazy"
-                                        alt="<?php the_title_attribute(); ?>" width="360px" height="280px" class="transition">
-                                
-                           </picture>
+                                <?php if (has_post_thumbnail()):
+                                    $featured_image = get_the_post_thumbnail_url($post->ID, 'img_450x350');
+                                    $placeholder_image_url = get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
+                                    ?>
+                                    <picture>
+                                        <source srcset="<?php echo esc_url($featured_image); ?>" type="image/webp">
+                                        <source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
+                                        <img src="<?php echo esc_url($featured_image); ?>" loading="lazy"
+                                            alt="<?php the_title_attribute(); ?>" width="360px" height="280px" class="transition">
+
+                                    </picture>
                                 <?php else: ?>
-                                    <img src="<?php echo esc_url($placeholder_image); ?>" loading="lazy" alt="Blog" width="498" height="260" class="transition">
+                                    <img src="<?php echo esc_url($placeholder_image); ?>" loading="lazy" alt="Blog" width="498"
+                                        height="260" class="transition">
                                 <?php endif; ?>
-                            <div class="info mt-20 xs:pl-20 xs:pr-20">
-                                <h3 class="h5 transition font-regular"><strong
-                                        class="transition font-bold"><?php the_title(); ?>&colon;</strong>
-                                    <?php echo truncate_text(get_the_excerpt(), 90, '...'); ?></h3>
-                            </div>
-                        </a>
+                                <div class="info mt-20 xs:pl-20 xs:pr-20">
+                                    <h3 class="h5 transition font-regular"><strong
+                                            class="transition font-bold"><?php the_title(); ?>&colon;</strong>
+                                        <?php echo truncate_text(get_the_excerpt(), 90, '...'); ?></h3>
+                                </div>
+                            </a>
 
-                    </div>
+                        </div>
 
 
                     <?php endforeach; ?>

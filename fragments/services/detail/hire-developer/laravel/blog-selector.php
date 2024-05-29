@@ -11,7 +11,8 @@
                 </div>
             <?php endif; ?>
             <div class="content mt-50 xs:mt-30">
-                <div class="grid grid-4 xl:grid-3 md:grid-2 xs:grid-1 gap-15 xs:flex xs:nowrap xs:scroll-x xs:-ml-20 xs:-mr-20 scroll-snap">
+                <div
+                    class="grid grid-4 xl:grid-3 md:grid-2 xs:grid-1 gap-15 xs:flex xs:nowrap xs:scroll-x xs:-ml-20 xs:-mr-20 scroll-snap">
 
                     <?php
                     foreach ($posts as $key => $post):
@@ -27,7 +28,8 @@
                         $featured_image_alt = get_the_title($featured_image_id);
                         $classes = ($key == count($posts) - 1) ? 'col card snap-center xl:hidden lg:visible' : 'col card snap-center';
                         ?>
-                        <div class="<?php echo $classes; ?>"> <a href="<?php echo $url; ?>" class="item">
+                        <div class="<?php echo $classes; ?>">
+                            <a href="<?php echo $url; ?>" class="item">
                                 <picture>
                                     <source srcset="<?php echo webp($featured_image); ?>" type="image/webp">
                                     <source srcset="<?php echo $featured_image; ?>" type="image/jpg">
@@ -51,9 +53,10 @@
 
                 </div>
                 <?php if ($cta): ?>
-                <div class="btn-group center mt-80 xs:mt-40"> <a href="<?php echo $cta['url']?>" class="btn btn-primary"><?php echo $cta['title']; ?></a>
+                    <div class="btn-group center mt-80 xs:mt-40"> 
+                        <a href="<?php echo $cta['url'] ?>" class="btn btn-primary"><?php echo $cta['title']; ?></a>
 
-                </div>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>

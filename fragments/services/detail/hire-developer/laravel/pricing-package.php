@@ -21,7 +21,7 @@
                                         </div>
                                         <p class="min-h-px-230 md:min-h-auto"><?php echo $item['description'] ?></p>
                                     </div>
-                                    <?php if ($item['button']['url']): ?>
+                                    <?php if ($item['button']): ?>
                                         <div class="btn-wrap mt-40"> <a href="<?php echo $item['button']['url'] ?>"
                                                 class="btn btn-secondary"><?php echo $item['button']['title'] ?></a>
                                         </div>
