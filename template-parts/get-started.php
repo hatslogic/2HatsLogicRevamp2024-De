@@ -1,7 +1,7 @@
 <?php
 $get_started_image = get_field('get_started_image','option');
 $get_started_image_mobile = get_field('get_started_image_mobile','option');
-$form_shortcode =  get_field('form_shortcode','option');    
+$form_selector =  get_field('form_shortcode','option');    
 ?>
 <section id="get-started" class="get-started bg-dark-primary c-white relative" id="get-started">
     
@@ -17,12 +17,12 @@ $form_shortcode =  get_field('form_shortcode','option');
     </picture>
    <?php endif; ?>
 
-    <?php if($form_shortcode): ?>
+    <?php if($form_selector): ?>
     <div class="flex align-center relative z-1">
         <div class="col w-50 sm:hidden"></div>
         <div class="col w-50 sm:w-100 p-80 sm:px-30 sm:py-60">
             <div class="form-wrap">
-            <?php echo do_shortcode($form_shortcode); ?>
+            <?php echo do_shortcode('[contact-form-7 id="' . $form_selector->ID . '"]'); ?>
             </div>
         </div>
     </div>
