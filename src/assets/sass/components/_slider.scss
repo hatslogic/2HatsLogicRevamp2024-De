@@ -13,4 +13,26 @@
             color: var(--c-white);
         }
     }
+}   
+
+.dots{
+    text-align: center;
+    margin: rem(30) 0;
+    .dot{
+        cursor: pointer;
+        height: rem(10);
+        width: rem(10);
+        margin: 0 rem(5);
+        background-color: transparent;
+        border: rem(1) solid var(--c-hash);
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        &.active {
+            background-color: var(--c-hash);
+            border-radius: rem(5);
+            width: rem(40);
+        }
+
+    }
 }

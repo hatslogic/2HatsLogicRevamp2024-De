@@ -11,3 +11,4 @@
 //=require app/accordian.js
 //=require app/plugins.js
 //=require app/contact.js
+//=require app/case-study.js

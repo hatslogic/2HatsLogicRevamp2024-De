@@ -5,17 +5,37 @@
             <h2><?php echo $headline['title']; ?></h2>
         </div>
         <div class="content">
-            <p><?php echo $content; ?></p>
-            <?php if ($list): ?>
-            <ul class="no-bullets split-2 mt-30 xs:split-1 xs:fs-14">
-            <?php foreach ($list as $item): ?>
-                <li class="mb-10 flex"><i class="icomoon icon-check_circle fs-16 c-primary mt-4"></i> 
-                  <span class="ml-8"><?php echo $item['list_item']; ?></span>
-                </li>
-            <?php endforeach; ?>
-            </ul>
-            <?php endif; ?>
+            <div class="challenge mb-60">
+                <p><?php echo $content; ?></p>
 
+                <?php if ($list): ?>
+                <ul class="no-bullets split-2 mt-30 xs:split-1 xs:fs-14">
+                    <?php foreach ($list as $item): ?>
+                        <li class="mb-10 flex"><i class="icomoon icon-check_circle fs-16 c-primary mt-4"></i> 
+                        <span class="ml-8"><?php echo $item['list_item']; ?></span>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
+                
+                <?php if($slider): ?>
+                <div id="case-study-slider" class="hats-slider mt-60 horizontal">
+                    <?php foreach ($slider as $item): ?>
+                    <div class="hats-slider__slide">
+                        <div class="slide-item">
+                            <?php $image = $item['slide_image']; ?>
+                            <picture>
+                                <source srcset="<?php echo webp($image['sizes']['img_556x340']); ?>" type="image/webp">
+                                <source srcset="<?php echo $image['sizes']['img_556x340']; ?>" type="<?php echo $item['slide_image']['mime_type']; ?>">
+                                <img src="<?php echo $image['sizes']['img_556x340']; ?>" alt="<?php echo $image['alt']; ?>" width="556px" height="340px" class="w-px-556 h-auto max-w-100">
+                            </picture>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+                <?php endif; ?>
+
+            </div>
             <?php if ($facts): ?>
                 <div class="facts mt-60">
                     <h3><?php echo $facts_title; ?></h3>
