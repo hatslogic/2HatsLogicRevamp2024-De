@@ -709,4 +709,4 @@ function contactform_dequeue_scripts() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'contactform_dequeue_scripts', 99 );
+// add_action( 'wp_enqueue_scripts', 'contactform_dequeue_scripts', 99 );
