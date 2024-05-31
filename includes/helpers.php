@@ -112,63 +112,6 @@ function app_render_page_single_blog() {
 	}
 }
 
-function app_render_resource_page_sections() {
-	if ( ! $sections = get_field( 'resource_sections' ) ) {
-		return;
-	}
-
-	foreach ( $sections as $section_index => $section ) {
-		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
-
-		app_render_fragment( 'sections' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
-	}
-}
-
-function app_render_news_press_page_sections() {
-	if ( ! $sections = get_field( 'news_and_press_sections' ) ) {
-		return;
-	}
-
-	foreach ( $sections as $section_index => $section ) {
-		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
-
-		app_render_fragment( 'sections' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
-	}
-}
-function app_render_thankyou_page_sections() {
-	if ( ! $sections = get_field( 'thankyou_sections' ) ) {
-		return;
-	}
-
-	foreach ( $sections as $section_index => $section ) {
-		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
-
-		app_render_fragment( 'sections' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
-	}
-}
-function app_render_event_page_sections() {
-	if ( ! $sections = get_field( 'event_sections' ) ) {
-		return;
-	}
-
-	foreach ( $sections as $section_index => $section ) {
-		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
-
-		app_render_fragment( 'sections' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
-	}
-}
-function app_get_video_provider( $video_url ) {
-	 if ( strpos( $video_url, 'youtube' ) > 0 ) {
-		  return 'youtube';
-	 }
-
-	 if ( strpos( $video_url, 'vimeo' ) > 0 ) {
-		  return 'vimeo';
-	 }
-
-	 return false;
-}
-
 function app_filter_number( $number ) {
 	return preg_replace( '~[^0-9]~', '', $number );
 }
@@ -300,54 +243,4 @@ function app_get_related_posts( $post_id, $posts_num, $is_posts_num_required = f
 	}
 
 	return $related_posts;
-}
-
-
-function app_render_service_page_sections() {
-	
-	if ( ! $sections = get_field( 'services_sections' ) ) {
-		return;
-	}
-	foreach ( $sections as $section_index => $section ) {
-		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
-
-		app_render_fragment( 'sections' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
-	}
-}
-
-
-function app_render_about_page_sections() {
-	
-	if ( ! $sections = get_field( 'about_sections' ) ) {
-		return;
-	}
-	foreach ( $sections as $section_index => $section ) {
-		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
-
-		app_render_fragment( 'sections' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
-	}
-}
-
-function app_render_method_page_sections() {
-	
-	if ( ! $sections = get_field( 'method_sections' ) ) {
-		return;
-	}
-	foreach ( $sections as $section_index => $section ) {
-		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
-
-		app_render_fragment( 'sections' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
-	}
-}
-
-function app_render_belief_foundation_page_sections() {
-	
-	if ( ! $sections = get_field( 'belief_foundation_sections' ) ) {
-		return;
-	}
-	foreach ( $sections as $section_index => $section ) {
-		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
-
-		app_render_fragment( 'belief-foundation' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
-	}
 }

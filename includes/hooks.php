@@ -25,7 +25,7 @@ function app_check_filetype( $data, $file, $filename, $mimes ) {
 /**
  * Fix svg preview in media
  */
-add_filter( 'wp_prepare_attachment_for_js', 'app_fix_svg_preview_in_admin', 10, 3 );
+// add_filter( 'wp_prepare_attachment_for_js', 'app_fix_svg_preview_in_admin', 10, 3 );
 function app_fix_svg_preview_in_admin($response, $attachment, $meta){
 	if( $response['type'] === 'image' && $response['subtype'] === 'svg+xml' && class_exists( 'SimpleXMLElement' ) ) {
 		try {
@@ -58,15 +58,15 @@ function app_fix_svg_preview_in_admin($response, $attachment, $meta){
 /**
  * Fix svg insert in editor
  */
-add_filter( 'image_send_to_editor', 'app_before_insert_image', 10, 8 );
-function app_before_insert_image( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
-	if ( strpos($html, '.svg') !== false ) {
-		$url  = wp_get_attachment_url( $id );
-		$html = '<img src="' . $url . '" alt="' . $alt . '" width="312" class="align' . $align . ' size-full wp-image-' . $id . '"  />';
-	}
+// add_filter( 'image_send_to_editor', 'app_before_insert_image', 10, 8 );
+// function app_before_insert_image( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
+// 	if ( strpos($html, '.svg') !== false ) {
+// 		$url  = wp_get_attachment_url( $id );
+// 		$html = '<img src="' . $url . '" alt="' . $alt . '" width="312" class="align' . $align . ' size-full wp-image-' . $id . '"  />';
+// 	}
 
-	return $html;
-}
+// 	return $html;
+// }
 
 /**
  * Prevent svg images from crop
@@ -103,13 +103,8 @@ function app_hide_wysiwyg_editor() {
 add_filter( 'admin_post_thumbnail_html', 'app_add_featured_images_help_texts');
 function app_add_featured_images_help_texts( $html ) {
 	if( get_post_type() === 'post' ) {
-		$html .= '<p>' . __( 'The recommended image size is 893px x 1072px.', 'app' ) . '</p>';
+		$html .= '<p>' . __( 'The recommended image size is 1200px x 628px.', 'app' ) . '</p>';
 	}
-
-	if( get_post_type() === 'app_team_member' ) {
-		$html .= '<p>' . __( 'The recommended image size is 880px x 1140px.', 'app' ) . '</p>';
-	}
-
 	return $html;
 }
 
@@ -122,7 +117,7 @@ function app_display_custom_header_scripts() {
 }
 
 // Display custom scripts in footer
-add_action( 'wp_footer', 'app_display_custom_footer_scripts', 99 );
+// add_action( 'wp_footer', 'app_display_custom_footer_scripts', 99 );
 function app_display_custom_footer_scripts() {
 	if ( $scripts = get_field( 'footer_scripts', 'option' ) ) {
 		echo $scripts;

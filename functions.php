@@ -382,7 +382,8 @@ function webp($url)
 
 add_filter('big_image_size_threshold', '__return_false');
 add_filter('jpeg_quality', function ($arg) {
-	return 100; });
+	return 100; 
+});
 
 add_action('wp_print_styles', 'wps_deregister_styles', 100);
 function wps_deregister_styles()
@@ -710,3 +711,29 @@ function contactform_dequeue_scripts() {
 }
 
 // add_action( 'wp_enqueue_scripts', 'contactform_dequeue_scripts', 99 );
+
+
+add_theme_support( 'post-thumbnails' );
+
+add_action( 'after_setup_theme', 'aw_custom_add_image_sizes' );
+function aw_custom_add_image_sizes() {
+    add_image_size( 'small', 300, 9999 ); // 300px wide unlimited height
+    add_image_size( 'medium-small', 450, 9999 ); // 300px wide unlimited height
+    add_image_size( 'xl', 1200, 9999 ); // 1200px wide unlimited height
+    add_image_size( 'xxl', 2000, 9999 ); // 2000px wide unlimited height
+    add_image_size( 'xxxl', 3000, 9999 ); // 3000px wide unlimited height
+    add_image_size( 'portfolio_full', 9999, 900 ); // 900px tall unlimited width
+
+}
+
+add_filter( 'image_size_names_choose', 'aw_custom_add_image_size_names' );
+function aw_custom_add_image_size_names( $sizes ) {
+  return array_merge( $sizes, array(
+    'small' => __( 'Small' ),
+    'medium-small' => __( 'Medium Small' ),
+    'xl' => __( 'Extra Large' ),
+    'xxl' => __( '2x Extra Large' ),
+    'xxxl' => __( '3x Extra Large' ),
+    'portfolio_full' => __( 'Portfolio Full Size' ),
+  ) );
+}
