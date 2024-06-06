@@ -690,6 +690,12 @@
     }
 }
 
+.xs\:justify-between {
+    @include below($xs) {
+        justify-content: space-between;
+    }
+}
+
 .xxl\:justify-around {
     @include below($xxl) {
         justify-content: space-around;

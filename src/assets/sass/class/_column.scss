@@ -14,6 +14,10 @@
     column-count: 4;
 }
 
+.break-in\:ac {
+    break-inside: avoid-column;
+}
+
 @include below($xxl) {
     .xxl\:split-1 {
         column-count: 1;
