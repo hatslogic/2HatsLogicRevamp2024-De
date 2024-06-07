@@ -271,3 +271,63 @@
         border-color: var(--c-pigment);
     }
 }
+
+.hover\:bg-primary{
+    &:hover{
+        background-color: var(--c-primary);
+    }
+}
+
+.hover\:bg-secondary{
+    &:hover{
+        background-color: var(--c-secondary);
+    }
+}
+
+.hover\:bg-white{
+    &:hover{
+        background-color: var(--c-white);
+    }
+}
+
+.hover\:bg-black{
+    &:hover{
+        background-color: var(--c-black);
+    }
+}
+
+.hover\:bg-grey{
+    &:hover{
+        background-color: var(--c-grey);
+    }
+}
+
+.hover\:bg-light-grey{
+    &:hover{
+        background-color: var(--c-light-grey);
+    }
+}   
+
+.hover\:bg-dark-grey{
+    &:hover{
+        background-color: var(--c-dark-grey);
+    }
+}
+
+.hover\:bg-hash{
+    &:hover{
+        background-color: var(--c-hash);
+    }
+}   
+
+.hover\:bg-moonstone{
+    &:hover{
+        background-color: var(--c-moonstone);
+    }
+}
+
+.hover\:bg-pigment{
+    &:hover{
+        background-color: var(--c-pigment);
+    }
+}
