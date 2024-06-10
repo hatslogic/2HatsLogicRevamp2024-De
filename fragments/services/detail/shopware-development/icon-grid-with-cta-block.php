@@ -1,4 +1,5 @@
 <?php extract($section); ?>
+
 <section class="expert-service">
     <div class="container">
         <?php if ($title || $description): ?>
@@ -27,20 +28,23 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
-
                 </div>
-
             <?php endif; ?>
+
             <?php if ($cta_block): ?>
-                <div class="info py-60 xs:py-40 px-130 md:px-20 mt-40 b-1 solid bc-hash"> <span
-                        class="w-100 font-bold fs-26 xs:fs-22 lh-1-25 tr text-center mb-30 block md:mb-20">
+                <div class="info py-60 xs:py-40 px-130 md:px-20 mt-40 b-1 solid bc-hash"> 
+                    <?php if($cta_block['text']): ?>
+                    <span class="w-100 font-bold fs-26 xs:fs-22 lh-1-25 tr text-center mb-30 block md:mb-20">
                         <?php echo $cta_block['text']; ?>
                     </span>
-
+                    <?php endif; ?>
+                    <?php if($cta_block['button']): ?>
                     <div class="w-100 flex justify-center"> 
-                        <a href="<?php echo $cta_block['button']['url']; ?>" class="btn btn-primary"><?php echo $cta_block['button']['title']; ?></a>
-
+                        <a href="<?php echo $cta_block['button']['url']; ?>" class="btn btn-primary">
+                            <?php echo $cta_block['button']['title']; ?>
+                        </a>
                     </div>
+                    <?php endif; ?>
                 </div>
             <?php endif; ?>
         </div>

@@ -45,6 +45,7 @@
             </div>
         </div>
     </div>
+    <?php if($plugin['slider']): ?>
     <div class="container mt-80 extend">
         <div class="content plugins flex xl:wrap slider-wrapper">
             <div class="slider-label w-min-30 flex align-center">
@@ -69,4 +70,5 @@
             </div>
         </div>
     </div>
+    <?php endif; ?>
 </section>

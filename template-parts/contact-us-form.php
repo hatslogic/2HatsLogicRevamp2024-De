@@ -20,7 +20,7 @@ $contact_form_desc = get_field('contact_form_description', 'option');
                 <div class="flex align-center relative z-1">
                     <div class="col w-50 sm:hidden"></div>
                     <?php if($form_selector): ?>
-                    <div class="col w-50 sm:w-100 p-80 sm:px-30 sm:py-60">
+                    <div class="col w-50 sm:w-100 p-80 sm:px-20 sm:py-60">
                         <div class="form-wrap">
                             <?php if ($contact_form_title || $contact_form_desc): ?>
                             <div class="title">

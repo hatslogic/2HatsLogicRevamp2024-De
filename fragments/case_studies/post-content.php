@@ -6,11 +6,10 @@
         <picture>
             <source srcset="<?php echo webp($image['sizes']['img_1139x340']); ?>" type="image/webp">
             <source srcset="<?php echo $image['sizes']['img_1139x340']; ?>" type="image/jpg">
-            <img src="<?php echo $image['sizes']['img_1139x340']; ?>" alt="Featured case study" width="731px"
-                height="466px" class="h-auto w-100">
+            <img src="<?php echo $image['sizes']['img_1139x340']; ?>" alt="Featured case study" width="731px" height="466px" class="h-auto w-100">
         </picture>
         <?php endif; ?>
-        <div class="title mt-60">
+        <div class="title <?php if ($image): ?>mt-60<?php endif; ?>">
             <?php if ($client_location): ?>
                 <div class="font-bold capitalize mb-15">Client location&colon; <span class="c-primary"><?php echo $client_location; ?></span></div>
             <?php endif; ?>
@@ -19,7 +18,7 @@
             <?php endif; ?>
         </div>
         <?php if ($content): ?>
-            <div class="content mt-40 xs:mt-30">
+            <div class="content <?php if ($client_location || $title): ?>mt-40 xs:mt-30<?php endif; ?>">
                 <p><?php echo $content; ?></p>
             </div>
         <?php endif; ?>

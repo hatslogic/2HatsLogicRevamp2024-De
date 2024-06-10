@@ -31,8 +31,8 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col w-45 md:w-100 md:hidden"></div>
-            <?php if ($background_image['url']): ?>
+            <?php if ($background_image): ?>
+                <div class="col w-45 md:w-100 md:hidden"></div>
                 <div class="background-col absolute right-0 -right-50 md:-right-0 w-75 md:w-100 md:relative md:order-1">
                     <picture>
                         <source srcset="<?php echo webp($background_image['url']); ?>" type="image/webp">

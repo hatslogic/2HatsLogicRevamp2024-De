@@ -143,7 +143,6 @@
 
 <?php wp_footer(); ?>
 
-<!--
 <script>
     var elements = document.querySelectorAll('section, header, footer, .service, .col, .content .info');
     var observer = new IntersectionObserver(function(entries) {
@@ -158,7 +157,6 @@
         observer.observe(element);
     });
 </script>
--->
 
 </body>
 
