@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 
-<section class="why-work-with-us pt-40 pb-100 xs:pt-20 xs:pb-80">
+<section class="why-work-with-us">
     <div class="container">
         <?php if ($title || $description): ?>
             <div class="title w-70 xl:w-100">
@@ -14,11 +14,13 @@
                     <?php foreach ($items as $item): ?>
                         <div class="col">
                             <div class="card xs:w-100 flex align-start">
-                                <div class="wrap-icon min-w-px-60 xs:min-w-px-40">
-                                    <?php if ($item['icon']['url']): ?>
-                                        <img src="<?php echo $item['icon']['url']; ?>" alt="2hatslogic" loading="lazy" height="100px" width="100px">
-                                    <?php endif; ?>
-                                </div>
+                                <?php if ($item['icon']): ?>
+                                    <div class="wrap-icon min-w-px-60 xs:min-w-px-40">
+                                        <?php if ($item['icon']['url']): ?>
+                                            <img src="<?php echo $item['icon']['url']; ?>" alt="2hatslogic" loading="lazy" height="100px" width="100px">
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
                                 <div class="info ml-20">
                                     <h3 class="h4 transition font-bold"><?php echo $item['heading']; ?></h3>
                                     <p class="mt-10"><?php echo $item['content']; ?></p>

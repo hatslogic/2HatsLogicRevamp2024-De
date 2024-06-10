@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 
-<section class="works pt-100 pb-100 xs:pt-80 xs:pb-80">
+<section class="works">
     <div class="container">
         <?php if ($headline['title'] || $headline['description']): ?>
         <div class="title">

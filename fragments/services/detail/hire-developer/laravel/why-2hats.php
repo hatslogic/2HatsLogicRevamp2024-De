@@ -1,7 +1,7 @@
 <?php extract($section); ?>
 
 <?php if ($items): ?>
-    <section class="why-select pt-100 pb-100 xs:pt-80 xs:pb-80 bg-white">
+    <section class="why-select bg-white">
         <div class="container">
             <?php if ($title): ?>
             <div class="title w-70 md:w-100">

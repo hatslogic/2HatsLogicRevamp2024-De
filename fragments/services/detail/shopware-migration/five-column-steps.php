@@ -1,5 +1,5 @@
 <?php extract($section); ?>
-<section class="migration-steps pt-100 pb-100 xs:pt-80 xs:pb-80">
+<section class="migration-steps">
                 <div class="container">
                     <div class="title">
                          <h2><?php echo $title; ?></h2>

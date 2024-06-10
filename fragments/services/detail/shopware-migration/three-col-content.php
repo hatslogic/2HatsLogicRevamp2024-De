@@ -1,7 +1,7 @@
 <?php extract($section); ?>
 
 
-<section class="shopware-migration pt-100 xs:pt-80 pb-100 xs:pb-80 b-0 bt-1 solid bc-hash bg-white">
+<section class="shopware-migration bg-white">
     <div class="container">
         <div class="title w-70 md:w-100">
             <h2><?php echo $title ?></h2>

@@ -1,8 +1,8 @@
 <?php extract($section); ?>
 
-<section class="hero overflow-hidden py-60 relative">
+<section class="hero overflow-hidden pt-60 relative">
     <div class="container relative z-1">
-        <div class="flex align-center justify-between md:wrap">
+        <div class="flex align-start justify-between md:wrap">
             <div class="col w-50 md:w-100">
                 <?php if ($review['rating'] || $review['score']): ?>
                     <div class="service-rating flex align-center gap-20 xs:wrap xs:gap-10">

@@ -401,6 +401,45 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6666c2e947423": {
+                    "key": "layout_6666c2e947423",
+                    "name": "spacer",
+                    "label": "Spacer",
+                    "display": "row",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6666c2f047425": {
+                    "key": "layout_6666c2f047425",
+                    "name": "seperator",
+                    "label": "Seperator",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_6666c34c785c2",
+                            "label": "Full Wide",
+                            "name": "full_wide",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Check to make the separator line full width.",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -426,5 +465,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716280778
+    "modified": 1718010795
 }

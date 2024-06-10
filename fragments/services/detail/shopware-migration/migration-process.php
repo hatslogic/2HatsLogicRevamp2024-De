@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 <?php if ($steps): ?>
-<section class="migration-process pb-100 xs:pb-80">
+<section class="migration-process">
                 <div class="container">
                     <div class="title">
                          <h2><?php echo $title ?> </h2></div>

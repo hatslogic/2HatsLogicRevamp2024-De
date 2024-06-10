@@ -1,7 +1,7 @@
 <?php extract($section); ?>
 
 <?php if ($items): ?>
-    <section class="development-service pt-100 pb-100 xs:pt-80 xs:pb-80">
+    <section class="development-service">
         <div class="container">
             <div class="title w-70 xl:w-100">
                 <h2><?php echo $title ?></h2>
@@ -13,10 +13,12 @@
                     <?php foreach ($items as $item): ?>
                         <div class="col">
                             <div class="card xs:w-100 flex align-start">
-                                <div class="wrap-icon min-w-px-60 xs:min-w-px-40">
-                                    <img src="<?php echo $item['icon']['url']; ?>" alt="2hatslogic" loading="lazy"
-                                        height="100px" width="100px">
-                                </div>
+                                <?php if ($item['icon']): ?>
+                                    <div class="wrap-icon min-w-px-60 xs:min-w-px-40">
+                                        <img src="<?php echo $item['icon']['url']; ?>" alt="2hatslogic" loading="lazy"
+                                            height="100px" width="100px">
+                                    </div>
+                                <?php endif; ?>
                                 <div class="info ml-20">
                                     <h3 class="h4 transition font-bold"><?php echo $item['title'] ?></h3>
 

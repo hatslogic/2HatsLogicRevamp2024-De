@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 
-<section class="solutions pt-100 pb-100 xs:pt-80 xs:pb-80 b-0 bb-1 bc-hash solid">
+<section class="solutions">
     <div class="container">
         <?php if ($title): ?>
             <div class="title">

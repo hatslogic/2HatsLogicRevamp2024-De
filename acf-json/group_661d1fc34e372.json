@@ -1,6 +1,6 @@
 {
     "key": "group_661d1fc34e372",
-    "title": "Page Builder",
+    "title": "Home Page Builder",
     "fields": [
         {
             "key": "field_661d1fc3e4a36",
@@ -1193,6 +1193,45 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6666c41ee223d": {
+                    "key": "layout_6666c41ee223d",
+                    "name": "spacer",
+                    "label": "Spacer",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6666c426e2243": {
+                    "key": "layout_6666c426e2243",
+                    "name": "seperator",
+                    "label": "Seperator",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6666c42ce2245",
+                            "label": "Full Wide",
+                            "name": "full_wide",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Check to make the separator line full width.",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -1220,5 +1259,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715941708
+    "modified": 1718010989
 }

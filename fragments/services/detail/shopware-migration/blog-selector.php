@@ -1,7 +1,7 @@
 <?php extract($section); ?>
 
 <?php if ($posts): ?>
-    <section class="journal pt-100 pb-100 xs:pt-80 xs:pb-80">
+    <section class="journal">
         <div class="container">
             <?php if ($headline['title']): ?>
                 <div class="title"> <span class="headline c-primary font-bold"><?php echo $headline['sub_title']; ?></span>

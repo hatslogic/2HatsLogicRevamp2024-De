@@ -9,7 +9,7 @@ $form_1_description = get_field('form_1_description');
 $form_2_description = get_field('form_2_description');
 ?>
 <?php if($get_quote_form || $partnership_form): ?>
-<section class="hero py-60">
+<section class="hero pt-60">
     <div class="container">
         <div class="contact-wrap transition show" id="get-a-quote">
             <div class="flex align-start justify-between md:wrap">

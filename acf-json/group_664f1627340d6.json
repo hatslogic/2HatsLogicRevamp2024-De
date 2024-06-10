@@ -1255,7 +1255,28 @@
                     "name": "seperator",
                     "label": "Seperator",
                     "display": "row",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_6666c50d98ed7",
+                            "label": "Full Wide",
+                            "name": "full_wide",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Check to make the separator line full width.",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 }
@@ -1283,5 +1304,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1717746985
+    "modified": 1718011171
 }

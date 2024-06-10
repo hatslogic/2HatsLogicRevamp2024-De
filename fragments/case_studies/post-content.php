@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 
-<section class="journal pt-100 pb-100 xs:pt-80 xs:pb-80">
+<section class="case-study-info pt-100 xs:pt-80 pb-100 xs:pb-80">
     <div class="container">
         <?php if ($image): ?>
         <picture>

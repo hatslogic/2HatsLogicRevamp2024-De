@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 <?php if ($items): ?>
-    <section class="remote-developer pb-100 xs:pb-80 bg-white">
+    <section class="remote-developer bg-white">
         <div class="container">
             <div class="title w-70 md:w-100">
                 <h2><?php echo $title; ?></h2>

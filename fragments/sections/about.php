@@ -1,5 +1,5 @@
 <?php extract($section); ?>
-<section class="about pt-100 pb-100 xs:pt-80 xs:pb-80">
+<section class="about">
     <div class="container">
         <div class="content flex sm:wrap align-center">
         <?php if($image): ?>

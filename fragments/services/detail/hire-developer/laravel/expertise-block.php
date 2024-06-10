@@ -1,5 +1,5 @@
 <?php extract($section); ?>
-<section class="expertise pb-100 xs:pb-80">
+<section class="expertise">
     <div class="container">
         <div class="flex justify-between md:wrap">
             <div class="col w-40 md:w-100"> 

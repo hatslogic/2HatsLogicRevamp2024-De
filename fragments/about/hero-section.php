@@ -1,8 +1,8 @@
 <?php extract($section); ?>
-<section class="hero py-60">
+<section class="hero pt-60">
     <div class="container">
-        <div class="flex align-center md:wrap">
-            <div class="col w-60 md:w-100">
+        <div class="flex align-center justify-between md:wrap">
+            <div class="col w-50 md:w-100">
                 <div class="about-header">
                     <?php if ($headline['title']): ?>
                         <div class="title">

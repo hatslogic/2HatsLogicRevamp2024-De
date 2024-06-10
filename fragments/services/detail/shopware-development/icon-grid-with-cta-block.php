@@ -1,5 +1,5 @@
 <?php extract($section); ?>
-<section class="expert-service pb-100 xs:pb-80">
+<section class="expert-service">
     <div class="container">
         <?php if ($title || $description): ?>
             <div class="title w-70 xl:w-100">
@@ -13,10 +13,12 @@
                     <?php foreach ($items as $item): ?>
                         <div class="col">
                             <div class="card xs:w-100 flex align-start">
-                                <div class="wrap-icon min-w-px-60 xs:min-w-px-40">
-                                    <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['title'] ?>"
-                                        loading="lazy" height="100px" width="100px">
-                                </div>
+                                <?php if ($item['icon']): ?>
+                                    <div class="wrap-icon min-w-px-60 xs:min-w-px-40">
+                                        <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['title'] ?>"
+                                            loading="lazy" height="100px" width="100px">
+                                    </div>
+                                <?php endif; ?>
                                 <div class="info ml-20">
                                     <h3 class="h4 transition font-bold"><?php echo $item['title']; ?></h3>
 
