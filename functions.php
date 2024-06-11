@@ -357,6 +357,16 @@ if (!function_exists('app_setup_theme')) {
 		add_image_size('img_460x487', 460, 487, true);
 		add_image_size('img_914x511', 914, 511, true);
 		add_image_size('img_556x340', 556, 340, true);
+
+		add_image_size('img_1920x893', 1920, 893, true);
+		add_image_size('img_649x734', 649, 734, true);
+		add_image_size('img_250x330', 250, 330, true);
+		add_image_size('img_500x611', 500, 611, true);
+		add_image_size('img_500x288', 500, 288, true);
+		add_image_size('img_500x286', 500, 286, true);
+		add_image_size('img_500x613', 500, 613, true);
+		add_image_size('img_500x599', 500, 599, true);
+		add_image_size('img_238x288', 238, 288, true);
 		
 		
 	}

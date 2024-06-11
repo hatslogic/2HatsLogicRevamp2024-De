@@ -7,7 +7,7 @@
         margin-bottom: rem(30);
       }
     }
-    :not(.text-center) {
+    &:not(.text-center) {
         h2, h3{
             max-width: 80%;
             @include below($md){
