@@ -747,3 +747,37 @@ function aw_custom_add_image_size_names( $sizes ) {
     'portfolio_full' => __( 'Portfolio Full Size' ),
   ) );
 }
+
+function replace_image_classes_with_ids($content)
+{
+    // Match all image tags
+    preg_match_all('/<img[^>]+>/i', $content, $matches);
+    $images = $matches[0];
+	
+    foreach ($images as $img) {
+        // Extract the image URL from each tag
+        preg_match('/src="([^"]+)/i', $img, $match);
+		$image_url = str_replace('src="', '', $match[0]);
+        // Remove the dimensions from the image URL (e.g., '-300x170')
+		$image_url = preg_replace('/-\d+x\d+(?=\.\w+$)/', '', $image_url);
+
+		// Use the cleaned URL to get the attachment ID
+		$attachment_id = attachment_url_to_postid($image_url);
+		
+        // If an attachment ID was found, extract the old class and replace it in the content
+        if ($attachment_id) {
+            // Extract the old class
+            preg_match('/wp-image-\d+/', $img, $class_match);
+            $old_class = $class_match[0]; // This is the class you want to replace
+			
+            // Define the new class with the correct ID
+            $new_class = 'wp-image-' . $attachment_id; // This is the new class with the correct ID
+			
+            // Replace the old class with the new class in the content
+            $content = str_replace($old_class, $new_class, $content);
+        }
+    }
+
+    return $content;
+}
+add_filter('the_content', 'replace_image_classes_with_ids');
