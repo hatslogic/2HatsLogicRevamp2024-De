@@ -23,7 +23,7 @@
                     $formatted_key = sprintf("%02d", $key + 1);
                     $name = get_field('name', $item->ID);
                     $designation = get_field('designation', $item->ID);
-                    $image = get_the_post_thumbnail_url($item->ID, 'img_250x250');
+                    $image = get_the_post_thumbnail_url($item->ID, 'img_250x330');
                 ?>
                 <div class="item">
                     <div class="card">

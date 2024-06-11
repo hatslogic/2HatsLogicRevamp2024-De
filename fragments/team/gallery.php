@@ -156,19 +156,19 @@
                             $image_url = $item['sizes']['img_238x288'];
                             ?>
                             <div class="album">
-                                <a href="#" class="w-100 h-100 relative">
-                                    <div
-                                        class="overlay absolute h-100 w-100 c-white flex column gap-10 align-center justify-center">
+                                <?php if($button && $image_url): ?>
+                                <a href="<?php echo $button['title']; ?>" target="<?php echo $button['target']; ?>" class="w-100 h-100 relative">
+                                    <div class="overlay absolute h-100 w-100 c-white flex column gap-10 align-center justify-center">
                                         <i class="icomoon fs-28 icon-plus"></i>
-                                        <span>See More</span>
+                                        <span><?php echo $button['title']; ?></span>
                                     </div>
                                     <picture>
                                         <source srcset="<?php echo webp($image_url); ?>" type="image/webp">
                                         <source srcset="<?php echo $image_url; ?>" type="<?php echo $item['mime_type']; ?>">
-                                        <img src="<?php echo $image_url; ?>" loading="lazy" alt="album-01" width="238px"
-                                            height="288px" class="transition">
+                                        <img src="<?php echo $image_url; ?>" loading="lazy" alt="album-01" width="238px" height="288px" class="transition">
                                     </picture>
                                 </a>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <?php endif; ?>
