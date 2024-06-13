@@ -4,27 +4,39 @@
     <div class="container relative z-1">
         <div class="flex align-start justify-between md:wrap">
             <div class="col w-50 md:w-100">
-                <?php if ($review['rating'] || $review['score']): ?>
+                
+                <?php if ($rating['rating'] || $rating['score']): ?>
                     <div class="service-rating flex align-center gap-20 xs:wrap xs:gap-10">
-                    <?php if (!empty($review['rating'])): ?>    
-                    <div class="logo flex gap-10">
-                            <img src="<?php echo $review['platform']['url'] ?>" class="w-px-100" alt="google" width="100"
-                                height="100">
-                            <img src="<?php echo $review['rating']['url'] ?>" alt="star" class="w-px-80" width="100"
-                                height="100">
-                    </div>
-                    <?php endif; ?>
-                    <?php if (!empty($review['score'])): ?>
-                            <div class="label fs-20 xs:fs-14 xs:w-100">
-                                <?php echo esc_html($review['score']); ?>
-                                <?php if (!empty($review['total'])): ?>
-                                    based on <span class="c-primary"><?php echo esc_html($review['total']); ?> reviews</span>
-                                <?php endif; ?>
-                            </div>
-                    <?php endif; ?>
+                        
+                        <div class="logo flex gap-10">
+                            <?php if($rating['platform']): ?>
+                                <img src="<?php echo $rating['platform']['url']; ?>" class="w-px-100" alt="<?php echo $rating['platform']['alt']; ?>" width="100" height="100">
+                            <?php else: ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/google-logo.svg" class="w-px-100" alt="google" width="100" height="100">
+                            <?php endif; ?>
+                            <?php if($rating['rating']): ?>
+                                <img src="<?php echo $rating['rating']['url'] ?>" alt="<?php echo $rating['rating']['alt'] ?>" class="w-px-80" width="100" height="100">
+                            <?php else: ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/star.svg" alt="star" class="w-px-80" width="100" height="100">
+                            <?php endif; ?>
+                        </div>
+                        <div class="label fs-20 xs:fs-14 xs:w-100">
+                            <?php echo esc_html($rating['score']); ?>
+                            based on 
+                            <?php if($rating['link_to_review']): ?>
+                                <a href="<?php echo $rating['link_to_review']; ?>" target="_blank">
+                            <?php endif; ?>
+                            <span class="c-primary">
+                                <?php echo esc_html($rating['total']); ?> reviews
+                            </span>
+                            <?php if($rating['link_to_review']): ?>
+                                </a>
+                            <?php endif; ?>
+                        </div>
 
                     </div>
                 <?php endif; ?>
+
                 <div class="service-header mt-30">
                     <div class="service-logo max-w-px-150 max-h-px-60 mt-20 mb-20">
                         <img src="<?php echo $logo['url']; ?>" alt="shopware" width="100" height="100">

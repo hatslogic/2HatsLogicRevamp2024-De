@@ -7,8 +7,13 @@
                 <h2><?php echo $title; ?></h2>
             </div>
             <div class="content mt-60 md:mt-50 xs:mt-30">
-                <h3><?php echo $subtitle; ?></h3>
+                <?php if($sub_title): ?>
+                <h3><?php echo $sub_title; ?></h3>
+                <?php endif; ?>
+
+                <?php if($description): ?>
                 <p><?php echo $description; ?></p>
+                <?php endif; ?>
 
                 <div class="grid grid-3 md:grid-2 xs:grid-1 gap-100 mt-60 md:gap-40 xs:gap-20">
                     <?php foreach ($items as $key => $item):

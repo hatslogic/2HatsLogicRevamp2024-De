@@ -45,8 +45,7 @@
             <div class="flex xs:wrap align-center justify-start mt-60 md:mt-40">
                 <?php foreach ($technologies_used as $key => $technology_used): ?>
                     <div class="col w-25 xs:w-50<?php echo ($key >= 2) ? ' xs:mt-20' : ''; ?>">
-                        <img src="<?php echo esc_url($technology_used['image']['url']); ?>"
-                            alt="<?php echo esc_attr($technology_used['label']); ?>" width="100" height="100" class="w-50">
+                        <img src="<?php echo esc_url($technology_used['image']['url']); ?>" alt="<?php echo esc_attr($technology_used['image']['title']); ?>" width="100" height="100" class="w-50">
                     </div>
                 <?php endforeach; ?>
             </div>
