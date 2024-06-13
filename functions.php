@@ -763,13 +763,16 @@ function replace_image_classes_with_ids($content)
 
 		// Use the cleaned URL to get the attachment ID
 		$attachment_id = attachment_url_to_postid($image_url);
+
+		// Extract the old class
+		preg_match('/wp-image-\d+/', $img, $class_match);
 		
+
         // If an attachment ID was found, extract the old class and replace it in the content
-        if ($attachment_id) {
-            // Extract the old class
-            preg_match('/wp-image-\d+/', $img, $class_match);
-            $old_class = $class_match[0]; // This is the class you want to replace
-			
+        if ($attachment_id && !empty($class_match)) {
+
+			$old_class = $class_match[0]; // This is the class you want to replace
+
             // Define the new class with the correct ID
             $new_class = 'wp-image-' . $attachment_id; // This is the new class with the correct ID
 			
