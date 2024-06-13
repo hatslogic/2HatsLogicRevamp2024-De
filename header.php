@@ -47,6 +47,7 @@
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
+	<script> var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>'; </script>
 
 	<div class="progress-container w-100 block fixed">
 		<span class="progress-bar bg-primary w-0 block" id="progress"></span>

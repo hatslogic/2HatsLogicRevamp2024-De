@@ -269,6 +269,7 @@ if (!function_exists('app_setup_theme')) {
 		include_once ($autoload_dir);
 
 		# Additional libraries and includes
+		include_once (APP_THEME_DIR . 'includes/ajax.php');
 		include_once (APP_THEME_DIR . 'includes/admin-login.php');
 		include_once (APP_THEME_DIR . 'includes/comments.php');
 		include_once (APP_THEME_DIR . 'includes/title.php');
@@ -599,7 +600,7 @@ function no_x_gravity_form_css()
 	wp_dequeue_style('x-gravity-forms');
 }
 
-require get_template_directory() . '/inc/minify-html.php';
+// require get_template_directory() . '/inc/minify-html.php';
 
 // Function to calculate reading time
 function get_reading_time($content) {

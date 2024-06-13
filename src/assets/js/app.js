@@ -12,3 +12,4 @@
 //=require app/plugins.js
 //=require app/contact.js
 //=require app/case-study.js
+//=require app/team.js

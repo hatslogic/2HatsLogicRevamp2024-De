@@ -16,22 +16,23 @@
         
         <?php if ($select_members): ?>
         <div class="content mt-60">
-            <div class="grid grid-6 xxl:grid-5 xl:grid-4 md:grid-3 xs:grid-2 cg-10 rg-40">
+            <div class="grid grid-6 xl:grid-4 md:grid-3 xs:grid-2 cg-10 rg-40" id="members">
                 <?php 
-                    foreach ($select_members as $key => $item):
-                    setup_postdata($item);
-                    $formatted_key = sprintf("%02d", $key + 1);
-                    $name = get_field('name', $item->ID);
-                    $designation = get_field('designation', $item->ID);
-                    $image = get_the_post_thumbnail_url($item->ID, 'img_250x330');
+                foreach ($select_members as $key => $item):
+                if($key > 23) break;
+                setup_postdata($item);
+                $formatted_key = sprintf("%02d", $key + 1);
+                $name = get_field('name', $item->ID);
+                $designation = get_field('designation', $item->ID);
+                $image = get_the_post_thumbnail_url($item->ID, 'img_250x330');
                 ?>
                 <div class="item">
                     <div class="card">
-                        <div class="img">
+                        <div class="img bg-secondary">
                             <picture>
                                 <source srcset="<?php echo webp($image); ?>" type="image/webp">
                                 <source srcset="<?php echo $image; ?>" type="">
-                                <img src="<?php echo $image; ?>" loading="lazy" alt="<?php the_title_attribute(); ?>" width="250px" height="250px" class="transition">
+                                <img src="<?php echo $image; ?>" loading="lazy" alt="<?php the_title_attribute(); ?>" width="250px" height="330px" class="transition">
                             </picture>
                         </div>
                         <div class="info mt-10">
@@ -51,10 +52,9 @@
             </div>
         </div>
         <?php endif; ?>
-        
 
         <div class="btn-group center mt-60"> 
-            <a href="#" class="btn btn-secondary">View All</a>
+            <a href="#" class="btn btn-secondary" id="view-all-members">View All</a>
         </div>
     </div>
 </section>
