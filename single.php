@@ -13,22 +13,13 @@ get_header();
 <main class="page-wrap inline-block w-100">
     <section class="blog-detail pt-100 xs:pt-60 pb-100 md:pb-60">
       <div class="container relative z-1">
-        <div class="title w-100 flex justify-between sm:wrap">
-          <h1 class="h1-sml w-100 sm:mb-20">Blogs</h1>
-          <div class="flex w-100 justify-end gap-20 align-end">
-            <div class="form-group max-w-58 md:max-w-100">
-				<form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url('/'); ?>">
-					<input type="search" name="s" id="s" class="form-control lined" aria-label="Search" placeholder="Search Blog here">
-				</form>
-            </div>
-          </div>
-        </div>
+        
         <div class="content mt-60 sm:mt-40 xs:mt-30 align-start md:wrap flex gap-60 md:gap-40">
           <div class="w-70 md:w-100 md:w-100">
 
             <!-- Featured Image -->
 			<?php if (has_post_thumbnail()):
-			$featured_image = get_the_post_thumbnail_url(get_the_ID(), 'img_749x379');
+			$featured_image = get_the_post_thumbnail_url(get_the_ID());
 			$reading_time_text = get_reading_time(get_the_content());
 			?>
 			<div class="w-100">
