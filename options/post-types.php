@@ -25,7 +25,7 @@ function register_team() {
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'page-attributes', 'comments', 'revisions', 'custom-fields', ),
 		'hierarchical'        => false,
-		'public'              => true,
+		'public'              => false,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
 		'show_in_nav_menus'   => true,
@@ -34,9 +34,9 @@ function register_team() {
 		'can_export'          => true,
 		'has_archive'         => false,
 		'exclude_from_search' => true,
-		'publicly_queryable'  => true,
+		'publicly_queryable'  => false,
 		'capability_type'     => 'page',
-		'show_in_rest'        => true,
+		'show_in_rest'        => false,
 		'menu_icon' => 'dashicons-groups'
 	);
 		
