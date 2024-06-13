@@ -600,7 +600,7 @@ function no_x_gravity_form_css()
 	wp_dequeue_style('x-gravity-forms');
 }
 
-// require get_template_directory() . '/inc/minify-html.php';
+require get_template_directory() . '/inc/minify-html.php';
 
 // Function to calculate reading time
 function get_reading_time($content) {
