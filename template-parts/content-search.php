@@ -6,7 +6,7 @@
  *
  * @package 2HatsLogic
  */
-
+$reading_time_text = get_reading_time(get_the_content());
 ?>
 
 <div class="col card" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -15,7 +15,6 @@
         if (has_post_thumbnail()):
 
             $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'img_498x260');
-            $reading_time_text = get_reading_time(get_the_content());
             ?>
             <picture>
                 <source srcset="<?php echo esc_url($featured_image); ?>" type="image/webp">
