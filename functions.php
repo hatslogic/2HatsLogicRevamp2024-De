@@ -369,6 +369,14 @@ if (!function_exists('app_setup_theme')) {
 		add_image_size('img_500x599', 500, 599, true);
 		add_image_size('img_238x288', 238, 288, true);
 		
+		add_image_size('mobile-1x', 480, 320, true); // width, height, crop
+		add_image_size('mobile-2x', 960, 640, true);
+		add_image_size('tablet-1x', 768, 512, true);
+		add_image_size('tablet-2x', 1536, 1024, true);
+		add_image_size('small-desktop-1x', 1024, 682, true);
+		add_image_size('small-desktop-2x', 2048, 1364, true);
+		add_image_size('large-desktop-1x', 1440, 960, true);
+		add_image_size('large-desktop-2x', 2880, 1920, true);
 		
 	}
 }
