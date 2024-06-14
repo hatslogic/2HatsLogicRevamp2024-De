@@ -85,8 +85,13 @@
 				<a href="#" class="menu-btn fs-32 inline-flex align-center column hidden md:visible" aria-label="menu">
 					<i class="icomoon icon-menu"></i> 
 				</a>
-
-				<a href="#" class="btn btn-primary ml-40 xl:ml-30 sm:inline-flex md:hidden">Hire a developer</a>
+				<?php 
+				$header_cta_label = get_field('header_cta_label', 'options');
+				$header_cta_link  = get_field('header_cta_link', 'options');
+				?>
+				<?php if($header_cta_label): ?>
+				<a href="<?php echo $header_cta_link ?:'#' ?>" class="btn btn-primary ml-40 xl:ml-30 sm:inline-flex md:hidden"><?php echo $header_cta_label; ?></a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</header>

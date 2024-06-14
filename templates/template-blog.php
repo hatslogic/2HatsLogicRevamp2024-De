@@ -32,7 +32,7 @@ get_header();
 
                         <?php
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                        $posts_per_page = 8;
+                        $posts_per_page = 16;
                         $offset = ($paged - 1) * $posts_per_page;
                         $args = array(
                             'post_type' => 'post',
