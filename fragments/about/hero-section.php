@@ -5,13 +5,9 @@
             <div class="col w-50 md:w-100">
                 <div class="about-header">
                     <?php if ($headline['title']): ?>
-                        <div class="title">
-                            <h1 class="h3"><?php echo $headline['subtitle'] ?></h1>
-
-                            <h2 class="h1-sml"><?php echo $headline['title'] ?></h2>
-
-                            <p class="mt-30"><?php echo $content ?></p>
-                        </div>
+                        <h1 class="h3"><?php echo $headline['subtitle'] ?></h1>
+                        <h2 class="h1-sml"><?php echo $headline['title'] ?></h2>
+                        <p class="mt-30"><?php echo $content ?></p>
                     <?php endif; ?>
                     <?php if ($button): ?>
                         <div class="btn-group mt-40">

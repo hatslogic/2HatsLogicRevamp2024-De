@@ -14,7 +14,7 @@
         <?php endif; ?>
 
         <?php if ($images): ?>
-            <div class="content mt-60">
+            <div class="content mt-60 xs:mt-30">
                 <div class="split-3 xs:split-2 xs:gap-5 xs:split-1 gap-20">
                     <?php
                     foreach ($images as $key => $item): ?>

@@ -15,7 +15,7 @@
         <?php endif; ?>
         
         <?php if ($select_members): ?>
-        <div class="content mt-60">
+        <div class="content mt-60 xs:mt-30">
             <div class="grid grid-6 xl:grid-4 md:grid-3 xs:grid-2 cg-10 rg-40" id="members">
                 <?php 
                 foreach ($select_members as $key => $item):

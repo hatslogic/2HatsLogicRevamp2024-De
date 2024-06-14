@@ -122,7 +122,7 @@ h2,
 
 h3,
 .h3 {
-  font-size: rem(34);
+  font-size: rem(30);
   line-height: 1.1;
   @include below($xxl) {
     font-size: rem(32);
@@ -137,7 +137,7 @@ h3,
 
 h4,
 .h4 {
-  font-size: rem(21);
+  font-size: rem(20);
   line-height: rem(26);
   line-height: 1.1;
   @include below($xxl) {

@@ -8,7 +8,7 @@
     }
 }
 
-@for $i from 0 through 300 {
+@for $i from 0 through 500 {
     .max-w-px-#{$i} {
         max-width: rem($i);
     }
