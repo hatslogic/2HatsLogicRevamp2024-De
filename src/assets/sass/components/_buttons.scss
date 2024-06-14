@@ -22,7 +22,7 @@
         border-color: var(--c-primary);
         background: var(--c-primary);
         color: var(--c-white);
-        &:hover{
+        &:hover, &:focus{
             background: var(--c-primary-hover);
             border-color: var(--c-primary-hover);
             color: var(--c-white);
@@ -33,7 +33,7 @@
         border-color: var(--c-moonstone);
         background: var(--c-moonstone);
         color: var(--c-white);
-        &:hover{
+        &:hover, &:focus{
             background: var(--c-secondary-hover);
             border-color: var(--c-secondary-hover);
             color: var(--c-white);
@@ -44,7 +44,7 @@
         border-color: var(--c-pigment);
         background: var(--c-pigment);
         color: var(--c-white);
-        &:hover{
+        &:hover, &:focus{
             background: var(--c-secondary-hover);
             border-color: var(--c-secondary-hover);
             color: var(--c-white);
@@ -55,7 +55,7 @@
         border-color: var(--c-primary);
         background: transparent;
         color: var(--c-primary);
-        &:hover{
+        &:hover, &:focus{
             background: var(--c-primary);
             border-color: var(--c-primary);
             color: var(--c-white);
@@ -65,7 +65,7 @@
         background: var(--c-black);
         border-color: var(--c-black);
         color: var(--c-white);
-        &:hover{
+        &:hover, &:focus{
             background: var(--c-primary);
             border-color: var(--c-primary);
             color: var(--c-white);
@@ -75,7 +75,7 @@
         border-color: var(--c-secondary);
         background: transparent;
         color: var(--c-secondary);
-        &:hover{
+        &:hover, &:focus{
             background: var(--c-black);
             border-color: var(--c-black);
             color: var(--c-white);
@@ -86,7 +86,7 @@
         background: var(--c-white);
         border-color: var(--c-white);
         color: var(--c-black);
-        &:hover{
+        &:hover, &:focus{
             background: var(--c-black);
             border-color: var(--c-black);
             color: var(--c-white);
@@ -96,7 +96,7 @@
         border-color: var(--c-white);
         background: transparent;
         color: var(--c-white);
-        &:hover{
+        &:hover, &:focus{
             background: var(--c-white);
             border-color: var(--c-white);
             color: var(--c-black);
@@ -132,13 +132,13 @@
 
     &-primary{
         color: var(--c-primary);
-        &:hover{
+        &:hover, &:focus{
             color: var(--c-secondary);
         }
     }       
     &-secondary{
         color: var(--c-secondary);
-        &:hover{
+        &:hover, &:focus{
             color: var(--c-primary);
         }
     }      

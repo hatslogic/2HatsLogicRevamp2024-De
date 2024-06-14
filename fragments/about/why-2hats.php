@@ -15,7 +15,7 @@
                         <div class="col">
                             <div class="card xs:w-100 flex align-start">
                                 <?php if ($item['icon']): ?>
-                                    <div class="wrap-icon min-w-px-60 xs:min-w-px-40">
+                                    <div class="wrap-icon min-w-px-60 xs:min-w-px-40 max-w-px-60 xs:max-w-px-40">
                                         <?php if ($item['icon']['url']): ?>
                                             <img src="<?php echo $item['icon']['url']; ?>" alt="2hatslogic" loading="lazy" height="100px" width="100px">
                                         <?php endif; ?>

@@ -12,7 +12,7 @@
                 <p><?php echo $content; ?></p>
                 <?php if ($cta): ?>
                     <div class="btn-group flex justify-center mt-60">
-                        <a href="<?php echo $cta['url'] ?>" class="btn btn-secondary"><?php echo $cta['title'] ?></a>
+                        <a href="<?php echo $cta['url'] ?>" target="<?php echo $cta['target'] ?>" class="btn btn-secondary"><?php echo $cta['title'] ?></a>
                     </div>
                 <?php endif; ?>
             </div>
