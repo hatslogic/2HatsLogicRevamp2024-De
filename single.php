@@ -14,7 +14,7 @@ get_header();
     <section class="blog-detail pt-100 xs:pt-60 pb-100 md:pb-60">
       <div class="container relative z-1">
         
-        <div class="content mt-60 sm:mt-40 xs:mt-30 align-start md:wrap flex gap-60 md:gap-40">
+        <div class="content align-start md:wrap flex gap-60 md:gap-40">
           <div class="w-70 md:w-100 md:w-100">
 
             <!-- Featured Image -->
