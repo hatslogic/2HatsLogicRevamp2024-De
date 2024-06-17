@@ -171,6 +171,7 @@ function hatslogic_scripts()
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
+
 	if (is_page('contact')) {
         wp_enqueue_style('hatslogic-contact', 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css');
         wp_enqueue_style('hatslogic-contact-theme', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css');
@@ -234,8 +235,6 @@ function app_excerpt_length()
 {
 	return 55;
 }
-
-
 
 # Sidebar Options
 function app_get_default_sidebar_options()
@@ -384,8 +383,6 @@ function webp($url)
 	return $url;
 }
 
-
-
 /**
  * Image Compression Adjustments in WordPress
  */
@@ -395,16 +392,14 @@ add_filter('jpeg_quality', function ($arg) {
 	return 100; 
 });
 
-add_action('wp_print_styles', 'wps_deregister_styles', 100);
+
 function wps_deregister_styles()
 {
+	wp_dequeue_style('classic-theme-styles');
 	wp_dequeue_style('wp-block-library');
 	wp_dequeue_style('global-styles');
 }
-
-add_action('wp_enqueue_scripts', function () {
-	wp_dequeue_style('classic-theme-styles');
-}, 20);
+add_action('wp_print_styles', 'wps_deregister_styles', 100);
 
 add_filter('wpcf7_autop_or_not', '__return_false');
 
@@ -536,6 +531,19 @@ function truncate_text($text, $max = 50, $append = '...')
 
 
 /**
+ * Filter out the tinymce emoji plugin.
+ */
+function disable_emojis_tinymce($plugins)
+{
+	if (is_array($plugins)) {
+		return array_diff($plugins, array('wpemoji'));
+	} else {
+		return array();
+	}
+}
+
+
+/**
  * Disable the emoji's
  */
 function disable_emojis()
@@ -551,30 +559,7 @@ function disable_emojis()
 	// Remove from TinyMCE
 	add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
 }
-// add_action('init', 'disable_emojis');
-
-/**
- * Filter out the tinymce emoji plugin.
- */
-function disable_emojis_tinymce($plugins)
-{
-	if (is_array($plugins)) {
-		return array_diff($plugins, array('wpemoji'));
-	} else {
-		return array();
-	}
-}
-
-
-// add_action('wp_print_styles', 'my_deregister_styles', 100);
-
-function my_deregister_styles()
-{
-	//wp_deregister_style( 'amethyst-dashicons-style' ); 
-	wp_deregister_style('dashicons');
-
-
-}
+add_action('init', 'disable_emojis');
 
 function itsme_disable_feed()
 {
@@ -687,7 +672,7 @@ function deregister_polyfill(){
 	wp_deregister_script( 'regenerator-runtime' );
 	// wp_deregister_script( 'cfturnstile' );
 }
-// add_action( 'wp_enqueue_scripts', 'deregister_polyfill');
+add_action( 'wp_enqueue_scripts', 'deregister_polyfill');
 
 // function deregister_plugin_styles() {
 // 	wp_deregister_style( 'cfturnstile-js' );
