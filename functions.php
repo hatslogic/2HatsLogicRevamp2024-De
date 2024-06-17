@@ -786,13 +786,16 @@ function replace_image_classes_with_ids($content)
 add_filter('the_content', 'replace_image_classes_with_ids');
 
 //Crop Images Dynamically based on the aspect ratio and use in picture tags
-function display_responsive_image($image_id) {
+function display_responsive_image($image_id,$options) {
     // Get the original image dimensions
     $image_data = wp_get_attachment_metadata($image_id);
 	
     $width = $image_data['width'];
     $height = $image_data['height'];
 
+	$fallback_image_sizes = isset($options["fallbackimage-size"]) ? $options["fallbackimage-size"] : [$width,$height];
+	$fallbackimage_class = isset($options["fallbackimage-class"]) ? $options["fallbackimage-class"] : '';
+	$picturetag_class = isset($options["picturetag-class"]) ? $options["picturetag-class"] : '';
 	// Calculate the aspect ratio
     $aspect_ratio = $width / $height;
 
@@ -812,7 +815,7 @@ function display_responsive_image($image_id) {
     $large_desktop_2x = fly_get_attachment_image_src($image_id, [ 2880 ,round(2880 / $aspect_ratio)],1);
 
     // Fallback image
-    $default_image = fly_get_attachment_image_src($image_id, [$width,$height],0);
+    $default_image = bis_get_attachment_image_src($image_id, $fallback_image_sizes,1);
     ?>
 
     <picture>
@@ -833,7 +836,7 @@ function display_responsive_image($image_id) {
         <source srcset="<?php echo $large_desktop_1x['src']; ?> 1x, <?php echo $large_desktop_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 1440px)">
 
         <!-- Fallback image -->
-        <img src="<?php echo $default_image['src']; ?>" loading="lazy" alt="<?php echo get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" class="transition">
+        <img src="<?php echo $default_image['src']; ?>" loading="lazy" alt="<?php echo get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>" width="<?php echo $fallback_image_sizes[0]; ?>" height="<?php echo $fallback_image_sizes[1]; ?>" class="<?php echo $fallbackimage_class; ?>" >
     </picture>
     <?php
 }
