@@ -21,14 +21,12 @@ get_header();
 			<?php if (has_post_thumbnail()):
 			$featured_image = get_the_post_thumbnail_url(get_the_ID());
 			$reading_time_text = get_reading_time(get_the_content());
+			$featured_image_id = get_post_thumbnail_id(get_the_ID());
 			?>
 			<div class="w-100">
-				<picture>
-					<source srcset="<?php echo esc_url($featured_image); ?>" type="image/webp">
-					<source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
-					<img src="<?php echo esc_url($featured_image); ?>" loading="lazy" alt="<?php the_title_attribute()?>" width="749px" height="379px"
-						class="transition">
-				</picture>
+				<?php 
+					display_responsive_image($featured_image_id);
+				?>
 				<div class="info mt-15">
 					<div class="w-100 flex justify-between mb-15 md:mb-10">
 						<span class="c-dark-grey fs-14"><?php the_field('author'); ?> &period; <?php echo esc_html($reading_time_text); ?></span>

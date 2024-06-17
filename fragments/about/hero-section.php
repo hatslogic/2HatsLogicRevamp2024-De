@@ -17,13 +17,11 @@
                 </div>
             </div>
             <?php if ($image): ?>
+                <?php
+                $featured_image_id = get_post_thumbnail_id($image['ID']);
+                ?>
                 <div class="col w-40 md:w-100 md:mt-40">
-                    <picture>
-                        <source srcset="<?php echo webp($image['sizes']['img_648x445']); ?>" type="image/webp">
-                        <source srcset="<?php echo $image['sizes']['img_648x445']; ?>" type="image/jpg">
-                        <img src="<?php echo $image['sizes']['img_648x445']; ?>" loading="lazy" alt="about" width="648px"
-                            height="445px" class="transition">
-                    </picture>
+                    <?php display_responsive_image($featured_image_id); ?>
                 </div>
             <?php endif; ?>
         </div>
