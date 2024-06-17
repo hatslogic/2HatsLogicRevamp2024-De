@@ -369,15 +369,6 @@ if (!function_exists('app_setup_theme')) {
 		add_image_size('img_500x599', 500, 599, true);
 		add_image_size('img_238x288', 238, 288, true);
 		
-		add_image_size('mobile-1x', 480, 320, true); // width, height, crop
-		add_image_size('mobile-2x', 960, 640, true);
-		add_image_size('tablet-1x', 768, 512, true);
-		add_image_size('tablet-2x', 1536, 1024, true);
-		add_image_size('small-desktop-1x', 1024, 682, true);
-		add_image_size('small-desktop-2x', 2048, 1364, true);
-		add_image_size('large-desktop-1x', 1440, 960, true);
-		add_image_size('large-desktop-2x', 2880, 1920, true);
-		
 	}
 }
 
@@ -793,3 +784,57 @@ function replace_image_classes_with_ids($content)
     return $content;
 }
 add_filter('the_content', 'replace_image_classes_with_ids');
+
+//Crop Images Dynamically based on the aspect ratio and use in picture tags
+function display_responsive_image($image_id) {
+    // Get the original image dimensions
+    $image_data = wp_get_attachment_metadata($image_id);
+	
+    $width = $image_data['width'];
+    $height = $image_data['height'];
+
+	// Calculate the aspect ratio
+    $aspect_ratio = $width / $height;
+
+    // Mobile images
+    $mobile_1x = fly_get_attachment_image_src($image_id, [ 480 ,round(480 / $aspect_ratio)],1);
+    $mobile_2x = fly_get_attachment_image_src($image_id, [ 960 ,round(960 / $aspect_ratio)],1);
+    // Tablet images
+    $tablet_1x = fly_get_attachment_image_src($image_id, [ 768 ,round(768 / $aspect_ratio)],1);
+    $tablet_2x = fly_get_attachment_image_src($image_id, [ 1536 ,round(1536 / $aspect_ratio)],1);
+
+    // Small desktop images
+    $small_desktop_1x = fly_get_attachment_image_src($image_id, [ 1024 ,round(1024 / $aspect_ratio)],1);
+    $small_desktop_2x = fly_get_attachment_image_src($image_id, [ 2048 ,round(2048 / $aspect_ratio)],1);
+
+    // Large desktop images
+    $large_desktop_1x = fly_get_attachment_image_src($image_id, [ 1440 ,round(1440 / $aspect_ratio)],1);
+    $large_desktop_2x = fly_get_attachment_image_src($image_id, [ 2880 ,round(2880 / $aspect_ratio)],1);
+
+    // Fallback image
+    $default_image = fly_get_attachment_image_src($image_id, [$width,$height],0);
+    ?>
+
+    <picture>
+        <!-- Mobile images -->
+        <source srcset="<?php echo webp($mobile_1x['src']); ?> 1x, <?php echo webp($mobile_2x['src']); ?> 2x" type="image/webp" media="(max-width: 599px)">
+        <source srcset="<?php echo $mobile_1x['src']; ?> 1x, <?php echo $mobile_2x['src']; ?> 2x" type="image/jpeg" media="(max-width: 599px)">
+
+        <!-- Tablet images -->
+        <source srcset="<?php echo webp($tablet_1x['src']); ?> 1x, <?php echo webp($tablet_2x['src']); ?> 2x" type="image/webp" media="(min-width: 600px) and (max-width: 1023px)">
+        <source srcset="<?php echo $tablet_1x['src']; ?> 1x, <?php echo $tablet_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 600px) and (max-width: 1023px)">
+
+        <!-- Small desktop images -->
+        <source srcset="<?php echo webp($small_desktop_1x['src']); ?> 1x, <?php echo webp($small_desktop_2x['src']); ?> 2x" type="image/webp" media="(min-width: 1024px) and (max-width: 1439px)">
+        <source srcset="<?php echo $small_desktop_1x['src']; ?> 1x, <?php echo $small_desktop_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 1024px) and (max-width: 1439px)">
+
+        <!-- Large desktop images -->
+        <source srcset="<?php echo webp($large_desktop_1x['src']); ?> 1x, <?php echo webp($large_desktop_2x['src']); ?> 2x" type="image/webp" media="(min-width: 1440px)">
+        <source srcset="<?php echo $large_desktop_1x['src']; ?> 1x, <?php echo $large_desktop_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 1440px)">
+
+        <!-- Fallback image -->
+        <img src="<?php echo $default_image['src']; ?>" loading="lazy" alt="<?php echo get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" class="transition">
+    </picture>
+    <?php
+}
+
