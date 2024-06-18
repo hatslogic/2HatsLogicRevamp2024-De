@@ -56,13 +56,13 @@ get_header();
                                     <a href="<?php the_permalink(); ?>" class="item">
                                         <?php if (has_post_thumbnail()):
                                             $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'img_498x260');
-                                            ?>
-                                            <picture>
-                                                <source srcset="<?php echo esc_url($featured_image); ?>" type="image/webp">
-                                                <source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
-                                                <img src="<?php echo esc_url($featured_image); ?>" loading="lazy" alt="Blog"
-                                                    width="498" height="260" class="transition">
-                                            </picture>
+                                            $featured_image_id = get_post_thumbnail_id(get_the_ID());
+                                        ?>
+                                        <?php $cropOptions = [
+                                                "fallbackimage-size" => [498,260],
+                                                "fallbackimage-class" => "transition"
+                                                ];?>
+                                        <?php display_responsive_image($featured_image_id,$cropOptions) ?>
                                         <?php else:
 
                                             ?>

@@ -24,9 +24,12 @@ get_header();
 			$featured_image_id = get_post_thumbnail_id(get_the_ID());
 			?>
 			<div class="w-100">
-				<?php 
-					display_responsive_image($featured_image_id);
-				?>
+				
+				<?php $cropOptions = [
+                "fallbackimage-size" => [749,379],
+                'fallbackimage-class'=> 'transition'
+				];?>
+				<?php display_responsive_image($featured_image_id,$cropOptions) ?>
 				<div class="info mt-15">
 					<div class="w-100 flex justify-between mb-15 md:mb-10">
 						<span class="c-dark-grey fs-14"><?php the_field('author'); ?> &period; <?php echo esc_html($reading_time_text); ?></span>

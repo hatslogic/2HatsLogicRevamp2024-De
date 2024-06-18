@@ -19,14 +19,14 @@
                                 <?php if (has_post_thumbnail()):
                                     $featured_image = get_the_post_thumbnail_url($post->ID, 'img_450x350');
                                     $placeholder_image_url = get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
+                                    $featured_image_id = get_post_thumbnail_id($post->ID);
                                     ?>
-                                    <picture>
-                                        <source srcset="<?php echo esc_url($featured_image); ?>" type="image/webp">
-                                        <source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
-                                        <img src="<?php echo esc_url($featured_image); ?>" loading="lazy"
-                                            alt="<?php the_title_attribute(); ?>" width="360px" height="280px" class="transition">
-
-                                    </picture>
+                                    
+                                <?php $cropOptions = [
+                                        "fallbackimage-size" => [360,280],
+                                        "fallbackimage-class" => "transition"
+                                        ];?>
+                                <?php display_responsive_image($featured_image_id,$cropOptions) ?>
                                 <?php else: ?>
                                     <img src="<?php echo esc_url($placeholder_image); ?>" loading="lazy" alt="Blog" width="498"
                                         height="260" class="transition">

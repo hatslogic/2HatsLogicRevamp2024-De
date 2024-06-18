@@ -24,12 +24,11 @@
                     $featured_image = $attachment[0];?>
 
                 <div class="col card snap-center"> <a href="<?php echo esc_url($url); ?>" class="item">
-                        <picture>
-                            <source srcset="<?php echo webp($featured_image); ?>" type="image/webp">
-                            <source srcset="<?php echo $featured_image; ?>" type="image/jpg">
-                            <img src="<?php echo $featured_image; ?>" loading="lazy" alt="about" width="360px"
-                                height="280px" class="transition">
-                        </picture>
+                        <?php $cropOptions = [
+                                "fallbackimage-size" => [360,280],
+                                "fallbackimage-class" => "transition"
+                            ];?>
+                        <?php display_responsive_image($featured_image_id,$cropOptions) ?>
                         <div class="info mt-20 xs:pl-20 xs:pr-20">
                             <h3 class="h5 transition font-regular"><strong
                                     class="transition font-bold"><?php echo truncate_text($title, 60, '...'); ?>&colon;</strong>

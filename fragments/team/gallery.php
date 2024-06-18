@@ -25,12 +25,12 @@
                             ?>
                             <div class="col break-in:ac">
                                 <div class="album">
-                                    <picture>
-                                        <source srcset="<?php echo webp($image_url); ?>" type="image/webp">
-                                        <source srcset="<?php echo $image_url; ?>" type="<?php echo $item['mime_type']; ?>">
-                                        <img src="<?php echo $image_url; ?>" loading="lazy" alt="album-01" width="500px"
-                                            height="611px" class="transition">
-                                    </picture>
+                                    
+                                    <?php $cropOptions = [
+                                    "fallbackimage-size" => [500,611],
+                                    "fallbackimage-class" => "transition"
+                                    ];?>
+                                    <?php display_responsive_image($item['ID'],$cropOptions) ?>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -41,12 +41,12 @@
                             ?>
                             <div class="col break-in:ac mt-20 xs:mt-5">
                                 <div class="album">
-                                    <picture>
-                                        <source srcset="<?php echo webp($image_url); ?>" type="image/webp">
-                                        <source srcset="<?php echo $image_url; ?>" type="<?php echo $item['mime_type']; ?>">
-                                        <img src="<?php echo $image_url; ?>" loading="lazy" alt="album-01" width="500px"
-                                            height="288px" class="transition">
-                                    </picture>
+                                    
+                                    <?php $cropOptions = [
+                                    "fallbackimage-size" => [500,288],
+                                    "fallbackimage-class" => "transition"
+                                    ];?>
+                                    <?php display_responsive_image($item['ID'],$cropOptions) ?>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -57,12 +57,13 @@
                             ?>
                             <div class="col break-in:ac mt-20 xs:mt-5">
                                 <div class="album">
-                                    <picture>
-                                        <source srcset="<?php echo webp($image_url); ?>" type="image/webp">
-                                        <source srcset="<?php echo $image_url; ?>" type="<?php echo $item['mime_type']; ?>">
-                                        <img src="<?php echo $image_url; ?>" loading="lazy" alt="album-01" width="500px"
-                                            height="286px" class="transition">
-                                    </picture>
+                                    
+                                    <?php $cropOptions = [
+                                    "fallbackimage-size" => [500,286],
+                                    "fallbackimage-class" => "transition"
+                                    ];?>
+                                    <?php display_responsive_image($item['ID'],$cropOptions) ?>
+                                </div>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -77,12 +78,12 @@
                                     <i class="icomoon fs-22 icon-expand_circle_down"></i>
                                 </div>
                                 <div class="album">
-                                    <picture>
-                                        <source srcset="<?php echo webp($image_url); ?>" type="image/webp">
-                                        <source srcset="<?php echo $image_url; ?>" type="<?php echo $item['mime_type']; ?>">
-                                        <img src="<?php echo $image_url; ?>" loading="lazy" alt="album-01" width="500px"
-                                            height="613px" class="transition">
-                                    </picture>
+                                    
+                                    <?php $cropOptions = [
+                                    "fallbackimage-size" => [500,613],
+                                    "fallbackimage-class" => "transition"
+                                    ];?>
+                                    <?php display_responsive_image($item['ID'],$cropOptions) ?>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -93,12 +94,12 @@
                             ?>
                             <div class="col break-in:ac mt-20 xs:mt-5">
                                 <div class="album">
-                                        <picture>
-                                            <source srcset="<?php echo webp($image_url); ?>" type="image/webp">
-                                            <source srcset="<?php echo $image_url; ?>" type="<?php echo $item['mime_type']; ?>">
-                                            <img src="<?php echo $image_url; ?>" loading="lazy" alt="album-01" width="500px"
-                                                height="599px" class="transition">
-                                        </picture>
+                                       
+                                        <?php $cropOptions = [
+                                        "fallbackimage-size" => [500,599],
+                                        "fallbackimage-class" => "transition"
+                                        ];?>
+                                        <?php display_responsive_image($item['ID'],$cropOptions) ?>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -110,12 +111,12 @@
                             ?>
                             <div class="col break-in:ac xs:mt-5">
                                 <div class="album">
-                                    <picture>
-                                        <source srcset="<?php echo webp($image_url); ?>" type="image/webp">
-                                        <source srcset="<?php echo $image_url; ?>" type="<?php echo $item['mime_type']; ?>">
-                                        <img src="<?php echo $image_url; ?>" loading="lazy" alt="album-01" width="500px"
-                                            height="611px" class="transition">
-                                    </picture>
+                                   
+                                    <?php $cropOptions = [
+                                        "fallbackimage-size" => [500,611],
+                                        "fallbackimage-class" => "transition"
+                                        ];?>
+                                        <?php display_responsive_image($item['ID'],$cropOptions) ?>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -126,12 +127,12 @@
                             ?>
                             <div class="col break-in:ac mt-20 xs:mt-5">
                                 <div class="album">
-                                    <picture>
-                                        <source srcset="<?php echo webp($image_url); ?>" type="image/webp">
-                                        <source srcset="<?php echo $image_url; ?>" type="<?php echo $item['mime_type']; ?>">
-                                        <img src="<?php echo $image_url; ?>" loading="lazy" alt="album-01" width="500px"
-                                            height="286px" class="transition">
-                                    </picture>
+                                    
+                                    <?php $cropOptions = [
+                                        "fallbackimage-size" => [500,286],
+                                        "fallbackimage-class" => "transition"
+                                        ];?>
+                                        <?php display_responsive_image($item['ID'],$cropOptions) ?>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -142,12 +143,11 @@
                             ?>
                             <div class="col break-in:ac mt-20 xs:mt-5 flex cg-20 xs:cg-5">
                             <div class="album">
-                                <picture>
-                                    <source srcset="<?php echo webp($image_url); ?>" type="image/webp">
-                                    <source srcset="<?php echo $image_url; ?>" type="<?php echo $item['mime_type']; ?>">
-                                    <img src="<?php echo $image_url; ?>" loading="lazy" alt="album-01" width="238px"
-                                        height="288px" class="transition">
-                                </picture>
+                                <?php $cropOptions = [
+                                        "fallbackimage-size" => [500,288],
+                                        "fallbackimage-class" => "transition"
+                                        ];?>
+                                <?php display_responsive_image($item['ID'],$cropOptions) ?>
                             </div>
                         <?php endif; ?>
                         
@@ -162,11 +162,11 @@
                                         <i class="icomoon fs-28 icon-plus"></i>
                                         <span><?php echo $button['title']; ?></span>
                                     </div>
-                                    <picture>
-                                        <source srcset="<?php echo webp($image_url); ?>" type="image/webp">
-                                        <source srcset="<?php echo $image_url; ?>" type="<?php echo $item['mime_type']; ?>">
-                                        <img src="<?php echo $image_url; ?>" loading="lazy" alt="album-01" width="238px" height="288px" class="transition">
-                                    </picture>
+                                    <?php $cropOptions = [
+                                        "fallbackimage-size" => [238,288],
+                                        "fallbackimage-class" => "transition"
+                                        ];?>
+                                <?php display_responsive_image($item['ID'],$cropOptions) ?>
                                 </a>
                                 <?php endif; ?>
                             </div>

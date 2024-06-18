@@ -13,20 +13,18 @@
             <div class="grid grid-2 gap-20 mt-60 xs:flex xs:wrap">
                 <?php if ($images['image_1']): ?>
                 <div class="col">
-                    <picture>
-                        <source srcset="<?php echo webp($images['image_1']['sizes']['img_580x540']); ?>" type="image/webp">
-                        <source srcset="<?php echo $images['image_1']['sizes']['img_580x540']; ?>" type="image/jpg">
-                        <img src="<?php echo webp($images['image_1']['sizes']['img_580x540']); ?>" loading="lazy" alt="about" width="360px" height="280px">
-                    </picture>
+                    <?php $cropOptions = [
+                        "fallbackimage-size" => [360,280]
+                    ];?>
+                    <?php display_responsive_image($images['image_1']['ID'],$cropOptions) ?>
                 </div>
                 <?php endif; ?>
                 <?php if ($images['image_2']): ?>
                 <div class="col">
-                    <picture>
-                        <source srcset="<?php echo webp($images['image_2']['sizes']['img_580x540']); ?>" type="image_2/webp">
-                        <source srcset="<?php echo webp($images['image_2']['sizes']['img_580x540']); ?>" type="image/jpg">
-                        <img src="<?php echo webp($images['image_2']['sizes']['img_580x540']); ?>" loading="lazy" alt="about" width="360px" height="280px">
-                    </picture>
+                    <?php $cropOptions = [
+                        "fallbackimage-size" => [360,280]
+                    ];?>
+                    <?php display_responsive_image($images['image_2']['ID'],$cropOptions) ?>
                 </div>
                 <?php endif; ?>
             </div>

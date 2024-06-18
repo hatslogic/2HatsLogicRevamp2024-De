@@ -30,12 +30,11 @@
                         ?>
                         <div class="<?php echo $classes; ?>">
                             <a href="<?php echo $url; ?>" class="item">
-                                <picture>
-                                    <source srcset="<?php echo webp($featured_image); ?>" type="image/webp">
-                                    <source srcset="<?php echo $featured_image; ?>" type="image/jpg">
-                                    <img src="<?php echo $featured_image; ?>" loading="lazy" alt="<?php echo $title; ?>"
-                                        width="304px" height="208px" class="transition">
-                                </picture>
+                                <?php $cropOptions = [
+                                "fallbackimage-size" => [304,208],
+                                "fallbackimage-class" => "transition"
+                                ];?>
+                                <?php display_responsive_image($featured_image_id,$cropOptions) ?>
                                 <div class="info mt-30 xs:pl-20 xs:pr-20">
                                     <?php if ($title): ?>
                                         <h3 class="h4 transition font-bold"><?php echo truncate_text($title, 60, '...'); ?></h3>

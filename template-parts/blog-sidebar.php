@@ -53,12 +53,12 @@ $link = get_field('sidebar_cta_link');
         if ($image): ?>
             <div class="content">
                 <div class="w-100 py-30 md:pb-0">
-                    <picture>
-                        <source srcset="<?php echo $image['url'] ?>" type="image/webp">
-                        <source srcset="<?php echo $image['url'] ?>" type="image/jpg">
-                        <img src="<?php echo $image['url'] ?>" loading="lazy" alt="Sidebar image" width="347px"
-                            height="335px" class="transition" />
-                    </picture>
+                    
+                    <?php $cropOptions = [
+                                    "fallbackimage-size" => [347,335],
+                                    "fallbackimage-class" => "transition"
+                                    ];?>
+                    <?php display_responsive_image($image["ID"],$cropOptions) ?>
                 </div>
             </div>
         <?php endif; ?>

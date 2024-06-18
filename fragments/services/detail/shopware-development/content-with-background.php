@@ -33,12 +33,11 @@
             <?php if ($background_image): ?>
                 <div class="col w-45 md:w-100 md:hidden"></div>
                 <div class="background-col absolute right-0 -right-50 md:-right-0 w-75 md:w-100 md:relative md:order-1">
-                    <picture>
-                        <source srcset="<?php echo webp($background_image['url']); ?>" type="image/webp">
-                        <source srcset="<?php echo $background_image['url']; ?>" type="image/jpg">
-                        <img src="<?php echo $background_image['url']; ?>" class="w-100" loading="lazy" alt="shops"
-                            width="648px" height="445px" class="transition">
-                    </picture>
+                    <?php $cropOptions = [
+                        "fallbackimage-size" => [648,445],
+                        "fallbackimage-class" => 'transition'
+                    ];?>
+                    <?php display_responsive_image($background_image['ID'],$cropOptions) ?>
                 </div>
             <?php endif; ?>
         </div>

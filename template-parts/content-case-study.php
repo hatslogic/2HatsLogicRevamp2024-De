@@ -33,22 +33,21 @@
                             $featured_image = $attachment[0];
 
                             ?>
-                            <picture>
-                                <source srcset="<?php echo webp(esc_url($featured_image)); ?>" type="image/webp">
-                                <source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
-                                <img src="<?php echo esc_url($featured_image); ?>" alt="<?php the_title_attribute(); ?>"
-                                    width="731px" height="466px" class="h-auto w-100">
-                            </picture>
+                            
+                            <?php $cropOptions = [
+                                "fallbackimage-size" => [731,466],
+                                "fallbackimage-class" => "h-auto w-100"
+                                ];?>
+                            <?php display_responsive_image($featured_image_id,$cropOptions) ?>
                             <?php else:
                             $placeholder_image_id = attachment_url_to_postid(get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
                             $placeholder_image_url = wp_get_attachment_image_src($placeholder_image_id, 'img_730x466')[0];
                             ?>
-                            <picture>
-                                <source srcset="<?php echo $placeholder_image_url ?>" type="image/webp">
-                                <source srcset="<?php echo $placeholder_image_url ?>" type="image/jpeg">
-                                <img src="<?php echo $placeholder_image_url ?>" loading="lazy" alt="Placeholder" width="731px"
-                                    height="466px" class="transition">
-                            </picture>
+                            <?php $cropOptions = [
+                                "fallbackimage-size" => [731,466],
+                                "fallbackimage-class" => "transition"
+                                ];?>
+                            <?php display_responsive_image($placeholder_image_id,$cropOptions) ?>
                         <?php endif; ?>
                     </div>
                     <div class="col w-40 ml-50 sm:ml-0 sm:mt-40 md:w-100">
@@ -85,21 +84,21 @@
                                     $featured_image_height = $attachment[2];
                                     $featured_image_alt = get_the_title($featured_image_id);
                                     ?>
-                                    <picture>
-                                        <source srcset="<?php echo esc_url($featured_image); ?>" type="image/webp">
-                                        <source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
-                                        <img src="<?php echo esc_url($featured_image); ?>" loading="lazy"
-                                            alt="<?php the_title_attribute(); ?>"
-                                            width="<?php echo esc_attr($featured_image_width); ?>"
-                                            height="<?php echo esc_attr($featured_image_height); ?>" class="transition">
-                                    </picture>
+                                    
+                                    <?php $cropOptions = [
+                                        "fallbackimage-size" => [$featured_image_width,$featured_image_height],
+                                        "fallbackimage-class" => "transition"
+                                        ];?>
+                                    <?php display_responsive_image($featured_image_id,$cropOptions) ?>
                                     <?php else:
+                                    $placeholder_image_id = attachment_url_to_postid(get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
                                     $placeholder_image_url = get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
                                     ?>
-                                    <picture>
-                                        <img src="<?php echo esc_url($placeholder_image_url); ?>" loading="lazy" alt="Placeholder"
-                                            width="548px" height="349px" class="transition">
-                                    </picture>
+                                    <?php $cropOptions = [
+                                    "fallbackimage-size" => [548,349],
+                                    "fallbackimage-class" => "transition"
+                                    ];?>
+                                    <?php display_responsive_image($placeholder_image_id,$cropOptions) ?>
                                 <?php endif; ?>
                                 <div class="info mt-30">
                                     <span class="headline c-primary font-bold mb-6 block xs:fs-14">

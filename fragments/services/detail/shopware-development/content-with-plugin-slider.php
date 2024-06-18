@@ -36,11 +36,11 @@
             </div>
             <div class="col w-45 md:w-100 md:mt-40">
                 <?php if ($image): ?>
-                <picture>
-                    <source srcset="<?php echo webp($image['sizes']['img_460x487']); ?>" type="image/webp">
-                    <source srcset="<?php echo  $image['sizes']['img_460x487']; ?>" type="image/jpg">
-                    <img src="<?php echo  $image['sizes']['img_460x487']; ?>" loading="lazy" alt="hide-developer" width="648px" height="445px" class="transition">
-                </picture>
+                <?php $cropOptions = [
+                    "fallbackimage-size" => [648,445],
+                    "fallbackimage-class" => "transition"
+                ];?>
+                <?php display_responsive_image($image['ID'],$cropOptions) ?>
                 <?php endif; ?>
             </div>
         </div>
