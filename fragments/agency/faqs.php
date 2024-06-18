@@ -9,10 +9,10 @@
                 <p><?php echo $description; ?></p>
             </div>
         <?php endif; ?>
-        <?php if ($faqs): ?>
-            <div class="content mt-40 xs:mt-20">
+        <?php if ($questions): ?>
+            <div class="content mt-60 gap-40 xs:mt-30">
                 <div class="acc">
-                    <?php foreach ($faqs as $faq): ?>
+                    <?php foreach ($questions as $faq): ?>
                         <div class="acc-item py-20 b-0 bb-1 bc-hash solid">
                             <div class="acc-toggle flex justify-between relative md:pr-0">
                                 <h3 class="max-w-80 h4"><?php echo $faq['question']; ?></h3>

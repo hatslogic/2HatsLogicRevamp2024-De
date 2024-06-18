@@ -1,36 +1,36 @@
 <?php extract($section); ?>
 <?php if ($faqs): ?>
-<section class="faqs pt-100 pb-100 xs:pt-80 xs:pb-80 bg-light-grey">
-                <div class="container">
-                <?php if ($faq_title): ?>
-                    <div class="title">
+    <section class="faqs pt-100 pb-100 xs:pt-80 xs:pb-80 bg-light-grey">
+        <div class="container">
+            <?php if ($faq_title): ?>
+                <div class="title">
                     <h2><?php echo $faq_title; ?></h2>
 
-                    </div>
+                </div>
             <?php endif; ?>
 
-                    <div class="content mt-60 xs:mt-30">
-                        <div class="acc">
-                        <?php foreach ($faqs as $faq): ?>
-                            <div class="acc-item py-20 b-0 bb-1 bc-hash solid">
-                                <div class="acc-toggle flex justify-between relative">
+            <div class="content mt-40 xs:mt-20">
+                <div class="acc">
+                    <?php foreach ($faqs as $faq): ?>
+                        <div class="acc-item py-20 b-0 bb-1 bc-hash solid">
+                            <div class="acc-toggle flex justify-between relative">
                                 <h3 class="max-w-80 h4"><?php echo $faq['question']; ?></h3>
 
-                                    <div class="wrap-icon absolute right-0 flex fs-30 xs:fs-20">
-                                        <div class="icomoon icon-expand_circle_down add"></div>
-                                        <div class="icomoon icon-expand_circle_up minus"></div>
-                                    </div>
-                                </div>
-                                <div class="acc-content">
-                                    <div class="inner w-60 xl:w-100">
-                                    <p><?php echo $faq['answer']; ?></p>
-                                    </div>
+                                <div class="wrap-icon absolute right-0 flex fs-30 xs:fs-20">
+                                    <div class="icomoon icon-expand_circle_down add"></div>
+                                    <div class="icomoon icon-expand_circle_up minus"></div>
                                 </div>
                             </div>
-
-                        <?php endforeach; ?>
+                            <div class="acc-content">
+                                <div class="inner w-60 xl:w-100">
+                                    <p><?php echo $faq['answer']; ?></p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+
+                    <?php endforeach; ?>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 <?php endif; ?>

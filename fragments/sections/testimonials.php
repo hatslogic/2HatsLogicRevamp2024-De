@@ -37,7 +37,7 @@
                                         <blockquote class="font-quote m-0 fs-22 lh-1-25 sm:fs-18 sm:lh-1-24"><?php echo $quote; ?>
                                         </blockquote>
                                         <div class="author mt-30">
-                                            <div class="author-name font-bold"><?php echo $name; ?></div>
+                                            <div class="author-name fs-18 font-bold"><?php echo $name; ?></div>
                                             <span
                                                 class="designation font-light fs-15 lh-1-2 mt-5 inline-block"><?php echo $designation; ?></span>
                                         </div>

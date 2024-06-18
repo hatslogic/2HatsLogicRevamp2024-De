@@ -55,10 +55,10 @@
                 <?php endif; ?>
                 <?php if ($review['review']): ?>
                     <div class="review-block mt-40 xs:mt-30 flex gap-20 w-90 xs:wrap xs:w-100">
-                        <div class="avatar-wrap flex mt-30 align-center w-px-300 md:w-100">
+                        <div class="avatar-wrap flex align-center mt-30 align-center w-px-300 md:w-100">
                             <?php if ($review['avatar']): ?>
                                 <div
-                                    class="img-wrap w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50 over overflow-hidden">
+                                    class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50 over overflow-hidden">
                                     <img src="<?php echo $review['avatar']['url']; ?>" alt="avatar" width="100" height="100">
                                 </div>
                             <?php endif; ?>
@@ -83,18 +83,18 @@
                         <h3 class="uppercase h4"><?php echo $form_title; ?></h3>
 
                         <p><?php echo $form_description; ?></p>
-                        <div class="avatar-wrap flex mt-30">
+                        <div class="avatar-wrap flex align-center mt-30">
                             <?php if ($consultant['image']): ?>
                                 <div
-                                    class="img-wrap w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50">
+                                    class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50">
                                     <img src="<?php echo $consultant['image']['url']; ?>" alt="avatar" width="75" height="75">
                                 </div>
                             <?php endif; ?>
                             <?php if ($consultant['name'] || $consultant['desig']): ?>
                                 <div class="author ml-30">
-                                    <div class="author-name font-bold"><?php echo $consultant['name'] ?></div>
+                                    <div class="author-name fs-18 font-bold"><?php echo $consultant['name'] ?></div>
                                     <span
-                                        class="designation font-light fs-15 lh-1-25 mt-5 inline-block"><?php echo $consultant['desig']; ?></span>
+                                        class="designation font-regular fs-15 lh-1-35 mt-8 inline-block"><?php echo $consultant['desig']; ?></span>
 
                                 </div>
                             <?php endif; ?>

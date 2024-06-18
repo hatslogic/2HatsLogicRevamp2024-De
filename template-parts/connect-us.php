@@ -27,7 +27,7 @@ $call2 = get_field('call_two_button');
                                          <img src="<?php echo $image_1['url'] ?>" alt="<?php echo $name_1 ?>" width="80" height="80">
                                      </div>
                                      <div class="author ml-20">
-                                         <div class="author-name font-bold fs-20"><?php echo $name_1 ?></div> <span class="designation font-light fs-15 lh-1-25 mt-5 inline-block"><?php echo $desig1; ?>,<br> <small><?php echo $loc1; ?>&period;</small></span>
+                                         <div class="author-name fs-18 font-bold fs-20"><?php echo $name_1 ?></div> <span class="designation font-regular fs-15 lh-1-35 mt-8 inline-block"><?php echo $desig1; ?>,<br> <small><?php echo $loc1; ?>&period;</small></span>
  
                                      </div>
                                  </div> 
@@ -43,7 +43,7 @@ $call2 = get_field('call_two_button');
                                          <img src="<?php echo $image_2['url'] ?>" alt="<?php echo $name_2 ?>" width="80" height="80">
                                      </div>
                                      <div class="author ml-20">
-                                         <div class="author-name font-bold fs-20"><?php echo $name_2 ?></div> <span class="designation font-light fs-15 lh-1-25 mt-5 inline-block"><?php echo $desig2; ?>,<br> <small><?php echo $loc2; ?>&period;</small></span>
+                                         <div class="author-name fs-18 font-bold fs-20"><?php echo $name_2 ?></div> <span class="designation font-regular fs-15 lh-1-35 mt-8 inline-block"><?php echo $desig2; ?>,<br> <small><?php echo $loc2; ?>&period;</small></span>
  
                                      </div>
                                  </div>
