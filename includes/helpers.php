@@ -256,3 +256,15 @@ function app_get_related_posts( $post_id, $posts_num, $is_posts_num_required = f
 
 	return $related_posts;
 }
+
+function app_render_page_agency() {
+	if ( ! $sections = get_field( 'agency' ) ) {
+		return;
+	}
+
+	foreach ( $sections as $section_index => $section ) {
+		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
+
+		app_render_fragment( 'agency' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
+	}
+}
