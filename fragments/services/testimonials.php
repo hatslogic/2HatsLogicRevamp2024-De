@@ -19,7 +19,7 @@
                                             they have completed on time and on budget. We highly recommend their website
                                             development services to anyone in need of a good partner.</blockquote>
                                         <div class="author mt-30">
-                                            <div class="author-name font-bold">Jan-Pieter Oosting</div> <span class="designation font-light fs-15 lh-1-2 mt-5 inline-block">YachtFocus, Netherlands</span>
+                                            <div class="author-name fs-18 font-bold">Jan-Pieter Oosting</div> <span class="designation font-light fs-15 lh-1-2 mt-5 inline-block">YachtFocus, Netherlands</span>
 
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@
                                         they have completed on time and on budget. We highly recommend their website
                                         development services to anyone in need of a good partner.</blockquote>
                                     <div class="author mt-30">
-                                        <div class="author-name font-bold">Jan-Pieter Oosting</div> <span class="designation font-light fs-15 lh-1-2 mt-5 inline-block">YachtFocus, Netherlands</span>
+                                        <div class="author-name fs-18 font-bold">Jan-Pieter Oosting</div> <span class="designation font-light fs-15 lh-1-2 mt-5 inline-block">YachtFocus, Netherlands</span>
 
                                 </div>
                             </div>
@@ -51,7 +51,7 @@
                                     they have completed on time and on budget. We highly recommend their website
                                     development services to anyone in need of a good partner.</blockquote>
                                 <div class="author mt-30">
-                                    <div class="author-name font-bold">Jan-Pieter Oosting</div> <span class="designation font-light fs-15 lh-1-2 mt-5 inline-block">YachtFocus, Netherlands</span>
+                                    <div class="author-name fs-18 font-bold">Jan-Pieter Oosting</div> <span class="designation font-light fs-15 lh-1-2 mt-5 inline-block">YachtFocus, Netherlands</span>
 
                             </div>
                         </div>
