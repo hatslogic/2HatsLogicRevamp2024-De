@@ -10,12 +10,12 @@
             <p><?php echo $content; ?></p>
             <?php if($image): ?>
             <div class="banner-wrap mt-40">
-                <picture>
-                    <source srcset="<?php echo webp($image['sizes']['img_1140x348']); ?>" type="image/webp">
-                    <source srcset="<?php echo $image['sizes']['img_1140x348']; ?>" type="image/jpg">
-                    <img src="<?php echo $image['sizes']['img_1140x348']; ?>" alt="<?php the_title_attribute(); ?>"
-                        width="731px" height="466px" class="h-auto w-100">
-                </picture>
+                
+                <?php $cropOptions = [
+                        "fallbackimage-size" => [731,466],
+                        "fallbackimage-class" => 'h-auto w-100'
+                    ];?>
+                    <?php display_responsive_image($image['ID'],$cropOptions) ?>
             </div>
             <?php endif; ?>
         </div>

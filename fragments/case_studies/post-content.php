@@ -3,11 +3,11 @@
 <section class="case-study-info pt-100 xs:pt-80 pb-100 xs:pb-80">
     <div class="container">
         <?php if ($image): ?>
-        <picture>
-            <source srcset="<?php echo webp($image['sizes']['img_1139x340']); ?>" type="image/webp">
-            <source srcset="<?php echo $image['sizes']['img_1139x340']; ?>" type="image/jpg">
-            <img src="<?php echo $image['sizes']['img_1139x340']; ?>" alt="Featured case study" width="731px" height="466px" class="h-auto w-100">
-        </picture>
+        <?php $cropOptions = [
+            "fallbackimage-size" => [731,466],
+            'fallbackimage-class'=> 'h-auto w-100'
+        ];?>
+        <?php display_responsive_image($image['ID'],$cropOptions) ?>
         <?php endif; ?>
         <div class="title <?php if ($image): ?>mt-60<?php endif; ?>">
             <?php if ($client_location): ?>

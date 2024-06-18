@@ -24,11 +24,11 @@
                     <div class="hats-slider__slide">
                         <div class="slide-item">
                             <?php $image = $item['slide_image']; ?>
-                            <picture>
-                                <source srcset="<?php echo webp($image['sizes']['img_556x340']); ?>" type="image/webp">
-                                <source srcset="<?php echo $image['sizes']['img_556x340']; ?>" type="<?php echo $item['slide_image']['mime_type']; ?>">
-                                <img src="<?php echo $image['sizes']['img_556x340']; ?>" alt="<?php echo $image['alt']; ?>" width="556px" height="340px" class="w-px-556 h-auto max-w-100">
-                            </picture>
+                            <?php $cropOptions = [
+                                "fallbackimage-size" => [556,340],
+                                'fallbackimage-class'=> 'w-px-556 h-auto max-w-100'
+                            ];?>
+                            <?php display_responsive_image($image['ID'],$cropOptions) ?>
                         </div>
                     </div>
                     <?php endforeach; ?>
