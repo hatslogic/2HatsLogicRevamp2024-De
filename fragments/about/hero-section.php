@@ -18,7 +18,11 @@
             </div>
             <?php if ($image): ?>
                 <div class="col w-40 md:w-100 md:mt-40">
-                    <?php display_responsive_image($image['ID']); ?>
+                <?php $cropOptions = [
+                        "fallbackimage-size" => [648,445],
+                        'fallbackimage-class'=> 'transition'
+                    ];?>
+                    <?php display_responsive_image($image['ID'],$cropOptions) ?>
                 </div>
             <?php endif; ?>
         </div>

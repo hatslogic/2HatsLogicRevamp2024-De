@@ -23,16 +23,17 @@ function load_more_team_members() {
                     $name = get_field('name', $item->ID);
                     $designation = get_field('designation', $item->ID);
                     $image = get_the_post_thumbnail_url($item->ID, 'img_250x330');
+                    $image_id = get_post_thumbnail_id($item->ID);
                     ?>
 
                     <div class="item">
                         <div class="card">
                             <div class="img bg-secondary">
-                                <picture>
-                                    <source srcset="<?php echo webp($image); ?>" type="image/webp">
-                                    <source srcset="<?php echo $image; ?>" type="">
-                                    <img src="<?php echo $image; ?>" loading="lazy" alt="<?php the_title_attribute(); ?>" width="250px" height="330px" class="transition">
-                                </picture>
+                            <?php $cropOptions = [
+                                    "fallbackimage-size" => [250,330],
+                                    "fallbackimage-class" => "transition"
+                                    ];?>
+                            <?php display_responsive_image($image_id,$cropOptions) ?>
                             </div>
                             <div class="info mt-10">
                                 <?php if($name): ?>

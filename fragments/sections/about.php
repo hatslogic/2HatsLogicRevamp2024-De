@@ -4,11 +4,11 @@
         <div class="content flex sm:wrap align-center">
         <?php if($image): ?>
             <div class="col w-100">
-                <picture>
-                    <source srcset="<?php echo webp($image['sizes']['img_494x328']); ?>" type="image/webp">
-                    <source srcset="<?php echo $image['sizes']['img_494x328']; ?>" type="image/jpg">
-                    <img src="<?php echo $image['sizes']['img_494x328']; ?>" loading="lazy" alt="about" width="494px" height="328px" class="h-auto w-100">
-                </picture>
+                <?php $cropOptions = [
+                    "fallbackimage-size" => [494,328],
+                    "fallbackimage-class"=>"h-auto w-100"
+                ];?>
+                <?php display_responsive_image($image['ID'],$cropOptions) ?>
             </div>
             <?php endif; ?>
             <div class="col w-100 ml-120 xxl:ml-80 xl:ml-60 sm:ml-0 sm:mt-40">

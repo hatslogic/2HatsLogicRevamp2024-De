@@ -20,11 +20,11 @@
                         </div>
                         <?php if($image): ?>
                         <div class="col w-45 md:w-100">
-                            <picture>
-                                <source srcset="<?php echo webp($image['sizes']['img_524x450']); ?>" type="image/webp">
-                                    <source srcset="<?php echo  $image['sizes']['img_524x450']; ?>" type="image/jpg">
-                                        <img src="<?php echo $image['sizes']['img_524x450']; ?>" loading="lazy" alt="certified" width="648px" height="445px" class="transition">
-                            </picture>
+                            <?php $cropOptions = [
+                                "fallbackimage-size" => [648,445],
+                                "fallbackimage-class" => "transition"
+                            ];?>
+                            <?php display_responsive_image($image['ID'],$cropOptions) ?>
                         </div>
                         <?php endif; ?>
                     </div>

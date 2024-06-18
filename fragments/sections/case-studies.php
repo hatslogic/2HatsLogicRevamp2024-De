@@ -37,13 +37,11 @@
                         <div class="col card snap-center">
                             <a href="<?php echo esc_url($url); ?>" class="item">
                                 <?php if ($featured_image): ?>
-                                    <picture>
-                                        <source srcset="<?php echo webp($featured_image); ?>" type="image/webp">
-                                        <source srcset="<?php echo $featured_image; ?>" type="image/jpg">
-                                        <img src="<?php echo $featured_image; ?>" loading="lazy"
-                                            alt="<?php echo $featured_image_alt; ?>" width="<?php echo $featured_image_width; ?>"
-                                            height="<?php echo $featured_image_height; ?>" class="transition">
-                                    </picture>
+                                    <?php $cropOptions = [
+                                        "fallbackimage-size" => [$featured_image_width,$featured_image_height],
+                                        "fallbackimage-class" => "transition"
+                                    ];?>
+                                    <?php display_responsive_image($featured_image_id,$cropOptions) ?>
                                 <?php endif; ?>
                                 <div class="info mt-20 xs:pl-20 xs:pr-20">
                                     <h3 class="h5 transition font-regular">

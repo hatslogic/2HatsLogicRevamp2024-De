@@ -17,13 +17,13 @@
                                 <?php if (has_post_thumbnail()):
                                     $featured_image = get_the_post_thumbnail_url($post->ID, 'img_450x235');
                                     $placeholder_image = get_site_url() . '/wp-content/uploads/2024/05/blog-listing.svg';
-                                    ?>
-                                    <picture>
-                                        <source srcset="<?php echo webp(esc_url($featured_image)); ?>" type="image/webp">
-                                        <source srcset="<?php echo esc_url($featured_image); ?>" type="image/jpg">
-                                        <img src="<?php echo esc_url($featured_image); ?>" loading="lazy"
-                                            alt="<?php the_title_attribute(); ?>" width="304" height="208" class="transition">
-                                    </picture>
+                                    $featured_image_id = get_post_thumbnail_id($post->ID);
+                                ?>
+                                <?php $cropOptions = [
+                                        "fallbackimage-size" => [304,208],
+                                        "fallbackimage-class" => "transition"
+                                        ];?>
+                                <?php display_responsive_image($featured_image_id,$cropOptions) ?>
                                 <?php else: ?>
                                     <img src="<?php echo esc_url($placeholder_image); ?>" loading="lazy" alt="Blog" width="304"
                                         height="208" class="transition">

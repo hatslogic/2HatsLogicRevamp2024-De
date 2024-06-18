@@ -14,12 +14,12 @@ $form_2_description = get_field('form_2_description');
         <div class="contact-wrap transition show" id="get-a-quote">
             <div class="flex align-start justify-between md:wrap">
                 <div class="col w-50 mr-50 xl:mr-30 md:mr-0 md:w-100 md:mt-0">
-                    <picture>
-                        <source srcset="<?php echo esc_url($contact_form_image_1['sizes']['img_606x749']); ?>" type="image/webp">
-                        <source srcset="<?php echo esc_url($contact_form_image_1['sizes']['img_606x749']); ?>" type="image/jpg">
-                        <img src="<?php echo esc_url($contact_form_image_1['sizes']['img_606x749']); ?>" loading="lazy" alt="contact-1" width="606px"
-                            height="749px" class="transition">
-                    </picture>
+                    
+                    <?php $cropOptions = [
+                                    "fallbackimage-size" => [606,749],
+                                    "fallbackimage-class" => "transition"
+                                    ];?>
+                    <?php display_responsive_image($contact_form_image_1["ID"],$cropOptions) ?>
                 </div>
                 <div class="col w-50 ml-50 xl:ml-30 md:ml-0 md:mt-40 md:w-100">
                     <div class="form-wrap">
@@ -48,12 +48,11 @@ $form_2_description = get_field('form_2_description');
         <div class="contact-wrap transition" id="partnership">
             <div class="flex align-start justify-between md:wrap" id="partnership">
                 <div class="col w-50 mr-50 xl:mr-30 md:mr-0 md:w-100 md:mt-40">
-                    <picture>
-                    <source srcset="<?php echo esc_url($contact_form_image_2['sizes']['img_606x749']); ?>" type="image/webp">
-                        <source srcset="<?php echo esc_url($contact_form_image_2['sizes']['img_606x749']); ?>" type="image/jpg">
-                        <img src="<?php echo esc_url($contact_form_image_2['sizes']['img_606x749']); ?>" loading="lazy" alt="contact-2" width="648px"
-                            height="445px" class="transition">
-                    </picture>
+                    <?php $cropOptions = [
+                        "fallbackimage-size" => [648,445],
+                        "fallbackimage-class" => "transition"
+                        ];?>
+                    <?php display_responsive_image($contact_form_imcontact_form_image_2age_1["ID"],$cropOptions) ?>
                 </div>
                 <div class="col w-50 ml-50 xl:ml-30 md:ml-0 md:mt-40 md:w-100">
                     <div class="form-wrap">
