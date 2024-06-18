@@ -60,18 +60,18 @@
                         <h3 class="uppercase h4"><?php echo $form_title; ?></h3>
 
                         <p><?php echo $form_description; ?></p>
-                        <div class="avatar-wrap flex mt-30">
+                        <div class="avatar-wrap flex align-center mt-30">
                             <?php if ($consultant['image']): ?>
                                 <div
-                                    class="img-wrap w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50">
+                                    class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50">
                                     <img src="<?php echo $consultant['image']['url']; ?>" alt="consultant" width="75"
                                         height="75">
                                 </div>
                             <?php endif; ?>
                             <?php if ($consultant['name'] || $consultant['desig']): ?>
                                 <div class="author ml-30">
-                                    <div class="author-name font-bold"><?php echo $consultant['name'] ?></div><span
-                                        class="designation font-light fs-15 lh-1-25 mt-5 inline-block"><?php echo $consultant['desig']; ?></span>
+                                    <div class="author-name fs-18 font-bold"><?php echo $consultant['name'] ?></div><span
+                                        class="designation font-regular fs-15 lh-1-35 mt-8 inline-block"><?php echo $consultant['desig']; ?></span>
 
                                 </div>
                             <?php endif; ?>

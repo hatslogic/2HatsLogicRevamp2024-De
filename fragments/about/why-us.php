@@ -10,7 +10,7 @@
             </div>
         <?php endif; ?>
         <?php if ($faqs): ?>
-            <div class="content mt-60 gap-40 xs:mt-30">
+            <div class="content mt-40 xs:mt-20">
                 <div class="acc">
                     <?php foreach ($faqs as $faq): ?>
                         <div class="acc-item py-20 b-0 bb-1 bc-hash solid">
