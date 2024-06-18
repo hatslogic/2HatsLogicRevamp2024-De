@@ -33,18 +33,18 @@
                     </div>
                 </div>
                 <div class="col w-50 md:w-100 md:order-1">
-                    <div class="img-wrap">
-                        <?php if($image): ?>
+                    <?php if($image): ?>
+                        <div class="img-wrap">
                             <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" width="360" height="180" class="w-100">
-                        <?php endif; ?>
-                    </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
-            <div class="btn-group center mt-60 xs:mt-40">
-                <?php if($button): ?>
+            <?php if($button): ?>
+                <div class="btn-group center mt-60 xs:mt-40">
                     <a href="<?php echo $button['url'] ?>" class="btn btn-secondary"><?php echo $button['title'] ?></a>
-                <?php endif; ?>
-            </div>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
