@@ -782,12 +782,18 @@ function display_responsive_image($image_id,$options) {
 	$fallback_image_sizes = isset($options["fallbackimage-size"]) ? $options["fallbackimage-size"] : [$width,$height];
 	$fallbackimage_class = isset($options["fallbackimage-class"]) ? $options["fallbackimage-class"] : '';
 	$picturetag_class = isset($options["picturetag-class"]) ? $options["picturetag-class"] : '';
+	$mobile_settings = isset($options["mobile-settings"]) ? $options["mobile-settings"] : [];
+	$mobile_image_id = $image_id;
+
+	if(!empty($mobile_settings) && isset($mobile_settings['image'])){
+		$mobile_image_id = $mobile_settings['image'];
+	}
 	// Calculate the aspect ratio
     $aspect_ratio = $width / $height;
 
     // Mobile images
-    $mobile_1x = fly_get_attachment_image_src($image_id, [ 480 ,round(480 / $aspect_ratio)],1);
-    $mobile_2x = fly_get_attachment_image_src($image_id, [ 960 ,round(960 / $aspect_ratio)],1);
+    $mobile_1x = fly_get_attachment_image_src($mobile_image_id, [ 480 ,round(480 / $aspect_ratio)],1);
+    $mobile_2x = fly_get_attachment_image_src($mobile_image_id, [ 960 ,round(960 / $aspect_ratio)],1);
     // Tablet images
     $tablet_1x = fly_get_attachment_image_src($image_id, [ 768 ,round(768 / $aspect_ratio)],1);
     $tablet_2x = fly_get_attachment_image_src($image_id, [ 1536 ,round(1536 / $aspect_ratio)],1);
@@ -804,11 +810,15 @@ function display_responsive_image($image_id,$options) {
     $default_image = bis_get_attachment_image_src($image_id, $fallback_image_sizes,1);
     ?>
 
-    <picture>
+    <picture class="<?php echo $picturetag_class ?>">
         <!-- Mobile images -->
-        <source srcset="<?php echo webp($mobile_1x['src']); ?> 1x, <?php echo webp($mobile_2x['src']); ?> 2x" type="image/webp" media="(max-width: 599px)">
-        <source srcset="<?php echo $mobile_1x['src']; ?> 1x, <?php echo $mobile_2x['src']; ?> 2x" type="image/jpeg" media="(max-width: 599px)">
-
+		<source srcset="<?php echo webp($mobile_1x['src']); ?> 1x, <?php echo webp($mobile_2x['src']); ?> 2x" type="image/webp" media="(max-width: 599px)">
+        <source srcset="<?php echo $mobile_1x['src']; ?> 1x, <?php echo $mobile_2x['src']; ?> 2x" type="image/jpeg" media="(max-width: 599px)">	
+		<?php if(!empty($mobile_settings)):?>
+		
+		<?php else: ?>	
+		
+		<?php endif; ?>
         <!-- Tablet images -->
         <source srcset="<?php echo webp($tablet_1x['src']); ?> 1x, <?php echo webp($tablet_2x['src']); ?> 2x" type="image/webp" media="(min-width: 600px) and (max-width: 1023px)">
         <source srcset="<?php echo $tablet_1x['src']; ?> 1x, <?php echo $tablet_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 600px) and (max-width: 1023px)">

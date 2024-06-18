@@ -24,13 +24,19 @@
     </div>
     <div class="hero-bg">
         <?php if ($image || $mobile_image): ?>
-            <picture>
-                <source srcset="<?php echo webp($mobile_image['sizes']['img_649x734']); ?>" media="(max-width: 768px)" type="image/webp">
-                <source srcset="<?php echo $mobile_image['sizes']['img_649x734']; ?>" media="(max-width: 768px)" type="<?php echo $mobile_image['mime_type']; ?>">
-                <source srcset="<?php echo webp($image['sizes']['img_1920x893']); ?>" type="image/webp">
-                <source srcset="<?php echo $image['sizes']['img_1920x893']; ?>" type="<?php echo $image['mime_type']; ?>">
-                <img src="<?php echo $image['sizes']['img_1920x893']; ?>" alt="<?php echo $image['alt']; ?>" width="1920px" height="893px" class="h-auto w-100 transition">
-            </picture>
+           
+            <?php $cropOptions = [
+                    "fallbackimage-size" => [1920,893],
+                    "fallbackimage-class" => "h-auto w-100 transition"
+                ];
+                if($mobile_image){
+
+                    $cropOptions["mobile-settings"] = [
+                        "image" => $mobile_image['id']
+                    ];
+                }
+            ?>
+            <?php display_responsive_image($image['ID'],$cropOptions) ?>
         <?php endif; ?>
     </div>
 </section>
