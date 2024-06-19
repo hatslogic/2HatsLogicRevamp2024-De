@@ -10,7 +10,15 @@ $form_selector =  get_field('form_shortcode','option');
             "fallbackimage-size" => [780,780],
             "fallbackimage-class" => "h-100 cover",
             "picturetag-class" => "h-100 w-50 absolute top-0 sm:w-100 sm:relative"
-        ];?>
+        ];
+        if($get_started_image_mobile){
+
+            $cropOptions["mobile-settings"] = [
+                "image" => $get_started_image_mobile['ID']
+            ];
+        }
+        
+        ?>
         <?php display_responsive_image($get_started_image['ID'],$cropOptions) ?>
    <?php endif; ?>
 
