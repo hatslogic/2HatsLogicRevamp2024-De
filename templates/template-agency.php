@@ -12,7 +12,7 @@ get_header();
 
 <main class="page-wrap inline-block w-100">
     <?php app_render_page_agency(); ?>
-<?php get_template_part( 'template-parts/contact-us-form');?>
+<?php get_template_part( 'template-parts/get-started');?>
 </main>
 
 <?php
