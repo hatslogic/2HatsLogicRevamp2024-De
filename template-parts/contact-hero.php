@@ -52,7 +52,7 @@ $form_2_description = get_field('form_2_description');
                         "fallbackimage-size" => [648,445],
                         "fallbackimage-class" => "transition"
                         ];?>
-                    <?php display_responsive_image($contact_form_imcontact_form_image_2age_1["ID"],$cropOptions) ?>
+                    <?php display_responsive_image($contact_form_image_2["ID"],$cropOptions) ?>
                 </div>
                 <div class="col w-50 ml-50 xl:ml-30 md:ml-0 md:mt-40 md:w-100">
                     <div class="form-wrap">
