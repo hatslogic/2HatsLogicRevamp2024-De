@@ -774,6 +774,9 @@ add_filter('the_content', 'replace_image_classes_with_ids');
 
 //Crop Images Dynamically based on the aspect ratio and use in picture tags
 function display_responsive_image($image_id,$options) {
+	if(!$image_id){
+		return;
+	}
     // Get the original image dimensions
     $image_data = wp_get_attachment_metadata($image_id);
 	
@@ -838,3 +841,16 @@ function display_responsive_image($image_id,$options) {
     <?php
 }
 
+function short_content($num)
+{
+    $limit = $num + 1;
+    $content = str_split(get_the_content());
+    $length = count($content);
+    if ($length >= $num) {
+        $content = array_slice($content, 0, $num);
+        $content = implode("", $content) . "...";
+        echo strip_tags($content);
+    } else {
+        strip_tags(the_content());
+    }
+}
