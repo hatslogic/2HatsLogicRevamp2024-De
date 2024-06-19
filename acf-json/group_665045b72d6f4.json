@@ -1548,6 +1548,67 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_66717ad806972": {
+                    "key": "layout_66717ad806972",
+                    "name": "related_services",
+                    "label": "Related Services",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_66717c6b6fbcc",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_66717aeb06974",
+                            "label": "Services",
+                            "name": "services",
+                            "aria-label": "",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "service"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search"
+                            ],
+                            "return_format": "",
+                            "min": "",
+                            "max": 4,
+                            "elements": "",
+                            "bidirectional": 0,
+                            "bidirectional_target": []
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_664ef91c38809": {
                     "key": "layout_664ef91c38809",
                     "name": "blog_selector",
@@ -1726,5 +1787,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718272528
+    "modified": 1718713470
 }

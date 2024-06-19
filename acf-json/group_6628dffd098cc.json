@@ -66,8 +66,12 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": "",
-            "post_status": "",
+            "post_type": [
+                "wpcf7_contact_form"
+            ],
+            "post_status": [
+                "publish"
+            ],
             "taxonomy": "",
             "return_format": "object",
             "multiple": 0,
@@ -95,5 +99,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716976917
+    "modified": 1718715215
 }
