@@ -21,7 +21,7 @@ $form_shortcode = get_field('form_shortcode', 'option');
                     if($free_consultation_image_mobile){
 
                         $cropOptions["mobile-settings"] = [
-                            "image" => $free_consultation_image_mobile['id']
+                            "image" => $free_consultation_image_mobile['ID']
                         ];
                     }
                     ?>

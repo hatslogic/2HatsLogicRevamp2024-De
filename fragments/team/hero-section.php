@@ -32,7 +32,7 @@
                 if($mobile_image){
 
                     $cropOptions["mobile-settings"] = [
-                        "image" => $mobile_image['id']
+                        "image" => $mobile_image['ID']
                     ];
                 }
             ?>

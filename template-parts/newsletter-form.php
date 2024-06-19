@@ -14,7 +14,7 @@ $form_selector = get_field('form_selector', 'option');
         if($newsletter_image_mobile){
 
             $cropOptions["mobile-settings"] = [
-                "image" => $newsletter_image_mobile['id']
+                "image" => $newsletter_image_mobile['ID']
             ];
         }
         ?>
