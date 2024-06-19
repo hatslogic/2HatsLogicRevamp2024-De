@@ -1,118 +1,58 @@
-<?php extract($section) ?>
+<?php
+extract($section);
+
+// Define cropOptions before the loop to avoid repeated declarations
+$cropOptions = [
+"fallbackimage-size" => [360, 360],
+'fallbackimage-class' => 'transition'
+];
+?>
+
 <section class="meet-our-team">
     <div class="container">
         <div class="title text-center">
-            <h2>Life @2Hats</h2>
-
-            <p>Unleash your potential at 2Hats Logic! We're all about fostering a positive
-                and vibrant workplace culture. Our team thrives on a dynamic mix of challenging
-                projects and fun activities, sparking creativity and collaboration. Join
-                our passionate community that values innovation, dedication, and a shared
-                vision for success.</p>
+            <?php if($title): ?>
+            <h2><?= $title; ?></h2>
+            <?php endif; ?>
+            <?php if($content): ?>
+            <p><?= $content; ?></p>
+            <?php endif; ?>
         </div>
+        <?php if($album): ?>
         <div class="content mt-60 xs:mt-30">
             <div class="split-3 xs:split-2 xs:gap-5 xs:split-1 gap-20">
-                <div class="col break-in:ac">
+                <?php foreach($album as $key => $image): ?>
+                <?php ${"picture" . $key} = $image['pictures'];?>
+                <?php if(${"picture" . $key}): ?>
+                <div class="col break-in:ac <?= $key > 0 ? 'mt-20 xs:mt-5' : ''; ?>">
                     <div class="album">
-                        <picture>
-                            <source srcset="uploads/team/album-01.webp" type="image/webp">
-                            <source srcset="uploads/team/album-01.jpg" type="image/jpg">
-                            <img src="uploads/team/album-01.jpg" loading="lazy" alt="album-01" width="360px"
-                                height="360px" class="transition">
-                        </picture>
+                        <?php display_responsive_image(${"picture" . $key}, $cropOptions); ?>
                     </div>
                 </div>
-                <div class="col break-in:ac mt-20 xs:mt-5">
-                    <div class="album">
-                        <picture>
-                            <source srcset="uploads/team/album-02.webp" type="image/webp">
-                            <source srcset="uploads/team/album-02.jpg" type="image/jpg">
-                            <img src="uploads/team/album-02.jpg" loading="lazy" alt="album-02" width="360px"
-                                height="360px" class="transition">
-                        </picture>
-                    </div>
-                </div>
-                <div class="col break-in:ac mt-20 xs:mt-5">
-                    <div class="album">
-                        <picture>
-                            <source srcset="uploads/team/album-03.webp" type="image/webp">
-                            <source srcset="uploads/team/album-03.jpg" type="image/jpg">
-                            <img src="uploads/team/album-03.jpg" loading="lazy" alt="album-03" width="360px"
-                                height="360px" class="transition">
-                        </picture>
-                    </div>
-                </div>
-                <div class="col break-in:ac xs:mt-5">
-                    <div class="scroll-down h-px-100 justify-start flex column align-center rg-12 hidden"> <span
-                            class="block">Scroll Down for More</span>
-                        <i class="icomoon fs-22 icon-expand_circle_down"></i>
-
-                    </div>
-                    <div class="album">
-                        <picture>
-                            <source srcset="uploads/team/album-04.webp" type="image/webp">
-                            <source srcset="uploads/team/album-04.jpg" type="image/jpg">
-                            <img src="uploads/team/album-04.jpg" loading="lazy" alt="album-04" width="360px"
-                                height="360px" class="transition">
-                        </picture>
-                    </div>
-                </div>
-                <div class="col break-in:ac mt-20 xs:mt-5">
-                    <div class="album">
-                        <picture>
-                            <source srcset="uploads/team/album-05.webp" type="image/webp">
-                            <source srcset="uploads/team/album-05.jpg" type="image/jpg">
-                            <img src="uploads/team/album-05.jpg" loading="lazy" alt="album-05" width="360px"
-                                height="360px" class="transition">
-                        </picture>
-                    </div>
-                </div>
-                <div class="col break-in:ac xs:mt-5">
-                    <div class="album">
-                        <picture>
-                            <source srcset="uploads/team/album-06.webp" type="image/webp">
-                            <source srcset="uploads/team/album-06.jpg" type="image/jpg">
-                            <img src="uploads/team/album-06.jpg" loading="lazy" alt="album-06" width="360px"
-                                height="360px" class="transition">
-                        </picture>
-                    </div>
-                </div>
-                <div class="col break-in:ac mt-20 xs:mt-5">
-                    <div class="album">
-                        <picture>
-                            <source srcset="uploads/team/album-07.webp" type="image/webp">
-                            <source srcset="uploads/team/album-07.jpg" type="image/jpg">
-                            <img src="uploads/team/album-07.jpg" loading="lazy" alt="album-07" width="360px"
-                                height="360px" class="transition">
-                        </picture>
-                    </div>
-                </div>
+                <?php endif; ?>
+                <?php endforeach; ?>
+                <?php if($picture7 && $picture8): ?>
                 <div class="col break-in:ac mt-20 xs:mt-5 flex cg-20 xs:cg-5">
                     <div class="album">
-                        <picture>
-                            <source srcset="uploads/team/album-08.webp" type="image/webp">
-                            <source srcset="uploads/team/album-08.jpg" type="image/jpg">
-                            <img src="uploads/team/album-08.jpg" loading="lazy" alt="album-08" width="360px"
-                                height="360px" class="transition">
-                        </picture>
+                        <?php display_responsive_image($picture7, $cropOptions) ?>
                     </div>
-                    <div class="album"> <a href="#" class="w-100 h-100 relative">
+                    <div class="album">
+
+                        <a href="<?php echo $see_more ? $see_more['url'] : "#" ?>" class="w-100 h-100 relative">
+
                             <div
                                 class="overlay absolute h-100 w-100 c-white flex column gap-10 align-center justify-center">
                                 <i class="icomoon fs-28 icon-plus"></i>
-                                <span>See More</span>
+                                <span><?php echo $see_more ? $see_more['title'] : "See More" ?></span>
                             </div>
-                            <picture>
-                                <source srcset="uploads/team/album-09.webp" type="image/webp">
-                                <source srcset="uploads/team/album-09.jpg" type="image/jpg">
-                                <img src="uploads/team/album-09.jpg" loading="lazy" alt="album-09" width="360px"
-                                    height="360px" class="transition">
-                            </picture>
+                            <?php display_responsive_image($picture8, $cropOptions) ?>
                         </a>
 
                     </div>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
+        <?php endif; ?>
     </div>
 </section>
