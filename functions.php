@@ -773,6 +773,9 @@ add_filter('the_content', 'replace_image_classes_with_ids');
 
 //Crop Images Dynamically based on the aspect ratio and use in picture tags
 function display_responsive_image($image_id,$options) {
+	if(!$image_id){
+		return;
+	}
     // Get the original image dimensions
     $image_data = wp_get_attachment_metadata($image_id);
 	
