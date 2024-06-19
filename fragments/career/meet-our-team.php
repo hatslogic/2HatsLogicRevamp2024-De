@@ -23,14 +23,13 @@ $cropOptions = [
             <div class="split-3 xs:split-2 xs:gap-5 xs:split-1 gap-20">
                 <?php foreach($album as $key => $image): ?>
                 <?php ${"picture" . $key} = $image['pictures'];?>
-                <?php if(${"picture" . $key}): ?>
+                <?php if(${"picture" . $key} && $key < 7 ): ?>
                 <div class="col break-in:ac <?= $key > 0 ? 'mt-20 xs:mt-5' : ''; ?>">
                     <div class="album">
                         <?php display_responsive_image(${"picture" . $key}, $cropOptions); ?>
                     </div>
                 </div>
                 <?php endif; ?>
-                <?php endforeach; ?>
                 <?php if($picture7 && $picture8): ?>
                 <div class="col break-in:ac mt-20 xs:mt-5 flex cg-20 xs:cg-5">
                     <div class="album">
@@ -51,6 +50,8 @@ $cropOptions = [
                     </div>
                 </div>
                 <?php endif; ?>
+                <?php endforeach; ?>
+                
             </div>
         </div>
         <?php endif; ?>
