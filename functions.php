@@ -837,3 +837,16 @@ function display_responsive_image($image_id,$options) {
     <?php
 }
 
+function short_content($num)
+{
+    $limit = $num + 1;
+    $content = str_split(get_the_content());
+    $length = count($content);
+    if ($length >= $num) {
+        $content = array_slice($content, 0, $num);
+        $content = implode("", $content) . "...";
+        echo strip_tags($content);
+    } else {
+        strip_tags(the_content());
+    }
+}
