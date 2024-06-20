@@ -24,7 +24,7 @@
                     <div class="positions w-25 md:w-50"><?= $opening['no_of_positions']; ?></div>
                     <div class="experience w-25 md:w-50"><?= $opening['experience']; ?></div>
                     <div class="apply-now w-25 md:w-100 md:mt-20 flex align-center justify-end md:justify-start">
-                        <a href="mailto:hr@2hatslogic.com" class="flex align-center gap-10">Apply Now
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hr@2hatslogic.com" target="_blank" class="flex align-center gap-10">Apply Now
                             <i class="icon-arrow_circle_right fs-22"></i>
                         </a>
                     </div>
