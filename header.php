@@ -29,6 +29,19 @@
 	<link rel="preload" href="<?php echo $get_dir; ?>/dist/assets/img/brand/logo-wide.svg" as="image">
 	<style>@font-face {font-family: "TTFirsNeueTrl-Thin";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Thin.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Thin.woff") format("woff");font-display: swap }@font-face {font-family: "TTFirsNeueTrl-Medium";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Medium.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Medium.woff") format("woff");font-display: swap }@font-face {font-family: "BasisGrotesquePro-Light";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Light.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Light.woff") format("woff");font-display: swap }@font-face {font-family: "BasisGrotesquePro-Regular";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Regular.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Regular.woff") format("woff");font-display: swap }@font-face {font-family: "BasisGrotesquePro-Bold";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Bold.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Bold.woff") format("woff");font-display: swap }@font-face {font-family: "PTSerif-Regular";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/PTSerif/PTSerif-Regular.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/PTSerif/PTSerif-Regular.woff") format("woff");font-display: swap }@font-face {font-family: 'icomoon';src: url('<?php echo $get_dir; ?>/dist/assets/fonts/2HatsIcons/icomoon.woff2') format('woff2'), url('<?php echo $get_dir; ?>/dist/assets/fonts/2HatsIcons/icomoon.woff') format('woff');font-weight: normal;font-style: normal;font-display: block;}</style>
 	<?php wp_head(); ?>
+	<?php
+	//Schema code
+	if ( function_exists('get_field') ) {
+		$schemaCode = '';
+		if (get_field('schema_code', get_the_ID())) {
+			$schemaCode = get_field('schema_code', get_the_ID());
+		}
+		if (get_field('schema', get_the_ID())) {
+			$schemaCode = get_field('schema', get_the_ID());
+		}
+		echo $schemaCode;
+	}
+	?>
 </head>
 
 <body <?php body_class(); ?>>
