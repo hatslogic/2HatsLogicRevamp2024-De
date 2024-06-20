@@ -31,7 +31,7 @@
                             ?>
                         </div>
                         <div class="menu-group mt-40">
-                            <a href="#" class="h4 font-bold">Web and E-commerce<br/> Services</a>
+                            <a href="#" class="h4 font-bold">Web and E-commerce<br /> Services</a>
                             <?php 
                             wp_nav_menu( array(
                               'menu'   => 'web-ecommerce-menu',
@@ -57,7 +57,7 @@
                               'walker' => new \FOOTER_Menu_Walker(),
                             ) );
                             ?>
-                        </div>   
+                        </div>
                         <div class="menu-group mt-40">
                             <a href="#" class="h4 font-bold">Company</a>
                             <?php 
@@ -94,50 +94,60 @@
                     <div class="accreditation sm:w-50 xs:w-100">
                         <div class="h4 font-bold">Accreditation</div>
                         <div class="block sm:flex sm:justify-center">
-                            <div class="flex justify-start mt-30 sm:justify-center">
-                                <div class="col">
-                                    <a href="#" target="_blank">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/accreditation/shopware-partner.svg" alt="shopware partner" loading="lazy" width="100" height="100">
-                                    </a>
-                                </div>
-                                <div class="col ml-20">
-                                    <a href="#" target="_blank">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/accreditation/clutch-logo.svg" alt="shopware partner" loading="lazy" width="100" height="100">
-                                    </a>
-                                </div>
-                                <div class="col ml-20">
-                                    <a href="#" target="_blank">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/accreditation/vue-storefront.svg" alt="shopware partner" loading="lazy" width="100" height="100">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="flex justify-start mt-30 sm:justify-center sm:ml-20">
-                                <div class="col col-100">
-                                    <a href="#" target="_blank">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/accreditation/appfutura-badge.svg" alt="appfutura" loading="lazy" width="100" height="100">
-                                    </a>
-                                </div>
-                            </div>
+                            <?php $badges = get_field('badges', 'option'); ?>
+                            <?php if($badges): ?>
+                            <?php foreach($badges as $index => $badge): ?>
+                            <?php if($index % 3 == 0): // Start a new row for every 3 badges ?>
+                            <?php if($index > 0): // Close the previous row if it's not the first set ?>
                         </div>
+                        <?php endif; ?>
+                        <div
+                            class="flex justify-start mt-30 sm:justify-center <?php echo $index > 0 ? 'sm:ml-20' : ''; ?>">
+                            <?php endif; ?>
+                            <div class="col <?php echo $index % 3 > 0 ? 'ml-20' : ''; ?>">
+                                <a href="<?php echo esc_url($badge['link']); ?>" target="_blank">
+                                    <img src="<?php echo esc_url($badge['badge_image']); ?>"
+                                        alt="<?php echo esc_attr($badge['alt_text']); ?>" loading="lazy" width="100"
+                                        height="100">
+                                </a>
+                            </div>
+                            <?php if($index == count($badges) - 1): // Close the last row ?>
+                        </div>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
-                    <div class="social-media flex align-center ml-auto mr-0 sm:ml-auto sm:mr-auto sm:mt-40 sm:w-100 xs:w-100 xs:ml-auto xs:mr-auto xs:justify-center fs-22">
-                        <?php
+
+                </div>
+                <div
+                    class="social-media flex align-center ml-auto mr-0 sm:ml-auto sm:mr-auto sm:mt-40 sm:w-100 xs:w-100 xs:ml-auto xs:mr-auto xs:justify-center fs-22">
+                    <?php
                         $social_media = get_field('social_media', 'option');
                         foreach ($social_media as $key => $item):
                         $classes = ($key == 0) ? 'flex align-center' : 'flex align-center ml-20';
                         ?>
-                          <a href="<?php echo $item['url']; ?>" class="<?php echo $classes; ?>" target="_blank" aria-label="<?php echo strtolower($item['icon']); ?>">
-                            <i class="icomoon icon-<?php echo strtolower($item['icon']); ?>"></i>
-                          </a>
-                        <?php endforeach; ?>
-                    </div>
+                    <a href="<?php echo $item['url']; ?>" class="<?php echo $classes; ?>" target="_blank"
+                        aria-label="<?php echo strtolower($item['icon']); ?>">
+                        <i class="icomoon icon-<?php echo strtolower($item['icon']); ?>"></i>
+                    </a>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom flex align-center justify-between xs:wrap xs:column b-0 bt-1 py-30 xs:pb-50 bc-hash solid fs-14 xxl:fs-16">
-            <div class="copyright sm:order-2 xs:mt-10">&copy; <span id="year"></span>  2Hats Logic Solutions Private Limited</div>
-            <div class="terms sm:order-1 sm:mt-20"><a href="#" aria-label="terms">Terms & Conditions</a> | <a href="#" aria-label="privacy">Privacy Policy</a></div>
-        </div>
+    </div>
+    <div class="footer-bottom flex align-center justify-between xs:wrap xs:column b-0 bt-1 py-30 xs:pb-50 bc-hash solid fs-14 xxl:fs-16">
+        <?php $footer_bottom = get_field('footer_bottom', 'option'); ?>
+        <?php 
+            $copy_right_text = $footer_bottom['copy_right_text'] ? $footer_bottom['copy_right_text'] : '';
+            $terms_and_condition_title = $footer_bottom['terms_and_condition']['title'] ? $footer_bottom['terms_and_condition']['title'] : 'Terms & Conditions';
+            $terms_and_condition_link = $footer_bottom['terms_and_condition']['url'] ? $footer_bottom['terms_and_condition']['url'] : '#';
+            $privacy_policy_title = $footer_bottom['privacy_policy']['title'] ? $footer_bottom['privacy_policy']['title'] : 'Privacy Policy';
+            $privacy_policy_link = $footer_bottom['privacy_policy']['url'] ? $footer_bottom['privacy_policy']['url'] : '#';
+        ?>
+        <div class="copyright sm:order-2 xs:mt-10">&copy; <span id="year"><?=date("Y")?></span> <?= $copy_right_text ?></div>
+        <div class="terms sm:order-1 sm:mt-20"><a href="<?= $terms_and_condition_link ?>" aria-label="terms"><?= $terms_and_condition_title ?></a> | <a href="<?= $privacy_policy_link ?>"
+                aria-label="privacy"><?= $privacy_policy_title ?></a></div>
+    </div>
     </div>
 </footer>
 
@@ -145,15 +155,15 @@
 
 <script>
     var elements = document.querySelectorAll('section, header, footer, .service, .col, .content .info');
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (entry.intersectionRatio > 0) {
                 entry.target.classList.add('animate');
             }
         });
     });
 
-    elements.forEach(function(element) {
+    elements.forEach(function (element) {
         observer.observe(element);
     });
 </script>

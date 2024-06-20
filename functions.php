@@ -589,25 +589,41 @@ function no_x_gravity_form_css()
 require get_template_directory() . '/inc/minify-html.php';
 
 // Function to calculate reading time
-function get_reading_time($content) {
-
-	$word_count = str_word_count(strip_tags($content));
-
-	$reading_time_minutes = ceil($word_count / 200);
-
-
-	if ($reading_time_minutes < 60) {
-		$reading_time_text = $reading_time_minutes . ' minute' . ($reading_time_minutes > 1 ? 's' : '');
-	} else {
-		$reading_time_hours = floor($reading_time_minutes / 60);
-		$reading_time_remaining_minutes = $reading_time_minutes % 60;
-		$reading_time_text = $reading_time_hours . ' hour' . ($reading_time_hours > 1 ? 's' : '');
-		if ($reading_time_remaining_minutes > 0) {
-			$reading_time_text .= ' ' . $reading_time_remaining_minutes . ' minute' . ($reading_time_remaining_minutes > 1 ? 's' : '');
-		}
+function get_reading_time($post_id, $content) {
+	// Check if content is empty and a custom reading time is set
+	if (!$content && ($custom_reading_time = get_field('reading_time', $post_id))) {
+	return $custom_reading_time . ' minute' . ($custom_reading_time > 1 ? 's' : '');
 	}
-
-	return $reading_time_text;
+	
+	// Return empty string if content is empty and no custom reading time is set
+	if (!$content) {
+	return '';
+	}
+	
+	// Calculate word count and reading time in minutes
+	$word_count = str_word_count(strip_tags($content));
+	$reading_time_minutes = ceil($word_count / 200);
+	
+	// If reading time is less than 1 minute, calculate and return in seconds
+	if ($reading_time_minutes < 1) {
+	$reading_time_seconds = ceil($word_count / (200 / 60));
+	return $reading_time_seconds . ' second' . ($reading_time_seconds > 1 ? 's' : '');
+	}
+	
+	// Calculate hours and remaining minutes if reading time is 60 minutes or more
+	$reading_time_hours = intdiv($reading_time_minutes, 60);
+	$reading_time_remaining_minutes = $reading_time_minutes % 60;
+	
+	// Construct reading time text
+	$reading_time_text = '';
+	if ($reading_time_hours > 0) {
+	$reading_time_text .= $reading_time_hours . ' hour' . ($reading_time_hours > 1 ? 's' : '') . ' ';
+	}
+	if ($reading_time_remaining_minutes > 0) {
+	$reading_time_text .= $reading_time_remaining_minutes . ' minute' . ($reading_time_remaining_minutes > 1 ? 's' : '');
+	}
+	
+	return trim($reading_time_text);
 }
 
 // Related Case studes

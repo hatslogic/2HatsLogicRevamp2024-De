@@ -49,7 +49,7 @@ get_header();
                         if ($blog_query->have_posts()):
                             while ($blog_query->have_posts()):
                                 $blog_query->the_post();
-                                $reading_time_text = get_reading_time(get_the_content());
+                                $reading_time_text = get_reading_time(get_the_ID(),get_the_content());
                                 ?>
 
                                 <div class="col card">
