@@ -32,10 +32,11 @@ $call2 = get_field('call_two_button');
                                      </div>
                                  </div> 
                                  <?php  if($call1): ?>
-                                 <a href="tel:<?php echo $call1 ?>" class="bg-transparent px-0 mt-20 xs:mt-10 xs:ml-80 fs-18 xs:fs-16 c-secondary hover:c-primary b-0 font-bold py-10 bc-transparent inline-flex align-center gap-15 xs:gap-10">
-                         <i class="icomoon icon-calendar_month fs-24"></i> Schedule a call
-                     </a>
- <?php endif; ?>
+                                 <?php $call1 = filter_var($call1, FILTER_VALIDATE_URL) === FALSE ? 'tel:'.$call1  : $call1  ?>   
+                                 <a href="<?php echo $call1 ?>" target="_blank" class="bg-transparent px-0 mt-20 xs:mt-10 xs:ml-80 fs-18 xs:fs-16 c-secondary hover:c-primary b-0 font-bold py-10 bc-transparent inline-flex align-center gap-15 xs:gap-10">
+                                    <i class="icomoon icon-calendar_month fs-24"></i> Schedule a call
+                                 </a>
+                                <?php endif; ?>
                              </div>
                              <div class="col w-100 xl:w-50 xs:w-100 pl-40 xl:pl-30 xs:pl-0 md:mt-30 xs:mt-20 pr-40 xl:pr-20 xs:pr-0 xs:pt-20 b-0 br-1 xs:br-0 md:br-0 solid bc-hash">
                                  <div class="avatar-wrap flex">
@@ -48,9 +49,10 @@ $call2 = get_field('call_two_button');
                                      </div>
                                  </div>
                                  <?php if($call2): ?>
-                                 <a href="tel:<?php echo $call2 ?>" class="bg-transparent px-0 mt-20 xs:mt-10 xs:ml-80 fs-18 xs:fs-16 c-secondary hover:c-primary b-0 font-bold py-10 bc-transparent inline-flex align-center gap-15 xs:gap-10">
-                         <i class="icomoon icon-calendar_month fs-24"></i> Schedule a call
-                     </a>
+                                 <?php $call2 = filter_var($call2, FILTER_VALIDATE_URL) === FALSE ? 'tel:'.$call2  : $call2  ?>   
+                                 <a href="<?php echo $call2 ?>" target="_blank" class="bg-transparent px-0 mt-20 xs:mt-10 xs:ml-80 fs-18 xs:fs-16 c-secondary hover:c-primary b-0 font-bold py-10 bc-transparent inline-flex align-center gap-15 xs:gap-10">
+                                    <i class="icomoon icon-calendar_month fs-24"></i> Schedule a call
+                                </a>
 
                                  <?php endif; ?>
                              </div>
