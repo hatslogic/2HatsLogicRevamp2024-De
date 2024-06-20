@@ -269,6 +269,18 @@ function app_render_page_agency() {
 	}
 }
 
+function app_render_page_career() {
+	if ( ! $sections = get_field( 'career' ) ) {
+		return;
+	}
+
+	foreach ( $sections as $section_index => $section ) {
+		$section_slug = str_replace( '_', '-', $section['acf_fc_layout'] );
+
+		app_render_fragment( 'career' . DIRECTORY_SEPARATOR . $section_slug, compact( 'section_index', 'section_slug', 'section' ) );
+	}
+}
+
 function app_render_page_single_help_desk() {
 	if ( ! $sections = get_field( 'single_help_desk' ) ) {
 		return;
