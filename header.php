@@ -17,20 +17,6 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Experience excellence in Web and E-Commerce development services with 2HatsLogic. Our dedicated programmers deliver top-notch solutions for your success.">
-	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Custom Web &amp; E-Commerce Development Services | 2Hats Logic">
-	<meta property="og:description" content="Experience excellence in Web and E-Commerce development services with 2HatsLogic. Our dedicated programmers deliver top-notch solutions for your success.">
-	<meta property="og:url" content="https://www.2hatslogic.com/">
-	<meta property="og:site_name" content="2Hats Logic Solutions - Laravel, Shopware, Magento experts, UX consultants">
-	<meta property="og:image" content="<?php echo $get_dir; ?>/dist/assets/img/2hats-thumbnail.png">
-	<meta property="og:image:width" content="484">
-	<meta property="og:image:height" content="283">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:description" content="Experience excellence in Web and E-Commerce development services with 2HatsLogic. Our dedicated programmers deliver top-notch solutions for your success.">
-	<meta name="twitter:title" content="Custom Web &amp; E-Commerce Development Services | 2Hats Logic">
-	<meta name="twitter:image" content="<?php echo $get_dir; ?>/dist/assets/img/2hats-thumbnail.png">
 	<meta name="msapplication-TileImage" content="<?php echo $get_dir; ?>/dist/assets/img/cropped-favicon-270x270.png">
 	<link rel="icon" href="<?php echo $get_dir; ?>/dist/assets/img/cropped-favicon-32x32.png" sizes="32x32">
 	<link rel="icon" href="<?php echo $get_dir; ?>/dist/assets/img/cropped-favicon-192x192.png" sizes="192x192">

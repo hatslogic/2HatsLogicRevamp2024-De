@@ -324,6 +324,7 @@ if (!function_exists('app_setup_theme')) {
 		});
 
 		# Image sizes
+		add_image_size('img_100x100', 100, 100, true);
 		add_image_size('img_494x328', 494, 328, true);
 		add_image_size('img_450x350', 450, 350, true);
 		add_image_size('img_360x280', 360, 280, true);
@@ -773,6 +774,9 @@ add_filter('the_content', 'replace_image_classes_with_ids');
 
 //Crop Images Dynamically based on the aspect ratio and use in picture tags
 function display_responsive_image($image_id,$options) {
+	if(!$image_id){
+		return;
+	}
     // Get the original image dimensions
     $image_data = wp_get_attachment_metadata($image_id);
 	
