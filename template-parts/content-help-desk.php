@@ -8,7 +8,7 @@
  */
 
 
- $reading_time_text = get_reading_time(get_the_content());
+ $reading_time_text = get_reading_time(get_the_ID(),get_the_content());
 ?>
 
 <div class="col card" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
