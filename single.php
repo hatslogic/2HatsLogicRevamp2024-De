@@ -20,7 +20,7 @@ get_header();
             <!-- Featured Image -->
 			<?php if (has_post_thumbnail()):
 			$featured_image = get_the_post_thumbnail_url(get_the_ID());
-			$reading_time_text = get_reading_time(get_the_content());
+			$reading_time_text = get_reading_time(get_the_ID(),get_the_content());
 			$featured_image_id = get_post_thumbnail_id(get_the_ID());
 			?>
 			<div class="w-100">

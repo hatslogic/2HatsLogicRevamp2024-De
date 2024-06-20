@@ -25,6 +25,28 @@
             "disabled": 0
         },
         {
+            "key": "field_667434420e8f1",
+            "label": "Reading Time",
+            "name": "reading_time",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Enter the value in minutes",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6648a66bd4ad1",
             "label": "Sidebar Widget",
             "name": "",
@@ -653,5 +675,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716216499
+    "modified": 1718891685
 }
