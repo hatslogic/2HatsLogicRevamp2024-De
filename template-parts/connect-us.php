@@ -64,7 +64,7 @@ $call2 = get_field('call_two_button');
                                      <div class="info ml-20">
                                           <h3 class="h5 transition font-regular opacity-50 mb-5">Email</h3>
  
-                                         <p class="mt-0 mb-0 fs-16 font-regular">E: <a class="c-secondary hover:c-primary hover:text-decoration-underline" href="mailto:<?php echo $primary_email; ?>"><?php echo $primary_email; ?></a>
+                                         <p class="mt-0 mb-0 fs-16 font-regular">E: <a class="c-secondary hover:c-primary hover:text-decoration-underline" href="https://mail.google.com/mail/?view=cm&fs=1&to=<?php echo $primary_email; ?>" target="_blank"><?php echo $primary_email; ?></a>
  
                                          </p>
                                      </div>
@@ -76,7 +76,7 @@ $call2 = get_field('call_two_button');
                                      <div class="info ml-20">
                                           <h3 class="h5 transition font-regular opacity-50 mb-5">Career</h3>
  
-                                         <p class="mt-0 mb-0 fs-16 font-regular">E: <a class="c-secondary hover:c-primary hover:text-decoration-underline" href="<?php the_field('contact_mail');?>"><?php the_field('contact_mail'); ?></a>
+                                         <p class="mt-0 mb-0 fs-16 font-regular">E: <a class="c-secondary hover:c-primary hover:text-decoration-underline" href="https://mail.google.com/mail/?view=cm&fs=1&to=<?php the_field('contact_mail');?>" target="_blank"><?php the_field('contact_mail'); ?></a>
  
                                          </p>
                                          <p class="mt-0 mb-0 fs-16 font-regular">P: <a class="c-secondary hover:c-primary hover:text-decoration-underline" href="tel:<?php the_field('contact_phone');?>"><?php the_field('contact_phone');?></a>
