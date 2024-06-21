@@ -55,7 +55,7 @@
         {
             "key": "field_664700bc84efe",
             "label": "Form Shortcode",
-            "name": "form_shortcode",
+            "name": "get_started_form_shortcode",
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
@@ -97,5 +97,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716976239
+    "modified": 1718971861
 }

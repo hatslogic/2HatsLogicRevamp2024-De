@@ -14,7 +14,7 @@ if ( get_field( 'show_callout' ) ) {
     app_render_fragment( 'global-callout' );
 }
 
- get_template_part('template-parts/get-started'); 
+get_template_part('template-parts/get-started');
 get_template_part( 'template-parts/free-consultation');
 
 get_footer();
