@@ -19,7 +19,7 @@ get_header();
 if (get_field('show_callout')) {
     app_render_fragment('global-callout');
 } 
-get_template_part( 'template-parts/free-consultation');
+//get_template_part( 'template-parts/free-consultation');
 ?>
 
 <?php get_footer(); ?>
