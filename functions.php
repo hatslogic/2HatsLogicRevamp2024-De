@@ -172,7 +172,7 @@ function hatslogic_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 
-	if (is_page('contact')) {
+	if (is_page('contact') || is_front_page()) {
         wp_enqueue_style('hatslogic-contact', 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css');
         wp_enqueue_style('hatslogic-contact-theme', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css');
         wp_enqueue_script('hatslogic-contact-intlTelInput', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js');
