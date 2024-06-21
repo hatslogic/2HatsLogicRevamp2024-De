@@ -35,7 +35,7 @@ get_header();
 						<span class="c-dark-grey fs-14"><?php the_field('author'); ?> &period; <?php echo esc_html($reading_time_text); ?></span>
 						<span class="c-dark-grey fs-14"><?php echo get_the_date(); ?></span>
 					</div>
-					<h2><?php the_title(); ?></h2>
+					<h1 class="h2"><?php the_title(); ?></h1>
 				</div>
 			</div>
 			<?php endif; ?>
