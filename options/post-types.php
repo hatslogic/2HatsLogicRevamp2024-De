@@ -135,6 +135,7 @@ function register_case_study() {
 		'show_in_rest'        => true,
 		'menu_icon' => 'dashicons-portfolio',
 		'taxonomies' => array( 'category' ),
+		'rewrite' => array( 'slug' => 'case-studies' )
 	);
 		
 	// Registering your Custom Post Type
