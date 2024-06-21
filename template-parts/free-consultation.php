@@ -1,7 +1,7 @@
 <?php
 $free_consultation_image = get_field('free_consultation_image', 'option');
 $free_consultation_image_mobile = get_field('free_consultation_image_mobile', 'option');
-$form_shortcode = get_field('form_shortcode', 'option');
+$form_shortcode = get_field('free_consultation_form_shortcode', 'option');
 ?>
 
 <div id="free-consultation" class="modal fixed free-consultation bg-overlay inset-0 z-14 h-100 w-100 transition">

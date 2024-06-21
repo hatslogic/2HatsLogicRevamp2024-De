@@ -1,7 +1,7 @@
 <?php
 $get_started_image = get_field('get_started_image','option');
 $get_started_image_mobile = get_field('get_started_image_mobile','option');
-$form_selector =  get_field('form_shortcode','option');    
+$form_selector =  get_field('get_started_form_shortcode','option');
 ?>
 <section id="get-started" class="get-started bg-dark-primary c-white relative" id="get-started">
     
