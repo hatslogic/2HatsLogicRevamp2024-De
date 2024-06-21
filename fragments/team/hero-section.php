@@ -27,12 +27,14 @@
            
             <?php $cropOptions = [
                     "fallbackimage-size" => [1920,893],
-                    "fallbackimage-class" => "h-auto w-100 transition"
+                    "fallbackimage-class" => "h-auto w-100 transition",
+                    "aspect-ratio" => [1920,893]
                 ];
-                if($mobile_image){
 
+                if($mobile_image){
                     $cropOptions["mobile-settings"] = [
-                        "image" => $mobile_image['ID']
+                        "image" => $mobile_image['ID'],
+                        "aspect-ratio" => [375,424]
                     ];
                 }
             ?>

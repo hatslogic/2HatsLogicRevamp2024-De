@@ -1,5 +1,28 @@
 <?php extract($section); ?>
+<?php 
 
+$aspectRatio = [
+    [496,606],
+    [496,284],
+    [496,284],
+    [500,613],
+    [496,594],
+    [496,606],
+    [496,284],
+    [236,286],
+    [236,286],
+];
+foreach ($images as $key => $item){
+    ${"picture" . $key} = $item['ID'];
+
+    $cropOptions[$key] =  [
+        "fallbackimage-size" => [360, 360],
+        'fallbackimage-class' => 'transition',
+        'aspect-ratio' => $aspectRatio[$key]
+    ];
+}
+
+?>
 <section class="meet-our-team">
     <div class="container">
         <?php if ($title || $content): ?>
@@ -15,168 +38,37 @@
 
         <?php if ($images): ?>
             <div class="content mt-60 xs:mt-30">
+                
                 <div class="split-3 xs:split-2 xs:gap-5 xs:split-1 gap-20">
-                    <?php
-                    foreach ($images as $key => $item): ?>
-
-                        <?php
-                        if ($key == 0):
-                            $image_url = $item['sizes']['img_500x611'];
-                            ?>
-                            <div class="col break-in:ac">
-                                <div class="album">
-                                    
-                                    <?php $cropOptions = [
-                                    "fallbackimage-size" => [500,611],
-                                    "fallbackimage-class" => "transition"
-                                    ];?>
-                                    <?php display_responsive_image($item['ID'],$cropOptions) ?>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php
-                        if ($key == 1):
-                            $image_url = $item['sizes']['img_500x288'];
-                            ?>
-                            <div class="col break-in:ac mt-20 xs:mt-5">
-                                <div class="album">
-                                    
-                                    <?php $cropOptions = [
-                                    "fallbackimage-size" => [500,288],
-                                    "fallbackimage-class" => "transition"
-                                    ];?>
-                                    <?php display_responsive_image($item['ID'],$cropOptions) ?>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php
-                        if ($key == 2):
-                            $image_url = $item['sizes']['img_500x286'];
-                            ?>
-                            <div class="col break-in:ac mt-20 xs:mt-5">
-                                <div class="album">
-                                    
-                                    <?php $cropOptions = [
-                                    "fallbackimage-size" => [500,286],
-                                    "fallbackimage-class" => "transition"
-                                    ];?>
-                                    <?php display_responsive_image($item['ID'],$cropOptions) ?>
-                                </div>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php
-                        if ($key == 3):
-                            $image_url = $item['sizes']['img_500x613'];
-                            ?>
-                            <div class="col break-in:ac xs:mt-5">
-                                <div class="scroll-down h-px-100 justify-start flex column align-center rg-12 hidden">
-                                    <span class="block">Scroll Down for More</span>
-                                    <i class="icomoon fs-22 icon-expand_circle_down"></i>
-                                </div>
-                                <div class="album">
-                                    
-                                    <?php $cropOptions = [
-                                    "fallbackimage-size" => [500,613],
-                                    "fallbackimage-class" => "transition"
-                                    ];?>
-                                    <?php display_responsive_image($item['ID'],$cropOptions) ?>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php
-                        if ($key == 4):
-                            $image_url = $item['sizes']['img_500x599'];
-                            ?>
-                            <div class="col break-in:ac mt-20 xs:mt-5">
-                                <div class="album">
-                                       
-                                        <?php $cropOptions = [
-                                        "fallbackimage-size" => [500,599],
-                                        "fallbackimage-class" => "transition"
-                                        ];?>
-                                        <?php display_responsive_image($item['ID'],$cropOptions) ?>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-
-
-                        <?php
-                        if ($key == 5):
-                            $image_url = $item['sizes']['img_500x611'];
-                            ?>
-                            <div class="col break-in:ac xs:mt-5">
-                                <div class="album">
-                                   
-                                    <?php $cropOptions = [
-                                        "fallbackimage-size" => [500,611],
-                                        "fallbackimage-class" => "transition"
-                                        ];?>
-                                        <?php display_responsive_image($item['ID'],$cropOptions) ?>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php
-                        if ($key == 6):
-                            $image_url = $item['sizes']['img_500x286'];
-                            ?>
-                            <div class="col break-in:ac mt-20 xs:mt-5">
-                                <div class="album">
-                                    
-                                    <?php $cropOptions = [
-                                        "fallbackimage-size" => [500,286],
-                                        "fallbackimage-class" => "transition"
-                                        ];?>
-                                        <?php display_responsive_image($item['ID'],$cropOptions) ?>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php
-                        if ($key == 7):
-                            $image_url = $item['sizes']['img_238x288'];
-                            ?>
-                            <div class="col break-in:ac mt-20 xs:mt-5 flex cg-20 xs:cg-5">
-                            <div class="album">
-                                <?php $cropOptions = [
-                                        "fallbackimage-size" => [500,288],
-                                        "fallbackimage-class" => "transition"
-                                        ];?>
-                                <?php display_responsive_image($item['ID'],$cropOptions) ?>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <?php
-                        if ($key == 8):
-                            $image_url = $item['sizes']['img_238x288'];
-                            ?>
-                            <div class="album">
-                                <?php if($button && $image_url): ?>
-                                <a href="<?php echo $button['title']; ?>" target="<?php echo $button['target']; ?>" class="w-100 h-100 relative">
-                                    <div class="overlay absolute h-100 w-100 c-white flex column gap-10 align-center justify-center">
-                                        <i class="icomoon fs-28 icon-plus"></i>
-                                        <span><?php echo $button['title']; ?></span>
-                                    </div>
-                                    <?php $cropOptions = [
-                                        "fallbackimage-size" => [238,288],
-                                        "fallbackimage-class" => "transition"
-                                        ];?>
-                                <?php display_responsive_image($item['ID'],$cropOptions) ?>
-                                </a>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                        <?php endif; ?>
-
-                    <?php endforeach; ?>
-
-
+                <?php foreach ($images as $key => $item): ?>
+                <?php if(${"picture" . $key} && $key < 7 ): ?>
+                <div class="col break-in:ac <?= $key > 0 ? 'mt-20 xs:mt-5' : ''; ?>">
+                    <div class="album">
+                        <?php display_responsive_image(${"picture" . $key}, $cropOptions[$key]); ?>
+                    </div>
                 </div>
+                <?php endif; ?>
+                <?php endforeach; ?>
+                <?php if($picture7 && $picture8): ?>
+                <div class="col break-in:ac mt-20 xs:mt-5 flex cg-20 xs:cg-5">
+                    <div class="album">
+                        <?php display_responsive_image($picture7, $cropOptions[7]) ?>
+                    </div>
+                    <div class="album">
+
+                        <a href="<?php echo $button ? $button['url'] : "#" ?>" target="<?php echo $button['target']; ?>"class="w-100 h-100 relative">
+
+                            <div
+                                class="overlay absolute h-100 w-100 c-white flex column gap-10 align-center justify-center">
+                                <i class="icomoon fs-28 icon-plus"></i>
+                                <span><?php echo $button ? $button['title'] : "See More" ?></span>
+                            </div>
+                            <?php display_responsive_image($picture8, $cropOptions[8]) ?>
+                        </a>
+                    </div>
+                </div>
+                <?php endif; ?>
+            </div>
             </div>
         <?php endif; ?>
     </div>
