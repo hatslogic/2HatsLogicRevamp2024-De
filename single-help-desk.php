@@ -18,7 +18,7 @@ get_header();
           
           <div class="w-70 md:w-100 md:w-100">
             <div class="w-100">    
-                <?php $reading_time_text = get_reading_time(get_the_content()); ?>
+                <?php $reading_time_text = get_reading_time(get_the_ID(),get_the_content()); ?>
                 <div class="info mt-15">
                     <div class="w-100 flex justify-between mb-15 md:mb-10">
                       <span class="c-dark-grey fs-14"><?php echo esc_html($reading_time_text); ?></span>
