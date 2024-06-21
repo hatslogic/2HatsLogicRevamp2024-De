@@ -10,7 +10,7 @@
             <h3 class="h4 mt-40"><?= $header['sub_title']; ?></h3>
             <?php endif; ?>
             <?php if (!empty($header['content'])): ?>
-            <?= $header['content']; ?>
+            <p><?= $header['content']; ?></p>
             <?php endif; ?>
         </div>
 
