@@ -799,32 +799,41 @@ function display_responsive_image($image_id,$options) {
     $width = $image_data['width'];
     $height = $image_data['height'];
 
+	if(isset($options["aspect-ratio"])){
+		$width = $options["aspect-ratio"]['0'];
+    	$height = $options["aspect-ratio"]['1'];
+	}
+
+	// Calculate the aspect ratio
+    $mobile_aspect_ratio = $aspect_ratio = $width / $height;
+
 	$fallback_image_sizes = isset($options["fallbackimage-size"]) ? $options["fallbackimage-size"] : [$width,$height];
 	$fallbackimage_class = isset($options["fallbackimage-class"]) ? $options["fallbackimage-class"] : '';
 	$picturetag_class = isset($options["picturetag-class"]) ? $options["picturetag-class"] : '';
 	$mobile_settings = isset($options["mobile-settings"]) ? $options["mobile-settings"] : [];
 	$mobile_image_id = $image_id;
-
+	
 	if(!empty($mobile_settings) && isset($mobile_settings['image'])){
 		$mobile_image_id = $mobile_settings['image'];
+		if(isset($options["mobile-settings"]['aspect-ratio'])){
+			$mobile_aspect_ratio =   $options["mobile-settings"]['aspect-ratio'][0]/$options["mobile-settings"]['aspect-ratio'][1];
+		}
 	}
-	// Calculate the aspect ratio
-    $aspect_ratio = $width / $height;
 
     // Mobile images
-    $mobile_1x = fly_get_attachment_image_src($mobile_image_id, [ 480 ,round(480 / $aspect_ratio)],1);
-    $mobile_2x = fly_get_attachment_image_src($mobile_image_id, [ 960 ,round(960 / $aspect_ratio)],1);
+    $mobile_1x = bis_get_attachment_image_src($mobile_image_id, [ 480 ,round(480 / $mobile_aspect_ratio)],1);
+    $mobile_2x = bis_get_attachment_image_src($mobile_image_id, [ 960 ,round(960 / $mobile_aspect_ratio)],1);
     // Tablet images
-    $tablet_1x = fly_get_attachment_image_src($image_id, [ 768 ,round(768 / $aspect_ratio)],1);
-    $tablet_2x = fly_get_attachment_image_src($image_id, [ 1536 ,round(1536 / $aspect_ratio)],1);
+    $tablet_1x = bis_get_attachment_image_src($image_id, [ 768 ,round(768 / $aspect_ratio)],1);
+    $tablet_2x = bis_get_attachment_image_src($image_id, [ 1536 ,round(1536 / $aspect_ratio)],1);
 
     // Small desktop images
-    $small_desktop_1x = fly_get_attachment_image_src($image_id, [ 1024 ,round(1024 / $aspect_ratio)],1);
-    $small_desktop_2x = fly_get_attachment_image_src($image_id, [ 2048 ,round(2048 / $aspect_ratio)],1);
+    $small_desktop_1x = bis_get_attachment_image_src($image_id, [ 1024 ,round(1024 / $aspect_ratio)],1);
+    $small_desktop_2x = bis_get_attachment_image_src($image_id, [ 2048 ,round(2048 / $aspect_ratio)],1);
 
     // Large desktop images
-    $large_desktop_1x = fly_get_attachment_image_src($image_id, [ 1440 ,round(1440 / $aspect_ratio)],1);
-    $large_desktop_2x = fly_get_attachment_image_src($image_id, [ 2880 ,round(2880 / $aspect_ratio)],1);
+    $large_desktop_1x = bis_get_attachment_image_src($image_id, [ 1440 ,round(1440 / $aspect_ratio)],1);
+    $large_desktop_2x = bis_get_attachment_image_src($image_id, [ 2880 ,round(2880 / $aspect_ratio)],1);
 
     // Fallback image
     $default_image = bis_get_attachment_image_src($image_id, $fallback_image_sizes,1);
@@ -834,11 +843,6 @@ function display_responsive_image($image_id,$options) {
         <!-- Mobile images -->
 		<source srcset="<?php echo webp($mobile_1x['src']); ?> 1x, <?php echo webp($mobile_2x['src']); ?> 2x" type="image/webp" media="(max-width: 599px)">
         <source srcset="<?php echo $mobile_1x['src']; ?> 1x, <?php echo $mobile_2x['src']; ?> 2x" type="image/jpeg" media="(max-width: 599px)">	
-		<?php if(!empty($mobile_settings)):?>
-		
-		<?php else: ?>	
-		
-		<?php endif; ?>
         <!-- Tablet images -->
         <source srcset="<?php echo webp($tablet_1x['src']); ?> 1x, <?php echo webp($tablet_2x['src']); ?> 2x" type="image/webp" media="(min-width: 600px) and (max-width: 1023px)">
         <source srcset="<?php echo $tablet_1x['src']; ?> 1x, <?php echo $tablet_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 600px) and (max-width: 1023px)">
