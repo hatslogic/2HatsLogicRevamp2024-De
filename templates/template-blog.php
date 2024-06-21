@@ -114,7 +114,11 @@ get_header();
                                         $paginate_link = '';
                                         if (strpos($link, 'prev') !== false || strpos($link, 'next') !== false) {
                                             $paginate_link = str_replace('page-numbers', 'page-link slider-prev flex align-center justify-center transition no-decoration', $link);
-                                        } else {
+                                        } elseif (strpos($link, 'current') !== false) {
+                                            $paginate_link = str_replace('page-numbers', 'page-link current', $link);
+                                            $paginate_link = str_replace('<span', '<a', $paginate_link);
+                                            $paginate_link = str_replace('</span>', '</a>', $paginate_link);
+                                        }else {
                                             $paginate_link = str_replace('page-numbers', 'page-link no-decoration', $link);
                                         }
                                         // $paginate_link = str_replace( 'page-numbers', 'page-link slider-next flex align-center justify-center transition no-decoration', $link );
