@@ -40,10 +40,12 @@
                 <?php if ($headline['heading'] || $description): ?>
                     <div class="service-header mt-30">
                         <div class="title">
+                        <?php if($headline['heading']){ ?>
                             <h1 class="h1-sml"><?php echo $headline['heading']; ?></h1>
-
-                            <h2 class="h3 mt-15 xs:fs-12"><?php echo $headline['sub_heading']; ?></h2>
-
+                            <?php } ?>
+                            <?php if($headline['sub_heading']){ ?>
+                                <h2 class="h3 mt-15 xs:fs-12"><?php echo $headline['sub_heading']; ?></h2>
+                            <?php } ?>
                             <p class="mt-30"><?php echo $description; ?></p>
                         </div>
                         <?php if ($cta): ?>
