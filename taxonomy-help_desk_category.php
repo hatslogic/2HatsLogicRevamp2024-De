@@ -14,8 +14,13 @@ get_header();
     <section class="blog-list relative pt-100 xs:pt-60 pb-100 md:pb-60">
         <div class="container relative z-1">
             <div class="title w-100 flex justify-between sm:wrap">
-
-                <?php the_archive_title( '<h1 class="h1-sml w-100 sm:mb-20">', '</h1>' );?>
+                <?php 
+                $taxonomy_name = '';
+                if (is_tax()) {
+                    $taxonomy_name = single_term_title("", false);
+                } ?>
+                <h1 class="h1-sml w-100 sm:mb-20"><?php echo $taxonomy_name ?> Support Center</h1>
+        
                 <div class="flex w-100 justify-end gap-20 align-end">
                     <div class="form-group max-w-58 md:max-w-100">
                         <form role="search" method="get" id="searchform" class="searchform"
