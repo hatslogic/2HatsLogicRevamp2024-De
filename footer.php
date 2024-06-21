@@ -138,14 +138,14 @@
     <div class="footer-bottom flex align-center justify-between xs:wrap xs:column b-0 bt-1 py-30 xs:pb-50 bc-hash solid fs-14 xxl:fs-16">
         <?php $footer_bottom = get_field('footer_bottom', 'option'); ?>
         <?php 
-            $copy_right_text = $footer_bottom['copy_right_text'] ? $footer_bottom['copy_right_text'] : '';
-            $terms_and_condition_title = $footer_bottom['terms_and_condition']['title'] ? $footer_bottom['terms_and_condition']['title'] : 'Terms & Conditions';
+            $copy_right_text = $footer_bottom['copy_right_text'] ? $footer_bottom['copy_right_text'] : '2Hats Logic Solutions Private';
+            $terms_and_condition_title = $footer_bottom['terms_and_condition']['title'];
             $terms_and_condition_link = $footer_bottom['terms_and_condition']['url'] ? $footer_bottom['terms_and_condition']['url'] : '#';
             $privacy_policy_title = $footer_bottom['privacy_policy']['title'] ? $footer_bottom['privacy_policy']['title'] : 'Privacy Policy';
             $privacy_policy_link = $footer_bottom['privacy_policy']['url'] ? $footer_bottom['privacy_policy']['url'] : '#';
         ?>
         <div class="copyright sm:order-2 xs:mt-10">&copy; <span id="year"><?=date("Y")?></span> <?= $copy_right_text ?></div>
-        <div class="terms sm:order-1 sm:mt-20"><a href="<?= $terms_and_condition_link ?>" aria-label="terms"><?= $terms_and_condition_title ?></a> | <a href="<?= $privacy_policy_link ?>"
+        <div class="terms sm:order-1 sm:mt-20"><?php if($terms_and_condition_title): ?><a href="<?= $terms_and_condition_link ?>" aria-label="terms"><?= $terms_and_condition_title ?></a> | <?php endif; ?> <a href="<?= $privacy_policy_link ?>"
                 aria-label="privacy"><?= $privacy_policy_title ?></a></div>
     </div>
     </div>
