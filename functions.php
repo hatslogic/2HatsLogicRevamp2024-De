@@ -800,6 +800,7 @@ function display_responsive_image($image_id,$options) {
     $height = $image_data['height'];
 
 	if(isset($options["aspect-ratio"])){
+		$options["fallbackimage-size"] = $options["aspect-ratio"];
 		$width = $options["aspect-ratio"]['0'];
     	$height = $options["aspect-ratio"]['1'];
 	}
@@ -807,7 +808,7 @@ function display_responsive_image($image_id,$options) {
 	// Calculate the aspect ratio
     $mobile_aspect_ratio = $aspect_ratio = $width / $height;
 
-	$fallback_image_sizes = isset($options["fallbackimage-size"]) ? $options["fallbackimage-size"] : [$width,$height];
+	
 	$fallbackimage_class = isset($options["fallbackimage-class"]) ? $options["fallbackimage-class"] : '';
 	$picturetag_class = isset($options["picturetag-class"]) ? $options["picturetag-class"] : '';
 	$mobile_settings = isset($options["mobile-settings"]) ? $options["mobile-settings"] : [];
@@ -820,6 +821,7 @@ function display_responsive_image($image_id,$options) {
 		}
 	}
 
+	$fallback_image_sizes = isset($options["fallbackimage-size"]) ? $options["fallbackimage-size"] : [$width,$height];
     // Mobile images
     $mobile_1x = bis_get_attachment_image_src($mobile_image_id, [ 480 ,round(480 / $mobile_aspect_ratio)],1);
     $mobile_2x = bis_get_attachment_image_src($mobile_image_id, [ 960 ,round(960 / $mobile_aspect_ratio)],1);
@@ -840,21 +842,29 @@ function display_responsive_image($image_id,$options) {
     ?>
 
     <picture class="<?php echo $picturetag_class ?>">
+
+		<?php if(isset($mobile_1x['src']) && isset($mobile_2x['src'])): ?>
         <!-- Mobile images -->
 		<source srcset="<?php echo webp($mobile_1x['src']); ?> 1x, <?php echo webp($mobile_2x['src']); ?> 2x" type="image/webp" media="(max-width: 599px)">
         <source srcset="<?php echo $mobile_1x['src']; ?> 1x, <?php echo $mobile_2x['src']; ?> 2x" type="image/jpeg" media="(max-width: 599px)">	
-        <!-- Tablet images -->
+        
+		<?php endif;?>
+		<?php if(isset($tablet_1x['src']) && isset($tablet_2x['src'])): ?>
+		<!-- Tablet images -->
         <source srcset="<?php echo webp($tablet_1x['src']); ?> 1x, <?php echo webp($tablet_2x['src']); ?> 2x" type="image/webp" media="(min-width: 600px) and (max-width: 1023px)">
         <source srcset="<?php echo $tablet_1x['src']; ?> 1x, <?php echo $tablet_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 600px) and (max-width: 1023px)">
-
+		<?php endif;?>
+		<?php if(isset($small_desktop_1x['src']) && isset($large_desktop_2x['src'])): ?>
         <!-- Small desktop images -->
         <source srcset="<?php echo webp($small_desktop_1x['src']); ?> 1x, <?php echo webp($small_desktop_2x['src']); ?> 2x" type="image/webp" media="(min-width: 1024px) and (max-width: 1439px)">
         <source srcset="<?php echo $small_desktop_1x['src']; ?> 1x, <?php echo $small_desktop_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 1024px) and (max-width: 1439px)">
-
+		<?php endif;?>	
+		<?php if(isset($large_desktop_1x['src']) && isset($large_desktop_2x['src'])): ?>
         <!-- Large desktop images -->
         <source srcset="<?php echo webp($large_desktop_1x['src']); ?> 1x, <?php echo webp($large_desktop_2x['src']); ?> 2x" type="image/webp" media="(min-width: 1440px)">
         <source srcset="<?php echo $large_desktop_1x['src']; ?> 1x, <?php echo $large_desktop_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 1440px)">
-
+		<?php endif;?>	
+			
         <!-- Fallback image -->
         <img src="<?php echo $default_image['src']; ?>" loading="lazy" alt="<?php echo get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>" width="<?php echo $fallback_image_sizes[0]; ?>" height="<?php echo $fallback_image_sizes[1]; ?>" class="<?php echo $fallbackimage_class; ?>" >
     </picture>
