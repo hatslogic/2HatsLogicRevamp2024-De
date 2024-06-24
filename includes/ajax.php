@@ -31,7 +31,8 @@ function load_more_team_members() {
                             <div class="img bg-secondary">
                             <?php $cropOptions = [
                                     "fallbackimage-size" => [250,330],
-                                    "fallbackimage-class" => "transition"
+                                    "fallbackimage-class" => "transition",
+                                    'aspect-ratio' => [185,243]
                                     ];?>
                             <?php display_responsive_image($image_id,$cropOptions) ?>
                             </div>
