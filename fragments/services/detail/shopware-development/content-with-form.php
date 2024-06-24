@@ -50,7 +50,7 @@
                         </div>
                         <?php if ($cta): ?>
                             <div class="btn-group mt-30"> 
-                                <a href="<?php echo $cta['url']; ?>" class="btn btn-primary"><?php echo $cta['title']; ?></a>
+                                <a href="<?php echo $cta['url']; ?>" <?php if($cta['target']) { ?> target="_blank" <?php } ?> class="btn btn-primary"><?php echo $cta['title']; ?></a>
                             </div>
                         <?php endif; ?>
                     </div>
