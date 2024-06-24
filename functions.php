@@ -325,6 +325,7 @@ if (!function_exists('app_setup_theme')) {
 
 		# Image sizes
 		add_image_size('img_100x100', 100, 100, true);
+		add_image_size('img_180x180', 180, 180, true);
 		add_image_size('img_494x328', 494, 328, true);
 		add_image_size('img_450x350', 450, 350, true);
 		add_image_size('img_360x280', 360, 280, true);

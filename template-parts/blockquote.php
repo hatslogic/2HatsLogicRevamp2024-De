@@ -19,7 +19,7 @@ $cta = get_field('quote_cta','option');
                     <div class="avatar-wrap flex align-center mt-30 align-center md:w-100 md:mb-20">
                         <?php if($avatar): ?>
                         <div class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50 over border-radius-100 overflow-hidden">
-                            <img src="<?php echo  $avatar['sizes']['img_100x100']; ?>" alt="CEO" width="100" height="100">
+                            <img src="<?php echo  $avatar['sizes']['img_180x180']; ?>" alt="CEO" width="100" height="100">
                         </div>
                         <?php endif; ?>
                         <div class="author ml-20">
