@@ -19,7 +19,7 @@
             <p class="mt-50 sm:mt-30"> <?php echo ($description ? $description : ''); ?> <br>
                 <?php echo ($links ? $links : ''); ?> </p>
                 <div class="btn-group flex align-center mt-60 md:mt-40 md:wrap md:column md:align-start">
-                <button onclick="openModal('free-consultation')" aria-label="get a quote" class="btn btn-secondary">Get a Free Quote</button>
+                <button onclick="openModal('get-a-quote')" aria-label="get a quote" class="btn btn-secondary">Get a Free Quote</button>
 
                 <!-- rating -->
                 <?php if ($rating): ?>
@@ -39,8 +39,9 @@
                 <?php endif; ?>
             </div>
         </div>
+
         <!-- Free Consultation -->
-        <a href="#get-started" aria-label="consultation" class="consultation-btn absolute top-0 right-20 md:hidden">
+        <button onclick="openModal('free-consultation')" aria-label="consultation" class="b-0 bg-transparent consultation-btn pointer absolute top-0 right-20 md:hidden">
             <svg width="176px" height="177px" viewBox="0 0 176 177" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="consultation" class="consultation sm:hidden" stroke="none" stroke-width="1" fill="none"
