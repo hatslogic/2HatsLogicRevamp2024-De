@@ -903,7 +903,7 @@
                                     "aria-label": "",
                                     "type": "text",
                                     "instructions": "",
-                                    "required": 0,
+                                    "required": 1,
                                     "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "",
@@ -915,6 +915,27 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
+                                    "parent_repeater": "field_664dce175bb77"
+                                },
+                                {
+                                    "key": "field_66797cc41e853",
+                                    "label": "List Content",
+                                    "name": "list_content",
+                                    "aria-label": "",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "rows": "",
+                                    "placeholder": "",
+                                    "new_lines": "",
                                     "parent_repeater": "field_664dce175bb77"
                                 }
                             ]
@@ -1986,5 +2007,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718713484
+    "modified": 1719237858
 }

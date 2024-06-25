@@ -162,23 +162,6 @@ get_header();
                             </ul>
                         </div>
                     </div>
-                    <div class="w-100">
-                        <div class="title mb-20">
-                            <h2 class="h4">Categories</h2>
-
-                        </div>
-                        <div class="content">
-                            <ul class="list no-bullets flex wrap cg-20 rg-5">
-                                <?php
-                                $categories = get_categories();
-                                foreach ($categories as $category):
-                                    ?>
-                                    <li><a href="<?php echo get_category_link($category->term_id); ?>"
-                                            class="no-decoration fs-16"><?php echo $category->name; ?></a></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

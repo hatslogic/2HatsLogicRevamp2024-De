@@ -6,7 +6,8 @@
             <div class="col w-100">
                 <?php $cropOptions = [
                     "fallbackimage-size" => [494,328],
-                    "fallbackimage-class"=>"h-auto w-100"
+                    "fallbackimage-class"=>"h-auto w-100",
+                    'aspect-ratio' => [694,567]
                 ];?>
                 <?php display_responsive_image($image['ID'],$cropOptions) ?>
             </div>

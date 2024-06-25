@@ -893,3 +893,11 @@ function short_content($num)
         strip_tags(the_content());
     }
 }
+
+function disable_category_archive_page() {
+	if (is_category()) {
+		wp_redirect(home_url('/'));
+		exit;
+	}
+}
+add_action('template_redirect', 'disable_category_archive_page');
