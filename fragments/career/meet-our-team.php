@@ -24,7 +24,7 @@ foreach($album as $key => $image){
 }
 ?>
 
-<section class="meet-our-team">
+<section class="meet-our-team overflow-hidden">
     <div class="container">
         <div class="title text-center">
             <?php if($title): ?>
