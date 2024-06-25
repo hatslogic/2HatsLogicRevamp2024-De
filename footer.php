@@ -168,40 +168,42 @@
 </script>
 
 <script async>
-    var phoneInput = document.querySelectorAll("[type=tel]");
-    function require(urls, callback) {
-      let loadedCount = 0;
+    document.addEventListener('DOMContentLoaded', function() {
+        var phoneInput = document.querySelectorAll("[type=tel]");
+        function require(urls, callback) {
+            let loadedCount = 0;
 
-      function loadScript(url) {
-        var script = document.createElement("script");
-        script.src = url;
-        script.type = "text/javascript";
-        script.addEventListener('load', function() {
-          loadedCount++;
-          if (loadedCount === urls.length) {
-            callback();
-          }
+            function loadScript(url) {
+                var script = document.createElement("script");
+                script.src = url;
+                script.type = "text/javascript";
+                script.addEventListener('load', function() {
+                loadedCount++;
+                if (loadedCount === urls.length) {
+                    callback();
+                }
+                });
+                document.getElementsByTagName("head")[0].appendChild(script);
+            }
+
+            urls.forEach(loadScript);
+        }
+
+        require([
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
+        ], function() {
+        if (phoneInput) {
+            phoneInput.forEach((input) => {
+            var iti = window.intlTelInput(input, {
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+                separateDialCode: true,
+                autoHideDialCode: false,
+                preferredCountries: ['us', 'gb', 'in'],
+                initialCountry: 'in',
+            });
+            });
+        }
         });
-        document.getElementsByTagName("head")[0].appendChild(script);
-      }
-
-      urls.forEach(loadScript);
-    }
-
-    require([
-      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
-    ], function() {
-      if (phoneInput) {
-        phoneInput.forEach((input) => {
-          var iti = window.intlTelInput(input, {
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            separateDialCode: true,
-            autoHideDialCode: false,
-            preferredCountries: ['us', 'gb', 'in'],
-            initialCountry: 'in',
-          });
-        });
-      }
     });
 </script>
 
