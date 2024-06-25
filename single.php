@@ -17,19 +17,19 @@ get_header();
         <div class="content align-start md:wrap flex gap-60 md:gap-40">
           <div class="w-70 md:w-100 md:w-100">
 
-            <!-- Featured Image -->
-			<?php if (has_post_thumbnail()):
-			$featured_image = get_the_post_thumbnail_url(get_the_ID());
-			$reading_time_text = get_reading_time(get_the_ID(),get_the_content());
-			$featured_image_id = get_post_thumbnail_id(get_the_ID());
-			?>
-			<div class="w-100">
-				
-				<?php $cropOptions = [
-                "fallbackimage-size" => [749,379],
-                'fallbackimage-class'=> 'transition'
-				];?>
-				<?php display_responsive_image($featured_image_id,$cropOptions) ?>
+		  	<div class="w-100">
+				<!-- Featured Image -->
+				<?php 
+				$reading_time_text = get_reading_time(get_the_ID(),get_the_content());
+				if (has_post_thumbnail()):
+					$featured_image = get_the_post_thumbnail_url(get_the_ID());
+					$featured_image_id = get_post_thumbnail_id(get_the_ID());
+					$cropOptions = [
+					"fallbackimage-size" => [749,379],
+					'fallbackimage-class'=> 'transition'
+					];?>
+					<?php display_responsive_image($featured_image_id,$cropOptions) ?>
+				<?php endif; ?>
 				<div class="info mt-15">
 					<div class="w-100 flex justify-between mb-15 md:mb-10">
 						<span class="c-dark-grey fs-14"><?php the_field('author'); ?> &period; <?php echo esc_html($reading_time_text); ?></span>
@@ -38,7 +38,6 @@ get_header();
 					<h1 class="h2"><?php the_title(); ?></h1>
 				</div>
 			</div>
-			<?php endif; ?>
 
             <div class="content w-100 xs:mt-30 mt-60">
 				<?php app_render_page_single_blog(); ?>
