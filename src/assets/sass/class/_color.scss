@@ -1,3 +1,12 @@
+$breakpoints: (
+    xxl: $xxl,
+    xl: $xl,
+    lg: $lg,
+    md: $md,
+    sm: $sm,
+    xs: $xs
+);
+
 /* Color */
 .c-primary{
     color: var(--c-primary);
@@ -329,5 +338,49 @@
 .hover\:bg-pigment{
     &:hover{
         background-color: var(--c-pigment);
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        .#{$breakpoint}\:c-primary {
+            color: var(--c-primary);
+        }
+
+        .#{$breakpoint}\:c-secondary {
+            color: var(--c-secondary);
+        }
+
+        .#{$breakpoint}\:c-white {
+            color: var(--c-white);
+        }
+
+        .#{$breakpoint}\:c-black {
+            color: var(--c-black);
+        }
+
+        .#{$breakpoint}\:c-grey {
+            color: var(--c-grey);
+        }
+
+        .#{$breakpoint}\:c-light-grey {
+            color: var(--c-light-grey);
+        }
+
+        .#{$breakpoint}\:c-dark-grey {
+            color: var(--c-dark-grey);
+        }
+
+        .#{$breakpoint}\:c-moonstone {
+            color: var(--c-moonstone);
+        }
+
+        .#{$breakpoint}\:c-pigment {
+            color: var(--c-pigment);
+        }
+
+        .#{$breakpoint}\:c-light-blue {
+            color: var(--c-light-blue);
+        }
     }
 }
