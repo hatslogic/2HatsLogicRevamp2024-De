@@ -150,10 +150,11 @@ function hatslogic_scripts()
 	wp_enqueue_style('hatslogic-app-main', get_template_directory_uri() . '/dist/assets/css/main.min.css', array(), _S_VERSION);
 	wp_enqueue_style('hatslogic-wp-main', get_template_directory_uri() . '/dist/assets/css/wp.min.css', array(), _S_VERSION);
 	wp_enqueue_style('hatslogic-transition-main', get_template_directory_uri() . '/dist/assets/css/transition.min.css', array(), _S_VERSION);
-	wp_enqueue_script('hatslogic-main', get_template_directory_uri() . '/dist/assets/js/main.min.js', array(), _S_VERSION, array(
-		'in_footer' => true,
-		'strategy' => 'async',
-	)
+	wp_enqueue_script('hatslogic-main', get_template_directory_uri() . '/dist/assets/js/main.min.js', array(), _S_VERSION, 
+		array(
+			'in_footer' => true,
+			'strategy' => 'async',
+		)
 	);
 
 	/*
@@ -168,16 +169,16 @@ function hatslogic_scripts()
 	   ));
 	   */
 
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
-	}
+	// if (is_singular() && comments_open() && get_option('thread_comments')) {
+	// 	wp_enqueue_script('comment-reply');
+	// }
 
-	if (is_page('contact') || is_front_page()) {
-        wp_enqueue_style('hatslogic-contact', 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css');
-        wp_enqueue_style('hatslogic-contact-theme', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css');
-        wp_enqueue_script('hatslogic-contact-intlTelInput', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js');
-        wp_enqueue_script('hatslogic-contact-utils', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js');
-    }
+	// if (is_page('contact') || is_front_page()) {
+    //     wp_enqueue_style('hatslogic-contact', 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css');
+    //     wp_enqueue_style('hatslogic-contact-theme', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css');
+    //     wp_enqueue_script('hatslogic-contact-intlTelInput', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js');
+    //     wp_enqueue_script('hatslogic-contact-utils', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js');
+    // }
 
 }
 add_action('wp_enqueue_scripts', 'hatslogic_scripts');
@@ -413,7 +414,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
         $ul_classes = '';
 
         if ($depth === 0) {
-            $ul_classes = 'no-bullets fixed md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-hash md:bt-0';
+            $ul_classes = 'no-bullets fixed md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-light-grey md:bt-0';
         } elseif ($depth === 1) {
             $ul_classes = 'no-bullets font-regular mt-20 md:mt-5 lh-2';
         } elseif ($depth === 2) {
@@ -421,20 +422,27 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
         }
         
 		if ($depth === 0) {
-        	$output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex justify-between md:column gap-30 md:gap-20 py-60 md:pt-20 md:pb-20 md:pl-0 md:pr-0\">\n";
-		} else {	
+        	$output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex justify-between md:column gap-30 md:gap-20 py-40 md:pt-20 md:pb-20 md:pl-0 md:pr-0\">\n";
+		} else {
 			$output .= "\n$indent<ul class=\"$ul_classes\">\n";
 		}
     }
 
     function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
         // Add classes to <li> and <a>
+		$is_compact = in_array('compact', $item->classes);
+
         $active_class = $item->current ? ' active' : '';
         $li_classes = '';
         $a_classes = '';
 
         if ($depth === 0) {
             $li_classes = 'ml-40 xl:ml-30 md:ml-0 inline-flex md:inline-block md:w-100';
+
+			if ($is_compact) {
+				$li_classes .= ' compact relative';
+			}
+
 			if ($args->walker->has_children) {
 				$li_classes .= ' has-child';
 			}
@@ -481,14 +489,14 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
     function end_lvl( &$output, $depth = 0, $args = null ) {
         // End <li> and <ul> elements.
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-        $output .= "$indent\t</li>\n";
+        // $output .= "$indent\t</li>\n";
         // $output .= "$indent</div></ul>\n";
 
 		$blog_url = home_url().'/blogs';
 		$contact_url = home_url().'/contact';
 
 		if ($depth === 0) {
-        	$output .= "$indent</div><div class=\"container flex md:hidden\"> <ul class=\"sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100\"><li class=\"mt-30 mb-30\"> <a href=\"$blog_url\" class=\"inline-block\" aria-label=\"blog\">Blog</a></li><li class=\"mt-30 mb-30 ml-30 pl-30 b-0 bl-1 solid bc-hash\"> <a href=\"$contact_url\" class=\"inline-block\" aria-label=\"contact\">Contact</a></li></ul></div></ul>\n";
+        	$output .= "$indent</div><div class=\"menu-end container flex md:hidden\"> <ul class=\"sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100\"><li class=\"mt-30 mb-30\"> <a href=\"$blog_url\" class=\"inline-block\" aria-label=\"blog\">Blog</a></li><li class=\"mt-30 mb-30 ml-30 pl-30 b-0 bl-1 solid bc-hash\"> <a href=\"$contact_url\" class=\"inline-block\" aria-label=\"contact\">Contact</a></li></ul></div></ul>\n";
 		} else {
 			$output .= "$indent</ul>\n";
 		}
@@ -587,7 +595,7 @@ function no_x_gravity_form_css()
 	wp_dequeue_style('x-gravity-forms');
 }
 
-require get_template_directory() . '/inc/minify-html.php';
+// require get_template_directory() . '/inc/minify-html.php';
 
 // Function to calculate reading time
 function get_reading_time($post_id, $content) {

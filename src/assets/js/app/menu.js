@@ -1,6 +1,6 @@
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.top-menu');
-const hasChild = document.querySelector('.main-menu > li.has-child > a');
+const hasChild = document.querySelectorAll('.main-menu > li.has-child > a');
 
 if(menuBtn !== null) {
     menuBtn.addEventListener('click', (e) => {
@@ -11,10 +11,17 @@ if(menuBtn !== null) {
 }
 
 if(hasChild !== null && window.matchMedia('(max-width: 1024px)').matches) {
-    hasChild.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.target.parentNode.classList.toggle('active');
-    });
+    for (let i = 0; i < hasChild.length; i++) {
+        hasChild[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            for (let j = 0; j < hasChild.length; j++) {
+                if (j !== i) {
+                    hasChild[j].parentNode.classList.remove('active');
+                }
+            }
+            e.target.parentNode.classList.toggle('active');
+        });
+    }
 }
 
 function closeMenu() {
