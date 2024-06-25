@@ -408,13 +408,20 @@ add_action('wp_print_styles', 'wps_deregister_styles', 100);
 add_filter('wpcf7_autop_or_not', '__return_false');
 
 class MAIN_Menu_Walker extends Walker_Nav_Menu {
+	private $curItem;
+
     function start_lvl( &$output, $depth = 0, $args = null ) {
         // Add classes to <ul> based on depth
         $indent = str_repeat( "\t", $depth );
+		$is_compact = in_array('compact', $this->curItem->classes);
         $ul_classes = '';
 
-        if ($depth === 0) {
-            $ul_classes = 'no-bullets fixed md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-light-grey md:bt-0';
+		if ($depth === 0) {
+			if ($is_compact) {
+				$ul_classes = 'no-bullets absolute min-w-px-260 md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-light-grey md:bt-0 -ml-20 md:ml-0';
+			} else {
+				$ul_classes = 'no-bullets fixed md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-light-grey md:bt-0';	
+			}
         } elseif ($depth === 1) {
             $ul_classes = 'no-bullets font-regular mt-20 md:mt-5 lh-2';
         } elseif ($depth === 2) {
@@ -422,7 +429,11 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
         }
         
 		if ($depth === 0) {
-        	$output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex justify-between md:column gap-30 md:gap-20 py-40 md:pt-20 md:pb-20 md:pl-0 md:pr-0\">\n";
+			if ($is_compact) {
+        		$output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex column justify-between md:column gap-10 md:gap-10 py-40 md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
+			} else {
+				$output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex justify-between md:column gap-30 md:gap-20 py-40 md:pt-20 md:pb-20 md:pl-0 md:pr-0\">\n";
+			}
 		} else {
 			$output .= "\n$indent<ul class=\"$ul_classes\">\n";
 		}
@@ -430,6 +441,8 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 
     function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
         // Add classes to <li> and <a>
+		$this->curItem = $item;
+
 		$is_compact = in_array('compact', $item->classes);
 
         $active_class = $item->current ? ' active' : '';
@@ -455,7 +468,12 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 				$li_classes .= ' has-child';
 			}
 
-            $a_classes = 'h4 inline-block font-bold b-0 bb-1 bc-hash solid pb-20 md:bb-0 md:pb-0';
+			if ($is_compact) {
+				$a_classes = 'inline-block font-regular';
+			} else {
+				$a_classes = 'h4 inline-block font-bold b-0 bb-1 bc-hash solid pb-20 md:bb-0 md:pb-0';
+			}
+            
         } elseif ($depth === 2) {
             $li_classes = 'depth-2';
 			if ($args->walker->has_children) {
@@ -488,6 +506,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 
     function end_lvl( &$output, $depth = 0, $args = null ) {
         // End <li> and <ul> elements.
+		$is_compact = in_array('compact', $this->curItem->classes);
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
         // $output .= "$indent\t</li>\n";
         // $output .= "$indent</div></ul>\n";
@@ -496,7 +515,11 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 		$contact_url = home_url().'/contact';
 
 		if ($depth === 0) {
-        	$output .= "$indent</div><div class=\"menu-end container flex md:hidden\"> <ul class=\"sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100\"><li class=\"mt-30 mb-30\"> <a href=\"$blog_url\" class=\"inline-block\" aria-label=\"blog\">Blog</a></li><li class=\"mt-30 mb-30 ml-30 pl-30 b-0 bl-1 solid bc-hash\"> <a href=\"$contact_url\" class=\"inline-block\" aria-label=\"contact\">Contact</a></li></ul></div></ul>\n";
+			if($is_compact){
+				$output .= "$indent</div></ul>\n";
+			} else {
+				$output .= "$indent</div><div class=\"menu-end container flex md:hidden\"> <ul class=\"sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100\"><li class=\"mt-30 mb-30\"> <a href=\"$blog_url\" class=\"inline-block\" aria-label=\"blog\">Blog</a></li><li class=\"mt-30 mb-30 ml-30 pl-30 b-0 bl-1 solid bc-hash\"> <a href=\"$contact_url\" class=\"inline-block\" aria-label=\"contact\">Contact</a></li></ul></div></ul>\n";
+			}
 		} else {
 			$output .= "$indent</ul>\n";
 		}
