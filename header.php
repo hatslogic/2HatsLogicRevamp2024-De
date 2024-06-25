@@ -32,8 +32,8 @@
 	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" fetchpriority="low" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<?php wp_head(); ?>
 	<?php
-	//Schema code
 	if ( function_exists('get_field') ) {
+		//Schema code
 		$schemaCode = '';
 		if (get_field('schema_code', get_the_ID())) {
 			$schemaCode = get_field('schema_code', get_the_ID());
@@ -42,6 +42,11 @@
 			$schemaCode = get_field('schema', get_the_ID());
 		}
 		echo $schemaCode;
+
+		// Page specific hreflang
+		if (get_field('hreflang', get_the_ID())) {
+			echo get_field('hreflang', get_the_ID());
+		}
 	}
 	?>
 </head>
