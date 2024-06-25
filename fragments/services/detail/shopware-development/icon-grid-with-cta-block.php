@@ -40,7 +40,7 @@
                     <?php endif; ?>
                     <?php if($cta_block['button']): ?>
                     <div class="w-100 flex justify-center"> 
-                        <a href="<?php echo $cta_block['button']['url']; ?>" class="btn btn-primary">
+                        <a href="<?php echo $cta_block['button']['url']; ?>" class="btn btn-primary text-center">
                             <?php echo $cta_block['button']['title']; ?>
                         </a>
                     </div>
