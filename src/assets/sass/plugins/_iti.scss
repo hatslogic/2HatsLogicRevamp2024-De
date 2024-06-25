@@ -2,8 +2,14 @@
     width: 100%;
     display: flex !important;
     border-bottom: 1px solid var(--c-hash);
+    .iti__country{
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     .iti__country-list{
         max-width: rem(250);
+        overflow-x: hidden;
         color: var(--c-black);
         font-size: rem(16);
     }
