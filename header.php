@@ -101,26 +101,26 @@
 	 $sticky_cta_2 = get_field('sticky_cta_2', 'options');
 	 ?>
 
-	 <?php if( $sticky_cta_1 || $sticky_cta_2 ): ?>
+	 <?php if( true == false ): ?>
 	<div class="sticky-menu transition z-10 hidden md:block w-100 bg-white fixed bottom-0 left-0 right-0">
-    <ul class="no-bullets flex align-center justify-center">
-		<?php if( $sticky_cta_1 ): ?>
-        <li class="h-100 w-100">
-            <a href="<?php echo $sticky_cta_1['url']; ?>" class="menu-btn h-100 bg-primary px-30 py-10 w-100 inline-flex align-center row" aria-label="consultation">
-                <i class="icomoon icon-headphones fs-24"></i> 
-                <span class="ml-10 fs-14"><?php echo $sticky_cta_1['title']; ?></span>
-            </a>
-        </li>
-		<?php endif; ?>
+		<ul class="no-bullets flex align-center justify-center">
+			<?php if( $sticky_cta_1 ): ?>
+			<li class="h-100 w-100">
+				<a href="<?php echo $sticky_cta_1['url']; ?>" class="menu-btn h-100 bg-primary px-30 py-10 w-100 inline-flex align-center row" aria-label="consultation">
+					<i class="icomoon icon-headphones fs-24"></i> 
+					<span class="ml-10 fs-14"><?php echo $sticky_cta_1['title']; ?></span>
+				</a>
+			</li>
+			<?php endif; ?>
 
-		<?php if( $sticky_cta_2 ): ?>
-        <li class="h-100 w-100">
-            <a href="<?php echo $sticky_cta_2['url']; ?>" class="menu-btn h-100 bg-secondary px-30 py-10 w-100 inline-flex align-center row" aria-label="agency">
-                <i class="icomoon icon-handshake fs-24"></i> 
-                <span class="ml-10 fs-14"><?php echo $sticky_cta_2['title']; ?></span>
-            </a>
-        </li>
-		<?php endif; ?>
-    </ul>
-</div>
-<?php endif; ?>
+			<?php if( $sticky_cta_2 ): ?>
+			<li class="h-100 w-100">
+				<a href="<?php echo $sticky_cta_2['url']; ?>" class="menu-btn h-100 bg-secondary px-30 py-10 w-100 inline-flex align-center row" aria-label="agency">
+					<i class="icomoon icon-handshake fs-24"></i> 
+					<span class="ml-10 fs-14"><?php echo $sticky_cta_2['title']; ?></span>
+				</a>
+			</li>
+			<?php endif; ?>
+		</ul>
+	</div>
+	<?php endif; ?>
