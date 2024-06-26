@@ -16,7 +16,7 @@ $link = get_field('sidebar_cta_link');
                             <?php while (have_rows('toc_block')):
                                 the_row(); ?>
                                 <li class="mb-15">
-                                    <a href="#section-<?php echo get_row_index(); ?>" class="c-secondary hover-text-primary">
+                                    <a href="#head<?php echo get_row_index(); ?>" class="c-secondary hover-text-primary">
                                         <?php the_sub_field('toc_content') ?>
                                     </a>
                                 </li>
