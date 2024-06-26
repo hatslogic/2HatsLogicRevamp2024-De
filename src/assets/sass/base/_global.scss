@@ -76,7 +76,11 @@ h1,
   }
 
   @include below($xs) {
-    font-size: rem(40);
+    font-size: rem(34);
+
+    & + h2{
+      margin-top: rem(8);
+    }
   }
 }
 
@@ -98,7 +102,8 @@ h1,
   }
 
   @include below($xs) {
-    font-size: rem(28);
+    font-size: rem(34);
+    line-height: 1;
   }
 }
 
@@ -184,7 +189,7 @@ ol {
   }
 
   @include below($xs) {
-    font-size: rem(16);
+    font-size: rem(17);
   }
 }
 
