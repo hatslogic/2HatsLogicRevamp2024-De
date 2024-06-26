@@ -1,5 +1,5 @@
 <?php extract($section); ?>
-<section class="hero pt-80 pb-100 md:pt-60 md:pb-80">
+<section class="hero pt-60 pb-100 md:pt-60 md:pb-80">
     <div class="container relative">
         <div class="caption">
             <?php if (!empty($title)): ?>

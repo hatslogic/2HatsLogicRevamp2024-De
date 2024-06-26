@@ -460,7 +460,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 				$li_classes .= ' has-child';
 			}
 
-            $a_classes = 'pt-30 pb-30 md:pt-8 md:pb-8 b-0 bb-3 solid md:bb-0 md:w-100 uppercase md:capitalize md:fs-26 block md:flex md:justify-between md:align-center';
+            $a_classes = 'pt-30 pb-30 md:pt-8 md:pb-8 b-0 bb-3 solid md:bb-0 md:w-100 uppercase md:capitalize md:fs-28 block md:flex md:justify-between md:align-center';
 			
         } elseif ($depth === 1) {
             $li_classes = 'depth-1 w-100';

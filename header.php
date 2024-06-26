@@ -72,9 +72,9 @@
 					'menu'   => 'main-menu',
 					'theme_location' => 'main-menu',
 					'container' => 'nav',
-					'container_class' => 'top-menu inline-flex ml-auto mr-0 h-px-82 md:hidden md:fixed md:z-12 md:h-100 md:w-100 md:left-0 md:top-0 md:pt-100 md:pb-100 md:pl-20 md:pr-20',
+					'container_class' => 'top-menu transition block ml-auto mr-0 h-px-82 md:fixed md:z-12 md:h-100 md:w-100 md:left-0 md:top-0 md:pt-140 md:pb-100 md:pl-20 md:pr-20',
 					'menu_class' => 'main-menu no-bullets font-button flex md:column align-center fs-14 xxl:fs-16 lg:fs-15 md:fs-18',
-					'items_wrap' => '<button class="btn btn-secondary hidden md:visible absolute md:fixed z-3 top-0 right-0 close" onclick="closeMenu()"> <i class="icomoon icon-close"></i></button><ul id="%1$s" class="%2$s">%3$s</ul> <div class="flex bg-white hidden md:visible md:mt-30 md:fixed bottom-1 w-100 left-0 right-0 px-20">
+					'items_wrap' => '<a href="#" class="hidden md:visible brand absolute left-20 top-20" aria-label="2hatslogic"><img src="'.$get_dir.'/dist/assets/img/brand/logo-wide.svg" alt="'.get_bloginfo('name').'" class="w-100" width="106" height="48"> </a><button class="btn btn-secondary hidden md:visible absolute md:fixed z-3 top-0 right-0 close" onclick="closeMenu()"> <i class="icomoon icon-close"></i></button><ul id="%1$s" class="%2$s">%3$s</ul> <div class="flex bg-white hidden md:visible md:mt-30 md:fixed bottom-1 w-100 left-0 right-0 px-20">
 									<ul class="sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100">
 										<li class="md:mt-20 md:mb-20">
 											<a href="'. home_url() .'/blogs" class="inline-block" aria-label="blog">Blogs</a>
@@ -88,7 +88,7 @@
 				) );
 				?>
 				
-				<a href="#" class="menu-btn fs-32 inline-flex align-center column hidden md:visible" aria-label="menu">
+				<a href="#" class="menu-btn fs-34 inline-flex align-center column hidden md:visible" aria-label="menu">
 					<i class="icomoon icon-menu"></i> 
 				</a>
 				<?php 
@@ -101,31 +101,32 @@
 			</div>
 		</div>
 	</header>
-     <?php
-	 $sticky_cta_1 = get_field('sticky_cta_1', 'options');
-	 $sticky_cta_2 = get_field('sticky_cta_2', 'options');
-	 ?>
 
-	 <?php if( $sticky_cta_1 || $sticky_cta_2 ): ?>
+	<?php
+	$sticky_cta_1 = get_field('sticky_cta_1', 'options');
+	$sticky_cta_2 = get_field('sticky_cta_2', 'options');
+	?>
+
+	<?php if( true == false ): ?>
 	<div class="sticky-menu transition z-10 hidden md:block w-100 bg-white fixed bottom-0 left-0 right-0">
-    <ul class="no-bullets flex align-center justify-center">
-		<?php if( $sticky_cta_1 ): ?>
-        <li class="h-100 w-100">
-            <a href="<?php echo $sticky_cta_1['url']; ?>" class="menu-btn h-100 bg-primary px-30 py-10 w-100 inline-flex align-center row" aria-label="consultation">
-                <i class="icomoon icon-headphones fs-24"></i> 
-                <span class="ml-10 fs-14"><?php echo $sticky_cta_1['title']; ?></span>
-            </a>
-        </li>
-		<?php endif; ?>
+		<ul class="no-bullets flex align-center justify-center">
+			<?php if( $sticky_cta_1 ): ?>
+			<li class="h-100 w-100">
+				<a href="<?php echo $sticky_cta_1['url']; ?>" class="menu-btn h-100 bg-primary px-30 py-10 w-100 inline-flex align-center row" aria-label="consultation">
+					<i class="icomoon icon-headphones fs-24"></i> 
+					<span class="ml-10 fs-14"><?php echo $sticky_cta_1['title']; ?></span>
+				</a>
+			</li>
+			<?php endif; ?>
 
-		<?php if( $sticky_cta_2 ): ?>
-        <li class="h-100 w-100">
-            <a href="<?php echo $sticky_cta_2['url']; ?>" class="menu-btn h-100 bg-secondary px-30 py-10 w-100 inline-flex align-center row" aria-label="agency">
-                <i class="icomoon icon-handshake fs-24"></i> 
-                <span class="ml-10 fs-14"><?php echo $sticky_cta_2['title']; ?></span>
-            </a>
-        </li>
-		<?php endif; ?>
-    </ul>
-</div>
-<?php endif; ?>
+			<?php if( $sticky_cta_2 ): ?>
+			<li class="h-100 w-100">
+				<a href="<?php echo $sticky_cta_2['url']; ?>" class="menu-btn h-100 bg-secondary px-30 py-10 w-100 inline-flex align-center row" aria-label="agency">
+					<i class="icomoon icon-handshake fs-24"></i> 
+					<span class="ml-10 fs-14"><?php echo $sticky_cta_2['title']; ?></span>
+				</a>
+			</li>
+			<?php endif; ?>
+		</ul>
+	</div>
+	<?php endif; ?>

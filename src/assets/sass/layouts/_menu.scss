@@ -1,3 +1,15 @@
+$delay-step: 0.05s; // Define the step for delay
+$transform-duration: 0.3s;
+$opacity-duration: 0.3s;
+$elements-count: 6;
+$traslate-y: 10px;
+$transition-timing-function: ease-in-out;
+
+// Define the mixin to generate transition delay for nth child
+@mixin transition-delay($num) {
+    transition-delay: $num * $delay-step;
+}
+
 .main-menu{
     
     a{
@@ -41,9 +53,15 @@
     }
 
     @include below($md){
+        .icon-expand_more{
+            pointer-events: none;
+        }
         & > .has-child{
             & > ul{
                 display: none;
+                // transition: max-height 0.35s ease-in-out;
+                // overflow: hidden;
+                // max-height: 0;
             }
             &.active{
                 & > a{
@@ -51,6 +69,7 @@
                 }
                 & > ul{
                     display: block;
+                    // max-height: 1000px;
                 }
                 .icon-expand_more{
                     transform: rotate(180deg);
@@ -62,11 +81,36 @@
 
 .top-menu{
     @include below($md){
+        visibility: hidden;
+        opacity: 0;
         background-color: var(--c-white);
         max-height: 100vh;
         overflow-y: auto;
+        .main-menu{
+            // transition: 0.5s all ease-in-out;
+            & > li{
+                transition: $transform-duration all ease-in-out;
+                transform: translateY($traslate-y);
+                visibility: hidden;
+                opacity: 0;
+
+                @for $i from 1 through $elements-count {
+                    &:nth-child(#{$i}) {
+                        @include transition-delay($i);
+                    }
+                }
+            }
+        }
     }
     &.active{
-        display: block;
+        visibility: visible;
+        opacity: 1;
+        .main-menu{
+            & > li{
+                transform: translateY(0);
+                visibility: visible;
+                opacity: 1;
+            }
+        }
     }
 }
