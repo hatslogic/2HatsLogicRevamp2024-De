@@ -11,7 +11,7 @@ define('APP_THEME_DIR', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '1.1.0');
+	define('_S_VERSION', '1.2.0');
 }
 
 
@@ -618,7 +618,7 @@ function no_x_gravity_form_css()
 	wp_dequeue_style('x-gravity-forms');
 }
 
-// require get_template_directory() . '/inc/minify-html.php';
+require get_template_directory() . '/inc/minify-html.php';
 
 // Function to calculate reading time
 function get_reading_time($post_id, $content) {
