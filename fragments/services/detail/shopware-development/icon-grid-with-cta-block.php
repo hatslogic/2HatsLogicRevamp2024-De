@@ -13,19 +13,21 @@
                 <div class="grid grid-2 xs:grid-1 gap-60 ml-100 xl:ml-60 md:ml-0 xl:gap-40 xs:gap-20 xs:flex xs:wrap">
                     <?php foreach ($items as $item): ?>
                         <div class="col">
-                            <div class="card xs:w-100 flex align-start">
-                                <?php if ($item['icon']): ?>
-                                    <div class="wrap-icon min-w-px-60 xs:min-w-px-40 max-w-px-60 xs:max-w-px-40">
-                                        <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['title'] ?>"
-                                            loading="lazy" height="100px" width="100px">
-                                    </div>
-                                <?php endif; ?>
-                                <div class="info ml-20">
-                                    <h3 class="h4 transition font-bold"><?php echo $item['title']; ?></h3>
+                            <a href="<?php echo ($item['link']) ? $item['link'] : '#' ?>" class="no-decoration">
+                                <div class="card xs:w-100 flex align-start">
+                                    <?php if ($item['icon']): ?>
+                                        <div class="wrap-icon min-w-px-60 xs:min-w-px-40 max-w-px-60 xs:max-w-px-40">
+                                            <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['title'] ?>"
+                                                loading="lazy" height="100px" width="100px">
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="info ml-20">
+                                        <h3 class="h4 transition font-bold"><?php echo $item['title']; ?></h3>
 
-                                    <p class="mt-10"><?php echo $item['content']; ?></p>
+                                        <p class="mt-10 c-secondary"><?php echo $item['content']; ?></p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     <?php endforeach; ?>
                 </div>

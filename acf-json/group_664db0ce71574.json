@@ -668,6 +668,24 @@
                                     "parent_repeater": "field_664dcd3007871"
                                 },
                                 {
+                                    "key": "field_667d8be13910e",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria-label": "",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "parent_repeater": "field_664dcd3007871"
+                                },
+                                {
                                     "key": "field_664dcd5507873",
                                     "label": "Title",
                                     "name": "title",
