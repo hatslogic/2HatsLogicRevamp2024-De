@@ -56,7 +56,7 @@
                     </div>
                 <?php endif; ?>
                 <?php if ($review['review']): ?>
-                    <div class="review-block mt-40 xs:mt-30 flex gap-20 w-90 xs:wrap xs:w-100">
+                    <div class="review-block mt-40 xs:mt-30 flex gap-20 w-100 xs:wrap xs:w-100">
                         <div class="avatar-wrap flex align-center mt-30 align-center w-px-300 md:w-100">
                             <?php if ($review['avatar']): ?>
                                 <div

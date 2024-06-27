@@ -11,7 +11,7 @@ define('APP_THEME_DIR', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '1.2.0');
+	define('_S_VERSION', '1.2.4');
 }
 
 
@@ -460,7 +460,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 				$li_classes .= ' has-child';
 			}
 
-            $a_classes = 'pt-30 pb-30 md:pt-8 md:pb-8 b-0 bb-3 solid md:bb-0 md:w-100 uppercase md:capitalize md:fs-28 block md:flex md:justify-between md:align-center';
+            $a_classes = 'mobile-toggle pt-30 pb-30 md:pt-8 md:pb-8 b-0 bb-3 solid md:bb-0 md:w-100 uppercase md:capitalize md:fs-28 block md:flex md:justify-between md:align-center';
 			
         } elseif ($depth === 1) {
             $li_classes = 'depth-1 w-100';
@@ -469,7 +469,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 			}
 
 			if ($is_compact) {
-				$a_classes = 'inline-block font-regular';
+				$a_classes = 'inline-block font-regular w-100';
 			} else {
 				$a_classes = 'h4 inline-block font-bold b-0 bb-1 bc-hash solid pb-20 md:bb-0 md:pb-0';
 			}
@@ -480,7 +480,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 				$li_classes .= ' has-child';
 			}
 			
-            $a_classes = 'depth-2 a';
+            $a_classes = 'depth-2 inline-block w-100';
         }
 
         $output .= "<li class=\"$li_classes$active_class\">";
