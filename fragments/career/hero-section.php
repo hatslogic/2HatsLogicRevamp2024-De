@@ -21,7 +21,9 @@
             <div class="col w-40 md:w-100 md:mt-40">
                 <?php $cropOptions = [
                         "fallbackimage-size" => [648,445],
-                        'fallbackimage-class'=> 'transition'
+                        'fallbackimage-class'=> 'transition',
+                        "loading" => "eager",
+                        "fetchpriority" => "high"
                     ];?>
                     <?php display_responsive_image($image['ID'],$cropOptions) ?>
                 </div>
