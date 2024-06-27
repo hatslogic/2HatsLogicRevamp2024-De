@@ -10,14 +10,14 @@
                         
                         <div class="logo flex gap-10">
                             <?php if($rating['platform']): ?>
-                                <img src="<?php echo $rating['platform']['url']; ?>" class="w-px-100" alt="<?php echo $rating['platform']['alt']; ?>" width="100" height="100">
+                                <img src="<?php echo $rating['platform']['url']; ?>" class="w-px-100" alt="<?php echo $rating['platform']['alt']; ?>" width="100" height="35">
                             <?php else: ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/google-logo.svg" class="w-px-100" alt="google" width="100" height="100">
+                                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/google-logo.svg" class="w-px-100" alt="google" width="100" height="35">
                             <?php endif; ?>
                             <?php if($rating['rating']): ?>
-                                <img src="<?php echo $rating['rating']['url'] ?>" alt="<?php echo $rating['rating']['alt'] ?>" class="w-px-80" width="100" height="100">
+                                <img src="<?php echo $rating['rating']['url'] ?>" alt="<?php echo $rating['rating']['alt'] ?>" class="w-px-80" width="80" height="35">
                             <?php else: ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/star.svg" alt="star" class="w-px-80" width="100" height="100">
+                                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/star.svg" alt="star" class="w-px-80" width="80" height="35">
                             <?php endif; ?>
                         </div>
                         <div class="label fs-20 xs:fs-14 xs:w-100">

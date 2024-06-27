@@ -4,9 +4,9 @@
     <?php if (!empty($review['rating'])): ?>    
     <div class="logo flex gap-10">
             <img src="<?php echo $review['platform']['url'] ?>" class="w-px-100" alt="google" width="100"
-                height="100">
-            <img src="<?php echo $review['rating']['url'] ?>" alt="star" class="w-px-80" width="100"
-                height="100">
+                height="35">
+            <img src="<?php echo $review['rating']['url'] ?>" alt="star" class="w-px-80" width="80"
+                height="35">
     </div>
     <?php endif; ?>
     <?php if (!empty($review['score'])): ?>
