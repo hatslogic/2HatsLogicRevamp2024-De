@@ -1,6 +1,6 @@
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.top-menu');
-const hasChild = document.querySelectorAll('.main-menu > li.has-child');
+const hasChild = document.querySelectorAll('.main-menu li.has-child a.mobile-toggle');
 
 if (menuBtn !== null) {
     menuBtn.addEventListener('click', (e) => {
@@ -19,7 +19,7 @@ if (hasChild !== null && window.matchMedia('(max-width: 1024px)').matches) {
             // Close all other submenus
             for (let j = 0; j < hasChild.length; j++) {
                 if (hasChild[j] !== hasChild[i]) { // Check to avoid toggling the same submenu twice
-                    hasChild[j].classList.remove('active');
+                    hasChild[j].parentNode.classList.remove('active');
                 }
             }
 
