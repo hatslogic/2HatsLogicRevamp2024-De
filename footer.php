@@ -199,7 +199,7 @@
                 separateDialCode: true,
                 autoHideDialCode: false,
                 preferredCountries: ['us', 'gb', 'in'],
-                initialCountry: 'in',
+                initialCountry: 'us',
             });
             });
         }
