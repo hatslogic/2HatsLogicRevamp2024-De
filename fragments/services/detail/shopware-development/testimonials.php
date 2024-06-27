@@ -46,7 +46,7 @@
 
 
                     </div>
-                    <div class="btn-wrap flex align-center justify-start mt-80 xs:mt-40">
+                    <div class="btn-wrap flex align-center justify-start mt-60 xs:mt-40">
                         <div class="slider-prev testimonial-button-prev flex align-center justify-center transition"> <i
                                 class="icomoon icon-chevron_left"></i>
 
