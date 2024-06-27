@@ -844,6 +844,9 @@ function display_responsive_image($image_id,$options) {
 	$fallbackimage_class = isset($options["fallbackimage-class"]) ? $options["fallbackimage-class"] : '';
 	$picturetag_class = isset($options["picturetag-class"]) ? $options["picturetag-class"] : '';
 	$mobile_settings = isset($options["mobile-settings"]) ? $options["mobile-settings"] : [];
+	$loading = isset($options["loading"]) ? $options["loading"] : 'lazy';
+	$fetchpriority = isset($options["fetchpriority"]) ? "fetchpriority=".$options["fetchpriority"] : '';
+	
 	$mobile_image_id = $image_id;
 	
 	if(!empty($mobile_settings) && isset($mobile_settings['image'])){
@@ -898,7 +901,7 @@ function display_responsive_image($image_id,$options) {
 		<?php endif;?>	
 			
         <!-- Fallback image -->
-        <img src="<?php echo $default_image['src']; ?>" loading="lazy" alt="<?php echo get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>" width="<?php echo $fallback_image_sizes[0]; ?>" height="<?php echo $fallback_image_sizes[1]; ?>" class="<?php echo $fallbackimage_class; ?>" >
+        <img src="<?php echo $default_image['src']; ?>" loading="<?php echo $loading; ?>"  <?php echo $fetchpriority;?> alt="<?php echo get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>" width="<?php echo $fallback_image_sizes[0]; ?>" height="<?php echo $fallback_image_sizes[1]; ?>" class="<?php echo $fallbackimage_class; ?>" >
     </picture>
     <?php
 }
