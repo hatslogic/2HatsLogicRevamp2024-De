@@ -32,9 +32,9 @@
                 <div class="col ml-100 xs:ml-0 xs:mt-60 relative">
                     <?php foreach ($items as $key => $item):
                         $formatted_key = sprintf("%02d", $key + 1);
-                        $classes = ($key == count($items) - 1) ? 'xs:pb-0' : 'xs:pb-40';
+                        $classes = ($key == count($items) - 1) ? 'pt-0 pb-0 xs:pt-0 xs:pb-0' : 'pt-0 pb-200 xs:pt-0 xs:pb-40';
                         ?>
-                        <div class="service bg-light-grey relative top-0 pt-0 xs:pt-0 pl-50 xs:pl-0 <?php echo $classes; ?>">
+                        <div class="service bg-light-grey relative top-0 pl-50 xs:pl-0 <?php echo $classes; ?>">
                             <span class="counter fs-280 xs:fs-80 font-thin relative lh-1 -mb-80 c-hash opacity-30 -left-50 -top-50 xs:-left-10 xs:-top-0"><?php echo $formatted_key ?></span>
                             <?php if ($item['title']): ?>
                                 <div class="title -mt-100 xs:mt-0">
