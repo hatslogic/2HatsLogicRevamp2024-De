@@ -1,5 +1,7 @@
 <?php extract($section); ?>
 
+<?php $rating =  get_field('reviews', 'options'); ?>
+
 <section class="hero overflow-hidden pt-60 relative">
     <div class="container relative z-1">
         <div class="flex align-start justify-between md:wrap">
