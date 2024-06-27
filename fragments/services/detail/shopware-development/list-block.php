@@ -15,10 +15,12 @@
                 <ul class="acc no-bullets fs-20 lh-1-2 mt-40 sm:fs-16">
                     <?php foreach ($lists as $key => $list): ?>
 
-                        <li class="acc-item relative block <?php if($key > 0) { echo 'mt-20 xs:mt-15'; } ?>">
+                        <li class="<?php echo ($list['list_content']) ? 'acc-item' : '' ?> relative block <?php if($key > 0) { echo 'mt-20 xs:mt-15'; } ?>">
                         <div class="acc-toggle">
                             <div class="wrap-icon fs-15 absolute left-0 top-6"> <i class="icomoon icon-add add"></i>
+                            <?php if($list['list_content']): ?>
                                 <i class="icomoon icon-remove minus"></i>
+                            <?php endif; ?>
 
                             </div> <span class="inline-block ml-30"> <?php echo $list['list_item']; ?></span>
 
