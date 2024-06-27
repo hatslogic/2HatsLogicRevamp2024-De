@@ -1,8 +1,8 @@
 $delay-step: 0.1s; // Define the step for delay
-$transform-duration: 0.6s;
-$opacity-duration: 0.5s;
+$transform-duration: 0.4s;
+$opacity-duration: 0.3s;
 $elements-count: 10;
-$traslate-y: 10px;
+$traslate-y: 5px;
 $transition-timing-function: ease-in-out;
 
 // Define the mixin to generate transition delay for nth child
@@ -39,14 +39,14 @@ $transition-timing-function: ease-in-out;
             transform: translateY($traslate-y);
 
             @for $i from 1 through $elements-count {
-                & > *{
+                & > *:not(.btn) {
                     opacity: 0;
                     transition: transform $transform-duration, opacity $opacity-duration;
                     transition-timing-function: $transition-timing-function;
                     transform: translateY($traslate-y);
                 }
 
-                & > *:nth-child(#{$i}) {
+                & > *:nth-child(#{$i}):not(.btn, picture, img) {
                     @include transition-delay($i);
                 }
             }
@@ -61,7 +61,7 @@ $transition-timing-function: ease-in-out;
                 transform: translateY(0) !important;
                 opacity: 1 !important;
 
-                & > * {
+                & > *:not(.btn, picture, img) {
                     transform: translateY(0) !important;
                     opacity: 1 !important;
                 }
