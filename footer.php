@@ -151,6 +151,13 @@
     </div>
 </footer>
 
+<?php
+get_template_part( 'template-parts/free-consultation');
+get_template_part( 'template-parts/get-a-quote');
+get_template_part( 'template-parts/hire-now');
+get_template_part( 'template-parts/contact-us-modal');
+?>
+
 <?php wp_footer(); ?>
 
 <script>

@@ -232,7 +232,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "theme-options-page"
+                "value": "footer"
             }
         ]
     ],
@@ -245,5 +245,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718896487
+    "modified": 1719484421
 }

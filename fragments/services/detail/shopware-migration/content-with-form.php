@@ -46,10 +46,15 @@
 
                         <p class="mt-30"><?php echo $description; ?></p>
                     </div>
-                    <?php if ($cta): ?>
-                    <div class="btn-group mt-40"> 
-                        <a href="<?php echo $cta['url']; ?>" class="btn btn-moonstone"><?php echo $cta['title']; ?></a>
+                    <?php if ($cta || $modal): ?>
+                    <div class="btn-group mt-40">
+                        <?php if($action == 'modal'): ?>
+                            <button onclick="openModal('<?php echo $modal['value']; ?>')" class="btn btn-moonstone"><?php echo $modal['label']; ?></a>
+                        <?php endif; ?>
 
+                        <?php if($action == 'link'): ?>
+                            <a href="<?php echo $cta['url']; ?>" class="btn btn-moonstone"><?php echo $cta['title']; ?></a>
+                        <?php endif; ?>
                     </div>
                     <?php endif; ?>
                 </div>

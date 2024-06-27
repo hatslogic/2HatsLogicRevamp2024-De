@@ -15,7 +15,4 @@ if ( get_field( 'show_callout' ) ) {
 }
 
 get_template_part('template-parts/get-started');
-get_template_part( 'template-parts/free-consultation');
-get_template_part( 'template-parts/get-a-quote');
-
 get_footer();

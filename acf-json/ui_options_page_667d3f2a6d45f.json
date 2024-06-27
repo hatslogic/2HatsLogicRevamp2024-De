@@ -1,0 +1,22 @@
+{
+    "key": "ui_options_page_667d3f2a6d45f",
+    "title": "Header",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Header",
+    "menu_slug": "header",
+    "parent_slug": "none",
+    "advanced_configuration": 0,
+    "icon_url": "",
+    "menu_title": "",
+    "position": "",
+    "redirect": 0,
+    "description": "",
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1719484333
+}

@@ -243,11 +243,11 @@
                             "new_lines": ""
                         },
                         {
-                            "key": "field_664dcb2a07863",
-                            "label": "Cta",
-                            "name": "cta",
+                            "key": "field_667d4a7442589",
+                            "label": "Action",
+                            "name": "action",
                             "aria-label": "",
-                            "type": "link",
+                            "type": "radio",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -256,7 +256,76 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "choices": {
+                                "link": "Link",
+                                "modal": "Modal"
+                            },
+                            "default_value": "link",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "layout": "horizontal",
+                            "save_other_choice": 0
+                        },
+                        {
+                            "key": "field_664dcb2a07863",
+                            "label": "Cta",
+                            "name": "cta",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_667d4a7442589",
+                                        "operator": "==",
+                                        "value": "link"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "return_format": "array"
+                        },
+                        {
+                            "key": "field_667d4a974258a",
+                            "label": "Modal",
+                            "name": "modal",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_667d4a7442589",
+                                        "operator": "==",
+                                        "value": "modal"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "get-a-quote": "Get a free quote",
+                                "free-consultation": "Free consultation",
+                                "hire-now": "Hire now",
+                                "contact-us": "Contact us"
+                            },
+                            "default_value": "get-a-quote",
+                            "return_format": "array",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
                         },
                         {
                             "key": "field_664dcf885bb7e",
@@ -2007,5 +2076,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719474114
+    "modified": 1719487230
 }

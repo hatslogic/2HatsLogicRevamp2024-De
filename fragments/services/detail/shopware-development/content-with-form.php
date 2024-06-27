@@ -48,10 +48,16 @@
                             <?php } ?>
                             <p class="mt-30"><?php echo $description; ?></p>
                         </div>
-                        <?php if ($cta): ?>
-                            <div class="btn-group mt-30"> 
-                                <a href="<?php echo $cta['url']; ?>" <?php if($cta['target']) { ?> target="_blank" <?php } ?> class="btn btn-primary"><?php echo $cta['title']; ?></a>
-                            </div>
+                        <?php if ($cta || $modal): ?>
+                        <div class="btn-group mt-40">
+                            <?php if($action == 'modal'): ?>
+                                <button onclick="openModal('<?php echo $modal['value']; ?>')" class="btn btn-moonstone"><?php echo $modal['label']; ?></a>
+                            <?php endif; ?>
+
+                            <?php if($action == 'link'): ?>
+                                <a href="<?php echo $cta['url']; ?>" class="btn btn-moonstone"><?php echo $cta['title']; ?></a>
+                            <?php endif; ?>
+                        </div>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>

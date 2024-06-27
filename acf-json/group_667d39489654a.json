@@ -1,11 +1,11 @@
 {
-    "key": "group_664c5de6e2ae4",
-    "title": "Contact us Form",
+    "key": "group_667d39489654a",
+    "title": "Contact Us (Modal)",
     "fields": [
         {
-            "key": "field_664c5de6eeec8",
-            "label": "Contact us Image",
-            "name": "contact_us_image",
+            "key": "field_667d3948a4251",
+            "label": "Contact Us Modal Image",
+            "name": "contact_us_modal_image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -28,9 +28,9 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_664c5de6eeed3",
-            "label": "Contact Us Image Mobile",
-            "name": "contact_us_mobile",
+            "key": "field_667d3948a4299",
+            "label": "Contact Us Modal Image (Mobile)",
+            "name": "contact_us_modal_image_mobile",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -53,9 +53,9 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_664c5de6eeed9",
-            "label": "Form Selector",
-            "name": "contact_form_selector",
+            "key": "field_667d3948a42dd",
+            "label": "Form Shortcode",
+            "name": "contact_us_modal_form_shortcode",
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
@@ -69,7 +69,9 @@
             "post_type": [
                 "wpcf7_contact_form"
             ],
-            "post_status": "",
+            "post_status": [
+                "publish"
+            ],
             "taxonomy": "",
             "return_format": "object",
             "multiple": 0,
@@ -77,46 +79,6 @@
             "bidirectional": 0,
             "ui": 1,
             "bidirectional_target": []
-        },
-        {
-            "key": "field_664c60f3be827",
-            "label": "Contact form Title",
-            "name": "contact_form_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_664c656a15778",
-            "label": "Contact form Description",
-            "name": "contact_form_description",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
         }
     ],
     "location": [
@@ -124,7 +86,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "footer"
+                "value": "modals"
             }
         ]
     ],
@@ -137,5 +99,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719484395
+    "modified": 1719482828
 }
