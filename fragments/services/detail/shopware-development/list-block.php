@@ -23,9 +23,11 @@
                             </div> <span class="inline-block ml-30"> <?php echo $list['list_item']; ?></span>
 
                         </div>
-                        <div class="acc-content">
-                            <p><?php echo $list['list_content']; ?></p>
-                        </div>
+                        <?php if($list['list_content']): ?>
+                            <div class="acc-content">
+                                <p><?php echo $list['list_content']; ?></p>
+                            </div>
+                        <?php endif; ?>
                     </li>
                     <?php endforeach; ?>
                 </ul>
