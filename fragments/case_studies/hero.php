@@ -10,7 +10,7 @@
                         if ($categories && !is_wp_error($categories)):
 
                         ?>
-                        <span class="headline c-primary font-bold"><?php echo esc_html($categories[0]->name); ?></span>
+                        <span class="headline block c-primary font-bold mb-10"><?php echo esc_html($categories[0]->name); ?></span>
                         <?php endif; ?>
                         <h1 class="h1-sml"><?php
                         if ($title):

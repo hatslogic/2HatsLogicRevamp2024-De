@@ -52,7 +52,7 @@
                     </div>
                     <div class="col w-40 ml-50 sm:ml-0 sm:mt-40 md:w-100">
                         <div class="title">
-                            <span class="c-primary font-bold mb-6 block fs-14">
+                            <span class="headline c-primary uppercase font-bold mb-10 block fs-14">
                                 <?php $categories = get_the_terms(get_the_ID(), 'category');
                                 if (!empty($categories) && !is_wp_error($categories)):
                                     echo esc_html($categories[0]->name);
@@ -101,7 +101,7 @@
                                     <?php display_responsive_image($placeholder_image_id,$cropOptions) ?>
                                 <?php endif; ?>
                                 <div class="info mt-30">
-                                    <span class="headline c-primary font-bold mb-6 block xs:fs-14">
+                                    <span class="headline c-primary uppercase font-bold mb-10 block fs-14">
                                         <?php $categories = get_the_terms(get_the_ID(), 'category');
                                         if (!empty($categories) && !is_wp_error($categories)) {
                                             echo esc_html($categories[0]->name);
