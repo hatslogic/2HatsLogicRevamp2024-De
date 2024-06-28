@@ -13,7 +13,9 @@
                 <div class="grid grid-2 xs:grid-1 gap-60 ml-100 xl:ml-60 md:ml-0 xl:gap-40 xs:gap-20 xs:flex xs:wrap">
                     <?php foreach ($items as $item): ?>
                         <div class="col">
-                            <a href="<?php echo ($item['link']) ? $item['link'] : '#' ?>" class="no-decoration">
+                            <?php if(!empty($item['link'])): ?>
+                                <a href="<?php echo $item['link']; ?>" class="no-decoration">
+                            <?php endif; ?>
                                 <div class="card xs:w-100 flex align-start">
                                     <?php if ($item['icon']): ?>
                                         <div class="wrap-icon min-w-px-60 xs:min-w-px-40 max-w-px-60 xs:max-w-px-40">
@@ -27,7 +29,9 @@
                                         <p class="mt-10 c-secondary"><?php echo $item['content']; ?></p>
                                     </div>
                                 </div>
-                            </a>
+                            <?php if(!empty($item['link'])): ?>
+                                </a>
+                            <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
