@@ -3,7 +3,7 @@
 <section class="online-store">
     <div class="container relative">
         <?php if ($title): ?>
-            <div class="title w-70 md:w-100">
+            <div class="title relative z-1 w-70 md:w-100">
                 <h2 class="h2"><?php echo $title; ?></h2>
             </div>
         <?php endif; ?>
@@ -32,7 +32,7 @@
             </div>
             <?php if ($background_image): ?>
                 <div class="col w-45 md:w-100 md:hidden"></div>
-                <div class="background-col absolute right-0 -right-50 md:-right-0 w-75 md:w-100 md:relative md:order-1">
+                <div class="background-col absolute z-0 right-0 -right-50 md:-right-0 w-75 md:w-100 md:relative md:order-1">
                     <?php $cropOptions = [
                         "fallbackimage-size" => [648,445],
                         "fallbackimage-class" => 'transition'
