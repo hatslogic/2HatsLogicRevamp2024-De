@@ -59,7 +59,7 @@
 		<span class="progress-bar bg-primary w-0 block" id="progress"></span>
 	</div>
 
-	<header class="header transition z-12 sticky top-0 w-100 md:bb-0 bg-white md:pb-20 md:pt-20 md:relative">
+	<header class="header transition z-12 sticky top-0 w-100 md:bb-0 bg-white md:pb-20 md:pt-20">
 		<div class="container">
 			<div class="header-inner flex w-100 justify-between align-center">
 				<a href="<?php echo home_url(); ?>" class="brand" aria-label="<?php echo get_bloginfo('name'); ?>">

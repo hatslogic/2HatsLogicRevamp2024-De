@@ -114,3 +114,11 @@ $transition-timing-function: ease-in-out;
         }
     }
 }
+
+.menu-visible{
+    overflow: hidden;
+    header{
+        transform: none !important;
+        
+    }
+}
