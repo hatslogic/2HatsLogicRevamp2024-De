@@ -67,7 +67,7 @@
                             <?php if ($review['avatar']): ?>
                                 <div
                                     class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50 over overflow-hidden">
-                                    <img src="<?php echo $review['avatar']['url']; ?>" alt="avatar" width="100" height="100">
+                                    <img src="<?php echo $review['avatar']['sizes']['img_180x180']; ?>" alt="avatar" width="100" height="100">
                                 </div>
                             <?php endif; ?>
                             <div class="author ml-20">
@@ -95,7 +95,7 @@
                             <?php if ($consultant['image']): ?>
                                 <div
                                     class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50">
-                                    <img src="<?php echo $consultant['image']['url']; ?>" alt="avatar" width="75" height="75">
+                                    <img src="<?php echo $consultant['image']['sizes']['img_180x180']; ?>" alt="avatar" width="75" height="75">
                                 </div>
                             <?php endif; ?>
                             <?php if ($consultant['name'] || $consultant['desig']): ?>
