@@ -15,11 +15,11 @@
         <?php endif; ?>
         
         <?php if ($select_members): ?>
-        <div class="content mt-60 xs:mt-30">
+        <div class="content relative mt-60 xs:mt-30">
             <div class="grid grid-6 xl:grid-4 md:grid-3 xs:grid-2 cg-10 rg-40" id="members">
                 <?php 
                 foreach ($select_members as $key => $item):
-                if($key > 23) break;
+                if($key > 35) break;
                 setup_postdata($item);
                 $formatted_key = sprintf("%02d", $key + 1);
                 $name = get_field('name', $item->ID);
@@ -52,6 +52,7 @@
                 wp_reset_postdata();
                 ?>
             </div>
+            <div class="gradient-end h-px-300 w-100 block absolute bottom-0"></div>
         </div>
         <?php endif; ?>
 
