@@ -27,7 +27,7 @@
             </div>
 
             <?php if (!empty($header['sub_title'])): ?>
-            <h3 class="h4 mt-60"><?= $header['sub_title']; ?></h3>
+            <h3 class="h4 mt-60 md:mt-30"><?= $header['sub_title']; ?></h3>
             <?php endif; ?>
             <?php if (!empty($header['content'])): ?>
             <p><?= $header['content']; ?></p>
@@ -35,7 +35,7 @@
 
             <?php if (!empty($button)): ?>
             <div class="btn-group mt-60">
-                <a href="<?= htmlspecialchars($button['url']); ?>" class="btn btn-secondary"><?= htmlspecialchars($button['title']); ?></a>
+                <a href="<?= htmlspecialchars($button['url']); ?>" target="<?php echo $button['target']; ?>" class="btn btn-secondary"><?= htmlspecialchars($button['title']); ?></a>
             </div>
             <?php endif; ?>
         </div>
