@@ -42,17 +42,14 @@
                             <?php else:
                             $placeholder_image_id = attachment_url_to_postid(get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
                             $placeholder_image_url = wp_get_attachment_image_src($placeholder_image_id, 'img_730x466')[0];
+                            
                             ?>
-                            <?php $cropOptions = [
-                                "fallbackimage-size" => [731,466],
-                                "fallbackimage-class" => "transition"
-                                ];?>
-                            <?php display_responsive_image($placeholder_image_id,$cropOptions) ?>
+                            <img src="<?php echo $placeholder_image_url;?>" alt="Featured casestudy" width="731px" height="466px" class="h-auto w-100">
                         <?php endif; ?>
                     </div>
                     <div class="col w-40 ml-50 sm:ml-0 sm:mt-40 md:w-100">
                         <div class="title">
-                            <span class="c-primary font-bold mb-6 block fs-14">
+                            <span class="headline c-primary uppercase font-bold mb-10 block fs-14">
                                 <?php $categories = get_the_terms(get_the_ID(), 'category');
                                 if (!empty($categories) && !is_wp_error($categories)):
                                     echo esc_html($categories[0]->name);
@@ -94,14 +91,10 @@
                                     $placeholder_image_id = attachment_url_to_postid(get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
                                     $placeholder_image_url = get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
                                     ?>
-                                    <?php $cropOptions = [
-                                    "fallbackimage-size" => [548,349],
-                                    "fallbackimage-class" => "transition"
-                                    ];?>
-                                    <?php display_responsive_image($placeholder_image_id,$cropOptions) ?>
+                                    <img src="<?php $placeholder_image_url?>" loading="lazy" alt="<?php the_title() ?>" width="548px" height="349px" class="transition">
                                 <?php endif; ?>
                                 <div class="info mt-30">
-                                    <span class="headline c-primary font-bold mb-6 block xs:fs-14">
+                                    <span class="headline c-primary uppercase font-bold mb-10 block fs-14">
                                         <?php $categories = get_the_terms(get_the_ID(), 'category');
                                         if (!empty($categories) && !is_wp_error($categories)) {
                                             echo esc_html($categories[0]->name);
