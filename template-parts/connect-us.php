@@ -1,6 +1,10 @@
 <?php
+
 $image_1 = get_field('image_1');
 $image_2 = get_field('image_2');
+$image_1_url = bis_get_attachment_image_src($image_1['ID'], [ 120 , 120],1);
+$image_2_url = bis_get_attachment_image_src($image_2['ID'], [ 120 , 120],1);
+
 $name_1 =  get_field('contact_one_name');
 $name_2 = get_field('contact_two_name');
 $primary_email = get_field('primary_email');
@@ -24,7 +28,7 @@ $call2 = get_field('call_two_button');
                              <div class="col w-100 xl:w-50 xs:w-100 pr-40 xl:pr-30 xs:pr-0 b-0 br-1 xs:br-0 solid bc-hash">
                                  <div class="avatar-wrap flex">
                                      <div class="img-wrap w-px-80 h-px-80 max-w-px-80 min-w-px-80 xs:w-px-60 xs:h-px-60 xs:max-w-px-60 xs:min-w-px-60">
-                                         <img src="<?php echo $image_1['url'] ?>" alt="<?php echo $name_1 ?>" width="80" height="80">
+                                         <img src="<?php echo $image_1_url['src']; ?>" alt="<?php echo $name_1 ?>" width="80" height="80">
                                      </div>
                                      <div class="author ml-20">
                                          <div class="author-name fs-18 font-bold fs-20"><?php echo $name_1 ?></div> <span class="designation font-regular fs-15 lh-1-35 mt-8 inline-block"><?php echo $desig1; ?><br> <small><?php echo $loc1; ?>&period;</small></span>
@@ -41,7 +45,7 @@ $call2 = get_field('call_two_button');
                              <div class="col w-100 xl:w-50 xs:w-100 pl-40 xl:pl-30 xs:pl-0 md:mt-30 xs:mt-20 pr-40 xl:pr-20 xs:pr-0 xs:pt-20 b-0 br-1 xs:br-0 md:br-0 solid bc-hash">
                                  <div class="avatar-wrap flex">
                                      <div class="img-wrap w-px-80 h-px-80 max-w-px-80 min-w-px-80 xs:w-px-60 xs:h-px-60 xs:max-w-px-60 xs:min-w-px-60">
-                                         <img src="<?php echo $image_2['url'] ?>" alt="<?php echo $name_2 ?>" width="80" height="80">
+                                         <img src="<?php echo $image_2_url['src']; ?>" alt="<?php echo $name_2 ?>" width="80" height="80">
                                      </div>
                                      <div class="author ml-20">
                                          <div class="author-name fs-18 font-bold fs-20"><?php echo $name_2 ?></div> <span class="designation font-regular fs-15 lh-1-35 mt-8 inline-block"><?php echo $desig2; ?><br> <small><?php echo $loc2; ?>&period;</small></span>

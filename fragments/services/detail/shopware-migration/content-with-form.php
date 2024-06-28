@@ -71,7 +71,7 @@
                             <?php if ($consultant['image']): ?>
                                 <div
                                     class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50">
-                                    <img src="<?php echo $consultant['image']['url']; ?>" alt="consultant" width="75"
+                                    <img src="<?php echo $consultant['image']['sizes']['img_180x180']; ?>" alt="consultant" width="75"
                                         height="75">
                                 </div>
                             <?php endif; ?>
