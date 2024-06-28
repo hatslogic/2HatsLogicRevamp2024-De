@@ -140,7 +140,7 @@ $get_started = get_field('section_get_started');
             <?php if($backgroundImage): ?>
               <?php $cropOptions = [
                 "fallbackimage-size" => [873,873],
-                  "fallbackimage-class" => "shape w-100 absolute top-0",
+                  "fallbackimage-class" => "shape w-100 absolute -top-10",
                   "picturetag-class" => ""
                   ];?>
               <?php display_responsive_image($backgroundImage['ID'],$cropOptions) ?>
