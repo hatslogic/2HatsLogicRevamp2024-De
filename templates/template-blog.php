@@ -171,8 +171,6 @@ get_header();
                 class="shape w-100" alt="shopware" width="100" height="100">
         </div>
     </section>
-
-    <?php get_template_part('template-parts/blockquote'); ?>
     <?php get_template_part('template-parts/newsletter-form'); ?>
 
 </main>
