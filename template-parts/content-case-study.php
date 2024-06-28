@@ -127,6 +127,6 @@
     <div class="bg-shape absolute z-0 right-0 top-0 w-60 md:w-80">
         <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg.jpg"
             srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg2x.jpg 2x"
-            class="shape w-100" alt="shopware" width="100" height="100">
+            class="shape w-100" loading="eager" fetchpriority="high" alt="shopware" width="100" height="100">
     </div>
 </section>

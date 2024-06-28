@@ -859,8 +859,9 @@ function display_responsive_image($image_id,$options) {
 	$fallback_image_sizes = isset($options["fallbackimage-size"]) ? $options["fallbackimage-size"] : [$width,$height];
     // Mobile images
     $mobile_1x = bis_get_attachment_image_src($mobile_image_id, [ 480 ,round(480 / $mobile_aspect_ratio)],1);
-    $mobile_2x = bis_get_attachment_image_src($mobile_image_id, [ 960 ,round(960 / $mobile_aspect_ratio)],1);
-    // Tablet images
+    $mobile_2x = bis_get_attachment_image_src($mobile_image_id, [ 768 ,round(768 / $mobile_aspect_ratio)],1);
+    
+	// Tablet images
     $tablet_1x = bis_get_attachment_image_src($image_id, [ 768 ,round(768 / $aspect_ratio)],1);
     $tablet_2x = bis_get_attachment_image_src($image_id, [ 1536 ,round(1536 / $aspect_ratio)],1);
 
