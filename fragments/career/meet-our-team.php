@@ -53,7 +53,7 @@ foreach($album as $key => $image){
                     </div>
                     <div class="album">
 
-                        <a href="<?php echo $see_more ? $see_more['url'] : "#" ?>" class="w-100 h-100 relative">
+                        <a href="<?php echo $see_more ? $see_more['url'] : "#" ?>" target="<?php echo $see_more ? $see_more['target'] : "_self" ?>"  class="w-100 h-100 relative">
 
                             <div
                                 class="overlay absolute z-2 h-100 w-100 c-white flex column gap-10 align-center justify-center">

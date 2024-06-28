@@ -56,7 +56,7 @@ foreach ($images as $key => $item){
                     </div>
                     <div class="album">
 
-                        <a href="<?php echo $button ? $button['url'] : "#" ?>" target="<?php echo $button['target']; ?>"class="w-100 h-100 relative">
+                        <a href="<?php echo $button ? $button['url'] : "#" ?>" target="<?php echo $button ? $button['target'] : "_self" ?>" class="w-100 h-100 relative">
 
                             <div
                                 class="overlay absolute z-2 h-100 w-100 c-white flex column gap-10 align-center justify-center">
