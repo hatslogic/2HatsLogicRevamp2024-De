@@ -11,7 +11,7 @@ $form_shortcode = get_field('get_a_quote_form_shortcode', 'option');
                 <button class="btn btn-secondary absolute xs:fixed z-1 top-0 right-0 close" onclick="closeModal('get-a-quote')">
                     <i class="icomoon icon-close"></i>
                 </button>
-                <div class="col w-50 h-100 xs:w-100 xs:h-40 md:hidden xs:visible">
+                <div class="col w-50 h-100 xs:w-100 xs:h-50 md:hidden xs:visible">
                     <?php if($get_a_quote_image && $get_a_quote_image_mobile): ?>
                     <?php $cropOptions = [
                     "fallbackimage-size" => [800,540],
