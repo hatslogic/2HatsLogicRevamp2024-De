@@ -457,6 +457,26 @@
                             ]
                         },
                         {
+                            "key": "field_664798d92771e",
+                            "label": "Top Content",
+                            "name": "content",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
                             "key": "field_66823df9029e5",
                             "label": "List",
                             "name": "list",
@@ -501,9 +521,9 @@
                             ]
                         },
                         {
-                            "key": "field_664798d92771e",
-                            "label": "Content",
-                            "name": "content",
+                            "key": "field_668247cb2a54b",
+                            "label": "Bottom Content",
+                            "name": "bottom_content",
                             "aria-label": "",
                             "type": "textarea",
                             "instructions": "",
@@ -903,7 +923,7 @@
                         },
                         {
                             "key": "field_66479c238d985",
-                            "label": "Content",
+                            "label": "Top Content",
                             "name": "content",
                             "aria-label": "",
                             "type": "textarea",
@@ -964,6 +984,26 @@
                                     "parent_repeater": "field_66823e1e029e7"
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_668247ab2a54a",
+                            "label": "Bottom Content",
+                            "name": "bottom_content",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "placeholder": "",
+                            "new_lines": ""
                         },
                         {
                             "key": "field_66479c238d987",
@@ -1060,7 +1100,7 @@
                         },
                         {
                             "key": "field_6648368da2345",
-                            "label": "Content",
+                            "label": "Top Content",
                             "name": "content",
                             "aria-label": "",
                             "type": "textarea",
@@ -1123,6 +1163,26 @@
                             ]
                         },
                         {
+                            "key": "field_6682477b2a548",
+                            "label": "Bottom Content",
+                            "name": "bottom_content",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
                             "key": "field_6648369da2347",
                             "label": "CTA",
                             "name": "cta",
@@ -1166,5 +1226,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719811671
+    "modified": 1719814187
 }

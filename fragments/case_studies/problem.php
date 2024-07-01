@@ -18,6 +18,9 @@
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
+            <?php if ($bottom_content): ?>
+                <p><?php echo $bottom_content; ?></p>
+            <?php endif; ?>
             <?php if ($images['image_1'] || $images['image_2']): ?>
             <div class="grid grid-2 gap-20 mt-60 xs:flex xs:wrap">
                 <?php if ($images['image_1']): ?>
