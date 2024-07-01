@@ -151,7 +151,7 @@ $transition-timing-function: ease-in-out;
 
 .menu-overlay{
     height: 100vh;
-    backdrop-filter: blur(rem(10));
+    backdrop-filter: blur(rem(6));
     background-color: rgba(0, 0, 0, 0.15);
     visibility: hidden;
     opacity: 0;
