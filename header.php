@@ -39,16 +39,16 @@
 		//Schema code
 		$schemaCode = '';
 		if (get_field('schema_code', get_the_ID())) {
-			$schemaCode = get_field('schema_code', get_the_ID());
+			$schemaCode = get_field('schema_code', get_the_ID(), false, false);
 		}
 		if (get_field('schema', get_the_ID())) {
-			$schemaCode = get_field('schema', get_the_ID());
+			$schemaCode = get_field('schema', get_the_ID(), false, false);
 		}
 		echo $schemaCode;
 
 		// Page specific hreflang
 		if (get_field('hreflang', get_the_ID())) {
-			echo get_field('hreflang', get_the_ID());
+			echo get_field('hreflang', get_the_ID(), false, false);
 		}
 	}
 	?>
