@@ -19,6 +19,9 @@
                     <?php endforeach; ?>
                 </ul>
                 <?php endif; ?>
+                <?php if ($bottom_content): ?>
+                <p><?php echo $bottom_content; ?></p>
+                <?php endif; ?>
                 <?php if ($cta): ?>
                     <div class="btn-group flex justify-center mt-60">
                         <a href="<?php echo $cta['url'] ?>" target="<?php echo $cta['target'] ?>" class="btn btn-secondary"><?php echo $cta['title'] ?></a>
