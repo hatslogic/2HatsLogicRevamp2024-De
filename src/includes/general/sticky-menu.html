@@ -16,3 +16,25 @@
     </ul>
 </div>
 -->
+
+<button onclick="openModal('free-consultation')"
+  class="bubble-menu b-0 bg-transparent p-0 hidden md:block transition fixed right-20 bottom-30 z-10"
+  aria-label="free consultation">
+  <div
+    class="inner p-7 flex align-center justify-center relative text-center shadow z-1 column radius-50 h-px-80  w-px-80 c-white bg-primary">
+    <i class="icomoon icon-chat fs-24 absolute z-1 h-100 w-100 flex align-center justify-center"></i>
+    <svg viewBox="0 0 100 100" class="rotating uppercase" xmlns="http://www.w3.org/2000/svg">
+      <path id="circlePath" d="
+            M 10, 50
+            a 40,40 0 1,1 80,0
+            40,40 0 1,1 -80,0
+            " fill="none" />
+      <text class="fs-15 font-bold" fill="currentColor">
+        <textPath href="#circlePath" textLength="255">Get a free Consultation! &nbsp; * &nbsp;</textPath>
+      </text>
+    </svg>
+  </div>
+  <div class="bubble-overlay absolute top-0 bottom-0 left-0 right-0 z-0 radius-50 block h-100 w-100"></div>
+  <div class="bubble-overlay-2 absolute top-0 bottom-0 left-0 right-0 z-0 radius-50 block h-100 w-100"></div>
+  <div class="bubble-overlay-3 absolute top-0 bottom-0 left-0 right-0 z-0 radius-50 block h-100 w-100"></div>
+</button>

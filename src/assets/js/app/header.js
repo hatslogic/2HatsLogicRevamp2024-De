@@ -14,6 +14,7 @@ let lastScrollPosition = 0;
 
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
+  const body = document.querySelector('body');
   const currentScrollPosition = window.scrollY;
 
   if (currentScrollPosition > 100) {
@@ -30,6 +31,16 @@ window.addEventListener('scroll', function() {
     // If we are within the first 150px of scrolling, ensure the header is in its original state
     header.classList.remove('move-to-out');
     header.classList.remove('move-to-in');
+  }
+
+  if (currentScrollPosition > 0) {
+    if (currentScrollPosition > lastScrollPosition) {
+      // Scrolling down
+      body.classList.add('clear-scroll');
+    } else if (currentScrollPosition < lastScrollPosition) {
+      // Scrolling up
+      body.classList.remove('clear-scroll');
+    }
   }
 
   lastScrollPosition = currentScrollPosition;
