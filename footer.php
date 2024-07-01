@@ -150,6 +150,7 @@
     </div>
     </div>
 </footer>
+<div class="menu-overlay transition fixed top-0 bottom-0 left-0 right-0 z-1 md:hidden"></div>
 
 <?php
 get_template_part( 'template-parts/free-consultation');

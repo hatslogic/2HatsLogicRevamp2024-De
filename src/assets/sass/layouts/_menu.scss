@@ -23,9 +23,17 @@ $transition-timing-function: ease-in-out;
                 border-color: transparent;
             }
             & > ul{
-                box-shadow: 0px 8px 8px rgba(0,0,0,.05);
+                box-shadow: 0px rem(8) rem(8) rgba(0,0,0,.05);
                 visibility: hidden;
                 opacity: 0;
+            }
+            &.compact{
+                & > ul{
+                    box-shadow: none;
+                    & > .container{
+                        box-shadow: 0rem 5rem 50rem rgba(0,0,0,.35);
+                    }
+                }
             }
             &.active, &:hover{
                 & > a{
@@ -135,8 +143,21 @@ $transition-timing-function: ease-in-out;
             left: rem(60);
             top: rem(10);
             display: block;
-            margin-left: rem(-20);
+            margin-left: rem(-10);
             z-index: 0;
         }
     }
+}
+
+.menu-overlay{
+    height: 100vh;
+    backdrop-filter: blur(rem(2));
+    background-color: rgba(0, 0, 0, 0.15);
+    visibility: hidden;
+    opacity: 0;
+    
+	&.active {
+	    opacity: 1;
+	    visibility: visible;
+	}
 }

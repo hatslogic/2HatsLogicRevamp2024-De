@@ -2,6 +2,8 @@ const body = document.querySelector('body');
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.top-menu');
 const hasChild = document.querySelectorAll('.main-menu li.has-child a.mobile-toggle');
+const menuHasChildEl = document.querySelectorAll('.main-menu>li.has-child');
+const menuOverlay = document.querySelector('.menu-overlay');
 
 if (menuBtn !== null) {
     menuBtn.addEventListener('click', (e) => {
@@ -39,4 +41,16 @@ function closeMenu() {
     for (let i = 0; i < hasChild.length; i++) {
         hasChild[i].classList.remove('active');
     }
+}
+
+if (menuHasChildEl !== null && window.matchMedia('(min-width: 1025px)').matches) {
+    menuHasChildEl.forEach((el) => {
+        // on hover add class on menuOverlay, remove on hoverout
+        el.addEventListener('mouseover', () => {
+            menuOverlay.classList.add('active');
+        });
+        el.addEventListener('mouseout', () => {
+            menuOverlay.classList.remove('active');
+        });
+    });
 }
