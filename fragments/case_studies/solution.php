@@ -17,6 +17,9 @@
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
+            <?php if ($bottom_content): ?>
+            <p><?php echo $bottom_content; ?></p>
+            <?php endif; ?>
             <?php if($image): ?>
             <div class="banner-wrap mt-40">
                 
