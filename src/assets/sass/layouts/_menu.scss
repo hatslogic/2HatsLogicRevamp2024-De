@@ -119,6 +119,24 @@ $transition-timing-function: ease-in-out;
     overflow: hidden;
     header{
         transform: none !important;
-        
+    }
+}
+
+.arrow-top{
+    @include above($md){
+        &:before {
+            content: "";
+            position: absolute;
+            height: 0;
+            border-style: solid;
+            border-width: 1.25rem 1.25rem 0 0;
+            border-color: var(--c-white) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+            transform: rotate(45deg);
+            left: rem(60);
+            top: rem(10);
+            display: block;
+            margin-left: rem(-20);
+            z-index: 0;
+        }
     }
 }
