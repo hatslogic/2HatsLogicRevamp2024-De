@@ -24,6 +24,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_6683aaf07d207",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_664dcb3e07864",
                             "label": "Content",
                             "name": "",
@@ -488,6 +508,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_6683ab147d208",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_664e15ae35bfc",
                             "label": "Content",
                             "name": "content",
@@ -580,6 +620,26 @@
                     "label": "Icon Grid with Cta Block",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_6683ab307d209",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
                         {
                             "key": "field_664dcd130786f",
                             "label": "Title",
@@ -794,6 +854,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_6683ab4f7d20a",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_664dcdfe5bb75",
                             "label": "Image",
                             "name": "image",
@@ -913,6 +993,26 @@
                     "label": "Post Selector",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_6683ab757d20b",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
                         {
                             "key": "field_664dce875bb7c",
                             "label": "Headline",
@@ -1048,6 +1148,26 @@
                     "label": "Content with Plugin Slider",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_6683ab9e7d20c",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
                         {
                             "key": "field_664dd04b5bb89",
                             "label": "Title",
@@ -1331,6 +1451,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_6683abc07d20d",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_664dd20e5bb9d",
                             "label": "Title",
                             "name": "title",
@@ -1467,6 +1607,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_6683abf0cbb58",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_664dd19f5bb97",
                             "label": "Faq Title",
                             "name": "faq_title",
@@ -1562,6 +1722,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_6683ac0ccbb59",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_664ef05adfe0f",
                             "label": "Title",
                             "name": "title",
@@ -1622,6 +1802,26 @@
                     "label": "Three Col Grid Layout",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_6683ac30cbb5a",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
                         {
                             "key": "field_664ef6f831c89",
                             "label": "Title",
@@ -1738,6 +1938,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_6683ac4ccbb5b",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_66717c413f773",
                             "label": "Title",
                             "name": "title",
@@ -1798,6 +2018,26 @@
                     "label": "Blog Post Selector",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_6683ac6ecbb5c",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
                         {
                             "key": "field_664ef91c3880e",
                             "label": "Headline",
@@ -1970,5 +2210,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719487230
+    "modified": 1719905413
 }

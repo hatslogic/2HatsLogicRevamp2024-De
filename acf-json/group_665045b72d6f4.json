@@ -24,6 +24,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_66839a81c369c",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_665045b741853",
                             "label": "Content",
                             "name": "",
@@ -367,6 +387,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_66839ac3c369d",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_66504f94d11aa",
                             "label": "Items",
                             "name": "items",
@@ -463,6 +503,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_66839cc9c369e",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_665055567799a",
                             "label": "Title",
                             "name": "title",
@@ -556,6 +616,26 @@
                     "label": "Grid Layout with Icons",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_66839cf6218cd",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
                         {
                             "key": "field_665045b7418a8",
                             "label": "Title",
@@ -697,6 +777,26 @@
                     "label": "Pricing Package",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_66839d1c218ce",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
                         {
                             "key": "field_665063a848ee5",
                             "label": "Title",
@@ -851,6 +951,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_66839d44218cf",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_66506be39e860",
                             "label": "Title",
                             "name": "title",
@@ -945,6 +1065,26 @@
                     "label": "Three Column Content",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_66839d64218d0",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
                         {
                             "key": "field_665045b741894",
                             "label": "Title",
@@ -1041,6 +1181,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_66839db81cf15",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_66508012e850b",
                             "label": "Title",
                             "name": "title",
@@ -1115,6 +1275,26 @@
                     "label": "Hiring Process",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_66839de31595c",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
                         {
                             "key": "field_665045b74188c",
                             "label": "Title",
@@ -1268,6 +1448,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_66839e481595d",
+                            "label": "Enable Grey Backround",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_66508dbec6af0",
                             "label": "Title",
                             "name": "title",
@@ -1404,6 +1604,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_66839e6c1595e",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_665045b7418c2",
                             "label": "Faq Title",
                             "name": "faq_title",
@@ -1499,6 +1719,26 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_66839e901595f",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_66717c6b6fbcc",
                             "label": "Title",
                             "name": "title",
@@ -1559,6 +1799,26 @@
                     "label": "Blog Post Selector",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_66839eb415960",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
                         {
                             "key": "field_665045b7418c8",
                             "label": "Headline",
@@ -1731,5 +1991,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719487783
+    "modified": 1719902041
 }
