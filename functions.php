@@ -514,7 +514,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
         // $output .= "$indent\t</li>\n";
         // $output .= "$indent</div></ul>\n";
 
-		$blog_url = home_url().'/blogs';
+		$blog_url = home_url().'/blog';
 		$contact_url = home_url().'/contact';
 
 		if ($depth === 0) {

@@ -46,7 +46,7 @@
                             <h1 class="h1-sml"><?php echo $headline['heading']; ?></h1>
                             <?php } ?>
                             <?php if($headline['sub_heading']){ ?>
-                                <h2 class="h3 mt-15 xs:fs-12"><?php echo $headline['sub_heading']; ?></h2>
+                                <h2 class="h3 mt-15 xs:fs-20"><?php echo $headline['sub_heading']; ?></h2>
                             <?php } ?>
                             <p class="mt-30"><?php echo $description; ?></p>
                         </div>
@@ -65,7 +65,7 @@
                 <?php endif; ?>
                 <?php if ($review['review']): ?>
                     <div class="review-block mt-40 xs:mt-30 flex gap-20 w-100 xs:wrap xs:w-100">
-                        <div class="avatar-wrap flex align-center mt-30 align-center w-px-300 md:w-100">
+                        <div class="avatar-wrap flex align-center mt-30 w-px-300 md:w-100">
                             <?php if ($review['avatar']): ?>
                                 <div
                                     class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50 over overflow-hidden">

@@ -1,8 +1,8 @@
-$delay-step: 0.1s; // Define the step for delay
-$transform-duration: 0.4s;
-$opacity-duration: 0.3s;
+$delay-step: 0.085s; // Define the step for delay
+$transform-duration: 0.5s;
+$opacity-duration: 0.5s;
 $elements-count: 10;
-$traslate-y: 5px;
+$traslate-y: 10px;
 $transition-timing-function: ease-in-out;
 
 // Define the mixin to generate transition delay for nth child

@@ -14,7 +14,6 @@ let lastScrollPosition = 0;
 
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
-  const body = document.querySelector('body');
   const currentScrollPosition = window.scrollY;
 
   if (currentScrollPosition > 100) {

@@ -383,3 +383,10 @@ mark {
 .gradient-end{
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
 }
+
+.disable-scroll{
+  overflow: hidden;
+  header{
+      transform: none !important;
+  }
+}

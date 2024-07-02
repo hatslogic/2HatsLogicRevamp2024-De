@@ -15,6 +15,7 @@ $transition-timing-function: ease-in-out;
     a{
         text-decoration: none;
         color: var(--c-secondary);
+        transition: 0.25s all;
     }
 
     @include above($md){
@@ -35,20 +36,16 @@ $transition-timing-function: ease-in-out;
                     }
                 }
             }
-            &.active, &:hover{
+            &:hover{
+                a{
+                    &:hover{
+                        color: var(--c-primary);
+                    }
+                }
+            }
+            &.active, &:not(.has-child):hover{
                 & > a{
                     border-color: var(--c-primary);
-                    color: var(--c-primary);
-                }
-                & > ul{
-                    // visibility: visible;
-                    // opacity: 1;
-
-                    a{
-                        &:hover{
-                            color: var(--c-primary);
-                        }
-                    }
                 }
             }
             &:hover{
@@ -123,13 +120,6 @@ $transition-timing-function: ease-in-out;
     }
 }
 
-.menu-visible{
-    overflow: hidden;
-    header{
-        transform: none !important;
-    }
-}
-
 .arrow-top{
     @include above($md){
         &:before {
@@ -149,7 +139,7 @@ $transition-timing-function: ease-in-out;
     }
 }
 
-.menu-overlay{
+.overlay{
     height: 100vh;
     backdrop-filter: blur(rem(6));
     background-color: rgba(0, 0, 0, 0.15);
