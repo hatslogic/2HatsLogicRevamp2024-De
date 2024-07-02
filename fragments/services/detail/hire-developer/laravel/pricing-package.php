@@ -1,7 +1,7 @@
 <?php extract($section); ?>
-
+<?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white'; ?>
 <?php if ($items): ?>
-    <section class="pricing-packages <?php if($bg_enabled) : ?>bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80<?php endif; ?>">
+    <section class="pricing-packages <?php echo $bg_class; ?>">
         <div class="container">
             <div class="title w-70 xl:w-100">
                 <h2><?php echo $title ?></h2>

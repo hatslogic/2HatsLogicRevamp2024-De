@@ -1,5 +1,5 @@
 <?php extract($section); ?>
-<?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : ''; ?>
+<?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white'; ?>
 <?php if ($posts): ?>
     <section class="journal <?php echo $bg_class; ?> ">
         <div class="container">

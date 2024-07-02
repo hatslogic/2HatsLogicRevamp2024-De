@@ -1,7 +1,7 @@
 <?php extract($section); ?>
-
+<?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white'; ?>
 <?php if ($items): ?>
-    <section class="why-select <?php if($bg_enabled): ?> bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80<?php else: ?>  bg-white <?php endif;?>">
+    <section class="why-select <?php echo $bg_class;?>">
         <div class="container">
             <?php if ($title): ?>
             <div class="title w-70 md:w-100">
