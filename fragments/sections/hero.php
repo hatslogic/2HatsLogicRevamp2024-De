@@ -30,7 +30,7 @@
                                 <?php foreach ($rating['items'] as $item): ?>
                                     <a href="<?php echo $item['url']; ?>" aria-label="<?php echo $item['logo']['alt']; ?>"
                                         target="_blank" rel="noopener" class="rating-item flex align-center justify-center nowrap">
-                                        <img src="<?php echo $item['logo']['url']; ?>" alt="<?php echo $item['logo']['alt']; ?>" class="md:max-w-px-80" width="120" height="60">
+                                        <img src="<?php echo $item['logo']['url']; ?>" alt="<?php echo $item['logo']['alt']; ?>" fetchpriority="high" class="md:max-w-px-80" width="120" height="60">
                                     </a>
                                 <?php endforeach; ?>
                             </div>

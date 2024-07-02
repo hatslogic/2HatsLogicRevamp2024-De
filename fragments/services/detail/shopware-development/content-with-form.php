@@ -82,7 +82,7 @@
                             </div>
                         </div>
                         <div class="rewiew-wrap w-80 xs:w-100 xs:mt-10 px-20 py-0 bg-light-blue">
-                            <p class="fs-20 xs:fs-16 c-primary"><?php echo $review['review']; ?></p>
+                            <p class="fs-18 xs:fs-16 c-primary"><?php echo $review['review']; ?></p>
                         </div>
                     </div>
                 <?php endif; ?>
