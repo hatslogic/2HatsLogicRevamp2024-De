@@ -32,7 +32,7 @@ $transition-timing-function: ease-in-out;
             }
         }
 
-        .caption, .title, .content{
+        .caption, .title, .content, .headline{
             opacity: 0;
             transition: transform $transform-duration, opacity $opacity-duration;
             transition-timing-function: $transition-timing-function;
@@ -57,7 +57,7 @@ $transition-timing-function: ease-in-out;
                 opacity: 1;
             }
 
-            .caption, .title, .content{
+            .caption, .title, .content, .headline{
                 transform: translateY(0) !important;
                 opacity: 1 !important;
 

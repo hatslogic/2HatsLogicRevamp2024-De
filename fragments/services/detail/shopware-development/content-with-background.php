@@ -9,7 +9,7 @@
         <?php endif; ?>
         <div class="flex align-center gap-80 md:gap-40 md:wrap">
             <div class="col w-55 md:w-100 relative z-1 md:order-2">
-                <div class="about-header">
+                <div class="headline">
                     <?php if ($repeated_content || $button['url']): ?>
                         <div class="content">
                             <?php if ($repeated_content): ?>
