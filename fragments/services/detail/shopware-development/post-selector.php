@@ -1,7 +1,7 @@
 <?php extract($section); ?>
 
-
-<section class="works">
+<?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white '; ?>
+<section class="works <?php $bg_class; ?>">
     <div class="container">
         <div class="title"> <span class="headline c-primary font-bold"><?php echo $headline['sub_title']; ?></span>
 

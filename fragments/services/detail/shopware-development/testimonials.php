@@ -1,6 +1,7 @@
 <?php extract($section); ?>
+<?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white '; ?>
 <?php if ($posts): ?>
-    <section class="testimonials pt-100 pb-100 xs:pt-80 xs:pb-80 bg-white">
+    <section class="testimonials <?php echo $bg_class;?>">
         <div class="container extend">
             <?php if ($title): ?>
                 <div class="title">

@@ -1,6 +1,7 @@
 <?php extract($section); ?>
+<?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white '; ?>
 <?php if ($items): ?>
-    <section class="should-you-migrate-to-sw6 bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80">
+    <section class="should-you-migrate-to-sw6 <?php echo $bg_class;?>">
         <div class="container">
             <div class="title">
                 <h2><?php echo $title; ?></h2>

@@ -1,6 +1,6 @@
 <?php extract($section); ?>
-
-<section class="expert-service">
+<?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white '; ?>
+<section class="expert-service <?php echo $bg_class;?>">
     <div class="container">
         <?php if ($title || $description): ?>
             <div class="title w-70 xl:w-100">

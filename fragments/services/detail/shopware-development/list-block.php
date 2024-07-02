@@ -1,6 +1,6 @@
 <?php extract($section); ?>
-
-<section class="official-shopware-partner pt-100 pb-100 xs:pt-80 xs:pb-80 bg-light-grey">
+<?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white '; ?>
+<section class="official-shopware-partner <?php $bg_class; ?>">
     <div class="container">
         <div class="flex justify-between align-center md:wrap max-w-80 md:max-w-100 mx-auto md:mx-0">
             <div class="col w-20 md:w-100"> <a href="https://shopware.com" target="_blank">
