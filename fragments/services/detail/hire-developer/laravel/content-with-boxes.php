@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 <?php if (!empty($boxes)): ?>
-    <section class="developer-from-india bg-light-grey c-secondary pt-100 pb-100 xs:pt-80 xs:pb-80">
+    <section class="developer-from-india <?php if($bg_enabled) : ?>bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80<?php endif; ?> c-secondary ">
         <div class="container">
             <div class="title">
                 <h2><?php echo $title ?></h2>

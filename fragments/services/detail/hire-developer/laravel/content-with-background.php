@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 
-<section class="we-help-develop bg-light-grey c-secondary pt-100 pb-100 xs:pt-80 xs:pb-80 relative">
+<section class="we-help-develop <?php if($bg_enabled) : ?>bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80<?php endif; ?> c-secondary relative">
     <img src="<?php echo $image['url']; ?>" alt="bg" height="100" width="100" fetchpriority="high"
         class="absolute z-0 inset-0 ml-auto my-auto mr-0 w-auto max-h-90 max-w-90 xs:hidden">
     <div class="container">

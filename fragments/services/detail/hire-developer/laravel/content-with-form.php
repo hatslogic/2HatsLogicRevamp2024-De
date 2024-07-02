@@ -2,7 +2,7 @@
 
 <?php $rating =  get_field('reviews', 'options'); ?>
 
-<section class="hero overflow-hidden pt-60 relative">
+<section class="hero overflow-hidden pt-60 relative <?php if($bg_enabled) : ?>bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80<?php endif; ?>">
     <div class="container relative z-1">
         <div class="flex align-start justify-between md:wrap">
             <div class="col w-50 md:w-100">

@@ -1,7 +1,7 @@
 <?php extract($section); ?>
-
+<?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : ''; ?>
 <?php if ($posts): ?>
-    <section class="journal">
+    <section class="journal <?php echo $bg_class; ?> ">
         <div class="container">
             <?php if ($headline['title']): ?>
                 <div class="title"> <span class="headline c-primary font-bold"><?php echo $headline['sub_title']; ?></span>

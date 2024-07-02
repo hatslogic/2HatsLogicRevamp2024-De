@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 
-<section class="related-services">
+<section class="related-services <?php if($bg_enabled) : ?>bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80<?php endif; ?>">
     <div class="container">
         <?php if($title): ?>
         <div class="title">
