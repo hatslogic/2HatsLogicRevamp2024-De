@@ -20,6 +20,11 @@ $transition-timing-function: ease-in-out;
 
     @include above($md){
         & > li{
+            a{
+                &:hover{
+                    color: var(--c-primary);
+                }
+            }
             & > a{
                 border-color: transparent;
             }
@@ -32,15 +37,13 @@ $transition-timing-function: ease-in-out;
                 & > ul{
                     box-shadow: none;
                     & > .container{
-                        box-shadow: 0rem 5rem 50rem rgba(0,0,0,.35);
+                        box-shadow: 0px rem(8) rem(8) rgba(0,0,0,.05);
                     }
                 }
             }
             &:hover{
-                a{
-                    &:hover{
-                        color: var(--c-primary);
-                    }
+                & > a{
+                    color: var(--c-primary);
                 }
             }
             &.active, &:not(.has-child):hover{
@@ -49,6 +52,9 @@ $transition-timing-function: ease-in-out;
                 }
             }
             &:hover{
+                & > a{
+                    color: var(--c-primary);
+                }
                 & > ul{
                     visibility: visible;
                     opacity: 1;
@@ -137,17 +143,4 @@ $transition-timing-function: ease-in-out;
             z-index: 0;
         }
     }
-}
-
-.overlay{
-    height: 100vh;
-    backdrop-filter: blur(rem(6));
-    background-color: rgba(0, 0, 0, 0.15);
-    visibility: hidden;
-    opacity: 0;
-    
-	&.active {
-	    opacity: 1;
-	    visibility: visible;
-	}
 }

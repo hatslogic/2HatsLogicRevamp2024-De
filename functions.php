@@ -11,7 +11,7 @@ define('APP_THEME_DIR', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '12.12.12');
+	define('_S_VERSION', 'dev.clear.cache');
 }
 
 
@@ -469,7 +469,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 			}
 
 			if ($is_compact) {
-				$a_classes = 'inline-block font-regular w-100';
+				$a_classes = 'inline-block font-bold w-100';
 			} else {
 				$a_classes = 'h4 inline-block font-bold b-0 bb-1 bc-hash solid pb-20 md:bb-0 md:pb-0';
 			}
@@ -493,7 +493,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 
         $output .= $item->title;
 		if($depth === 1) {
-        	$output .= '<span class="block fs-14 c-grey">'.$item->description.'</span>';
+        	$output .= '<span class="block fs-14 c-grey font-regular">'.$item->description.'</span>';
 		}
 
         if ($item->url && $item->url != '#') {
