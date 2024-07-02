@@ -1,7 +1,7 @@
 <?php extract($section); ?>
 
 <?php if ($items): ?>
-    <section class="hire-items <?php if($bg_enabled) : ?>bg-light-grey<?php endif; ?> pt-100 pb-100 xs:pt-80 xs:pb-80">
+    <section class="hire-items <?php if($bg_enabled) : ?>bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80<?php endif; ?>">
         <div class="container">
             <div class="title">
                 <h2><?php echo $title; ?></h2>

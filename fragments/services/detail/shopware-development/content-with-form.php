@@ -41,7 +41,7 @@
 
                 <?php if ($headline['heading'] || $description): ?>
                     <div class="service-header mt-30">
-                        <div class="title">
+                        <div class="headline">
                         <?php if($headline['heading']){ ?>
                             <h1 class="h1-sml"><?php echo $headline['heading']; ?></h1>
                             <?php } ?>

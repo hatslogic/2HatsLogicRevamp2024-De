@@ -43,7 +43,7 @@
                     <div class="service-logo max-w-px-150 max-h-px-60 mt-20 mb-20">
                         <img src="<?php echo $logo['url']; ?>" alt="shopware" width="100" height="100">
                     </div>
-                    <div class="title">
+                    <div class="headline">
                         <h1 class="h1-sml"><?php echo $title; ?></h1>
 
                         <p class="mt-30"><?php echo $description; ?></p>
