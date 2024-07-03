@@ -78,7 +78,7 @@
 					'container' => 'nav',
 					'container_class' => 'top-menu transition block ml-auto mr-0 h-px-82 md:fixed md:z-12 md:h-100 md:w-100 md:left-0 md:top-0 md:pt-140 md:pb-100 md:pl-20 md:pr-20',
 					'menu_class' => 'main-menu no-bullets font-button flex md:column align-center fs-14 xxl:fs-16 lg:fs-15 md:fs-18',
-					'items_wrap' => '<a href="#" class="hidden md:visible brand absolute left-20 top-20" aria-label="2hatslogic"><img src="'.$get_dir.'/dist/assets/img/brand/logo-wide.svg" alt="'.get_bloginfo('name').'" class="w-100" width="106" height="48"> </a><button class="btn btn-secondary hidden md:visible absolute md:fixed z-3 top-0 right-0 close" onclick="closeMenu()"> <i class="icomoon icon-close"></i></button><ul id="%1$s" class="%2$s">%3$s</ul> <div class="flex bg-white hidden md:visible md:mt-30 md:fixed bottom-1 w-100 left-0 right-0 px-20">
+					'items_wrap' => '<a href="#" class="hidden md:visible brand absolute left-20 top-20" aria-label="2hatslogic"><img src="'.$get_dir.'/dist/assets/img/brand/logo-wide.svg" alt="'.get_bloginfo('name').'" class="w-100" width="106" height="48"> </a><button class="btn btn-secondary hidden md:visible absolute md:fixed z-3 top-20 right-20 close" onclick="closeMenu()"> <i class="icomoon icon-close"></i></button><ul id="%1$s" class="%2$s">%3$s</ul> <div class="flex bg-white hidden md:visible md:mt-30 md:fixed bottom-1 w-100 left-0 right-0 px-20">
 									<ul class="sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100">
 										<li class="md:mt-20 md:mb-20">
 											<a href="'. home_url() .'/blog" class="inline-block" aria-label="blog">Blogs</a>

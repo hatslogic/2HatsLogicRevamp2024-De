@@ -69,10 +69,10 @@ $transition-timing-function: ease-in-out;
         }
         & > .has-child{
             & > ul{
-                display: none;
-                // transition: max-height 0.35s ease-in-out;
-                // overflow: hidden;
-                // max-height: 0;
+                // display: none;
+                transition: max-height 0.3s ease-in-out;
+                overflow: hidden;
+                max-height: 0;
             }
             &.active{
                 & > a{
@@ -80,7 +80,7 @@ $transition-timing-function: ease-in-out;
                 }
                 & > ul{
                     display: block;
-                    // max-height: 1000px;
+                    max-height: 1000px;
                 }
                 .icon-expand_more{
                     transform: rotate(180deg);

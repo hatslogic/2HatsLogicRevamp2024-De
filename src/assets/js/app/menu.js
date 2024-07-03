@@ -37,7 +37,7 @@ function closeMenu() {
     body.classList.remove('disable-scroll');
     // Close all submenus when the main menu is closed
     for (let i = 0; i < hasChild.length; i++) {
-        hasChild[i].classList.remove('active');
+        hasChild[i].parentNode.classList.remove('active');
     }
 }
 
