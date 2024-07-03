@@ -17,6 +17,7 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <meta name="google-site-verification" content="u1BOfAhFqe0jJD_eAKvMNowWGV-UywRXnASwMZGBuUA" /> -->
 	<meta name="msapplication-TileImage" content="<?php echo $get_dir; ?>/dist/assets/img/cropped-favicon-270x270.png">
 	<link rel="icon" href="<?php echo $get_dir; ?>/dist/assets/img/cropped-favicon-32x32.png" sizes="32x32">
 	<link rel="icon" href="<?php echo $get_dir; ?>/dist/assets/img/cropped-favicon-192x192.png" sizes="192x192">
