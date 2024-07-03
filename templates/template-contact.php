@@ -10,7 +10,7 @@
  get_header();
  ?>
  
- <main class="page-wrap inline-block w-100">
+ <main class="page-wrap inline-block w-100 relative z-0">
 <?php get_template_part( 'template-parts/contact-hero' );?>
 <?php get_template_part('template-parts/connect-us') ?>
 <?php get_template_part( 'template-parts/office-locations' );?>

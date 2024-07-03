@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-<main class="page-wrap inline-block w-100">
+<main class="page-wrap inline-block w-100 relative z-0">
     <?php app_render_page_sections(); ?>
 </main>
 
