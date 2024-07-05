@@ -30,22 +30,12 @@
                 <div class="item">
                     <div class="card">
                         <div class="img bg-secondary">
-                           
-                            <?php $breakpoints = [
-                                '(max-width: 560px)' => [208, 274],
-                                '(max-width: 768px)' => [338, 434],
-                                '(max-width: 1020px)' => [236, 310],
-                                '(max-width: 1320px)' => [238, 314],
-                                '(min-width: 1321px)' => [250, 330]
-                             ];
-                             $attributes = [
-                                "class" => "transition",
-                                "loading" => "eager"
-                             ]
-                             
-                             ?>  
-
-                            <?php echo hatslogic_get_attachment_picture($image_id,$breakpoints,$attributes) ?>
+                            <?php $cropOptions = [
+                                    "fallbackimage-size" => [250,330],
+                                    "fallbackimage-class" => "transition",
+                                    'aspect-ratio' => [185,243]
+                                    ];?>
+                            <?php display_responsive_image($image_id,$cropOptions) ?>
                         </div>
                         <div class="info mt-10">
                             <?php if($name): ?>
