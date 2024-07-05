@@ -61,3 +61,8 @@
         </div>
     </div>
 </section>
+<style>
+.gradient-end {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffffa3 100%); !important;
+}
+</style>
