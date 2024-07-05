@@ -83,7 +83,7 @@ foreach ($images as $key => $item){
                         <a href="<?php echo $button ? $button['url'] : "#" ?>" target="<?php echo $button ? $button['target'] : "_self" ?>" class="w-100 h-100 relative">
 
                             <div
-                                class="overlay absolute z-2 h-100 w-100 c-white flex column gap-10 align-center justify-center">
+                                class="absolute z-2 h-100 w-100 c-white flex column gap-10 align-center justify-center">
                                 <i class="icomoon fs-28 icon-plus"></i>
                                 <span class="md:hidden"><?php echo $button ? $button['title'] : "See More" ?></span>
                             </div>
