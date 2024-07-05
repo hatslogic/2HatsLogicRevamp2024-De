@@ -931,11 +931,10 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
             $webp_src = webp(esc_url($image_src['src']));
             $webp_src_2x = webp(esc_url($image_src_2x['src']));
 
-            $source_tag = match(true) {
-                $media_query => "<source srcset='$webp_src 1x, $webp_src_2x 2x' type='image/webp' media='" . esc_attr($media_query) . "'>",
-                default => "<source srcset='" . esc_url($image_src['src']) . " 1x, " . esc_url($image_src_2x['src']) . " 2x'>"
-            };
-            $picture .= $source_tag;
+            $source_tag = "<source srcset='$webp_src 1x, $webp_src_2x 2x' type='image/webp' media='" . esc_attr($media_query) . "'>
+			<source srcset='" . esc_url($image_src['src']) . " 1x, " . esc_url($image_src_2x['src']) . " 2x' media='" . esc_attr($media_query) . "'>";
+            
+			$picture .= $source_tag;
         }
     }
 
