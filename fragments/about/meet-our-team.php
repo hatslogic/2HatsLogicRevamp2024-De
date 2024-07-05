@@ -83,7 +83,7 @@ foreach($album as $key => $image){
                                 <i class="icomoon fs-28 icon-plus"></i>
                                 <span><?php echo $see_more ? $see_more['title'] : "See More" ?></span>
                             </div>
-                            <?php echo hatslogic_get_attachment_picture($picture7, $cropOptions[8],$attributes[8]) ?>
+                            <?php echo hatslogic_get_attachment_picture($picture8, $cropOptions[8],$attributes[8]) ?>
                             <span class="absolute z-0 bg-black opacity-70 top-0 h-100 w-100"></span>
                         </a>
 
