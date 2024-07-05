@@ -1,8 +1,8 @@
 <?php extract($section); ?>
 
 <?php $rating =  get_field('reviews', 'options'); ?>
-
-<section class="hero overflow-hidden pt-60 relative">
+<?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white '; ?>
+<section class="hero overflow-hidden pt-60 relative <?php echo $bg_class;?>">
     <div class="container relative z-1">
         <div class="flex align-start justify-between md:wrap">
             <div class="col w-50 md:w-100">
@@ -43,7 +43,7 @@
                     <div class="service-logo max-w-px-150 max-h-px-60 mt-20 mb-20">
                         <img src="<?php echo $logo['url']; ?>" alt="shopware" width="100" height="100">
                     </div>
-                    <div class="title">
+                    <div class="headline">
                         <h1 class="h1-sml"><?php echo $title; ?></h1>
 
                         <p class="mt-30"><?php echo $description; ?></p>
@@ -96,6 +96,6 @@
     <div class="background-shape absolute z-0 right-0 top-0 w-60 h-px-500 md:w-80">
         <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg.jpeg"
             srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg.jpeg, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg2x.jpeg 2x"
-            class="shape w-100 absolute top-0" alt="shopware" width="100" height="100">
+            class="shape w-100 absolute -top-10" alt="shopware" width="100" height="100">
     </div>
 </section>

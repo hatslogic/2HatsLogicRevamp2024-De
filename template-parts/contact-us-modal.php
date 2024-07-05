@@ -11,7 +11,7 @@ $form_shortcode = get_field('contact_us_modal_form_shortcode', 'option');
                 <button class="btn btn-secondary absolute xs:fixed z-1 top-0 right-0 close" onclick="closeModal('contact-us')">
                     <i class="icomoon icon-close"></i>
                 </button>
-                <div class="col w-50 h-100 xs:w-100 xs:h-40 md:hidden xs:visible">
+                <div class="col w-50 h-100 xs:w-100 xs:h-50 md:hidden xs:visible">
                     <?php if($contact_us_modal_image && $contact_us_modal_image_mobile): ?>
                     <?php $cropOptions = [
                     "fallbackimage-size" => [800,540],

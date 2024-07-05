@@ -3,14 +3,14 @@
     <div class="container">
         <div class="flex align-center justify-between md:wrap xl:column">
             <div class="col w-50 xl:w-100">
-                <div class="service-header">
-                    <div class="title">
+                <div class="case-study-header">
+                    <div class="headline">
                         <?php
                         $categories = get_the_terms(get_the_ID(), 'category');
                         if ($categories && !is_wp_error($categories)):
 
                         ?>
-                        <span class="headline block c-primary font-bold mb-10"><?php echo esc_html($categories[0]->name); ?></span>
+                        <span class="block c-primary font-bold mb-10"><?php echo esc_html($categories[0]->name); ?></span>
                         <?php endif; ?>
                         <h1 class="h1-sml"><?php
                         if ($title):

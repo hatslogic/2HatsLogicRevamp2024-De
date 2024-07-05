@@ -1,7 +1,7 @@
 <?php extract($section); ?>
-
+<?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white'; ?>
 <section class="online-store">
-    <div class="container relative">
+    <div class="container relative <?php echo $bg_class;?>">
         <?php if ($title): ?>
             <div class="title relative z-1 w-70 md:w-100">
                 <h2 class="h2"><?php echo $title; ?></h2>
@@ -9,7 +9,7 @@
         <?php endif; ?>
         <div class="flex align-center gap-80 md:gap-40 md:wrap">
             <div class="col w-55 md:w-100 relative z-1 md:order-2">
-                <div class="about-header">
+                <div class="headline">
                     <?php if ($repeated_content || $button['url']): ?>
                         <div class="content">
                             <?php if ($repeated_content): ?>

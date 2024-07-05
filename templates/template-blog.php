@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-<main class="page-wrap inline-block w-100">
+<main class="page-wrap inline-block w-100 relative z-0">
     <section class="blog-list relative pt-100 xs:pt-60 pb-100 md:pb-60">
         <div class="container relative z-1">
             <div class="title w-100 flex justify-between sm:wrap">

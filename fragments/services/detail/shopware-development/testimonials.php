@@ -1,6 +1,7 @@
 <?php extract($section); ?>
+<?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white '; ?>
 <?php if ($posts): ?>
-    <section class="testimonials pt-100 pb-100 xs:pt-80 xs:pb-80 bg-white">
+    <section class="testimonials <?php echo $bg_class;?>">
         <div class="container extend">
             <?php if ($title): ?>
                 <div class="title">
@@ -22,7 +23,7 @@
                             <div class="hats-slider__slide">
                                 <div
                                     class="testimonial h-100 b-0 br-2 solid bc-hash pr-120 mr-120 xxl:pr-80 xxl:mr-80 xl:pr-60 xl:mr-60 xs:pr-0 xs:mr-0 xs:br-0">
-                                    <div class="top flex justify-between align-center mb-20 bg-white">
+                                    <div class="top flex justify-between align-center mb-20 <?php $bg_enabled ? 'bg-light-grey' : 'bg-white'; ?>">
                                         <?php if ($brand): ?>
                                         <img class="order-2" src="<?php echo $brand['url']; ?>"
                                             alt="<?php echo $brand['alt']; ?>" loading="lazy" width="100" height="100">

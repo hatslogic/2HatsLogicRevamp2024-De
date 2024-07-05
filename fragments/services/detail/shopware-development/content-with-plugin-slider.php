@@ -1,10 +1,10 @@
 <?php extract($section); ?>
-
-<section class="hire-developer">
+<?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white'; ?>
+<section class="hire-developer <?php echo $bg_class;?>">
     <div class="container">
         <div class="flex align-center gap-80 md:gap-40 md:wrap">
             <div class="col w-55 md:w-100">
-                <div class="about-header">
+                <div class="headline">
                     <div class="title">
                         <h2 class="h2"><?php echo $title ?></h2>
 

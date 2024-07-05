@@ -1,0 +1,27 @@
+.bubble-menu{
+    transform: translateY(0);
+    .bubble{
+        &-overlay{
+            // backdrop-filter: blur(rem(1));
+            background-color: rgba(255, 255, 255, 0.85);
+            transform: scale(1.3);
+        }
+        &-overlay-2{
+            // backdrop-filter: blur(rem(6));
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.6);
+        }
+        &-overlay-3{
+            // backdrop-filter: blur(rem(6));
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.9);
+        }
+    }
+}
+
+.clear-scroll{
+    .bubble-menu{
+        transform: translateY(rem(150));
+    }
+}
+

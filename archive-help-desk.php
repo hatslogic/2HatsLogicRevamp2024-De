@@ -17,7 +17,7 @@ $backgroundImage = get_field('background_image');
 $get_started = get_field('section_get_started');
 ?>
 
-<main class="page-wrap inline-block w-100">
+<main class="page-wrap inline-block w-100 relative z-0">
     <section class="help-desk overflow-hidden relative pt-100 xs:pt-60 pb-100 md:pb-60">
         <div class="container relative z-1">
           <div class="title w-100 flex justify-between sm:wrap">
@@ -140,7 +140,7 @@ $get_started = get_field('section_get_started');
             <?php if($backgroundImage): ?>
               <?php $cropOptions = [
                 "fallbackimage-size" => [873,873],
-                  "fallbackimage-class" => "shape w-100 absolute top-0",
+                  "fallbackimage-class" => "shape w-100 absolute -top-10",
                   "picturetag-class" => ""
                   ];?>
               <?php display_responsive_image($backgroundImage['ID'],$cropOptions) ?>

@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main class="page-wrap inline-block w-100">
+<main class="page-wrap inline-block w-100 relative z-0">
     <?php app_render_page_service_shopware_migration(); ?>
 
     <?php get_template_part('template-parts/get-started'); ?>

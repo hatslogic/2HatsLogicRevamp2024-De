@@ -17,7 +17,7 @@ $call2 = get_field('call_two_button');
 
 
 ?>
-<section class="connect-us py-60 xs:pt-0">
+<section class="connect-us py-60">
                  <div class="container">
                      <div class="title">
                           <h2>Connect us</h2>

@@ -1,12 +1,14 @@
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.top-menu');
 const hasChild = document.querySelectorAll('.main-menu li.has-child a.mobile-toggle');
+const menuHasChildEl = document.querySelectorAll('.main-menu>li.has-child');
 
 if (menuBtn !== null) {
     menuBtn.addEventListener('click', (e) => {
         e.preventDefault();
         menuBtn.classList.toggle('active');
         menu.classList.toggle('active');
+        body.classList.toggle('disable-scroll');
     });
 }
 
@@ -32,8 +34,21 @@ if (hasChild !== null && window.matchMedia('(max-width: 1024px)').matches) {
 function closeMenu() {
     menuBtn.classList.remove('active');
     menu.classList.remove('active');
+    body.classList.remove('disable-scroll');
     // Close all submenus when the main menu is closed
     for (let i = 0; i < hasChild.length; i++) {
-        hasChild[i].classList.remove('active');
+        hasChild[i].parentNode.classList.remove('active');
     }
+}
+
+if (menuHasChildEl !== null && window.matchMedia('(min-width: 1025px)').matches) {
+    menuHasChildEl.forEach((el) => {
+        // on hover add class on overlay, remove on hoverout
+        el.addEventListener('mouseover', () => {
+            overlayMenu.classList.add('active');
+        });
+        el.addEventListener('mouseout', () => {
+            overlayMenu.classList.remove('active');
+        });
+    });
 }

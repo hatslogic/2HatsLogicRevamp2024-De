@@ -1,8 +1,8 @@
 <?php extract($section); ?>
 
 <?php $rating =  get_field('reviews', 'options'); ?>
-
-<section class="hero pt-60 relative">
+<?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white'; ?>
+<section class="hero pt-60 relative <?php echo $bg_class;?>">
     <div class="container relative z-1">
         <div class="flex align-start justify-between md:wrap">
             <div class="col w-50 md:w-100"> 
@@ -41,12 +41,12 @@
 
                 <?php if ($headline['heading'] || $description): ?>
                     <div class="service-header mt-30">
-                        <div class="title">
+                        <div class="headline">
                         <?php if($headline['heading']){ ?>
                             <h1 class="h1-sml"><?php echo $headline['heading']; ?></h1>
                             <?php } ?>
                             <?php if($headline['sub_heading']){ ?>
-                                <h2 class="h3 mt-15 xs:fs-12"><?php echo $headline['sub_heading']; ?></h2>
+                                <h2 class="h3 mt-15 xs:fs-20"><?php echo $headline['sub_heading']; ?></h2>
                             <?php } ?>
                             <p class="mt-30"><?php echo $description; ?></p>
                         </div>
@@ -65,7 +65,7 @@
                 <?php endif; ?>
                 <?php if ($review['review']): ?>
                     <div class="review-block mt-40 xs:mt-30 flex gap-20 w-100 xs:wrap xs:w-100">
-                        <div class="avatar-wrap flex align-center mt-30 align-center w-px-300 md:w-100">
+                        <div class="avatar-wrap flex align-center mt-30 w-px-300 md:w-100">
                             <?php if ($review['avatar']): ?>
                                 <div
                                     class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50 over overflow-hidden">
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                         <div class="rewiew-wrap w-80 xs:w-100 xs:mt-10 px-20 py-0 bg-light-blue">
-                            <p class="fs-20 xs:fs-16 c-primary"><?php echo $review['review']; ?></p>
+                            <p class="fs-18 xs:fs-16 c-primary"><?php echo $review['review']; ?></p>
                         </div>
                     </div>
                 <?php endif; ?>
@@ -122,6 +122,6 @@
     <div class="bg-shape absolute z-0 right-0 top-0 w-60 h-px-500 md:w-80">
         <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png"
             srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-012x.png 2x"
-            class="shape w-100 absolute top-0" alt="shopware" width="100" height="100">
+            class="shape w-100 absolute -top-10" alt="shopware" width="100" height="100">
     </div>
 </section>

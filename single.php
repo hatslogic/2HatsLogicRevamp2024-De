@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main class="page-wrap inline-block w-100">
+<main class="page-wrap inline-block w-100 relative z-0">
     <section class="blog-detail pt-100 xs:pt-60 pb-100 md:pb-60">
       <div class="container relative z-1">
         

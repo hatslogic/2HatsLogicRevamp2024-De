@@ -1,6 +1,6 @@
 .modal{
     visibility: hidden;
-    // overflow: auto;
+    overflow: scroll;
     opacity: 0;
 
     .title{
@@ -12,9 +12,5 @@
     &.show{
         visibility: visible;
         opacity: 1;
-    }
-
-    .overlay{
-        background: var(--c-overlay);
     }
 }

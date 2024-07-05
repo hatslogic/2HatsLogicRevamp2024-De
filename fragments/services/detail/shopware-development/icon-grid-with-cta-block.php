@@ -1,6 +1,6 @@
 <?php extract($section); ?>
-
-<section class="expert-service">
+<?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white '; ?>
+<section class="expert-service <?php echo $bg_class;?>">
     <div class="container">
         <?php if ($title || $description): ?>
             <div class="title w-70 xl:w-100">
@@ -38,11 +38,13 @@
             <?php endif; ?>
 
             <?php if ($cta_block): ?>
-                <div class="info py-60 xs:py-40 px-130 md:px-20 mt-40 b-1 solid bc-hash"> 
+                <div class="info py-60 xs:py-40 px-130 md:px-20 mt-40 bg-dark-primary c-white">
                     <?php if($cta_block['text']): ?>
-                    <span class="w-100 font-bold fs-26 xs:fs-22 lh-1-25 tr text-center mb-30 block md:mb-20">
-                        <?php echo $cta_block['text']; ?>
-                    </span>
+                    <div class="max-w-60 xs:max-w-100 mx-auto">
+                        <h3 class="h3 text-center block mb-30 md:mb-20">
+                            <?php echo $cta_block['text']; ?>
+                        </h3>
+                    </div>
                     <?php endif; ?>
                     <?php if($cta_block['button']): ?>
                     <div class="w-100 flex justify-center"> 

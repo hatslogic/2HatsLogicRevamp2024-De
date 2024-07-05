@@ -1,7 +1,7 @@
 const loadMoreBtn = document.querySelector("#view-all-members");
 const memberContainer = document.querySelector("#members");
 const gradientEnd = document.querySelector('.gradient-end');
-let offset = 24; // Initial offset
+let offset = 36; // Initial offset
 
 if(loadMoreBtn !== null && memberContainer !== null) {
 

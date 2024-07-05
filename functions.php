@@ -11,7 +11,7 @@ define('APP_THEME_DIR', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '3.4.6');
+	define('_S_VERSION', '20.8.1');
 }
 
 
@@ -418,9 +418,9 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 
 		if ($depth === 0) {
 			if ($is_compact) {
-				$ul_classes = 'no-bullets absolute min-w-px-260 md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-light-grey md:bt-0 -ml-20 md:ml-0';
+				$ul_classes = 'arrow-top no-bullets absolute min-w-px-260 md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0';
 			} else {
-				$ul_classes = 'no-bullets fixed md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-light-grey md:bt-0';	
+				$ul_classes = 'no-bullets fixed md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-light-grey md:bt-0';
 			}
         } elseif ($depth === 1) {
             $ul_classes = 'no-bullets font-regular mt-20 md:mt-5 lh-2';
@@ -430,7 +430,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
         
 		if ($depth === 0) {
 			if ($is_compact) {
-        		$output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex column justify-between md:column gap-10 md:gap-10 py-40 md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
+        		$output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex column justify-between md:column gap-20 md:gap-10 py-40 mt-20 md:mt-5 bg-white md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
 			} else {
 				$output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex justify-between md:column gap-30 md:gap-20 py-40 md:pt-20 md:pb-20 md:pl-0 md:pr-0\">\n";
 			}
@@ -469,7 +469,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
 			}
 
 			if ($is_compact) {
-				$a_classes = 'inline-block font-regular w-100';
+				$a_classes = 'h4 inline-block font-bold w-100';
 			} else {
 				$a_classes = 'h4 inline-block font-bold b-0 bb-1 bc-hash solid pb-20 md:bb-0 md:pb-0';
 			}
@@ -492,6 +492,9 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
         }
 
         $output .= $item->title;
+		if($depth === 1) {
+        	$output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">'.$item->description.'</span>';
+		}
 
         if ($item->url && $item->url != '#') {
             if ($args->walker->has_children && $depth === 0) {
@@ -511,7 +514,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu {
         // $output .= "$indent\t</li>\n";
         // $output .= "$indent</div></ul>\n";
 
-		$blog_url = home_url().'/blogs';
+		$blog_url = home_url().'/blog';
 		$contact_url = home_url().'/contact';
 
 		if ($depth === 0) {

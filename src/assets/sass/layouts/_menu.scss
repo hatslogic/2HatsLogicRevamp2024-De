@@ -15,35 +15,46 @@ $transition-timing-function: ease-in-out;
     a{
         text-decoration: none;
         color: var(--c-secondary);
+        transition: 0.25s all;
     }
 
     @include above($md){
         & > li{
+            a{
+                &:hover{
+                    color: var(--c-primary);
+                }
+            }
             & > a{
                 border-color: transparent;
             }
             & > ul{
-                box-shadow: 0px 8px 8px rgba(0,0,0,.05);
+                box-shadow: 0px rem(8) rem(8) rgba(0,0,0,.05);
                 visibility: hidden;
                 opacity: 0;
             }
-            &.active, &:hover{
-                & > a{
-                    border-color: var(--c-primary);
-                    color: var(--c-primary);
-                }
+            &.compact{
                 & > ul{
-                    // visibility: visible;
-                    // opacity: 1;
-
-                    a{
-                        &:hover{
-                            color: var(--c-primary);
-                        }
+                    box-shadow: none;
+                    & > .container{
+                        box-shadow: 0px rem(8) rem(8) rgba(0,0,0,.05);
                     }
                 }
             }
             &:hover{
+                & > a{
+                    color: var(--c-primary);
+                }
+            }
+            &.active, &:not(.has-child):hover{
+                & > a{
+                    border-color: var(--c-primary);
+                }
+            }
+            &:hover{
+                & > a{
+                    color: var(--c-primary);
+                }
                 & > ul{
                     visibility: visible;
                     opacity: 1;
@@ -58,10 +69,10 @@ $transition-timing-function: ease-in-out;
         }
         & > .has-child{
             & > ul{
-                display: none;
-                // transition: max-height 0.35s ease-in-out;
-                // overflow: hidden;
-                // max-height: 0;
+                // display: none;
+                transition: max-height 0.3s ease-in-out;
+                overflow: hidden;
+                max-height: 0;
             }
             &.active{
                 & > a{
@@ -69,7 +80,7 @@ $transition-timing-function: ease-in-out;
                 }
                 & > ul{
                     display: block;
-                    // max-height: 1000px;
+                    max-height: 1000px;
                 }
                 .icon-expand_more{
                     transform: rotate(180deg);
@@ -111,6 +122,25 @@ $transition-timing-function: ease-in-out;
                 visibility: visible;
                 opacity: 1;
             }
+        }
+    }
+}
+
+.arrow-top{
+    @include above($md){
+        &:before {
+            content: "";
+            position: absolute;
+            height: 0;
+            border-style: solid;
+            border-width: 1.25rem 1.25rem 0 0;
+            border-color: var(--c-white) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+            transform: rotate(45deg);
+            left: rem(60);
+            top: rem(10);
+            display: block;
+            margin-left: rem(-12);
+            z-index: 0;
         }
     }
 }

@@ -1,4 +1,7 @@
+//=require variables.js
 //=require plugins/hats-slider.js
+//=require plugins/smooth-scroll.js
+
 //=require app/base.js
 //=require app/hero.js
 //=require app/menu.js

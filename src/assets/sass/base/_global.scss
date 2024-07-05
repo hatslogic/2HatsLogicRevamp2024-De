@@ -306,7 +306,7 @@ ol {
 }
 
 .transition {
-  transition: 0.15s all ease-in-out;
+  transition: 0.2s all ease-in-out;
   transform-origin: center center;
 }
 
@@ -376,11 +376,30 @@ mark {
 }
 
 .progress-container,
-.modal,
-.sticky-menu {
+.modal {
   max-width: 100vw;
 }
 
 .gradient-end{
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+}
+
+.disable-scroll{
+  overflow: hidden;
+  header{
+      transform: none !important;
+  }
+}
+
+.overlay{
+  height: 100vh;
+  backdrop-filter: blur(rem(6));
+  background-color: rgba(0, 0, 0, 0.15);
+  visibility: hidden;
+  opacity: 0;
+  
+  &.active {
+      opacity: 1;
+      visibility: visible;
+  }
 }

@@ -7,9 +7,9 @@
         right: 0;
     }
     &-bar{
-        height: rem(8);
+        height: rem(6);
         @include below($sm) {
-            height: rem(5);
+            height: rem(4);
         }
     }
 }

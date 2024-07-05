@@ -4,7 +4,7 @@
         <div class="container">
           <div class="flex align-center justify-between md:wrap">
             <div class="col w-50 md:w-100">
-              <div class="about-header">
+              <div class="headline">
                 <?php if ($headline['title']): ?>
                     <h1 class="h1-sml"><?php echo $headline['title'] ?></h1>
                 <?php endif; ?>
