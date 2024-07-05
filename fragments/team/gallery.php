@@ -1,25 +1,49 @@
 <?php extract($section); ?>
 <?php 
 
-$aspectRatio = [
-    [496,606],
-    [496,284],
-    [496,284],
-    [500,613],
-    [496,594],
-    [496,606],
-    [496,284],
-    [236,286],
-    [236,286],
+$breakpoints = [
+    [
+        '(max-width: 768px)' => [265,324],
+        '(min-width: 769px)' => [522,626]
+    ],
+    [
+        '(max-width: 768px)' => [265,152],
+        '(min-width: 769px)' => [496,284]
+    ],
+    [
+        '(max-width: 768px)' => [265,152],
+        '(min-width: 769px)' => [522,298]
+    ],
+    [
+        '(max-width: 768px)' => [265,324],
+        '(min-width: 769px)' => [522,626]
+    ],
+    [
+        '(max-width: 768px)' => [265,324],
+        '(min-width: 769px)' => [522,626]
+    ],
+    [
+        '(max-width: 768px)' => [265,324],
+        '(min-width: 769px)' => [522,626]
+    ],
+    [
+        '(max-width: 768px)' => [265,152],
+        '(min-width: 769px)' => [522,298]
+    ],
+    [
+        '(max-width: 768px)' => [180,218],
+        '(min-width: 769px)' => [300,364]
+    ],
+    [
+        '(max-width: 768px)' => [180,218],
+        '(min-width: 769px)' => [300,364]
+    ]
 ];
 foreach ($images as $key => $item){
     ${"picture" . $key} = $item['ID'];
 
-    $cropOptions[$key] =  [
-        "fallbackimage-size" => [360, 360],
-        'fallbackimage-class' => 'transition',
-        'aspect-ratio' => $aspectRatio[$key]
-    ];
+    $cropOptions[$key] =  $breakpoints[$key];
+    $attributes[$key] = ["class" => "transition","loading" => "lazy"];
 }
 
 ?>
@@ -44,7 +68,7 @@ foreach ($images as $key => $item){
                 <?php if(${"picture" . $key} && $key < 7 ): ?>
                 <div class="col break-in:ac <?= $key > 0 ? 'mt-20 xs:mt-5' : ''; ?>">
                     <div class="album">
-                        <?php display_responsive_image(${"picture" . $key}, $cropOptions[$key]); ?>
+                        <?php echo hatslogic_get_attachment_picture(${"picture" . $key}, $cropOptions[$key],$attributes[$key]); ?>
                     </div>
                 </div>
                 <?php endif; ?>
@@ -52,7 +76,7 @@ foreach ($images as $key => $item){
                 <?php if($picture7 && $picture8): ?>
                 <div class="col break-in:ac mt-20 xs:mt-5 flex cg-20 xs:cg-5">
                     <div class="album">
-                        <?php display_responsive_image($picture7, $cropOptions[7]) ?>
+                        <?php echo hatslogic_get_attachment_picture($picture7, $cropOptions[7],$attributes[7]) ?>
                     </div>
                     <div class="album">
 
@@ -63,7 +87,7 @@ foreach ($images as $key => $item){
                                 <i class="icomoon fs-28 icon-plus"></i>
                                 <span class="md:hidden"><?php echo $button ? $button['title'] : "See More" ?></span>
                             </div>
-                            <?php display_responsive_image($picture8, $cropOptions[8]) ?>
+                            <?php echo hatslogic_get_attachment_picture($picture8, $cropOptions[8],$attributes[8]) ?>
                             <span class="absolute z-0 bg-black opacity-70 top-0 h-100 w-100"></span>
                         </a>
                     </div>
