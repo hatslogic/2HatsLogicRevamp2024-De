@@ -256,7 +256,7 @@ function register_help_desk() {
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
-		"publicly_queryable" => false,
+		"publicly_queryable" => true,
 		"show_ui" => true,
 		"show_in_rest" => false,
 		"rest_base" => "",
