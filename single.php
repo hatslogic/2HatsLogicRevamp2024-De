@@ -41,7 +41,9 @@ get_header();
 
             <div class="content w-100 xs:mt-30 mt-60">
 				<?php app_render_page_single_blog(); ?>
-				<?php the_content(); ?>
+				<div class="editor-content">
+					<?php the_content(); ?>
+				</div>
 			   	<?php get_template_part('template-parts/blog-faqs'); ?>
             </div>
           </div>
