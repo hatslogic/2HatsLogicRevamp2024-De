@@ -13,7 +13,7 @@ get_header();
     <section class="blog-list relative pt-100 xs:pt-60 pb-100 md:pb-60">
         <div class="container relative z-1">
             <div class="title w-100 flex justify-between sm:wrap">
-                <h1 class="h1-sml w-100 sm:mb-20">Blogs</h1>
+                <h1 class="h1-sml w-100 sm:mb-20"><?php the_title() ?></h1>
                 <div class="flex w-100 justify-end gap-20 align-end">
                     <div class="form-group max-w-58 md:max-w-100">
                         <form role="search" method="get" id="searchform" class="searchform"
