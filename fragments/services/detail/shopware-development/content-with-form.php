@@ -26,7 +26,7 @@
                             <?php echo esc_html($rating['score']); ?>
                             based on 
                             <?php if($rating['link_to_review']): ?>
-                                <a href="<?php echo $rating['link_to_review']; ?>" target="_blank">
+                                <a href="<?php echo $rating['link_to_review']['url']; ?>" target="_blank">
                             <?php endif; ?>
                             <span class="c-primary">
                                 <?php echo esc_html($rating['total']); ?> reviews
