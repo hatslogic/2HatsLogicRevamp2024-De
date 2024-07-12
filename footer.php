@@ -199,22 +199,40 @@ get_template_part( 'template-parts/contact-us-modal');
         }
 
         require([
-        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
+        "<?php echo get_template_directory_uri(); ?>/dist/assets/js/tel-input.js"
         ], function() {
-        if (phoneInput) {
-            phoneInput.forEach((input) => {
-            var iti = window.intlTelInput(input, {
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-                separateDialCode: true,
-                autoHideDialCode: false,
-                preferredCountries: ['us', 'gb', 'in'],
-                initialCountry: 'us',
-            });
-            });
-        }
+            if (phoneInput) {
+                phoneInput.forEach((input) => {
+                var iti = window.intlTelInput(input, {
+                    utilsScript: "<?php echo get_template_directory_uri(); ?>/dist/assets/js/utils.js",
+                    separateDialCode: true,
+                    autoHideDialCode: false,
+                    preferredCountries: ['us', 'gb', 'in'],
+                    initialCountry: 'us',
+                });
+                });
+            }
         });
     });
 </script>
+
+<style>
+.iti__flag {
+    background-image: url("<?php echo get_template_directory_uri(); ?>/dist/assets/img/flag/flags.png");
+    @supports (background-image: url('<?php echo get_template_directory_uri(); ?>/dist/assets/img/flag/flags.webp')) {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/dist/assets/img/flag/flags.webp");
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .iti__flag {
+        background-image: url("<?php echo get_template_directory_uri(); ?>/dist/assets/img/flag/flags@2x.png");
+        @supports (background-image: url('<?php echo get_template_directory_uri(); ?>/dist/assets/img/flag/flags@2x.webp')) {
+            background-image: url("<?php echo get_template_directory_uri(); ?>/dist/assets/img/flag/flags@2x.webp");
+        }
+    }
+}
+</style>
 
 </body>
 </html>
