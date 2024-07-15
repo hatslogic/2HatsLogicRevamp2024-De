@@ -24,7 +24,7 @@
                                     <h3 class="h4 transition font-bold"><?php echo $technology['title']; ?></h3>
                                     <p class="font-light"><?php echo truncate_text($technology['content'], 80, '...'); ?></p>
                                     <?php if ($technology['read_more']): ?>
-                                        <a href="<?php echo $technology['read_more']['url']; ?>" aria-label="<?php echo $technology['read_more']['title']; ?>" class="link link-primary"><?php echo $technology['read_more']['title']; ?>
+                                        <a href="<?php echo $technology['read_more']['url']; ?>" aria-label="<?php echo $technology['title']; ?>" class="link link-primary"><?php echo $technology['read_more']['title']; ?>
                                         <i class="icomoon icon-chevron_right"></i></a>
                                     <?php endif; ?>
                                 </div>

@@ -357,10 +357,6 @@
                     // selected flag (displayed to left of input)
                     this.selectedFlag = this._createEl("div", {
                         "class": "iti__selected-flag",
-                        role: "combobox",
-                        "aria-controls": "iti-".concat(this.id, "__country-listbox"),
-                        "aria-owns": "iti-".concat(this.id, "__country-listbox"),
-                        "aria-expanded": "false"
                     }, this.flagsContainer);
                     this.selectedFlagInner = this._createEl("div", {
                         "class": "iti__flag"
@@ -944,7 +940,6 @@
                             nextItem.setAttribute("aria-selected", "true");
                             nextItem.classList.add("iti__active");
                             this.activeItem = nextItem;
-                            this.selectedFlag.setAttribute("aria-activedescendant", nextItem.getAttribute("id"));
                         }
                     }
                     // return if the flag has changed or not
