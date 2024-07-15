@@ -199,12 +199,12 @@ get_template_part( 'template-parts/contact-us-modal');
         }
 
         require([
-        "<?php echo get_template_directory_uri(); ?>/dist/assets/js/tel-input.js?v=1.2.0"
+        "<?php echo get_template_directory_uri(); ?>/dist/assets/js/tel-input.js?v=1.0.0"
         ], function() {
             if (phoneInput) {
                 phoneInput.forEach((input) => {
                 var iti = window.intlTelInput(input, {
-                    utilsScript: "<?php echo get_template_directory_uri(); ?>/dist/assets/js/utils.js?v=1.2.0",
+                    utilsScript: "<?php echo get_template_directory_uri(); ?>/dist/assets/js/utils.js?v=1.0.0",
                     separateDialCode: true,
                     autoHideDialCode: false,
                     preferredCountries: ['us', 'gb', 'in'],
