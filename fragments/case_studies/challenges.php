@@ -5,7 +5,7 @@
             <h2><?php echo $headline['title']; ?></h2>
         </div>
         <div class="content">
-            <div class="challenge mb-60">
+            <div class="challenge">
                 <p><?php echo $content; ?></p>
 
                 <?php if ($list): ?>

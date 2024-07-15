@@ -40,7 +40,7 @@
                     }
                     $cropOptions = [
                         '(max-width: 768px)' => $mobile_aspectratio,
-                        '(min-width: 769px)' => [648, 445],
+                        '(min-width: 769px)' => [1200, 824],
                     ];
 
                     $attributes = ['class' => 'transition'];
