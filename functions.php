@@ -426,7 +426,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
 
         if ($depth === 0) {
             if ($is_compact) {
-                $output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex column justify-between md:column gap-20 md:gap-10 py-40 mt-20 md:mt-5 bg-white md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
+                $output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex column justify-between md:column gap-20 md:gap-15 py-40 mt-20 md:mt-5 bg-white md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
             } else {
                 $output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex justify-between md:column gap-30 md:gap-20 py-40 md:pt-20 md:pb-20 md:pl-0 md:pr-0\">\n";
             }
