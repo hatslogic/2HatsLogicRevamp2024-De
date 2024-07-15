@@ -2,22 +2,22 @@
 
 <section class="journal">
     <div class="container">
-        <?php if ($headline['title']): ?>
+        <?php if ($headline['title']) { ?>
         <div class="title">
-            <?php if ($headline['sub_title']): ?>
+            <?php if ($headline['sub_title']) { ?>
                 <span class="headline c-primary font-bold"><?php echo $headline['sub_title']; ?></span>
-            <?php endif; ?>
-            <?php if ($headline['title']): ?>
+            <?php } ?>
+            <?php if ($headline['title']) { ?>
                 <h2><?php echo $headline['title']; ?></h2>
-            <?php endif; ?>
+            <?php } ?>
         </div>
-        <?php endif; ?>
+        <?php } ?>
         <div class="content mt-50 xs:mt-30">
-            <?php if ($posts): ?>
+            <?php if ($posts) { ?>
                 <div
                     class="grid grid-4 xl:grid-3 md:grid-2 xs:grid-1 gap-15 xs:flex xs:nowrap xs:scroll-x xs:-ml-20 xs:-mr-20 scroll-snap">
                     <?php
-                    foreach ($posts as $key => $post):
+                    foreach ($posts as $key => $post) {
                         setup_postdata($post);
                         $title = get_the_title($post->ID);
                         $description = get_the_excerpt($post->ID);
@@ -34,33 +34,36 @@
                         ?>
                         <div class="<?php echo $classes; ?>">
                             <a href="<?php echo $url; ?>" class="item">
-                                <?php $cropOptions = [
-                                        "fallbackimage-size" => [$featured_image_width,$featured_image_height],
-                                        "fallbackimage-class" => "transition"
-                                ];?>
-                                <?php display_responsive_image($featured_image_id,$cropOptions) ?>
+                                <?php
+                                        $cropOptions = [
+                                            '(max-width: 768px)' => [365, 262],
+                                            '(min-width: 769px)' => [370, 265],
+                                        ];
+                        $attributes = ['class' => 'transition', 'loading' => 'lazy', 'alt' => $featured_image_alt];
+                        ?>
+                                <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
                                 <div class="info mt-30 xs:pl-20 xs:pr-20">
-                                    <?php if ($title): ?>
+                                    <?php if ($title) { ?>
                                         <h3 class="h4 transition font-bold"><?php echo truncate_text($title, 60, '...'); ?></h3>
-                                    <?php endif; ?>
-                                    <?php if ($description): ?>
+                                    <?php } ?>
+                                    <?php if ($description) { ?>
                                         <p class="font-light"><?php echo truncate_text($description, 90, '...'); ?></p>
-                                    <?php endif; ?>
+                                    <?php } ?>
                                 </div>
                             </a>
                         </div>
                         <?php
-                    endforeach;
-                    wp_reset_postdata();
-                    ?>
+                    }
+                wp_reset_postdata();
+                ?>
                 </div>
-            <?php endif; ?>
-            <?php if ($view_blogs): ?>
+            <?php } ?>
+            <?php if ($view_blogs) { ?>
                 <div class="btn-group center mt-80 xs:mt-40">
                     <a href="<?php echo $view_blogs['url']; ?>"
                         class="btn btn-primary"><?php echo $view_blogs['title']; ?></a>
                 </div>
-            <?php endif; ?>
+            <?php } ?>
         </div>
     </div>
 </section>
