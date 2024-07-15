@@ -7,7 +7,7 @@
                 <h2 class="h2"><?php echo $title; ?></h2>
             </div>
         <?php endif; ?>
-        <div class="flex align-center gap-80 md:gap-40 md:wrap">
+        <div class="flex align-center gap-80 md:gap-0 md:wrap">
             <div class="col w-55 md:w-100 relative z-1 md:order-2">
                 <div class="headline">
                     <?php if ($repeated_content || $button['url']): ?>
@@ -30,14 +30,22 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <?php if ($background_image): ?>
+            <?php if ($background_image || $mobile_background_image): ?>
                 <div class="col w-45 md:w-100 md:hidden"></div>
-                <div class="background-col absolute z-0 right-0 -right-50 md:-right-0 w-75 md:w-100 md:relative md:order-1">
-                    <?php $cropOptions = [
-                        "fallbackimage-size" => [648,445],
-                        "fallbackimage-class" => 'transition'
-                    ];?>
-                    <?php display_responsive_image($background_image['ID'],$cropOptions) ?>
+                <div class="background-col absolute z-0 right-0 -right-50 md:-right-0 w-75 md:w-100 md:mt-40 md:relative md:order-1">
+                    <?php
+                    $mobile_aspectratio = [320, 220];
+                    if ($mobile_background_image) {
+                        $mobile_aspectratio = [320, 220, $mobile_background_image['ID']];
+                    }
+                    $cropOptions = [
+                        '(max-width: 768px)' => $mobile_aspectratio,
+                        '(min-width: 769px)' => [648, 445],
+                    ];
+
+                    $attributes = ['class' => 'transition'];
+                    ?>
+                    <?php echo hatslogic_get_attachment_picture($background_image['ID'], $cropOptions, $attributes); ?>
                 </div>
             <?php endif; ?>
         </div>
