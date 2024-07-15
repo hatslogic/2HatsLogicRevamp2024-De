@@ -2,6 +2,15 @@
 get_header();
 
 $author = get_queried_object();
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+$args = array(
+    'author' => $author->ID,
+    'posts_per_page' => 9, // Change this to the number of posts you want per page
+    'paged' => $paged
+);
+
+$author_query = new WP_Query($args);
 ?>
 
 <main class="page-wrap inline-block w-100 relative z-0">
@@ -9,7 +18,7 @@ $author = get_queried_object();
         <div class="container">
             <div class="title">
                 <h1 class="h1-sml">
-                    Author Archives: <?php echo get_the_author_meta( 'first_name', $author->ID ); ?>
+                    Author: <?php echo get_the_author_meta( 'first_name', $author->ID ); ?>
                 </h1>
             </div>
             <div class="content w-80 lg:w-100 flex mt-60 md:mt-40 justify-between align-start gap-80 md:gap-20 md:wrap md:justify-end">
@@ -58,15 +67,15 @@ $author = get_queried_object();
         </div>
     </section>
 
-    <?php if ( have_posts() ) : ?>
+    <?php if ($author_query->have_posts()) : ?>
     <section class="blog-list overflow-hidden relative pt-100 xs:pt-60 pb-100 md:pb-60">
         <div class="container">
             <div class="title">
                 <h2 class="h2">Recent Articles</h2>
             </div>
             <div class="grid grid-3 md:grid-2 xs:grid-1 mt-40 cg-30 rg-50 md:rg-30 w-100 grid grid-2 md:grid-2 xs:grid-1 cg-40 rg-60 md:rg-40">
-                <?php while ( have_posts() ) :
-					the_post(); 
+                <?php while ($author_query->have_posts()) : 
+                    $author_query->the_post(); 
 				    $reading_time_text = get_reading_time(get_the_ID(),get_the_content()); ?>
                     <div class="col card" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <a href="<?php the_permalink(); ?>" class="item">
@@ -96,9 +105,38 @@ $author = get_queried_object();
                     </div>
                 <?php endwhile; ?>
             </div>
+            
+            
+            <nav class="pagination w-100 mt-40 flex justify-center">
+                <ul class="mx-auto no-bullets flex fs-16 align-center">
+                <?php
+                $pagination_links = paginate_links(array(
+                    'total' => $author_query->max_num_pages,
+                    'type' => 'array',
+                    'prev_text' => '<i class="icomoon icon-chevron_left"></i>',
+                    'next_text' => '<i class="icomoon icon-chevron_right"></i>',
+                ));
+            
+                if (!empty($pagination_links)): ?>
+                   <nav class="pagination w-100 mt-40 flex justify-center">
+                        <ul class="mx-auto no-bullets flex fs-16 align-center">
+                            <?php foreach ($pagination_links as $link): 
+                                if (strpos($link, 'current') !== false) { ?>
+                                    <li class="px-10"><span aria-current="page" class="page-link no-decoration current"><?php echo $link ?></span></li>
+                                <?php } elseif (strpos($link, 'dots') !== false) { ?>
+                                    <li class="px-10"><span class="page-link no-decoration dots"><?php echo $link ?></span></li>
+                                <?php } else { ?>
+                                    <li class="px-10"><?php echo $link ?></li>
+                                <?php }
+                            endforeach; ?>
+                        </ul>
+                    </nav>
+                <?php endif;?>
+                </ul>
+            </nav>
         </div>
     </section>
-    <?php endif; ?>
+    <?php endif; wp_reset_postdata(); ?>
 
     <?php get_template_part( 'template-parts/newsletter-form');?>
     
