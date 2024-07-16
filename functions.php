@@ -944,7 +944,9 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
 
     if ($fallback_image_src && !empty($fallback_image_src['src'])) {
         $alt_text = esc_attr(get_post_meta($image_id, '_wp_attachment_image_alt', true));
-        $picture .= "<img srcset='".esc_url($fallback_image_src['src']).' 1x, '.esc_url($fallback_image_src_2x['src'])." 2x' $img_attributes alt='$alt_text'>";
+        $width = $fallback_image_src['width'];
+        $height = $fallback_image_src['height'];
+        $picture .= "<img srcset='".esc_url($fallback_image_src['src']).' 1x, '.esc_url($fallback_image_src_2x['src'])." 2x' $img_attributes alt='$alt_text' width='$width' height='$height'>";
     }
 
     $picture .= '</picture>';

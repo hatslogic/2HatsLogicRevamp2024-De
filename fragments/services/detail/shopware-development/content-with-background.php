@@ -1,7 +1,7 @@
 <?php extract($section); ?>
 <?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white'; ?>
-<section class="online-store">
-    <div class="container relative <?php echo $bg_class;?>">
+<section class="online-store <?php echo $bg_class;?>">
+    <div class="container relative">
         <?php if ($title): ?>
             <div class="title relative z-1 w-70 md:w-100">
                 <h2 class="h2"><?php echo $title; ?></h2>
@@ -40,7 +40,7 @@
                     }
                     $cropOptions = [
                         '(max-width: 768px)' => $mobile_aspectratio,
-                        '(min-width: 769px)' => [1200, 824],
+                        '(min-width: 769px)' => [1480, 824],
                     ];
 
                     $attributes = ['class' => 'transition'];
