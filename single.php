@@ -32,7 +32,14 @@ get_header();
 				<?php endif; ?>
 				<div class="info mt-15">
 					<div class="w-100 flex justify-between mb-15 md:mb-10">
-						<span class="c-dark-grey fs-14"><?php the_field('author'); ?> &period; <?php echo esc_html($reading_time_text); ?></span>
+						<span class="c-dark-grey fs-14">
+							<?php
+							$author_id = get_the_author_meta('ID');
+							$author_url = get_author_posts_url($author_id);
+							$author_name = get_the_author_meta('user_firstname');
+							?> 
+							<a href="<?php echo $author_url ?>"><?php echo $author_name; ?></a>
+							&period; <?php echo esc_html($reading_time_text); ?></span>
 						<span class="c-dark-grey fs-14"><?php echo get_the_date(); ?></span>
 					</div>
 					<h1 class="h2"><?php the_title(); ?></h1>
