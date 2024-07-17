@@ -3,7 +3,7 @@
 <section class="hire-developer <?php echo $bg_class;?>">
     <div class="container">
         <div class="flex align-center gap-80 md:gap-40 md:wrap">
-            <div class="col w-55 md:w-100">
+            <div class="col w-55 md:w-100 md:order-2">
                 <div class="headline">
                     <div class="title">
                         <h2 class="h2"><?php echo $title ?></h2>
@@ -20,7 +20,7 @@
                         <?php if ($list): ?>
                         <h3 class="h4 mt-40"><?php echo $list_title?></h3>
 
-                        <ul class="no-bullets mt-30 xs:fs-14">
+                        <ul class="no-bullets mt-30">
                             <?php foreach ($list as $list_item): ?>
                             <li class="mb-10 flex"> <i class="icomoon icon-check_circle fs-16 c-primary mt-4"></i> <span
                                     class="ml-8"><?php echo $list_item['list_item']; ?> </span>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col w-45 md:w-100 md:mt-40">
+            <div class="col w-45 md:w-100 md:order-1">
                 <?php if ($image): ?>
                 <?php $cropOptions = [
                     "fallbackimage-size" => [648,445],
@@ -46,7 +46,7 @@
         </div>
     </div>
     <?php if($plugin['slider']): ?>
-    <div class="container mt-80 extend">
+    <div class="container mt-80 extend md:mt-40">
         <div class="content plugins flex xl:wrap slider-wrapper">
             <div class="slider-label w-min-30 flex align-center">
                 <h3 class="h3 b-0 br-2 xl:br-0 bc-primary h-auto solid pr-40"><?php echo $plugin['title']; ?></h3>

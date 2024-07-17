@@ -18,12 +18,12 @@
                             <?php endif; ?>
                                 <div class="card xs:w-100 flex align-start">
                                     <?php if ($item['icon']): ?>
-                                        <div class="wrap-icon min-w-px-60 xs:min-w-px-40 max-w-px-60 xs:max-w-px-40">
+                                        <div class="wrap-icon min-w-px-60 xs:min-w-px-40 max-w-px-60 xs:max-w-px-40 mr-20">
                                             <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['title'] ?>"
                                                 loading="lazy" height="100px" width="100px">
                                         </div>
                                     <?php endif; ?>
-                                    <div class="info ml-20">
+                                    <div class="info">
                                         <h3 class="h4 transition font-bold"><?php echo $item['title']; ?></h3>
 
                                         <p class="mt-10 c-secondary"><?php echo $item['content']; ?></p>

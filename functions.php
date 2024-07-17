@@ -8,7 +8,7 @@ define('APP_THEME_DIR', dirname(__FILE__).DIRECTORY_SEPARATOR);
 
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
-    define('_S_VERSION', '25.9.4');
+    define('_S_VERSION', '1.0.0');
 }
 
 function my_acf_add_local_field_groups()
@@ -426,7 +426,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
 
         if ($depth === 0) {
             if ($is_compact) {
-                $output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex column justify-between md:column gap-20 md:gap-10 py-40 mt-20 md:mt-5 bg-white md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
+                $output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex column justify-between md:column gap-20 md:gap-15 py-40 mt-20 md:mt-5 bg-white md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
             } else {
                 $output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex justify-between md:column gap-30 md:gap-20 py-40 md:pt-20 md:pb-20 md:pl-0 md:pr-0\">\n";
             }
@@ -924,7 +924,7 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
             $imageId = $image_size[2];
         }
 
-        $image_src = bis_get_attachment_image_src($imageId, [$image_size[0] * 1.5, $image_size[1] * 1.5], true);
+        $image_src = bis_get_attachment_image_src($imageId, [$image_size[0] * 1.25, $image_size[1] * 1.25], true);
         $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], true);
 
         if ($image_src && !empty($image_src['src'])) {
@@ -944,7 +944,9 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
 
     if ($fallback_image_src && !empty($fallback_image_src['src'])) {
         $alt_text = esc_attr(get_post_meta($image_id, '_wp_attachment_image_alt', true));
-        $picture .= "<img srcset='".esc_url($fallback_image_src['src']).' 1x, '.esc_url($fallback_image_src_2x['src'])." 2x' $img_attributes alt='$alt_text'>";
+        $width = $fallback_image_src['width'];
+        $height = $fallback_image_src['height'];
+        $picture .= "<img srcset='".esc_url($fallback_image_src['src']).' 1x, '.esc_url($fallback_image_src_2x['src'])." 2x' $img_attributes alt='$alt_text' width='$width' height='$height'>";
     }
 
     $picture .= '</picture>';

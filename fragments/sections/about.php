@@ -26,7 +26,7 @@
                     <?php echo apply_filters('the_content', $content); ?>
                
                     <?php if ($link) { ?>
-                    <a href="<?php echo $link['url']; ?>" aria-label="<?php echo $link['title']; ?>" class="btn btn-secondary-outline"><?php echo $link['title']; ?></a></a>
+                    <a href="<?php echo $link['url']; ?>" aria-label="<?php echo $headline['title']; ?>" class="btn btn-secondary-outline"><?php echo $link['title']; ?></a></a>
                       <?php } ?>
                 </div>
             </div>

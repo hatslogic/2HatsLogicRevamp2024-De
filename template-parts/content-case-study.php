@@ -17,6 +17,7 @@
             <?php
             $args = array(
                 'post_type' => 'case-study',
+                'post_status' => 'publish',
                 'posts_per_page' => -1,
             );
             $case_studies_query = new WP_Query($args);
@@ -60,7 +61,7 @@
                         </div>
                         <div class="content">
                             <p class="mb-0"><?php the_excerpt(); ?></p>
-                            <a href="<?php the_permalink(); ?>" aria-label="read more" class="btn btn-secondary">Read More</a>
+                            <a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>" class="btn btn-secondary">Read More</a>
                         </div>
                     </div>
                 </div>

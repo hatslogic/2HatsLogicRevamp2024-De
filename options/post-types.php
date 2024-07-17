@@ -282,3 +282,31 @@ function register_help_desk() {
 }
 
 add_action( 'init', 'register_help_desk' );
+
+// help_desk_category taxonomy
+function register_help_desk_category() {
+	$labels = array(
+		'name'              => _x( 'Help Desk Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Help Desk Category', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Help Desk Categories' ),
+		'all_items'         => __( 'All Help Desk Categories' ),
+		'parent_item'       => __( 'Parent Help Desk Category' ),
+		'parent_item_colon' => __( 'Parent Help Desk Category:' ),
+		'edit_item'         => __( 'Edit Help Desk Category' ),
+		'update_item'       => __( 'Update Help Desk Category' ),
+		'add_new_item'      => __( 'Add New Help Desk Category' ),
+		'new_item_name'     => __( 'New Help Desk Category Name' ),
+		'menu_name'         => __( 'Help Desk Category' ),
+	);
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'help-desk-category' ),
+	);
+	register_taxonomy( 'help_desk_category', array( 'help-desk' ), $args );
+}
+
+add_action( 'init', 'register_help_desk_category' );

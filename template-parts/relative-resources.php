@@ -5,7 +5,7 @@
     <section class="journal pb-100 xs:pb-80">
         <div class="container">
             <div class="title">
-                <h2>Relative Resources</h2>
+                <h2>Related Articles</h2>
             </div>
             <div class="content mt-50 xs:mt-30">
                 <div

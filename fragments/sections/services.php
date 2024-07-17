@@ -20,7 +20,7 @@
                             <?php endif; ?>
                             <?php if ($sticky): ?>
                                 <a href="<?php echo $sticky['link']['url']; ?>"
-                                    aria-label="<?php echo $sticky['link']['title']; ?>"
+                                    aria-label="<?php echo $sticky['headline']['title']; ?>"
                                     class="btn btn-primary-outline"><?php echo $sticky['link']['title']; ?></a>
                             <?php endif; ?>
                         </div>
@@ -45,7 +45,7 @@
                                 <div class="content">
                                     <?php echo apply_filters('the_content', $item['content']); ?>
                                     <?php if ($item): ?>
-                                        <a href="<?php echo $item['link']['url']; ?>" aria-label="<?php echo $item['link']['title']; ?>" class="link link-primary"><?php echo $item['link']['title']; ?> 
+                                        <a href="<?php echo $item['link']['url']; ?>" aria-label="<?php echo $item['title']; ?>" class="link link-primary"><?php echo $item['link']['title']; ?> 
                                          <i class="icomoon icon-chevron_right"></i>
                                         </a>
                                     <?php endif; ?>

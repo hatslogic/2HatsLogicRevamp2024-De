@@ -29,7 +29,9 @@ const paths = {
         js: {
             main: 'src/assets/js/main.js',
             app: 'src/assets/js/app.js',
-            plugins: 'src/assets/js/plugins.js'
+            plugins: 'src/assets/js/plugins.js',
+            telInput: 'src/assets/js/tel-input.js',
+            utils: 'src/assets/js/utils.js'
         },
         fonts: 'src/assets/fonts/**/*',
         images: 'src/assets/img/**/*',
@@ -130,9 +132,9 @@ const cssTask = gulp.parallel(
     compileCSS.bind(null, paths.src.sass.wp, 'wp.min.css')
 );
 const jsTask = gulp.parallel(
-    compileJS.bind(null, paths.src.js.main, 'main.min.js')
-    // compileJS.bind(null, paths.src.js.main, 'app.min.js'),
-    // compileJS.bind(null, paths.src.js.plugins, 'plugins.min.js')
+    compileJS.bind(null, paths.src.js.main, 'main.min.js'),
+    compileJS.bind(null, paths.src.js.telInput, 'tel-input.js'),
+    compileJS.bind(null, paths.src.js.utils, 'utils.js')
 );
 const fontsTask = moveFiles.bind(null, paths.src.fonts, paths.dist.fonts);
 const imagesTask = gulp.series(
