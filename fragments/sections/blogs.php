@@ -36,8 +36,8 @@
                             <a href="<?php echo $url; ?>" class="item">
                                 <?php
                                         $cropOptions = [
-                                            '(max-width: 768px)' => [365, 262],
-                                            '(min-width: 769px)' => [370, 265],
+                                            '(max-width: 768px)' => [280, 146],
+                                            '(min-width: 769px)' => [280, 146],
                                         ];
                         $attributes = ['class' => 'transition', 'loading' => 'lazy', 'alt' => $featured_image_alt];
                         ?>
