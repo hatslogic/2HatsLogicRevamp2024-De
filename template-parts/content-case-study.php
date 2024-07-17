@@ -17,6 +17,7 @@
             <?php
             $args = array(
                 'post_type' => 'case-study',
+                'post_status' => 'publish',
                 'posts_per_page' => -1,
             );
             $case_studies_query = new WP_Query($args);
