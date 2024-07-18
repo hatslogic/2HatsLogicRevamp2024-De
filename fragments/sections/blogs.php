@@ -37,7 +37,7 @@
                                 <?php
                                         $cropOptions = [
                                             '(max-width: 768px)' => [280, 146],
-                                            '(min-width: 769px)' => [280, 146],
+                                            '(min-width: 769px)' => [350, 182],
                                         ];
                         $attributes = ['class' => 'transition', 'loading' => 'lazy', 'alt' => $featured_image_alt];
                         ?>

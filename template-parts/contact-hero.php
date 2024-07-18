@@ -24,8 +24,7 @@ $form_2_description = get_field('form_2_description');
                 <div class="col w-50 ml-50 xl:ml-30 md:ml-0 md:mt-40 md:w-100">
                     <div class="form-wrap">
                         <div class="title">
-                            <h2> <?php echo $form_1_title; ?></h2>
-
+                            <h1 class="h2"> <?php echo $form_1_title; ?></h1>
                             <p class="opacity-70"><?php echo $form_1_description; ?></p>
                         </div>
                         <div class="content">

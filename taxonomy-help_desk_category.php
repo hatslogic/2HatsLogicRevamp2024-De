@@ -104,7 +104,7 @@ get_header();
         </div>
     </section>
     <?php get_template_part('template-parts/blockquote'); ?>
-    <?php get_template_part( 'template-parts/get-started');?>
+    <?php get_template_part( 'template-parts/newsletter-form');?>
 </main><!-- #main -->
 
 <?php

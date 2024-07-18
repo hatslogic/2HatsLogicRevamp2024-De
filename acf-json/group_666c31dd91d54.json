@@ -81,7 +81,7 @@
                                     "label": "Title",
                                     "name": "title",
                                     "aria-label": "",
-                                    "type": "wysiwyg",
+                                    "type": "text",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -91,10 +91,10 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 0
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
                                 },
                                 {
                                     "key": "field_666c322138328",
@@ -1463,5 +1463,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720529054
+    "modified": 1721215360
 }
