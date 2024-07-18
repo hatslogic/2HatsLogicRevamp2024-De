@@ -1,12 +1,9 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying all single posts.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package 2HatsLogic
+ * @see https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  */
-
 get_header();
 ?>
 
@@ -19,26 +16,29 @@ get_header();
 
 		  	<div class="w-100">
 				<!-- Featured Image -->
-				<?php 
-				$reading_time_text = get_reading_time(get_the_ID(),get_the_content());
-				if (has_post_thumbnail()):
-					$featured_image = get_the_post_thumbnail_url(get_the_ID());
-					$featured_image_id = get_post_thumbnail_id(get_the_ID());
-					$cropOptions = [
-					"fallbackimage-size" => [749,379],
-					'fallbackimage-class'=> 'transition'
-					];?>
-					<?php display_responsive_image($featured_image_id,$cropOptions) ?>
-				<?php endif; ?>
+				<?php
+                $reading_time_text = get_reading_time(get_the_ID(), get_the_content());
+if (has_post_thumbnail()) {
+    $featured_image = get_the_post_thumbnail_url(get_the_ID());
+    $featured_image_id = get_post_thumbnail_id(get_the_ID());
+
+    $cropOptions = [
+        '(max-width: 768px)' => [390, 200],
+        '(min-width: 769px)' => [770, 390],
+    ];
+    $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+    ?>
+					<?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
+				<?php } ?>
 				<div class="info mt-15">
 					<div class="w-100 flex justify-between mb-15 md:mb-10">
 						<span class="c-dark-grey fs-14">
 							<?php
-							$author_id = get_the_author_meta('ID');
-							$author_url = get_author_posts_url($author_id);
-							$author_name = get_the_author_meta('user_firstname');
-							?> 
-							<a href="<?php echo $author_url ?>"><?php echo $author_name; ?></a>
+            $author_id = get_the_author_meta('ID');
+$author_url = get_author_posts_url($author_id);
+$author_name = get_the_author_meta('user_firstname');
+?> 
+							<a href="<?php echo $author_url; ?>"><?php echo $author_name; ?></a>
 							&period; <?php echo esc_html($reading_time_text); ?></span>
 						<span class="c-dark-grey fs-14"><?php echo get_the_date(); ?></span>
 					</div>
