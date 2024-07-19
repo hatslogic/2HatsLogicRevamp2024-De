@@ -18,7 +18,7 @@
                             <?php if ($sticky['content']): ?>
                                 <p><?php echo $sticky['content']; ?></p>
                             <?php endif; ?>
-                            <?php if ($sticky): ?>
+                            <?php if ($sticky['link']): ?>
                                 <a href="<?php echo $sticky['link']['url']; ?>"
                                     aria-label="<?php echo $sticky['headline']['title']; ?>"
                                     class="btn btn-primary-outline"><?php echo $sticky['link']['title']; ?></a>

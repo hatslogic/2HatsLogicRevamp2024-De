@@ -6,28 +6,28 @@
             $title = get_field('case_studies_page_title', 'option');
             $desc = get_field('case_studies_page_description', 'option');
             ?>
-            <?php if ($title): ?>
+            <?php if ($title) { ?>
                 <h1 class="h1-sml"><?php echo $title; ?></h1>
-            <?php endif; ?>
-            <?php if ($desc): ?>
-                <p><?php echo $desc ?></p>
-            <?php endif; ?>
+            <?php } ?>
+            <?php if ($desc) { ?>
+                <p><?php echo $desc; ?></p>
+            <?php } ?>
         </div>
         <div class="content mt-100 sm:mt-80 xs:mt-60">
             <?php
-            $args = array(
+            $args = [
                 'post_type' => 'case-study',
                 'post_status' => 'publish',
                 'posts_per_page' => -1,
-            );
+            ];
             $case_studies_query = new WP_Query($args);
             ?>
-            <?php if ($case_studies_query->have_posts()):
+            <?php if ($case_studies_query->have_posts()) {
                 $case_studies_query->the_post(); ?>
                 <!-- Featured Post -->
                 <div class="casestudy-list-featured flex sm:wrap align-start md:mb-20">
                     <div class="col w-60 md:w-100">
-                        <?php if (has_post_thumbnail()):
+                        <?php if (has_post_thumbnail()) {
                             $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'img_730x466');
                             $featured_image_id = get_post_thumbnail_id();
                             $attachment = wp_get_attachment_image_src($featured_image_id, 'img_730x466');
@@ -36,26 +36,26 @@
                             ?>
                             
                             <?php $cropOptions = [
-                                "fallbackimage-size" => [731,466],
-                                "fallbackimage-class" => "h-auto w-100"
-                                ];?>
-                            <?php display_responsive_image($featured_image_id,$cropOptions) ?>
-                            <?php else:
-                            $placeholder_image_id = attachment_url_to_postid(get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
-                            $placeholder_image_url = wp_get_attachment_image_src($placeholder_image_id, 'img_730x466')[0];
-                            
-                            ?>
-                            <img src="<?php echo $placeholder_image_url;?>" alt="Featured casestudy" width="731px" height="466px" class="h-auto w-100">
-                        <?php endif; ?>
+                                'fallbackimage-size' => [731, 466],
+                                'fallbackimage-class' => 'h-auto w-100',
+                            ]; ?>
+                            <?php display_responsive_image($featured_image_id, $cropOptions); ?>
+                            <?php } else {
+                                $placeholder_image_id = attachment_url_to_postid(get_site_url().'/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
+                                $placeholder_image_url = wp_get_attachment_image_src($placeholder_image_id, 'img_730x466')[0];
+
+                                ?>
+                            <img src="<?php echo $placeholder_image_url; ?>" alt="Featured casestudy" width="731px" height="466px" class="h-auto w-100">
+                        <?php } ?>
                     </div>
                     <div class="col w-40 ml-50 sm:ml-0 sm:mt-40 md:w-100">
                         <div class="title">
                             <span class="headline c-primary uppercase font-bold mb-10 block fs-14">
                                 <?php $categories = get_the_terms(get_the_ID(), 'category');
-                                if (!empty($categories) && !is_wp_error($categories)):
-                                    echo esc_html($categories[0]->name);
-                                endif;
-                                ?>
+                if (!empty($categories) && !is_wp_error($categories)) {
+                    echo esc_html($categories[0]->name);
+                }
+                ?>
                             </span>
                             <h2 class="h3"><?php the_title(); ?></h2>
                         </div>
@@ -69,11 +69,11 @@
 
                 <!-- Case Studies List -->
                 <div class="grid grid-2 md:grid-2 xs:grid-1 cg-40 rg-60 pt-80 md:pt-50 xs:pt-20 md:rg-40">
-                    <?php while ($case_studies_query->have_posts()):
+                    <?php while ($case_studies_query->have_posts()) {
                         $case_studies_query->the_post(); ?>
                         <div class="col card">
                             <a href="<?php the_permalink(); ?>" class="item">
-                                <?php if (has_post_thumbnail()):
+                                <?php if (has_post_thumbnail()) {
                                     $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'img_548x348');
                                     $featured_image_id = get_post_thumbnail_id();
                                     $attachment = wp_get_attachment_image_src($featured_image_id, 'img_548x348');
@@ -84,23 +84,23 @@
                                     ?>
                                     
                                     <?php $cropOptions = [
-                                        "fallbackimage-size" => [$featured_image_width,$featured_image_height],
-                                        "fallbackimage-class" => "transition"
-                                        ];?>
-                                    <?php display_responsive_image($featured_image_id,$cropOptions) ?>
-                                    <?php else:
-                                    $placeholder_image_id = attachment_url_to_postid(get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
-                                    $placeholder_image_url = get_site_url() . '/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
-                                    ?>
-                                    <img src="<?php $placeholder_image_url?>" loading="lazy" alt="<?php the_title() ?>" width="548px" height="349px" class="transition">
-                                <?php endif; ?>
+                                        'fallbackimage-size' => [$featured_image_width, $featured_image_height],
+                                        'fallbackimage-class' => 'transition',
+                                    ]; ?>
+                                    <?php display_responsive_image($featured_image_id, $cropOptions); ?>
+                                    <?php } else {
+                                        $placeholder_image_id = attachment_url_to_postid(get_site_url().'/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
+                                        $placeholder_image_url = get_site_url().'/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
+                                        ?>
+                                    <img src="<?php echo $placeholder_image_url; ?>" loading="lazy" alt="<?php the_title(); ?>" width="548px" height="349px" class="transition">
+                                <?php } ?>
                                 <div class="info mt-30">
                                     <span class="headline c-primary uppercase font-bold mb-10 block fs-14">
                                         <?php $categories = get_the_terms(get_the_ID(), 'category');
-                                        if (!empty($categories) && !is_wp_error($categories)) {
-                                            echo esc_html($categories[0]->name);
-                                        }
-                                        ?>
+                        if (!empty($categories) && !is_wp_error($categories)) {
+                            echo esc_html($categories[0]->name);
+                        }
+                        ?>
                                     </span>
                                     <h3 class="h4 transition font-bold"><?php the_title(); ?></h3>
                                     <p class="font-light"><?php echo truncate_text(get_the_excerpt(), 130, '...'); ?></p>
@@ -109,12 +109,12 @@
                                 </div>
                             </a>
                         </div>
-                    <?php endwhile; ?>
+                    <?php } ?>
                 </div>
                 <!-- End of Case Studies List -->
-            <?php else: ?>
+            <?php } else { ?>
                 <p><?php _e('No case studies found.', '2hatslogic'); ?></p>
-            <?php endif; ?>
+            <?php } ?>
             <?php wp_reset_postdata(); ?>
         </div>
     </div>
