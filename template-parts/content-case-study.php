@@ -35,11 +35,15 @@
 
                             ?>
                             
-                            <?php $cropOptions = [
-                                'fallbackimage-size' => [731, 466],
-                                'fallbackimage-class' => 'h-auto w-100',
-                            ]; ?>
-                            <?php display_responsive_image($featured_image_id, $cropOptions); ?>
+                            <?php
+                            $cropOptions = [
+                                '(max-width: 768px)' => [390, 249],
+                                '(min-width: 769px)' => [624, 424],
+                            ];
+
+                            $attributes = ['class' => 'h-auto w-100', 'loading' => 'lazy'];
+                            ?>
+                            <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
                             <?php } else {
                                 $placeholder_image_id = attachment_url_to_postid(get_site_url().'/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
                                 $placeholder_image_url = wp_get_attachment_image_src($placeholder_image_id, 'img_730x466')[0];
@@ -82,12 +86,15 @@
                                     $featured_image_height = $attachment[2];
                                     $featured_image_alt = get_the_title($featured_image_id);
                                     ?>
-                                    
-                                    <?php $cropOptions = [
-                                        'fallbackimage-size' => [$featured_image_width, $featured_image_height],
-                                        'fallbackimage-class' => 'transition',
-                                    ]; ?>
-                                    <?php display_responsive_image($featured_image_id, $cropOptions); ?>
+                                    <?php
+                                    $cropOptions = [
+                                        '(max-width: 768px)' => [390, 248],
+                                        '(min-width: 769px)' => [558, 355],
+                                    ];
+
+                                    $attributes = ['class' => 'transition', 'loading' => 'lazy'];
+                                    ?>
+                                    <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
                                     <?php } else {
                                         $placeholder_image_id = attachment_url_to_postid(get_site_url().'/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
                                         $placeholder_image_url = get_site_url().'/wp-content/uploads/2024/05/no-image-casestudy-list.svg';

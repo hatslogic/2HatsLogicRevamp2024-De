@@ -12,25 +12,27 @@ $form_shortcode = get_field('hire_now_form_shortcode', 'option');
                     <i class="icomoon icon-close"></i>
                 </button>
                 <div class="col w-50 h-100 xs:w-100 xs:h-50 md:hidden xs:visible">
-                    <?php if($hire_now_image && $hire_now_image_mobile): ?>
-                    <?php $cropOptions = [
-                    "fallbackimage-size" => [800,540],
-                    "fallbackimage-class" => "h-100 cover",
-                    "picturetag-class" => "h-100 w-100 sm:w-100"
-                    ];
-                    if($hire_now_image_mobile){
-
-                        $cropOptions["mobile-settings"] = [
-                            "image" => $hire_now_image_mobile['ID']
+                    <?php if ($hire_now_image && $hire_now_image_mobile) { ?>
+                    
+                    <?php
+                        $mobile_aspectratio = [430, 466];
+                        if ($hire_now_image_mobile) {
+                            $mobile_aspectratio = [430, 466, $hire_now_image_mobile['ID']];
+                        }
+                        ?>
+                        <?php
+                        $cropOptions = [
+                            '(max-width: 768px)' => $mobile_aspectratio,
+                            '(min-width: 769px)' => [576, 405],
                         ];
-                    }
-                    ?>
-                    <?php display_responsive_image($hire_now_image['ID'],$cropOptions) ?>
-                    <?php endif; ?>
+                        $attributes = ['picturetag_class' => 'h-100 w-100 sm:w-100', 'class' => 'h-100 cover', 'loading' => 'lazy'];
+                        ?>
+                    <?php echo hatslogic_get_attachment_picture($hire_now_image['ID'], $cropOptions, $attributes); ?>
+                    <?php } ?>
                 </div>
                 <div class="col w-50 h-100 xs:h-auto md:w-100 md:h-auto p-60 md:px-20 xs:py-60 flex align-center">
                     <div class="form-wrap">
-                    <?php echo do_shortcode('[contact-form-7 id="' . $form_shortcode->ID . '"]'); ?>
+                    <?php echo do_shortcode('[contact-form-7 id="'.$form_shortcode->ID.'"]'); ?>
                   </div>
                 </div>
             </div>
