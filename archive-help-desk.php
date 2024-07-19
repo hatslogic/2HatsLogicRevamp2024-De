@@ -1,12 +1,9 @@
 <?php
 /**
- * Template Name: Template Help desk
+ * Template Name: Template Help desk.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package 2HatsLogic
+ * @see https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
-
 get_header();
 
 $headline = get_field('headline');
@@ -22,18 +19,18 @@ $get_started = get_field('section_get_started');
         <div class="container relative z-1">
           <div class="title w-100 flex justify-between sm:wrap">
             <div class="header w-100 sm:mb-20">
-                <?php if($headline): ?>
-                    <h1 class="h1-sml w-100"><?php echo $headline ?></h1>
-                <?php endif; ?>
-                <?php if($sub_headline): ?>
-                    <p><?php echo $sub_headline ?></p>
-                <?php endif; ?>
+                <?php if ($headline) { ?>
+                    <h1 class="h1-sml w-100"><?php echo $headline; ?></h1>
+                <?php } ?>
+                <?php if ($sub_headline) { ?>
+                    <p><?php echo $sub_headline; ?></p>
+                <?php } ?>
             </div>
             <div class="flex w-100 justify-end gap-20 align-end">
               <div class="form-group max-w-58 md:max-w-100">
                 <form role="search" method="get" id="searchform" class="searchform"
                     action="<?php echo home_url('/'); ?>">
-                    <input type="search" class="form-control lined" placeholder="<?php echo ($search_placeholder) ? $search_placeholder : 'Search here' ?>"
+                    <input type="search" class="form-control lined" placeholder="<?php echo ($search_placeholder) ? $search_placeholder : 'Search here'; ?>"
                         value="<?php echo get_search_query(); ?>" name="s" id="s" aria-label="Search">
                     <input type="hidden" name="post_type" value="help-desk">
                 </form>
@@ -45,61 +42,61 @@ $get_started = get_field('section_get_started');
                 <div class="filter btn-group flex gap-15 scroll-snap xs:nowrap xs:scroll-x">
                     <?php
                     $terms = get_terms([
-                    'taxonomy' => 'help_desk_category',
-                    'hide_empty' => false,
+                        'taxonomy' => 'help_desk_category',
+                        'hide_empty' => false,
                     ]);
-            
-                    foreach ($terms as $term): ?> 
-                        <a href="<?php echo get_term_link($term) ?>" class="snap-center btn btn-secondary-outline"><?php echo $term->name ?></a>
-                    <?php endforeach; ?>
+
+foreach ($terms as $term) { ?> 
+                        <a href="<?php echo get_term_link($term); ?>" class="snap-center btn btn-secondary-outline"><?php echo $term->name; ?></a>
+                    <?php } ?>
                 
                 </div>
                 <div class="split-2 mt-60 xs:split-1 gap-30">
-                    <?php 
-                    $termCount = 0;
-                    foreach ($terms as $term): ?>
-                        <div class="<?php echo ($termCount == 0) ? 'col break-in:ac animate' : 'col mt-30 xs:mt-40 break-in:ac' ?>">
+                    <?php
+$termCount = 0;
+foreach ($terms as $term) { ?>
+                        <div class="<?php echo ($termCount == 0) ? 'col break-in:ac animate' : 'col mt-30 xs:mt-40 break-in:ac'; ?>">
                             <div class="card b-1 xs:b-0 p-30 xs:p-0 bc-hash solid transition">
                                 <div class="title b-0 bb-1 solid bc-hash pb-12 mb-20">
-                                    <h3 class="h4 uppercase"><?php echo $term->name ?></h3>
+                                    <h3 class="h4 uppercase"><?php echo $term->name; ?></h3>
                                 </div>
                                 <div class="content">
                                 <ul class="no-bullets fs-16">
                                     <?php
-                                    // Query posts for the current term
-                                    $args = [
-                                        'post_type' => 'help-desk',
-                                        'posts_per_page' => 6,
-                                        'tax_query' => [
-                                            [
-                                                'taxonomy' => 'help_desk_category',
-                                                'field'    => 'slug',
-                                                'terms'    => $term->slug,
-                                            ],
-                                        ],
-                                    ];
-                                    $query = new WP_Query($args); 
-                                    while ($query->have_posts()) :
-                                        $query->the_post(); ?>
+                // Query posts for the current term
+                $args = [
+                    'post_type' => 'help-desk',
+                    'posts_per_page' => 6,
+                    'tax_query' => [
+                        [
+                            'taxonomy' => 'help_desk_category',
+                            'field' => 'slug',
+                            'terms' => $term->slug,
+                        ],
+                    ],
+                ];
+    $query = new WP_Query($args);
+    while ($query->have_posts()) {
+        $query->the_post(); ?>
                                         <li class="mt-15">
-                                        <a href="<?php echo get_the_permalink() ?>" class="no-decoration">
-                                            <span><?php echo get_the_title() ?></span>
+                                        <a href="<?php echo get_the_permalink(); ?>" class="no-decoration">
+                                            <span><?php echo get_the_title(); ?></span>
                                         </a>
                                         </li>
-                                    <?php endwhile;
-                                    // Reset post data
-                                    wp_reset_postdata(); ?>
+                                    <?php }
+    // Reset post data
+    wp_reset_postdata(); ?>
                                 </ul>
                                 <div class="btn-group mt-30">
-                                    <a href="<?php echo get_term_link($term) ?>" class="link link-primary"><?php echo ($show_all_link_label) ? $show_all_link_label : 'Show All Articles' ?><i class="icomoon icon-chevron_right"></i>
+                                    <a href="<?php echo get_term_link($term); ?>" class="link link-primary"><?php echo ($show_all_link_label) ? $show_all_link_label : 'Show All Articles'; ?><i class="icomoon icon-chevron_right"></i>
                                     </a>
                                 </div>
                                 </div>
                             </div>
                         </div>
-                        <?php 
-                        $termCount++;
-                    endforeach; ?>
+                        <?php
+                        ++$termCount;
+} ?>
 
               </div>
             </div>
@@ -111,24 +108,24 @@ $get_started = get_field('section_get_started');
                 <div class="content">
                   <ul class="fs-16 no-bullets">
                       <?php
-                      $args = array(
-                          'post_type' => 'post',
-                          'posts_per_page' => 4,
-                          'orderby' => 'post_date',
-                          'order' => 'DESC',
-                      );
-                      $popular_posts = new WP_Query($args);
-                      if ($popular_posts->have_posts()):
-                          while ($popular_posts->have_posts()):
-                              $popular_posts->the_post(); ?>
+  $args = [
+      'post_type' => 'post',
+      'posts_per_page' => 4,
+      'orderby' => 'post_date',
+      'order' => 'DESC',
+  ];
+$popular_posts = new WP_Query($args);
+if ($popular_posts->have_posts()) {
+    while ($popular_posts->have_posts()) {
+        $popular_posts->the_post(); ?>
                               <li class="b-0 bb-1 solid bc-hash mb-20 pb-10">
                                 <a href="<?php the_permalink(); ?>" class="no-decoration"><?php the_title(); ?></a>
                               </li>
                           <?php
-                          endwhile;
-                      endif;
-                      wp_reset_postdata();
-                    ?>
+    }
+}
+wp_reset_postdata();
+?>
                   </ul>
                 </div>
               </div>
@@ -137,18 +134,22 @@ $get_started = get_field('section_get_started');
         </div>
         
         <div class="bg-shape absolute z-0 right-0 top-0 w-60 md:w-80">
-            <?php if($backgroundImage): ?>
-              <?php $cropOptions = [
-                "fallbackimage-size" => [873,873],
-                  "fallbackimage-class" => "shape w-100 absolute -top-10",
-                  "picturetag-class" => ""
-                  ];?>
-              <?php display_responsive_image($backgroundImage['ID'],$cropOptions) ?>
-            <?php endif; ?>
+            <?php if ($backgroundImage) { ?>
+              
+              <?php
+                $cropOptions = [
+                    '(max-width: 768px)' => [390, 204],
+                    '(min-width: 769px)' => [375, 195],
+                ];
+
+                $attributes = ['class' => 'shape w-100 absolute -top-10', 'loading' => 'lazy'];
+                ?>
+                <?php echo hatslogic_get_attachment_picture($backgroundImage['ID'], $cropOptions, $attributes); ?>
+            <?php } ?>
         </div>
     </section>
     
-    <?php get_template_part( 'template-parts/get-started');?>
+    <?php get_template_part('template-parts/get-started'); ?>
 
 </main>
 
