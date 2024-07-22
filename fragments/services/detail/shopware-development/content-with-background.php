@@ -43,7 +43,7 @@
                         '(min-width: 769px)' => [1480, 824],
                     ];
 
-                    $attributes = ['class' => 'transition'];
+                    $attributes = ['class' => 'transition', 'loading' => 'lazy'];
                     ?>
                     <?php echo hatslogic_get_attachment_picture($background_image['ID'], $cropOptions, $attributes); ?>
                 </div>
