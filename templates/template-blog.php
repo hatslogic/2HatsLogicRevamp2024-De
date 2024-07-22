@@ -59,7 +59,7 @@ if ($blog_query->have_posts()) {
                                         <?php
                                     $cropOptions = [
                                         '(max-width: 768px)' => [390, 204],
-                                        '(min-width: 769px)' => [375, 195],
+                                        '(min-width: 769px)' => [487, 255],
                                     ];
 
                                             $attributes = ['class' => 'transition', 'loading' => 'lazy'];

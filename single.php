@@ -24,7 +24,7 @@ if (has_post_thumbnail()) {
 
     $cropOptions = [
         '(max-width: 768px)' => [390, 200],
-        '(min-width: 769px)' => [770, 390],
+        '(min-width: 769px)' => [1025, 519],
     ];
     $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
     ?>
