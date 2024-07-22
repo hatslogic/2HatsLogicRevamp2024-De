@@ -23,7 +23,7 @@ $form_shortcode = get_field('free_consultation_form_shortcode', 'option');
                         <?php
                         $cropOptions = [
                             '(max-width: 768px)' => $mobile_aspectratio,
-                            '(min-width: 769px)' => [768, 649],
+                            '(min-width: 769px)' => [492, 701],
                         ];
                         $attributes = ['picturetag_class' => 'h-100 w-100 sm:w-100', 'class' => 'h-100 cover', 'loading' => 'lazy'];
                         ?>
