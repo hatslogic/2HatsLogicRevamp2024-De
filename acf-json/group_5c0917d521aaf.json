@@ -126,6 +126,101 @@
                     "readonly": 0,
                     "disabled": 0,
                     "parent_repeater": "field_64918f354a5ca"
+                },
+                {
+                    "key": "field_669dece14de87",
+                    "label": "Enable Sub Items",
+                    "name": "enable_sub_items",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "parent_repeater": "field_64918f354a5ca"
+                },
+                {
+                    "key": "field_669ded294de88",
+                    "label": "Sub items",
+                    "name": "sub_items",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_669dece14de87",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "row",
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add Row",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_669df2325ce09",
+                            "label": "Sub item Content",
+                            "name": "sub_item_content",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_669ded294de88"
+                        },
+                        {
+                            "key": "field_669f44cbf282d",
+                            "label": "Scroll To",
+                            "name": "scroll_to",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "Enter the ID of the element to scroll to.",
+                            "parent_repeater": "field_669ded294de88"
+                        }
+                    ],
+                    "parent_repeater": "field_64918f354a5ca"
                 }
             ]
         },
@@ -695,5 +790,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719921068
+    "modified": 1721715327
 }
