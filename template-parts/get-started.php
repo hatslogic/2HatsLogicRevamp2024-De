@@ -8,15 +8,15 @@ $form_selector = get_field('get_started_form_shortcode', 'option');
     <?php if ($get_started_image) { ?>
         
         <?php
-            $mobile_aspectratio = [430, 430];
+            $mobile_aspectratio = [420, 420];
         if ($get_started_image_mobile) {
-            $mobile_aspectratio = [430, 430, $get_started_image_mobile['ID']];
+            $mobile_aspectratio = [420, 420, $get_started_image_mobile['ID']];
         }
         ?>
         <?php
             $cropOptions = [
                 '(max-width: 768px)' => $mobile_aspectratio,
-                '(min-width: 769px)' => [952, 696],
+                '(min-width: 769px)' => [606, 746],
             ];
         $attributes = ['picturetag_class' => 'h-100 w-50 absolute top-0 sm:w-100 sm:relative', 'class' => 'h-100 cover', 'loading' => 'lazy'];
         ?>

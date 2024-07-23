@@ -15,15 +15,15 @@ $form_shortcode = get_field('contact_us_modal_form_shortcode', 'option');
                     <?php if ($contact_us_modal_image && $contact_us_modal_image_mobile) { ?>
                     
                     <?php
-                        $mobile_aspectratio = [430, 466];
+                        $mobile_aspectratio = [420, 420];
                         if ($contact_us_modal_image_mobile) {
-                            $mobile_aspectratio = [430, 466, $contact_us_modal_image_mobile['ID']];
+                            $mobile_aspectratio = [420, 420, $contact_us_modal_image_mobile['ID']];
                         }
                         ?>
                         <?php
                         $cropOptions = [
                             '(max-width: 768px)' => $mobile_aspectratio,
-                            '(min-width: 769px)' => [576, 405],
+                            '(min-width: 769px)' => [606, 746],
                         ];
                         $attributes = ['picturetag_class' => 'h-100 w-100 sm:w-100', 'class' => 'h-100 cover', 'loading' => 'lazy'];
                         ?>

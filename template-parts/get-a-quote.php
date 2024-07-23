@@ -15,16 +15,16 @@ $form_shortcode = get_field('get_a_quote_form_shortcode', 'option');
                     <?php if ($get_a_quote_image && $get_a_quote_image_mobile) { ?>
                     
                     <?php
-                        $mobile_aspectratio = [430, 430];
+                        $mobile_aspectratio = [420, 420];
                         if ($get_a_quote_image_mobile) {
-                            $mobile_aspectratio = [430, 430, $get_a_quote_image_mobile['ID']];
+                            $mobile_aspectratio = [420, 420, $get_a_quote_image_mobile['ID']];
                         }
                         ?>
            
                         <?php
                         $cropOptions = [
                             '(max-width: 768px)' => $mobile_aspectratio,
-                            '(min-width: 769px)' => [768, 649],
+                            '(min-width: 769px)' => [606, 746],
                         ];
                         $attributes = ['picturetag_class' => 'h-100 w-100 sm:w-100', 'class' => 'h-100 cover', 'loading' => 'lazy'];
                         ?>

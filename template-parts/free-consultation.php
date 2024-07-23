@@ -15,17 +15,17 @@ $form_shortcode = get_field('free_consultation_form_shortcode', 'option');
                     <?php if ($free_consultation_image && $free_consultation_image_mobile) { ?>
                    
                     <?php
-                            $mobile_aspectratio = [430, 466];
+                            $mobile_aspectratio = [420, 420];
                         if ($free_consultation_image_mobile) {
-                            $mobile_aspectratio = [430, 466, $free_consultation_image_mobile['ID']];
+                            $mobile_aspectratio = [420, 420, $free_consultation_image_mobile['ID']];
                         }
                         ?>
                         <?php
                         $cropOptions = [
                             '(max-width: 768px)' => $mobile_aspectratio,
-                            '(min-width: 769px)' => [492, 701],
+                            '(min-width: 1280px)' => [606, 746],
                         ];
-                        $attributes = ['picturetag_class' => 'h-100 w-100 sm:w-100', 'class' => 'h-100 cover', 'loading' => 'lazy'];
+                        $attributes = ['picturetag_class' => 'h-100 w-100 sm:w-100 flex align-start', 'class' => 'h-100 cover', 'loading' => 'lazy'];
                         ?>
                     <?php echo hatslogic_get_attachment_picture($free_consultation_image['ID'], $cropOptions, $attributes); ?>
                     <?php } ?>
