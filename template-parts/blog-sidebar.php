@@ -28,26 +28,26 @@ $link = get_field('sidebar_cta_link');
         <?php } ?>
 
         <?php if (get_field('sidebar_cta_title')) { ?>
-            <div class="content p-30 md:p-20 mt-30 b-1 solid bc-hash">
-                <div class="title">
-                    <h4><?php the_field('sidebar_cta_title'); ?></h4>
-                </div>
-                <div class="content mt-40">
-                    <?php
-                    if ($link) {
-                        $link_url = $link['url'];
-                        $link_title = $link['title'];
-                        $link_target = $link['target'] ? $link['target'] : '_self';
-                        ?>
-                        <a href="<?php echo esc_url($link_url); ?>"
-                            class="no-decoration bc-primary w-100 flex align-center justify-between"
-                            aria-label="Click here to book a free 30 min call">
-                            <span class="c-primary w-80"><?php echo esc_html($link_title); ?></span>
-                            <i class="icomoon icon-arrow_circle_right fs-32 c-primary"></i>
-                        </a>
-                    <?php } ?>
-                </div>
+            <?php
+            if ($link) {
+            $link_url = $link['url'];
+            $link_title = $link['title'];
+            $link_target = $link['target'] ? $link['target'] : '_self';
+            ?>
+            <div class="content p-30 md:p-20 mt-30 b-1 solid bc-hash bg-dark-primary c-white">
+                <a href="<?php echo esc_url($link_url); ?>" aria-label="<?php echo esc_html($link_title); ?>">
+                    <div class="title c-white">
+                        <h4><?php the_field('sidebar_cta_title'); ?></h4>
+                    </div>
+                    <div class="content mt-20">
+                    <div class="no-decoration bc-primary flex align-center">
+                        <span class="c-white mr-20"><?php echo esc_html($link_title); ?></span>
+                        <i class="icomoon icon-arrow_circle_right fs-32 c-white"></i>
+                    </div>
+                    </div>
+                </a>
             </div>
+            <?php } ?>
         <?php } ?>
         <?php
         if ($image) { ?>
