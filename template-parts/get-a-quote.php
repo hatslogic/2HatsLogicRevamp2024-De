@@ -24,7 +24,7 @@ $form_shortcode = get_field('get_a_quote_form_shortcode', 'option');
                         <?php
                         $cropOptions = [
                             '(max-width: 768px)' => $mobile_aspectratio,
-                            '(min-width: 769px)' => [713, 660],
+                            '(min-width: 769px)' => [768, 649],
                         ];
                         $attributes = ['picturetag_class' => 'h-100 w-100 sm:w-100', 'class' => 'h-100 cover', 'loading' => 'lazy'];
                         ?>
