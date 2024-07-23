@@ -38,19 +38,19 @@
 	<?php endif; ?>
 
 	<?php if(is_page_template('templates/template-hire-developer.php')): ?>
-		<link rel="preload" fetchpriority="high" as="image" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/laravel-bg.jpg" imagesrcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/laravel-bg.jpg, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/laravel-bg2x.jpg 2x" type="image/jpeg">
+		<link rel="preload" fetchpriority="high" as="image" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/laravel-bg.jpg" imagesrcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/laravel-bg.jpg, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/laravel-bg2x.jpg 2x" type="image/jpg">
 	<?php endif; ?>
 
 	<?php if(is_page_template('templates/template-shopware-agency.php') || is_page_template('templates/template-agency.php')): ?>
-		<link rel="preload" fetchpriority="high" as="image" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png" imagesrcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-012x.png 2x" type="image/jpeg">
+		<link rel="preload" fetchpriority="high" as="image" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png" imagesrcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-012x.png 2x" type="image/png">
 	<?php endif; ?>
 
 	<?php if(is_page_template('templates/template-services.php')): ?>
-		<link rel="preload" fetchpriority="high" as="image" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/service-bg.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/service-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/service-bg2x.jpg 2x" type="image/jpeg">
+		<link rel="preload" fetchpriority="high" as="image" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/service-bg.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/service-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/service-bg2x.jpg 2x" type="image/jpg">
 	<?php endif; ?>
 
 	<?php if(is_post_type_archive('post')): ?>
-		<link rel="preload" fetchpriority="high" as="image" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg2x.jpg 2x" type="image/jpeg">
+		<link rel="preload" fetchpriority="high" as="image" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg2x.jpg 2x" type="image/jpg">
 	<?php endif; ?>
 
 
