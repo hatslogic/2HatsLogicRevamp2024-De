@@ -6,25 +6,37 @@ $link = get_field('sidebar_cta_link');
 <div class="w-30 md:w-100 md:mt-30 sticky top-120">
     <div class="w-100">
         <?php if (get_field('enable_toc')) { ?>
-            <div class="b-0 md:b-1 solid bc-hash md:p-20">
-                <div class="title">
-                    <h4>Table of contents</h4>
-                </div>
-                <?php if (have_rows('toc_block')) { ?>
-                    <dive class="content mt-20">
-                        <ul class="fs-16 pl-15">
-                            <?php while (have_rows('toc_block')) {
+        <div class="b-0 md:b-1 solid bc-hash md:p-20">
+            <div class="title">
+                <h4>Table of contents</h4>
+            </div>
+            <?php if (have_rows('toc_block')) { ?>
+            <dive class="content mt-20">
+                <ul class="fs-16 pl-15">
+                    <?php while (have_rows('toc_block')) {
+                        the_row(); ?>
+                    <li class="mb-15">
+                        <a href="#head<?php echo get_row_index(); ?>" class="c-secondary hover-text-primary">
+                            <?php the_sub_field('toc_content'); ?>
+                        </a>
+                        <?php if (get_sub_field('enable_sub_items') && have_rows('sub_items')) { ?>
+                        <ul class="fs-14 pl-15 mt-10">
+                            <?php while (have_rows('sub_items')) {
                                 the_row(); ?>
-                                <li class="mb-15">
-                                    <a href="#head<?php echo get_row_index(); ?>" class="c-secondary hover-text-primary">
-                                        <?php the_sub_field('toc_content'); ?>
-                                    </a>
-                                </li>
+                            <li class="mb-10">
+                                <a href="#<?php the_sub_field('scroll_to'); ?>" class="c-secondary hover-text-primary">
+                                    <?php the_sub_field('sub_item_content'); ?>
+                                </a>
+                            </li>
                             <?php } ?>
                         </ul>
-                    </dive>
-                <?php } ?>
-            </div>
+                        <?php } ?>
+                    </li>
+                    <?php } ?>
+                </ul>
+            </dive>
+            <?php } ?>
+        </div>
         <?php } ?>
 
         <?php if (get_field('sidebar_cta_title')) { ?>
@@ -49,12 +61,13 @@ $link = get_field('sidebar_cta_link');
             </div>
             <?php } ?>
         <?php } ?>
+        
         <?php
         if ($image) { ?>
-            <div class="content">
-                <div class="w-100 py-30 md:pb-0">
-                    
-                    <?php
+        <div class="content">
+            <div class="w-100 py-30 md:pb-0">
+
+                <?php
                      $cropOptions = [
                          '(max-width: 768px)' => [390, 377],
                          '(min-width: 769px)' => [347, 318],
@@ -62,8 +75,8 @@ $link = get_field('sidebar_cta_link');
             $attributes = ['class' => 'transition', 'loading' => 'lazy'];
             ?>
                 <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
-                </div>
             </div>
+        </div>
         <?php } ?>
     </div>
 </div>
