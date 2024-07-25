@@ -44,5 +44,8 @@
   "main": "gulpfile.js",
   "directories": {
     "doc": "docs"
+  },
+  "dependencies": {
+    "@builder.io/partytown": "^0.10.2"
   }
 }

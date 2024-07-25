@@ -132,7 +132,7 @@ h2,
 h3,
 .h3 {
   font-size: rem(30);
-  line-height: 1.1;
+  line-height: 1.25;
 
   @include below($xxl) {
     font-size: rem(32);
