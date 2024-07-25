@@ -42,30 +42,31 @@ $dir = get_template_directory_uri();
                 </div>
             <?php endif; ?>
         </div>
-    </div>
-    <?php if ($cta_block): ?>
-        <div class="info bg-dark-primary c-white pt-100 pb-100 xs:pt-80 xs:pb-80 relative mt-80"> 
 
-            <?php if($background_image): ?>
-                <img src="<?php echo $background_image['url']; ?>" alt="<?php echo $background_image['alt']; ?>" height="<?php echo $background_image['height']; ?>" width="<?php echo $background_image['width']; ?>" class="absolute z-0 inset-0 ml-auto my-auto mr-0 w-auto max-h-90 max-w-90 xs:hidden">
-            <?php else: ?>
-                <img src="<?php echo $dir; ?>/dist/assets/img/background/help.svg" alt="help" height="100" width="100" class="absolute z-0 inset-0 ml-auto my-auto mr-0 w-auto max-h-90 max-w-90 xs:hidden">
-            <?php endif; ?>
+        <?php if ($cta_block): ?>
+            <div class="info bg-dark-primary c-white pt-100 pb-100 xs:pt-80 xs:pb-80 relative mt-80"> 
 
-            <div class="container">
-                <div class="title text-center">
-                    <?php if($cta_block['text']): ?>
-                        <h3 class="h3 block mb-30 md:mb-20"><?php echo $cta_block['text']; ?></h3>
-                    <?php endif; ?>
-                    <?php if($cta_block['button']): ?>
-                        <div class="w-100 flex justify-center"> 
-                            <a href="<?php echo $cta_block['button']['url']; ?>" class="btn btn-primary text-center">
-                                <?php echo $cta_block['button']['title']; ?>
-                            </a>
-                        </div>
-                    <?php endif; ?>
+                <?php if($background_image): ?>
+                    <img src="<?php echo $background_image['url']; ?>" alt="<?php echo $background_image['alt']; ?>" height="<?php echo $background_image['height']; ?>" width="<?php echo $background_image['width']; ?>" class="absolute z-0 inset-0 ml-auto my-auto mr-0 w-auto max-h-90 max-w-90 xs:hidden">
+                <?php else: ?>
+                    <img src="<?php echo $dir; ?>/dist/assets/img/background/help.svg" alt="help" height="100" width="100" class="absolute z-0 inset-0 ml-auto my-auto mr-0 w-auto max-h-90 max-w-90 xs:hidden">
+                <?php endif; ?>
+
+                <div class="container">
+                    <div class="title text-center">
+                        <?php if($cta_block['text']): ?>
+                            <h3 class="h3 block mb-30 md:mb-20"><?php echo $cta_block['text']; ?></h3>
+                        <?php endif; ?>
+                        <?php if($cta_block['button']): ?>
+                            <div class="w-100 flex justify-center"> 
+                                <a href="<?php echo $cta_block['button']['url']; ?>" class="btn btn-primary text-center">
+                                    <?php echo $cta_block['button']['title']; ?>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
-        </div>
-    <?php endif; ?>
+        <?php endif; ?>
+    </div>
 </section>
