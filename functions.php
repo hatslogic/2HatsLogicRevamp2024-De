@@ -836,36 +836,53 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
         $imageId = $image_id;
         if (isset($image_size[2])) {
             $imageId = $image_size[2];
-        }
+            list($mobWidth, $mobHeight) = resizeDimensions($image_size[0], $image_size[1], 768);
+            $image_src = bis_get_attachment_image_src($imageId, [$mobWidth, $mobHeight], true);
+            if ($image_src) {
+                $webp_src = webp(esc_url($image_src['src']));
+                $source_tag = "<source srcset='$webp_src' type='image/webp' media='".esc_attr($media_query)."'>
+                <source srcset='".esc_url($image_src['src'])."' media='".esc_attr($media_query)."'>";
 
-        $image_src = bis_get_attachment_image_src($imageId, [$image_size[0] * 1.25, $image_size[1] * 1.25], true);
-        $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], true);
+                $picture .= $source_tag;
+            }
+        } else {
+            $image_src = bis_get_attachment_image_src($imageId, [$image_size[0] * 1.25, $image_size[1] * 1.25], true);
+            $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], true);
 
-        if ($image_src && !empty($image_src['src'])) {
-            $webp_src = webp(esc_url($image_src['src']));
-            $webp_src_2x = webp(esc_url($image_src_2x['src']));
+            if ($image_src && !empty($image_src['src'])) {
+                $webp_src = webp(esc_url($image_src['src']));
+                $webp_src_2x = webp(esc_url($image_src_2x['src']));
 
-            $source_tag = "<source srcset='$webp_src 1x, $webp_src_2x 2x' type='image/webp' media='".esc_attr($media_query)."'>
+                $source_tag = "<source srcset='$webp_src 1x, $webp_src_2x 2x' type='image/webp' media='".esc_attr($media_query)."'>
 			<source srcset='".esc_url($image_src['src']).' 1x, '.esc_url($image_src_2x['src'])." 2x' media='".esc_attr($media_query)."'>";
 
-            $picture .= $source_tag;
+                $picture .= $source_tag;
+            }
         }
     }
 
     $largest_size = end($breakpoints);
     $fallback_image_src = bis_get_attachment_image_src($image_id, $largest_size);
-    $fallback_image_src_2x = bis_get_attachment_image_src($image_id, [$largest_size[0] * 2, $largest_size[1] * 2]);
 
-    if ($fallback_image_src && !empty($fallback_image_src['src'])) {
+    if ($fallback_image_src) {
         $alt_text = esc_attr(get_post_meta($image_id, '_wp_attachment_image_alt', true));
         $width = $fallback_image_src['width'];
         $height = $fallback_image_src['height'];
-        $picture .= "<img srcset='".esc_url($fallback_image_src['src']).' 1x, '.esc_url($fallback_image_src_2x['src'])." 2x' $img_attributes alt='$alt_text' width='$width' height='$height'>";
+        $picture .= "<img src='".esc_url($fallback_image_src['src'])."' $img_attributes alt='$alt_text' width='$width' height='$height'>";
     }
 
     $picture .= '</picture>';
 
     return $picture;
+}
+
+function resizeDimensions($width, $height, $maxWidth)
+{
+    $aspectRatio = $width / $height;
+    $newWidth = $maxWidth;
+    $newHeight = $maxWidth / $aspectRatio;
+
+    return [$newWidth, $newHeight];
 }
 function short_content($num)
 {
