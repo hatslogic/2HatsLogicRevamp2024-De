@@ -675,6 +675,7 @@ function get_related_case_studies($post_id, $taxonomy = 'category', $post_type =
         'post_type' => $post_type,
         'posts_per_page' => $posts_per_page,
         'post__not_in' => [$post_id],
+        'post_status' => 'publish',
         'tax_query' => [
             [
                 'taxonomy' => $taxonomy,
@@ -705,6 +706,7 @@ function get_related_resources($post_id, $taxonomy = 'category', $post_type = 'p
         'post_type' => $post_type,
         'posts_per_page' => $posts_per_page,
         'post__not_in' => [$post_id],
+        'post_status' => 'publish',
         'tax_query' => [
             [
                 'taxonomy' => $taxonomy,
@@ -728,7 +730,7 @@ function deregister_polyfill()
 add_action('wp_enqueue_scripts', 'deregister_polyfill');
 
 // function deregister_plugin_styles() {
-// 	wp_deregister_style( 'cfturnstile-js' );
+// 	wp_deregister_style( 'cfturnstile' );
 // }
 // add_action( 'wp_print_styles', 'deregister_plugin_styles', 100 );
 
@@ -736,6 +738,36 @@ add_action('wp_enqueue_scripts', 'deregister_polyfill');
 // 	wp_enqueue_script( 'cfturnstile-js', 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit', array(), 'null', true );
 // 	wp_script_add_data( 'cfturnstile-js', 'strategy', 'async' );
 // } );
+
+function custom_turnstile_script()
+{
+    // Deregister the original script if needed
+    wp_dequeue_script('cloudflare-turnstile-script'); // Adjust the handle name as per your existing script handle
+
+    // Register and enqueue the script in the head
+    wp_register_script(
+        'cloudflare-turnstile-api',
+        'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit', // Cloudflare Turnstile API URL
+        [], // Dependencies
+        null, // Version
+        false // In the head (true for footer, false for head)
+    );
+    wp_enqueue_script('cloudflare-turnstile-api');
+}
+
+// Add the custom attribute to the script tag
+function add_custom_script_type($tag, $handle)
+{
+    if ('cloudflare-turnstile-api' === $handle) {
+        // Add the custom type attribute to the script tag
+        $tag = str_replace(' src=', ' type="text/partytown" src=', $tag);
+    }
+
+    return $tag;
+}
+
+add_action('wp_enqueue_scripts', 'custom_turnstile_script');
+add_filter('script_loader_tag', 'add_custom_script_type', 10, 2);
 
 function contactform_dequeue_scripts()
 {
@@ -818,6 +850,92 @@ function replace_image_classes_with_ids($content)
 }
 add_filter('the_content', 'replace_image_classes_with_ids');
 
+// Crop Images Dynamically based on the aspect ratio and use in picture tags
+function display_responsive_image($image_id, $options)
+{
+    if (!$image_id) {
+        return;
+    }
+    // Get the original image dimensions
+    $image_data = wp_get_attachment_metadata($image_id);
+
+    $width = $image_data['width'];
+    $height = $image_data['height'];
+
+    if (isset($options['aspect-ratio'])) {
+        $options['fallbackimage-size'] = $options['aspect-ratio'];
+        $width = $options['aspect-ratio']['0'];
+        $height = $options['aspect-ratio']['1'];
+    }
+
+    // Calculate the aspect ratio
+    $mobile_aspect_ratio = $aspect_ratio = $width / $height;
+
+    $fallbackimage_class = isset($options['fallbackimage-class']) ? $options['fallbackimage-class'] : '';
+    $picturetag_class = isset($options['picturetag-class']) ? $options['picturetag-class'] : '';
+    $mobile_settings = isset($options['mobile-settings']) ? $options['mobile-settings'] : [];
+    $loading = isset($options['loading']) ? $options['loading'] : 'lazy';
+    $fetchpriority = isset($options['fetchpriority']) ? 'fetchpriority='.$options['fetchpriority'] : '';
+
+    $mobile_image_id = $image_id;
+
+    if (!empty($mobile_settings) && isset($mobile_settings['image'])) {
+        $mobile_image_id = $mobile_settings['image'];
+        if (isset($options['mobile-settings']['aspect-ratio'])) {
+            $mobile_aspect_ratio = $options['mobile-settings']['aspect-ratio'][0] / $options['mobile-settings']['aspect-ratio'][1];
+        }
+    }
+
+    $fallback_image_sizes = isset($options['fallbackimage-size']) ? $options['fallbackimage-size'] : [$width, $height];
+    // Mobile images
+    $mobile_1x = bis_get_attachment_image_src($mobile_image_id, [480, round(480 / $mobile_aspect_ratio)], 1);
+    $mobile_2x = bis_get_attachment_image_src($mobile_image_id, [768, round(768 / $mobile_aspect_ratio)], 1);
+
+    // Tablet images
+    $tablet_1x = bis_get_attachment_image_src($image_id, [768, round(768 / $aspect_ratio)], 1);
+    $tablet_2x = bis_get_attachment_image_src($image_id, [1536, round(1536 / $aspect_ratio)], 1);
+
+    // Small desktop images
+    $small_desktop_1x = bis_get_attachment_image_src($image_id, [1024, round(1024 / $aspect_ratio)], 1);
+    $small_desktop_2x = bis_get_attachment_image_src($image_id, [2048, round(2048 / $aspect_ratio)], 1);
+
+    // Large desktop images
+    $large_desktop_1x = bis_get_attachment_image_src($image_id, [1440, round(1440 / $aspect_ratio)], 1);
+    $large_desktop_2x = bis_get_attachment_image_src($image_id, [2880, round(2880 / $aspect_ratio)], 1);
+
+    // Fallback image
+    $default_image = bis_get_attachment_image_src($image_id, $fallback_image_sizes, 1);
+    ?>
+
+    <picture class="<?php echo $picturetag_class; ?>">
+
+		<?php if (isset($mobile_1x['src']) && isset($mobile_2x['src'])) { ?>
+        <!-- Mobile images -->
+		<source srcset="<?php echo webp($mobile_1x['src']); ?> 1x, <?php echo webp($mobile_2x['src']); ?> 2x" type="image/webp" media="(max-width: 599px)">
+        <source srcset="<?php echo $mobile_1x['src']; ?> 1x, <?php echo $mobile_2x['src']; ?> 2x" type="image/jpeg" media="(max-width: 599px)">	
+        
+		<?php }?>
+		<?php if (isset($tablet_1x['src']) && isset($tablet_2x['src'])) { ?>
+		<!-- Tablet images -->
+        <source srcset="<?php echo webp($tablet_1x['src']); ?> 1x, <?php echo webp($tablet_2x['src']); ?> 2x" type="image/webp" media="(min-width: 600px) and (max-width: 1023px)">
+        <source srcset="<?php echo $tablet_1x['src']; ?> 1x, <?php echo $tablet_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 600px) and (max-width: 1023px)">
+		<?php }?>
+		<?php if (isset($small_desktop_1x['src']) && isset($large_desktop_2x['src'])) { ?>
+        <!-- Small desktop images -->
+        <source srcset="<?php echo webp($small_desktop_1x['src']); ?> 1x, <?php echo webp($small_desktop_2x['src']); ?> 2x" type="image/webp" media="(min-width: 1024px) and (max-width: 1439px)">
+        <source srcset="<?php echo $small_desktop_1x['src']; ?> 1x, <?php echo $small_desktop_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 1024px) and (max-width: 1439px)">
+		<?php }?>	
+		<?php if (isset($large_desktop_1x['src']) && isset($large_desktop_2x['src'])) { ?>
+        <!-- Large desktop images -->
+        <source srcset="<?php echo webp($large_desktop_1x['src']); ?> 1x, <?php echo webp($large_desktop_2x['src']); ?> 2x" type="image/webp" media="(min-width: 1440px)">
+        <source srcset="<?php echo $large_desktop_1x['src']; ?> 1x, <?php echo $large_desktop_2x['src']; ?> 2x" type="image/jpeg" media="(min-width: 1440px)">
+		<?php }?>	
+			
+        <!-- Fallback image -->
+        <img src="<?php echo $default_image['src']; ?>" loading="<?php echo $loading; ?>"  <?php echo $fetchpriority; ?> alt="<?php echo get_post_meta($image_id, '_wp_attachment_image_alt', true); ?>" width="<?php echo $fallback_image_sizes[0]; ?>" height="<?php echo $fallback_image_sizes[1]; ?>" class="<?php echo $fallbackimage_class; ?>" >
+    </picture>
+    <?php
+}
 function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = [], array $attributes = []): ?string
 {
     if (!$image_id) {
@@ -834,12 +952,12 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
 
     foreach ($breakpoints as $media_query => $image_size) {
         $imageId = $image_id;
-        $image_src = bis_get_attachment_image_src($imageId, [$image_size[0] * 1.25, $image_size[1] * 1.25], false);
         if (isset($image_size[2])) {
             $imageId = $image_size[2];
-            $image_src = bis_get_attachment_image_src($imageId, [$image_size[0], $image_size[1]], false);
         }
-        $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], false);
+
+        $image_src = bis_get_attachment_image_src($imageId, [$image_size[0] * 1.25, $image_size[1] * 1.25], true);
+        $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], true);
 
         if ($image_src && !empty($image_src['src'])) {
             $webp_src = webp(esc_url($image_src['src']));
@@ -860,7 +978,7 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
         $alt_text = esc_attr(get_post_meta($image_id, '_wp_attachment_image_alt', true));
         $width = $fallback_image_src['width'];
         $height = $fallback_image_src['height'];
-        $picture .= "<img src='".esc_url($fallback_image_src['src'])."' $img_attributes alt='$alt_text' width='$width' height='$height'>";
+        $picture .= "<img srcset='".esc_url($fallback_image_src['src']).' 1x, '.esc_url($fallback_image_src_2x['src'])." 2x' $img_attributes alt='$alt_text' width='$width' height='$height'>";
     }
 
     $picture .= '</picture>';
