@@ -12,28 +12,25 @@ $form_shortcode = get_field('get_a_quote_form_shortcode', 'option');
                     <i class="icomoon icon-close"></i>
                 </button>
                 <div class="col w-50 h-100 xs:w-100 xs:h-50 md:hidden xs:visible">
-                    <?php if ($get_a_quote_image && $get_a_quote_image_mobile) { ?>
-                    
-                    <?php
-                        $mobile_aspectratio = [420, 420];
-                        if ($get_a_quote_image_mobile) {
-                            $mobile_aspectratio = [420, 420, $get_a_quote_image_mobile['ID']];
-                        }
-                        ?>
-           
-                        <?php
-                        $cropOptions = [
-                            '(max-width: 768px)' => $mobile_aspectratio,
-                            '(min-width: 769px)' => [606, 746],
+                    <?php if($get_a_quote_image && $get_a_quote_image_mobile): ?>
+                    <?php $cropOptions = [
+                    "fallbackimage-size" => [800,540],
+                    "fallbackimage-class" => "h-100 cover",
+                    "picturetag-class" => "h-100 w-100 sm:w-100"
+                    ];
+                    if($get_a_quote_image_mobile){
+
+                        $cropOptions["mobile-settings"] = [
+                            "image" => $get_a_quote_image_mobile['ID']
                         ];
-                        $attributes = ['picturetag_class' => 'h-100 w-100 sm:w-100', 'class' => 'h-100 cover', 'loading' => 'lazy'];
-                        ?>
-                    <?php echo hatslogic_get_attachment_picture($get_a_quote_image['ID'], $cropOptions, $attributes); ?>
-                    <?php } ?>
+                    }
+                    ?>
+                    <?php display_responsive_image($get_a_quote_image['ID'],$cropOptions) ?>
+                    <?php endif; ?>
                 </div>
                 <div class="col w-50 h-100 xs:h-auto md:w-100 md:h-auto p-60 md:px-20 xs:py-60 flex align-center">
                     <div class="form-wrap">
-                    <?php echo do_shortcode('[contact-form-7 id="'.$form_shortcode->ID.'"]'); ?>
+                    <?php echo do_shortcode('[contact-form-7 id="' . $form_shortcode->ID . '"]'); ?>
                   </div>
                 </div>
             </div>
