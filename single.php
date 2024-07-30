@@ -51,9 +51,9 @@ $author_name = get_the_author_meta('user_firstname');
 									</div>
 								</div>
 								</div>
-								<div class="action-btn btn-bookmark">
+								<!-- <div class="action-btn btn-bookmark">
 								<a href="#" class="bookmark bg-transparent b-0 p-0 fs-18 c-secondary hover:c-primary"><i class="icon icon-bookmark"></i></a>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
