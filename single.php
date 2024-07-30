@@ -18,26 +18,26 @@ get_header();
 				<!-- Featured Image -->
 				<?php
                 $reading_time_text = get_reading_time(get_the_ID(), get_the_content());
-				if (has_post_thumbnail()) {
-					$featured_image = get_the_post_thumbnail_url(get_the_ID());
-					$featured_image_id = get_post_thumbnail_id(get_the_ID());
+if (has_post_thumbnail()) {
+    $featured_image = get_the_post_thumbnail_url(get_the_ID());
+    $featured_image_id = get_post_thumbnail_id(get_the_ID());
 
-					$cropOptions = [
-						'(max-width: 768px)' => [390, 200],
-						'(min-width: 769px)' => [1025, 519],
-					];
-					$attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
-					?>
+    $cropOptions = [
+        '(max-width: 768px)' => [390, 200],
+        '(min-width: 769px)' => [1025, 519],
+    ];
+    $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+    ?>
 					<?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
 				<?php } ?>
 
 				<div class="info mt-20">
 					<div class="w-100 flex justify-between mb-15 md:mb-10">
 						<?php
-						$author_id = get_the_author_meta('ID');
-						$author_url = get_author_posts_url($author_id);
-						$author_name = get_the_author_meta('user_firstname');
-						?> 
+        $author_id = get_the_author_meta('ID');
+$author_url = get_author_posts_url($author_id);
+$author_name = get_the_author_meta('user_firstname');
+?> 
 						<div class="c-dark-grey"><a href="<?php echo $author_url; ?>"><?php echo $author_name; ?></a> &period; <?php echo esc_html($reading_time_text); ?></div>
 						<div class="c-dark-grey flex">
 							<div class="date"><?php echo get_the_date(); ?></div>
@@ -46,8 +46,8 @@ get_header();
 								<div class="dropdown relative">
 									<a href="#" class="share bg-transparent b-0 p-0 fs-18 c-secondary hover:c-primary"><i class="icon icon-share"></i></a>
 									<div class="dropdown-content fs-14 bg-white transition b-1 solid bc-hash absolute -right-32 top-30 z-1 min-w-px-120">
-									<a href="#" class="flex align-center p-10 hover:bg-primary hover:c-white"><i class="icomoon icon-facebook"></i> <span class="ml-10">Facebook</span></a>
-									<a href="#" class="flex align-center p-10 hover:bg-primary hover:c-white b-0 bt-1 bc-hash solid"><i class="icomoon icon-linkedin"></i> <span class="ml-10">LinkedIn</span></a>
+									<a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" target="_blank" class="flex align-center p-10 hover:bg-primary hover:c-white"><i class="icomoon icon-facebook"></i> <span class="ml-10">Facebook</span></a>
+									<a href="https://www.linkedin.com/cws/share?url=<?php echo get_permalink(); ?>" target="_blank" class="flex align-center p-10 hover:bg-primary hover:c-white b-0 bt-1 bc-hash solid"><i class="icomoon icon-linkedin"></i> <span class="ml-10">LinkedIn</span></a>
 									</div>
 								</div>
 								</div>
