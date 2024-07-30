@@ -56,3 +56,13 @@
         margin-top: rem(20);
     }
 }
+
+
+.blog-detail{
+    h1, h2, h3{
+        max-width: 80%;
+        @include below($md){
+            max-width: 100%;
+        }
+    }
+}
