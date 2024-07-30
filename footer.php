@@ -213,6 +213,18 @@ get_template_part( 'template-parts/contact-us-modal');
                 });
             }
         });
+
+        var styles = ["<?php echo get_template_directory_uri(); ?>/dist/assets/css/wp.min.css"];
+        styles.forEach(url => {
+            var request = new XMLHttpRequest();
+            request.open("GET", url);
+            request.send();
+            request.onload = function() {
+                var styleElement = document.createElement("style");
+                styleElement.textContent = request.responseText || request.response;
+                document.head.append(styleElement);
+            }
+        });
     });
 </script>
 
