@@ -18,38 +18,31 @@ get_header();
 				<!-- Featured Image -->
 				<?php
                 $reading_time_text = get_reading_time(get_the_ID(), get_the_content());
-				if (has_post_thumbnail()) {
-					$featured_image = get_the_post_thumbnail_url(get_the_ID());
-					$featured_image_id = get_post_thumbnail_id(get_the_ID());
+if (has_post_thumbnail()) {
+    $featured_image = get_the_post_thumbnail_url(get_the_ID());
+    $featured_image_id = get_post_thumbnail_id(get_the_ID());
 
-					$cropOptions = [
-						'(max-width: 768px)' => [390, 200],
-						'(min-width: 769px)' => [1025, 519],
-					];
-					$attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
-					?>
+    $cropOptions = [
+        '(max-width: 768px)' => [390, 200],
+        '(min-width: 769px)' => [1025, 519],
+    ];
+    $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+    ?>
 					<?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
 				<?php } ?>
-
-				<div class="info mt-20">
+				<div class="info mt-15">
 					<div class="w-100 flex justify-between mb-15 md:mb-10">
-						<?php
-						$author_id = get_the_author_meta('ID');
-						$author_url = get_author_posts_url($author_id);
-						$author_name = get_the_author_meta('user_firstname');
-						?> 
-						<div class="c-dark-grey"><a href="<?php echo $author_url; ?>"><?php echo $author_name; ?></a> &period; <?php echo esc_html($reading_time_text); ?></div>
-						<div class="c-dark-grey flex">
-							<div class="date"><?php echo get_the_date(); ?></div>
-							<div class="actions flex gap-15 ml-20"> 
-								<a href="#" class="share bg-transparent b-0 p-0 fs-18 c-secondary hover:c-primary"><i class="icon icon-share"></i></a>
-								<a href="#" class="bookmark bg-transparent b-0 p-0 fs-18 c-secondary hover:c-primary"><i class="icon icon-bookmark"></i></a>
-							</div>
-						</div>
+						<span class="c-dark-grey fs-14">
+							<?php
+            $author_id = get_the_author_meta('ID');
+$author_url = get_author_posts_url($author_id);
+$author_name = get_the_author_meta('user_firstname');
+?> 
+							<a href="<?php echo $author_url; ?>"><?php echo $author_name; ?></a>
+							&period; <?php echo esc_html($reading_time_text); ?></span>
+						<span class="c-dark-grey fs-14"><?php echo get_the_date(); ?></span>
 					</div>
-					<div class="title mt-40">
-						<h2><?php the_title(); ?></h2>
-					</div>
+					<h1 class="h2"><?php the_title(); ?></h1>
 				</div>
 			</div>
 
