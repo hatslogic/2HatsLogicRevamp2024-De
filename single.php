@@ -30,19 +30,36 @@ if (has_post_thumbnail()) {
     ?>
 					<?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
 				<?php } ?>
-				<div class="info mt-15">
+
+				<div class="info mt-20">
 					<div class="w-100 flex justify-between mb-15 md:mb-10">
-						<span class="c-dark-grey fs-14">
-							<?php
-            $author_id = get_the_author_meta('ID');
+						<?php
+        $author_id = get_the_author_meta('ID');
 $author_url = get_author_posts_url($author_id);
 $author_name = get_the_author_meta('user_firstname');
 ?> 
-							<a href="<?php echo $author_url; ?>"><?php echo $author_name; ?></a>
-							&period; <?php echo esc_html($reading_time_text); ?></span>
-						<span class="c-dark-grey fs-14"><?php echo get_the_date(); ?></span>
+						<div class="c-dark-grey"><a href="<?php echo $author_url; ?>"><?php echo $author_name; ?></a> &period; <?php echo esc_html($reading_time_text); ?></div>
+						<div class="c-dark-grey flex">
+							<div class="date"><?php echo get_the_date(); ?></div>
+							<div class="actions flex gap-15 ml-20">
+								<div class="action-btn btn-share">
+								<div class="dropdown relative">
+									<a href="#" class="share bg-transparent b-0 p-0 fs-18 c-secondary hover:c-primary"><i class="icon icon-share"></i></a>
+									<div class="dropdown-content fs-14 bg-white transition b-1 solid bc-hash absolute -right-32 top-30 z-1 min-w-px-120">
+									<a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" target="_blank" class="flex align-center p-10 hover:bg-primary hover:c-white"><i class="icomoon icon-facebook"></i> <span class="ml-10">Facebook</span></a>
+									<a href="https://www.linkedin.com/cws/share?url=<?php echo get_permalink(); ?>" target="_blank" class="flex align-center p-10 hover:bg-primary hover:c-white b-0 bt-1 bc-hash solid"><i class="icomoon icon-linkedin"></i> <span class="ml-10">LinkedIn</span></a>
+									</div>
+								</div>
+								</div>
+								<!-- <div class="action-btn btn-bookmark">
+								<a href="#" class="bookmark bg-transparent b-0 p-0 fs-18 c-secondary hover:c-primary"><i class="icon icon-bookmark"></i></a>
+								</div> -->
+							</div>
+						</div>
 					</div>
-					<h1 class="h2"><?php the_title(); ?></h1>
+					<div class="title mt-40">
+						<h2><?php the_title(); ?></h2>
+					</div>
 				</div>
 			</div>
 
