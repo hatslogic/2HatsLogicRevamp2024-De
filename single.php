@@ -58,7 +58,7 @@ $author_name = get_the_author_meta('user_firstname');
 						</div>
 					</div>
 					<div class="title mt-40">
-						<h2><?php the_title(); ?></h2>
+						<h1 class="h2"><?php the_title(); ?></h1>
 					</div>
 				</div>
 			</div>
