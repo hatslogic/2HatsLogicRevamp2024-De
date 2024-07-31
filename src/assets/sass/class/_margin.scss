@@ -1,7 +1,7 @@
 
 $sides: top, right, bottom, left; // Define the sides
 
-@for $space from 0 through 300 {
+@for $space from 0 through 3000 {
     @each $side in $sides {
         .m#{str-slice($side, 0, 1)}-#{$space} {
           margin-#{$side}: rem($space);

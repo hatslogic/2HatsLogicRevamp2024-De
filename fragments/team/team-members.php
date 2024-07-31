@@ -57,7 +57,7 @@
             wp_reset_postdata();
             ?>
             </div>
-            <div class="gradient-end h-px-300 w-100 block absolute bottom-0"></div>
+            <div class="gradient-end-white h-px-300 w-100 block absolute bottom-0"></div>
         </div>
         <?php } ?>
 

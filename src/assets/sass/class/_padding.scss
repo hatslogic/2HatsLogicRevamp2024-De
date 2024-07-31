@@ -49,7 +49,7 @@ $sides: top, right, bottom, left; // Define the sides
 }
 
 @each $breakpoint, $size in $breakpoints  {
-  @for $space from 1 through 300 {
+  @for $space from 0 through 300 {
     .#{$breakpoint}\:px-#{$space} {
       @include below($size) {
         padding-left: rem($space);

@@ -388,3 +388,47 @@ $breakpoints: (
         }
     }
 }
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        .#{$breakpoint}\:bg-primary {
+            background-color: var(--c-primary);
+        }
+
+        .#{$breakpoint}\:bg-secondary {
+            background-color: var(--c-secondary);
+        }
+
+        .#{$breakpoint}\:bg-white {
+            background-color: var(--c-white);
+        }
+
+        .#{$breakpoint}\:bg-black {
+            background-color: var(--c-black);
+        }
+
+        .#{$breakpoint}\:bg-grey {
+            background-color: var(--c-grey);
+        }
+
+        .#{$breakpoint}\:bg-light-grey {
+            background-color: var(--c-light-grey);
+        }
+
+        .#{$breakpoint}\:bg-dark-grey {
+            background-color: var(--c-dark-grey);
+        }
+
+        .#{$breakpoint}\:bg-moonstone {
+            background-color: var(--c-moonstone);
+        }
+
+        .#{$breakpoint}\:bg-pigment {
+            background-color: var(--c-pigment);
+        }
+
+        .#{$breakpoint}\:bg-light-blue {
+            background-color: var(--c-light-blue);
+        }
+    }
+}

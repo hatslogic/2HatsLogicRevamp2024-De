@@ -1,0 +1,17 @@
+.flip-wrap {
+    .flip-item{
+        padding-top: rem(100);
+        cursor: pointer;
+        width: 42%;
+        &.active{
+            width: 58%;
+            padding-top: 0;
+            h3{
+                color: var(--c-primary);
+            }
+            .flip-item-trigger{
+                border-color: var(--c-hash);
+            }
+        }
+    }
+}
