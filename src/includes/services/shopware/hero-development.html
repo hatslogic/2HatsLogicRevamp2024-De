@@ -2,13 +2,6 @@
     <div class="container relative z-1">
         <div class="flex align-start justify-between md:wrap">
             <div class="col w-50 md:w-100">
-                <div class="service-rating flex align-center gap-20 xs:wrap xs:gap-10">
-                    <div class="logo flex gap-10">
-                        <img src="assets/img/rating/google-logo.svg" class="w-px-100" alt="google" width="100" height="35">
-                        <img src="assets/img/rating/star.svg" alt="star" class="w-px-80" width="80" height="35">
-                    </div>
-                    <div class="label fs-20 xs:fs-14 xs:w-100"> 4.6 based on <span class="c-primary">70 reviews</span></div>
-                </div>
                 <div class="service-header mt-30">
                     <div class="headline">
                         <h1 class="h1-sml">Shopware<br/> Development Agency</h1>
@@ -19,23 +12,7 @@
                         <a href="#" class="btn btn-primary">Get a Quote</a>
                     </div>
                 </div>
-                <div class="review-block mt-40 xs:mt-30 flex gap-20 w-100 xs:wrap xs:w-100">
-                    <div class="avatar-wrap flex align-center mt-30 w-px-300 md:w-100">
-                        <div
-                          class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50 over overflow-hidden">
-                          <img src="assets/img/services/avatar.jpg" alt="CEO" width="100" height="100">
-                        </div>
-                        <div class="author ml-20">
-                          <div class="author-name fs-20 xs:fs-16 font-bold">Petter Joseph</div>
-                          <span class="rating-score font-light fs-15 lh-1-2 mt-5 inline-block">
-                            <img src="assets/img/rating/star.svg" alt="star" class="w-px-100 xs:w-px-75" width="100" height="100">
-                          </span>
-                        </div>
-                    </div>
-                    <div class="rewiew-wrap w-80 xs:w-100 xs:mt-10 px-20 py-0 bg-light-blue">
-                        <p class="fs-18 xs:fs-16 c-primary">Great guys! Professional developers and more! Helping a lot with Shopware 6! Thank you a lot!</p>
-                    </div>
-                </div>
+                <partial src="services/review.html"></partial>
             </div>
             <div class="col w-40  md:w-100 md:mt-40">
                 <partial src="consultation/from-aneesh.html"></partial>
