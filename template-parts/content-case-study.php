@@ -1,10 +1,11 @@
-<section class="casestudy-list relative pt-100 pb-100 xs:pt-60 xs:pb-80">
+<section class="casestudy-list overflow-hidden relative pt-100 pb-100 xs:pt-60 xs:pb-80">
     <div class="container relative z-1">
         <div class="title w-70 md:w-100">
             <?php
 
             $title = get_field('case_studies_page_title', 'option');
             $desc = get_field('case_studies_page_description', 'option');
+            $grid_col = get_field('grid_layout', 'option');
             ?>
             <?php if ($title) { ?>
                 <h1 class="h1-sml"><?php echo $title; ?></h1>
@@ -13,7 +14,7 @@
                 <p><?php echo $desc; ?></p>
             <?php } ?>
         </div>
-        <div class="content mt-100 sm:mt-80 xs:mt-60">
+        <div class="content">
             <?php
             $args = [
                 'post_type' => 'case-study',
@@ -22,57 +23,10 @@
             ];
             $case_studies_query = new WP_Query($args);
             ?>
-            <?php if ($case_studies_query->have_posts()) {
-                $case_studies_query->the_post(); ?>
-                <!-- Featured Post -->
-                <div class="casestudy-list-featured flex sm:wrap align-start md:mb-20">
-                    <div class="col w-60 md:w-100">
-                        <?php if (has_post_thumbnail()) {
-                            $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'img_730x466');
-                            $featured_image_id = get_post_thumbnail_id();
-                            $attachment = wp_get_attachment_image_src($featured_image_id, 'img_730x466');
-                            $featured_image = $attachment[0];
-
-                            ?>
-                            
-                            <?php
-                            $cropOptions = [
-                                '(max-width: 768px)' => [390, 249],
-                                '(min-width: 769px)' => [624, 424],
-                            ];
-
-                            $attributes = ['class' => 'h-auto w-100', 'loading' => 'lazy'];
-                            ?>
-                            <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
-                            <?php } else {
-                                $placeholder_image_id = attachment_url_to_postid(get_site_url().'/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
-                                $placeholder_image_url = wp_get_attachment_image_src($placeholder_image_id, 'img_730x466')[0];
-
-                                ?>
-                            <img src="<?php echo $placeholder_image_url; ?>" alt="Featured casestudy" width="731px" height="466px" class="h-auto w-100">
-                        <?php } ?>
-                    </div>
-                    <div class="col w-40 ml-50 sm:ml-0 sm:mt-40 md:w-100">
-                        <div class="title">
-                            <span class="headline c-primary uppercase font-bold mb-10 block fs-14">
-                                <?php $categories = get_the_terms(get_the_ID(), 'category');
-                if (!empty($categories) && !is_wp_error($categories)) {
-                    echo esc_html($categories[0]->name);
-                }
-                ?>
-                            </span>
-                            <h2 class="h3"><?php the_title(); ?></h2>
-                        </div>
-                        <div class="content">
-                            <p class="mb-0"><?php the_excerpt(); ?></p>
-                            <a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>" class="btn btn-secondary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Featured Post -->
-
+            <?php if ($case_studies_query->have_posts()) {?>
+             
                 <!-- Case Studies List -->
-                <div class="grid grid-2 md:grid-2 xs:grid-1 cg-40 rg-60 pt-80 md:pt-50 xs:pt-20 md:rg-40">
+                <div class="grid <?php echo $grid_col; ?> md:grid-2 xs:grid-1 cg-40 rg-60 pt-80 md:pt-50 xs:pt-20 md:rg-40">
                     <?php while ($case_studies_query->have_posts()) {
                         $case_studies_query->the_post(); ?>
                         <div class="col card">

@@ -3,6 +3,32 @@
     "title": "Case Studies Page",
     "fields": [
         {
+            "key": "field_66ab6546aca0e",
+            "label": "Grid Layout",
+            "name": "grid_layout",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "grid-2": "2 column",
+                "grid-3": "3 column",
+                "grid-4": "4 column"
+            },
+            "default_value": "grid-2",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_6646e79798981",
             "label": "Case Studies Page Title",
             "name": "case_studies_page_title",
@@ -61,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715934412
+    "modified": 1722508973
 }
