@@ -1,6 +1,5 @@
 //=require variables.js
 //=require plugins/hats-slider.js
-//=require plugins/smooth-scroll.js
 //=require plugins/rellax.js
 
 //=require app/hero.js
