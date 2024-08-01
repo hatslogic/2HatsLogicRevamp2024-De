@@ -107,3 +107,23 @@ $sides: top, right, bottom, left; // Define the sides
         }
     }
 }
+
+@for $space from 0 through 100 {
+  @each $side in $sides {
+      .rp-#{str-slice($side, 0, 1)}-#{$space} {
+        padding-#{$side}: $space * 1%;
+      }
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @include below($size) {
+    @for $space from 0 through 100 {
+      @each $side in $sides {
+        .#{$breakpoint}\:rp-#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: $space * 1%;
+          }
+      }
+    }
+  }
+}

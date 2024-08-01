@@ -3,14 +3,19 @@
         padding-top: rem(100);
         cursor: pointer;
         width: 42%;
+
+        h3{
+            opacity: 0.5;
+        }
+
+        @include below($md){
+            padding-top: rem(40);
+        }
         &.active{
             width: 58%;
             padding-top: 0;
             h3{
-                color: var(--c-primary);
-            }
-            .flip-item-trigger{
-                border-color: var(--c-hash);
+                opacity: 1;
             }
         }
     }
