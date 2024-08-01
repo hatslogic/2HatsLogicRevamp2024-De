@@ -32,6 +32,7 @@ const paths = {
             plugins: 'src/assets/js/plugins.js',
             telInput: 'src/assets/js/tel-input.js',
             rellax: 'src/assets/js/rellax.js',
+            smoothScroll: 'src/assets/js/plugins/smooth-scroll.js',
             utils: 'src/assets/js/utils.js'
         },
         fonts: 'src/assets/fonts/**/*',
@@ -136,6 +137,7 @@ const jsTask = gulp.parallel(
     compileJS.bind(null, paths.src.js.main, 'main.min.js'),
     compileJS.bind(null, paths.src.js.telInput, 'tel-input.js'),
     compileJS.bind(null, paths.src.js.rellax, 'rellax.js'),
+    compileJS.bind(null, paths.src.js.smoothScroll, 'smooth-scroll.js'),
     compileJS.bind(null, paths.src.js.utils, 'utils.js')
 );
 const fontsTask = moveFiles.bind(null, paths.src.fonts, paths.dist.fonts);
