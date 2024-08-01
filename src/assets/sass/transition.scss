@@ -2,7 +2,7 @@ $delay-step: 0.08s; // Define the step for delay
 $transform-duration: 0.5s;
 $opacity-duration: 0.5s;
 $elements-count: 10;
-$traslate-y: rem(12);
+$traslate-y: 12px;
 $transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
 // Define the mixin to generate transition delay for nth child
