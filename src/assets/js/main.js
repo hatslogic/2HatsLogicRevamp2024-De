@@ -1,8 +1,8 @@
 //=require variables.js
 //=require plugins/hats-slider.js
 //=require plugins/smooth-scroll.js
+//=require plugins/rellax.js
 
-//=require app/base.js
 //=require app/hero.js
 //=require app/menu.js
 //=require app/progress.js
@@ -14,5 +14,6 @@
 //=require app/accordian.js
 //=require app/plugins.js
 //=require app/contact.js
-//=require app/case-study.js
 //=require app/team.js
+//=require app/animation.js
+//=require app/toggle-transform.js
