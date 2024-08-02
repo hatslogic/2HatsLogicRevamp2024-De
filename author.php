@@ -23,19 +23,23 @@ $author_query = new WP_Query($args);
             </div>
             <div class="content w-80 lg:w-100 flex mt-60 md:mt-40 justify-between align-start gap-80 md:gap-20 md:wrap md:justify-end">
                 <div class="avatar-wrap md:w-100 md:mb-20 col">
-                    <div class="img-wrap bg-light-grey w-px-220 h-px-220 max-w-px-220 min-w-px-220 xs:w-px-150 xs:h-px-150 xs:max-w-px-150 xs:min-w-px-150 over overflow-hidden">
-                        <?php $author_image = get_field('user_image', 'user_'.$author->ID); ?>
-                        
-                        
-                        <?php
-                            $cropOptions = [
-                                '(max-width: 768px)' => [100, 100],
-                                '(min-width: 769px)' => [150, 150],
-                            ];
-$attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
-?>
-                <?php echo hatslogic_get_attachment_picture($author_image['ID'], $cropOptions, $attributes); ?>
+                <div class="img-wrap bg-light-grey w-px-220 h-px-220 max-w-px-220 min-w-px-220 xs:w-px-150 xs:h-px-150 xs:max-w-px-150 xs:min-w-px-150 over overflow-hidden">
+                    <?php $author_image = get_field('user_image', 'user_'.$author->ID); ?>
+                    <?php
+                    $cropOptions = [
+                        '(max-width: 768px)' => [100, 100],
+                        '(min-width: 769px)' => [150, 150],
+                    ];
+                    $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+                    ?>
+
+                    <?php
+                    if($author_image):
+                    echo hatslogic_get_attachment_picture($author_image['ID'], $cropOptions, $attributes);
+                    endif;
+                    ?>
                     </div>
+                    
                     <?php if (get_field('social_links', 'user_'.$author->ID)) { ?>
                         <?php $social_links = get_field('social_links', 'user_'.$author->ID); ?>
                         <div class="social-media mt-40 md:mt-20 flex align-center justify-center md:justify-start fs-22"> 
@@ -53,7 +57,7 @@ $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' =>
                         </div>
                     <?php } ?>
                 </div>
-                <div class="quote col">
+                <div class="quote col w-100">
                     <div class="author mb-30">
                         <h1 class="author-name fs-24 font-bold"><?php echo get_the_author_meta('display_name', $author->ID); ?></h1>
                         <?php if (get_field('designation', 'user_'.$author->ID)) { ?>
