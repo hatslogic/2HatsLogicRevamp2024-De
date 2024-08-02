@@ -1,14 +1,28 @@
 <section class="case-study-hero mt-40">
   <div class="container">
-    <div class="banner-block relative">
-      <picture>
-        <source srcset="uploads/case-studies/v2/banner.webp" type="image/webp">
-        <source srcset="uploads/case-studies/v2/banner.jpg" type="image/jpg">
-        <img src="uploads/case-studies/v2/banner.jpg" alt="banner" width="1920px" height="986px" class="h-auto w-100">
-      </picture>
+    <div class="banner-block relative md:static">
+      <div class="img-wrap relative">
+        <picture>
+          <source srcset="uploads/case-studies/v2/banner.webp" type="image/webp">
+          <source srcset="uploads/case-studies/v2/banner.jpg" type="image/jpg">
+          <img src="uploads/case-studies/v2/banner.jpg" alt="banner" width="1920px" height="986px" class="h-auto w-100">
+        </picture>
+        <div class="technologies col b-0 bl-1 solid bc-white pl-40 py-10 flex align-start md:justify-center column md:row md:pl-0 md:bl-0 cg-30 md:cg-20 rg-30 absolute z-2 right-60 md:right-0 md:left-0 bottom-100 md:bottom-20 md:mt-40">
+          <a href="#">
+            <img src="assets/img/technology/shopware-logo-white.svg" alt="technologies" class="max-w-px-140 max-h-px-35 xs:max-h-px-22 xs:max-w-px-100 w-100 h-auto" width="200px" height="60px">
+          </a>
+          <a href="#">
+            <img src="assets/img/technology/vue-logo-white.svg" alt="technologies" class="max-w-px-140 max-h-px-35 xs:max-h-px-22 xs:max-w-px-100 w-100 h-auto" width="200px" height="60px">
+          </a>
+          <a href="#">
+            <img src="assets/img/technology/figma-logo-white.svg" alt="technologies" class="max-w-px-140 max-h-px-35 xs:max-h-px-22 xs:max-w-px-100 w-100 h-auto" width="200px" height="60px">
+          </a>
+        </div>
+        <div class="img-overlay absolute h-100 w-100 top-0 z-1"></div>
+      </div>
 
-      <div class="content-wrap h-100 w-100 c-white xs:c-secondary absolute top-0 xs:relative h-100 w-100 z-2 flex align-end p-60 xs:p-0 xs:mt-40">
-        <div class="headline-content flex justify-between xs:column">
+      <div class="content-wrap h-100 w-100 c-white md:c-secondary absolute top-0 md:relative h-100 w-100 z-2 flex align-end p-60 md:p-0 md:mt-40">
+        <div class="headline-content">
           <div class="title">
             <span class="headline font-bold">Custom development</span>
             <h1 class="h1-sml mt-20">Bike2Care - German e-bike online store</h1>
@@ -16,7 +30,7 @@
             <div class="actions flex gap-15">
               <div class="action-btn btn-share">
                 <div class="dropdown relative">
-                    <a href="#" class="share bg-white xs:bg-secondary b-0 p-10 radius-50 fs-18 flex align-center justify-center h-px-45 w-px-45 c-secondary xs:c-white hover:c-white hover:bg-primary">
+                    <a href="#" class="share bg-white md:bg-secondary b-0 p-10 radius-50 fs-18 flex align-center justify-center h-px-45 w-px-45 c-secondary md:c-white hover:c-white hover:bg-primary">
                         <i class="icon icon-share"></i>
                     </a>
                     <div class="dropdown-content fs-14 bg-white transition b-1 solid bc-hash absolute left-0 top-60 z-1 min-w-px-120">
@@ -30,19 +44,14 @@
                 </div>
               </div>
               <div class="action-btn btn-bookmark">
-                <a href="#" class="bookmark bg-white xs:bg-secondary b-0 p-10 radius-50 fs-18 flex align-center justify-center h-px-45 w-px-45 c-secondary xs:c-white hover:c-white hover:bg-primary">
+                <a href="#" class="bookmark bg-white md:bg-secondary b-0 p-10 radius-50 fs-18 flex align-center justify-center h-px-45 w-px-45 c-secondary md:c-white hover:c-white hover:bg-primary">
                   <i class="icon icon-bookmark"></i>
                 </a>
               </div>
             </div>
           </div>
-          <div class="technologies xs:mt-40 hidden">
-            &nbsp;
-            <!--TODO: Adding technologies-->
-          </div>
         </div>
       </div>
-      <div class="img-overlay absolute h-100 w-100 top-0 z-1 xs:hidden"></div>
     </div>
   </div>
 </section>
