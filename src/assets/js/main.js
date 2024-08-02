@@ -1,6 +1,5 @@
 //=require variables.js
 //=require plugins/hats-slider.js
-//=require plugins/rellax.js
 
 //=require app/hero.js
 //=require app/menu.js
@@ -14,5 +13,4 @@
 //=require app/plugins.js
 //=require app/contact.js
 //=require app/team.js
-//=require app/animation.js
 //=require app/toggle-transform.js
