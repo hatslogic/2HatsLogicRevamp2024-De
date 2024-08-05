@@ -8,7 +8,7 @@
             <?php } ?> 
             <h2><?php echo $title; ?></h2>
             <?php if (!empty($content)) { ?>    
-                <p><?php echo $content; ?></p>
+                <p><?php echo nl2br($content); ?></p>
             <?php } ?>    
         </div>
         <?php } ?>   

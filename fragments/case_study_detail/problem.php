@@ -15,7 +15,7 @@
             <?php } ?>
             <?php if (!empty($content)) { ?>
             <div class="content">
-                <p><?php echo $content; ?></p>
+                <p><?php echo nl2br($content); ?></p>
             </div>
             <?php } ?>
         </div>

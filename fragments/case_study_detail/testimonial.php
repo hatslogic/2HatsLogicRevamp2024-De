@@ -13,7 +13,7 @@
             </div>
             <?php if (!empty($content)) {?>
             <blockquote class="font-quote m-0 fs-22 lh-1-25 sm:fs-18 sm:lh-1-24"> 
-                <?php echo $content; ?>
+                <?php echo nl2br($content); ?>
             </blockquote>
             <?php }?>  
             <?php if (!empty($author)) { ?>  
