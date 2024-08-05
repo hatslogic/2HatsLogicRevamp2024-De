@@ -3,7 +3,7 @@
 <?php if (!empty($title) || !empty($content)) {?>
     <div class="container">
         <div class="max-w-75 xs:max-w-100 mx-auto px-60 xs:px-0">
-            <?php if (!empty($title)) { ?>
+            <?php if (!empty($title) || !empty($headline)) { ?>
             <div class="title"> 
                 <?php if (!empty($headline)) { ?>
                 <span class="headline c-primary font-bold"><?php echo $headline; ?></span>
