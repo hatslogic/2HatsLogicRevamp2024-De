@@ -3,7 +3,7 @@
     <div class="container">
         <?php if (!empty($title)) {?>
         <div class="title">
-        <?php echo $title; ?>
+        <h2><?php echo $title; ?></h2>
         </div>
         <?php } ?>
         <?php if (!empty($case_studies)) { ?>
