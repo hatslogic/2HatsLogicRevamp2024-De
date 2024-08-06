@@ -26,7 +26,7 @@
             <?php if ($case_studies_query->have_posts()) {?>
              
                 <!-- Case Studies List -->
-                <div class="grid <?php echo $grid_col; ?> md:grid-2 xs:grid-1 cg-40 rg-60 pt-80 md:pt-50 xs:pt-20 md:rg-60">
+                <div class="grid <?php echo $grid_col; ?> md:grid-2 xs:grid-1 cg-60 rg-60 pt-80 md:pt-50 xs:pt-20 md:rg-60">
                     <?php while ($case_studies_query->have_posts()) {
                         $case_studies_query->the_post(); ?>
                         <div class="col card">
