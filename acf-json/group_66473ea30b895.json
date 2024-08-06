@@ -1214,6 +1214,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "case-study"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "templates\/template-case-study-details.php"
             }
         ]
     ],
@@ -1226,5 +1231,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719814187
+    "modified": 1722589055
 }
