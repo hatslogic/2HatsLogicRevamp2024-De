@@ -3,6 +3,26 @@
     "title": "Blog Details Page Builder",
     "fields": [
         {
+            "key": "field_66b1defd1955c",
+            "label": "Disable Modals",
+            "name": "disable_modals",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_5c0917dab5dd5",
             "label": "Author",
             "name": "author",
@@ -176,6 +196,7 @@
                     "collapsed": "",
                     "button_label": "Add Row",
                     "rows_per_page": 20,
+                    "parent_repeater": "field_64918f354a5ca",
                     "sub_fields": [
                         {
                             "key": "field_669df2325ce09",
@@ -219,8 +240,7 @@
                             "append": "Enter the ID of the element to scroll to.",
                             "parent_repeater": "field_669ded294de88"
                         }
-                    ],
-                    "parent_repeater": "field_64918f354a5ca"
+                    ]
                 }
             ]
         },
@@ -790,5 +810,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721715327
+    "modified": 1722933181
 }
