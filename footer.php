@@ -151,7 +151,10 @@ $privacy_policy_link = $footer_bottom['privacy_policy']['url'] ? $footer_bottom[
 <div class="overlay overlay-modal transition fixed top-0 bottom-0 left-0 right-0 z-12  md:hidden"></div>
 
 <?php
-if (!is_singular('help-desk')) {
+global $wp_query;
+$postid = $wp_query->post->ID;
+$disable_modals = get_field('disable_modals', $postid);
+if (!is_singular('help-desk') && !$disable_modals) {
     get_template_part('template-parts/free-consultation');
     get_template_part('template-parts/get-a-quote');
     get_template_part('template-parts/hire-now');
@@ -161,7 +164,7 @@ if (!is_singular('help-desk')) {
 
 <?php wp_footer(); ?>
 
-<script>
+<script id="Radhu" <?php echo $disable_modals; ?>>
     var elements = document.querySelectorAll('section, header, footer, .service, .col, .content .info');
     var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
