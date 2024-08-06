@@ -24,7 +24,7 @@
                     <?php foreach ($technologies_used as $tech) { ?>
                     <a href="<?php echo $tech['link']; ?>">
                         <img src="<?php echo $tech['image']; ?>" alt="technologies"
-                            class="max-w-px-140 max-h-px-35 xs:max-h-px-22 xs:max-w-px-100 w-100 h-auto" width="200px"
+                            class="max-w-px-140 max-h-px-35 xs:max-h-px-22 xs:max-w-px-100 w-auto h-auto" width="200px"
                             height="60px">
                     </a>
                     <?php } ?>
