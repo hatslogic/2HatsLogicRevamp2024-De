@@ -443,7 +443,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
 
         $is_compact = in_array('compact', $item->classes);
 
-        $active_class = $item->current ? ' active' : '';
+        $active_class = $item->current || in_array('current-menu-parent', $item->classes) || in_array('current-menu-ancestor', $item->classes)  ? ' active' : '';
         $li_classes = '';
         $a_classes = '';
 
