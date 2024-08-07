@@ -6,7 +6,7 @@
   <div class="container relative z-1">
     <div class="flex align-start justify-between md:wrap">
       <div class="col w-50 md:w-100">
-        <div class="service-header mt-30">
+        <div class="service-header">
           <?php if ($headline['title']): ?>
             <h1 class="h1-sml"><?php echo $headline['title'] ?></h1>
           <?php endif; ?>
