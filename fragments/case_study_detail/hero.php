@@ -19,7 +19,7 @@
         <?php echo hatslogic_get_attachment_picture($image['ID'], $cropOptions, $attributes); ?>
         <?php }?>
         <?php if (!empty($technologies_used)) { ?>
-        <div class="technologies col b-0 bl-1 solid bc-white pl-40 py-10 flex align-start md:justify-center column md:row md:pl-0 md:bl-0 cg-30 md:cg-20 rg-30 absolute z-2 right-60 md:right-0 md:left-0 bottom-100 md:bottom-20 md:mt-40">
+        <div class="technologies col b-0 bl-1 solid bc-white pl-40 py-10 flex align-center md:justify-center column md:row md:pl-0 md:bl-0 cg-30 md:cg-20 rg-30 absolute z-2 right-60 md:right-0 md:left-0 bottom-100 md:bottom-20 md:mt-40">
         <?php foreach ($technologies_used as $tech) { ?>
             <?php if (!empty($tech['image'])) { ?>  
                 <a href="<?php echo $tech['link']; ?>">
