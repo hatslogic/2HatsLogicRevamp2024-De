@@ -1,8 +1,8 @@
 <?php extract($section); ?>
 <section class="hero pt-60">
     <div class="container">
-        <div class="flex align-start justify-between md:wrap">
-            <div class="col w-50 md:w-100">
+        <div class="flex align-center justify-between md:wrap">
+            <div class="col w-50 md:w-100 md:mt-40 md:order-2">
                 <div class="headline">
                     <?php if ($headline['title']) { ?>
                         <h1 class="h3"><?php echo $headline['subtitle']; ?></h1>
@@ -17,7 +17,7 @@
                 </div>
             </div>
             <?php if ($image) { ?>
-                <div class="col w-40 md:w-100 md:mt-40">
+                <div class="col w-40 md:w-100 md:order-1">
                 <?php
                     $cropOptions = [
                         '(max-width: 768px)' => [335, 232],
