@@ -5,8 +5,9 @@
             <?php if (!empty($title)): ?>
                 <h1 class="font-bold">
                     <?php echo $title ?>
+                    <?php if (!empty($bluetitle)): ?>
                     <mark class="relative inline-block text-center c-primary">
-                        <span class="relative z-2">Your Brand.</span>
+                        <span class="relative z-2"><?php echo $bluetitle ?></span>
                         <svg class="stroke block absolute" viewBox="0 0 154 13">
                             <use href="#line"></use>
                         </svg>
@@ -14,13 +15,20 @@
                             <use href="#line"></use>
                         </svg>
                     </mark>
+                    <?php endif ?>
                 </h1>
             <?php endif ?>
             <p class="mt-50 sm:mt-30"> <?php echo ($description ? $description : ''); ?> <br>
                 <?php echo ($links ? $links : ''); ?> </p>
                 <div class="btn-group flex align-center mt-60 md:mt-40 md:wrap md:column md:align-start">
-                <button onclick="openModal('get-a-quote')" aria-label="get a quote" class="btn btn-secondary">Get a Free Quote</button>
-
+                <?php if(!empty($cta['label'])) { ?>    
+                    <?php if( $cta['action'] == 'modal' ) { ?>    
+                        <button onclick="openModal('<?php echo $cta['modal']; ?>')" aria-label="get a quote" class="btn btn-secondary"><?php echo $cta['label'];?></button>
+                     <?php } ?>
+                     <?php if( $cta['action'] == 'link' ) { ?>    
+                        <a href="<?php echo $cta['link']['url']; ?>"  class="btn btn-secondary"><?php echo $cta['label']; ?></a>
+                     <?php } ?>
+                <?php } ?>    
                 <!-- rating -->
                 <?php if ($rating): ?>
                     <div class="rating flex align-center row ml-60 md:ml-0 md:mt-40 sm:column sm:align-start">
@@ -41,7 +49,18 @@
         </div>
 
         <!-- Free Consultation -->
-        <button onclick="openModal('free-consultation')" aria-label="consultation" class="b-0 bg-transparent consultation-btn pointer absolute top-0 right-20 md:hidden">
+        <?php if(!empty($animation_section_texts['text1']) && !empty($animation_section_texts['text2']) && !empty($animation_section_texts['text3'])) { ?>
+        <?php 
+            $cta_action = $animation_section_texts['cta_action'];
+            $cta_modal = $animation_section_texts['cta_modal'];
+            $cta_link = $animation_section_texts['cta_link'];
+        ?>
+        <?php if($cta_action == 'modal') { ?>
+        <button onclick="openModal('<?php echo $cta_modal ?>')" aria-label="consultation" class="b-0 bg-transparent consultation-btn pointer absolute top-0 right-20 md:hidden">
+        <?php } ?> 
+        <?php if($cta_action == 'link') { ?>
+        <a href="<?php echo $cta_link['url']; ?>" aria-label="consultation" class="b-0 bg-transparent consultation-btn pointer absolute top-0 right-20 md:hidden">
+        <?php } ?>   
             <svg width="176px" height="177px" viewBox="0 0 176 177" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="consultation" class="consultation sm:hidden" stroke="none" stroke-width="1" fill="none"
@@ -50,9 +69,9 @@
                         <g id="label" class="label transition" transform="translate(-30, -64)" fill="var(--c-primary)">
                             <text id="text" class="font-button"
                                 transform="translate(149, 149) rotate(10) translate(-133, -111)">
-                                <tspan x="90" y="108">FREE</tspan>
-                                <tspan x="57" y="122">CONSULTATION</tspan>
-                                <tspan x="76" y="136">REQUEST</tspan>
+                                <tspan x="90" y="108"><?php echo $animation_section_texts['text1']; ?></tspan>
+                                <tspan x="57" y="122"><?php echo $animation_section_texts['text2']; ?></tspan>
+                                <tspan x="76" y="136"><?php echo $animation_section_texts['text3']; ?></tspan>
                             </text>
                         </g>
                         <g id="inner" class="inner transition" fill="var(--c-primary)">
@@ -104,7 +123,12 @@
                     </g>
                 </g>
             </svg>
-        </a>
+        <?php if($cta_action == 'modal') { ?>    
+        </button>
+        <?php } else { ?>
+        </a> 
+        <?php } ?>  
+        <?php } ?>
     </div>
     <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0" class="hidden">
         <defs>
