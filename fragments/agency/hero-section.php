@@ -6,39 +6,6 @@
   <div class="container relative z-1">
     <div class="flex align-center justify-between md:wrap">
       <div class="col w-50 md:w-100">
-      <?php if ($rating['rating'] || $rating['score']): ?>
-          <div class="service-rating flex align-center gap-20 xs:wrap xs:gap-10">
-              
-              <div class="logo flex gap-10">
-                  <?php if($rating['platform']): ?>
-                      <img src="<?php echo $rating['platform']['url']; ?>" class="w-px-100" alt="<?php echo $rating['platform']['alt']; ?>" width="100" height="35">
-                  <?php else: ?>
-                      <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/google-logo.svg" class="w-px-100" alt="google" width="100" height="35">
-                  <?php endif; ?>
-                  <?php if($rating['rating']): ?>
-                      <img src="<?php echo $rating['rating']['url'] ?>" alt="<?php echo $rating['rating']['alt'] ?>" class="w-px-80" width="80" height="35">
-                  <?php else: ?>
-                      <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/star.svg" alt="star" class="w-px-80" width="80" height="35">
-                  <?php endif; ?>
-              </div>
-              <div class="label fs-20 xs:fs-14 xs:w-100">
-                  <?php echo esc_html($rating['score']); ?>
-                  based on 
-                  <?php if($rating['link_to_review']): ?>
-                      <a href="<?php echo $rating['link_to_review']['url']; ?>" target="_blank">
-                  <?php endif; ?>
-                  <span class="c-primary">
-                      <?php echo esc_html($rating['total']); ?> reviews
-                  </span>
-                  <?php if($rating['link_to_review']): ?>
-                      </a>
-                  <?php endif; ?>
-              </div>
-
-          </div>
-        <?php endif; ?>
-
-        
         <div class="service-header mt-30">
           <?php if ($headline['title']): ?>
             <h1 class="h1-sml"><?php echo $headline['title'] ?></h1>
@@ -57,29 +24,57 @@
           <?php endif; ?>
         </div>
 
-        <?php if ($review['review']): ?>
-          <div class="review-block mt-40 xs:mt-30 flex gap-20 w-100 xs:wrap xs:w-100">
-              <div class="avatar-wrap flex align-center mt-30 w-px-300 md:w-100">
-                  <?php if ($review['avatar']): ?>
-                      <div
-                          class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50 over overflow-hidden">
-                          <img src="<?php echo $review['avatar']['sizes']['img_180x180']; ?>" alt="avatar" width="100" height="100">
-                      </div>
-                  <?php endif; ?>
-                  <div class="author ml-20">
-                      <div class="author-name fs-20 xs:fs-16 font-bold"><?php echo $review['name']; ?></div> <span
-                          class="rating-score font-light fs-15 lh-1-2 mt-5 inline-block">
-                          <img src="<?php echo $review['rating']['url'] ?>" alt="star" class="w-px-100 xs:w-px-75"
-                              width="100" height="100">
-                      </span>
+        <?php if ($review['review']) { ?>
+                <div class="review-wrap bg-light-grey p-20 mt-40">
 
-                  </div>
-              </div>
-              <div class="rewiew-wrap w-80 xs:w-100 xs:mt-10 px-20 py-0 bg-light-blue">
-                  <p class="fs-18 xs:fs-16 c-primary"><?php echo $review['review']; ?></p>
-              </div>
-          </div>
-      <?php endif; ?>
+                    <div class="avatar-wrap flex align-center">
+                        <?php if ($review['avatar']) { ?>
+                        <div
+                            class="img-wrap radius-50 bg-light-grey w-px-50 h-px-50 max-w-px-50 min-w-px-50 over overflow-hidden">
+                            <img src="<?php echo $review['avatar']['sizes']['img_180x180']; ?>" alt="CEO" width="50"
+                                height="50">
+                        </div>
+                        <?php } ?>
+                        <div class="author ml-15">
+                            <div class="author-name fs-16 font-bold"><?php echo $review['name']; ?></div>
+                        </div>
+                    </div>
+                    <div class="review-block flex gap-20 md:mt-10 w-100 xs:wrap xs:w-100">
+                        <p class="fs-16 c-primary"><?php echo $review['review']; ?></p>
+                    </div>
+                    <?php if ($rating['rating'] || $rating['score']) { ?>
+                    <div class="google-rating flex justify-between align-center xs:wrap mt-15 xs:mt-10">
+                        <div class="rating-score flex align-center gap-20">
+                            <?php if ($rating['platform']) { ?>
+                            <img src="<?php echo $rating['platform']['url']; ?>" class="w-px-100"
+                                alt="<?php echo $rating['platform']['alt']; ?>" class="w-px-80" width="80" height="16">
+                            <?php } else { ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/google-logo.svg"
+                                alt="google" class="w-px-80" alt="google" width="80" height="16">
+                            <?php } ?>
+                            <?php if ($rating['rating']) { ?>
+                            <img src="<?php echo $rating['rating']['url']; ?>"
+                                alt="<?php echo $rating['rating']['alt']; ?>" class="w-px-90" width="90" height="18">
+                            <?php } else { ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/star.svg"
+                                alt="star" class="w-px-90" width="90" height="18">
+                            <?php } ?>
+                        </div>
+                        <div class="label fs-16 xs:mt-5">
+                            <?php echo esc_html($rating['score']); ?> based on
+                            <?php if (!empty($rating['link_to_review'])) { ?>
+                            <a href="<?php echo esc_url($rating['link_to_review']['url']); ?>" target="_blank"
+                                class="c-primary">
+                                <?php } ?>
+                                <?php echo esc_html($rating['total']); ?> reviews
+                                <?php if (!empty($rating['link_to_review'])) { ?>
+                            </a>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+                <?php } ?>
       </div>
       <?php if ($consultant['name'] || $form_selector): ?>
         <div class="col w-40 md:w-100 md:mt-40">
