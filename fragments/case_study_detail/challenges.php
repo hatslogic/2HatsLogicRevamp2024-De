@@ -3,14 +3,16 @@
     <div class="container">
         <div class="max-w-75 xs:max-w-100 mx-auto px-60 xs:px-0">
             <?php if (!empty($title) || !empty($content)) {?>
-                <?php if (!empty($title) || !empty($headline)) { ?>
+                
                     <div class="title">
                         <?php if (!empty($headline)) { ?>
                         <span class="headline c-primary font-bold"><?php echo $headline; ?></span>
                         <?php } ?>
+                        <?php if (!empty($title)) { ?>
                         <h2><?php echo $title; ?></h2>
+                        <?php } ?>
                     </div>
-                <?php } ?>
+                
                 <?php if (!empty($content)) { ?>
                     <div class="content">
                         <p><?php echo nl2br($content); ?></p>

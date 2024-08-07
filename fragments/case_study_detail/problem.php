@@ -8,9 +8,9 @@
                 <?php if (!empty($headline)) { ?>
                 <span class="headline c-primary font-bold"><?php echo $headline; ?></span>
                 <?php } ?>
-
+                <?php if (!empty($title)) { ?>    
                 <h2><?php echo $title; ?></h2>
-
+                <?php } ?>    
             </div>
             <?php } ?>
             <?php if (!empty($content)) { ?>

@@ -6,7 +6,9 @@
             <?php if (!empty($headline)) { ?>
             <span class="headline c-primary font-bold"><?php echo $headline; ?></span>
             <?php } ?> 
+            <?php if (!empty($title)) { ?>
             <h2><?php echo $title; ?></h2>
+            <?php } ?> 
             <?php if (!empty($content)) { ?>    
                 <p><?php echo nl2br($content); ?></p>
             <?php } ?>    
