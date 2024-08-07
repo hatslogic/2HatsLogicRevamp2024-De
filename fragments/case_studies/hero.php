@@ -1,7 +1,7 @@
 <?php extract($section); ?>
 <section class="hero py-100 xs:py-80 b-0 bb-1 bc-hash solid">
     <div class="container">
-        <div class="flex align-center justify-between md:wrap xl:column">
+        <div class="flex align-start justify-between md:wrap xl:column">
             <div class="col w-50 xl:w-100">
                 <div class="case-study-header">
                     <div class="headline">

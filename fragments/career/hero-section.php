@@ -1,7 +1,7 @@
 <?php extract($section); ?>
 <section class="hero pt-60">
     <div class="container">
-        <div class="flex align-center justify-between md:wrap">
+        <div class="flex align-start justify-between md:wrap">
             <div class="col w-50 md:w-100">
                 <div class="headline">
                     <?php if ($title) { ?>

@@ -4,7 +4,7 @@
 
 <section class="hero pt-60 overflow-hidden relative <?php echo $bg_class;?>">
   <div class="container relative z-1">
-    <div class="flex align-center justify-between md:wrap">
+    <div class="flex align-start justify-between md:wrap">
       <div class="col w-50 md:w-100">
         <div class="service-header mt-30">
           <?php if ($headline['title']): ?>
