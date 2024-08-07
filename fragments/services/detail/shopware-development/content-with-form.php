@@ -8,7 +8,7 @@
             <div class="col w-50 md:w-100">
 
                 <?php if ($headline['heading'] || $description) { ?>
-                <div class="service-header mt-30">
+                <div class="service-header">
                     <div class="headline">
                         <?php if ($headline['heading']) { ?>
                         <h1 class="h1-sml"><?php echo $headline['heading']; ?></h1>

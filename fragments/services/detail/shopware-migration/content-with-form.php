@@ -7,10 +7,12 @@
         <div class="flex align-start justify-between md:wrap">
             <div class="col w-50 md:w-100">
                 
-                <div class="service-header mt-30">
+                <div class="service-header">
+                    <?php if($logo['url']): ?>
                     <div class="service-logo max-w-px-150 max-h-px-60 mt-20 mb-20">
                         <img src="<?php echo $logo['url']; ?>" alt="shopware" width="100" height="100">
                     </div>
+                    <?php endif; ?>
                     <div class="headline">
                         <h1 class="h1-sml"><?php echo $title; ?></h1>
 
