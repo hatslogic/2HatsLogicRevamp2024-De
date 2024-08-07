@@ -7,9 +7,10 @@
             <div class="title"> 
                 <?php if (!empty($headline)) { ?>
                 <span class="headline c-primary font-bold"><?php echo $headline; ?></span>
-                <?php } ?>    
+                <?php } ?>  
+                <?php if (!empty($title)) { ?>  
                 <h2><?php echo $title; ?></h2>
-
+                <?php } ?>      
             </div>
             <?php if (!empty($content)) { ?>
             <div class="content">
