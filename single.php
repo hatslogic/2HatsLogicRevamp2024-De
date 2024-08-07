@@ -67,6 +67,12 @@ $author_name = get_the_author_meta('user_firstname');
 				<?php app_render_page_single_blog(); ?>
 				<div class="editor-content">
 					<?php the_content(); ?>
+					<script>
+						const editorTable = document.querySelectorAll('.editor-content table');
+						editorTable.forEach(table => {
+							table.outerHTML = `<div class="table-wrap max-w-100 scroll-x">${table.outerHTML}</div>`;
+						});
+					</script>
 				</div>
 			   	<?php get_template_part('template-parts/blog-faqs'); ?>
             </div>
