@@ -1,0 +1,43 @@
+.w-auto{
+    width: auto;
+}
+
+@for $i from 0 through 600 {
+    .w-#{$i} {
+        width: $i * 1%;
+    }
+}
+
+@for $i from 0 through 600 {
+    .w-px-#{$i} {
+        width:rem($i);
+    }
+}
+
+$breakpoints: (
+    xxl: $xxl,
+    xl: $xl,
+    lg: $lg,
+    md: $md,
+    sm: $sm,
+    xs: $xs
+);
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $i from 1 through 600 {
+            .#{$breakpoint}\:w-#{$i} {
+                width: $i * 1%;
+            }
+        }
+    }
+}
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $i from 1 through 600 {
+            .#{$breakpoint}\:w-px-#{$i} {
+                width:rem($i);
+            }
+        }
+    }
+}

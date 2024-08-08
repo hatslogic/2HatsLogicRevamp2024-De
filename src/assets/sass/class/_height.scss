@@ -1,0 +1,80 @@
+.h-auto {
+    height: auto;
+}
+
+@for $i from 0 through 100 {
+    .h-#{$i} {
+        height: $i * 1%;
+    }
+}
+
+@for $i from 0 through 300 {
+    .h-px-#{$i} {
+        height: rem($i);
+    }
+}
+
+$breakpoints: (
+    xxl: $xxl,
+    xl: $xl,
+    lg: $lg,
+    md: $md,
+    sm: $sm,
+    xs: $xs
+);
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $i from 1 through 100 {
+            .#{$breakpoint}\:h-#{$i} {
+                height: $i * 1%;
+            }
+        }
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $i from 1 through 300 {
+            .#{$breakpoint}\:h-px-#{$i} {
+                height: rem($i);
+            }
+        }
+    }
+}
+
+.xxl\:h-auto {
+    @include below($xxl) {
+        height: auto;
+    }
+}   
+
+.xl\:h-auto {
+    @include below($xl) {
+        height: auto;
+    }
+}
+
+.lg\:h-auto {
+    @include below($lg) {
+        height: auto;
+    }
+}
+
+.md\:h-auto {
+    @include below($md) {
+        height: auto;
+    }
+}
+
+.sm\:h-auto {
+    @include below($sm) {
+        height: auto;
+    }
+}
+
+.xs\:h-auto {
+    @include below($xs) {
+        height: auto;
+    }
+}

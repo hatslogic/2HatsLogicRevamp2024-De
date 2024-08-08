@@ -1,0 +1,33 @@
+.acc-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    /* Transition for height */
+}
+
+.acc-content.active {
+    max-height: 1000px;
+    /* Set a sufficiently large value */
+}
+
+.acc-item{
+    cursor: pointer;
+
+    .add{
+        display: block;
+    }
+
+    .minus{
+        display: none;
+    }
+
+    &.open{
+        .add{
+            display: none;
+        }
+        
+        .minus{
+            display: block;
+        }
+    }
+}

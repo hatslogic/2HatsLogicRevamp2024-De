@@ -1,0 +1,434 @@
+$breakpoints: (
+    xxl: $xxl,
+    xl: $xl,
+    lg: $lg,
+    md: $md,
+    sm: $sm,
+    xs: $xs
+);
+
+/* Color */
+.c-primary{
+    color: var(--c-primary);
+}
+
+.c-secondary{
+    color: var(--c-secondary);
+}
+
+.c-white{
+    color: var(--c-white);
+}
+
+.c-black{
+    color: var(--c-black);
+}
+
+.c-grey{
+    color: var(--c-grey);
+}
+
+.c-hash{
+    color: var(--c-hash);
+}
+
+.c-light-grey{
+    color: var(--c-light-grey);
+}
+
+.c-dark-grey{
+    color: var(--c-dark-grey);
+}
+
+.c-moonstone{
+    color: var(--c-moonstone);
+}
+
+.c-pigment{
+    color: var(--c-pigment);
+}
+
+.c-transparent{
+    color: transparent;
+}
+
+.c-light-blue{
+    color: var(--c-light-blue);
+}
+
+.c-primary-hover{
+    color: var(--c-primary-hover);
+}
+
+/* Border Color */
+.bc-primary{
+    border-color: var(--c-primary);
+}
+
+.bc-secondary{
+    border-color: var(--c-secondary);
+}
+
+.bc-white{
+    border-color: var(--c-white);
+}
+
+.bc-black{
+    border-color: var(--c-black);
+}
+
+.bc-grey{
+    border-color: var(--c-grey);
+}
+
+.bc-hash{
+    border-color: var(--c-hash);
+}
+
+.bc-light-grey{
+    border-color: var(--c-light-grey);
+}
+
+.bc-dark-grey{
+    border-color: var(--c-dark-grey);
+}
+
+.bc-moonstone{
+    border-color: var(--c-moonstone);
+}
+
+.bc-pigment{
+    border-color: var(--c-pigment);
+}
+
+.bc-transparent{
+    border-color: transparent;
+}
+
+.bc-semi-transparent{
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.bc-light-blue{
+    border-color: var(--c-light-blue);
+}
+
+/* Background Color */
+.bg-primary{
+    background-color: var(--c-primary);
+}
+
+.bg-secondary{
+    background-color: var(--c-secondary);
+}
+
+.bg-white{
+    background-color: var(--c-white);
+}
+
+.bg-black{
+    background-color: var(--c-black);
+}
+
+.bg-grey{
+    background-color: var(--c-grey);
+}
+
+.bg-light-grey{
+    background-color: var(--c-light-grey);
+}
+
+.bg-dark-grey{
+    background-color: var(--c-dark-grey);
+}
+
+.bg-hash{
+    background-color: var(--c-hash);
+}
+
+.bg-dark-primary{
+    background-color: var(--c-dark-primary);
+}
+
+.bg-overlay{
+    background-color: var(--c-overlay);
+}
+
+.bg-moonstone{
+    background-color: var(--c-moonstone);
+}
+
+.bg-pigment{
+    background-color: var(--c-pigment);
+}
+
+.bg-transparent{
+    background-color: transparent;
+}
+
+.bg-light-blue{
+    background-color: var(--c-light-blue);
+}
+
+// Hover colors
+.hover\:c-primary{
+    &:hover{
+        color: var(--c-primary);
+    }
+}
+
+.hover\:c-secondary{
+    &:hover{
+        color: var(--c-secondary);
+    }
+}
+
+.hover\:c-white{
+    &:hover{
+        color: var(--c-white);
+    }
+}
+
+.hover\:c-black{
+    &:hover{
+        color: var(--c-black);
+    }
+}
+
+.hover\:c-grey{
+    &:hover{
+        color: var(--c-grey);
+    }
+}
+
+.hover\:c-light-grey{
+    &:hover{
+        color: var(--c-light-grey);
+    }
+}
+
+.hover\:c-dark-grey{
+    &:hover{
+        color: var(--c-dark-grey-hover);
+    }
+}
+
+.hover\:c-hash{
+    &:hover{
+        color: var(--c-hash-hover);
+    }
+}
+
+.hover\:c-light-blue{
+    &:hover{
+        color: var(--c-light-blue);
+    }
+}
+
+.hover\:bc-primary{
+    &:hover{
+        border-color: var(--c-primary);
+    }
+}
+
+.hover\:bc-secondary{
+    &:hover{
+        border-color: var(--c-secondary);
+    }
+}
+
+.hover\:bc-white{
+    &:hover{
+        border-color: var(--c-white);
+    }
+}
+
+.hover\:bc-black{
+    &:hover{
+        border-color: var(--c-black);
+    }
+}
+
+.hover\:bc-grey{
+    &:hover{
+        border-color: var(--c-grey);
+    }
+}
+
+.hover\:bc-light-grey{
+    &:hover{
+        border-color: var(--c-light-grey);
+    }
+}   
+
+.hover\:bc-dark-grey{
+    &:hover{
+        border-color: var(--c-dark-grey);
+    }
+}
+
+.hover\:bc-hash{
+    &:hover{
+        border-color: var(--c-hash);
+    }
+}   
+
+.hover\:bc-moonstone{
+    &:hover{
+        border-color: var(--c-moonstone);
+    }
+}
+
+.hover\:bc-pigment{
+    &:hover{
+        border-color: var(--c-pigment);
+    }
+}
+
+.hover\:bg-primary{
+    &:hover{
+        background-color: var(--c-primary);
+    }
+}
+
+.hover\:bg-secondary{
+    &:hover{
+        background-color: var(--c-secondary);
+    }
+}
+
+.hover\:bg-white{
+    &:hover{
+        background-color: var(--c-white);
+    }
+}
+
+.hover\:bg-black{
+    &:hover{
+        background-color: var(--c-black);
+    }
+}
+
+.hover\:bg-grey{
+    &:hover{
+        background-color: var(--c-grey);
+    }
+}
+
+.hover\:bg-light-grey{
+    &:hover{
+        background-color: var(--c-light-grey);
+    }
+}   
+
+.hover\:bg-dark-grey{
+    &:hover{
+        background-color: var(--c-dark-grey);
+    }
+}
+
+.hover\:bg-hash{
+    &:hover{
+        background-color: var(--c-hash);
+    }
+}   
+
+.hover\:bg-moonstone{
+    &:hover{
+        background-color: var(--c-moonstone);
+    }
+}
+
+.hover\:bg-pigment{
+    &:hover{
+        background-color: var(--c-pigment);
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        .#{$breakpoint}\:c-primary {
+            color: var(--c-primary);
+        }
+
+        .#{$breakpoint}\:c-secondary {
+            color: var(--c-secondary);
+        }
+
+        .#{$breakpoint}\:c-white {
+            color: var(--c-white);
+        }
+
+        .#{$breakpoint}\:c-black {
+            color: var(--c-black);
+        }
+
+        .#{$breakpoint}\:c-grey {
+            color: var(--c-grey);
+        }
+
+        .#{$breakpoint}\:c-light-grey {
+            color: var(--c-light-grey);
+        }
+
+        .#{$breakpoint}\:c-dark-grey {
+            color: var(--c-dark-grey);
+        }
+
+        .#{$breakpoint}\:c-moonstone {
+            color: var(--c-moonstone);
+        }
+
+        .#{$breakpoint}\:c-pigment {
+            color: var(--c-pigment);
+        }
+
+        .#{$breakpoint}\:c-light-blue {
+            color: var(--c-light-blue);
+        }
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        .#{$breakpoint}\:bg-primary {
+            background-color: var(--c-primary);
+        }
+
+        .#{$breakpoint}\:bg-secondary {
+            background-color: var(--c-secondary);
+        }
+
+        .#{$breakpoint}\:bg-white {
+            background-color: var(--c-white);
+        }
+
+        .#{$breakpoint}\:bg-black {
+            background-color: var(--c-black);
+        }
+
+        .#{$breakpoint}\:bg-grey {
+            background-color: var(--c-grey);
+        }
+
+        .#{$breakpoint}\:bg-light-grey {
+            background-color: var(--c-light-grey);
+        }
+
+        .#{$breakpoint}\:bg-dark-grey {
+            background-color: var(--c-dark-grey);
+        }
+
+        .#{$breakpoint}\:bg-moonstone {
+            background-color: var(--c-moonstone);
+        }
+
+        .#{$breakpoint}\:bg-pigment {
+            background-color: var(--c-pigment);
+        }
+
+        .#{$breakpoint}\:bg-light-blue {
+            background-color: var(--c-light-blue);
+        }
+    }
+}

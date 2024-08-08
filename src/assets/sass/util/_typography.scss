@@ -1,0 +1,10 @@
+/*
+* Fonts
+*/
+
+@include font-face("TTFirsNeueTrl", "Thin", 100, normal);
+@include font-face("TTFirsNeueTrl", "Medium", 500, normal);
+@include font-face("BasisGrotesquePro", "Light", 100, italic);
+@include font-face("BasisGrotesquePro", "Regular", 400, italic);
+@include font-face("BasisGrotesquePro", "Bold", 700, italic);
+@include font-face("PTSerif", "Regular", 400, normal);

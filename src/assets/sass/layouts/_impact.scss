@@ -1,0 +1,13 @@
+.impact {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    .count {
+        min-width: rem(120);
+    }
+
+    p {
+        max-width: 95%;
+    }
+}

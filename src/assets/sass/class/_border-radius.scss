@@ -1,0 +1,44 @@
+@for $i from 0 through 300 {
+  .radius-#{$i} {
+    border-radius: rem($i);
+  }
+}
+
+$breakpoints: (
+  xxl: $xxl,
+  xl: $xl,
+  lg: $lg,
+  md: $md,
+  sm: $sm,
+  xs: $xs
+);
+
+@each $breakpoint, $size in $breakpoints {
+  @include below($size) {
+    @for $i from 1 through 300 {
+      .#{$breakpoint}\:radius-#{$i} {
+        border-radius: rem($i);
+      }
+    }
+  }
+}
+
+//each side wise
+@each $breakpoint, $size in $breakpoints {
+  @include below($size) {
+    @for $i from 1 through 300 {
+      .#{$breakpoint}\:radius-tl-#{$i} {
+        border-top-left-radius: rem($i);
+      }
+      .#{$breakpoint}\:radius-tr-#{$i} {
+        border-top-right-radius: rem($i);
+      }
+      .#{$breakpoint}\:radius-br-#{$i} {
+        border-bottom-right-radius: rem($i);
+      }
+      .#{$breakpoint}\:radius-bl-#{$i} {
+        border-bottom-left-radius: rem($i);
+      }
+    }
+  }
+}

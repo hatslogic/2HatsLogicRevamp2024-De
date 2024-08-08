@@ -1,0 +1,15 @@
+.progress{
+    &-container{
+        top: 0;
+        z-index: 3;
+        max-width: 100%;
+        display: none;
+        right: 0;
+    }
+    &-bar{
+        height: rem(6);
+        @include below($sm) {
+            height: rem(4);
+        }
+    }
+}

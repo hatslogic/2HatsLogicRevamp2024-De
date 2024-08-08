@@ -1,0 +1,30 @@
+.card {
+     @include below($md) {
+        min-width: 85%;
+     }
+
+    .item {
+      color: var(---c-black);
+      transition-delay: 0ms;
+
+      p{
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    a.item:hover{
+      box-shadow: 6px 10px 12.5px 0px rgba(0, 0, 0, 0.102);
+      img{
+        transform: scale(1.1);
+      }
+      .info{
+        .h4, .h5 strong{
+          color: var(--c-primary);
+        }
+      }
+    }
+  
+    .info {}
+  }

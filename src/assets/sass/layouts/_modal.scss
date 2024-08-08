@@ -1,0 +1,16 @@
+.modal{
+    visibility: hidden;
+    overflow: scroll;
+    opacity: 0;
+
+    .title{
+        .h2, .h3{
+            max-width: 100%;
+        }
+    }
+    
+    &.show{
+        visibility: visible;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,57 @@
+/*------------------*
+# Variables
+*------------------*/
+
+// Breakpoints
+$xs: rem(768);
+$sm: rem(991);
+$md: rem(1024);
+$lg: rem(1280);
+$xl: rem(1320);
+$xxl: rem(1536);
+$xxxl: rem(2000);
+
+// Container
+$container-max-width: 82.5vw;
+$container-max-width-xxxl: 1460px;
+$container-max-width-xxl: 1160px;
+$container-max-width-xl: 1024px;
+$container-max-width-lg: 991px;
+$container-max-width-md: 768px;
+$container-max-width-sm: 100%;
+
+/*
+* Paths
+*/
+$assets-path: "/dist";
+$font-path: "../fonts";
+
+/*
+ * Base fonts, colors
+*/
+:root {
+    --c-primary: #14759C;
+    --c-secondary: #2f2f2f;
+    --c-primary-hover: #31A9C7;
+    --c-secondary-hover: #2f2f2f;
+    --c-success: #00D68F;
+    --c-danger: #FF4D4F;
+    --c-warning: #FFB800;
+    --c-moonstone: #268097;
+    --c-pigment: #CD130A;
+    --c-black: #2f2f2f;
+    --c-white: #ffffff;
+    --c-hash: #C6C6C6;
+    --c-grey: #707070;
+    --c-dark-primary: #0D3C4D;
+    --c-dark-grey: #393939;
+    --c-light-grey: #FAF7F5;
+    --c-light-blue: #DCF8FF;
+    --c-overlay: rgba(0, 0, 0, 0.35);
+    --font-thin: 'TTFirsNeueTrl-Thin', Arial, Helvetica, sans-serif;
+    --font-light: 'BasisGrotesquePro-Light', Arial, Helvetica, sans-serif;
+    --font-regular: 'BasisGrotesquePro-Regular', Arial, Helvetica, sans-serif;
+    --font-button: 'BasisGrotesquePro-Bold', Arial, Helvetica, sans-serif;
+    --font-bold: 'TTFirsNeueTrl-Medium', Arial, Helvetica, sans-serif;
+    --font-quote: "PTSerif-Regular", serif;
+}

@@ -1,0 +1,12 @@
+.dropdown{
+    .dropdown-content{
+        visibility: hidden;
+        opacity: 0;
+    }
+    &:hover{
+        & > .dropdown-content{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

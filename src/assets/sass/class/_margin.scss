@@ -1,0 +1,229 @@
+
+$sides: top, right, bottom, left; // Define the sides
+
+@for $space from 0 through 3000 {
+    @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}-#{$space} {
+          margin-#{$side}: rem($space);
+        }
+        .-m#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: rem(-$space);
+        }
+    }
+}
+
+//xxl screen 
+@include below($xxl) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .xxl\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .xxl\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+
+//xl screen
+@include below($xl) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .xl\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .xl\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+
+//lg screen
+@include below($lg) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .lg\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .lg\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+
+//md screen
+@include below($md) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .md\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .md\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+
+//sm screen
+@include below($sm) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .sm\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .sm\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+//xs screen
+@include below($xs) {
+    @for $space from 0 through 300 {
+        @each $side in $sides {
+            .xs\:m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem($space);
+            }
+            .xs\:-m#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: rem(-$space);
+            }
+        }
+    }
+}
+
+
+$sets: left, right, top, bottom;
+
+@each $set in $sets {
+  .m#{str-slice($set, 0, 1)}-auto {
+    margin-#{$set}: auto;
+  }
+}
+
+//xxl screen
+@include below($xxl) {
+  @each $set in $sets {
+    .xxl\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+
+//xl screen
+@include below($xl) {
+  @each $set in $sets {
+    .xl\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+
+//lg screen
+@include below($lg) {
+  @each $set in $sets {
+    .lg\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+
+//md screen
+@include below($md) {
+  @each $set in $sets {
+    .md\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+
+//sm screen
+@include below($sm) {
+  @each $set in $sets {
+    .sm\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+//xs screen
+@include below($xs) {
+  @each $set in $sets {
+    .xs\:m#{str-slice($set, 0, 1)}-auto {
+      margin-#{$set}: auto;
+    }
+  }
+}
+
+
+// Margin 0 
+.m-0 {
+  margin: 0;
+}
+
+$breakpoints: (
+    xs: $xs,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl,
+    xxl: $xxl
+);
+
+@each $size, $breakpoint in $breakpoints {
+  .#{$size}\:m-0 {
+    @include below($breakpoint) {
+      margin: 0;
+    }
+  }
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Margin auto
+.m-auto {
+  margin: auto;
+}
+
+
+@each $size, $breakpoint in $breakpoints {
+  .#{$size}\:ml-auto {
+    @include below($breakpoint) {
+      margin-left: auto;
+    }
+  }
+
+  .#{$size}\:mr-auto {
+    @include below($breakpoint) {
+      margin-right: auto;
+    }
+  }
+
+  .#{$size}\:mx-auto {
+    @include below($breakpoint) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .#{$size}\:my-auto {
+    @include below($breakpoint) {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,44 @@
+.max-w-auto {
+    max-width: auto;
+}
+
+@for $i from 0 through 100 {
+    .max-w-#{$i} {
+        max-width: $i * 1%;
+    }
+}
+
+@for $i from 0 through 500 {
+    .max-w-px-#{$i} {
+        max-width: rem($i);
+    }
+}
+
+$breakpoints: (
+    xxl: $xxl,
+    xl: $xl,
+    lg: $lg,
+    md: $md,
+    sm: $sm,
+    xs: $xs
+);
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $i from 1 through 100 {
+            .#{$breakpoint}\:max-w-#{$i} {
+                max-width: $i * 1%;
+            }
+        }
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $i from 1 through 300 {
+            .#{$breakpoint}\:max-w-px-#{$i} {
+                max-width: rem($i);
+            }
+        }
+    }
+}

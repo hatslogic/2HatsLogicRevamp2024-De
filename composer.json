@@ -1,0 +1,16 @@
+{
+    "type": "project",
+    "require": {
+        "erusev/parsedown": "^1.6",
+        "symfony/var-dumper": "~2.7",
+        "htmlburger/carbon-video": "^1.0"
+    },
+    "config": {
+        "secure-http": false
+    },
+    "extra": {
+        "installer-paths": {
+            "vendor/{$vendor}/{$name}/": ["type:wordpress-plugin"]
+        }
+    }
+}

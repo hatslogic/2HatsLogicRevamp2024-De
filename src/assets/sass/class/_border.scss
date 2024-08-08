@@ -1,0 +1,113 @@
+$spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+$sides: (top, bottom, left, right);
+
+.b-0{
+    border-width: 0;
+}
+
+.solid{
+  border-style: solid;
+}
+
+@each $space in $spaceamounts {
+  .b-#{$space} {
+    border-width: rem($space);
+  }
+}
+//xxl screen
+@include below($xxl) {
+  @each $space in $spaceamounts {
+    .xxl\:b-#{$space} {
+      border-width: rem($space);
+    }
+  }
+}
+//xl screen
+@include below($xl) {
+  @each $space in $spaceamounts {
+    .xl\:b-#{$space} {
+      border-width: rem($space);
+    }
+  }
+}
+//lg screen
+@include below($lg) {
+  @each $space in $spaceamounts {
+    .lg\:b-#{$space} {
+      border-width: rem($space);
+    } 
+  }
+}
+//md screen
+@include below($md) {
+  @each $space in $spaceamounts {
+    .md\:b-#{$space} {
+      border-width: rem($space);
+    }
+  }
+}
+//sm screen
+@include below($sm) {
+  @each $space in $spaceamounts {
+    .sm\:b-#{$space} {
+      border-width: rem($space);
+    }
+  }
+} 
+//xs screen
+@include below($xs) {
+  @each $space in $spaceamounts {
+    .xs\:b-#{$space} {
+      border-width: rem($space);
+    }
+  }
+}
+
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .b#{str-slice($side, 0, 1)}-#{$space} {
+      border-#{$side}-width: rem($space);
+    }
+  }
+}
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .xxl\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xxl){
+        border-#{$side}-width: rem($space);
+      }
+    }
+
+    .xl\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xl){
+        border-#{$side}-width: rem($space);
+      }
+    }
+
+    .lg\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($lg){
+        border-#{$side}-width: rem($space);
+      }
+    }
+    
+    .md\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($md){
+        border-#{$side}-width: rem($space);
+      }
+    }
+
+    .sm\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($sm){
+        border-#{$side}-width: rem($space);
+      }
+    }
+
+    .xs\:b#{str-slice($side, 0, 1)}-#{$space} {
+      @include below($xs){
+        border-#{$side}-width: rem($space);
+      }
+    }
+  }
+}

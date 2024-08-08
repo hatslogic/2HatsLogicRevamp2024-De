@@ -1,0 +1,241 @@
+.font-light {
+    font-family: var(--font-light);
+}
+
+.font-thin {
+    font-family: var(--font-thin);
+}
+
+.font-regular {
+    font-family: var(--font-regular);
+}
+
+.font-bold {
+    font-family: var(--font-bold);
+}
+
+.font-button {
+    font-family: var(--font-button);
+}
+
+.font-quote {
+    font-family: var(--font-quote);
+}
+
+
+.xxl\:font-light {
+    @include below($xxl) {
+        font-family: var(--font-light);
+    }
+}
+
+.xxl\:font-thin {
+    @include below($xxl) {
+        font-family: var(--font-thin);
+    }
+}
+
+.xxl\:font-regular {
+    @include below($xxl) {
+        font-family: var(--font-regular);
+    }
+}
+
+.xxl\:font-bold {
+    @include below($xxl) {
+        font-family: var(--font-bold);
+    }
+}
+
+.xxl\:font-button {
+    @include below($xxl) {
+        font-family: var(--font-button);
+    }
+}
+
+.xxl\:font-quote {
+    @include below($xxl) {
+        font-family: var(--font-quote);
+    }
+}
+
+
+.xl\:font-light {
+    @include below($xl) {
+        font-family: var(--font-light);
+    }
+}
+
+.xl\:font-thin {
+    @include below($xl) {
+        font-family: var(--font-thin);
+    }
+}
+
+.xl\:font-regular {
+    @include below($xl) {
+        font-family: var(--font-regular);
+    }
+}
+
+.xl\:font-bold {
+    @include below($xl) {
+        font-family: var(--font-bold);
+    }
+}
+
+.xl\:font-button {
+    @include below($xl) {
+        font-family: var(--font-button);
+    }
+}
+
+.xl\:font-quote {
+    @include below($xl) {
+        font-family: var(--font-quote);
+    }
+}
+
+.lg\:font-light {
+    @include below($lg) {
+        font-family: var(--font-light);
+    }
+}
+
+.lg\:font-thin {
+    @include below($lg) {
+        font-family: var(--font-thin);
+    }
+}
+
+.lg\:font-regular {
+    @include below($lg) {
+        font-family: var(--font-regular);
+    }
+}
+
+.lg\:font-bold {
+    @include below($lg) {
+        font-family: var(--font-bold);
+    }
+}
+
+.lg\:font-button {
+    @include below($lg) {
+        font-family: var(--font-button);
+    }
+}
+
+.lg\:font-quote {
+    @include below($lg) {
+        font-family: var(--font-quote);
+    }
+}
+
+.md\:font-light {
+    @include below($md) {
+        font-family: var(--font-light);
+    }
+}
+
+.md\:font-thin {
+    @include below($md) {
+        font-family: var(--font-thin);
+    }
+}
+
+.md\:font-regular {
+    @include below($md) {
+        font-family: var(--font-regular);
+    }
+}
+
+.md\:font-bold {
+    @include below($md) {
+        font-family: var(--font-bold);
+    }
+}
+
+.md\:font-button {
+    @include below($md) {
+        font-family: var(--font-button);
+    }
+}
+
+.md\:font-quote {
+    @include below($md) {
+        font-family: var(--font-quote);
+    }
+}
+
+.sm\:font-light {
+    @include below($sm) {
+        font-family: var(--font-light);
+    }
+}
+
+.sm\:font-thin {
+    @include below($sm) {
+        font-family: var(--font-thin);
+    }
+}
+
+.sm\:font-regular {
+    @include below($sm) {
+        font-family: var(--font-regular);
+    }
+}
+
+.sm\:font-bold {
+    @include below($sm) {
+        font-family: var(--font-bold);
+    }
+}
+
+.sm\:font-button {
+    @include below($sm) {
+        font-family: var(--font-button);
+    }
+}
+
+.sm\:font-quote {
+    @include below($sm) {
+        font-family: var(--font-quote);
+    }
+}
+
+.xs\:font-light {
+    @include below($xs) {
+        font-family: var(--font-light);
+    }
+}
+
+.xs\:font-thin {
+    @include below($xs) {
+        font-family: var(--font-thin);
+    }
+}
+
+.xs\:font-regular {
+    @include below($xs) {
+        font-family: var(--font-regular);
+    }
+}
+
+.xs\:font-bold {
+    @include below($xs) {
+        font-family: var(--font-bold);
+    }
+}
+
+.xs\:font-button {
+    @include below($xs) {
+        font-family: var(--font-button);
+    }
+}
+
+.xs\:font-quote {
+    @include below($xs) {
+        font-family: var(--font-quote);
+    }
+}

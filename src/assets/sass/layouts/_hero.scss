@@ -1,0 +1,117 @@
+.hero {
+    .caption {
+        max-width: rem(950);
+
+        p {
+            max-width: rem(680);
+        }
+    }
+
+    mark {
+
+        .stroke{
+            width: calc(100% - rem(-40));
+            height: rem(20);
+            transform: rotate(-1deg);
+            stroke: var(--c-white);
+            left: 0;
+            bottom: rem(-15);
+            stroke-width: 1;
+            z-index: 0;
+
+            @include below($xl){
+                left: rem(-25);
+                transform-origin: center center;
+                transform: scale(0.75);
+            }
+
+            @include below($md){
+                transform: scale(0.5);
+            }
+            
+            &:nth-child(2) {
+                stroke-dasharray: rem(660);
+                stroke-dashoffset: rem(660);
+                stroke: var(--c-primary);
+                stroke-width: 5;
+                transition: stroke-dashoffset 0.75s cubic-bezier(.4,.68,.92,1.03);
+                z-index: 1;
+            }
+        }
+
+        &.loaded{
+            .stroke:nth-child(2){
+                stroke-dashoffset: 0;
+            }
+        }
+    }
+}
+
+.rotating {
+    animation: rotating 20s linear infinite;
+}
+
+.consultation {
+    width: rem(176);
+    height: rem(177);
+
+    // .label text {
+    //     font-size: rem(11);
+    //     line-height: 0.5;
+    // }
+
+    .outer {
+        transform-origin: center;
+        animation: 8s infinite rotating;
+    }
+}
+
+.consultation-btn {
+
+    svg{
+        font-size: 12px;
+        height: rem(176);
+        width: rem(176);
+
+        // @include above($xxxl){
+        //     font-size: rem(10);
+        // }
+    }
+
+    .hover-wrap {
+        transform-origin: center center;
+    }
+
+    &:hover {
+        .hover-wrap {
+            // transform: rotate(-16deg);
+            transform: rotate(-10deg) scale(1.085);
+
+            .label {
+                fill: var(--c-secondary);
+            }
+
+            .inner {
+                // fill: var(--c-secondary);
+            }
+        }
+
+        .outer {
+            // fill: var(--c-primary);
+            // pause animation
+            fill: var(--c-hash);
+            // animation-play-state: paused;
+            // transform: scale(0.5);
+        }
+    }
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

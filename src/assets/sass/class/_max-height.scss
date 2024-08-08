@@ -1,0 +1,47 @@
+.max-h-auto {
+    max-height: auto;
+}
+
+@for $i from 0 through 1000 {
+    .max-h-#{$i} {
+        max-height: $i * 1%;
+    }
+}
+
+@for $i from 0 through 3000 {
+    .max-h-px-#{$i} {
+        max-height: rem($i);
+    }
+}
+
+$breakpoints: (
+    xxl: $xxl,
+    xl: $xl,
+    lg: $lg,
+    md: $md,
+    sm: $sm,
+    xs: $xs
+);
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $i from 1 through 1000 {
+            .#{$breakpoint}\:max-h-#{$i} {
+                max-height: $i * 1%;
+            }
+        }
+        .#{$breakpoint}\:max-h-auto {
+            max-height: auto;
+        }
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $i from 1 through 3000 {
+            .#{$breakpoint}\:max-h-px-#{$i} {
+                max-height: rem($i);
+            }
+        }
+    }
+}

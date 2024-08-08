@@ -1,0 +1,146 @@
+$delay-step: 0.05s; // Define the step for delay
+$transform-duration: 0.3s;
+$opacity-duration: 0.3s;
+$elements-count: 6;
+$traslate-y: 10px;
+$transition-timing-function: ease-in-out;
+
+// Define the mixin to generate transition delay for nth child
+@mixin transition-delay($num) {
+    transition-delay: $num * $delay-step;
+}
+
+.main-menu{
+    
+    a{
+        text-decoration: none;
+        color: var(--c-secondary);
+        transition: 0.25s all;
+    }
+
+    @include above($md){
+        & > li{
+            a{
+                &:hover{
+                    color: var(--c-primary);
+                }
+            }
+            & > a{
+                border-color: transparent;
+            }
+            & > ul{
+                box-shadow: 0px rem(8) rem(8) rgba(0,0,0,.05);
+                visibility: hidden;
+                opacity: 0;
+            }
+            &.compact{
+                & > ul{
+                    box-shadow: none;
+                    & > .container{
+                        box-shadow: 0px rem(8) rem(8) rgba(0,0,0,.05);
+                    }
+                }
+            }
+            &:hover{
+                & > a{
+                    color: var(--c-primary);
+                }
+            }
+            &.active, &:not(.has-child):hover{
+                & > a{
+                    border-color: var(--c-primary);
+                }
+            }
+            &:hover{
+                & > a{
+                    color: var(--c-primary);
+                }
+                & > ul{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    @include below($md){
+        .icon-expand_more{
+            pointer-events: none;
+        }
+        & > .has-child{
+            & > ul{
+                // display: none;
+                transition: max-height 0.3s ease-in-out;
+                overflow: hidden;
+                max-height: 0;
+            }
+            &.active{
+                & > a{
+                    color: var(--c-primary);
+                }
+                & > ul{
+                    display: block;
+                    max-height: 1000px;
+                }
+                .icon-expand_more{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}
+
+.top-menu{
+    @include below($md){
+        visibility: hidden;
+        opacity: 0;
+        background-color: var(--c-white);
+        max-height: 100vh;
+        overflow-y: auto;
+        .main-menu{
+            // transition: 0.5s all ease-in-out;
+            & > li{
+                transition: $transform-duration all ease-in-out;
+                transform: translateY($traslate-y);
+                visibility: hidden;
+                opacity: 0;
+
+                @for $i from 1 through $elements-count {
+                    &:nth-child(#{$i}) {
+                        @include transition-delay($i);
+                    }
+                }
+            }
+        }
+    }
+    &.active{
+        visibility: visible;
+        opacity: 1;
+        .main-menu{
+            & > li{
+                transform: translateY(0);
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.arrow-top{
+    @include above($md){
+        &:before {
+            content: "";
+            position: absolute;
+            height: 0;
+            border-style: solid;
+            border-width: 1.25rem 1.25rem 0 0;
+            border-color: var(--c-white) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+            transform: rotate(45deg);
+            left: rem(60);
+            top: rem(10);
+            display: block;
+            margin-left: rem(-12);
+            z-index: 0;
+        }
+    }
+}

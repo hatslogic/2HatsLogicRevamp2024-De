@@ -1,0 +1,33 @@
+header{
+    // height: rem(90);
+
+    // @include below($md){
+    //     height: rem(80);
+    // }
+
+    &.scrolled{
+        box-shadow: 1px 1px 8px rgba(0,0,0,.05);
+
+        @include below($md){
+            // box-shadow: none;
+        }   
+
+        &.move-to-out{
+            transform: translateY(-100%);
+        }
+
+        &.move-to-in{
+            transform: translateY(0);
+        }
+    }
+    
+    .brand, .brand img{
+        max-width: rem(106);
+        max-height: rem(48);
+        width: 100%;
+    }
+
+    .menu-btn{
+        color: var(--c-secondary);
+    }
+}

@@ -1,0 +1,26 @@
+<partial src="general/head.html" title="Blog - details"></partial>
+<partial src="general/progress.html"></partial>
+
+<partial src="general/header.html"></partial>
+<partial src="general/sticky-menu.html"></partial>
+
+<main class="page-wrap inline-block w-100 relative z-0">
+  <section class="blog-detail overflow-hidden relative pt-100 xs:pt-60 pb-100 md:pb-60">
+    <div class="container relative z-1">
+      <partial src="blog/blog-details/blogs-title.html"></partial>
+      <div class="content mt-60 sm:mt-40 xs:mt-30 align-start md:wrap flex gap-60 md:gap-40">
+        <partial src="blog/blog-details/blogs-left-column.html"></partial>
+        <partial src="blog/blog-details/blogs-right-column.html"></partial>
+      </div>
+    </div>
+    <div class="bg-shape absolute z-0 right-0 top-0 w-60 md:w-80">
+      <img src="assets/img/shapes/blog-bg.jpg" srcset="assets/img/shapes/blog-bg.jpg 1x, assets/img/shapes/blog-bg2x.jpg 2x" class="shape w-100 absolute -top-10" alt="service" width="100" height="100">
+    </div>
+  </section>
+  <partial src="consultation/greetings-from-ceo.html"></partial>
+  <partial src="blog/blog-details/relative-blogs.html"></partial>
+  <partial src="general/newsletter.html"></partial>
+</main>
+
+<partial src="general/modal-get-a-quote.html"></partial>
+<partial src="general/footer.html"></partial>

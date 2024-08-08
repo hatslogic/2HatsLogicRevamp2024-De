@@ -1,0 +1,414 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-regular);
+  font-size: 1vw;
+  line-height: 1;
+  color: var(--c-secondary);
+  // min-height: 100%;
+  letter-spacing: 0px;
+  margin: 0;
+
+  /*
+  @include above($xxxl){
+    font-size: rem(18.5);
+  }
+
+  @include below($xxl){
+    font-size: rem(17);
+  }
+  */
+
+  @include below($xl) {
+    font-size: rem(16);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-bold);
+  line-height: 1;
+  font-weight: normal;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-size: rem(76);
+
+  /*
+  @include above($xxxl){
+    font-size: rem(80);
+  }
+
+  @include below($xxl){
+    font-size: rem(70);
+  }
+  */
+
+  @include below($xl) {
+    font-size: rem(60);
+  }
+
+  @include below($xs) {
+    font-size: rem(34);
+
+    & + h2{
+      margin-top: rem(15);
+    }
+  }
+}
+
+.h1-sml {
+  font-size: rem(55);
+
+  /*
+  @include above($xxxl){
+    font-size: rem(60);
+  }
+
+  @include below($xxl){
+    font-size: rem(50);
+  }
+  */
+
+  @include below($xl) {
+    font-size: rem(40);
+  }
+
+  @include below($xs) {
+    font-size: rem(34);
+    line-height: 1;
+  }
+}
+
+h2,
+.h2 {
+  font-size: rem(42);
+  line-height: 1.1;
+
+  @include below($xxxl) {
+    font-size: rem(38);
+  }
+
+  @include below($xxl) {
+    font-size: rem(34);
+  }
+
+  @include below($xl) {
+    font-size: rem(30);
+  }
+
+  @include below($xs) {
+    font-size: rem(26);
+  }
+}
+
+h3,
+.h3 {
+  font-size: rem(30);
+  line-height: 1.25;
+
+  @include below($xxl) {
+    font-size: rem(32);
+  }
+
+  @include below($xl) {
+    font-size: rem(30);
+  }
+
+  @include below($xs) {
+    font-size: rem(24);
+  }
+}
+
+h4,
+.h4 {
+  font-size: rem(20);
+  line-height: rem(26);
+  line-height: 1.25;
+
+  @include below($xxl) {
+    font-size: rem(22);
+  }
+
+  @include below($xl) {
+    font-size: rem(20);
+  }
+}
+
+h5,
+.h5 {
+  font-size: rem(18);
+  line-height: rem(22);
+}
+
+h6,
+.h6 {
+  font-size: rem(15);
+  line-height: 1.1;
+}
+
+p,
+ul,
+ol {
+  font-size: rem(16);
+  line-height: 1.4;
+
+  @include below($xxxl) {
+    font-size: rem(18);
+  }
+
+  @include below($xxl) {
+    font-size: rem(19);
+  }
+
+  @include below($xs) {
+    font-size: rem(17);
+  }
+}
+
+.container {
+  padding-left: rem(20);
+  padding-right: rem(20);
+  margin: auto;
+  max-width: $container-max-width;
+
+  /*
+  @include above($xxxl){
+    max-width: $container-max-width-xxxl;
+  }
+
+  @include below($xxl){
+    max-width: $container-max-width-xxl;
+  }
+  */
+
+  @include below($lg) {
+    max-width: $container-max-width-lg;
+  }
+
+  @include below($xl) {
+    max-width: $container-max-width-xl;
+  }
+
+  @include below($md) {
+    max-width: $container-max-width-md;
+    padding-left: rem(20);
+    padding-right: rem(20);
+  }
+
+  @include below($xs) {
+    max-width: $container-max-width-sm;
+  }
+
+  &.extend {
+    .content {
+      width: calc(($container-max-width - rem(30)) + (100vw - $container-max-width) / 2);
+
+      /*
+      @include above($xxxl){
+        width: calc(($container-max-width-xxxl - rem(30)) + (100vw - $container-max-width-xxxl) / 2);
+      }
+
+      @include below($xxl){
+        width: calc(($container-max-width-xxl - rem(30)) + (100vw - $container-max-width-xxl) / 2);
+      }
+      */
+
+      @include below($xl) {
+        width: calc(($container-max-width-xl - rem(30)) + (100vw - $container-max-width-xl) / 2);
+      }
+
+      @include below($lg) {
+        width: calc(($container-max-width-lg - rem(30)) + (100vw - $container-max-width-lg) / 2);
+      }
+
+      @include below($md) {
+        width: calc(($container-max-width-md - rem(30)) + (100vw - $container-max-width-md) / 2);
+      }
+
+      @include below($sm) {
+        width: $container-max-width-sm;
+      }
+    }
+  }
+}
+
+.container-full {
+  padding-left: rem(20);
+  padding-right: rem(20);
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+
+  @include below($md) {
+    padding-left: rem(20);
+    padding-right: rem(20);
+  }
+}
+
+.container-wide {
+  padding-left: rem(20);
+  padding-right: rem(20);
+  margin: auto;
+  max-width: 85%;
+  // max-width: rem(1320);
+
+  /*
+  @include above($xxxl){
+    max-width: rem(1580);
+  }
+
+  @include below($xxl){
+    max-width: 90%;
+  }
+  */
+
+  @include below($xl) {
+    max-width: $container-max-width-xl;
+  }
+
+  @include below($md) {
+    max-width: $container-max-width-md;
+    padding-left: rem(20);
+    padding-right: rem(20);
+  }
+
+  @include below($xs) {
+    max-width: $container-max-width-sm;
+  }
+}
+
+.transition {
+  transition: 0.2s all ease-in-out;
+  transform-origin: center center;
+}
+
+a,
+.btn,
+.icon {
+  @extend .transition;
+}
+
+a {
+  text-decoration: none;
+  color: var(--c-primary);
+}
+
+.no-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.no-decoration {
+  color: var(--c-secondary);
+
+  &:hover {
+    color: var(--c-primary);
+  }
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
+}
+
+strong,
+b {
+  font-weight: normal;
+  font-family: var(--font-button);
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 15px;
+}
+
+.border-radius-100 {
+  border-radius: 100%;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+mark {
+  background: none;
+  text-decoration: none;
+}
+
+.hover-text-primary {
+  color: var(--c-primary);
+
+  &:hover,
+  &:focus {
+    color: var(--c-primary);
+  }
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.progress-container,
+.modal {
+  max-width: 100vw;
+}
+
+.gradient-end-white{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffffa3 100%);
+  pointer-events: none;
+}
+
+.gradient-end-black{
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+}
+
+.img-overlay{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.frame-shadow{
+  box-shadow: 0px 4px 50px 0px rgba(77, 77, 77, 0.25);
+  border-radius: rem(20);
+}
+
+.disable-scroll{
+  overflow: hidden;
+  header{
+      transform: none !important;
+  }
+}
+
+.overlay{
+  height: 100vh;
+  backdrop-filter: blur(rem(6));
+  background-color: rgba(0, 0, 0, 0.15);
+  visibility: hidden;
+  opacity: 0;
+  
+  &.active {
+      opacity: 1;
+      visibility: visible;
+  }
+}

@@ -1,0 +1,118 @@
+$delay-step: 0.08s; // Define the step for delay
+$transform-duration: 0.5s;
+$opacity-duration: 0.5s;
+$elements-count: 10;
+$traslate-y: 12px;
+$transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+// Define the mixin to generate transition delay for nth child
+@mixin transition-delay($num) {
+    transition-delay: $num * $delay-step;
+}
+
+@media (min-width: 768px){
+
+    header {
+        *{
+            opacity: 0;
+            transition: opacity $opacity-duration;
+            transition-timing-function: $transition-timing-function;
+        }
+        &.animate{
+            * {
+                opacity: 1;
+            }
+        }
+    }
+
+    section{
+        .consultation-btn, .bg-shape{
+            opacity: 0;
+            transition: opacity $opacity-duration;
+            transition-delay: 0.3s;
+        }
+
+        .col {
+            opacity: 0;
+            transition: transform $transform-duration, opacity $opacity-duration;
+            transition-timing-function: $transition-timing-function;
+            transform: translateY($traslate-y);
+            
+            @for $i from 1 through $elements-count {
+                &:nth-child(#{$i}) {
+                    @include transition-delay($i);
+                }
+            }
+        }
+
+        .caption, .title, .content, .headline{
+            opacity: 0;
+            transition: transform $transform-duration, opacity $opacity-duration;
+            transition-timing-function: $transition-timing-function;
+            transform: translateY($traslate-y);
+
+            @for $i from 1 through $elements-count {
+                & > *:not(.btn) {
+                    opacity: 0;
+                    transition: transform $transform-duration, opacity $opacity-duration;
+                    transition-timing-function: $transition-timing-function;
+                    transform: translateY($traslate-y);
+                }
+
+                & > *:nth-child(#{$i}):not(.btn, picture, img) {
+                    @include transition-delay($i);
+                }
+            }
+        }
+
+        &.animate{
+            .consultation-btn, .bg-shape{
+                opacity: 1;
+            }
+
+            .caption, .title, .content, .headline{
+                transform: translateY(0) !important;
+                opacity: 1 !important;
+
+                & > *:not(.btn, picture, img) {
+                    transform: translateY(0) !important;
+                    opacity: 1 !important;
+                }
+            }
+        }
+    }
+
+    .service, .col{
+        opacity: 0;
+        transform: translateY($traslate-y);
+        transition: transform $transform-duration, opacity $opacity-duration;
+        transition-timing-function: $transition-timing-function;
+        &.animate{
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+        }
+    }
+
+    footer{
+        .col {
+            opacity: 0;
+            transition: transform $transform-duration, opacity $opacity-duration;
+            transition-timing-function: $transition-timing-function;
+            
+            @for $i from 1 through 20 {
+                &:nth-child(#{$i}) {
+                    @include transition-delay($i);
+                    transform: translateY($traslate-y);
+                }
+            }
+        }
+
+        &.animate{
+            .col {
+                transform: translateY(0) !important;
+                opacity: 1 !important;
+            }
+        }
+    }
+
+}

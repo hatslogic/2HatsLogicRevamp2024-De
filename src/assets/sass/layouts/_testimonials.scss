@@ -1,0 +1,52 @@
+.testimonials{
+    .hats-slider{
+        cursor: grab;
+    }
+    .hats-slider__slide{
+        // min-width: 52vw;
+
+        @include below($xs){
+            width: 100%;
+        }
+
+        &:first-child{
+            .testimonial{
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.testimonial{
+    width: rem(770);
+
+    @include above($xxxl){
+        width: rem(740);
+    }
+
+    @include below($xxl){
+        width: rem(680);
+    }
+
+    @include below($lg){
+        width: rem(560);
+    }
+
+    @include below($sm){
+        width: rem(420);
+    }
+
+    @include below($xs){
+        width: 100%;
+    }
+
+    .top{
+        img{
+            mix-blend-mode: multiply;
+            
+        }
+        .service{
+            text-transform: uppercase;
+        }
+    }
+}

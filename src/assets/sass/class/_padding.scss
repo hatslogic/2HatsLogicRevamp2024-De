@@ -1,0 +1,129 @@
+$breakpoints: (
+  xxl: $xxl,
+  xl: $xl,
+  lg: $lg,
+  md: $md,
+  sm: $sm,
+  xs: $xs
+);
+
+
+$sides: top, right, bottom, left; // Define the sides
+
+
+@for $space from 0 through 300 {
+    .p-#{$space} {
+      padding: rem($space);
+    }
+}
+
+.p-0 {
+  padding: 0;
+}
+
+@each $breakpoint, $size in $breakpoints  {
+.#{$breakpoint}\:px-0 {
+  @include below($breakpoint) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+}
+
+@each $breakpoint, $size in $breakpoints  {
+.#{$breakpoint}\:py-0 {
+  @include below($size) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+}
+
+//padding-x value 1 to 300
+@for $space from 0 through 300 {
+  .px-#{$space} {
+    padding-left: rem($space);
+    padding-right: rem($space);
+  }
+}
+
+@each $breakpoint, $size in $breakpoints  {
+  @for $space from 0 through 300 {
+    .#{$breakpoint}\:px-#{$space} {
+      @include below($size) {
+        padding-left: rem($space);
+        padding-right: rem($space);
+      }
+  }
+}
+}
+
+//padding-y value 1 to 300
+@for $space from 0 through 300 {
+  .py-#{$space} {
+    padding-top: rem($space);
+    padding-bottom: rem($space);
+  }
+}
+
+@each $breakpoint, $size in $breakpoints  {
+  @for $space from 0 through 300 {
+    .#{$breakpoint}\:py-#{$space} {
+      @include below($size) {
+        padding-top: rem($space);
+        padding-bottom: rem($space);
+      }
+    }
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $space from 0 through 300 {
+            .#{$breakpoint}\:p-#{$space} {
+                padding: rem($space);
+            }
+        }
+    }
+}
+
+@for $space from 0 through 300 {
+    @each $side in $sides {
+        .p#{str-slice($side, 0, 1)}-#{$space} {
+          padding-#{$side}: rem($space);
+        }
+    }
+}
+
+@each $breakpoint, $size in $breakpoints {
+    @include below($size) {
+        @for $space from 0 through 300 {
+            @each $side in $sides {
+                .#{$breakpoint}\:p#{str-slice($side, 0, 1)}-#{$space} {
+                    padding-#{$side}: rem($space);
+                }
+            }
+        }
+    }
+}
+
+@for $space from 0 through 100 {
+  @each $side in $sides {
+      .rp-#{str-slice($side, 0, 1)}-#{$space} {
+        padding-#{$side}: $space * 1%;
+      }
+  }
+}
+
+@each $breakpoint, $size in $breakpoints {
+  @include below($size) {
+    @for $space from 0 through 100 {
+      @each $side in $sides {
+        .#{$breakpoint}\:rp-#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: $space * 1%;
+          }
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.split-1 {
+    columns: 1;
+}
+
+.split-2 {
+    columns: 2;
+}
+
+.split-3 {
+    columns: 3;
+}
+
+.split-4 {
+    columns: 4;
+}
+
+.break-in\:ac {
+    break-inside: avoid-column;
+}
+
+@include below($xxl) {
+    .xxl\:split-1 {
+        columns: 1;
+    }
+    .xxl\:split-2 {
+        columns: 2;
+    }
+    .xxl\:split-3 {
+        columns: 3;
+    }
+    .xxl\:split-4 {
+        columns: 4;
+    }
+}
+
+@include below($xl) {
+    .xl\:split-1 {
+        columns: 1;
+    }
+    .xl\:split-2 {
+        columns: 2;
+    }
+    .xl\:split-3 {
+        columns: 3;
+    }
+    .xl\:split-4 {
+        columns: 4;
+    }
+}
+
+@include below($lg) {
+    .lg\:split-1 {
+        columns: 1;
+    }
+    .lg\:split-2 {
+        columns: 2;
+    }
+    .lg\:split-3 {
+        columns: 3;
+    }
+    .lg\:split-4 {
+        columns: 4;
+    }
+}
+
+@include below($md) {
+    .md\:split-1 {
+        columns: 1;
+    }
+    .md\:split-2 {
+        columns: 2;
+    }
+    .md\:split-3 {
+        columns: 3;
+    }
+    .md\:split-4 {
+        columns: 4;
+    }
+}
+
+@include below($sm) {
+    .sm\:split-1 {
+        columns: 1;
+    }
+    .sm\:split-2 {
+        columns: 2;
+    }
+    .sm\:split-3 {
+        columns: 3;
+    }
+    .sm\:split-4 {
+        columns: 4;
+    }
+}
+
+@include below($xs) {
+    .xs\:split-1 {
+        columns: 1;
+    }
+    .xs\:split-2 {
+        columns: 2;
+    }
+    .xs\:split-3 {
+        columns: 3;
+    }
+    .xs\:split-4 {
+        columns: 4;
+    }
+}

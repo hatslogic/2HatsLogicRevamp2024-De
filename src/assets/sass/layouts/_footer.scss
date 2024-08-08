@@ -1,0 +1,32 @@
+footer{
+    a{
+        color: var(--c-secondary);
+        &:hover{
+            color: var(--c-primary);
+        }
+    }
+
+    .menu{
+        ul{
+            li{
+                margin-bottom: rem(12);
+                
+                &:last-child{
+                    margin-bottom: rem(0);
+                }
+            }
+        }
+    }
+
+    .accreditation{
+        img{
+            max-width: rem(100);
+            max-height: rem(100);
+
+            @include below($sm){
+                max-width: rem(80);
+                max-height: rem(80);
+            }
+        }
+    }
+}
