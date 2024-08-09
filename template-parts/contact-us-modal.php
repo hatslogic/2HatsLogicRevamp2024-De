@@ -16,7 +16,7 @@ $form_shortcode = get_field('contact_us_modal_form_shortcode', 'option');
                     
                     <?php
                         $mobile_aspectratio = [430, 466];
-                        if ($get_a_quote_image_mobile) {
+                        if ($contact_us_modal_image_mobile) {
                             $mobile_aspectratio = [430, 466, $contact_us_modal_image_mobile['ID']];
                         }
                         ?>
