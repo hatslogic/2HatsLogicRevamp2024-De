@@ -164,7 +164,7 @@ if (!is_singular('help-desk') && !$disable_modals) {
 
 <?php wp_footer(); ?>
 
-<script id="Radhu" <?php echo $disable_modals; ?>>
+<script>
     var elements = document.querySelectorAll('section, header, footer, .service, .col, .content .info');
     var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
