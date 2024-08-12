@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 
-<section class="meet-our-team overflow-hidden">
+<section class="meet-our-team block overflow-hidden">
     <div class="container">
 
         <?php if ($title || $content) { ?>

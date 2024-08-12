@@ -47,7 +47,7 @@ foreach ($images as $key => $item){
 }
 
 ?>
-<section class="meet-our-team">
+<section class="meet-our-team block">
     <div class="container">
         <?php if ($title || $content): ?>
             <div class="title  text-center">
