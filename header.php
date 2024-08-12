@@ -36,8 +36,6 @@
 	<style>@font-face {font-family: "TTFirsNeueTrl-Thin";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Thin.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Thin.woff") format("woff");font-display: swap }@font-face {font-family: "TTFirsNeueTrl-Medium";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Medium.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/TTFirsNeueTrl/TTFirsNeueTrl-Medium.woff") format("woff");font-display: swap }@font-face {font-family: "BasisGrotesquePro-Light";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Light.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Light.woff") format("woff");font-display: swap }@font-face {font-family: "BasisGrotesquePro-Regular";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Regular.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Regular.woff") format("woff");font-display: swap }@font-face {font-family: "BasisGrotesquePro-Bold";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Bold.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/BasisGrotesquePro/BasisGrotesquePro-Bold.woff") format("woff");font-display: swap }@font-face {font-family: "PTSerif-Regular";src: url("<?php echo $get_dir; ?>/dist/assets/fonts/PTSerif/PTSerif-Regular.woff2") format("woff2"), url("<?php echo $get_dir; ?>/dist/assets/fonts/PTSerif/PTSerif-Regular.woff") format("woff");font-display: swap }@font-face {font-family: 'icomoon';src: url('<?php echo $get_dir; ?>/dist/assets/fonts/2HatsIcons/icomoon.woff2') format('woff2'), url('<?php echo $get_dir; ?>/dist/assets/fonts/2HatsIcons/icomoon.woff') format('woff');font-weight: normal;font-style: normal;font-display: block;}</style>
 	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" fetchpriority="low" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-	<?php // echo $gtm_head = get_field('gtm_head', 'options') ?? ''; ?>
-
 	<?php if(is_page_template('templates/template-shopware-migration.php')): ?>
 		<link rel="preload" fetchpriority="high" as="image" href="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg.jpeg" imagesrcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg.jpeg, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg2x.jpeg 2x" type="image/jpeg">
 	<?php endif; ?>
@@ -62,29 +60,7 @@
 	<?php wp_head(); ?>
 
 	<script src="/~partytown/partytown.js"></script>
-	
-	<!-- Google Tag Manager -->
-	<script type="text/partytown">
-	(function(w,d,s,l,i){
-		w[l]=w[l]||[];
-		w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-		var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-		j.async=true;
-		j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-		f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-MMNRGHR');
-	</script>
-	<!-- End Google Tag Manager -->
-
-
-	<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=AW-793939830"></script>
-	<script type="text/partytown">
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'AW-793939830');
-	</script>
-
+	<?php echo $gtm_head = get_field('gtm_head', 'options') ?? ''; ?>
 	
 	<?php
 	if ( function_exists('get_field') ) {
@@ -107,12 +83,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php // echo $gtm_body= get_field('gtm_body', 'options') ?? ''; ?>
-
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMNRGHR"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+	<?php echo $gtm_body= get_field('gtm_body', 'options') ?? ''; ?>
 	
 	<?php wp_body_open(); ?>
 	<script> var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>'; </script>

@@ -738,35 +738,35 @@ add_action('wp_enqueue_scripts', 'deregister_polyfill');
 // 	wp_script_add_data( 'cfturnstile-js', 'strategy', 'async' );
 // } );
 
-function custom_turnstile_script()
-{
-    // Deregister the original script if needed
-    wp_dequeue_script('cloudflare-turnstile-script'); // Adjust the handle name as per your existing script handle
+// function custom_turnstile_script()
+// {
+//     // Deregister the original script if needed
+//     wp_dequeue_script('cloudflare-turnstile-script'); // Adjust the handle name as per your existing script handle
 
-    // Register and enqueue the script in the head
-    wp_register_script(
-        'cloudflare-turnstile-api',
-        'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit', // Cloudflare Turnstile API URL
-        [], // Dependencies
-        null, // Version
-        false // In the head (true for footer, false for head)
-    );
-    wp_enqueue_script('cloudflare-turnstile-api');
-}
+//     // Register and enqueue the script in the head
+//     wp_register_script(
+//         'cloudflare-turnstile-api',
+//         'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit', // Cloudflare Turnstile API URL
+//         [], // Dependencies
+//         null, // Version
+//         false // In the head (true for footer, false for head)
+//     );
+//     wp_enqueue_script('cloudflare-turnstile-api');
+// }
 
-// Add the custom attribute to the script tag
-function add_custom_script_type($tag, $handle)
-{
-    if ('cloudflare-turnstile-api' === $handle) {
-        // Add the custom type attribute to the script tag
-        $tag = str_replace(' src=', ' type="text/partytown" src=', $tag);
-    }
+// // Add the custom attribute to the script tag
+// function add_custom_script_type($tag, $handle)
+// {
+//     if ('cloudflare-turnstile-api' === $handle) {
+//         // Add the custom type attribute to the script tag
+//         $tag = str_replace(' src=', ' type="text/partytown" src=', $tag);
+//     }
 
-    return $tag;
-}
+//     return $tag;
+// }
 
-add_action('wp_enqueue_scripts', 'custom_turnstile_script');
-add_filter('script_loader_tag', 'add_custom_script_type', 10, 2);
+// add_action('wp_enqueue_scripts', 'custom_turnstile_script');
+// add_filter('script_loader_tag', 'add_custom_script_type', 10, 2);
 
 function contactform_dequeue_scripts()
 {
