@@ -77,11 +77,11 @@ foreach($album as $key => $image){
                     </div>
                     <div class="album">
 
-                        <a href="<?php echo $see_more ? $see_more['url'] : "#" ?>" target="<?php echo $see_more ? $see_more['target'] : "_self" ?>" class="w-100 h-100 relative">
+                        <a href="<?php echo $see_more ? $see_more['url'] : "#" ?>" target="<?php echo $see_more ? $see_more['target'] : "_self" ?>" class="w-100 h-100 relative block">
                             <div
                                 class="absolute z-2 h-100 w-100 c-white flex column gap-10 align-center justify-center">
                                 <i class="icomoon fs-28 icon-plus"></i>
-                                <span><?php echo $see_more ? $see_more['title'] : "See More" ?></span>
+                                <span class="md:hidden"><?php echo $see_more ? $see_more['title'] : "See More" ?></span>
                             </div>
                             <?php echo hatslogic_get_attachment_picture($picture8, $cropOptions[8],$attributes[8]) ?>
                             <span class="absolute z-0 bg-black opacity-70 top-0 h-100 w-100"></span>
