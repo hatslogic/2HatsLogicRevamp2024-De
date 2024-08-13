@@ -37,8 +37,14 @@
                         <?php if ($review['avatar']) { ?>
                         <div
                             class="img-wrap radius-50 bg-light-grey w-px-50 h-px-50 max-w-px-50 min-w-px-50 over overflow-hidden">
-                            <img src="<?php echo $review['avatar']['sizes']['img_180x180']; ?>" alt="CEO" width="50"
-                                height="50">
+                            <?php
+                            $cropOptions = [
+                                '(max-width: 768px)' => [34, 34],
+                                '(min-width: 769px)' => [90, 90],
+                            ];
+                            $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+                            echo hatslogic_get_attachment_picture($review['avatar']['ID'], $cropOptions, $attributes);
+                            ?>
                         </div>
                         <?php } ?>
                         <div class="author ml-15">
