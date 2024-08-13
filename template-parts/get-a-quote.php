@@ -7,11 +7,11 @@ $form_shortcode = get_field('get_a_quote_form_shortcode', 'option');
 <div id="get-a-quote" class="modal fixed get-a-quote bg-overlay inset-0 z-14 h-100 w-100 transition">
     <div class="container h-100 xs:p-0">
         <div class="flex align-center h-100">
-            <div class="flex xs:wrap w-100 h-90 xs:h-100 align-center relative bg-white z-1 xs:scroll-y">
+            <div class="flex xs:wrap w-100 h-90 xs:h-100 align-center md:align-start relative bg-white z-1 xs:scroll-y">
                 <button class="btn btn-secondary absolute xs:fixed z-1 top-0 right-0 close" onclick="closeModal('get-a-quote')">
                     <i class="icomoon icon-close"></i>
                 </button>
-                <div class="col w-50 h-100 xs:w-100 xs:h-50 md:hidden xs:visible">
+                <div class="col w-50 h-100 xs:w-100 xs:h-50 md:hidden">
                     <?php if ($get_a_quote_image && $get_a_quote_image_mobile) { ?>
                     
                     <?php

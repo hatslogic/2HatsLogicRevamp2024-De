@@ -95,9 +95,9 @@
 	<header class="header transition z-12 sticky top-0 w-100 md:bb-0 bg-white md:pb-20 md:pt-20">
 		<div class="container">
 			<div class="header-inner flex w-100 justify-between align-center">
-				<a href="<?php echo home_url(); ?>" class="brand" aria-label="<?php echo get_bloginfo('name'); ?>">
+				<a href="<?php echo home_url(); ?>" class="brand w-100 max-w-px-106 max-h-px-48" aria-label="<?php echo get_bloginfo('name'); ?>">
 					<img src="<?php echo $get_dir; ?>/dist/assets/img/brand/logo-wide.svg"
-						alt="<?php echo get_bloginfo('name'); ?>" class="w-100" width="106" height="48">
+						alt="<?php echo get_bloginfo('name'); ?>" class="w-100 w-100 max-w-px-106 max-h-px-48" width="106" height="48">
 				</a>
 
 				<?php 
