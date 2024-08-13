@@ -9,7 +9,14 @@
                     <div class="avatar-wrap flex align-center mt-30 md:w-100 md:mb-20">
                         <?php if($avatar): ?>
                         <div class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50 over border-radius-100 overflow-hidden">
-                            <img src="<?php echo $avatar['sizes']['img_100x100']; ?>" alt="avatar" width="100" height="100">
+                            <?php
+                                $cropOptions = [
+                                    '(max-width: 768px)' => [34, 34],
+                                    '(min-width: 769px)' => [90, 90],
+                                ];
+                                $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+                                echo hatslogic_get_attachment_picture($avatar['ID'], $cropOptions, $attributes);
+                            ?>
                         </div>
                         <?php endif; ?>
                         <div class="author ml-20">
