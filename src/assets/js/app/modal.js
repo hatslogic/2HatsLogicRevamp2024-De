@@ -1,6 +1,6 @@
 function openModal(name) {
   var modal = document.getElementById(name);
-  var input = modal.querySelector('input'); // Assumes there's an input in the modal
+  var input = modal.querySelector('.form input'); // Assumes there's an input in the modal
 
   overlayModal.classList.add('active');
   body.classList.add('disable-scroll');
