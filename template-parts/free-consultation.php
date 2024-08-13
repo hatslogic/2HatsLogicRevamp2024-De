@@ -37,7 +37,7 @@ $get_dir = get_template_directory_uri();
 
                     <?php } ?>
                 </div>
-                <div class="col w-50 h-100 xs:h-auto md:w-100 md:h-auto p-60 md:px-20 md:pt-140 flex align-center">
+                <div class="col w-50 h-100 xs:h-auto md:w-100 md:h-auto p-60 md:px-20 md:pt-140 flex align-center md:block">
                     <div class="form-wrap">
                     <?php echo do_shortcode('[contact-form-7 id="'.$form_shortcode->ID.'"]'); ?>
                   </div>
