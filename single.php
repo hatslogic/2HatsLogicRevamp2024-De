@@ -69,7 +69,7 @@ get_header();
 								</div>
 							</div>
 							<div class="title mt-40">
-								<h1 class="h2-sml"><?php the_title(); ?></h1>
+								<h1 class="h1-sml"><?php the_title(); ?></h1>
 							</div>
 						</div>
 					</div>
