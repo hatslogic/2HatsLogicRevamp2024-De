@@ -7,31 +7,27 @@ function openModal(name) {
   modal.classList.add('show');
 
   if (input) {
+    // Temporarily disable transitions to ensure input focus works
+    modal.style.transition = 'none';
+    input.style.transition = 'none';
+
+    // Force a reflow (flush CSS changes)
+    modal.offsetHeight;
+
+    input.focus();
+
+    // Re-enable transitions after a short delay
     setTimeout(() => {
-      // Temporarily disable transitions to ensure input focus works
-      modal.style.transition = 'none';
-      input.style.transition = 'none';
+      modal.style.transition = '';
+      input.style.transition = '';
+    }, 50);
 
-      // Force a reflow (flush CSS changes)
-      modal.offsetHeight;
-
-      setTimeout(() => {
-        input.focus();
-      }, 10);
-
-      // Re-enable transitions after a short delay
-      setTimeout(() => {
-        modal.style.transition = '';
-        input.style.transition = '';
-      }, 50);
-
-      // Scroll input into view for mobile devices
-      if (window.innerWidth <= 768) {
-        input.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
-    }, 500); // Delay to ensure modal is fully open
+    // Scroll input into view for mobile devices
+    if (window.innerWidth <= 768) {
+      input.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
   }
 
   // close modal on escape
