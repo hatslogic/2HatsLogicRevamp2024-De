@@ -899,8 +899,8 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
 
     if ($fallback_image_src && !empty($fallback_image_src['src'])) {
         $alt_text = esc_attr(get_post_meta($image_id, '_wp_attachment_image_alt', true));
-        $width = $fallback_image_src['width'];
-        $height = $fallback_image_src['height'];
+        $width = $largest_size[0];
+        $height = $largest_size[1];
         $picture .= "<img src='".esc_url($fallback_image_src['src'])."' $img_attributes alt='$alt_text' width='$width' height='$height'>";
     }
 
