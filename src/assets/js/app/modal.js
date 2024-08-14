@@ -1,4 +1,5 @@
 function openModal(name) {
+  event.preventDefault()
   var modal = document.getElementById(name);
   var input = modal.querySelector('.form input'); // Assumes there's an input in the modal
 
