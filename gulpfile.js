@@ -101,7 +101,9 @@ function moveFiles(src, dest) {
 
 function convertToWebP(src, dest) {
     return gulp.src(src)
-        .pipe(webp())
+        .pipe(webp({
+            quality: 100,
+          }))
         .pipe(gulp.dest(dest))
         .pipe(browserSync.stream()); // Stream changes to BrowserSync
 }

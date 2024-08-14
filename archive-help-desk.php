@@ -132,20 +132,14 @@ wp_reset_postdata();
             </div>
           </div>
         </div>
-        
-        <div class="bg-shape absolute z-0 right-0 top-0 w-60 md:w-80">
-            <?php if ($backgroundImage) { ?>
-              
-              <?php
-                $cropOptions = [
-                    '(max-width: 768px)' => [390, 204],
-                    '(min-width: 769px)' => [375, 195],
-                ];
-
-                $attributes = ['class' => 'shape w-100 absolute -top-10', 'loading' => 'lazy'];
-                ?>
-                <?php echo hatslogic_get_attachment_picture($backgroundImage['ID'], $cropOptions, $attributes); ?>
-            <?php } ?>
+        <div class="bg-shape absolute z-0 right-0 top-0 w-60 h-px-500 md:w-80">
+            <picture class="shape w-100 absolute -top-10">
+                <source srcset="assets/img/shapes/blog-bg.webp 1x, assets/img/shapes/blog-bg2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+                <source srcset="assets/img/shapes/blog-bg-mobile.webp 1x, assets/img/shapes/blog-bg-mobile.webp 2x" media="(max-width: 767px)" type="image/webp">
+                <source srcset="assets/img/shapes/blog-bg.jpg 1x, assets/img/shapes/blog-bg2x.jpg 2x" media="(min-width: 768px)" type="image/jpg">
+                <source srcset="assets/img/shapes/blog-bg-mobile.jpg 1x, assets/img/shapes/blog-bg-mobile.jpg 2x" media="(max-width: 767px)" type="image/jpg">
+                <img src="assets/img/shapes/blog-bg.jpg" alt="help-desk" width="100" height="100">
+            </picture>
         </div>
     </section>
     

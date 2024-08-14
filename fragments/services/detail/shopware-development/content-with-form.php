@@ -40,8 +40,14 @@
                         <?php if ($review['avatar']) { ?>
                         <div
                             class="img-wrap radius-50 bg-light-grey w-px-50 h-px-50 max-w-px-50 min-w-px-50 over overflow-hidden">
-                            <img src="<?php echo $review['avatar']['sizes']['img_180x180']; ?>" alt="CEO" width="50"
-                                height="50">
+                            <?php
+                            $cropOptions = [
+                                '(max-width: 768px)' => [34, 34],
+                                '(min-width: 769px)' => [90, 90],
+                            ];
+                            $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+                            echo hatslogic_get_attachment_picture($review['avatar']['ID'], $cropOptions, $attributes);
+                            ?>
                         </div>
                         <?php } ?>
                         <div class="author ml-15">
@@ -95,8 +101,14 @@
                         <?php if ($consultant['image']) { ?>
                         <div
                             class="img-wrap bg-light-grey w-px-75 h-px-75 max-w-px-75 min-w-px-75 xs:w-px-50 xs:h-px-50 xs:max-w-px-50 xs:min-w-px-50">
-                            <img src="<?php echo $consultant['image']['sizes']['img_180x180']; ?>" alt="avatar"
-                                width="75" height="75">
+                            <?php
+                            $cropOptions = [
+                                '(max-width: 768px)' => [34, 34],
+                                '(min-width: 769px)' => [90, 90],
+                            ];
+                            $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+                            echo hatslogic_get_attachment_picture($consultant['image']['ID'], $cropOptions, $attributes);
+                            ?>
                         </div>
                         <?php } ?>
                         <?php if ($consultant['name'] || $consultant['desig']) { ?>
@@ -118,9 +130,13 @@
             <?php } ?>
         </div>
     </div>
-    <div class="bg-shape absolute z-0 right-0 top-0 w-60 h-px-500 md:w-80">
-        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png"
-            srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-01.png 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shape-012x.png 2x"
-            class="shape w-100 absolute -top-10" alt="shopware" width="100" height="100">
+    <div class="bg-shape absolute z-0 right-0 top-0 w-60  h-px-500 md:w-80">
+        <picture class="shape w-100 absolute -top-10">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg-mobile.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg-mobile.webp 2x" media="(max-width: 767px)" type="image/webp">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg2x.jpg 2x" media="(min-width: 768px)" type="image/jpg">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg-mobile.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg-mobile.jpg 2x" media="(max-width: 767px)" type="image/jpg">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg.jpg" alt="shopware" width="100" height="100">
+        </picture>
     </div>
 </section>

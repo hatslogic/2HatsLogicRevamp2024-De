@@ -8,7 +8,7 @@ define('APP_THEME_DIR', dirname(__FILE__).DIRECTORY_SEPARATOR);
 
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
-    define('_S_VERSION', '4.6.9');
+    define('_S_VERSION', '2.0.0');
 }
 
 function my_acf_add_local_field_groups()
