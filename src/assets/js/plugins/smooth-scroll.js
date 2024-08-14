@@ -4,7 +4,7 @@
  */
 
 function init() {
-  new SmoothScroll(document, 60, 15)
+  new SmoothScroll(document, 120, 12)
 }
 
 function SmoothScroll(target, speed, smooth) {
