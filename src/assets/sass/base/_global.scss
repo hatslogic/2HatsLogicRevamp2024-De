@@ -1,8 +1,13 @@
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: rem(90);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+
+  @include below($sm) {
+    scroll-padding-top: 0;
+  }
 }
 
 *,

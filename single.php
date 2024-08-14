@@ -74,22 +74,20 @@ get_header();
 						</div>
 					</div>
 
-					<div
-						class="content w-100 xs:mt-30 mt-60">
+					<div class="content w-100 xs:mt-30 mt-60">
 						<?php app_render_page_single_blog(); ?>
-						<div
-							class="editor-content">
+						<div class="editor-content">
 							<?php the_content(); ?>
 							<script>
 								const editorTable = document.querySelectorAll('.editor-content table');
-editorTable.forEach(table => {
-table.outerHTML = `<div class="table-wrap max-w-100 scroll-x">${
-table.outerHTML
-}</div>`;
-});
+								editorTable.forEach(table => {
+									table.outerHTML = `<div class="table-wrap max-w-100 scroll-x">${table.outerHTML}</div>`;
+								});
 							</script>
 						</div>
 						<?php get_template_part('template-parts/blog-faqs'); ?>
+					<div class="title mt-40">
+						<h1 class="h1-sml"><?php the_title(); ?></h1>
 					</div>
 				</div>
 

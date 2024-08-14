@@ -15,9 +15,7 @@
 	    	margin-top: rem(30);
 	    }
     }
-    p + * {
-    	margin-top: 30px;
-    }
+
     [class^="wp-image-"],
     [class*=" wp-image-"] {
         border: 1px solid var(--c-hash);

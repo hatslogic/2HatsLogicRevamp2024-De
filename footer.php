@@ -216,7 +216,7 @@ if (!is_singular('help-desk') && !$disable_modals) {
             }
         });
 
-        var styles = ["<?php echo get_template_directory_uri(); ?>/dist/assets/css/wp.min.css"];
+        var styles = ["<?php echo get_template_directory_uri(); ?>/dist/assets/css/wp.min.css?ver=3.6.8"];
         styles.forEach(url => {
             var request = new XMLHttpRequest();
             request.open("GET", url);
