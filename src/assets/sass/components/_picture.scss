@@ -7,10 +7,12 @@ picture, img{
     height: auto;
 }
 
-picture{
-	background: linear-gradient(100deg, #eceff1 30%, #f6f7f8 50%, #eceff1 70%);
-    background-size: 400%;
-    animation: loading 1s ease-in-out infinite;
+.modal, .card{
+  picture{
+    background: linear-gradient(100deg, #eceff1 30%, #f6f7f8 50%, #eceff1 70%);
+      background-size: 400%;
+      animation: loading 1s ease-in-out infinite;
+  }
 }
 
 @keyframes loading {
@@ -19,11 +21,5 @@ picture{
   }
   100% {
     background-position: 0 50%;
-  }
-}
-
-.background-col, .bg-shape{
-  picture{
-    background: none !important;
   }
 }

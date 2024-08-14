@@ -167,20 +167,21 @@
       }
     });
     
-    /*
     require([
-      "assets/js/rellax.js"
+      "assets/js/lenis.js"
     ], function() {
-        // Also can pass in optional settings block
-        var rellax = new Rellax('.rellax', {
-            center: false,
-            wrapper: '.case-study-intro',
-            round: true,
-            vertical: true,
-            horizontal: false
+        const smoothScroll = new Lenis();
+
+        function raf(time) {
+            smoothScroll.raf(time);
+            requestAnimationFrame(raf);
+        };
+        requestAnimationFrame(raf);
+
+        smoothScroll.on('scroll', (event) => {
+            console.log(event);
         });
     });
-    */
 </script>
 
 

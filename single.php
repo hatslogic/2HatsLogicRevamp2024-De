@@ -86,8 +86,6 @@ get_header();
 							</script>
 						</div>
 						<?php get_template_part('template-parts/blog-faqs'); ?>
-					<div class="title mt-40">
-						<h1 class="h1-sml"><?php the_title(); ?></h1>
 					</div>
 				</div>
 

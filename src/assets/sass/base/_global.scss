@@ -45,6 +45,12 @@ body {
   }
 }
 
+.page-wrap{
+  @include below($md) {
+    overflow-x: hidden;
+  }
+}
+
 h1,
 h2,
 h3,

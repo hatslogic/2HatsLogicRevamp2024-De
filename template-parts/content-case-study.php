@@ -53,7 +53,7 @@
                                         $placeholder_image_id = attachment_url_to_postid(get_site_url().'/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
                                         $placeholder_image_url = get_site_url().'/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
                                         ?>
-                                    <img src="<?php echo $placeholder_image_url; ?>" loading="lazy" alt="<?php the_title(); ?>" width="548px" height="349px" class="transition">
+                                    <img src="<?php echo $placeholder_image_url; ?>" loading="lazy" alt="<?php the_title(); ?>" width="548px" height="350px" class="transition">
                                 <?php } ?>
                                 <div class="info mt-30">
                                     <span class="headline c-primary uppercase font-bold mb-10 block fs-14">
