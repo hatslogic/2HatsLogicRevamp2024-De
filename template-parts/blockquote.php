@@ -24,7 +24,7 @@ $cta = get_field('quote_cta','option');
                                 '(max-width: 768px)' => [34, 34],
                                 '(min-width: 769px)' => [90, 90],
                             ];
-                            $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+                            $attributes = ['class' => 'transition', 'loading' => 'lazy', 'fetchPriority' => 'low'];
                             echo hatslogic_get_attachment_picture($avatar['ID'], $cropOptions, $attributes);
                             ?>
                         </div>
