@@ -46,7 +46,7 @@
                                         '(min-width: 769px)' => [558, 355],
                                     ];
 
-                                    $attributes = ['class' => 'transition', 'loading' => 'lazy'];
+                                    $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
                                     ?>
                                     <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
                                     <?php } else {

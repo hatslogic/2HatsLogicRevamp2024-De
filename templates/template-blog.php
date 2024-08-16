@@ -62,7 +62,7 @@ if ($blog_query->have_posts()) {
                                         '(min-width: 769px)' => [487, 255],
                                     ];
 
-                                            $attributes = ['class' => 'transition', 'loading' => 'lazy'];
+                                            $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
                                             ?>
                                     <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
                                         <?php } else {

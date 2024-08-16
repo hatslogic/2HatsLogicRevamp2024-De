@@ -39,7 +39,7 @@
                                             '(max-width: 768px)' => [280, 146],
                                             '(min-width: 769px)' => [350, 182],
                                         ];
-                        $attributes = ['class' => 'transition', 'loading' => 'lazy', 'alt' => $featured_image_alt];
+                        $attributes = ['class' => 'transition', 'loading' => 'lazy', 'alt' => $featured_image_alt, 'picturetag_class' => 'loader'];
                         ?>
                                 <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
                                 <div class="info mt-30 xs:pl-20 xs:pr-20">

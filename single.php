@@ -5,6 +5,7 @@
  * @see https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  */
 get_header();
+$disable_css = get_field('disable_css', get_the_ID());
 ?>
 
 <main class="page-wrap inline-block w-100 relative z-0">
@@ -26,7 +27,7 @@ get_header();
 								'(max-width: 768px)' => [390, 200],
 								'(min-width: 769px)' => [1025, 519],
 							];
-							$attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+							$attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high', 'picturetag_class' => 'loader'];
 							?>
 							<?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
 						<?php } ?>
@@ -76,7 +77,7 @@ get_header();
 
 					<div class="content w-100 xs:mt-30 mt-60">
 						<?php app_render_page_single_blog(); ?>
-						<div class="editor-content">
+						<div class="editor-content<?php echo $disable_css ? ' disable-css' : ''; ?>">
 							<?php the_content(); ?>
 							<script>
 								const editorTable = document.querySelectorAll('.editor-content table');

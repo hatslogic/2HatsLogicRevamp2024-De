@@ -1,4 +1,4 @@
-.editor-content{
+.editor-content:not(.disable-css){
     ul, ol{
         padding-left: 0;
         list-style-position: inside;
@@ -15,7 +15,9 @@
 	    	margin-top: rem(30);
 	    }
     }
-
+	p + * {
+    	margin-top: 30px;
+    }
     [class^="wp-image-"],
     [class*=" wp-image-"] {
         border: 1px solid var(--c-hash);

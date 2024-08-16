@@ -25,7 +25,7 @@
                             '(max-width: 768px)' => [390, 268],
                             '(min-width: 769px)' => [615, 422],
                         ];
-                $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+                $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high', 'picturetag_class' => 'loader'];
                 ?>
                     <?php echo hatslogic_get_attachment_picture($image['ID'], $cropOptions, $attributes); ?>
                 </div>

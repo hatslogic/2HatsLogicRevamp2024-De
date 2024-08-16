@@ -44,7 +44,7 @@
                                     '(max-width: 768px)' => [34, 34],
                                     '(min-width: 769px)' => [90, 90],
                                 ];
-                                $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
+                                $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high', 'picturetag_class' => 'loader'];
                                 echo hatslogic_get_attachment_picture($review['avatar']['ID'], $cropOptions, $attributes);
                                 ?>
                             </div>

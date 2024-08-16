@@ -8,7 +8,7 @@ define('APP_THEME_DIR', dirname(__FILE__).DIRECTORY_SEPARATOR);
 
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
-    define('_S_VERSION', '2.3.4');
+    define('_S_VERSION', '2.3.6');
 }
 
 function my_acf_add_local_field_groups()
@@ -988,36 +988,32 @@ add_action('admin_init', 'disable_comments_dashboard');
 
 
 function remove_unwanted_tags_and_styles($content) {
-    // Remove specific tags (adjust as needed)
-    $content = preg_replace('/<script[^>]*>(.*?)<\/script>/is', '', $content);
-    $content = preg_replace('/<style[^>]*>(.*?)<\/style>/is', '', $content);
-    $content = preg_replace('/<iframe[^>]*>(.*?)<\/iframe>/is', '', $content);
-  
-    // Remove inline styles
-    $content = preg_replace('/ style="[^"]*"/', '', $content);
 
-    // Remove unwanted spans
-    $content = preg_replace('/<span[^>]*>(.*?)<\/span>/is', '$1', $content);
+    if(!is_singular('post')){
+        return $content;
+    }
 
-    // Remove unwanted strong and b tags
-    $content = preg_replace('/<strong[^>]*>(.*?)<\/strong>/is', '$1', $content);
-    $content = preg_replace('/<b[^>]*>(.*?)<\/b>/is', '$1', $content);
-  
-    // return $content;
+    $disable_inline_styles = get_field('disable_inline_styles', get_the_ID());
 
-    $pattern = '/<p class="text-center my-3"><a href="(.*?)">Click Here For Free Code<\/a><\/p>/i';
-    $replacement = '<div class="btn-group"><a class="btn btn-primary" href="$1">Click Here For Free Code</a></div>';
-    return preg_replace($pattern, $replacement, $content);
+    // only for post single
+    if ($disable_inline_styles) {
+        // Remove specific tags (adjust as needed)
+        $content = preg_replace('/<script[^>]*>(.*?)<\/script>/is', '', $content);
+        $content = preg_replace('/<style[^>]*>(.*?)<\/style>/is', '', $content);
+        $content = preg_replace('/<iframe[^>]*>(.*?)<\/iframe>/is', '', $content);
+    
+        // Remove inline styles
+        $content = preg_replace('/ style="[^"]*"/', '', $content);
 
-  }
-//   add_filter('the_content', 'remove_unwanted_tags_and_styles');
-  
+        // Remove unwanted spans
+        $content = preg_replace('/<span[^>]*>(.*?)<\/span>/is', '$1', $content);
 
-  function change_code_link_wrapper($content) {
-    $pattern = '/<p class="text-center my-3"><a href="(.*?)">Click Here For Free Code<\/a><\/p>/i';
-    $replacement = '<div class="btn-group"><a class="btn btn-primary" href="$1">Click Here For Free Code</a></div>';
-    return preg_replace($pattern, $replacement, $content);
-  }
+        // Remove unwanted strong and b tags
+        $content = preg_replace('/<strong[^>]*>(.*?)<\/strong>/is', '$1', $content);
+        $content = preg_replace('/<b[^>]*>(.*?)<\/b>/is', '$1', $content);
+    }
   
-//   add_filter('the_content', 'change_code_link_wrapper');
-  
+    return $content;
+
+}
+add_filter('the_content', 'remove_unwanted_tags_and_styles');

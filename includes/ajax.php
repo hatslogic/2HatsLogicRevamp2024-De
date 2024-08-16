@@ -35,7 +35,7 @@ function load_more_team_members()
                                     '(max-width: 768px)' => [163, 213],
                                     '(min-width: 769px)' => [246, 323],
                                 ];
-                    $attributes = ['class' => 'transition', 'loading' => 'lazy'];
+                    $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
                     ?>
                             <?php echo hatslogic_get_attachment_picture($image_id, $cropOptions, $attributes); ?>
                             </div>

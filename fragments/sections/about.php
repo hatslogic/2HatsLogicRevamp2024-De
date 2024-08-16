@@ -10,7 +10,7 @@
                             '(max-width: 768px)' => [390, 260],
                             '(min-width: 769px)' => [696, 462],
                         ];
-            $attributes = ['class' => 'h-auto w-100', 'loading' => 'lazy'];
+            $attributes = ['class' => 'h-auto w-100', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
             ?>
                 <?php echo hatslogic_get_attachment_picture($image['ID'], $cropOptions, $attributes); ?>
             </div>
