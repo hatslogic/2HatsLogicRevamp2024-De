@@ -68,7 +68,7 @@ $sidebar_image_cta_link = get_field('sidebar_image_cta_link');
         if ($image) { ?>
         <div class="block mt-30">
         <?php if($sidebar_image_cta == 'modal') { ?>
-        <a onclick="openModal('<?php echo $sidebar_image_cta_modal ?>')" aria-label="offers" >
+        <a href="javascript:void(0)" onclick="openModal('<?php echo $sidebar_image_cta_modal ?>')" aria-label="offers" >
         <?php } ?> 
         <?php if($sidebar_image_cta == 'link') { ?>
         <a href="<?php echo $sidebar_image_cta_link['url']; ?>" aria-label="offers" >
