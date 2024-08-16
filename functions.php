@@ -1017,3 +1017,13 @@ function remove_unwanted_tags_and_styles($content) {
 
 }
 add_filter('the_content', 'remove_unwanted_tags_and_styles');
+add_filter('site_transient_update_plugins', 'disable_specific_plugin_updates');
+function disable_specific_plugin_updates($value)
+{
+    if (isset($value) && is_object($value)) {
+        if (isset($value->response['simple-cloudflare-turnstile/simple-cloudflare-turnstile.php'])) {
+            unset($value->response['simple-cloudflare-turnstile/simple-cloudflare-turnstile.php']);
+        }
+    }
+    return $value;
+}
