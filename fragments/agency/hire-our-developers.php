@@ -14,12 +14,15 @@
             <div class="flex align-center justify-between md:wrap">
                 <?php if ($image): ?>
                     <div class="col w-50 md:w-100">
-                        <picture class="loader">
-                            <source srcset="<?php echo webp($image['sizes']['img_818x464']); ?>" type="image/webp">
-                            <source srcset="<?php echo $image['sizes']['img_818x464']; ?>" type="image/jpg">
-                            <img src="<?php echo $image['sizes']['img_818x464']; ?>" loading="lazy" alt="Agency" width="818px"
-                                height="464px" class="transition">
-                        </picture>
+                        
+                        <?php
+                            $cropOptions = [
+                                '(max-width: 768px)' => [390, 221],
+                                '(min-width: 769px)' => [570, 324],
+                            ];
+                            $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
+                            echo hatslogic_get_attachment_picture($image['ID'], $cropOptions, $attributes);
+                        ?>
                     </div>
                 <?php endif; ?>
 
