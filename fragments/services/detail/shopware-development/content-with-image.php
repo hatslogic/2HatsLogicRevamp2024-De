@@ -21,12 +21,11 @@
                 </div>
                 <?php if ($image) { ?>
                     <div class="col w-45 md:w-100 md:order-1">
-
-                        <?php $cropOptions = [
-                            '(max-width: 768px)' => [390, 335],
-                            '(min-width: 769px)' => [486, 417],
-                        ];
-                    $attributes = ['class' => 'transition', 'loading' => 'lazy'];
+                    <?php $cropOptions = [
+                        '(max-width: 768px)' => [390, 335],
+                        '(min-width: 769px)' => [486, 417],
+                    ];
+                    $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
                     ?>
              <?php echo hatslogic_get_attachment_picture($image['ID'], $cropOptions, $attributes); ?>
                     </div>

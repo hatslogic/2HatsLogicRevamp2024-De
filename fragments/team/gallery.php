@@ -43,7 +43,7 @@ foreach ($images as $key => $item){
     ${"picture" . $key} = $item['ID'];
 
     $cropOptions[$key] =  $breakpoints[$key];
-    $attributes[$key] = ["class" => "transition","loading" => "lazy"];
+    $attributes[$key] = ["class" => "transition","loading" => "lazy", 'picturetag_class' => 'loader'];
 }
 
 ?>

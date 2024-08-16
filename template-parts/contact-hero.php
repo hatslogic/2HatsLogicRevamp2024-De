@@ -19,8 +19,8 @@ $form_2_description = get_field('form_2_description');
                         '(max-width: 768px)' => [390, 480],
                         '(min-width: 769px)' => [531, 654],
                     ];
-    $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high'];
-    ?>
+                    $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high', 'picturetag_class' => 'loader'];
+                    ?>
              <?php echo hatslogic_get_attachment_picture($contact_form_image_1['ID'], $cropOptions, $attributes); ?>
                 </div>
                 <div class="col w-50 ml-50 xl:ml-30 md:ml-0 md:mt-40 md:w-100">

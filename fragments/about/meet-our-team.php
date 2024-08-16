@@ -44,7 +44,7 @@ foreach($album as $key => $image){
     ${"picture" . $key} = $image['pictures'];
 
     $cropOptions[$key] =  $breakpoints[$key];
-    $attributes[$key] = ["class" => "transition","loading" => "lazy", 'picturetag_class' => 'loader'];
+    $attributes[$key] = ["class" => "transition", "loading" => "lazy", 'picturetag_class' => 'loader'];
 }
 ?>
 

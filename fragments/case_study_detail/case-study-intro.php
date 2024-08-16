@@ -32,7 +32,7 @@
                         '(min-width: 769px)' => [1152, 673],
                     ];
 
-                    $attributes = ['class' => 'h-auto w-100', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
+                    $attributes = ['class' => 'h-auto w-100', 'loading' => 'lazy'];
                     ?>
                 <?php echo hatslogic_get_attachment_picture($frame_image['desktop']['ID'], $cropOptions, $attributes); ?>
              <?php } ?>   

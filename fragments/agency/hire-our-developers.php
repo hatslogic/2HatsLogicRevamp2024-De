@@ -14,7 +14,7 @@
             <div class="flex align-center justify-between md:wrap">
                 <?php if ($image): ?>
                     <div class="col w-50 md:w-100">
-                        <picture>
+                        <picture class="loader">
                             <source srcset="<?php echo webp($image['sizes']['img_818x464']); ?>" type="image/webp">
                             <source srcset="<?php echo $image['sizes']['img_818x464']; ?>" type="image/jpg">
                             <img src="<?php echo $image['sizes']['img_818x464']; ?>" loading="lazy" alt="Agency" width="818px"
