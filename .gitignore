@@ -1,7 +1,6 @@
 /vendor/
 /node_modules/
 /dist/
-/lib/
 .DS_Store
 .DS_Store?
 ._*
@@ -14,4 +13,3 @@ package-lock.json
 yarn.lock
 node_modules
 dist
-lib

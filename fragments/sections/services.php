@@ -44,7 +44,7 @@
                             <?php if ($item['content'] || $item['link']): ?>
                                 <div class="content">
                                     <?php echo apply_filters('the_content', $item['content']); ?>
-                                    <?php if ($item): ?>
+                                    <?php if ($item && ): ?>
                                         <a href="<?php echo $item['link']['url']; ?>" aria-label="<?php echo $item['title']; ?>" class="link link-primary"><?php echo $item['link']['title']; ?> 
                                          <i class="icomoon icon-chevron_right"></i>
                                         </a>
