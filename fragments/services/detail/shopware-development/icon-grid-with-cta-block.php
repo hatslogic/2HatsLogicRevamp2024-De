@@ -42,8 +42,8 @@ $dir = get_template_directory_uri();
                 </div>
             <?php endif; ?>
         </div>
-
-        <?php if ($cta_block): ?>
+                              
+        <?php if ($cta_enabled): ?>
             <div class="info bg-dark-primary c-white pt-100 pb-100 xs:pt-80 xs:pb-80 relative mt-80"> 
 
                 <?php if($background_image): ?>

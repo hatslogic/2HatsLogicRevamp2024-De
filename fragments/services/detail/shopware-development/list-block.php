@@ -3,12 +3,16 @@
 <section class="official-shopware-partner <?php echo $bg_class; ?>">
     <div class="container">
         <div class="flex justify-between align-center md:wrap max-w-80 md:max-w-100 mx-auto md:mx-0">
-            <div class="col w-20 md:w-100"> <a href="https://shopware.com" target="_blank">
+            <?php if($image) { ?>
+            <div class="col w-20 md:w-100"> 
+                
+                <a href="https://shopware.com" target="_blank">
                     <img src="<?php echo $image['url']; ?>" class="md:max-w-px-120 xs:max-w-px-120"
                         alt="shopware-partner" loading="lazy" width="100" height="100">
                 </a>
 
             </div>
+            <?php } ?>
             <div class="col ml-30 sm:ml-0 w-70 md:w-100 md:mt-60 xs:mt-20">
                 <h2><?php echo $title ?></h2>
                 <?php if ($lists): ?>
