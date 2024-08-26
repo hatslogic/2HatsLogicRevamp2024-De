@@ -44,7 +44,7 @@ $dir = get_template_directory_uri();
         </div>
                               
         <?php if ($cta_enabled): ?>
-            <div class="info bg-dark-primary c-white pt-100 pb-100 xs:pt-80 xs:pb-80 relative mt-80"> 
+            <div class="info bg-dark-primary c-white pt-100 pb-100 xs:pt-80 xs:pb-80 relative mt-80 xs:mt-60"> 
 
                 <?php if($background_image): ?>
                     <img src="<?php echo $background_image['url']; ?>" alt="<?php echo $background_image['alt']; ?>" height="<?php echo $background_image['height']; ?>" width="<?php echo $background_image['width']; ?>" class="absolute z-0 inset-0 ml-auto my-auto mr-0 w-auto max-h-90 max-w-90 xs:hidden">

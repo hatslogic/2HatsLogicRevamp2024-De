@@ -14,6 +14,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-whatsapp:before {
+  content: "\e92a";
+}
+
 .icon-double-arrow:before {
   content: "\e929";
 }
