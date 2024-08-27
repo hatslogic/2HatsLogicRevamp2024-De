@@ -24,7 +24,7 @@ $dir = get_template_directory_uri();
                                 <div class="card xs:w-100 flex align-start">
                                     <?php if ($item['icon']): ?>
                                         <div class="wrap-icon min-w-px-60 xs:min-w-px-40 max-w-px-60 xs:max-w-px-40 mr-20">
-                                            <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['title'] ?>"
+                                            <img src="<?php echo $item['icon']['url']; ?>" 
                                                 loading="lazy" height="100px" width="100px">
                                         </div>
                                     <?php endif; ?>
@@ -42,8 +42,8 @@ $dir = get_template_directory_uri();
                 </div>
             <?php endif; ?>
         </div>
-                              
-        <?php if ($cta_enabled): ?>
+                        
+        <?php if ($enable_cta): ?>
             <div class="info bg-dark-primary c-white pt-100 pb-100 xs:pt-80 xs:pb-80 relative mt-80"> 
 
                 <?php if($background_image): ?>
