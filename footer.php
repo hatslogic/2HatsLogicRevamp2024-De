@@ -27,19 +27,6 @@
                             ]);
 ?>
                         </div>
-                        <div class="menu-group mt-40">
-                            <a href="#" class="h4 font-bold">Web and E-commerce<br /> Services</a>
-                            <?php
-wp_nav_menu([
-    'menu' => 'web-ecommerce-menu',
-    'theme_location' => 'web-ecommerce-menu',
-    'container' => false,
-    'menu_class' => 'no-bullets font-regular mt-20 sm:mt-15',
-    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-    'walker' => new FOOTER_Menu_Walker(),
-]);
-?>
-                        </div>
                     </div>
                     <div class="col px-20 xs:pl-0 xs:pr-0 xl:w-40 xs:w-100">
                         <div class="menu-group mt-0 xs:mt-40">
