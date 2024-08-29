@@ -14,9 +14,9 @@
                     <div class="points-wrap">
                         <ul class="points b-0 bl-1 solid bc-primary ml-30 pl-30 xs:ml-20 xs:pl-20 no-bullets">
                             
-                            <?php foreach( $left['list'] as $item) {?>   
+                            <?php foreach( $left['list'] as $k => $item) {?>   
                                 
-                            <li class="relative pl-40 xs:pl-20">
+                            <li class="relative pl-40 xs:pl-20 <?php echo $k != 0 ? "mt-40 xs:mt-30" : '' ?>">
                             <?php if(!empty($item['title']) || !empty($item['content'])){ ?>
                                 <div
                                     class="icon-wrap h-px-60 w-px-60 xs:h-px-40 xs:w-px-40 bg-primary c-white flex align-center justify-center absolute -left-60 xs:-left-40 top-0">

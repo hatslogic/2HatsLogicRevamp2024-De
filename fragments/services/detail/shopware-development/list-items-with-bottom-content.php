@@ -1,6 +1,6 @@
 <?php extract($section);?>
 <?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white'; ?>
-<section class="how-works">
+<section class="how-works <?php echo $bg_class;?>">
     <div class="container">
         <?php if(!empty($headline)){ ?>
         <div class="title">
@@ -11,8 +11,8 @@
             <?php if(!empty($listitems)) { ?>
             <div class="points-wrap px-120 sm:px-0">
                 <ul class="points b-0 bl-1 solid bc-primary ml-30 pl-30 pb-60 xs:ml-20 xs:pl-20 no-bullets">
-                    <?php foreach($listitems as $item) {  ?>
-                    <li class="relative pl-40 xs:pl-20">
+                    <?php foreach($listitems as $k => $item) {  ?>
+                    <li class="relative pl-40 xs:pl-20 <?php echo $k != 0 ? "mt-40 xs:mt-30" : '' ?>">
                         <?php if(!empty($item['title'])) { ?>
                         <div
                             class="icon-wrap h-px-60 w-px-60 xs:h-px-40 xs:w-px-40 bg-primary c-white flex align-center justify-center absolute -left-60 xs:-left-40 top-0">

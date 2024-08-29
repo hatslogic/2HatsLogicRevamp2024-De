@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 
-<section class="faqs pt-100 pb-100 xs:pt-80 xs:pb-80 bg-light-grey">
+<section class="faqs">
     <div class="container">
         <?php if ($title || $description): ?>
             <div class="title">

@@ -303,6 +303,7 @@ if (!function_exists('app_setup_theme')) {
                 'hide-developer-menu' => __('Hire a Developer', 'app'),
                 'company-menu' => __('Company', 'app'),
                 'quick-links-menu' => __('Quick Links', 'app'),
+                'locations' => __('Locations', 'app'),
             ]);
 
         // Attach custom shortcodes

@@ -15,7 +15,7 @@
                 <div class="menu flex align-start justify-between sm:wrap sm:justify-start">
                     <div class="col xl:w-40 xs:w-100">
                         <div class="menu-group mt-0">
-                            <a href="#" class="h4 font-bold">Services</a>
+                            <a href="#" class="h4 font-bold">Dienstleistungen</a>
                             <?php
                             wp_nav_menu([
                                 'menu' => 'service-menu',
@@ -27,10 +27,23 @@
                             ]);
 ?>
                         </div>
+                        <div class="menu-group mt-40">
+                            <a href="#" class="h4 font-bold">Unsere Shopware-Service-Standorte</a>
+                            <?php
+                            wp_nav_menu([
+                                'menu' => 'locations',
+                                'theme_location' => 'locations',
+                                'container' => false,
+                                'menu_class' => 'no-bullets font-regular mt-20 sm:mt-15',
+                                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                'walker' => new FOOTER_Menu_Walker(),
+                            ]);
+?>
+                        </div>
                     </div>
                     <div class="col px-20 xs:pl-0 xs:pr-0 xl:w-40 xs:w-100">
                         <div class="menu-group mt-0 xs:mt-40">
-                            <a href="#" class="h4 font-bold">Hire a Developer</a>
+                            <a href="#" class="h4 font-bold">Entwickler anheuern</a>
                             <?php
 wp_nav_menu([
     'menu' => 'hide-developer-menu',
@@ -43,7 +56,7 @@ wp_nav_menu([
 ?>
                         </div>
                         <div class="menu-group mt-40">
-                            <a href="#" class="h4 font-bold">Company</a>
+                            <a href="#" class="h4 font-bold">Unternehmen</a>
                             <?php
 wp_nav_menu([
     'menu' => 'company-menu',
@@ -58,7 +71,7 @@ wp_nav_menu([
                     </div>
                     <div class="col xl:w-20 xs:w-100">
                         <div class="menu-group mt-0 xs:mt-40">
-                            <a href="#" class="h4 font-bold">Quick Links</a>
+                            <a href="#" class="h4 font-bold">Schnelle Links</a>
                             <?php
 wp_nav_menu([
     'menu' => 'quick-links-menu',
@@ -76,7 +89,7 @@ wp_nav_menu([
             <div class="col w-40 md:w-100 md:mt-40 flex justify-end md:justify-start sm:justify-center">
                 <div class="flex justify-between column sm:w-100 b-0 sm:bt-1 sm:pt-40 bc-hash solid xs:text-center">
                     <div class="accreditation sm:w-50 xs:w-100">
-                        <div class="h4 font-bold">Accreditation</div>
+                        <div class="h4 font-bold">Akkreditierung</div>
                         <div class="block sm:flex sm:justify-center">
                             <?php $badges = get_field('badges', 'option'); ?>
                             <?php if ($badges) { ?>
