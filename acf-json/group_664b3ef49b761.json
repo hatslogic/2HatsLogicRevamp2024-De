@@ -85,6 +85,26 @@
             "new_lines": ""
         },
         {
+            "key": "field_66d028e4af05d",
+            "label": "Get Quote Contact Form Tab Title",
+            "name": "get_quote_form_tab_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_664b41f60d162",
             "label": "Get Quote Contact Form",
             "name": "get_quote_contact_form",
@@ -176,6 +196,26 @@
             "new_lines": ""
         },
         {
+            "key": "field_66d02921af05e",
+            "label": "Get Parrnership Form Tab Title",
+            "name": "partnership_form_tab_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_664b489ae14b8",
             "label": "Get Parrnership Form",
             "name": "get_parrnership_form",
@@ -217,6 +257,26 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_66d02b45a0d04",
+            "label": "Headline",
+            "name": "headline",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_664b4964ecf64",
@@ -349,6 +409,26 @@
             "append": ""
         },
         {
+            "key": "field_66d02c5a36b1c",
+            "label": "Call button Text",
+            "name": "call_one_button_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_664b4c2916a27",
             "label": "Contact Name",
             "name": "contact_two_name",
@@ -412,6 +492,26 @@
             "key": "field_664b4c858bc0f",
             "label": "Call button",
             "name": "call_two_button",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d02c4336b1b",
+            "label": "Call button Text",
+            "name": "call_two_button_text",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -587,6 +687,26 @@
             "endpoint": 0
         },
         {
+            "key": "field_66d02d78fcf03",
+            "label": "Headline",
+            "name": "visitus_headline",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_664b54bc56771",
             "label": "Office Locations",
             "name": "office_locations",
@@ -676,5 +796,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716214874
+    "modified": 1724919230
 }

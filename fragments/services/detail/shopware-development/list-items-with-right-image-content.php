@@ -67,15 +67,17 @@
 
                             </div>
                             <?php } ?> 
-                            <?php if(!empty($right['whatsapp'])) { ?>   
+                            <?php if(!empty($right['whatsapp'])) { 
+                                $whatsapp = str_replace(' ', '', $right['whatsapp']);
+                            ?>   
                             <div class="flex align-center c-white mt-20"> <i class="icomoon icon-whatsapp fs-22"></i>
-                                <a href="http://wa.me/<?php echo $right['whatsapp'];?>" class="c-white ml-20"><?php echo $right['whatsapp_text'];?> </a>
+                                <a href="http://wa.me/<?php echo $whatsapp;?>" class="c-white ml-20"><?php echo $right['whatsapp_text'];?> </a>
 
                             </div>
                             <?php } ?>
                             <?php if( !empty($right['email']) ) { ?>
                             <div class="flex align-center c-white mt-20"> <i class="icomoon icon-mail fs-22"></i>
-                                <a href="#" class="underline c-white ml-20 block"><?php echo $right['email']; ?></a>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=<?php echo $right['email']; ?>" target="_blank" class="underline c-white ml-20 block"><?php echo $right['email']; ?></a>
                             </div>
                             <?php } ?>
                         </div>

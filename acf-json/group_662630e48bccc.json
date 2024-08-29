@@ -223,6 +223,22 @@
                         "id": ""
                     },
                     "return_format": "array"
+                },
+                {
+                    "key": "field_66d014294a2ff",
+                    "label": "Imprint",
+                    "name": "imprint",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
                 }
             ]
         }
@@ -245,5 +261,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719484421
+    "modified": 1724912717
 }

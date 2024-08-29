@@ -1,10 +1,13 @@
+<?php 
+$headline = get_field('visitus_headline');
+?>
 <section class="impact relative pt-100 pb-100 sm:pt-80 sm:pb-80 bg-light-grey">
     <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/background/world-map-dot.svg"
         alt="world-map-dot" height="100" width="100" fetchpriority="high"
         class="absolute z-0 inset-0 my-auto w-auto mx-auto max-h-90 max-w-90">
     <div class="container relative z-1">
         <div class="title">
-            <h2>Visit us</h2>
+            <h2><?php echo !empty($headline) ? $headline : "Visit us" ?></h2>
 
         </div>
         <div class="content mt-50 gap-40 sm:mt-30">

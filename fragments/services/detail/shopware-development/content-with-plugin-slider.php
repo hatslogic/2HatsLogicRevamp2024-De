@@ -1,12 +1,13 @@
 <?php extract($section); ?>
-<?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white'; ?>
+<?php $title_tg = (!empty($title_tag)) ? $title_tag : 'h2'; ?>
+<?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white pt-60'; ?>
 <section class="hire-developer <?php echo $bg_class; ?>">
     <div class="container">
         <div class="flex align-center gap-80 md:gap-40 md:wrap">
             <div class="col w-55 md:w-100 md:order-2">
                 <div class="headline">
                     <div class="title">
-                        <h2 class="h2"><?php echo $title; ?></h2>
+                        <<?php echo $title_tg; ?> <?php if(!empty($title_tag) && $title_tag == 'h2') { echo "class='h2'";} ?> <?php if(!empty($title_tag) && $title_tag == 'h1') { echo "class='h1-sml'";} ?> ><?php echo $title; ?></<?php echo $title_tg; ?>>
 
                     </div>
                     <div class="content">

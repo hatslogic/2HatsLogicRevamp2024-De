@@ -1,5 +1,5 @@
 <?php
-
+$headline = get_field('headline');
 $image_1 = get_field('image_1');
 $image_2 = get_field('image_2');
 $image_1_url = bis_get_attachment_image_src($image_1['ID'], [ 120 , 120],1);
@@ -13,14 +13,16 @@ $desig2 = get_field('contact_two_designation');
 $loc1 = get_field('contact_one_location');
 $loc2 = get_field('contact_two_location');
 $call1 = get_field('call_one_button');
+$call1_button_text = get_field('call_one_button_text');
 $call2 = get_field('call_two_button');
+$call2_button_text = get_field('call_two_button_text');
 
 
 ?>
 <section class="connect-us py-60">
                  <div class="container">
                      <div class="title">
-                          <h2>Connect us</h2>
+                          <h2><?php echo !empty($headline) ? $headline : "Connect Us" ?></h2>
  
                      </div>
                      <div class="content gap-0 xl:mt-40">
@@ -38,7 +40,7 @@ $call2 = get_field('call_two_button');
                                  <?php  if($call1): ?>
                                  <?php $call1 = filter_var($call1, FILTER_VALIDATE_URL) === FALSE ? 'tel:'.$call1  : $call1  ?>   
                                  <a href="<?php echo $call1 ?>" target="_blank" class="bg-transparent px-0 mt-20 xs:mt-10 xs:ml-80 fs-18 xs:fs-16 c-secondary hover:c-primary b-0 font-bold py-10 bc-transparent inline-flex align-center gap-15 xs:gap-10">
-                                    <i class="icomoon icon-calendar_month fs-24"></i> Schedule a call
+                                    <i class="icomoon icon-calendar_month fs-24"></i> <?php echo !empty($call1_button_text) ? $call1_button_text : "Schedule a call" ?>
                                  </a>
                                 <?php endif; ?>
                              </div>
@@ -55,7 +57,7 @@ $call2 = get_field('call_two_button');
                                  <?php if($call2): ?>
                                  <?php $call2 = filter_var($call2, FILTER_VALIDATE_URL) === FALSE ? 'tel:'.$call2  : $call2  ?>   
                                  <a href="<?php echo $call2 ?>" target="_blank" class="bg-transparent px-0 mt-20 xs:mt-10 xs:ml-80 fs-18 xs:fs-16 c-secondary hover:c-primary b-0 font-bold py-10 bc-transparent inline-flex align-center gap-15 xs:gap-10">
-                                    <i class="icomoon icon-calendar_month fs-24"></i> Schedule a call
+                                    <i class="icomoon icon-calendar_month fs-24"></i> <?php echo !empty($call2_button_text) ? $call2_button_text : "Schedule a call" ?>
                                 </a>
 
                                  <?php endif; ?>

@@ -211,9 +211,9 @@
                             },
                             "choices": {
                                 "get-a-quote": "Legen Sie los",
-                                "free-consultation": "Free consultation",
-                                "hire-now": "Hire now",
-                                "contact-us": "Contact us"
+                                "free-consultation": "Kostenlose Konsultation",
+                                "hire-now": "Jetzt anstellen",
+                                "contact-us": "Kontakt"
                             },
                             "default_value": "get-a-quote",
                             "return_format": "array",
@@ -2770,6 +2770,31 @@
                             "append": ""
                         },
                         {
+                            "key": "field_66d05fea53db6",
+                            "label": "Title Tag",
+                            "name": "title_tag",
+                            "aria-label": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "h1": "H1",
+                                "h2": "H2"
+                            },
+                            "default_value": "",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "layout": "vertical",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_664dd0515bb8a",
                             "label": "Content",
                             "name": "content",
@@ -4078,5 +4103,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724830107
+    "modified": 1724932109
 }

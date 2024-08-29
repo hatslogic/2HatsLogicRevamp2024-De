@@ -25,14 +25,14 @@
                         <?php } ?>
                         <?php if(!empty($col['title'])){ ?>
                         <div class="info -mt-1 ml-40 xs:ml-0 xs:mt-20">
-                             <h3 class="fs-24 xs:fs-20 transition font-bold"><mark class="c-primary">Shopware Community:</mark> The Free Foundation/Shopware Gemeinschaft: Die Freie Stiftung</h3>
+                             <h3 class="fs-24 xs:fs-20 transition font-bold"><?php echo $col['title']; ?></h3>
 
                         </div>
                         <?php } ?>
                     </div>
                     <?php if(!empty($col['content'])){ ?>
                     <div class="content mt-40 xs:mt-20 pt-10 b-0 bt-1 solid bc-hash">
-                        <p><?php echo$col['content']; ?></p>
+                        <p><?php echo $col['content']; ?></p>
                     </div>
                     <?php } ?>
                 </div>
