@@ -18,7 +18,7 @@
                     <div class="positions w-50 md:w-100"><?= $opening['no_of_positions']; ?></div>
                     <div class="experience w-25 md:w-100 mt-10"><?= $opening['experience']; ?></div>
                     <div class="apply-now w-25 md:w-100 flex align-center justify-end md:absolute md:right-0 md:bottom-28">
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hr@2hatslogic.com" target="_blank" class="flex align-center gap-10">Apply Now
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hr@2hatslogic.com" target="_blank" class="flex align-center gap-10">Jetzt bewerben
                             <i class="icon-arrow_circle_right fs-22"></i>
                         </a>
                     </div>
