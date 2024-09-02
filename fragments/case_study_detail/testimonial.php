@@ -2,7 +2,7 @@
 <section class="testimonial-case-study">
     <div class="container xs:p-0 xs:m-0">
         <div class="max-w-75 xs:max-w-100 mx-auto bg-light-grey p-60 xs:px-20">
-            <div class="top min-px-36 flex justify-between align-center mb-20">
+            <div class="top min-h-px-36 flex justify-between align-center mb-20">
                 <?php if (!empty($image)) {?>
                 <img class="order-2 max-w-px-80 max-h-px-40 md:max-w-px-60 md:max-h-px-30"
                     src="<?php echo $image['sizes']['img_100x100']; ?>" alt="nike" loading="lazy" width="100" height="100">
