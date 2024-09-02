@@ -24,7 +24,7 @@ $form_selector = get_field('form_selector', 'option');
     <?php } ?>
     <div class="flex align-center relative z-1">
         <div class="col w-50 sm:hidden"></div>
-        <div class="col w-50 sm:w-100 p-80 sm:px-20 sm:py-60">
+        <div class="col w-50 sm:w-100 p-80 sm:px-20 sm:py-60 min-h-px-600 md:min-h-px-200">
             <?php if ($form_selector) { ?>
                 <div class="form-wrap">
                     <div class="content">
