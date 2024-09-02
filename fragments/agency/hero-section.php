@@ -55,14 +55,14 @@
                                 <img src="<?php echo $rating['platform']['url']; ?>" class="w-px-100"
                                     alt="<?php echo $rating['platform']['alt']; ?>" class="w-px-80" width="80" height="16">
                                 <?php } else { ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/dist/<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/google-logo.svg"
+                                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/google-logo.svg"
                                     alt="google" class="w-px-80" alt="google" width="80" height="16">
                                 <?php } ?>
                                 <?php if ($rating['rating']) { ?>
                                 <img src="<?php echo $rating['rating']['url']; ?>"
                                     alt="<?php echo $rating['rating']['alt']; ?>" class="w-px-90" width="90" height="18">
                                 <?php } else { ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/dist/<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/star.svg"
+                                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/star.svg"
                                     alt="star" class="w-px-90" width="90" height="18">
                                 <?php } ?>
                             </div>

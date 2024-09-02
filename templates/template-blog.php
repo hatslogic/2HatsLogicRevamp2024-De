@@ -41,7 +41,7 @@ $args = [
 ];
 
 $blog_query = new WP_Query($args);
-$placeholder_image = get_template_directory_uri().'/<?php echo get_template_directory_uri(); ?>/dist/assets/images/blog-listing.svg';
+$placeholder_image = get_template_directory_uri().'/dist/assets/images/blog-listing.svg';
 
 if ($blog_query->have_posts()) {
     while ($blog_query->have_posts()) {
