@@ -26,7 +26,7 @@ $form_selector = get_field('get_started_form_shortcode', 'option');
     <?php if ($form_selector) { ?>
     <div class="flex align-center relative z-1">
         <div class="col w-50 sm:hidden"></div>
-        <div class="col w-50 sm:w-100 p-80 sm:px-20 sm:py-60">
+        <div class="col w-50 sm:w-100 p-80 sm:px-20 sm:py-60 min-h-px-600 md:min-h-px-200">
             <div class="form-wrap">
             <?php echo do_shortcode('[contact-form-7 id="'.$form_selector->ID.'"]'); ?>
             </div>
