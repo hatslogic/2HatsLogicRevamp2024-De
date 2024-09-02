@@ -16,7 +16,7 @@ get_header();
             <div class="row">
                 <div class="content-404 p-20 text-center w-100">
                     <div class="title">
-                        <h1 class="mb-40 fs-100 c-primary">4<span class="c-primary-hover">0</span>4</h1>
+                        <h1 class="mb-40 mx-auto fs-100 c-primary">4<span class="c-primary-hover">0</span>4</h1>
                     </div>
                     <div class="content">
                         <h4 class="mb-0 uppercase"><?php _e('Page not found', 'sage'); ?></h4>
