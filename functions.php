@@ -414,7 +414,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
 
         if ($depth === 0) {
             if ($is_compact) {
-                $ul_classes = 'arrow-top no-bullets absolute min-w-px-260 md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0';
+                $ul_classes = 'arrow-top no-bullets absolute min-w-px-350 md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0';
             } else {
                 $ul_classes = 'no-bullets fixed md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-light-grey md:bt-0';
             }
