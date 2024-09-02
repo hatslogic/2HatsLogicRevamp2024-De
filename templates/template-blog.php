@@ -41,7 +41,7 @@ $args = [
 ];
 
 $blog_query = new WP_Query($args);
-$placeholder_image = get_template_directory_uri().'/assets/images/blog-listing.svg';
+$placeholder_image = get_template_directory_uri().'/dist/assets/images/blog-listing.svg';
 
 if ($blog_query->have_posts()) {
     while ($blog_query->have_posts()) {
@@ -62,7 +62,7 @@ if ($blog_query->have_posts()) {
                                         '(min-width: 769px)' => [487, 255],
                                     ];
 
-                                            $attributes = ['class' => 'transition', 'loading' => 'lazy'];
+                                            $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
                                             ?>
                                     <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
                                         <?php } else {
@@ -166,10 +166,14 @@ wp_reset_postdata();
                 </div>
             </div>
         </div>
-        <div class="bg-shape absolute z-0 right-0 top-0 w-60 md:w-80">
-            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg"
-                srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg2x.jpg 2x"
-                class="shape w-100" alt="shopware" width="100" height="100">
+        <div class="bg-shape absolute z-0 right-0 top-0 w-60  h-px-500 md:w-80">
+            <picture class="shape w-100 absolute -top-10">
+                <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+                <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg-mobile.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg-mobile.webp 2x" media="(max-width: 767px)" type="image/webp">
+                <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg2x.jpg 2x" media="(min-width: 768px)" type="image/jpg">
+                <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg-mobile.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg-mobile.jpg 2x" media="(max-width: 767px)" type="image/jpg">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/blog-bg.jpg" alt="help-desk" width="100" height="100">
+            </picture>
         </div>
     </section>
     <?php get_template_part('template-parts/newsletter-form'); ?>

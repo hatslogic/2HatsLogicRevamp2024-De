@@ -46,14 +46,14 @@
                                         '(min-width: 769px)' => [558, 355],
                                     ];
 
-                                    $attributes = ['class' => 'transition', 'loading' => 'lazy'];
+                                    $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
                                     ?>
                                     <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
                                     <?php } else {
                                         $placeholder_image_id = attachment_url_to_postid(get_site_url().'/wp-content/uploads/2024/05/no-image-casestudy-list.svg');
                                         $placeholder_image_url = get_site_url().'/wp-content/uploads/2024/05/no-image-casestudy-list.svg';
                                         ?>
-                                    <img src="<?php echo $placeholder_image_url; ?>" loading="lazy" alt="<?php the_title(); ?>" width="548px" height="349px" class="transition">
+                                    <img src="<?php echo $placeholder_image_url; ?>" loading="lazy" alt="<?php the_title(); ?>" width="548px" height="350px" class="transition">
                                 <?php } ?>
                                 <div class="info mt-30">
                                     <span class="headline c-primary uppercase font-bold mb-10 block fs-14">
@@ -79,9 +79,13 @@
             <?php wp_reset_postdata(); ?>
         </div>
     </div>
-    <div class="bg-shape absolute z-0 right-0 top-0 w-60 md:w-80">
-        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg.jpg"
-            srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg2x.jpg 2x"
-            class="shape w-100" loading="eager" fetchpriority="high" alt="shopware" width="100" height="100">
+    <div class="bg-shape absolute z-0 right-0 top-0 w-60  h-px-500 md:w-80">
+        <picture class="shape w-100 absolute -top-10">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg2x.webp 2x" media="(min-width: 768px)" type="image/webp">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg-mobile.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg-mobile.webp 2x" media="(max-width: 767px)" type="image/webp">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg2x.jpg 2x" media="(min-width: 768px)" type="image/jpg">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg-mobile.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg-mobile.jpg 2x" media="(max-width: 767px)" type="image/jpg">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/case-study-bg.jpg" alt="case-study" width="100" height="100">
+        </picture>
     </div>
 </section>

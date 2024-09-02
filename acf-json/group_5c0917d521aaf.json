@@ -23,6 +23,46 @@
             "ui": 1
         },
         {
+            "key": "field_66bf135816437",
+            "label": "Disable Custom styles",
+            "name": "disable_css",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_66bf136a16438",
+            "label": "Disable Inline styles",
+            "name": "disable_inline_styles",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_5c0917dab5dd5",
             "label": "Author",
             "name": "author",
@@ -810,5 +850,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1722933181
+    "modified": 1725254956
 }
