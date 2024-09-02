@@ -4,7 +4,7 @@
     <div class="container">
         <div class="gap flex xs:wrap justify-between">
             <?php if ($sticky['headline']): ?>
-                <div class="col relative">
+                <div class="col w-50 xs:w-100 relative">
                     <div class="sticky headline pb-0">
                         <div class="title">
                             <?php if ($sticky['headline']['sub_title']): ?>
@@ -29,7 +29,7 @@
             <?php endif; ?>
 
             <?php if ($items): ?>
-                <div class="col ml-100 xs:ml-0 xs:mt-60 relative">
+                <div class="col w-50 xs:w-100 ml-100 xs:ml-0 xs:mt-60 relative">
                     <?php foreach ($items as $key => $item):
                         $formatted_key = sprintf("%02d", $key + 1);
                         $classes = ($key == count($items) - 1) ? 'pt-0 pb-0 xs:pt-0 xs:pb-0' : 'pt-0 pb-200 xs:pt-0 xs:pb-40';

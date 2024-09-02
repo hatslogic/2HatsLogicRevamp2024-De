@@ -818,6 +818,12 @@
     }
 }
 
+.xs\:align-center {
+    @include below($sm) {
+        align-items: center;
+    }
+}
+
 /* order classes */
 
 .xxl\:order-1 {

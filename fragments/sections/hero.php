@@ -3,7 +3,7 @@
     <div class="container relative">
         <div class="caption">
             <?php if (!empty($title)): ?>
-                <h1 class="font-bold">
+                <h1 class="font-bold max-w-px-700 xl:max-w-px-550 xs:max-w-px-400">
                     <?php echo $title ?>
                     <?php if (!empty($bluetitle)): ?>
                     <mark class="relative inline-block text-center c-primary">
