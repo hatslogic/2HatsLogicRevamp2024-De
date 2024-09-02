@@ -90,7 +90,7 @@ wp_nav_menu([
                 <div class="flex justify-between column sm:w-100 b-0 sm:bt-1 sm:pt-40 bc-hash solid xs:text-center">
                     <div class="accreditation sm:w-50 xs:w-100">
                         <div class="h4 font-bold">Akkreditierung</div>
-                        <div class="block sm:flex sm:justify-center">
+                        <div class="block xs:flex xs:justify-center">
                             <?php $badges = get_field('badges', 'option'); ?>
                             <?php if ($badges) { ?>
                             <?php foreach ($badges as $index => $badge) { ?>
@@ -99,7 +99,7 @@ wp_nav_menu([
                         </div>
                         <?php } ?>
                         <div
-                            class="flex justify-start mt-30 sm:justify-center <?php echo $index > 0 ? 'sm:ml-20' : ''; ?>">
+                            class="flex justify-start mt-30 xs:justify-center <?php echo $index > 0 ? 'sm:ml-20' : ''; ?>">
                             <?php } ?>
                             <div class="col <?php echo $index % 3 > 0 ? 'ml-20' : ''; ?>">
                                 <a href="<?php echo esc_url($badge['link']); ?>" target="_blank">
@@ -114,10 +114,22 @@ wp_nav_menu([
                         <?php } ?>
                         <?php } ?>
                     </div>
-
+                </div>
+                <div class="contact sm:w-50 xs:w-100">
+                    <div class="block sm:flex xs:justify-center">
+                        <div class="flex column justify-start mt-30 md:mt-60 xs:align-center">
+                            <a class="inline" href="https://clutch.co/profile/2hats-logic-solutions-private?utm_source=widget&utm_medium=2&utm_campaign=widget&utm_content=logo&utm_term=www.2hatslogic.com#highlights" target="_blank">
+                                <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/clutch.svg" alt="clutch" loading="lazy" width="100" height="100" class="max-w-px-180">
+                            </a>
+                            <p class="fs-14 xxl:fs-16">
+                                <strong>Unser Standort:</strong> Yorckstraße 14, 10965<br/>
+                                Berlin, Germany
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div
-                    class="social-media flex align-center ml-auto mr-0 sm:ml-auto sm:mr-auto sm:mt-40 sm:w-100 xs:w-100 xs:ml-auto xs:mr-auto xs:justify-center fs-22">
+                    class="social-media flex align-center sm:mt-40 sm:w-100 xs:w-100 xs:ml-auto xs:mr-auto xs:justify-center fs-22">
                     <?php
                         $social_media = get_field('social_media', 'option');
 foreach ($social_media as $key => $item) {
