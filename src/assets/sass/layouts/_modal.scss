@@ -3,6 +3,13 @@
     overflow: scroll;
     opacity: 0;
 
+    picture{
+        background-color: var(--c-light-grey);
+    }
+    img{
+        display: none;
+    }
+
     .title{
         .h2, .h3{
             max-width: 100%;
@@ -12,5 +19,9 @@
     &.show{
         visibility: visible;
         opacity: 1;
+
+        img{
+            display: block;
+        }
     }
 }
