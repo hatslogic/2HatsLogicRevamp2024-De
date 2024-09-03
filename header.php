@@ -121,7 +121,7 @@
 											<a href="'. home_url() .'/blog" class="inline-block" aria-label="blog">Blogs</a>
 										</li>
 										<li class="md:mt-20 md:mb-20 ml-30 pl-30 b-0 bl-1 solid bc-hash">
-											<a href="'. home_url() .'/contact" class="inline-block" aria-label="contact">Kontakt</a>
+											<a href="'. home_url() .'/kontakt" class="inline-block" aria-label="contact">Kontakt</a>
 										</li>
 									</ul>
 								</div>',
