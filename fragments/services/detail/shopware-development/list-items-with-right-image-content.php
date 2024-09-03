@@ -71,7 +71,7 @@
                                 $whatsapp = str_replace(' ', '', $right['whatsapp']);
                             ?>   
                             <div class="flex align-center c-white mt-20"> <i class="icomoon icon-whatsapp fs-22"></i>
-                                <a href="http://wa.me/<?php echo $whatsapp;?>" class="c-white ml-20"><?php echo $right['whatsapp_text'];?> </a>
+                                <a href="http://wa.me/<?php echo $whatsapp;?>" target="_blank" class="c-white ml-20"><?php echo $right['whatsapp_text'];?> </a>
 
                             </div>
                             <?php } ?>
