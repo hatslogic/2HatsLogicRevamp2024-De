@@ -18,11 +18,20 @@
                                 
                             <li class="relative pl-40 xs:pl-20 <?php echo $k != 0 ? "mt-40 xs:mt-30" : '' ?>">
                             <?php if(!empty($item['title']) || !empty($item['content'])){ ?>
-                                <div
+                               <?php if($k == count($left['list']) - 1){ ?>
+                                <div class="point h-100 w-px-60 absolute -left-60 xs:-left-40 top-0">
+                                                <div class="icon-wrap z-1 relative h-px-60 w-px-60 xs:h-px-40 xs:w-px-40 bg-primary c-white flex align-center justify-center"> <i class="icomoon icon-done fs-18"></i>
+
+                                                </div> <span class="block absolute z-0 top-0 h-100 w-100 <?php echo $bg_enabled ? 'bg-light-grey' : 'bg-white' ?>  "></span>
+
+                                            </div>
+                                <?php } else { ?>
+                                    <div
                                     class="icon-wrap h-px-60 w-px-60 xs:h-px-40 xs:w-px-40 bg-primary c-white flex align-center justify-center absolute -left-60 xs:-left-40 top-0">
                                     <i class="icomoon icon-done fs-18"></i>
 
                                 </div>
+                                <?php } ?>    
                                 <div class="info">
                                     <?php if(!empty($item['title'])){ ?> 
                                     <h3 class="h4 -mt-5"><?php echo $item['title'];?></h3>
