@@ -73,10 +73,9 @@ $form_2_description = get_field('form_2_description');
                         <div class="content">
                             <div class="switch-form-actions mt-40 xl:mt-30">
                                 <button data-target="get-a-quote"
-                                    class="fs-18 bg-transparent px-0 c-secondary opacity-50 b-0 bb-2 font-bold py-10 bc-transparent solid">Get
-                                    a Quote</button>
+                                    class="fs-18 bg-transparent px-0 c-secondary opacity-50 b-0 bb-2 font-bold py-10 bc-transparent solid"><?php echo empty($get_quote_form_tab_title) ?  "Get a Quote" : $get_quote_form_tab_title; ?></button>
                                 <button data-target="partnership"
-                                    class="fs-18 bg-transparent px-0 active c-secondary opacity-100 font-bold b-0 bb-2 py-10 bc-secondary c-secondary solid ml-40 xl:ml-20">Partnership</button>
+                                    class="fs-18 bg-transparent px-0 active c-secondary opacity-100 font-bold b-0 bb-2 py-10 bc-secondary c-secondary solid ml-40 xl:ml-20"><?php echo empty($partnership_form_tab_title) ?  "Partnership" : $partnership_form_tab_title; ?></button>
                             </div>
                             <?php if ($partnership_form) { ?>
                                 <?php echo do_shortcode('[contact-form-7 id="'.$partnership_form->ID.'"]'); ?>
