@@ -4,3 +4,66 @@
 @import "./plugins/wpcf7";
 @import "./plugins/iti";
 @import "./module/blog";
+
+.newsletter-subscription {
+    .content input[type="text"], input[type="email"] {
+        display: block;
+        width: 100%;
+        padding: 0.625rem 0.75rem;
+        font-family: var(--font-regular);
+        font-size: 1rem;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 1px solid var(--c-hash);
+        background-color: rgba(0, 0, 0, 0);
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .hs-email {
+        margin-top: 2.5rem;
+    }
+    .hs-submit {
+        text-align: center;
+        margin-top: 3.125rem;
+        .actions input[type="submit"] {
+            outline: none;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 0;
+            text-transform: uppercase;
+            min-width: 10rem;
+            min-height: 3rem;
+            padding: 0.625rem 1.875rem;
+            font-family: var(--font-button);
+            font-size: 0.875rem;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: var(--c-black);
+            border-color: var(--c-black);
+            color: var(--c-white);
+
+            &:hover {
+                background: var(--c-primary);
+                border-color: var(--c-primary);
+                color: var(--c-white);
+                box-shadow: 6px 10px 12.5px 0px rgba(0, 0, 0, .102);
+            }
+        }
+    }
+    .hs-error-msgs {
+        list-style: none;
+        color: #dc3232;
+        font-weight: normal;
+        display: block;
+        font-size: 0.875rem;
+        margin-top: 0.3125rem;
+    }
+    .submitted-message {
+        font-size: 1rem;
+        color: var(--c-grey);
+        text-align: center;
+    }
+}
