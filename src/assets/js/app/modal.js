@@ -1,6 +1,7 @@
-let modalClosed = getCookie("modalClosed") === "true";
+// let modalClosed = getCookie("modalClosed") === "true";
+let modalClosed = false;
 let idleTimer;
-const idleTime = 15000; // 15 seconds in milliseconds
+const idleTime = 9000; // 9 seconds in milliseconds
 
 function openModal(name) {
   if (name != "newsletter-subscription") {
@@ -45,28 +46,28 @@ function openModal(name) {
 }
 
 // Cookie handling functions
-function setCookie(name, value, days) {
-  const d = new Date();
-  d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000); // Set expiration time
-  let expires = "expires=" + d.toUTCString();
-  document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
+// function setCookie(name, value, days) {
+//   const d = new Date();
+//   d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000); // Set expiration time
+//   let expires = "expires=" + d.toUTCString();
+//   document.cookie = name + "=" + value + ";" + expires + ";path=/";
+// }
 
-function getCookie(name) {
-  let nameEQ = name + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(";");
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) === " ") {
-      c = c.substring(1);
-    }
-    if (c.indexOf(nameEQ) === 0) {
-      return c.substring(nameEQ.length, c.length);
-    }
-  }
-  return "";
-}
+// function getCookie(name) {
+//   let nameEQ = name + "=";
+//   let decodedCookie = decodeURIComponent(document.cookie);
+//   let ca = decodedCookie.split(";");
+//   for (let i = 0; i < ca.length; i++) {
+//     let c = ca[i];
+//     while (c.charAt(0) === " ") {
+//       c = c.substring(1);
+//     }
+//     if (c.indexOf(nameEQ) === 0) {
+//       return c.substring(nameEQ.length, c.length);
+//     }
+//   }
+//   return "";
+// }
 
 // Set up event listeners for user activity
 if (!modalClosed) {
@@ -85,7 +86,7 @@ function closeModal(name) {
   modal.classList.remove("show");
 
   if (name == "newsletter-subscription") {
-    setCookie("modalClosed", "true", 7);
+    // setCookie("modalClosed", "true", 7);
     modalClosed = true;
   }
 }
