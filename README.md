@@ -59,3 +59,27 @@ Activate the theme: Go to Appearance > Themes and select the new theme.
 - npm run prod - This will bundle all assets into the ‘dist’ folder.
 
 Good luck!
+
+## Deployment:
+
+1. After running the production build, upload the entire theme folder to your WordPress installation's `wp-content/themes/` directory.
+2. Ensure all files in the `dist/` folder are included.
+3. Activate the theme in the WordPress admin panel.
+4. Sync ACF fields if necessary.
+
+## Required Plugins:
+
+- Advanced Custom Fields PRO
+
+## Recommended Plugins:
+
+- WP Rocket (for caching and performance optimization)
+- Yoast SEO (for search engine optimization)
+
+## Contributing:
+
+(Add contribution guidelines if applicable)
+
+## License:
+
+(Add license information)

@@ -114,5 +114,62 @@ if (get_field('show_callout')) {
 	app_render_fragment('global-callout');
 }
 ?>
+
+
+
+<script>
+	let idleTimer;
+	const idleTime = 9000;
+
+	function checkIdleTime() {
+		if (getCookie("modalClosed") !== "true") {
+			idleTimer = setTimeout(() => {
+				openModal("newsletter-subscription");
+			}, idleTime);
+		}
+	}
+
+	function resetIdleTimer() {
+		clearTimeout(idleTimer);
+		checkIdleTime();
+	}
+
+	document.addEventListener("mousemove", resetIdleTimer);
+	document.addEventListener("keypress", resetIdleTimer);
+	document.addEventListener("touchstart", resetIdleTimer);
+	document.addEventListener("scroll", resetIdleTimer);
+
+	checkIdleTime();
+
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    function getCookie(name) {
+        let nameEQ = name + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === " ") {
+            c = c.substring(1);
+            }
+            if (c.indexOf(nameEQ) === 0) {
+            return c.substring(nameEQ.length, c.length);
+            }
+        }
+        return "";
+    }
+
+	window.addEventListener('message', event => {
+		if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
+			setCookie("modalClosed", "true", 7);
+		}
+	});
+</script>
+
 <?php
 get_footer();
