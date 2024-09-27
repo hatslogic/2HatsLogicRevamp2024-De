@@ -70,10 +70,12 @@ function openModal(name) {
 // }
 
 // Set up event listeners for user activity
+
 if (!modalClosed) {
   document.addEventListener("mousemove", resetIdleTimer);
   document.addEventListener("keypress", resetIdleTimer);
   document.addEventListener("touchstart", resetIdleTimer);
+  document.addEventListener("scroll", resetIdleTimer);  
 
   // Initial setup of the idle timer
   resetIdleTimer();
@@ -92,12 +94,20 @@ function closeModal(name) {
 }
 
 
+// function resetIdleTimer() {
+//     clearTimeout(idleTimer);
+//     if (!modalClosed) {
+//       idleTimer = setTimeout(openNewsletterModal, idleTime);
+//     }
+// }
+
 function resetIdleTimer() {
-    clearTimeout(idleTimer);
-    if (!modalClosed) {
-      idleTimer = setTimeout(openNewsletterModal, idleTime);
-    }
+  clearTimeout(idleTimer); // This removes any previous timer
+  if (!modalClosed) {
+    idleTimer = setTimeout(openNewsletterModal, idleTime); // Start a new timer
+  }
 }
+
 
 function openNewsletterModal() {
     // Replace this with the actual function call to open your modal
