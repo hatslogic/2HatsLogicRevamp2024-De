@@ -10,7 +10,10 @@ get_header();
 <main class="page-wrap inline-block w-100 relative z-0">
     <?php app_render_page_case_study_detail(); ?>
 
-    <?php get_template_part('template-parts/get-started'); ?>
+    <?php
+        get_template_part('template-parts/start-project');  
+        get_template_part('template-parts/get-started'); 
+    ?>
 </main>
 <?php
 if (get_field('show_callout')) {
