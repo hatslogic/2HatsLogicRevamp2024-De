@@ -15,7 +15,7 @@
                 <div class="menu flex align-start justify-between sm:wrap sm:justify-start">
                     <div class="col xl:w-40 xs:w-100">
                         <div class="menu-group mt-0">
-                            <a href="#" class="h4 font-bold">Dienstleistungen</a>
+                        <div class="h4 font-bold">Dienstleistungen</div>
                             <?php
                             wp_nav_menu([
                                 'menu' => 'service-menu',
@@ -28,7 +28,7 @@
 ?>
                         </div>
                         <div class="menu-group mt-40">
-                            <a href="#" class="h4 font-bold">Unsere Shopware-Service-Standorte</a>
+                        <div class="h4 font-bold">Unsere Shopware-Service-Standorte</div>
                             <?php
                             wp_nav_menu([
                                 'menu' => 'locations',
@@ -43,7 +43,7 @@
                     </div>
                     <div class="col px-20 xs:pl-0 xs:pr-0 xl:w-40 xs:w-100">
                         <div class="menu-group mt-0 xs:mt-40">
-                            <a href="#" class="h4 font-bold">Entwickler anheuern</a>
+                        <div class="h4 font-bold">Entwickler anheuern</div>
                             <?php
 wp_nav_menu([
     'menu' => 'hide-developer-menu',
@@ -56,7 +56,7 @@ wp_nav_menu([
 ?>
                         </div>
                         <div class="menu-group mt-40">
-                            <a href="#" class="h4 font-bold">Unternehmen</a>
+                        <div class="h4 font-bold">Unternehmen</div>
                             <?php
 wp_nav_menu([
     'menu' => 'company-menu',
@@ -71,7 +71,7 @@ wp_nav_menu([
                     </div>
                     <div class="col xl:w-20 xs:w-100">
                         <div class="menu-group mt-0 xs:mt-40">
-                            <a href="#" class="h4 font-bold">Schnelle Links</a>
+                        <div class="h4 font-bold">Schnelle Links</div>
                             <?php
 wp_nav_menu([
     'menu' => 'quick-links-menu',
@@ -151,10 +151,17 @@ $terms_and_condition_title = $footer_bottom['terms_and_condition']['title'];
 $terms_and_condition_link = $footer_bottom['terms_and_condition']['url'] ? $footer_bottom['terms_and_condition']['url'] : '#';
 $privacy_policy_title = $footer_bottom['privacy_policy']['title'] ? $footer_bottom['privacy_policy']['title'] : 'Privacy Policy';
 $privacy_policy_link = $footer_bottom['privacy_policy']['url'] ? $footer_bottom['privacy_policy']['url'] : '#';
+$imprint_title = $footer_bottom['imprint']['title'];
+$imprint_link = $footer_bottom['imprint']['url'];
 ?>
         <div class="copyright sm:order-2 xs:mt-10">&copy; <span id="year"><?php echo date('Y'); ?></span> <?php echo $copy_right_text; ?></div>
         <div class="terms sm:order-1 sm:mt-20"><?php if ($terms_and_condition_title) { ?><a href="<?php echo $terms_and_condition_link; ?>" aria-label="terms"><?php echo $terms_and_condition_title; ?></a> | <?php } ?> <a href="<?php echo $privacy_policy_link; ?>"
-                aria-label="privacy"><?php echo $privacy_policy_title; ?></a></div>
+                aria-label="privacy"><?php echo $privacy_policy_title; ?></a>
+            <?php if(!empty($imprint_title) && !empty($imprint_link)) {?> 
+                | <a href="<?php echo $imprint_link; ?>"
+                aria-label="imprint"><?php echo $imprint_title; ?></a>  
+            <?php }?>    
+        </div>
     </div>
     </div>
 </footer>

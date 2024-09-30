@@ -978,3 +978,51 @@ function disable_comments_dashboard()
     remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
 }
 add_action('admin_init', 'disable_comments_dashboard');
+
+function remove_unwanted_tags_and_styles($content) {
+
+    if(!is_singular('post')){
+        return $content;
+    }
+
+    $disable_inline_styles = get_field('disable_inline_styles', get_the_ID());
+
+    // only for post single
+    if ($disable_inline_styles) {
+        // Remove specific tags (adjust as needed)
+        $content = preg_replace('/<script[^>]*>(.*?)<\/script>/is', '', $content);
+        $content = preg_replace('/<style[^>]*>(.*?)<\/style>/is', '', $content);
+        $content = preg_replace('/<iframe[^>]*>(.*?)<\/iframe>/is', '', $content);
+    
+        // Remove inline styles
+        $content = preg_replace('/ style="[^"]*"/', '', $content);
+
+        // Remove unwanted spans
+        $content = preg_replace('/<span[^>]*>(.*?)<\/span>/is', '$1', $content);
+
+        // Remove unwanted strong and b tags
+        $content = preg_replace('/<strong[^>]*>(.*?)<\/strong>/is', '$1', $content);
+        $content = preg_replace('/<b[^>]*>(.*?)<\/b>/is', '$1', $content);
+    }
+  
+    return $content;
+
+}
+add_filter('the_content', 'remove_unwanted_tags_and_styles');
+add_filter('site_transient_update_plugins', 'disable_specific_plugin_updates');
+function disable_specific_plugin_updates($value)
+{
+    if (isset($value) && is_object($value)) {
+        if (isset($value->response['simple-cloudflare-turnstile/simple-cloudflare-turnstile.php'])) {
+            unset($value->response['simple-cloudflare-turnstile/simple-cloudflare-turnstile.php']);
+        }
+    }
+    return $value;
+}
+function add_blog_to_post_permalink($permalink, $post, $leavename) {
+    if ($post->post_type == 'post') {
+    return home_url('/blog/' . $post->post_name . '/');
+    }
+    return $permalink;
+}
+add_filter('post_link', 'add_blog_to_post_permalink', 10, 3);
