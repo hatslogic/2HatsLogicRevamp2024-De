@@ -66,7 +66,7 @@
                                     <h3 class="h4 transition font-bold max-w-90 xs:max-w-100"><?php the_title(); ?></h3>
                                     <p class="font-light"><?php echo truncate_text(get_the_excerpt(), 130, '...'); ?></p>
                                     <a href="<?php the_permalink(); ?>" aria-label="<?php the_title_attribute(); ?>"
-                                        class="btn btn-secondary-outline mt-20"><?php _e('Read More', '2hatslogic'); ?></a>
+                                        class="btn btn-secondary-outline mt-20"><?php _e('Mehr lesen', '2hatslogic'); ?></a>
                                 </div>
                             </a>
                         </div>
