@@ -54,14 +54,14 @@ if ($categories && !is_wp_error($categories)) { ?>
             <div class="actions flex gap-15">
               <div class="action-btn btn-share">
                 <div class="dropdown relative">
-                    <a href="#" class="share bg-white md:bg-secondary b-0 p-10 radius-50 fs-18 flex align-center justify-center h-px-45 w-px-45 c-secondary md:c-white hover:c-white hover:bg-primary">
+                    <a href="javascript:void(0)" class="share bg-white md:bg-secondary b-0 p-10 radius-50 fs-18 flex align-center justify-center h-px-45 w-px-45 c-secondary md:c-white hover:c-white hover:bg-primary">
                         <i class="icon icon-share"></i>
                     </a>
                     <div class="dropdown-content fs-14 bg-white transition b-1 solid bc-hash absolute left-0 top-60 z-1 min-w-px-120">
-                        <a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" class="flex align-center p-10 hover:bg-primary hover:c-white">
+                        <a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" target="_blank" class="flex align-center p-10 hover:bg-primary hover:c-white">
                             <i class="icomoon icon-facebook"></i> <span class="ml-10">Facebook</span>
                         </a>
-                        <a href="https://www.linkedin.com/cws/share?url=<?php echo get_permalink(); ?>" class="flex align-center p-10 hover:bg-primary hover:c-white b-0 bt-1 bc-hash solid">
+                        <a href="https://www.linkedin.com/cws/share?url=<?php echo get_permalink(); ?>" target="_blank" class="flex align-center p-10 hover:bg-primary hover:c-white b-0 bt-1 bc-hash solid">
                             <i class="icomoon icon-linkedin"></i> <span class="ml-10">LinkedIn</span>
                         </a>
                     </div>
