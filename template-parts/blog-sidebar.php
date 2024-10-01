@@ -108,7 +108,7 @@ $enable_sidebar_form = get_field('enable_sidebar_form');
 <script>
     document.addEventListener('wpcf7mailsent', function (event) {
         var formId = event.detail.contactFormId;
-        var targetFormId = <?php echo $form_shortcode?>; // Replace with your form ID
+        var targetFormId = <?php echo $sidebar_form['form']?>; 
 
         if (formId == targetFormId) {
             var pdfUrl = document.getElementById('pdf_url').value;
