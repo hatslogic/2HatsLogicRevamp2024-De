@@ -92,7 +92,9 @@ $enable_sidebar_form = get_field('enable_sidebar_form');
        
         <?php if(!empty($sidebar_form['form']) ) { ?>  
             <div class="block mt-30 p-30 bg-dark-primary c-white relative animate">
-                <div class="title mb-20"> <h2 class="h4">Download PDF</h2> </div>
+                <?php if(!empty($sidebar_form['form_title'])) { ?>
+                <div class="title mb-20"> <h2 class="h4"><?php echo $sidebar_form['form_title'] ?></h2> </div>
+                <?php } ?>
                 <div class="content">
                  <div class="form-wrap" id="download-pdf">
                      <?php echo do_shortcode('[contact-form-7 id="'.$sidebar_form['form'].'"]'); ?>
