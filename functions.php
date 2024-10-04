@@ -8,7 +8,7 @@ define('APP_THEME_DIR', dirname(__FILE__).DIRECTORY_SEPARATOR);
 
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
-    define('_S_VERSION', '1.2.8');
+    define('_S_VERSION', '2.3.9');
 }
 
 function my_acf_add_local_field_groups()
@@ -872,8 +872,8 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
             $image_src = bis_get_attachment_image_src($imageId, [$image_size[0], $image_size[1]], true);
             $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], true);
         } else {
-            $image_src = bis_get_attachment_image_src($imageId, [$image_size[0] * 1.25, $image_size[1] * 1.25], true);
-            $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], true);
+            $image_src = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], true);
+            $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 3, $image_size[1] * 3], true);
         }
         if ($image_src && !empty($image_src['src'])) {
             $webp_src = webp(esc_url($image_src['src']));
@@ -892,8 +892,8 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
 
     if ($fallback_image_src && !empty($fallback_image_src['src'])) {
         $alt_text = esc_attr(get_post_meta($image_id, '_wp_attachment_image_alt', true));
-        $width = $fallback_image_src['width'];
-        $height = $fallback_image_src['height'];
+        $width = $largest_size[0];
+        $height = $largest_size[1];
         $picture .= "<img src='".esc_url($fallback_image_src['src'])."' $img_attributes alt='$alt_text' width='$width' height='$height'>";
     }
 
