@@ -178,11 +178,14 @@ if (!is_singular('help-desk') && !$disable_modals) {
     get_template_part('template-parts/hire-now');
     get_template_part('template-parts/contact-us-modal');
 }
+if(is_singular('post')){
+    get_template_part('template-parts/newsletter-modal');
+}
 ?>
 
 <?php wp_footer(); ?>
 
-<script id="Radhu" <?php echo $disable_modals; ?>>
+<script>
     var elements = document.querySelectorAll('section, header, footer, .service, .col, .content .info');
     var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
