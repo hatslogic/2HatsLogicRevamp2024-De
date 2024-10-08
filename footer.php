@@ -178,6 +178,9 @@ if (!is_singular('help-desk') && !$disable_modals) {
     get_template_part('template-parts/hire-now');
     get_template_part('template-parts/contact-us-modal');
 }
+if(is_singular('post')){
+    get_template_part('template-parts/newsletter-modal');
+}
 ?>
 
 <?php wp_footer(); ?>
