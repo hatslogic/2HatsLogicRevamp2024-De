@@ -94,9 +94,9 @@ function closeModal(name) {
 
 function resetIdleTimer() {
     clearTimeout(idleTimer);
-    if (!modalClosed) {
-      idleTimer = setTimeout(openNewsletterModal, idleTime);
-    }
+    // if (!modalClosed) {
+    //   idleTimer = setTimeout(openNewsletterModal, idleTime);
+    // }
 }
 
 function openNewsletterModal() {
