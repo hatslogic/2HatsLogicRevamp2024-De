@@ -103,9 +103,9 @@ function closeModal(name) {
 
 function resetIdleTimer() {
   clearTimeout(idleTimer); // This removes any previous timer
-  if (!modalClosed) {
-    idleTimer = setTimeout(openNewsletterModal, idleTime); // Start a new timer
-  }
+  // if (!modalClosed) {
+  //   idleTimer = setTimeout(openNewsletterModal, idleTime); // Start a new timer
+  // }
 }
 
 
