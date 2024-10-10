@@ -111,6 +111,19 @@ function app_render_page_service_hire_developer()
     }
 }
 
+function app_render_page_reach_us()
+{
+    if (!$sections = get_field('reach_us')) {
+        return;
+    }
+
+    foreach ($sections as $section_index => $section) {
+        $section_slug = str_replace('_', '-', $section['acf_fc_layout']);
+
+        app_render_fragment('reach-us/'.DIRECTORY_SEPARATOR.$section_slug, compact('section_index', 'section_slug', 'section'));
+    }
+}
+
 function app_render_page_service_shopware_development()
 {
     if (!$sections = get_field('service_shopware')) {
