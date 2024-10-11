@@ -35,11 +35,3 @@ $get_dir = get_template_directory_uri();
         </div>
     </div>
 </div>
-<script>
-window.addEventListener('message', event => {
-   if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
-       
-       setCookie("modalClosed", "true", 7);
-   }
-});
-</script>    

@@ -1027,3 +1027,45 @@ function disable_specific_plugin_updates($value)
     }
     return $value;
 }
+
+/** functions to redirect to seo tools page */
+function custom_seo_tool_rewrite() {
+    add_rewrite_rule('^seo-tool/?$', 'index.php?seo_tool=1', 'top');
+}
+add_action('init', 'custom_seo_tool_rewrite');
+
+function custom_seo_tool_query_vars($query_vars) {
+    $query_vars[] = 'seo_tool';
+    return $query_vars;
+}
+add_filter('query_vars', 'custom_seo_tool_query_vars');
+
+function custom_seo_tool_template_include($template) {
+    if (get_query_var('seo_tool')) {
+        return get_template_directory() . '/template-custom-seo-tool.php';
+    }
+    return $template;
+}
+add_filter('template_include', 'custom_seo_tool_template_include');
+
+/** Enqueue script files for SEO Tool */
+function enqueue_seo_tool_script() {
+
+    if (get_query_var('seo_tool')) {
+        
+        wp_enqueue_script('seo-tool-script', get_template_directory_uri() . '/src/assets/js/seo-tool.js', array(), null, true);
+
+        // Check if constants are defined, otherwise provide empty values
+        $openai_url = defined('OPENAI_URL') ? OPENAI_URL : '';
+        $openai_key = defined('OPENAI_KEY') ? OPENAI_KEY : '';
+        $openai_model = defined('OPENAI_MODEL') ? OPENAI_MODEL : '';
+
+        // Localize the script to pass API URL and key securely
+        wp_localize_script('seo-tool-script', 'config', array(
+            'OPENAIURL' => $openai_url,
+            'OPENAIKEY' => $openai_key,
+            'OPENAIMODEL' => $openai_model
+        ));
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_seo_tool_script');
