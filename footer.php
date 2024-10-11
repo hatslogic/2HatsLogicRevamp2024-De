@@ -161,9 +161,9 @@ if (!is_singular('help-desk') && !$disable_modals) {
     get_template_part('template-parts/contact-us-modal');
     get_template_part('template-parts/offers-modal');
 }
-if(is_singular('post')){
-    get_template_part('template-parts/newsletter-modal');
-}
+// if(is_singular('post')){
+//     get_template_part('template-parts/newsletter-modal');
+// }
 ?>
 
 <?php wp_footer(); ?>
