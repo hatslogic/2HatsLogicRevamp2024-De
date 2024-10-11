@@ -1055,11 +1055,16 @@ function enqueue_seo_tool_script() {
         
         wp_enqueue_script('seo-tool-script', get_template_directory_uri() . '/src/assets/js/seo-tool.js', array(), null, true);
 
-        // Localize the script to pass OPENAI URL and key securely
+        // Check if constants are defined, otherwise provide empty values
+        $openai_url = defined('OPENAI_URL') ? OPENAI_URL : '';
+        $openai_key = defined('OPENAI_KEY') ? OPENAI_KEY : '';
+        $openai_model = defined('OPENAI_MODEL') ? OPENAI_MODEL : '';
+
+        // Localize the script to pass API URL and key securely
         wp_localize_script('seo-tool-script', 'config', array(
-            'OPENAIURL' => OPENAI_URL,
-            'OPENAIKEY' => OPENAI_KEY,
-            'OPENAIMODEL' => OPENAI_MODEL
+            'OPENAIURL' => $openai_url,
+            'OPENAIKEY' => $openai_key,
+            'OPENAIMODEL' => $openai_model
         ));
     }
 }
