@@ -4,6 +4,7 @@ $link = get_field('sidebar_cta_link');
 $sidebar_image_cta = get_field('sidebar_image_cta');
 $sidebar_image_cta_modal = get_field('sidebar_image_cta_modal');
 $sidebar_image_cta_link = get_field('sidebar_image_cta_link');
+$enable_sidebar_form = get_field('enable_sidebar_form');
 ?>
 
 <div class="w-30 md:w-100 md:mt-30 sticky top-30">
@@ -86,4 +87,46 @@ $sidebar_image_cta_link = get_field('sidebar_image_cta_link');
         <?php } ?>      
         </div>
         <?php } ?>
+        <?php if($enable_sidebar_form) { ?>
+        <?php $sidebar_form = get_field('sidebar_form'); ?>  
+       
+        <?php if(!empty($sidebar_form['form']) ) { ?>  
+            <div class="block mt-30 p-30 bg-dark-primary c-white relative animate">
+                <?php if(!empty($sidebar_form['form_title'])) { ?>
+                <div class="title mb-20"> <h2 class="h4"><?php echo $sidebar_form['form_title'] ?></h2> </div>
+                <?php } ?>
+                <div class="content">
+                 <div class="form-wrap" id="download-pdf">
+                     <?php echo do_shortcode('[contact-form-7 id="'.$sidebar_form['form'].'"]'); ?>
+                    <?php ?>
+                </div>
+                <?php if(!empty($sidebar_form['pdf_file']) && $sidebar_form['form_action'] == 'download') { ?>
+                    <input type='hidden' id="pdf_file" value="<?php echo $sidebar_form['pdf_file'] ?>" >
+                 <?php } ?>   
+                </div>
+            </div>  
+
+        <?php } ?>      
+        <?php } ?>    
 </div>
+<?php if(!empty($sidebar_form['pdf_file']) && $sidebar_form['form_action'] == 'download') { ?>
+<script>
+    document.addEventListener('wpcf7mailsent', function (event) {
+        var formId = event.detail.contactFormId;
+        
+        var targetFormId = <?php echo $sidebar_form['form']?>; 
+
+        if (formId == targetFormId) {
+            var pdfUrl = document.getElementById('pdf_file').value;
+            if (pdfUrl) {
+                var link = document.createElement('a');
+                link.href = pdfUrl;
+                link.download = pdfUrl.split('/').pop();
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+    }, false);
+</script>
+<?php } ?>

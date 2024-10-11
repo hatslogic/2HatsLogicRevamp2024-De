@@ -310,3 +310,54 @@ function register_help_desk_category() {
 }
 
 add_action( 'init', 'register_help_desk_category' );
+
+// Register Resources post type
+function register_resources() {
+  
+	// Set UI labels for Custom Post Type
+	$labels = array(
+		'name'                => _x( 'Resources', 'Post Type General Name', 'twentythirteen' ),
+		'singular_name'       => _x( 'Resource', 'Post Type Singular Name', 'twentythirteen' ),
+		'menu_name'           => __( 'Resources', 'twentythirteen' ),
+		'parent_item_colon'   => __( 'Parent Resource', 'twentythirteen' ),
+		'all_items'           => __( 'Resources', 'twentythirteen' ),
+		'view_item'           => __( 'View Resource', 'twentythirteen' ),
+		'add_new_item'        => __( 'Add New Resource', 'twentythirteen' ),
+		'add_new'             => __( 'Add New', 'twentythirteen' ),
+		'edit_item'           => __( 'Edit Resource', 'twentythirteen' ),
+		'update_item'         => __( 'Update Resource', 'twentythirteen' ),
+		'search_items'        => __( 'Search Resource', 'twentythirteen' ),
+		'not_found'           => __( 'Not Found', 'twentythirteen' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'twentythirteen' ),
+	);
+		  
+	// Set other options for Custom Post Type
+	$args = array(
+		'label'               => __( 'resources', 'twentythirteen' ),
+		'description'         => __( 'Showcase of resources', 'twentythirteen' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'page-attributes', 'comments', 'revisions', 'custom-fields', ),
+		'hierarchical'        => true,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		// 'menu_position'       => 30,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'show_in_rest'        => true,
+		'menu_icon' => 'dashicons-portfolio',
+		'taxonomies' => array( 'category' ),
+		'rewrite' => array( 'slug' => 'resources' )
+	);
+		
+	// Registering your Custom Post Type
+	register_post_type( 'resources', $args );
+	
+}
+
+add_action( 'init', 'register_resources', 0 );
