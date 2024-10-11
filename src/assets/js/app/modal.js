@@ -46,3 +46,16 @@ function closeModal(name) {
   body.classList.remove('disable-scroll');
   modal.classList.remove('show');
 }
+
+
+function resetIdleTimer() {
+    clearTimeout(idleTimer);
+    // if (!modalClosed) {
+    //   idleTimer = setTimeout(openNewsletterModal, idleTime);
+    // }
+}
+
+function openNewsletterModal() {
+    // Replace this with the actual function call to open your modal
+    openModal("newsletter-subscription");
+}
