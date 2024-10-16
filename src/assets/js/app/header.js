@@ -1,6 +1,9 @@
 // Get the sticky element
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
+  if (!header) {
+    return;
+  }
   const scrollPosition = window.scrollY;
 
   if (scrollPosition > 0) {
@@ -14,6 +17,9 @@ let lastScrollPosition = 0;
 
 window.addEventListener('scroll', function() {
   const header = document.querySelector('header');
+  if(!header){
+    return;
+  }
   const currentScrollPosition = window.scrollY;
 
   if (currentScrollPosition > 100) {
