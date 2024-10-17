@@ -490,7 +490,11 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
         if ($item->url && $item->url != '#') {
             $output .= '<a class="'.$a_classes.'" href="'.$item->url.'" aria-label="'.strtolower($item->title).'">';
         } else {
-            $output .= '<span>';
+            if($args->walker->has_children && $depth === 0) {
+                $output .= '<span class="mobile-toggle pt-30 pb-30 md:pt-8 md:pb-8 b-0 solid md:bb-0 md:w-100 uppercase md:capitalize md:fs-28 block md:flex md:justify-between md:align-center">';
+            } else {
+                $output .= '<span>';
+            }
         }
 
         $output .= $item->title;
@@ -498,6 +502,10 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
             $output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">'.$item->description.'</span>';
         }
 
+        if ($item->url == '#' && $args->walker->has_children && $depth === 0) {
+            $output .= '<i class="icomoon icon-expand_more ml-5 fs-12 md:fs-20"></i>';
+        }
+        
         if ($item->url && $item->url != '#') {
             if ($args->walker->has_children && $depth === 0) {
                 $output .= '<i class="icomoon icon-expand_more ml-5 fs-12 md:fs-20"></i>';
@@ -519,12 +527,13 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
 
         $blog_url = home_url().'/blog';
         $contact_url = home_url().'/contact';
+        $hire_developer_url = home_url().'/hire-dedicated-developers';
 
         if ($depth === 0) {
             if ($is_compact) {
                 $output .= "$indent</div></ul>\n";
             } else {
-                $output .= "$indent</div><div class=\"menu-end container flex md:hidden\"> <ul class=\"sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100\"><li class=\"mt-30 mb-30\"> <a href=\"$blog_url\" class=\"inline-block\" aria-label=\"blog\">Blog</a></li><li class=\"mt-30 mb-30 ml-30 pl-30 b-0 bl-1 solid bc-hash\"> <a href=\"$contact_url\" class=\"inline-block\" aria-label=\"contact\">Contact</a></li></ul></div></ul>\n";
+                $output .= "$indent</div><div class=\"menu-end container flex md:hidden\"> <ul class=\"sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100\"><li class=\"mt-30 mb-30\"> <a href=\"$hire_developer_url\" class=\"inline-block\" aria-label=\"Hire a Developer\">Hire a Developer</a></li><li class=\"mt-30 mb-30 ml-30 pl-30 b-0 bl-1 solid bc-hash\"> <a href=\"$contact_url\" class=\"inline-block\" aria-label=\"contact\">Contact</a></li></ul></div></ul>\n";
             }
         } else {
             $output .= "$indent</ul>\n";
