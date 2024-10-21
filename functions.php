@@ -483,12 +483,20 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
         if ($item->url && $item->url != '#') {
             $output .= '<a class="'.$a_classes.'" href="'.$item->url.'" aria-label="'.strtolower($item->title).'">';
         } else {
-            $output .= '<span>';
+            if($args->walker->has_children && $depth === 0) {
+                $output .= '<span class="mobile-toggle pt-30 pb-30 md:pt-8 md:pb-8 b-0 solid md:bb-0 md:w-100 uppercase md:capitalize md:fs-28 block md:flex md:justify-between md:align-center">';
+            } else {
+                $output .= '<span>';
+            }
         }
 
         $output .= $item->title;
         if ($depth === 1) {
             $output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">'.$item->description.'</span>';
+        }
+
+        if ($item->url == '#' && $args->walker->has_children && $depth === 0) {
+            $output .= '<i class="icomoon icon-expand_more ml-5 fs-12 md:fs-20"></i>';
         }
 
         if ($item->url && $item->url != '#') {
