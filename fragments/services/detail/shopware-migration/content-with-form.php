@@ -92,7 +92,7 @@
             <?php if ($consultant['name'] || $form_selector) { ?>
                 <div class="col w-40 md:w-100 md:mt-40">
                     <div class="consultation-wrap b-1 bc-hash solid bg-white p-50 xs:p-30">
-                        <h3 class="uppercase h4"><?php echo $form_title; ?></h3>
+                        <h3 class="uppercase h6"><?php echo $form_title; ?></h3>
 
                         <p><?php echo $form_description; ?></p>
                         <div class="avatar-wrap flex align-center mt-30">

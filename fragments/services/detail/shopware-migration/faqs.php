@@ -15,7 +15,7 @@
                     <?php foreach ($faqs as $faq): ?>
                         <div class="acc-item py-20 b-0 bb-1 bc-hash solid">
                             <div class="acc-toggle flex justify-between relative">
-                                <h3 class="max-w-80 h4"><?php echo $faq['question']; ?></h3>
+                                <h3 class="max-w-80 h6"><?php echo $faq['question']; ?></h3>
 
                                 <div class="wrap-icon absolute right-0 flex fs-30 xs:fs-20">
                                     <div class="icomoon icon-expand_circle_down add"></div>

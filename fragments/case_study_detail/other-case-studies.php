@@ -7,7 +7,7 @@
         </div>
         <?php } ?>
         <?php if (!empty($case_studies)) { ?>
-        <div class="content mt-50 xs:mt-30">
+        <div class="content mt-40 xs:mt-30">
             <div class="grid grid-3 xl:grid-2 xs:grid-1 gap-35 xs:gap-20 xs:flex xs:nowrap xs:scroll-x xs:-ml-20 xs:-mr-20 scroll-snap">
                 <?php foreach ($case_studies as $case_study) { ?>
                 <?php ?>    
@@ -32,7 +32,7 @@
                                         height="260" class="transition">
                                 <?php } ?>    
                         <div class="info mt-20 xs:pl-20 xs:pr-20">
-                            <h3 class="h5 transition font-regular"><strong class="transition font-bold"><?php echo get_the_title($case_study); ?>&colon;</strong> <?php echo truncate_text(get_the_excerpt($case_study), 90, '...'); ?></h3>
+                            <h3 class="h6 transition font-regular"><strong class="transition font-bold"><?php echo get_the_title($case_study); ?>&colon;</strong> <?php echo truncate_text(get_the_excerpt($case_study), 90, '...'); ?></h3>
                         </div>
                     </a>
                 </div>
