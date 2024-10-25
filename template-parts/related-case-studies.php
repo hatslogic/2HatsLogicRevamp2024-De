@@ -8,7 +8,7 @@
                 <h2>Other Case Studies</h2>
 
             </div>
-            <div class="content mt-50 xs:mt-30">
+            <div class="content mt-40 xs:mt-30">
                 <div
                     class="grid grid-3 xl:grid-2 xs:grid-1 gap-35 xs:gap-20 xs:flex xs:nowrap xs:scroll-x xs:-ml-20 xs:-mr-20 scroll-snap">
                     <?php foreach ($related_posts as $post) {

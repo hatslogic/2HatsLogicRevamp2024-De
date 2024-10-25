@@ -10,7 +10,7 @@
 
                 </div>
             <?php } ?>
-            <div class="content mt-50 xs:mt-30">
+            <div class="content mt-40 xs:mt-30">
                 <div
                     class="grid grid-4 xl:grid-3 md:grid-2 xs:grid-1 gap-15 xs:flex xs:nowrap xs:scroll-x xs:-ml-20 xs:-mr-20 scroll-snap">
 
@@ -41,7 +41,7 @@
                         <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
                                 <div class="info mt-30 xs:pl-20 xs:pr-20">
                                     <?php if ($title) { ?>
-                                        <h3 class="h4 transition font-bold"><?php echo truncate_text($title, 60, '...'); ?></h3>
+                                        <h3 class="h6 transition font-bold"><?php echo truncate_text($title, 60, '...'); ?></h3>
                                     <?php } ?>
                                     <?php if ($description) { ?>
                                         <p class="font-light"><?php echo truncate_text($description, 90, '...'); ?></p>

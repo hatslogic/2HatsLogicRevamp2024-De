@@ -8,7 +8,7 @@
         <div class="title text-center">
             <div class="max-w-60 xs:max-w-100 mx-auto">
                 <?php if($headline): ?>
-                    <h2><?php echo $headline; ?></h2>
+                    <h2 class="mb-10"><?php echo $headline; ?></h2>
                 <?php endif; ?>
                 <?php if($content): ?>
                     <p><?php echo $content; ?></p>
