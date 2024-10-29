@@ -43,7 +43,7 @@
                     <?php wp_reset_postdata(); ?>
                 </div>
                 <div class="btn-group center mt-80 xs:mt-40">
-                    <a href="<?php echo get_permalink(get_page_by_path('blogs')); ?>" class="btn btn-primary">view all</a>
+                    <a href="<?php echo get_permalink(get_page_by_path('blog')); ?>" class="btn btn-primary">view all</a>
                 </div>
             </div>
         </div>
