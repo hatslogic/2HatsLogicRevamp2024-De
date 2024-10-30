@@ -1,12 +1,13 @@
 <?php
 $enable_faq = get_field('enable_faq');
 $faq_title = get_field('faq_title');
+$identifier = get_field('identifier');
 ?>
 <?php if ($enable_faq): ?>
 <section class="blogs_faq">
     <?php if($faq_title): ?>
         <div class="title">
-            <h3><?php echo $faq_title; ?></h3>
+            <h3 id="<?php echo $identifier; ?>"><?php echo $faq_title; ?></h3>
         </div>
     <?php endif; ?>
 
