@@ -10,13 +10,13 @@
                         <p><?php echo $description; ?></p>
                     </div>
                     <?php endif; ?>
-                    <div class="content mt-50">
+                    <div class="content mt-40">
                         <div class="grid grid-3 xl:grid-2 xs:grid-1 gap-60 xs:gap-30 xs:flex xs:wrap">
                             <?php foreach ($items as $item): ?>
                             <div class="col card">
                                 <div class="item">
                                     <div class="info">
-                                         <h3 class="h4 transition font-bold"><?php echo $item['heading']; ?></h3>
+                                         <h3 class="h6 transition font-bold"><?php echo $item['heading']; ?></h3>
 
                                         <p><?php echo $item['content']; ?></p>
                                     </div>

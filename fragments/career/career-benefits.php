@@ -24,7 +24,7 @@
                                 </div>
                                 <?php endif; ?>
                                 <div class="info ml-20">
-                                    <h3 class="h4 transition font-bold"><?= $item['title']; ?></h3>
+                                    <h3 class="h5 transition font-bold"><?= $item['title']; ?></h3>
                                 </div>
                             </div>
                             <?php endforeach; ?>
@@ -75,7 +75,7 @@
                                 </div>
                                 <?php endif; ?>
                                 <div class="info ml-20">
-                                    <h3 class="h4 transition font-bold"><?= $item['title']; ?></h3>
+                                    <h3 class="h5 transition font-bold"><?= $item['title']; ?></h3>
                                     <?php if (!empty($item['description'])): ?>
                                     <p class="mt-10 mb-0"><?= $item['description']; ?></p>
                                     <?php endif; ?>

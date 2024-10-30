@@ -10,7 +10,7 @@
         <div class="title text-center">
             <div class="max-w-60 xs:max-w-100 mx-auto">
                 <?php if($title): ?>
-                    <h2><?= $title ?></h2>
+                    <h2 class="mb-10"><?= $title ?></h2>
                 <?php endif; ?>
                 <?php if($content): ?>
                     <p><?= $content ?></p>

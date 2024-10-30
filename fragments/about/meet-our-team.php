@@ -52,7 +52,7 @@ foreach($album as $key => $image){
     <div class="container">
         <div class="title text-center">
             <?php if($title): ?>
-            <h2><?= $title; ?></h2>
+            <h2 class="mb-10"><?= $title; ?></h2>
             <?php endif; ?>
             <?php if($content): ?>
             <p><?= $content; ?></p>

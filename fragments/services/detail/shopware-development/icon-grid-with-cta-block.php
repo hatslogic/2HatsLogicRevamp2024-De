@@ -13,7 +13,7 @@ $dir = get_template_directory_uri();
                 <p class="mt-10"><?php echo $description; ?></p>
             </div>
         <?php endif; ?>
-        <div class="content mt-60 xs:mt-30">
+        <div class="content mt-40 xs:mt-30">
             <?php if ($items): ?>
                 <div class="grid grid-2 xs:grid-1 gap-60 ml-100 xl:ml-60 md:ml-0 xl:gap-40 xs:gap-20 xs:flex xs:wrap">
                     <?php foreach ($items as $item): ?>
@@ -29,7 +29,7 @@ $dir = get_template_directory_uri();
                                         </div>
                                     <?php endif; ?>
                                     <div class="info">
-                                        <h3 class="h4 transition font-bold"><?php echo $item['title']; ?></h3>
+                                        <h3 class="h6 transition font-bold"><?php echo $item['title']; ?></h3>
 
                                         <p class="mt-10 c-secondary"><?php echo $item['content']; ?></p>
                                     </div>

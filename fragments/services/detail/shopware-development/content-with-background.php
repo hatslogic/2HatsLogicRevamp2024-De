@@ -14,7 +14,7 @@
                         <div class="content">
                             <?php if ($repeated_content): ?>
                                 <?php foreach ($repeated_content as $content): ?>
-                                    <h3 class="h4 mt-40"><?php echo $content['title']; ?></h3>
+                                    <h3 class="h6 mt-40"><?php echo $content['title']; ?></h3>
 
                                     <p><?php echo $content['content']; ?></p>
 

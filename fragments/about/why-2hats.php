@@ -22,7 +22,7 @@
                                     </div>
                                 <?php endif; ?>
                                 <div class="info ml-20">
-                                    <h3 class="h4 transition font-bold"><?php echo $item['heading']; ?></h3>
+                                    <h3 class="h6 transition font-bold"><?php echo $item['heading']; ?></h3>
                                     <p class="mt-10"><?php echo $item['content']; ?></p>
                                 </div>
                             </div>
