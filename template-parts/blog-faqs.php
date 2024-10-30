@@ -6,7 +6,7 @@ $faq_title = get_field('faq_title');
 <section class="blogs_faq">
     <?php if($faq_title): ?>
         <div class="title">
-            <h3><?php $faq_title; ?></h3>
+            <h3><?php echo $faq_title; ?></h3>
         </div>
     <?php endif; ?>
 
