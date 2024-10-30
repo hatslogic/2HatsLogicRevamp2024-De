@@ -167,7 +167,15 @@ $imprint_link = $footer_bottom['imprint']['url'];
 </footer>
 <div class="overlay overlay-menu transition fixed top-0 bottom-0 left-0 right-0 z-1 md:hidden"></div>
 <div class="overlay overlay-modal transition fixed top-0 bottom-0 left-0 right-0 z-12  md:hidden"></div>
-
+<?php
+$whatsapp_chat_enable = get_field('whatsapp_chat_enable', 'option');
+$whatsapp_chat_phone_number = get_field('whatsapp_chat_phone_number', 'option');
+if($whatsapp_chat_enable && !empty($whatsapp_chat_phone_number)){
+?> 
+<div class="whatsapp-widget fixed bottom-75 xl:bottom-140 right-15 z-1">
+    <a href="https://wa.me/<?php echo $whatsapp_chat_phone_number;?>" target="_blank" class="block whatsapp p-13 radius-100"> <i class="icomoon icon-whatsapp fs-24 c-white block"></i> </a>
+</div>
+<?php } ?>
 <?php
 global $wp_query;
 $postid = $wp_query->post->ID;

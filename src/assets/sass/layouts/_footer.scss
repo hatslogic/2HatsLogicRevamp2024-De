@@ -1,32 +1,58 @@
-footer{
-    a{
+footer {
+    a {
         color: var(--c-secondary);
-        &:hover{
+        &:hover {
             color: var(--c-primary);
         }
     }
 
-    .menu{
-        ul{
-            li{
+    .menu {
+        ul {
+            li {
                 margin-bottom: rem(12);
-                
-                &:last-child{
+
+                &:last-child {
                     margin-bottom: rem(0);
                 }
             }
         }
     }
 
-    .accreditation{
-        img{
+    .accreditation {
+        img {
             max-width: rem(100);
             max-height: rem(100);
 
-            @include below($sm){
+            @include below($sm) {
                 max-width: rem(80);
                 max-height: rem(80);
             }
         }
+    }
+}
+
+.whatsapp-widget {
+    animation: beat 0.5s infinite alternate;
+    transition: 0.5s all ease-in-out;
+}
+
+.clear-scroll {
+    .whatsapp-widget {
+        @include below($lg) {
+        bottom: rem(-100);
+        transition: 0.5s all ease-in-out;
+    }
+}
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
     }
 }
