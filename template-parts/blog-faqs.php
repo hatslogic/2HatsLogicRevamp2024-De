@@ -7,7 +7,7 @@ $identifier = get_field('identifier');
 <section class="blogs_faq">
     <?php if($faq_title): ?>
         <div class="title">
-            <h3 id="<?php echo $identifier; ?>"><?php echo $faq_title; ?></h3>
+            <h3 id="<?php echo !empty($identifier) ? $identifier : "faq-blog-title" ; ?>"><?php echo $faq_title; ?></h3>
         </div>
     <?php endif; ?>
 
