@@ -16,7 +16,7 @@
             <div class="col ml-30 sm:ml-0 w-70 md:w-100 md:mt-60 xs:mt-20">
                 <h2><?php echo $title ?></h2>
                 <?php if ($lists): ?>
-                <ul class="acc no-bullets fs-20 lh-1-2 mt-40 sm:fs-16">
+                <ul class="acc no-bullets fs-20 lh-1-2 mt-30 sm:fs-16">
                     <?php foreach ($lists as $key => $list): ?>
 
                         <li class="<?php echo ($list['list_content']) ? 'acc-item' : '' ?> relative block <?php if($key > 0) { echo 'mt-20 xs:mt-15'; } ?>">

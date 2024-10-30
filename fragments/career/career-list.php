@@ -14,7 +14,7 @@
                 <?php foreach ($openings as $opening): ?>
                 <?php if (empty($opening['job_title'])) continue; ?>
                 <div class="item flex md:wrap align-center justify-between b-0 bt-1 bc-hash solid py-30 relative">
-                    <h4 class="w-50 md:w-100 md:mb-15"><?= $opening['job_title']; ?></h4>
+                    <h4 class="h6 w-50 md:w-100 md:mb-15"><?= $opening['job_title']; ?></h4>
                     <div class="positions w-50 md:w-100"><?= $opening['no_of_positions']; ?></div>
                     <div class="experience w-25 md:w-100 mt-10"><?= $opening['experience']; ?></div>
                     <div class="apply-now w-25 md:w-100 flex align-center justify-end md:absolute md:right-0 md:bottom-28">
@@ -27,7 +27,7 @@
             </div>
 
             <?php if (!empty($header['sub_title'])): ?>
-            <h3 class="h4 mt-60 md:mt-30"><?= $header['sub_title']; ?></h3>
+            <h3 class="h6 mt-60 md:mt-30"><?= $header['sub_title']; ?></h3>
             <?php endif; ?>
             <?php if (!empty($header['content'])): ?>
             <p><?= $header['content']; ?></p>

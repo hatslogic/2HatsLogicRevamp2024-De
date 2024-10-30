@@ -31,11 +31,6 @@ footer {
     }
 }
 
-.whatsapp-widget {
-    animation: beat 0.5s infinite alternate;
-    transition: 0.5s all ease-in-out;
-}
-
 .clear-scroll {
     .whatsapp-widget {
         @include below($lg) {
@@ -43,16 +38,4 @@ footer {
         transition: 0.5s all ease-in-out;
     }
 }
-}
-
-@keyframes beat {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
