@@ -9,36 +9,40 @@
             width: 100%;
         }
 
-        &:first-child{
-            .testimonial{
-                padding-left: 0;
-            }
-        }
+        // &:first-child{
+        //     .testimonial{
+        //         padding-left: 0;
+        //     }
+        // }
     }
 }
 
 .testimonial{
-    width: rem(770);
+    width: rem(608);
 
-    @include above($xxxl){
-        width: rem(740);
+    // @include above($xxxl){
+    //     width: rem(740);
+    // }
+
+    @include below($xxl){ 
+        width: rem(608);
     }
 
-    @include below($xxl){
-        width: rem(680);
-    }
-
-    @include below($lg){
-        width: rem(560);
-    }
-
-    @include below($sm){
-        width: rem(420);
-    }
-
-    @include below($xs){
+    @include below($xl){
         width: 100%;
     }
+
+    // @include below($lg){
+    //     width: rem(560);
+    // }
+
+    // @include below($sm){
+    //     width: rem(420);
+    // }
+
+    // @include below($xs){
+    //     width: 100%;
+    // }
 
     .top{
         img{
