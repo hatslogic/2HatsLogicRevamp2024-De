@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <style>
-        #loading {
+        #loading, #cf7-loading {
             display: none; /* Hide the loading message initially */
         }
 
@@ -50,14 +50,46 @@
             width: 100px;               /* Length of the underline */
             margin: 10px auto;          /* Center the underline */
         }
+
+      .wpcf7-form-control-wrap {
+          width: 100%;
+      }
      </style>
     <?php wp_head(); ?>
 </head>
 <body class="bg-light">
-    <div class="container py-5">
+
+    <?php
+    $userCookieExist = '';
+    $seoToolDisplay = 'none';
+    if (isset($_COOKIE['seo-tool-user-submitted']) && $_COOKIE['seo-tool-user-submitted'] === 'true') {
+        $userCookieExist = $_COOKIE['seo-tool-user-submitted'];
+        $seoToolDisplay = 'block';
+    }
+    ?>
+    
+    <?php if (!$userCookieExist): ?>
+        <!-- User information form -->
+        <div class="container py-5" id="form-container">
+            <div class="bg-white shadow rounded p-5 mx-auto" style="max-width: 800px;">
+                
+                <?php echo do_shortcode( '[contact-form-7 id="2a35323" title="SEO Tool User Information"]' )  ?>
+
+                <div id="form-message" class="mt-3 text-center text-danger"></div>
+
+                <div id="cf7-loading" class="text-center text-primary fw-semibold mb-3 mt-4">
+                    Loading, please wait... <br><br>
+                    <i class="fa fa-spinner fa-pulse fa-3x" ></i>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <!-- URL search form --> 
+    <div class="container py-5" id="content-container" style="display:<?php echo $seoToolDisplay; ?>">
         <div class="bg-white shadow rounded p-5 mx-auto" style="max-width: 800px;">
             <div class="text-center">
-                <h1 class="fs-2 fw-bold text-primary">SEO Performance Checker</h1>
+                <h1 class="fs-2 fw-bold">Free Ai SEO Audit & Reporting Tool</h1>
                 <hr class="header-underline">
             </div>
             
@@ -95,7 +127,44 @@
     </script>
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        jQuery(document).ready(function($) {
 
+            document.addEventListener('wpcf7mailsent', function(event) {
+                $('#cf7-loading').show();
+
+                if (event.detail.contactFormId == '7880') { // Replace 7880 with your CF7 form ID
+                    console.log('Form submitted successfully!');
+
+                    var username = $('#name').val();
+                    var email = $('#email').val(); 
+
+                    $.ajax({
+                        url: '<?php echo admin_url('admin-ajax.php'); ?>', // Make sure 'ajax_object' is localized correctly.
+                        type: 'POST',
+                        data: {
+                            action: 'set_user_submitted_cookie',
+                            username: username,
+                            email: email,
+                        },
+                        success: function(response) {
+                            console.log(response);
+                            if (response.success) {
+                                $('#form-container').hide();
+                                $('#content-container').fadeIn();
+                            } else {
+                                $('#form-message').text(response.data.message);
+                            }
+                            $('#cf7-loading').hide();
+                        },
+                        error: function() {
+                            $('#form-message').text('An error occurred. Please try again.');
+                        }
+                    });
+                }
+            }, false);
+        });
+    </script>
     <?php wp_footer(); ?>
 </body>
 </html>
