@@ -60,6 +60,7 @@
 <body class="bg-light">
 
     <?php
+    $userInfoForm = get_field('user_information_form', 'option');
     $userCookieExist = '';
     $seoToolDisplay = 'none';
     if (isset($_COOKIE['seo-tool-user-submitted']) && $_COOKIE['seo-tool-user-submitted'] === 'true') {
@@ -67,13 +68,13 @@
         $seoToolDisplay = 'block';
     }
     ?>
-    
+
     <?php if (!$userCookieExist): ?>
         <!-- User information form -->
         <div class="container py-5" id="form-container">
             <div class="bg-white shadow rounded p-5 mx-auto" style="max-width: 800px;">
                 
-                <?php echo do_shortcode( '[contact-form-7 id="2a35323" title="SEO Tool User Information"]' )  ?>
+                <?php echo do_shortcode( '[contact-form-7 id="'.$userInfoForm->ID.'" title="SEO Tool User Information"]' )  ?>
 
                 <div id="form-message" class="mt-3 text-center text-danger"></div>
 
@@ -95,19 +96,8 @@
             
             <div id="inputSection" class="input-group mb-3 mt-5">
                 <div id="hideSection"></div>
-
-                <input 
-                    type="text" 
-                    id="urlInput" 
-                    placeholder="Enter website URL"
-                    class="form-control"
-                />  
-                <button
-                    id="checkBtn"
-                    class="btn btn-primary"
-                >
-                    Check SEO
-                </button>
+                <input type="text" id="urlInput" placeholder="Enter website URL" class="form-control" />  
+                <button id="checkBtn" class="btn btn-primary" > Check SEO </button>
             </div>
             <label>
                 <input type="checkbox" id="useOpenAPI"> Use AI SEO Check
@@ -133,14 +123,13 @@
             document.addEventListener('wpcf7mailsent', function(event) {
                 $('#cf7-loading').show();
 
-                if (event.detail.contactFormId == '7880') { // Replace 7880 with your CF7 form ID
-                    console.log('Form submitted successfully!');
+                if (event.detail.contactFormId == '<?php echo $userInfoForm->ID ?>') {
 
                     var username = $('#name').val();
                     var email = $('#email').val(); 
 
                     $.ajax({
-                        url: '<?php echo admin_url('admin-ajax.php'); ?>', // Make sure 'ajax_object' is localized correctly.
+                        url: '<?php echo admin_url('admin-ajax.php'); ?>',
                         type: 'POST',
                         data: {
                             action: 'set_user_submitted_cookie',
