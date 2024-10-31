@@ -146,7 +146,6 @@ h4,
   font-size: rem(28);
   line-height: rem(26);
   line-height: 1.23;  
-
   @include below($xxl) {
     font-size: rem(25);
   }
@@ -155,6 +154,9 @@ h4,
     font-size: rem(22);
   }
 }
+
+
+
 
 h5,
 .h5 {
@@ -166,6 +168,10 @@ h6,
 .h6 {
   font-size: rem(19); 
   line-height: 1.4;  
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    font-size: rem(24);
+  } 
+
 }
 
 p,
@@ -185,6 +191,9 @@ ol {
   @include below($xs) {
     font-size: rem(16);
   }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    font-size: rem(18);
+  } 
 }
 p{
   margin-top: .5rem;
