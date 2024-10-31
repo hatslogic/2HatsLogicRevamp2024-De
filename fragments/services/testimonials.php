@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 <section class="testimonials pt-100 pb-100 xs:pt-80 xs:pb-80 bg-light-grey">
-                <div class="container extend">
+                <div class="container">
                     <div class="title">
                          <h2>Testimonials</h2>
 

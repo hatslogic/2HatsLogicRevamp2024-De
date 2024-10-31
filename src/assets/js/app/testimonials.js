@@ -39,7 +39,7 @@ if(testimonials !== null){
             mode: "snap",
             rtl: false,
             breakpoints: {
-                "(max-width: 768px)": {
+                "(max-width: 1320px)": {
                     slides: {
                         perView: 1,
                         spacing: 0
