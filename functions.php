@@ -1075,6 +1075,8 @@ function enqueue_seo_tool_script() {
             'OPENAIKEY' => $openai_key,
             'OPENAIMODEL' => $openai_model
         ));
+
+        wp_enqueue_script('jquery');
     }
 }
 add_action('wp_enqueue_scripts', 'enqueue_seo_tool_script');
