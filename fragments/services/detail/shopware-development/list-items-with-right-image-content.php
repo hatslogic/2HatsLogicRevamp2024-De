@@ -34,7 +34,7 @@
                                 <?php } ?>    
                                 <div class="info">
                                     <?php if(!empty($item['title'])){ ?> 
-                                    <h3 class="h4 -mt-5"><?php echo $item['title'];?></h3>
+                                    <h3 class="h5 -mt-5"><?php echo $item['title'];?></h3>
                                     <?php } ?>
                                     <?php if(!empty($item['content'])) { ?>
                                     <p class="mt-10"><?php echo $item['content'];?></p>

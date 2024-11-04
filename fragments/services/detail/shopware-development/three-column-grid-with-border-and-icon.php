@@ -24,7 +24,7 @@
                        <?php } ?> 
                         <div class="info -mt-1">
                             <?php if(!empty($col['title'])) { ?>
-                            <h3 class="h4 transition font-bold mt-30"><?php echo $col['title']; ?></h3>
+                            <h3 class="h6 transition font-bold mt-30"><?php echo $col['title']; ?></h3>
                             <?php } ?> 
                             <?php if(!empty($col['content'])) { ?>   
                             <p><?php echo $col['content']; ?></p>
