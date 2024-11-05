@@ -11,7 +11,7 @@
 
                     </div>
                     <div class="content">
-                        <p class="mt-30"><?php echo $content; ?></p>
+                        <p class="mt-20"><?php echo $content; ?></p>
                         <?php if ($cta) { ?>
                         <div class="btn-group mt-30"> 
                             <a href="<?php echo $cta['url']; ?>" class="btn btn-primary"><?php echo $cta['title']; ?></a>
@@ -19,9 +19,9 @@
                         </div>
                         <?php } ?>
                         <?php if ($list) { ?>
-                        <h3 class="h4 mt-40"><?php echo $list_title; ?></h3>
+                        <h3 class="h4 mt-60"><?php echo $list_title; ?></h3>
 
-                        <ul class="no-bullets mt-30">
+                        <ul class="no-bullets mt-20">
                             <?php foreach ($list as $list_item) { ?>
                             <li class="mb-10 flex"> <i class="icomoon icon-check_circle fs-16 c-primary mt-4"></i> <span
                                     class="ml-8"><?php echo $list_item['list_item']; ?> </span>
@@ -54,13 +54,13 @@
     <div class="container mt-80 extend md:mt-40">
         <div class="content plugins flex xl:wrap slider-wrapper">
             <div class="slider-label w-min-30 flex align-center">
-                <h3 class="h3 b-0 br-2 xl:br-0 bc-primary h-auto solid pr-40"><?php echo $plugin['title']; ?></h3>
+                <h3 class="h4 b-0 br-2 xl:br-0 bc-primary h-auto solid pr-40"><?php echo $plugin['title']; ?></h3>
 
             </div>
             <div id="plugins" class="hats-slider horizontal ml-40 xl:ml-0 xl:mt-40">
               <?php foreach ($plugin['slider'] as $plugin) { ?>
                 <div class="hats-slider__slide h-100"> 
-                    <a href="<?php echo $plugin['url']; ?>" target="_blank" class="plugin c-secondary hover:c-primary min-w-px-340 sm:min-w-100 inline-flex h-100 mr-40 sm:mr-0 align-center b-1 bc-hash solid p-30 sm:p-20">
+                    <a href="<?php echo $plugin['url']; ?>" target="_blank" class="plugin c-secondary hover:c-primary min-w-px-340 sm:min-w-100 inline-flex h-100 mr-40 sm:mr-0 align-center b-1 bc-hash solid p-20 sm:p-20">
                         <div class="icon-wrap w-px-100">
                             <img src="<?php echo $plugin['logo']['url']; ?>" class="max-w-px-80 max-h-px-80 w-100" alt="logo" loading="lazy" width="100px" height="100px">
                         </div>

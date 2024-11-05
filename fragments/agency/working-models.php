@@ -18,7 +18,7 @@
                     <?php endif; ?>
                     <div class="info mt-40">
                         <?php if($working_model_1['title']): ?>
-                            <h3 class="h3 transition font-bold"><?php echo $working_model_1['title'] ?></h3>
+                            <h3 class="h6 transition font-bold"><?php echo $working_model_1['title'] ?></h3>
                         <?php endif; ?>
                         <span class="line block mt-10 mb-10 h-px-1 w-px-150 bc-primary solid b-0 bb-2"></span>
                         <?php if($working_model_1['description']): ?>

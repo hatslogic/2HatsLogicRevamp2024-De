@@ -14,7 +14,7 @@
                         <?php } ?>
                         <?php if ($content['description']) { ?>
                             <div class="content">
-                                <p class="mt-30"><?php echo $content['description']; ?></p>
+                                <p class="mt-20"><?php echo $content['description']; ?></p>
                             </div>
                         <?php } ?>
                     </div>

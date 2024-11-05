@@ -6,7 +6,7 @@
         <?php if ($title || $content) { ?>
         <div class="title">
             <?php if ($title) { ?>
-                <h2> <?php echo $title; ?> </h2>
+                <h2 class="mb-10"> <?php echo $title; ?> </h2>
             <?php } ?>
             <?php if ($content) { ?>
                 <p> <?php echo $content; ?> </p>
@@ -44,7 +44,7 @@
                         </div>
                         <div class="info mt-10">
                             <?php if ($name) { ?>
-                                <h3 class="h5 font-bold"><?php echo $name; ?></h3>
+                                <h3 class="h6 font-bold"><?php echo $name; ?></h3>
                             <?php } ?>
                             <?php if ($designation) { ?>
                                 <div class="font-light fs-14 mt-3"><?php echo $designation; ?></div>

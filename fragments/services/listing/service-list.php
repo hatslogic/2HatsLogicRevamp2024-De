@@ -4,7 +4,7 @@
         <?php if ($hero['title']|| $hero['description']): ?>
         <div class="title"> <span class="headline c-primary font-bold"><?php echo $hero['sub_title'] ?></span>
 
-            <h1 class="h1-sml"><?php echo $hero['title'] ?></h1>
+            <h1 class="h2"><?php echo $hero['title'] ?></h1>
 
             <p><?php echo $hero['description']; ?>
             </p>
@@ -22,7 +22,7 @@
                 <div class="col">
                     <div class="item">
                         <span class="fs-100 opacity-20 font-thin -ml-6 xs:fs-80"><?php echo $formatted_key; ?></span>
-                        <h4 class="h4 mt-15"><?php echo get_the_title($item->ID); ?></h4>
+                        <h4 class="h6 mt-15"><?php echo get_the_title($item->ID); ?></h4>
                         <p><?php echo truncate_text($desc, 120); ?></p>
                         <a href="<?php echo get_permalink($item->ID); ?>" class="link link-primary">Read More <i
                                 class="icomoon icon-chevron_right"></i></a>

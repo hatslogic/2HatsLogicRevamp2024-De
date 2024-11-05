@@ -465,9 +465,9 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
             }
 
             if ($is_compact) {
-                $a_classes = 'h4 inline-block font-bold w-100';
+                $a_classes = 'h6 inline-block font-bold w-100';
             } else {
-                $a_classes = 'h4 inline-block font-bold b-0 bb-1 bc-hash solid pb-20 md:bb-0 md:pb-0';
+                $a_classes = 'h6 inline-block font-bold b-0 bb-1 bc-hash solid pb-10 md:bb-0 md:pb-0';
             }
         } elseif ($depth === 2) {
             $li_classes = 'depth-2';

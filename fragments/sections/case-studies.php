@@ -48,7 +48,7 @@
                                     <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
                                 <?php } ?>
                                 <div class="info mt-20 xs:pl-20 xs:pr-20">
-                                    <h3 class="h5 transition font-regular">
+                                    <h3 class="h6 transition font-regular">
                                         <?php if ($title) { ?>
                                             <strong
                                                 class="transition font-bold"><?php echo truncate_text($title, 60, '...'); ?></strong>

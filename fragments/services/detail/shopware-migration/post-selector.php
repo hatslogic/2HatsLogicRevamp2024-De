@@ -5,11 +5,11 @@
     <div class="container">
         <div class="title"> <span class="headline c-primary font-bold"><?php echo $headline['sub_title']; ?></span>
 
-            <h2><?php echo $headline['title']; ?></h2>
+            <h2 class="mb-10"><?php echo $headline['title']; ?></h2>
 
             <p><?php echo $description; ?></p>
         </div>
-        <div class="content mt-50 xs:mt-30">
+        <div class="content mt-40 xs:mt-30">
             <div
                 class="grid grid-3 xl:grid-2 xs:grid-1 gap-35 xs:gap-20 xs:flex xs:nowrap xs:scroll-x xs:-ml-20 xs:-mr-20 scroll-snap">
 
@@ -37,7 +37,7 @@
                     ?>
                     <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
                             <div class="info mt-20 xs:pl-20 xs:pr-20">
-                                <h3 class="h5 transition font-regular"><strong
+                                <h3 class="h6 transition font-regular"><strong
                                         class="transition font-bold"><?php echo truncate_text($title, 60, '...'); ?>&colon;</strong>
                                     <?php echo ($description) ? '- '.truncate_text($description, 90) : ''; ?></h3>
                             </div>

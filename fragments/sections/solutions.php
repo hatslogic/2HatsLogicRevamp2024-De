@@ -21,7 +21,7 @@
                                 </div>
                                 <?php endif; ?>
                                 <div class="info mt-30">
-                                    <h3 class="h4 transition font-bold"><?php echo $technology['title']; ?></h3>
+                                    <h3 class="h6 transition font-bold"><?php echo $technology['title']; ?></h3>
                                     <p class="font-light"><?php echo truncate_text($technology['content'], 80, '...'); ?></p>
                                     <?php if ($technology['read_more']): ?>
                                         <a href="<?php echo $technology['read_more']['url']; ?>" aria-label="<?php echo $technology['title']; ?>" class="link link-primary"><?php echo $technology['read_more']['title']; ?>

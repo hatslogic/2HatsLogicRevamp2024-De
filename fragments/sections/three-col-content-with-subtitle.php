@@ -4,14 +4,14 @@
     <section class="should-you-migrate-to-sw6 <?php echo $bg_class;?>">
         <div class="container">
             <div class="title">
-                <h2><?php echo $title; ?></h2>
+                <h2 class="mb-10"><?php echo $title; ?></h2>
 
                 <p><?php echo $description; ?></p>
             </div>
             
-            <div class="content mt-50">
+            <div class="content mt-40">
             <?php if ($grid_title): ?>
-                <h3><?php echo $grid_title; ?></h3>
+                <h3 class="h4"><?php echo $grid_title; ?></h3>
             <?php endif; ?>
 
                 <div class="grid mt-40 grid-3 xl:grid-2 xs:grid-1 gap-60 xs:gap-30 xs:flex xs:wrap">
