@@ -1,6 +1,6 @@
 <?php extract($section); ?>
 
-<?php $rating = get_field('reviews', 'options'); ?>
+<?php $review_rating = get_field('reviews', 'options'); ?>
 <?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white'; ?>
 <section class="hero pt-60 relative <?php echo $bg_class; ?>">
     <div class="container relative z-1">
@@ -19,16 +19,33 @@
                         <p class="mt-30"><?php echo $description; ?></p>
                     </div>
                     <?php if ($cta || $modal) { ?>
-                    <div class="btn-group mt-40">
+                    <div class="btn-group flex align-center mt-60 md:mt-40 md:wrap md:column md:align-start">
                         <?php if ($action == 'modal') { ?>
                         <button onclick="openModal('<?php echo $modal['value']; ?>')"
-                            class="btn btn-moonstone"><?php echo $modal['label']; ?></a>
+                            class="btn btn-moonstone"><?php echo $modal['label']; ?></button>
                             <?php } ?>
 
                             <?php if ($action == 'link') { ?>
                             <a href="<?php echo $cta['url']; ?>"
                                 class="btn btn-moonstone"><?php echo $cta['title']; ?></a>
                             <?php } ?>
+
+                        <!-- rating -->
+                        <?php if ($rating): ?>
+                            <div class="rating flex align-center row ml-60 md:ml-0 md:mt-40 sm:column sm:align-start">
+
+                                <?php if ($rating): ?>
+                                    <div id="rating" class="logo-wrap grid grid-4 gap-30 ml-10 sm:ml-0 sm:mt-10 sm:flex sm:wrap sm:justify-start">
+                                        <?php foreach ($rating['items'] as $item): ?>
+                                            <a href="javascript:void(0)" aria-label="<?php echo $item['logo']['alt']; ?>"
+                                                 rel="noopener" class="rating-item flex align-center justify-center nowrap">
+                                                <img src="<?php echo $item['logo']['url']; ?>" alt="<?php echo $item['logo']['alt']; ?>" fetchpriority="high" class="md:max-w-px-80" width="120" height="60">
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif ?>
+                            </div>
+                        <?php endif; ?>    
                     </div>
                     <?php } ?>
                 </div>
@@ -57,32 +74,32 @@
                     <div class="review-block flex gap-20 md:mt-10 w-100 xs:wrap xs:w-100">
                         <p class="fs-16 c-primary"><?php echo $review['review']; ?></p>
                     </div>
-                    <?php if ($rating['rating'] || $rating['score']) { ?>
+                    <?php if ($review_rating['rating'] || $review_rating['score']) { ?>
                     <div class="google-rating flex justify-between align-center xs:wrap mt-15 xs:mt-10">
                         <div class="rating-score flex align-center gap-20">
-                            <?php if ($rating['platform']) { ?>
-                            <img src="<?php echo $rating['platform']['url']; ?>" class="w-px-100"
-                                alt="<?php echo $rating['platform']['alt']; ?>" class="w-px-80" width="80" height="16">
+                            <?php if ($review_rating['platform']) { ?>
+                            <img src="<?php echo $review_rating['platform']['url']; ?>" class="w-px-100"
+                                alt="<?php echo $review_rating['platform']['alt']; ?>" class="w-px-80" width="80" height="16">
                             <?php } else { ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/google-logo.svg"
                                 alt="google" class="w-px-80" alt="google" width="80" height="16">
                             <?php } ?>
-                            <?php if ($rating['rating']) { ?>
-                            <img src="<?php echo $rating['rating']['url']; ?>"
-                                alt="<?php echo $rating['rating']['alt']; ?>" class="w-px-90" width="90" height="18">
+                            <?php if ($review_rating['rating']) { ?>
+                            <img src="<?php echo $review_rating['rating']['url']; ?>"
+                                alt="<?php echo $review_rating['rating']['alt']; ?>" class="w-px-90" width="90" height="18">
                             <?php } else { ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/rating/star.svg"
                                 alt="star" class="w-px-90" width="90" height="18">
                             <?php } ?>
                         </div>
                         <div class="label fs-16 xs:mt-5">
-                            <?php echo esc_html($rating['score']); ?> based on
-                            <?php if (!empty($rating['link_to_review'])) { ?>
-                            <a href="<?php echo esc_url($rating['link_to_review']['url']); ?>" target="_blank"
+                            <?php echo esc_html($review_rating['score']); ?> based on
+                            <?php if (!empty($review_rating['link_to_review'])) { ?>
+                            <a href="<?php echo esc_url($review_rating['link_to_review']['url']); ?>" target="_blank"
                                 class="c-primary">
                                 <?php } ?>
-                                <?php echo esc_html($rating['total']); ?> reviews
-                                <?php if (!empty($rating['link_to_review'])) { ?>
+                                <?php echo esc_html($review_rating['total']); ?> reviews
+                                <?php if (!empty($review_rating['link_to_review'])) { ?>
                             </a>
                             <?php } ?>
                         </div>
@@ -90,6 +107,7 @@
                     <?php } ?>
                 </div>
                 <?php } ?>
+                
             </div>
             <?php if ($consultant['name'] || $form_selector) { ?>
             <div class="col w-40 md:w-100 md:mt-40">
