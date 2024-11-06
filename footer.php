@@ -192,7 +192,21 @@ if (!is_singular('help-desk') && !$disable_modals) {
 ?>
 
 <?php wp_footer(); ?>
-
+<script>
+<?php 
+$cf7_external_redirect_forms = get_field('cf7_external_redirect_forms', 'option');
+$cf7_external_redirect_link = get_field('cf7_external_redirect_link', 'option');
+// Convert PHP array to JSON for JavaScript
+$js_array = json_encode($cf7_external_redirect_forms ?: ['1000', '1001']);
+?>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    console.log('wpcf7mailsent');
+    if(!<?php echo $js_array; ?>.includes(event.detail.contactFormId)){
+        return;
+    }
+    location = '<?php echo get_permalink($cf7_external_redirect_link); ?>';
+}, false );
+</script>
 <script>
     var elements = document.querySelectorAll('section, header, footer, .service, .col, .content .info');
     var observer = new IntersectionObserver(function (entries) {
