@@ -210,7 +210,7 @@
                                 "id": ""
                             },
                             "choices": {
-                                "get-a-quote": "Legen Sie los",
+                                "get-a-quote": "Jetzt Kontaktieren",
                                 "free-consultation": "Kostenlose Konsultation",
                                 "hire-now": "Jetzt anstellen",
                                 "contact-us": "Kontakt"
@@ -4209,5 +4209,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730794946
+    "modified": 1730888824
 }
