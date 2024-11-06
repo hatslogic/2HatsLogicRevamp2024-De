@@ -84,7 +84,18 @@ function app_render_page_team()
         app_render_fragment('team'.DIRECTORY_SEPARATOR.$section_slug, compact('section_index', 'section_slug', 'section'));
     }
 }
+function app_render_page_thankyou()
+{
+    if (!$sections = get_field('thankyou')) {
+        return;
+    }
 
+    foreach ($sections as $section_index => $section) {
+        $section_slug = str_replace('_', '-', $section['acf_fc_layout']);
+
+        app_render_fragment('thankyou'.DIRECTORY_SEPARATOR.$section_slug, compact('section_index', 'section_slug', 'section'));
+    }
+}
 function app_render_page_services()
 {
     if (!$sections = get_field('services')) {
