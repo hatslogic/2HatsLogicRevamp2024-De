@@ -332,6 +332,112 @@
                             ]
                         },
                         {
+                            "key": "field_6729d5032ae56",
+                            "label": "Rating",
+                            "name": "rating",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6729d5a62ae5c",
+                                    "label": "Label",
+                                    "name": "label",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_6729d5182ae57",
+                                    "label": "Items",
+                                    "name": "items",
+                                    "aria-label": "",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "pagination": 0,
+                                    "min": 0,
+                                    "max": 0,
+                                    "collapsed": "",
+                                    "button_label": "Add Row",
+                                    "rows_per_page": 20,
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_6729d5782ae5a",
+                                            "label": "URL",
+                                            "name": "url",
+                                            "aria-label": "",
+                                            "type": "url",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "parent_repeater": "field_6729d5182ae57"
+                                        },
+                                        {
+                                            "key": "field_6729d5892ae5b",
+                                            "label": "Logo",
+                                            "name": "logo",
+                                            "aria-label": "",
+                                            "type": "image",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "array",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": "",
+                                            "preview_size": "medium",
+                                            "parent_repeater": "field_6729d5182ae57"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
                             "key": "field_664dcb7607866",
                             "label": "Form",
                             "name": "",
@@ -3892,6 +3998,7 @@
                                     "collapsed": "",
                                     "button_label": "Add Row",
                                     "rows_per_page": 20,
+                                    "parent_repeater": "field_66cdd6257aacf",
                                     "sub_fields": [
                                         {
                                             "key": "field_66cdd6867aad3",
@@ -3914,8 +4021,7 @@
                                             "new_lines": "",
                                             "parent_repeater": "field_66cdd67b7aad2"
                                         }
-                                    ],
-                                    "parent_repeater": "field_66cdd6257aacf"
+                                    ]
                                 }
                             ]
                         }
@@ -4103,5 +4209,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724932109
+    "modified": 1730794946
 }
