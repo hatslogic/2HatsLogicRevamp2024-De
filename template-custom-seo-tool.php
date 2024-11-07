@@ -229,8 +229,34 @@
         jQuery(document).ready(function($) {
 
             $('#checkBtn').click(function() {
-                $('#seo-img').hide(); // Fade out the #seo-img div
-                $('#content-container').addClass('w-100'); // Add class w-100 to #content-container
+            $('#seo-img').hide(); // Fade out the #seo-img div
+            $('#content-container').addClass('w-100'); // Add class w-100 to #content-container
+            
+            // Get the input value
+            const inputUrl = $('#urlInput').val().toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')  // Replace non-alphanumeric chars with hyphens
+                .replace(/^-+|-+$/g, '');     // Remove leading/trailing hyphens
+            if (inputUrl) {
+                // Get the current location
+                let baseUrl = window.location.toString();
+                
+                // If URL already contains 'analysis', remove everything after it
+                if (baseUrl.includes('/analysis/')) {
+                    baseUrl = baseUrl.split('/analysis/')[0] + '/analysis/';
+                } else {
+                    baseUrl = baseUrl + 'analysis/';
+                }
+
+                // Construct the new URL
+                const newUrl = baseUrl + encodeURIComponent(inputUrl);
+                // Push the new state to browser history
+                history.pushState({ url: inputUrl }, '', newUrl);
+            }
+        });
+
+            // Add popstate event listener to handle browser back/forward
+            $(window).on('popstate', function(event) {
+                window.location.href = window.location.origin + '/seo-tool/';
             });
 
             document.addEventListener('wpcf7mailsent', function(event) {
