@@ -240,12 +240,14 @@
                         success: function(response) {
                             console.log(response);
                             if (response.success) {
-                                $('#form-container').hide();
-                                $('#content-container').fadeIn();
+                                setTimeout(() => {
+                                    $('#form-container').hide();
+                                    $('#content-container').fadeIn();
+                                }, 3000);
                             } else {
                                 $('#form-message').text(response.data.message);
                             }
-                            $('#cf7-loading').hide();
+                            
                         },
                         error: function() {
                             $('#form-message').text('An error occurred. Please try again.');
