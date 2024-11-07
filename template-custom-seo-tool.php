@@ -116,10 +116,8 @@
         $seoToolDisplay = 'block';
     }
     ?>
-
-    <?php if (!$userCookieExist): ?>
     <!-- User information form -->
-    <div class="container py-5 pb-0" id="form-container">
+    <div class="container py-5 pb-0">
 
         <div class="contact-wrap bg-white transition show ">
             <div class="flex align-center justify-between md:wrap">
@@ -127,7 +125,8 @@
                     <img src="https://www.2hatslogic.com/wp-content/webp-express/webp-images/uploads/bis-images/7303/IMG_3599-1-840x840-f50_50.jpg.webp"
                         class="transition" loading="eager" fetchpriority="high" alt="" width="531" height="654">
                 </div>
-                <div class=" w-50 mr-50 xl:mr-30 md:mr-0 md:w-100 md:mt-0 animate">
+                <?php if (!$userCookieExist): ?>
+                <div class=" w-50 mr-50 xl:mr-30 md:mr-0 md:w-100 md:mt-0 animate" id="form-container">
 
 
 
