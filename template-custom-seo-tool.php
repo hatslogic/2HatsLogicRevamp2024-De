@@ -217,7 +217,7 @@
         jQuery(document).ready(function($) {
 
             $('#checkBtn').click(function() {
-                $('#seo-img').fadeOut(); // Fade out the #seo-img div
+                $('#seo-img').hide(); // Fade out the #seo-img div
                 $('#content-container').addClass('w-100'); // Add class w-100 to #content-container
             });
 
