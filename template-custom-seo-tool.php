@@ -57,8 +57,8 @@
     #hideSection {
         position: absolute;
         background: #d2d2d226;
-        height: 50px;
-        margin-top: -5px;
+        height: 57px;
+        margin-top: 0px;
         width: 100%;
         z-index: 10;
         display: none;
@@ -133,7 +133,7 @@
 
         <div class="contact-wrap bg-white transition show ">
             <div class="flex align-center justify-between md:wrap">
-                <div class=" w-50  md:mr-0 md:w-100 md:mt-0 animate" id="seo-img">
+                <div class=" w-50  md:mr-0 md:w-100 md:mt-0 animate md:hidden" id="seo-img">
                     <img src="https://www.2hatslogic.com/wp-content/webp-express/webp-images/uploads/bis-images/7303/IMG_3599-1-840x840-f50_50.jpg.webp"
                         class="transition" loading="eager" fetchpriority="high" alt="" width="531" height="654">
                 </div>
