@@ -223,7 +223,7 @@
 
             document.addEventListener('wpcf7mailsent', function(event) {
                 $('#cf7-loading').show();
-
+                $('#form-container form').hide();
                 if (event.detail.contactFormId == '<?php echo $userInfoForm->ID ?>') {
 
                     var username = $('#name').val();
@@ -240,6 +240,7 @@
                         success: function(response) {
                             console.log(response);
                             if (response.success) {
+                               
                                 setTimeout(() => {
                                     $('#form-container').hide();
                                     $('#content-container').fadeIn();
