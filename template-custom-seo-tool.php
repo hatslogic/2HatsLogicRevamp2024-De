@@ -57,8 +57,8 @@
     #hideSection {
         position: absolute;
         background: #d2d2d226;
-        height: 57px;
-        margin-top: 0px;
+        height: 50px;
+        margin-top: -5px;
         width: 100%;
         z-index: 10;
         display: none;
@@ -81,17 +81,15 @@
         width: 100%;
     }
 
-    #results .text-center.animate-pop-in.pop-in {
+    #results .text-center.animate-pop-in.pop-in{
         background: #14759c;
         color: #fff;
         margin-top: 2rem;
     }
-
-    #results .animate-pop-in.pop-in {
+    #results .animate-pop-in.pop-in{
         line-height: 1.2;
     }
-
-    #results .animate-pop-in.pop-in span {
+    #results .animate-pop-in.pop-in span{
         line-height: 2;
     }
     </style>
@@ -190,11 +188,10 @@
 
                 <div
                     class="footer-bottom flex align-center justify-between xs:wrap xs:column b-0 bt-1 py-30 xs:pb-50 bc-hash solid fs-14 xxl:fs-16">
-                    <div class="copyright xs:mt-20 md:w-100 md:align-center flex  justify-first md:justify-center ">©
-                        <span id="year">2024</span> 2Hats Logic Solutions
+                    <div class="copyright xs:mt-20 md:w-100 md:align-center flex  justify-first md:justify-center ">© <span id="year">2024</span> 2Hats Logic Solutions
                         Private Limited</div>
 
-                    <div class="social-media flex md:w-100 align-center justify-center fs-22 md:mt-20">
+                        <div class="social-media flex md:w-100 align-center justify-center fs-22 md:mt-20">
 
                         <a href="https://www.linkedin.com/company/2hats-logic" class="flex align-center" target="_blank"
                             aria-label="linkedin"> <i class="bi bi-linkedin"></i> </a>
@@ -237,7 +234,7 @@
             });
 
             document.addEventListener('wpcf7mailsent', function(event) {
-
+                
                 if (event.detail.contactFormId == '<?php echo $userInfoForm->ID ?>') {
 
                     var username = $('#name').val();
@@ -259,7 +256,7 @@
                             } else {
                                 $('#form-message').text(response.data.message);
                             }
-
+                            
                         },
                         error: function() {
                             $('#form-message').text('An error occurred. Please try again.');
