@@ -136,11 +136,6 @@
                         <?php echo do_shortcode( '[contact-form-7 id="'.$userInfoForm->ID.'" title="SEO Tool User Information"]' )  ?>
 
                         <div id="form-message" class="mt-3 text-center text-danger"></div>
-
-                        <div id="cf7-loading" class="text-center text-primary fw-semibold mb-3 mt-4">
-                            Loading, please wait... <br><br>
-                            <i class="fa fa-spinner fa-pulse fa-3x"></i>
-                        </div>
                     </div>
                 </div>
                 <?php endif; ?>
@@ -222,8 +217,7 @@
         jQuery(document).ready(function($) {
 
             document.addEventListener('wpcf7mailsent', function(event) {
-                $('#cf7-loading').show();
-                $('#form-container form').hide();
+                
                 if (event.detail.contactFormId == '<?php echo $userInfoForm->ID ?>') {
 
                     var username = $('#name').val();
@@ -240,11 +234,8 @@
                         success: function(response) {
                             console.log(response);
                             if (response.success) {
-                               
-                                setTimeout(() => {
-                                    $('#form-container').hide();
-                                    $('#content-container').fadeIn();
-                                }, 3000);
+                                $('#form-container').hide();
+                                $('#content-container').fadeIn();
                             } else {
                                 $('#form-message').text(response.data.message);
                             }
