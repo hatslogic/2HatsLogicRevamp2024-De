@@ -163,7 +163,7 @@
                         <div id="inputSection" class="input-group mb-3 mt-5">
                             <div id="hideSection"></div>
                             <input type="text" id="urlInput" placeholder="Enter website URL" class="form-control" />
-                            <button id="checkBtn" class="btn btn-primary"> Check SEO </button>
+                            <button id="checkBtn" class="btn btn-primary"> Audit </button>
                         </div>
                         <label>
                             <input type="checkbox" id="useOpenAPI"> Use AI SEO Check
