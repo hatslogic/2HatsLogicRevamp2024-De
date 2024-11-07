@@ -57,8 +57,8 @@
     #hideSection {
         position: absolute;
         background: #d2d2d226;
-        height: 50px;
-        margin-top: -5px;
+        height: 57px;
+        margin-top: 0px;
         width: 100%;
         z-index: 10;
         display: none;
