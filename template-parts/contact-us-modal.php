@@ -29,7 +29,7 @@ $get_dir = get_template_directory_uri();
                     <?php
                         $cropOptions = [
                             '(max-width: 768px)' => $mobile_aspectratio,
-                            '(min-width: 769px)' => [952, 696],
+                            '(min-width: 769px)' => [800, 800],
                         ];
                         $attributes = ['picturetag_class' => 'h-100 w-100 sm:w-100', 'class' => 'h-100 cover', 'loading' => 'lazy'];
                         ?>
