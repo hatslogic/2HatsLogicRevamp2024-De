@@ -4,7 +4,7 @@ $newsletter_image_mobile = get_field('newsletter_mobile', 'option');
 $form_selector = get_field('form_selector', 'option');
 ?>
 
-<section id="get-started" class="get-started bg-dark-primary c-white relative" id="get-started">
+<section id="get-started" class="get-started bg-dark-primary c-white relative">
     <?php if ($newsletter_image && $newsletter_image_mobile) { ?>
         
         <?php
