@@ -20,16 +20,16 @@ $get_dir = get_template_directory_uri();
                     <?php if ($free_consultation_image && $free_consultation_image_mobile) { ?>
                     
                     <?php
-                        $mobile_aspectratio = [430, 466];
+                        $mobile_aspectratio = [430, 430];
                         if ($free_consultation_image_mobile) {
-                            $mobile_aspectratio = [430, 466, $free_consultation_image_mobile['ID']];
+                            $mobile_aspectratio = [430, 430, $free_consultation_image_mobile['ID']];
                         }
                         ?>
 
                     <?php
                         $cropOptions = [
                             '(max-width: 768px)' => $mobile_aspectratio,
-                            '(min-width: 769px)' => [576, 701],
+                            '(min-width: 769px)' => [952, 696],
                         ];
                         $attributes = ['picturetag_class' => 'h-100 w-100 sm:w-100', 'class' => 'h-100 cover', 'loading' => 'lazy'];
                         ?>
