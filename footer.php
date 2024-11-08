@@ -182,7 +182,7 @@ if (!is_singular('help-desk') && !$disable_modals) {
     });
 </script>
 
-<script async>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
         var phoneInput = document.querySelectorAll("[type=tel]");
         function require(urls, callback) {
