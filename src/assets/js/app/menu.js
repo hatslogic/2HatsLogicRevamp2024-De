@@ -1,6 +1,6 @@
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.top-menu');
-const hasChild = document.querySelectorAll('.main-menu li.has-child a.mobile-toggle');
+const hasChild = document.querySelectorAll('.main-menu li.has-child .mobile-toggle');
 const menuHasChildEl = document.querySelectorAll('.main-menu>li.has-child');
 
 if (menuBtn !== null) {
