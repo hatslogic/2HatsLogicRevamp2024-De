@@ -36,6 +36,14 @@ $get_dir = get_template_directory_uri();
                     <?php echo hatslogic_get_attachment_picture($get_a_quote_image['ID'], $cropOptions, $attributes); ?>
 
                     <?php } ?>
+
+
+                    <div class="absolute p-20 c-white  bottom-0 left-0 w-100 shadow-name">
+                    <h4 class="mb-5">Aneesh Sreedharan</h4> 
+                    <span>CEO, 2Hats Logic Solutions.</span>
+                  </div>
+
+
                 </div>
                 <div class="col w-50 h-100 xs:h-auto md:w-100 md:h-auto p-60 md:px-20 md:pt-140 flex align-center md:block">
                     <div class="form-wrap">
