@@ -188,7 +188,7 @@
 
                 <div
                     class="footer-bottom flex align-center justify-between xs:wrap xs:column b-0 bt-1 py-30 xs:pb-50 bc-hash solid fs-14 xxl:fs-16">
-                    <div class="copyright xs:mt-20 md:w-100 md:align-center flex  justify-first md:justify-center ">© <span id="year">2024</span> 2Hats Logic Solutions
+                    <div class="copyright xs:mt-20 md:w-100 md:align-center flex  justify-first md:justify-center ">© <span id="year">2024 </span> 2Hats Logic Solutions
                         Private Limited</div>
 
                         <div class="social-media flex md:w-100 align-center justify-center fs-22 md:mt-20">
