@@ -157,7 +157,7 @@
                     style="display:<?php echo $seoToolDisplay; ?>">
                     <div class="p-5 mx-auto">
                         <div class="text-left">
-                            <h2 class="h3">Free Ai SEO Audit & Reporting Tool</h2>
+                            <h2 class="h3">Free AI SEO Audit & Reporting Tool</h2>
                         </div>
 
                         <div id="inputSection" class="input-group mb-3 mt-5">
