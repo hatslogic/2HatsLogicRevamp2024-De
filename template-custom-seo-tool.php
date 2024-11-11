@@ -21,7 +21,13 @@
             width: 100% !important
         }
     }
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,400;1,100&display=swap');
 
+    .h3{
+        font-size: 2rem;
+        font-family: "Fira Sans", sans-serif;
+        font-weight: 500;
+    }
     #loading,
     #cf7-loading {
         display: none;
