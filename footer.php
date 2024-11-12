@@ -83,6 +83,19 @@ wp_nav_menu([
 ]);
 ?>
                         </div>
+                        <div class="menu-group mt-40">
+                            <a href="#" class="h4 font-bold">Tools</a>
+                            <?php
+wp_nav_menu([
+    'menu' => 'tools-menu',
+    'theme_location' => 'tools-menu',
+    'container' => false,
+    'menu_class' => 'no-bullets font-regular mt-20',
+    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+    'walker' => new FOOTER_Menu_Walker(),
+]);
+?>
+                        </div>
                     </div>
                 </div>
             </div>
