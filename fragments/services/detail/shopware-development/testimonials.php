@@ -2,7 +2,7 @@
 <?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white '; ?>
 <?php if ($posts): ?>
     <section class="testimonials <?php echo $bg_class;?>">
-        <div class="container extend">
+        <div class="container">
             <?php if ($title): ?>
                 <div class="title">
                     <h2><?php echo $title; ?></h2>
@@ -22,7 +22,7 @@
                             ?>
                             <div class="hats-slider__slide">
                                 <div
-                                    class="testimonial h-100 b-0 br-2 solid bc-hash pr-120 mr-120 xxl:pr-80 xxl:mr-80 xl:pr-60 xl:mr-60 xs:pr-0 xs:mr-0 xs:br-0">
+                                    class="testimonial h-100 b-0 br-2 solid bc-hash pr-80 mr-80 xl:pr-0 xl:mr-0 xl:br-0">
                                     <div class="top min-px-36 flex justify-between align-center mb-20 <?php $bg_enabled ? 'bg-light-grey' : 'bg-white'; ?>">
                                         <?php if ($brand): ?>
                                         <img class="order-2 max-w-px-80 max-h-px-40 md:max-w-px-60 md:max-h-px-30" src="<?php echo $brand['url']; ?>"

@@ -1,7 +1,7 @@
 <?php extract($section); ?>
 
 <section class="testimonials pt-100 pb-100 xs:pt-80 xs:pb-80 bg-light-grey">
-     <div class="container extend">
+     <div class="container">
     <?php if($title): ?>
         <div class="title">
             <h2><?php echo $title; ?></h2>
@@ -21,7 +21,7 @@
                             $quote = get_field('quote', $post->ID);
                         ?>   
                 <div class="hats-slider__slide">
-                        <div class="testimonial h-100 b-0 br-2 solid bc-hash pr-120 mr-120 xxl:pr-80 xxl:mr-80 xl:pr-60 xl:mr-60 xs:pr-0 xs:mr-0 xs:br-0">
+                        <div class="testimonial h-100 b-0 br-2 solid bc-hash pr-80 mr-80 xl:pr-0 xl:mr-0 xl:br-0">
                             <div class="top min-px-36 flex justify-between align-center mb-20 bg-light-grey">
                             <?php if($brand): ?>   
                             <img class="order-2 max-w-px-80 max-h-px-40 md:max-w-px-60 md:max-h-px-30" src="<?php echo $brand['url']; ?>" alt="<?php echo $brand['alt']; ?>" loading="lazy" width="100" height="100">
