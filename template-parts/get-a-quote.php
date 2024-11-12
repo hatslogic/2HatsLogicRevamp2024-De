@@ -1,5 +1,7 @@
 <?php
 $get_a_quote_image = get_field('get_a_quote_image', 'option');
+$get_a_quote_image_name = get_field('get_a_quote_image_name', 'option');
+$get_a_quote_image_position = get_field('get_a_quote_image_position', 'option');
 $get_a_quote_image_mobile = get_field('get_a_quote_image_mobile', 'option');
 $form_shortcode = get_field('get_a_quote_form_shortcode', 'option');
 $get_dir = get_template_directory_uri();
@@ -37,11 +39,12 @@ $get_dir = get_template_directory_uri();
 
                     <?php } ?>
 
-
+                    <?php if ($get_a_quote_image_name && $get_a_quote_image_position) { ?>
                     <div class="absolute p-20 c-white  bottom-0 left-0 w-100 shadow-name">
-                    <h4 class="mb-5">Aneesh Sreedharan</h4> 
-                    <span>CEO, 2Hats Logic Solutions.</span>
-                  </div>
+                        <h4 class="mb-5"><?php echo $get_a_quote_image_name; ?></h4> 
+                        <span><?php echo $get_a_quote_image_position; ?></span>
+                    </div>
+                    <?php } ?>
 
 
                 </div>
