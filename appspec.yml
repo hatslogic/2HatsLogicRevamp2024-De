@@ -16,3 +16,5 @@ hooks:
     - location: scripts/AfterInstall.sh
       timeout: 300
       runas: bitnami
+      commands:
+        - command: /bin/bash scripts/AfterInstall.sh
