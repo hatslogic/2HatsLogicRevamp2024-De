@@ -6,8 +6,8 @@ files:
 file_exists_behavior: OVERWRITE
 permissions:
   - object: /var/www/html/2hatslogic-wp/wp-content/themes/2hatslogic2024
-    owner: twohats
-    group: twohats
+    owner: bitnami
+    group: daemon
     type:
       - file
       - directory
@@ -15,4 +15,4 @@ hooks:
   AfterInstall:
     - location: scripts/AfterInstall.sh
       timeout: 300
-      runas: twohats
+      runas: bitnami
