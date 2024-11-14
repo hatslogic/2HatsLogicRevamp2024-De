@@ -67,7 +67,35 @@
 
 	<?php wp_head(); ?>
 
+	<script>
+		partytown = {
+			debug: false,
+			forward: ['dataLayer.push', 'gtag'],
+			apply: ['document', 'document.open', 'document.write', 'document.close'],
+			resolveUrl: function (url, location, type) {
+				if (type === 'script') {
+					if (url.href.includes('googletagmanager.com/gtm.js')) {
+						return new URL('https://www.2hatslogic.com/gtm-proxy/gtm.js?id=GTM-MMNRGHR');
+					} else if (url.href.includes('googletagmanager.com/gtag/js')) {
+						return new URL('https://www.2hatslogic.com/gtm-proxy/gtag/js?id=AW-793939830');
+					} else if (url.href.includes('googletagmanager.com/debug/bootstrap')) {
+						return new URL('https://www.2hatslogic.com/gtm-proxy/debug/bootstrap?id=GTM-MMNRGHR');
+					} else if (url.href.includes('connect.facebook.net/en_US/fbevents.js')) {
+						return new URL('https://www.2hatslogic.com/fb-proxy/fbevents.js');
+					} else if (url.href.includes('googleads.g.doubleclick.net/pagead/viewthroughconversion')) {
+						return new URL('https://www.2hatslogic.com/google-ads-proxy/pagead/viewthroughconversion' + url.search);
+					} else if (url.href.includes('https://www.google-analytics.com/collect')) {
+						return new URL('https://www.2hatslogic.com/ga-proxy/collect' + url.search);
+					} else if (url.href.includes('connect.facebook.net/signals/config')) {
+						return new URL('https://www.2hatslogic.com/fb-proxy/signals/config' + url.search);
+					}
+				}
+				return url;
+			}
+		};
+  	</script>
 	<script src="/~partytown/partytown.js"></script>
+
 	<?php echo $gtm_head = get_field('gtm_head', 'options') ?? ''; ?>
 	
 	<?php
