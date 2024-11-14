@@ -2,12 +2,12 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/2hatslogic-wp-de/wp-content/themes/2hatslogic2024
+    destination: /opt/bitnami/wordpress/wp-content/themes/2hatslogic2024
 file_exists_behavior: OVERWRITE
 permissions:
-  - object: /var/www/html/2hatslogic-wp-de/wp-content/themes/2hatslogic2024
-    owner: twohats
-    group: twohats
+  - object: /opt/bitnami/wordpress/wp-content/themes/2hatslogic2024
+    owner: bitnami
+    group: bitnami-admins
     type:
       - file
       - directory
@@ -15,4 +15,4 @@ hooks:
   AfterInstall:
     - location: scripts/AfterInstall.sh
       timeout: 300
-      runas: twohats
+      runas: bitnami
