@@ -39,7 +39,7 @@ if(testimonials !== null){
             mode: "snap",
             rtl: false,
             breakpoints: {
-                "(max-width: 1320px)": {
+                "(max-width: 768px)": {
                     slides: {
                         perView: 1,
                         spacing: 0
@@ -47,9 +47,10 @@ if(testimonials !== null){
                 }
             },
             slides: {
-                perView: "auto"
+                perView: 2,
+                spacing: 100
             },
         },
         [navigation]
     )
-}
+} 

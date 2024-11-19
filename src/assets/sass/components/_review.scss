@@ -18,3 +18,42 @@
         }
     }
 }
+.review-clients {
+    .col {
+        inline-size: none;
+        &:nth-child(4n) {
+            .card .review-box {
+                border-right-width: 0;
+                padding-right: 0;
+                @include below($lg) {
+                    border-right-width: 1px;
+                }
+            }
+        }
+        &:nth-child(3n) {
+            .card .review-box {
+                @include below($lg) {
+                    border-right-width: 0;
+                    padding-right: 0;
+                }
+                @include below($md) {
+                    border-right-width: 1px;
+                }
+            }
+        }
+        &:nth-child(2n) {
+            .card .review-box {
+                @include below($md) {
+                    border-right-width: 0;
+                }
+            }
+        }
+        &:nth-child(1n) {
+            .card .review-box {
+                @include below($xs) {
+                    border-right-width: 0;
+                }
+            }
+        }
+    }
+}
