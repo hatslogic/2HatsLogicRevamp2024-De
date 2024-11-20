@@ -42,7 +42,7 @@ if(testimonials !== null){
                 "(max-width: 768px)": {
                     slides: {
                         perView: 1,
-                        spacing: 0
+                        spacing: 20
                     },
                 }
             },
