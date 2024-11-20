@@ -44,14 +44,14 @@
         &:nth-child(2n) {
             .card .review-box {
                 @include below($md) {
-                    border-right-width: 0;
+                    border-right-width: 1;
                 }
             }
         }
         &:nth-child(1n) {
             .card .review-box {
                 @include below($xs) {
-                    border-right-width: 0;
+                    border-right-width: 1;
                 }
             }
         }
