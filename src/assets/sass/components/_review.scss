@@ -55,5 +55,10 @@
                 }
             }
         }
+        &:last-child{
+            .card .review-box{
+                border-right-width: 0;
+            }
+        }
     }
 }
