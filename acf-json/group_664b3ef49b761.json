@@ -65,6 +65,46 @@
             "append": ""
         },
         {
+            "key": "field_673c2d9024ebf",
+            "label": "Contact Form Image 1 Name",
+            "name": "contact_form_image_1_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_673c2daf24ec0",
+            "label": "Contact Form Image 1 Designation",
+            "name": "contact_form_image_1_designation",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_664b3f1f85c07",
             "label": "Contact Form 1 Description",
             "name": "form_1_description",
@@ -676,5 +716,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716214874
+    "modified": 1731997866
 }

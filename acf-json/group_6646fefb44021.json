@@ -28,6 +28,46 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_673c3779ac297",
+            "label": "Image Name",
+            "name": "get_started_image_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_673c3793ac298",
+            "label": "Image Designation",
+            "name": "get_started_image_designation",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6647004561309",
             "label": "Get started Image (Mobile)",
             "name": "get_started_image_mobile",
@@ -97,5 +137,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719484510
+    "modified": 1732000480
 }

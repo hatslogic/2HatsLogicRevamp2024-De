@@ -1,5 +1,7 @@
 <?php
 $get_a_quote_image = get_field('get_a_quote_image', 'option');
+$get_a_quote_image_name = get_field('get_a_quote_image_name', 'option');
+$get_a_quote_image_position = get_field('get_a_quote_image_position', 'option');
 $get_a_quote_image_mobile = get_field('get_a_quote_image_mobile', 'option');
 $form_shortcode = get_field('get_a_quote_form_shortcode', 'option');
 $get_dir = get_template_directory_uri();
@@ -36,6 +38,15 @@ $get_dir = get_template_directory_uri();
                     <?php echo hatslogic_get_attachment_picture($get_a_quote_image['ID'], $cropOptions, $attributes); ?>
 
                     <?php } ?>
+
+                    <?php if ($get_a_quote_image_name && $get_a_quote_image_position) { ?>
+                    <div class="absolute p-20 c-white  bottom-0 left-0 w-100 shadow-name">
+                        <h4 class="mb-5"><?php echo $get_a_quote_image_name; ?></h4> 
+                        <span><?php echo $get_a_quote_image_position; ?></span>
+                    </div>
+                    <?php } ?>
+
+
                 </div>
                 <div class="col w-50 h-100 xs:h-auto md:w-100 md:h-auto p-60 md:px-20 md:pt-140 flex align-center md:block">
                     <div class="form-wrap">
