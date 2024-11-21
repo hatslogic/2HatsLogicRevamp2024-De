@@ -20,7 +20,7 @@
                 <a href="<?php echo !empty($cert['link']) ? $cert['link'] : 'javascript:void(0)'  ?>">
                     
                     <img src="<?php echo $cert['image'];?>"
-                        class="max-w-px-340 max-h-px-150 xxl:max-w-px-280 xxl:max-h-px-140 w-100" alt="cert"
+                        class="h-px-120 sm:h-px-50" alt="cert"
                         loading="lazy" width="100px" height="100px">
                 </a>
                 <?php } ?>
