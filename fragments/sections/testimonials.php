@@ -40,7 +40,7 @@
                                             <?php endif; ?>       
                                         </div>
                                         <?php if ($quote): ?>
-                                        <blockquote class="font-quote m-0 fs-18 lh-1-5 sm:fs-16 sm:lh-1-5">
+                                        <blockquote class="font-quote m-0 fs-18 lh-1-5 sm:fs-17 sm:lh-1-5">
                                         <?php echo $quote; ?>
                                         </blockquote>
                                         <?php endif; ?>     
@@ -56,7 +56,7 @@
                                         </div>
                                         <?php endif;?>
                                         <div class="block">
-                                            <div class="author-name fs-18 font-bold mb-1"><?php echo $name; ?></div>
+                                            <div class="author-name fs-18 sm:fs-17 font-bold mb-1"><?php echo $name; ?></div>
                                             <span class="designation font-light fs-16 lh-1-2 mt-5 inline-block"><?php echo $designation; ?></span>
                                         </div>
                                     </div>

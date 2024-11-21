@@ -3,7 +3,7 @@
 <?php if ($posts): ?>
     <section class="testimonials">
         <div class="container">
-        <div class=" grid grid-4 sm:flex sm:flex-wrap sm:overflow-auto  lg:grid-3 xl:grid-4 rg-40 cg-20 p-60 xs:p-30 relative mt-80 xs:mt-60 bg-light-grey review-clients">
+        <div class="grid grid-4 sm:flex sm:flex-wrap sm:overflow-auto lg:grid-3 xl:grid-4 rg-40 cg-20 p-60 xs:p-30 relative bg-light-grey review-clients scroll-snap">
                 <?php   
                     foreach ($posts as $post):
                     setup_postdata($post);
@@ -13,7 +13,7 @@
                     $quote_excert = get_field('quote_excert', $post->ID);
                     $rating = get_field('rating', $post->ID);
                 ?>
-                <div class="col sm:min-w-px-300">
+                <div class="col snap-center sm:min-w-px-280">
                     <div class="card xs:w-100 flex align-start">
                         <div class="review-box flex wrap h-100 align-content-between b-0 br-1 solid bc-hash pr-20 xs:pr-0">
                             <?php if( $quote_excert ):?>
