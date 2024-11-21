@@ -1034,3 +1034,57 @@ function add_blog_to_post_permalink($permalink, $post, $leavename) {
     return $permalink;
 }
 add_filter('post_link', 'add_blog_to_post_permalink', 10, 3);
+
+/** Enqueue script files for SEO Tool */
+function enqueue_seo_tool_script() {
+    
+    if (is_page_template('template-custom-seo-tool.php')) {
+        
+        wp_enqueue_script('seo-tool-script', get_template_directory_uri() . '/src/assets/js/seo-tool.js', array(), null, true);
+
+        // Check if constants are defined, otherwise provide empty values
+        $openai_url = defined('OPENAI_URL') ? OPENAI_URL : '';
+        $openai_key = defined('OPENAI_KEY') ? OPENAI_KEY : '';
+        $openai_model = defined('OPENAI_MODEL') ? OPENAI_MODEL : '';
+
+        // Localize the script to pass API URL and key securely
+        wp_localize_script('seo-tool-script', 'config', array(
+            'OPENAIURL' => $openai_url,
+            'OPENAIKEY' => $openai_key,
+            'OPENAIMODEL' => $openai_model
+        ));
+
+        wp_enqueue_script('jquery');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_seo_tool_script');
+
+// function to save user details in options and set cookie
+add_action('wp_ajax_nopriv_set_user_submitted_cookie', 'wp_set_user_submitted_cookie');
+add_action('wp_ajax_set_user_submitted_cookie', 'wp_set_user_submitted_cookie');
+
+function wp_set_user_submitted_cookie() {
+    // Validate and sanitize the data
+    $username = isset($_POST['username']) ? sanitize_text_field($_POST['username']) : '';
+    $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
+
+    if (!empty($username) && !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        // Return a success response
+        setcookie('seo-tool-user-submitted', 'true', time() + (7 * 24 * 60 * 60), "/"); // Cookie expires in 7 days
+        
+        $usersList = get_option( 'seo_tool_users_list', array());
+
+        if (!array_key_exists($email, $usersList)) {
+          $usersList[$email] = array(
+            'name' => $username,
+            'date' => date('Y-m-d H:i:sa')
+          );
+        }
+
+        wp_send_json_success(['message' => 'User details submitted']);
+    } else {
+        wp_send_json_error(['message' => 'Invalid input. Please fill in all fields correctly.']);
+    }
+
+    wp_die();
+}
