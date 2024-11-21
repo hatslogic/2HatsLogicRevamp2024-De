@@ -32,7 +32,7 @@
                 <div class="block w-100 mt-30">
 
                     <div
-                        class="author-name fs-23 font-bold mb-5"><?php echo $profile_name?></div>
+                        class="author-name fs-23 sm:fs-20 font-bold mb-5"><?php echo $profile_name?></div>
                     <span
                         class="designation fs-16 lh-1-2 mt-5 inline-block"><?php echo $profile_designation?></span>
                 </div>
