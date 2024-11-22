@@ -26,7 +26,7 @@
                         <button onclick="openModal('<?php echo $cta['modal']; ?>')" aria-label="get a quote" class="btn btn-secondary"><?php echo $cta['label'];?></button>
                      <?php } ?>
                      <?php if( $cta['action'] == 'link' ) { ?>    
-                        <a href="<?php echo $cta['link']['url']; ?>"  class="btn btn-secondary"><?php echo $cta['label']; ?></a>
+                        <a href="<?php echo $cta['link']['url']; ?>"  class="btn btn-orange"><?php echo $cta['label']; ?></a>
                      <?php } ?>
                 <?php } ?>    
                 <!-- rating -->
