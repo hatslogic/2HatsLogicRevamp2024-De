@@ -59,7 +59,7 @@ $dir = get_template_directory_uri();
                         <?php endif; ?>
                         <?php if($cta_block['button']): ?>
                             <div class="w-100 flex justify-center"> 
-                                <a href="<?php echo $cta_block['button']['url']; ?>" class="btn btn-primary text-center">
+                                <a href="<?php echo $cta_block['button']['url']; ?>" class="btn orange-btn text-center">
                                     <?php echo $cta_block['button']['title']; ?>
                                 </a>
                             </div>
