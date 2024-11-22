@@ -83,6 +83,10 @@ wp_nav_menu([
 ]);
 ?>
                         </div>
+                        <?php
+$tools_menu_items = wp_get_nav_menu_items('tools-menu');
+if ($tools_menu_items) {
+?>
                         <div class="menu-group mt-40">
                             <a href="#" class="h4 font-bold">Tools</a>
                             <?php
@@ -96,6 +100,8 @@ wp_nav_menu([
 ]);
 ?>
                         </div>
+                        <?php
+} ?>
                     </div>
                 </div>
             </div>
