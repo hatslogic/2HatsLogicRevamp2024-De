@@ -23,10 +23,10 @@
                 <div class="btn-group flex align-center mt-60 md:mt-40 md:wrap md:column md:align-start">
                 <?php if(!empty($cta['label'])) { ?>    
                     <?php if( $cta['action'] == 'modal' ) { ?>    
-                        <button onclick="openModal('<?php echo $cta['modal']; ?>')" aria-label="get a quote" class="btn btn-secondary"><?php echo $cta['label'];?></button>
+                        <button onclick="openModal('<?php echo $cta['modal']; ?>')" aria-label="get a quote" class="btn orange-btn"><?php echo $cta['label'];?></button>
                      <?php } ?>
                      <?php if( $cta['action'] == 'link' ) { ?>    
-                        <a href="<?php echo $cta['link']['url']; ?>"  class="btn btn-secondary"><?php echo $cta['label']; ?></a>
+                        <a href="<?php echo $cta['link']['url']; ?>"  class="btn orange-btn"><?php echo $cta['label']; ?></a>
                      <?php } ?>
                 <?php } ?>    
                 <!-- rating -->
