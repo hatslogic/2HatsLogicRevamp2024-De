@@ -3,7 +3,7 @@
 <?php if ($posts): ?>
     <section class="testimonials">
         <div class="container">
-        <div class="grid grid-4 sm:flex sm:flex-wrap sm:overflow-auto lg:grid-3 xl:grid-4 rg-40 cg-20 p-60 xs:p-30 relative bg-light-grey review-clients scroll-snap">
+        <div class="grid grid-4 sm:flex sm:flex-wrap sm:overflow-auto lg:grid-3 xl:grid-4 rg-40 cg-20 p-60 xs:p-30 relative review-clients scroll-snap bg-light-grey b-white  shadow-rating">
                 <?php   
                     foreach ($posts as $post):
                     setup_postdata($post);
