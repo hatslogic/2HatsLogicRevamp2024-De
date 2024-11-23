@@ -1,10 +1,10 @@
 <?php extract($section); ?>
-<?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white '; ?>
+<?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white shadow-rating'; ?>
 <?php if ($posts): ?>
 <section class="testimonials">
     <div class="container">
         <div
-            class="grid grid-4 sm:flex sm:flex-wrap sm:overflow-auto lg:grid-3 xl:grid-4 rg-40 cg-20 p-60 xs:p-30 relative review-clients scroll-snap bg-light-grey b-white  shadow-rating">
+            class="grid grid-4 sm:flex sm:flex-wrap sm:overflow-auto lg:grid-3 xl:grid-4 rg-40 cg-20 p-60 xs:p-30 relative review-clients scroll-snaps <?php echo $bg_class;?>">
             <?php   
                     foreach ($posts as $post):
                     setup_postdata($post);
