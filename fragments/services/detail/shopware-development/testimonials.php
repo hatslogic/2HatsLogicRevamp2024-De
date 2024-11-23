@@ -1,5 +1,5 @@
 <?php extract($section); ?>
-<?php $bg_class = $bg_enabled ? ' bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80 ' : ' bg-white shadow-rating'; ?>
+<?php $bg_class = $bg_enabled ? ' bg-light-grey ' : ' bg-white shadow-rating'; ?>
 <?php if ($posts): ?>
 <section class="testimonials">
     <div class="container">
