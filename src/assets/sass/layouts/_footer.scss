@@ -29,6 +29,16 @@ footer {
             }
         }
     }
+    .accreditation-de{
+        img{
+            max-width: rem(200);
+            max-height: rem(90);
+            @include below($lg) {
+                max-width: auto;
+                max-height: rem(80);
+            }
+        } 
+    }
 }
 
 

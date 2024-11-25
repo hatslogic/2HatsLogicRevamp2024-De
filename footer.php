@@ -101,7 +101,7 @@ wp_nav_menu([
             </div>
             <div class="col w-40 md:w-100 md:mt-40 flex justify-end md:justify-start sm:justify-center">
                 <div class="flex justify-between column sm:w-100 b-0 sm:bt-1 sm:pt-40 bc-hash solid xs:text-center">
-                    <div class="accreditation sm:w-50 xs:w-100">
+                    <div class="accreditation accreditation-de sm:w-50 xs:w-100">
                         <div class="h4 font-bold">Akkreditierung</div>
                         <div class="block xs:flex xs:justify-center">
                             <?php $badges = get_field('badges', 'option'); ?>

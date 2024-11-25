@@ -2,7 +2,7 @@
 
 <?php $review_rating = get_field('reviews', 'options'); ?>
 <?php $bg_class = $bg_enabled ? 'bg-light-grey pt-100 pb-100 xs:pt-80 xs:pb-80' : 'bg-white'; ?>
-<section class="hero pt-60 pb-100 xs:pb-80 relative <?php echo $bg_class; ?>">
+<section class="hero pt-60 relative <?php echo $bg_class; ?>">
     <div class="container relative z-1">
         <div class="flex align-start justify-between md:wrap">
             <div class="col w-50 md:w-100">
@@ -148,7 +148,7 @@
             <?php } ?>
         </div>
     </div>
-    <div class="bg-shape h-100 pb-0 overflow-hidden absolute z-0 right-0 top-0 w-50">
+    <div class="bg-shape h-100 pb-0 absolute z-0 right-0 top-0 w-50 md:hidden">
         <picture class="shape absolute -top-10">
             <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.webp 2x" media="(min-width: 768px)" type="image/webp">
             <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.webp 2x" media="(max-width: 767px)" type="image/webp">
