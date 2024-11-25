@@ -21,6 +21,7 @@
                                 <blockquote class="font-quote m-0 fs-16 lh-1-35"><?php echo $quote_excert;?></blockquote>
                             </div>
                             <?php endif;?>
+                            <div class="w-100">
                             <?php if( $rating ):?>
                             <div class="google-rating flex justify-between align-center xs:wrap mt-15 xs:mt-10 w-100">
                                 <div class="rating-score flex align-center gap-20">
@@ -45,6 +46,7 @@
                                         <span class="designation font-light fs-14 lh-1-2 mt-5 inline-block"><?php echo $designation; ?></span>
                                     </div>
                                 
+                                </div>
                             </div>
                         </div>
                     </div>
