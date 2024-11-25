@@ -14,7 +14,7 @@
                     $rating = get_field('rating', $post->ID);
                 ?>
                 <div class="col snap-center sm:min-w-px-280">
-                    <div class="card xs:w-100 flex align-start">
+                    <div class="card xs:w-100 flex align-start h-100">
                         <div class="review-box flex wrap h-100 align-content-between b-0 br-1 solid bc-hash pr-20 xs:pr-0">
                             <?php if( $quote_excert ):?>
                             <div class="w-100">
