@@ -143,6 +143,26 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_674493c48e3fa",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
+                        },
+                        {
                             "key": "field_664d8b45d9f3c",
                             "label": "Title",
                             "name": "title",
@@ -319,5 +339,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716363582
+    "modified": 1732547664
 }
