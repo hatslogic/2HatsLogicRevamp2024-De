@@ -3485,7 +3485,7 @@
                 "layout_664ef04cdfe0d": {
                     "key": "layout_664ef04cdfe0d",
                     "name": "testimonials",
-                    "label": "Testimonials",
+                    "label": "Testimonials With Rating",
                     "display": "row",
                     "sub_fields": [
                         {
@@ -4239,5 +4239,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732177931
+    "modified": 1732279792
 }

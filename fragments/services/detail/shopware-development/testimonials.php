@@ -1,11 +1,10 @@
 <?php extract($section); ?>
-<?php $bg_class = $bg_enabled ? ' bg-light-grey ' : ' bg-white shadow-rating'; ?>
+<?php $bg_class = $bg_enabled ? ' bg-light-grey' : 'b-white  shadow-rating'; ?>
 <?php if ($posts): ?>
-<section class="testimonials">
-    <div class="container">
-        <div
-            class="grid grid-4 sm:flex sm:flex-wrap sm:overflow-auto lg:grid-3 xl:grid-4 rg-40 cg-20 p-60 xs:p-30 relative review-clients scroll-snaps <?php echo $bg_class;?>">
-            <?php   
+    <section class="testimonials">
+        <div class="container">
+        <div class="grid grid-4 sm:flex sm:flex-wrap sm:overflow-auto lg:grid-3 xl:grid-4 rg-40 cg-20 p-60 xs:p-30 relative review-clients scroll-snap <?php echo $bg_class?>">
+                <?php   
                     foreach ($posts as $post):
                     setup_postdata($post);
                     $author_image = get_field('author_image', $post->ID);
