@@ -64,7 +64,7 @@
                             <img src="<?php echo $plugin['logo']['url']; ?>" class="max-w-px-80 max-h-px-80 w-100" alt="logo" loading="lazy" width="100px" height="100px">
                         </div>
                         <div class="item-title ml-20">
-                            <h4 class="fs-20 xs:fs-18 font-regular lh-1-25"><?php echo $plugin['name']; ?></h4>
+                            <h4 class="fs-18 font-regular lh-1-25"><?php echo $plugin['name']; ?></h4>
                         </div>
                     </a>
 
