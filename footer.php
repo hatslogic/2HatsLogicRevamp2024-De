@@ -271,8 +271,8 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
                     utilsScript: "<?php echo get_template_directory_uri(); ?>/dist/assets/js/utils.js?v=1.0.0",
                     separateDialCode: true,
                     autoHideDialCode: false,
-                    preferredCountries: ['us', 'gb', 'in'],
-                    initialCountry: 'us',
+                    preferredCountries: ['de', 'us', 'gb', 'in'],
+                    initialCountry: 'de',
                 });
                 });
             }
