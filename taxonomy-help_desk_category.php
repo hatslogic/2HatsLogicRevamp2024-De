@@ -59,6 +59,46 @@ get_header();
                     endif;
                     ?>
                     </div>
+                    <?php
+                    $paginate_links = paginate_links(
+                        [
+                            'format' => '?paged=%#%',
+                            'current' => max(1, get_query_var('paged')),
+                            'total' =>  $wp_query->max_num_pages,
+                            'prev_class' => 'prev',
+                            'next_class' => 'nexts',
+                            'prev_text' => '<i class="icomoon icon-chevron_left"></i>',
+                            'next_text' => '<i class="icomoon icon-chevron_right"></i>',
+                            'type' => 'array',
+                        ]
+                    );
+
+if ($paginate_links) {
+    ?>
+                        <nav class="pagination w-100 mt-40 flex justify-center">
+                            <ul class="mx-auto no-bullets flex fs-16 align-center">
+                                <?php foreach ($paginate_links as $link) { ?>
+                                    <!--Add new classes for links -->
+                                    <li class="px-10">
+                                        <?php
+                    $paginate_link = '';
+                                    if (strpos($link, 'prev') !== false || strpos($link, 'next') !== false) {
+                                        $paginate_link = str_replace('page-numbers', 'page-link slider-prev flex align-center justify-center transition no-decoration', $link);
+                                    } elseif (strpos($link, 'current') !== false) {
+                                        $paginate_link = str_replace('page-numbers', 'page-link current', $link);
+                                        $paginate_link = str_replace('<span', '<a', $paginate_link);
+                                        $paginate_link = str_replace('</span>', '</a>', $paginate_link);
+                                    } else {
+                                        $paginate_link = str_replace('page-numbers', 'page-link no-decoration', $link);
+                                    }
+                                    // $paginate_link = str_replace( 'page-numbers', 'page-link slider-next flex align-center justify-center transition no-decoration', $link );
+                                    echo $paginate_link;
+                                    ?>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </nav>
+                    <?php } ?>
                 </div>
                 <div
                     class="w-30 md:w-100 pl-30 b-0 bl-1 solid bc-hash md:pl-20 md:b-1 solid bc-hash md:p-30 sticky top-120 md:mt-30">
