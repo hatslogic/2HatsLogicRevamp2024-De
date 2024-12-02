@@ -28,8 +28,8 @@ $form_2_description = get_field('form_2_description');
                 <div class="col w-50 ml-50 xl:ml-30 md:ml-0 md:mt-40 md:w-100">
                     <div class="form-wrap">
                         <div class="title">
-                            <h1 class="h2"> <?php echo $form_1_title; ?></h1>
-                            <p class="opacity-70"><?php echo $form_1_description; ?></p>
+                            <h1 class="h2 min-w-100"> <?php echo $form_1_title; ?></h1>
+                            <p class="opacity-70 min-w-100"><?php echo $form_1_description; ?></p>
                         </div>
                         <div class="content">
                             <div class="switch-form-actions mt-40 xl:mt-30">
@@ -66,9 +66,9 @@ $form_2_description = get_field('form_2_description');
                 <div class="col w-50 ml-50 xl:ml-30 md:ml-0 md:mt-40 md:w-100">
                     <div class="form-wrap">
                         <div class="title">
-                            <h2><?php echo $form_2_title; ?></h2>
+                            <h2 class="min-w-100"><?php echo $form_2_title; ?></h2>
 
-                            <p class="opacity-70"><?php echo $form_2_description; ?></p>
+                            <p class="opacity-70 min-w-100"><?php echo $form_2_description; ?></p>
                         </div>
                         <div class="content">
                             <div class="switch-form-actions mt-40 xl:mt-30">
