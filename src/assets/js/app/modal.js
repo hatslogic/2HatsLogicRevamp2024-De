@@ -4,7 +4,7 @@ let idleTimer;
 const idleTime = 9000; // 9 seconds in milliseconds
 
 function openModal(name) {
-  if (name != "newsletter-subscription") {
+  if (name != "newsletter-subscription" || name != "offer-modal") {
     event.preventDefault();
   }
 
@@ -87,29 +87,34 @@ function closeModal(name) {
   body.classList.remove("disable-scroll");
   modal.classList.remove("show");
 
-  if (name == "newsletter-subscription") {
+  if (name == "newsletter-subscription" || name == "offer-modal") {
     // setCookie("modalClosed", "true", 7);
     modalClosed = true;
   }
 }
 
 
-// function resetIdleTimer() {
-//     clearTimeout(idleTimer);
-//     if (!modalClosed) {
-//       idleTimer = setTimeout(openNewsletterModal, idleTime);
-//     }
-// }
+function resetIdleTimer() {
+    clearTimeout(idleTimer);
+    if (!modalClosed) {
+      idleTimer = setTimeout(openOfferModal, idleTime);
+    }
+}
 
 function resetIdleTimer() {
   clearTimeout(idleTimer); // This removes any previous timer
-  // if (!modalClosed) {
-  //   idleTimer = setTimeout(openNewsletterModal, idleTime); // Start a new timer
-  // }
+  if (!modalClosed) {
+    idleTimer = setTimeout(openOfferModal, idleTime); // Start a new timer
+  }
 }
 
 
 function openNewsletterModal() {
     // Replace this with the actual function call to open your modal
     openModal("newsletter-subscription");
+}
+
+function openOfferModal() {
+  // Replace this with the actual function call to open your modal
+  openModal("offer-modal");
 }

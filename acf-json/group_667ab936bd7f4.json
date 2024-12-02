@@ -1,11 +1,11 @@
 {
     "key": "group_667ab936bd7f4",
-    "title": "Get a quote (Modal)",
+    "title": "Offer (Modal)",
     "fields": [
         {
             "key": "field_667ab936d0bbf",
-            "label": "Get a Quote Image",
-            "name": "get_a_quote_image",
+            "label": "Offer Modal Image",
+            "name": "offer_modal_image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -29,8 +29,8 @@
         },
         {
             "key": "field_667ab936d0bc9",
-            "label": "Get a Quote Image (Mobile)",
-            "name": "get_a_quote_image_mobile",
+            "label": "Offer Modal Image (Mobile)",
+            "name": "offer_modal_image_mobile",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -55,7 +55,7 @@
         {
             "key": "field_667ab936d0bd2",
             "label": "Form Shortcode",
-            "name": "get_a_quote_form_shortcode",
+            "name": "offer_modal_form_shortcode",
             "aria-label": "",
             "type": "post_object",
             "instructions": "",
@@ -79,6 +79,46 @@
             "bidirectional": 0,
             "ui": 1,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_6749a9e46f961",
+            "label": "Form title",
+            "name": "offer_modal_form_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6749aa056f962",
+            "label": "Form Description",
+            "name": "offer_modal_form_description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -99,5 +139,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719482911
+    "modified": 1732881060
 }

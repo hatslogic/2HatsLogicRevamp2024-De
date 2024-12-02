@@ -204,6 +204,7 @@ if (!is_singular('help-desk') && !$disable_modals) {
     get_template_part('template-parts/get-a-quote');
     get_template_part('template-parts/hire-now');
     get_template_part('template-parts/contact-us-modal');
+    get_template_part('template-parts/offer-modal');
 }
 // if(is_singular('post')){
 //     get_template_part('template-parts/newsletter-modal');
@@ -291,7 +292,9 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
         });
     });
 </script>
-
+<script>
+    
+</script>    
 <style>
 .iti__flag {
     background-image: url("<?php echo get_template_directory_uri(); ?>/dist/assets/img/flag/flags.png");
