@@ -15,7 +15,7 @@ $get_dir = get_template_directory_uri();
 					<img src="<?php echo $get_dir; ?>/dist/assets/img/brand/logo-wide.svg"
 						alt="<?php echo get_bloginfo('name'); ?>" class="w-100 w-100 max-w-px-106 max-h-px-48" width="106" height="48">
 				</a>
-                <button class="btn btn-secondary absolute xs:fixed z-1 top-20 right-20 close" onclick="closeModal('get-a-quote')">
+                <button class="btn btn-secondary absolute xs:fixed z-1 top-20 right-20 close" onclick="closeModal('offer-modal')">
                     <i class="icomoon icon-close"></i>
                 </button>
                 <div class="col w-50 h-100 xs:w-100 xs:h-50 md:hidden">
