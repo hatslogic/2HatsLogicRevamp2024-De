@@ -47,7 +47,7 @@ $form_2_description = get_field('form_2_description');
                                 <?php echo do_shortcode('[contact-form-7 id="'.$get_quote_form->ID.'"]'); ?>
                             <?php } ?>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>

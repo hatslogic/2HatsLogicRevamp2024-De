@@ -87,8 +87,8 @@ let offerModalShown = false;
 
 
 function openOfferModal() {
-  // Check if the offer modal has already been shown by reading the cookie
-  if (offerModalShown || document.cookie.includes("offerModalShown=true")) return;
+  // Check if the offer modal has already been shown using sessionStorage
+  if (offerModalShown || sessionStorage.getItem("offerModalShown")) return;
 
   const modal = document.getElementById('offer-modal');
   if (!modal) return;
@@ -96,8 +96,8 @@ function openOfferModal() {
   overlayModal.classList.add("active");
   body.classList.add("disable-scroll");
 
-  // Set a cookie to indicate the offer modal has been shown
-  document.cookie = "offerModalShown=true; path=/; max-age=604800"; // Cookie expires in 7 days
+  // Store in sessionStorage that the offer modal has been shown
+  sessionStorage.setItem("offerModalShown", "true");
 
   // close modal on escape
   window.addEventListener("keyup", function (e) {

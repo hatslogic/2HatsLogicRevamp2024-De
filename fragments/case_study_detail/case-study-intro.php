@@ -6,7 +6,7 @@
             <div class="title">
                 <h2><?php echo $title; ?></h2>
                 <?php if (!empty($location)) { ?>    
-                <div class="location c-primary mt-20">Client Location: <?php echo $location; ?></div>
+                <div class="location c-primary mt-20">Standort des Kunden: <?php echo $location; ?></div>
                 <?php } ?>
             </div>
             <?php } ?>

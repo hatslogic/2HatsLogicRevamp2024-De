@@ -39,12 +39,12 @@ $get_dir = get_template_directory_uri();
 
                     <?php } ?>
                 </div>
-                <div class="col w-50 h-100 xs:h-auto md:w-100 md:h-auto p-60 md:px-20 md:pt-140 flex align-center md:block">
+                <div class="col w-50 h-100 xs:h-auto md:w-100 md:h-auto p-60 md:px-20 md:pt-140 flex align-center md:block overflow-auto">
                     <div class="form-wrap">
                     
                     <div class=title>
                         <h2 class="h3"><?php echo $form_title;?></h2>
-                        <p><?php echo $form_description;?></p>
+                        <p class="min-w-100"><?php echo $form_description;?></p>
                     </div>
                     <div class=content>
                     <?php echo do_shortcode('[contact-form-7 id="'.$form_shortcode->ID.'"]'); ?>
