@@ -54,12 +54,12 @@ $dir = get_template_directory_uri();
 
                 <div class="container">
                     <div class="title text-center">
-                        <?php if($cta_block['text']): ?>
+                        <?php if($cta_block['text']): ?> 
                             <h3 class="h3 block mb-30 md:mb-20"><?php echo $cta_block['text']; ?></h3>
                         <?php endif; ?>
                         <?php if($cta_block['button']): ?>
                             <div class="w-100 flex justify-center"> 
-                                <a href="<?php echo $cta_block['button']['url']; ?>" class="btn btn-primary text-center">
+                                <a href="<?php echo $cta_block['button']['url']; ?>" class="btn orange-btn text-center">
                                     <?php echo $cta_block['button']['title']; ?>
                                 </a>
                             </div>
