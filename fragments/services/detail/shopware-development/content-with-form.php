@@ -93,7 +93,7 @@
             </div>
             <?php if ($consultant['name'] || $form_selector) { ?>
             <div class="col w-40 md:w-100 md:mt-40">
-                <div class="consultation-wrap b-1 bc-hash solid bg-white p-50 xs:p-30">
+                <div class="consultation-wrap bg-white p-50 xs:p-30 shadow-rating">
                     <h3 class="uppercase h4"><?php echo $form_title; ?></h3>
 
                     <p><?php echo $form_description; ?></p>
@@ -130,13 +130,15 @@
             <?php } ?>
         </div>
     </div>
-    <div class="bg-shape absolute z-0 right-0 top-0 w-60  h-px-500 md:w-80">
-        <picture class="shape w-100 absolute -top-10">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg2x.webp 2x" media="(min-width: 768px)" type="image/webp">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg-mobile.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg-mobile.webp 2x" media="(max-width: 767px)" type="image/webp">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg2x.jpg 2x" media="(min-width: 768px)" type="image/jpg">
-            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg-mobile.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg-mobile.jpg 2x" media="(max-width: 767px)" type="image/jpg">
-            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/shapes/shopware-bg.jpg" alt="shopware" width="100" height="100">
+    <div class="bg-shape h-100 pb-0 absolute z-0 right-0 top-0 w-50 md:hidden">
+        <picture class="shape absolute -top-10">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.webp 2x" media="(min-width: 768px)" type="image/webp">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.webp 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.webp 2x" media="(max-width: 767px)" type="image/webp">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.jpg 2x" media="(min-width: 768px)" type="image/jpg">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.jpg 1x, <?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.jpg 2x" media="(max-width: 767px)" type="image/jpg">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/img/service-bg.jpg" alt="shopware" width="100" height="100">
         </picture>
     </div>
+
+
 </section>
