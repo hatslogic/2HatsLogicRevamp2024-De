@@ -3,6 +3,26 @@
     "title": "Offer (Modal)",
     "fields": [
         {
+            "key": "field_67584dbb39d95",
+            "label": "Enable\/Disable",
+            "name": "offer_modal_enable",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_667ab936d0bbf",
             "label": "Offer Modal Image",
             "name": "offer_modal_image",
@@ -139,5 +159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733835914
+    "modified": 1733841332
 }
