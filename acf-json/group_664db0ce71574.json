@@ -501,6 +501,36 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6757f7d94ff4f": {
+                    "key": "layout_6757f7d94ff4f",
+                    "name": "ceo_message",
+                    "label": "CEO Message\t\t\t\t\t \t\t\t\t\t\t",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_6757f7f94ff55",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_664dca6e0785d": {
                     "key": "layout_664dca6e0785d",
                     "name": "content_with_image",
@@ -2260,5 +2290,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1722517512
+    "modified": 1733818404
 }
