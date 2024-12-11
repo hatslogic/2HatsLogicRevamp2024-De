@@ -2,6 +2,9 @@
     .hats-slider{
         cursor: grab;
     }
+    .horizontal{
+        align-items: stretch;
+    }
     .hats-slider__slide{
         // min-width: 52vw;
 
@@ -18,14 +21,14 @@
 }
 
 .testimonial{
-    width: rem(608);
+    width: rem(600);
 
     // @include above($xxxl){
     //     width: rem(740);
     // }
 
     @include below($xxl){ 
-        width: rem(608);
+        width: rem(600);
     }
 
     @include below($xl){

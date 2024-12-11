@@ -167,12 +167,16 @@ $privacy_policy_link = $footer_bottom['privacy_policy']['url'] ? $footer_bottom[
 global $wp_query;
 $postid = $wp_query->post->ID;
 $disable_modals = get_field('disable_modals', $postid);
+$offer_modal_enable = get_field('offer_modal_enable', 'option');
 if (!is_singular('help-desk') && !$disable_modals) {
     get_template_part('template-parts/free-consultation');
     get_template_part('template-parts/get-a-quote');
     get_template_part('template-parts/hire-now');
     get_template_part('template-parts/contact-us-modal');
-    get_template_part('template-parts/offers-modal');
+    
+}
+if($offer_modal_enable){
+    get_template_part('template-parts/offer-modal');
 }
 // if(is_singular('post')){
 //     get_template_part('template-parts/newsletter-modal');

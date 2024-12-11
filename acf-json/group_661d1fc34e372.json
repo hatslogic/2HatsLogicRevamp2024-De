@@ -1320,6 +1320,89 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67581e1c4b223": {
+                    "key": "layout_67581e1c4b223",
+                    "name": "testimonials-with-rating",
+                    "label": "Testimonials With Rating",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_67581e3e4b229",
+                            "label": "Enable Grey Background",
+                            "name": "bg_enabled",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_67581e5c4b22a",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_67581e884b22b",
+                            "label": "Posts",
+                            "name": "posts",
+                            "aria-label": "",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "testimonial"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "return_format": "object",
+                            "min": "",
+                            "max": "",
+                            "elements": "",
+                            "bidirectional": 0,
+                            "bidirectional_target": []
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_661e424550ce2": {
                     "key": "layout_661e424550ce2",
                     "name": "testimonials",
@@ -1565,5 +1648,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723034118
+    "modified": 1733828399
 }

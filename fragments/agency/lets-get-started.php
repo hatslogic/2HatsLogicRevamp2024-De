@@ -15,7 +15,7 @@
                 <?php endif; ?>
                 <?php if ($button): ?>
                     <div class="btn-group mt-40">
-                        <a href="<?php echo $button['url']; ?>" class="btn btn-primary"><?php echo $button['title']; ?></a>
+                        <a href="<?php echo $button['url']; ?>" class="btn orange-btn"><?php echo $button['title']; ?></a>
                     </div>
                 <?php endif; ?>
             </div>

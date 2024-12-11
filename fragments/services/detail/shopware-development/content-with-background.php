@@ -16,14 +16,14 @@
                                 <?php foreach ($repeated_content as $content): ?>
                                     <h3 class="h4 mt-40"><?php echo $content['title']; ?></h3>
 
-                                    <p><?php echo $content['content']; ?></p>
+                                    <p class="mt-15"><?php echo $content['content']; ?></p>
 
                                 <?php endforeach; ?>
                             <?php endif; ?>
                             <?php if ($button): ?>
                                 <div class="btn-group mt-30">
                                     <a href="<?php echo $button['url']; ?>"
-                                        class="btn btn-primary"><?php echo $button['title']; ?></a>
+                                        class="btn orange-btn"><?php echo $button['title']; ?></a>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -51,3 +51,5 @@
         </div>
     </div>
 </section>
+
+
