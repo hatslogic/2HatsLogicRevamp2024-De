@@ -346,6 +346,91 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_675c036e40e2b",
+            "label": "Sidebar Image CTA",
+            "name": "sidebar_image_cta",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "modal": "Modal",
+                "link": "Link"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_675c039a40e2c",
+            "label": "Sidebar Image CTA - Modal",
+            "name": "sidebar_image_cta_modal",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_675c036e40e2b",
+                        "operator": "==",
+                        "value": "modal"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "free-consultation": "Free Consultation",
+                "get-a-quote": "Get A Quote",
+                "hire-now": "Hire Now",
+                "contact-us": "Contact Us"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_675c03e440e2d",
+            "label": "Sidebar Image CTA - Link",
+            "name": "sidebar_image_cta_-_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_675c036e40e2b",
+                        "operator": "==",
+                        "value": "link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_66488a827902d",
             "label": "Single Blog",
             "name": "single_blog",
@@ -850,5 +935,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725254956
+    "modified": 1734083624
 }
