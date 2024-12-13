@@ -74,7 +74,7 @@ $link = get_field('sidebar_cta_link');
                      ];
             $attributes = ['class' => 'transition', 'loading' => 'lazy'];
             ?>
-                <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
+                <?php echo hatslogic_get_attachment_picture($image['ID'], $cropOptions, $attributes); ?>
             </div>
         </div>
         <?php } ?>
