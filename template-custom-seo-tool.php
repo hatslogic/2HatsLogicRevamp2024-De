@@ -132,6 +132,10 @@
 
     <?php
     $userInfoForm = get_field('user_information_form', 'option');
+    $left_image_id = get_field('seo_tool_left_image', 'option');
+    
+    $seo_tool_left_image = bis_get_attachment_image_src($left_image_id, [840,840],true);
+   
     $userCookieExist = '';
     $seoToolDisplay = 'none';
     if (isset($_COOKIE['seo-tool-user-submitted']) && $_COOKIE['seo-tool-user-submitted'] === 'true') {
@@ -145,8 +149,13 @@
         <div class="contact-wrap bg-white transition show ">
             <div class="flex align-center justify-between md:wrap">
                 <div class=" w-50  md:mr-0 md:w-100 md:mt-0 animate md:hidden" id="seo-img">
+                    <?php if(!$left_image_id) {?>
                     <img src="https://www.2hatslogic.com/wp-content/webp-express/webp-images/uploads/bis-images/7303/IMG_3599-1-840x840-f50_50.jpg.webp"
                         class="transition" loading="eager" fetchpriority="high" alt="" width="531" height="654">
+                    <?php }else{ ?>
+                        <img src="<?php echo webp(esc_url($seo_tool_left_image['src'])) ?>"
+                        class="transition" loading="eager" fetchpriority="high" alt="" width="531" height="654">
+                    <?php } ?>        
                 </div>
                 <?php if (!$userCookieExist): ?>
                 <div class=" w-50 mr-50 xl:mr-30 md:mr-0 md:w-100 md:mt-0 animate" id="form-container">
