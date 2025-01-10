@@ -1,6 +1,10 @@
 <?php
 $image = get_field('sidebar_image');
 $link = get_field('sidebar_cta_link');
+$sidebar_image_cta = get_field('sidebar_image_cta');
+$sidebar_image_cta_modal = get_field('sidebar_image_cta_modal');
+$sidebar_image_cta_link = get_field('sidebar_image_cta_link');
+$enable_sidebar_form = get_field('enable_sidebar_form');
 ?>
 
 <div class="w-30 md:w-100 md:mt-30 sticky top-120">
@@ -64,18 +68,24 @@ $link = get_field('sidebar_cta_link');
         
         <?php
         if ($image) { ?>
-        <div class="content">
-            <div class="w-100 py-30 md:pb-0">
-
-                <?php
-                     $cropOptions = [
-                         '(max-width: 768px)' => [390, 377],
-                         '(min-width: 769px)' => [347, 318],
-                     ];
+        <div class="block mt-30">
+        <?php if($sidebar_image_cta == 'modal') { ?>
+        <a href="javascript:void(0)" onclick="openModal('<?php echo $sidebar_image_cta_modal ?>')" aria-label="offers" >
+        <?php } ?> 
+        <?php if($sidebar_image_cta == 'link') { ?>
+        <a href="<?php echo $sidebar_image_cta_link['url']; ?>" aria-label="offers" >
+        <?php } ?> 
+            <?php
+            $cropOptions = [
+                '(max-width: 768px)' => [280, 316],
+                '(min-width: 769px)' => [315, 356],
+            ];
             $attributes = ['class' => 'transition', 'loading' => 'lazy'];
             ?>
-                <?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
-            </div>
+            <?php echo hatslogic_get_attachment_picture($image['ID'], $cropOptions, $attributes); ?>
+        <?php if(!empty($sidebar_image_cta)) { ?>
+        </a>
+        <?php } ?>      
         </div>
         <?php } ?>
     </div>
