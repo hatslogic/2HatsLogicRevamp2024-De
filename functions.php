@@ -207,7 +207,7 @@ if (defined('JETPACK__VERSION')) {
 /*
  * Disable gutenberg block editor
  */
-add_filter('use_block_editor_for_post', '__return_false', 10);
+// add_filter('use_block_editor_for_post', '__return_false', 10);
 
 // Register Sidebars
 // Note: In a child theme with custom app_setup_theme() this function is not hooked to widgets_init
