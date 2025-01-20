@@ -425,25 +425,8 @@ mark {
   }
 }
 
-.orange-btn{
-  background-color: var(--c-orange);
-  color: var(--c-black);
-  border: 1px solid var(--c-orange);
-  &:hover{
-    background-color: var(--c-orange-hover);
-   }
-}
 .shadow-rating{
   box-shadow:rgba(52, 52, 52, 0.1) 0px 0px 15px;
-}
-
-.orange-btn-outline{
-  background-color: var(--c-white);
-  color: var(--c-black);
-  border: 2px solid var(--c-orange);
-  &:hover{
-    background-color: var(--c-orange-hover);
-   }
 }
 
 .shadow-rating{
@@ -468,6 +451,21 @@ mark {
 
 .c-title-grey{
   color: var(--c-title-grey);
+}
+
+.c-breadcrumb-grey{
+  color: var(--c-breadcrumb-grey);
+}
+
+.border-grey-3{
+  border-color: var(--c-detail-border-grey);
+}
+
+.list-bullet{
+  width: 4px;
+  height: 4px;
+  background-color: var(--c-black);
+  border-radius: 50%;
 }
 
 .plugin-list {
