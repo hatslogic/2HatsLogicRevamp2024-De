@@ -284,3 +284,20 @@ $breakpoints: (
         };
     }
 }
+
+.orange-btn{
+    background-color: var(--c-orange);
+    color: var(--c-black);
+    border: 1px solid var(--c-orange);
+    &:hover{
+      background-color: var(--c-orange-hover);
+     }
+     &-outline{
+        background-color: var(--c-white);
+        color: var(--c-black);
+        border: 2px solid var(--c-orange);
+        &:hover{
+            background-color: var(--c-orange-hover);
+        }
+     }
+}
