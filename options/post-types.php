@@ -361,3 +361,117 @@ function register_resources() {
 }
 
 add_action( 'init', 'register_resources', 0 );
+
+
+// Register Products post type
+function register_products() {
+  
+	// Set UI labels for Custom Post Type
+	$labels = array(
+		'name'                => _x( 'Products', 'Post Type General Name', 'hatslogic' ),
+		'singular_name'       => _x( 'Product', 'Post Type Singular Name', 'hatslogic' ),
+		'menu_name'           => __( 'Products', 'hatslogic' ),
+		'parent_item_colon'   => __( 'Parent Product', 'hatslogic' ),
+		'all_items'           => __( 'Products', 'hatslogic' ),
+		'view_item'           => __( 'View Product', 'hatslogic' ),
+		'add_new_item'        => __( 'Add New Product', 'hatslogic' ),
+		'add_new'             => __( 'Add New', 'hatslogic' ),
+		'edit_item'           => __( 'Edit Product', 'hatslogic' ),
+		'update_item'         => __( 'Update Product', 'hatslogic' ),
+		'search_items'        => __( 'Search Product', 'hatslogic' ),
+		'not_found'           => __( 'Not Found', 'hatslogic' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'hatslogic' ),
+	);
+		  
+	// Set other options for Custom Post Type
+	$args = array(
+		'label'               => __( 'products', 'hatslogic' ),
+		'description'         => __( 'Showcase of products', 'hatslogic' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'page-attributes', 'comments', 'revisions', 'custom-fields', ),
+		'hierarchical'        => true,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		// 'menu_position'       => 30,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'post',
+		'query_var' 		  => true,
+		'show_in_rest'        => false,
+		'menu_icon' => 'dashicons-products',
+		// 'taxonomies' => array( 'category' ),
+		'rewrite' => [ 'slug' => 'products', 'with_front' => true ],
+	);
+		
+	// Registering your Custom Post Type
+	register_post_type( 'products', $args );
+
+}
+
+add_action( 'init', 'register_products', 0 );
+
+
+// Adding product_category taxonomy
+function register_products_category() {
+	$labels = array(
+		'name'              => _x( 'Product Categories', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Product Category', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Product Categories' ),
+		'all_items'         => __( 'All Product Categories' ),
+		'parent_item'       => __( 'Parent Product Category' ),
+		'parent_item_colon' => __( 'Parent Product Category:' ),
+		'edit_item'         => __( 'Edit Product Category' ),
+		'update_item'       => __( 'Update Product Category' ),
+		'add_new_item'      => __( 'Add New Product Category' ),
+		'new_item_name'     => __( 'New Product Category Name' ),
+		'menu_name'         => __( 'Product Category' ),
+	);
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'product-category' ),
+	);
+	register_taxonomy( 'product_category', array( 'products' ), $args );
+	
+}
+
+add_action( 'init', 'register_products_category' );
+
+// Register Product Tags taxonomy
+function register_products_tag() {
+    $labels = array(
+        'name'              => _x( 'Product Tags', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Product Tag', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Product Tags' ),
+        'all_items'         => __( 'All Product Tags' ),
+        'parent_item'       => null,
+        'parent_item_colon' => null,
+        'edit_item'         => __( 'Edit Product Tag' ),
+        'update_item'       => __( 'Update Product Tag' ),
+        'add_new_item'      => __( 'Add New Product Tag' ),
+        'new_item_name'     => __( 'New Product Tag Name' ),
+        'menu_name'         => __( 'Product Tags' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false, // Tags are non-hierarchical
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'update_count_callback' => '_update_post_term_count',
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'product-tag' ),
+    );
+
+    register_taxonomy( 'product_tag', array( 'products' ), $args );
+}
+
+add_action( 'init', 'register_products_tag' );
