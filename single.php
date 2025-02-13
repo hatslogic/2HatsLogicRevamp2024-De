@@ -118,19 +118,19 @@ if (get_field('show_callout')) {
 
 
 <script>
-	let idleTimer;
-	const idleTime = 9000;
+	let idleTimerBlog;
+	const idleTimeBlog = 9000;
 
 	function checkIdleTime() {
 		if (getCookie("modalClosed") !== "true") {
-			idleTimer = setTimeout(() => {
+			idleTimerBlog = setTimeout(() => {
 				openModal("newsletter-subscription");
-			}, idleTime);
+			}, idleTimeBlog);
 		}
 	}
 
 	function resetIdleTimer() {
-		clearTimeout(idleTimer);
+		clearTimeout(idleTimerBlog);
 		checkIdleTime();
 	}
 
