@@ -207,7 +207,7 @@ if (defined('JETPACK__VERSION')) {
 /*
  * Disable gutenberg block editor
  */
-add_filter('use_block_editor_for_post', '__return_false', 10);
+// add_filter('use_block_editor_for_post', '__return_false', 10);
 
 // Register Sidebars
 // Note: In a child theme with custom app_setup_theme() this function is not hooked to widgets_init
@@ -394,7 +394,7 @@ add_filter('jpeg_quality', function ($arg) {
 function wps_deregister_styles()
 {
     wp_dequeue_style('classic-theme-styles');
-    wp_dequeue_style('wp-block-library');
+    // wp_dequeue_style('wp-block-library');
     wp_dequeue_style('global-styles');
 }
 add_action('wp_print_styles', 'wps_deregister_styles', 100);
@@ -1088,3 +1088,6 @@ function wp_set_user_submitted_cookie() {
 
     wp_die();
 }
+
+//Adding block editor styles support
+add_theme_support( 'wp-block-styles' );
