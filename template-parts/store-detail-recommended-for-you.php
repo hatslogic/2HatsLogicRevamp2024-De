@@ -1,17 +1,17 @@
 <?php
-$relatedCategories = get_the_terms(get_the_ID(), 'product_category');
-$relatedCategoriesIds = wp_list_pluck($relatedCategories, 'term_id');
+// $relatedCategories = get_the_terms(get_the_ID(), 'product_category');
+// $relatedCategoriesIds = wp_list_pluck($relatedCategories, 'term_id');
 $args = array(
     'post_type'      => get_post_type(),
     'posts_per_page' => 6, 
     'post__not_in'   => array(get_the_ID()),
-    'tax_query'      => array(
-        array(
-            'taxonomy' => 'product_category',
-            'field'    => 'term_id',
-            'terms'    => $relatedCategoriesIds,
-        ),
-    ),
+    // 'tax_query'      => array(
+    //     array(
+    //         'taxonomy' => 'product_category',
+    //         'field'    => 'term_id',
+    //         'terms'    => $relatedCategoriesIds,
+    //     ),
+    // ),
 );
 
 $query = new WP_Query($args);
@@ -22,7 +22,7 @@ $query = new WP_Query($args);
         <div class="w-100 mt-70 mb-50">
             <div class="title mb-40 flex align-center justify-between wrap">
                 <h2>Recommended for you</h2>
-                <a href="#" aria-label="show-full-description" class="link link-primary underline block md:mt-16">View More</a>
+                <a href="<?php echo site_url( 'store' ) ?>" aria-label="show-full-description" class="link link-primary underline block md:mt-16">View More</a>
             </div>
             <div class="w-100 lg:w-100 grid grid-3 md:grid-2 xs:grid-1 cg-40 rg-40 bg-grey-2 p-30">
                 <?php 

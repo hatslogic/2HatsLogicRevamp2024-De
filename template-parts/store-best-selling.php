@@ -32,9 +32,14 @@
                 if ($productsQuery->have_posts()) {
                     while ($productsQuery->have_posts()) {
                         $productsQuery->the_post(); 
-                        $shortDescription = get_field('short_description',get_the_ID() ); ?>
+                        $shortDescription = get_field('short_description',get_the_ID() ); 
+                        $pluginStoreLink = get_field('shopware_store_url',get_the_ID() );
+
+                        if(empty($pluginStoreLink)) {
+                            $pluginStoreLink = get_permalink(get_the_ID());
+                        } ?>
                         
-                        <a href="#" class="item flex justify-content-start">
+                        <a href="<?php echo $pluginStoreLink; ?>" class="item flex justify-content-start">
                             <?php
                             if (has_post_thumbnail()) {
                                 $featured_image_id = get_post_thumbnail_id(get_the_ID());

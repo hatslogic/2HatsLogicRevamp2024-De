@@ -10,12 +10,11 @@ $category_slug = isset( $_GET['category'] ) && ($_GET['category'] !== 'Select') 
         <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url('/store/'); ?>">  
             <input type="search" placeholder="Search plugins..." class="p-10 b-1 solid border-grey-2 fs-14 w-100" 
                 value="<?php echo get_search_query(); ?>" name="search" aria-label="Search">
-                <!-- <button type="submit">
-                    <span class="fs-20 c-black bg-orange px-20 py-10 -ml-1">
-                        <i class="icomoon icon-search flex"></i>
-                    </span>
-                </button> -->
-
+            <button type="submit">
+                <span class="fs-20 c-black bg-orange px-20 py-10 -ml-1">
+                    <i class="icomoon icon-search flex"></i>
+                </span>
+            </button>
         </form>
       </div>
 
@@ -79,6 +78,7 @@ $category_slug = isset( $_GET['category'] ) && ($_GET['category'] !== 'Select') 
             while ($productsQuery->have_posts()) {
                 $productsQuery->the_post();
                 $pluginPrice = get_field('plugin_price',get_the_ID() );
+                $pluginStoreLink = get_field('shopware_store_url',get_the_ID() );
                 ?>
                 <div class="col card flex b-0 bt-1 br-1 solid border-grey-2 p-20">
                     <a href="<?php echo get_permalink() ?>" class="w-20">
@@ -107,10 +107,12 @@ $category_slug = isset( $_GET['category'] ) && ($_GET['category'] !== 'Select') 
                         </div>
                         <p class="c-secondary m-0"><?php echo get_the_content( get_the_ID() ) ?></p>
                     </div>
-                    <?php if($pluginPrice) { ?>
+                    <?php if(!empty($pluginPrice) && !empty($pluginStoreLink)) { ?>
                         <div class="btn-group mt-20">
-                            <button type="submit" aria-label="submit" class="btn orange-btn-outline">Buy From €<?php echo $pluginPrice ?></button>
+                            <a href="<?php echo $pluginStoreLink ?>" class="btn orange-btn-outline">Buy From €<?php echo $pluginPrice ?></a>
                         </div>
+                    <?php } else { ?>
+                            <a href="<?php echo get_the_permalink(get_the_ID()) ?>" class="btn orange-btn-outline">Learn More</a>
                     <?php } ?>
                     </div>
                 </div>
