@@ -85,3 +85,28 @@ if(caseStudySlider !== null){
         [dots]
     )
 }
+
+
+const buttons = document.querySelectorAll('.case-study-btn');
+const cards = document.querySelectorAll('.case-study-card');
+
+
+function caseStudyFilterFunction(category) {
+    cards.forEach(card => {
+        if (!category || card.getAttribute('data-category') === category) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+}
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelector('.active')?.classList.remove('active');
+        button.classList.add('active');
+        const category = button.getAttribute('data-category');
+        caseStudyFilterFunction(category);
+       
+    });
+});
+
