@@ -27,7 +27,7 @@
 
             <div class="case-study-filter mt-60">
                 <div class="case-study-buttons md:flex md:flex-wrap sm:overflow-auto relative scroll-snap">
-                    <button class="btn btn-secondary-outline min-w-auto mr-17 mb-20 white-space-nowrap case-study-btn active" data-category="">all</button>
+                    <button class="btn btn-secondary-outline min-w-auto mr-17 mb-20 white-space-nowrap case-study-btn active" data-category="all">all</button>
                     <?php 
                     if (!empty($terms) && !is_wp_error($terms)) :
                         foreach ($terms as $term) : ?>
@@ -49,6 +49,7 @@
              
                 <!-- Case Studies List -->
                 <div class="grid <?php echo $grid_col; ?> md:grid-2 xs:grid-1 cg-60 rg-60 pt-80 md:pt-50 xs:pt-20 md:rg-60">
+                    
                     <?php while ($case_studies_query->have_posts()) {
                         $case_studies_query->the_post(); 
                         $category_slug = '';

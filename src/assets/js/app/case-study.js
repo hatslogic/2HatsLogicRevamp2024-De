@@ -86,27 +86,32 @@ if(caseStudySlider !== null){
     )
 }
 
-
 const buttons = document.querySelectorAll('.case-study-btn');
 const cards = document.querySelectorAll('.case-study-card');
 
-
-function caseStudyFilterFunction(category) {
-    cards.forEach(card => {
-        if (!category || card.getAttribute('data-category') === category) {
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
-        }
-    });
-}
 buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        document.querySelector('.active')?.classList.remove('active');
-        button.classList.add('active');
-        const category = button.getAttribute('data-category');
-        caseStudyFilterFunction(category);
-       
-    });
+  button.addEventListener('click', () => {
+      const previousActive = document.querySelector('.active');
+      if (previousActive) {
+          previousActive.classList.remove('active');
+      }
+      button.classList.add('active');
+      const category = button.getAttribute('data-category');
+      caseStudyFilterFunction(category);
+  });
 });
+function caseStudyFilterFunction(category) {
+  cards.forEach(card => {
+      const categories = card.getAttribute('data-category')?.split(/\s*,\s*|\s+/) || []; // Split by comma or space
+
+      if (category === "all" || !category || categories.includes(category)) {
+          card.classList.remove('hidden'); // Remove hidden to start fade-in
+          void card.offsetWidth; // Force reflow to restart animation
+          card.classList.add('animate');
+      } else {
+          card.classList.remove('animate'); // Remove animate first
+          card.classList.add('hidden'); // Apply fade-out
+      }
+  });
+}
 
