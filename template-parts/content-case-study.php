@@ -90,8 +90,11 @@
                                        if (function_exists('yoast_get_primary_term')) {
                                         $primary_category = yoast_get_primary_term('category', get_the_ID());
                                         if ($primary_category) {
-                                      
                                         echo $primary_category;
+                                        }else {
+                                        if (!empty($categories) && !is_wp_error($categories)) {
+                                        echo esc_html($categories[0]->name);
+                                        }
                                         }
                                         }else{
                                         if (!empty($categories) && !is_wp_error($categories)) {
