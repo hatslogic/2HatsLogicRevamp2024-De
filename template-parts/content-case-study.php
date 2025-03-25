@@ -54,9 +54,10 @@
                         $case_studies_query->the_post(); 
                         $category_slug = '';
                         $categories = get_the_terms(get_the_ID(), 'category'); 
-                        if (!empty($categories) && !is_wp_error($categories)) {
-                            $category_slug = $categories[0]->slug;
-                        }?>
+                        $category_slug = (!empty($categories) && !is_wp_error($categories))
+                        ? implode(', ', array_map(function($cat) { return $cat->slug; }, $categories))
+                        : '';
+                        ?>
                         <div class="col card case-study-card" data-category="<?php echo $category_slug; ?>">
                             <a href="<?php the_permalink(); ?>" class="item">
                                 <?php if (has_post_thumbnail()) {
