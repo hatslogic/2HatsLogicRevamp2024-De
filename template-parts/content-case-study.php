@@ -15,6 +15,28 @@
             <?php } ?>
         </div>
         <div class="content">
+        <?php $terms = get_terms(array(
+                'taxonomy'   => 'category',
+                'hide_empty' => true,
+                'object_ids' => get_posts(array(
+                    'post_type'      => 'case-study',
+                    'posts_per_page' => -1,
+                    'fields'         => 'ids'
+                )),
+            )); ?>
+
+            <div class="case-study-filter mt-60">
+                <div class="case-study-buttons md:flex md:flex-wrap sm:overflow-auto relative scroll-snap">
+                    <button class="btn btn-secondary-outline min-w-auto mr-17 mb-20 white-space-nowrap case-study-btn active" data-category="alles">Alles</button>
+                    <?php 
+                    if (!empty($terms) && !is_wp_error($terms)) :
+                        foreach ($terms as $term) : ?>
+                            <button class="btn btn-secondary-outline min-w-auto mr-17 mb-20 white-space-nowrap case-study-btn" data-category="<?php echo $term->slug ?>"><?php echo $term->name ?></button>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+
             <?php
             $args = [
                 'post_type' => 'case-study',
@@ -27,9 +49,16 @@
              
                 <!-- Case Studies List -->
                 <div class="grid <?php echo $grid_col; ?> md:grid-2 xs:grid-1 cg-60 rg-60 pt-80 md:pt-50 xs:pt-20 md:rg-60">
-                    <?php while ($case_studies_query->have_posts()) {
-                        $case_studies_query->the_post(); ?>
-                        <div class="col card">
+                  
+                              <?php while ($case_studies_query->have_posts()) {
+                                $case_studies_query->the_post(); 
+                                $category_slug = '';
+                                $categories = get_the_terms(get_the_ID(), 'category'); 
+                                $category_slug = (!empty($categories) && !is_wp_error($categories))
+                                ? implode(', ', array_map(function($cat) { return $cat->slug; }, $categories))
+                                : '';
+                                ?>
+                                <div class="col card case-study-card" data-category="<?php echo $category_slug; ?>">
                             <a href="<?php the_permalink(); ?>" class="item">
                                 <?php if (has_post_thumbnail()) {
                                     $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'img_548x348');
@@ -57,11 +86,22 @@
                                 <?php } ?>
                                 <div class="info mt-30">
                                     <span class="headline c-primary uppercase font-bold mb-10 block fs-14">
-                                        <?php $categories = get_the_terms(get_the_ID(), 'category');
-                        if (!empty($categories) && !is_wp_error($categories)) {
-                            echo esc_html($categories[0]->name);
-                        }
-                        ?>
+                                    <?php
+                                       if (function_exists('yoast_get_primary_term')) {
+                                        $primary_category = yoast_get_primary_term('category', get_the_ID());
+                                        if ($primary_category) {
+                                        echo $primary_category;
+                                        }else {
+                                        if (!empty($categories) && !is_wp_error($categories)) {
+                                        echo esc_html($categories[0]->name);
+                                        }
+                                        }
+                                        }else{
+                                        if (!empty($categories) && !is_wp_error($categories)) {
+                                        echo esc_html($categories[0]->name);
+                                        }
+                                        }
+                                        ?>
                                     </span>
                                     <h3 class="h4 transition font-bold max-w-90 xs:max-w-100"><?php the_title(); ?></h3>
                                     <p class="font-light"><?php echo truncate_text(get_the_excerpt(), 130, '...'); ?></p>

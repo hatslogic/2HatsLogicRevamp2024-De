@@ -8,8 +8,20 @@
     </div>
 
     <div class="content">
+
+      <div class="case-study-filter mt-60"> 
+        <div class="case-study-buttons md:flex md:flex-wrap sm:overflow-auto relative scroll-snap">
+            <button class="btn btn-secondary-outline min-w-auto mr-17 mb-20 case-study-btn white-space-nowrap active" data-category="alles">all</button>
+            <button class="btn btn-secondary-outline min-w-auto mr-17 mb-20 case-study-btn white-space-nowrap" data-category="e-commerce">e-commerce 1</button>
+            <button class="btn btn-secondary-outline min-w-auto mr-17 mb-20 case-study-btn white-space-nowrap" data-category="ai-agents">ai agents</button>
+            <button class="btn btn-secondary-outline min-w-auto mr-17 mb-20 case-study-btn white-space-nowrap" data-category="software-development">software development</button>
+            <button class="btn btn-secondary-outline min-w-auto mr-17 mb-20 case-study-btn white-space-nowrap" data-category="custom-e-commerce">custom</button>
+            <button class="btn btn-secondary-outline min-w-auto mr-17 mb-20 case-study-btn white-space-nowrap" data-category="custom-e-commerce-development">custom e-commerce development</button>
+        </div>
+    </div>
+
       <div class="grid grid-2 md:grid-2 xs:grid-1 cg-60 rg-60 pt-80 md:pt-50 xs:pt-20 md:rg-60">
-        <div class="col card">
+        <div class="col card case-study-card" data-category="software-development">
           <a href="#" class="item">
             <picture>
               <source srcset="uploads/case-studies/casestudy1.webp" type="image/webp">
@@ -26,7 +38,7 @@
             </div>
           </a>
         </div>
-        <div class="col card">
+        <div class="col card case-study-card" data-category="e-commerce, ai-agents">
           <a href="#" class="item">
             <picture>
               <source srcset="uploads/case-studies/casestudy2.webp" type="image/webp">
@@ -43,7 +55,7 @@
             </div>
           </a>
         </div>
-        <div class="col card">
+        <div class="col card case-study-card" data-category="e-commerce">
           <a href="#" class="item">
             <picture>
               <source srcset="uploads/case-studies/casestudy3.webp" type="image/webp">
@@ -60,7 +72,7 @@
             </div>
           </a>
         </div>
-        <div class="col card">
+        <div class="col card case-study-card" data-category="ai-agents">
           <a href="#" class="item">
             <picture>
               <source srcset="uploads/case-studies/casestudy4.webp" type="image/webp">

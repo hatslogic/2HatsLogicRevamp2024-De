@@ -14,3 +14,4 @@
 //=require app/contact.js
 //=require app/team.js
 //=require app/toggle-transform.js
+//=require app/case-study.js
