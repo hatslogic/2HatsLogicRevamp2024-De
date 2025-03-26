@@ -1,9 +1,9 @@
 <?php extract($section); ?>
 <section class="works pb-100 xs:pb-80">
     <div class="container">
-        <?php if (!empty($title)) {?>
+        <?php if (!empty($section_title)) {?>
         <div class="title">
-        <h2><?php echo $title; ?></h2>
+        <h2><?php echo $section_title; ?></h2>
         </div>
         <?php } ?>
         <?php if (!empty($case_studies)) { ?>
