@@ -237,7 +237,8 @@ if($offer_modal_enable){
             }
         });
 
-        var styles = ["<?php echo includes_url("css/dist/block-library/style.min.css?ver=" . get_bloginfo('version')); ?>", 
+        var styles = ["<?php echo get_template_directory_uri(); ?>/dist/assets/css/wp.min.css?ver=3.6.9",
+        "<?php echo includes_url("css/dist/block-library/style.min.css?ver=" . get_bloginfo('version')); ?>", 
         "<?php echo plugins_url("ultimate-blocks/dist/blocks.style.build.css?ver=" . get_bloginfo('version')); ?>",
         "<?php echo plugins_url("urvanov-syntax-highlighter/themes/classic/classic.css?ver=" . get_bloginfo('version')); ?>",
         "<?php echo plugins_url("urvanov-syntax-highlighter/fonts/monaco.css?ver=" . get_bloginfo('version')); ?>",
