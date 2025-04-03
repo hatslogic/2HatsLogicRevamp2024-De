@@ -1113,3 +1113,68 @@ function wp_set_user_submitted_cookie() {
 
 //Adding block editor styles support
 add_theme_support( 'wp-block-styles' );
+
+function remove_plugin_styles_frontend() {
+    // Only run this on the frontend
+    if (!is_admin()) {
+        // Example: Remove styles from a specific plugin
+        wp_dequeue_style('ultimate_blocks-cgb-style-css');
+        wp_dequeue_style('ub-extension-style-css');
+        wp_deregister_style('ultimate_blocks-cgb-style-css');
+        wp_deregister_style('ub-extension-style-css');
+    }
+}
+add_action('wp_enqueue_scripts', 'remove_plugin_styles_frontend', 100);
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+add_action('wp_head', function() {
+    ob_start(function($html) {
+        return preg_replace(
+            '/<link[^>]*?id=[\'"](ub-extension-style-css-css|urvanov_syntax_highlighter-css|crayon-theme-classic-css|crayon-font-monaco-css)[\'"][^>]*?>/', 
+            '',
+            $html
+        );
+    });
+}, 1);
+
+add_action('wp_footer', function() {
+    ob_end_flush();
+}, 999);
+
+function filter_featured_image_admin_text( $content, $post_id, $thumbnail_id ){
+	// Only for posts and for non-administrators
+    if ('post' !== get_post_type($post_id)) {
+        return $content;
+    }
+
+    $help_text = '<div id="featured-image-help-text" style="padding:12px; margin-top:10px; background:#f0f0f1; border-left:4px solid #3858e9;"><p><strong>Featured Image Guidelines:</strong></p><ul style="margin-left:16px;list-style-type:disc;"><li>Recommended size: 2050x1038 pixels</li><li>Compress image before uploading (https://tinypng.com/)</li></ul></div>';
+    return $help_text . $content;
+}
+add_filter( 'admin_post_thumbnail_html', 'filter_featured_image_admin_text', 10, 3 );
+
+// Add help text to Featured Image in Block Editor
+add_action('admin_footer', 'add_featured_image_help_to_block_editor');
+
+function add_featured_image_help_to_block_editor() {
+    global $post;
+    
+    // Only for posts in block editor
+    if (!$post || 'post' !== $post->post_type || !function_exists('get_current_screen') || !get_current_screen()->is_block_editor()) {
+        return;
+    }
+
+    echo '
+    <script>
+    jQuery(document).ready(function($) {
+        function addFeaturedImageHelp() {
+            if ($(".editor-post-featured-image").length && !$("#featured-image-help-text").length) {
+                $(".editor-post-featured-image").append(\'<div id="featured-image-help-text" style="padding:12px; margin-top:10px; background:#f0f0f1; border-left:4px solid #3858e9;"><p><strong>Featured Image Guidelines:</strong></p><ul style="margin-left:16px;list-style-type:disc;"><li>Recommended size: 2050x1038 pixels</li><li>Compress image before uploading (https://tinypng.com/)</li></ul></div>\');
+            }
+        }
+        
+        // Run immediately and also when the editor updates
+        addFeaturedImageHelp();
+        wp.data.subscribe(addFeaturedImageHelp);
+    });
+    </script>
+    ';
+}
