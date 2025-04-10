@@ -988,7 +988,6 @@ function get_custom_srcset_sources($attachment_id) {
     
     return $sources;
 }
-add_filter('the_content', 'replace_image_classes_with_ids_and_convert_to_picture');
 
 // Crop Images Dynamically based on the aspect ratio and use in picture tags
 function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = [], array $attributes = []): ?string
