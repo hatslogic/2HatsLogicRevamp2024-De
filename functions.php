@@ -831,40 +831,163 @@ function aw_custom_add_image_size_names($sizes)
     ]);
 }
 
-function replace_image_classes_with_ids($content)
-{
-    // Match all image tags
+function replace_image_classes_with_ids_and_convert_to_picture($content) {
     preg_match_all('/<img[^>]+>/i', $content, $matches);
     $images = $matches[0];
 
     foreach ($images as $img) {
-        // Extract the image URL from each tag
-        preg_match('/src="([^"]+)/i', $img, $match);
-        $image_url = str_replace('src="', '', $match[0]);
-        // Remove the dimensions from the image URL (e.g., '-300x170')
-        $image_url = preg_replace('/-\d+x\d+(?=\.\w+$)/', '', $image_url);
+        // Extract attributes
+        preg_match_all('/(\w+)="([^"]*)"/', $img, $attr_matches);
+        $attributes = array_combine($attr_matches[1], $attr_matches[2]);
 
-        // Use the cleaned URL to get the attachment ID
-        $attachment_id = attachment_url_to_postid($image_url);
+        if (!isset($attributes['src'])) continue;
+        
+        $image_url = $attributes['src'];
+        $clean_url = preg_replace('/-\d+x\d+(?=\.\w+$)/', '', $image_url);
+        $attachment_id = attachment_url_to_postid($clean_url);
+        
+        if (!$attachment_id) continue;
 
-        // Extract the old class
-        preg_match('/wp-image-\d+/', $img, $class_match);
+		preg_match('/wp-image-\d+/', $img, $class_match);
 
-        // If an attachment ID was found, extract the old class and replace it in the content
+        // If an attachment ID was found, extract the old class
+        $new_class = '';
         if ($attachment_id && !empty($class_match)) {
-            $old_class = $class_match[0]; // This is the class you want to replace
-
-            // Define the new class with the correct ID
-            $new_class = 'wp-image-'.$attachment_id; // This is the new class with the correct ID
-
-            // Replace the old class with the new class in the content
-            $content = str_replace($old_class, $new_class, $content);
+            $old_class = $class_match[0];
+            $new_class = 'new-wp-image';
         }
-    }
+        // Get and process srcset
+        $srcset_sources = get_custom_srcset_sources($attachment_id);
+        
+        $full_size_url = wp_get_attachment_image_url($attachment_id, 'full');
 
+        // Start building picture tag
+        $picture_tag = '<picture>';
+        
+        // Add WebP and original sources
+        foreach ($srcset_sources as $source) {
+            // WebP version
+            $webp_url =  webp(esc_url($source['url']));
+            if ($webp_url !== $source['url']) {
+                $picture_tag .= sprintf(
+                    '<source %s srcset="%s" type="image/webp">',
+					esc_attr($source['descriptor']),
+                    esc_attr($webp_url)
+                );
+            }
+            
+            // Original version
+            $picture_tag .= sprintf(
+                '<source %s srcset="%s" type="%s">',
+				esc_attr($source['descriptor']),
+                esc_attr($source['url']),
+                wp_get_image_mime($source['url'])
+            );
+        }
+        
+        // Add fallback img
+        $img_attributes = '';
+        $attributes['loading'] = 'lazy';
+        foreach ($attributes as $name => $value) {
+            if ($name === 'class' && $new_class) {
+                // Replace the old class with the new one
+                $value = str_replace($old_class, $new_class, $value);
+            }
+            // Remove srcset/sizes as they're now in sources
+            if ($name !== 'srcset' && $name !== 'sizes' && $name !== 'decoding') {
+                $img_attributes .= sprintf(' %s="%s"', $name, esc_attr($value));
+            }
+        }
+        
+        // Use full size image for fallback
+        $picture_tag .= sprintf(
+            '<img src="%s"%s>',
+            esc_url($full_size_url),
+            $img_attributes
+        );
+        
+        $picture_tag .= '</picture>';
+        
+        // Replace in content
+        $content = str_replace($img, $picture_tag, $content);
+    }
+    
     return $content;
 }
-add_filter('the_content', 'replace_image_classes_with_ids');
+add_filter('the_content', 'replace_image_classes_with_ids_and_convert_to_picture');
+
+function get_custom_srcset_sources($attachment_id) {
+    $sources = [];
+    
+    // Get all available image sizes for this attachment
+    $metadata = wp_get_attachment_metadata($attachment_id);
+    if (empty($metadata['sizes'])) {
+        return $sources;
+    }
+    
+    // Base URL without size suffix
+    $base_url = wp_get_attachment_image_url($attachment_id, 'full');
+    $base_url = preg_replace('/-\d+x\d+(?=\.\w+$)/', '', $base_url);
+    
+    // Find our two target sizes
+    $target_sizes = [
+        '1024' => false,
+        '768' => false
+    ];
+    
+    // Check all available sizes
+    foreach ($metadata['sizes'] as $size_name => $size_data) {
+        $width = $size_data['width'];
+        
+        // Check for exact matches first
+        if ($width == 1024) {
+            $target_sizes['1024'] = $size_name;
+        } elseif ($width == 768) {
+            $target_sizes['768'] = $size_name;
+        }
+    }
+    
+    // If we didn't find exact matches, find the closest sizes
+    if (!$target_sizes['1024']) {
+        $closest = null;
+        foreach ($metadata['sizes'] as $size_name => $size_data) {
+            if (!$closest || abs(1024 - $size_data['width']) < abs(1024 - $closest['width'])) {
+                $closest = $size_data;
+                $target_sizes['1024'] = $size_name;
+            }
+        }
+    }
+    
+    if (!$target_sizes['768']) {
+        $closest = null;
+        foreach ($metadata['sizes'] as $size_name => $size_data) {
+            if (!$closest || abs(768 - $size_data['width']) < abs(768 - $closest['width'])) {
+                $closest = $size_data;
+                $target_sizes['768'] = $size_name;
+            }
+        }
+    }
+	 // Build the sources array
+    if ($target_sizes['768']) {
+        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['768']);
+        $sources[] =  [
+			'url' => $url,
+			'descriptor' => 'media=(max-width:768px)'
+		];
+    }
+   
+    if ($target_sizes['1024']) {
+        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['1024']);
+        $sources[] = [
+			'url' => $url,
+			'descriptor' => 'media=(min-width:769px)'
+		];
+    }
+    
+    
+    
+    return $sources;
+}
 
 // Crop Images Dynamically based on the aspect ratio and use in picture tags
 function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = [], array $attributes = []): ?string
