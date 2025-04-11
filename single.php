@@ -25,7 +25,7 @@ $disable_css = get_field('disable_css', get_the_ID());
 
 							$cropOptions = [
 								'(max-width: 768px)' => [200, 102],
-								'(min-width: 769px)' => [560, 283],
+								'(min-width: 769px)' => [520, 264],
 							];
 							$attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high', 'picturetag_class' => 'loader'];
 							?>
