@@ -859,8 +859,9 @@ function replace_image_classes_with_ids_and_convert_to_picture($content) {
         // Get and process srcset
         $srcset_sources = get_custom_srcset_sources($attachment_id);
         
-        $full_size_url = wp_get_attachment_image_url($attachment_id, 'full');
-        $metadata = wp_get_attachment_metadata($attachment_id);
+        $full_size_url = $srcset_sources['fallback_image']['url'];
+        $metadata = $srcset_sources['fallback_image']['sizes'];
+        unset($srcset_sources['fallback_image']);
 
         // Start building picture tag
         $picture_tag = '<picture>';
@@ -992,6 +993,10 @@ function get_custom_srcset_sources($attachment_id) {
 			'url' => $url,
 			'descriptor' => 'media=(min-width:769px)'
 		];
+        $sources['fallback_image'] = [
+            'url' => $url,
+            'sizes' =>$target_sizes['768']
+        ];
     }
     
     
