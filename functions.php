@@ -1260,11 +1260,21 @@ add_action('wp_enqueue_scripts', 'remove_plugin_styles_frontend', 100);
 add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 add_action('wp_head', function() {
     ob_start(function($html) {
-        return preg_replace(
+        
+        $html = preg_replace(
             '/<link[^>]*?id=[\'"](ub-extension-style-css-css|urvanov_syntax_highlighter-css|crayon-theme-classic-css|crayon-font-monaco-css)[\'"][^>]*?>/', 
             '',
             $html
         );
+        
+        // Remove the script with ID 'cookie-law-info-js'
+        $html = preg_replace(
+            '/<script[^>]*?id=[\'"]cookie-law-info-js[\'"][^>]*?>.*?<\/script>/s',
+            '',
+            $html
+        );
+       
+        return $html;
     });
 }, 1);
 
