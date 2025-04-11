@@ -941,7 +941,7 @@ function get_custom_srcset_sources($attachment_id) {
     // Find our two target sizes
     $target_sizes = [
         '1024' => false,
-        '768' => false
+        '300' => false
     ];
     
     // Check all available sizes
@@ -951,8 +951,8 @@ function get_custom_srcset_sources($attachment_id) {
         // Check for exact matches first
         if ($width == 1024) {
             $target_sizes['1024'] = $size_name;
-        } elseif ($width == 768) {
-            $target_sizes['768'] = $size_name;
+        } elseif ($width == 300) {
+            $target_sizes['300'] = $size_name;
         }
     }
     
@@ -967,18 +967,18 @@ function get_custom_srcset_sources($attachment_id) {
         }
     }
     
-    if (!$target_sizes['768']) {
+    if (!$target_sizes['300']) {
         $closest = null;
         foreach ($metadata['sizes'] as $size_name => $size_data) {
-            if (!$closest || abs(768 - $size_data['width']) < abs(768 - $closest['width'])) {
+            if (!$closest || abs(300 - $size_data['width']) < abs(300 - $closest['width'])) {
                 $closest = $size_data;
-                $target_sizes['768'] = $size_name;
+                $target_sizes['300'] = $size_name;
             }
         }
     }
 	 // Build the sources array
-    if ($target_sizes['768']) {
-        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['768']);
+    if ($target_sizes['300']) {
+        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['300']);
         $sources[] =  [
 			'url' => $url,
 			'descriptor' => 'media=(max-width:768px)'
