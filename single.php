@@ -24,8 +24,8 @@ $disable_css = get_field('disable_css', get_the_ID());
 							$featured_image_id = get_post_thumbnail_id(get_the_ID());
 
 							$cropOptions = [
-								'(max-width: 768px)' => [390, 200],
-								'(min-width: 769px)' => [1025, 519],
+								'(max-width: 768px)' => [200, 102],
+								'(min-width: 769px)' => [560, 283],
 							];
 							$attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high', 'picturetag_class' => 'loader'];
 							?>
