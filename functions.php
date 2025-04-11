@@ -890,9 +890,13 @@ function replace_image_classes_with_ids_and_convert_to_picture($content) {
         // Add width/height if missing
         if (!isset($attributes['width']) && isset($metadata['width'])) {
             $attributes['width'] = $metadata['width'];
+        }else{
+            $attributes['width'] = 750;
         }
         if (!isset($attributes['height']) && isset($metadata['height'])) {
             $attributes['height'] = $metadata['height'];
+        }else{
+            $attributes['height'] = 350; 
         }
         
         // Add fallback img
