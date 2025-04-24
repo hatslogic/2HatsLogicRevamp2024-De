@@ -15,7 +15,7 @@
                 ?>
                 <div class="col snap-center sm:min-w-px-280">
                     <div class="card xs:w-100 flex align-start h-100">
-                        <div class="review-box flex wrap h-100 align-content-between b-0 br-1 solid bc-hash pr-20 xs:pr-0">
+                        <div class="review-box flex wrap h-100 align-content-between b-0 br-1 solid bc-hash pr-20 xs:pr-10">
                             <?php if( $quote_excert ):?>
                             <div class="w-100">
                                 <blockquote class="font-quote m-0 fs-16 lh-1-35"><?php echo $quote_excert;?></blockquote>
@@ -34,10 +34,16 @@
                             <div class="author flex align-center justify-start mt-15">
                                     <?php if( $author_image) :?>
                                     <div class="block mr-10 w-px-40 h-px-40 radius-40 overflow-hidden b-1 bc-hash solid">
-                                        <img class="w-px-40 h-px-40"
-                                            src="<?php echo $author_image['url']; ?>"
-                                            alt="<?php echo $author_image['alt']; ?>" loading="lazy"
-                                            width="50" height="50">
+                                            <?php
+                                                $cropOptions = [
+                                                    '(max-width: 768px)' => [60, 60],
+                                                    '(min-width: 769px)' => [60, 60],
+                                                ];
+                                                $attributes = ['class' => 'w-px-40 h-px-40', 'loading' => 'lazy'];
+                                                echo hatslogic_get_attachment_picture($author_image['ID'], $cropOptions, $attributes);
+                                                ?>
+
+                                            
                                     </div>
                                     <?php endif;?>
                                     <div class="block">
