@@ -1030,8 +1030,8 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
             $image_src = bis_get_attachment_image_src($imageId, [$image_size[0], $image_size[1]], true);
             $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], true);
         } else {
-            $image_src = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], true);
-            $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 3, $image_size[1] * 3], true);
+            $image_src = bis_get_attachment_image_src($imageId, [$image_size[0], $image_size[1]], true);
+            $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], true);
         }
         if ($image_src && !empty($image_src['src'])) {
             $webp_src = webp(esc_url($image_src['src']));
