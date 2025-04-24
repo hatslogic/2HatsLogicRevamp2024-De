@@ -24,7 +24,6 @@
         &:nth-child(4n) {
             .card .review-box {
                 border-right-width: 0;
-                padding-right: 0;
                 @include below($lg) {
                     border-right-width: 1px;
                 }
@@ -34,7 +33,6 @@
             .card .review-box {
                 @include below($lg) {
                     border-right-width: 0;
-                    padding-right: 0;
                 }
                 @include below($md) {
                     border-right-width: 1px;

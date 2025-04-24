@@ -49,10 +49,15 @@
                                     <div class="author flex align-center justify-start mt-30">
                                         <?php if( $author_image) :?>
                                         <div class="block mr-10 w-px-50 h-px-50 radius-50 overflow-hidden b-1 bc-hash solid">
-                                            <img class="w-px-50 h-px-50"
-                                                src="<?php echo $author_image['url']; ?>"
-                                                alt="<?php echo $author_image['alt']; ?>" loading="lazy"
-                                                width="50" height="50">
+
+                                                <?php
+                                                    $cropOptions = [
+                                                        '(max-width: 768px)' => [60, 60],
+                                                        '(min-width: 769px)' => [60, 60],
+                                                    ];
+                                                    $attributes = ['class' => 'w-px-50 h-px-50', 'loading' => 'lazy'];
+                                                    echo hatslogic_get_attachment_picture($author_image['ID'], $cropOptions, $attributes);
+                                                    ?>
                                         </div>
                                         <?php endif;?>
                                         <div class="block">
