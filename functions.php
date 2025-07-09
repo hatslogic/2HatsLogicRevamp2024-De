@@ -1,10 +1,11 @@
 <?php
+
 /**
  * 2HatsLogic functions and definitions.
  *
  * @see https://developer.wordpress.org/themes/basics/theme-functions/
  */
-define('APP_THEME_DIR', dirname(__FILE__).DIRECTORY_SEPARATOR);
+define('APP_THEME_DIR', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
@@ -32,7 +33,7 @@ function hatslogic_setup()
      * If you're building a theme based on 2HatsLogic, use a find and replace
      * to change 'hatslogic' to the name of your theme in all the template files.
      */
-    load_theme_textdomain('hatslogic', get_template_directory().'/languages');
+    load_theme_textdomain('hatslogic', get_template_directory() . '/languages');
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support('automatic-feed-links');
@@ -141,11 +142,15 @@ function hatslogic_scripts()
     wp_enqueue_style('hatslogic-style', get_stylesheet_uri(), [], _S_VERSION);
     // wp_enqueue_style( 'hatslogic-plugins', get_template_directory_uri() . '/dist/assets/css/plugins.min.css', array(), _S_VERSION );
     // wp_enqueue_style( 'hatslogic-app-app', get_template_directory_uri() . '/dist/assets/css/app.min.css', array(), _S_VERSION );
-    wp_enqueue_style('hatslogic-app-main', get_template_directory_uri().'/dist/assets/css/main.min.css', [], _S_VERSION);
+    wp_enqueue_style('hatslogic-app-main', get_template_directory_uri() . '/dist/assets/css/main.min.css', [], _S_VERSION);
     // wp_enqueue_style('hatslogic-wp-main', get_template_directory_uri().'/dist/assets/css/wp.min.css', [], _S_VERSION);
 
-    wp_enqueue_style('hatslogic-transition-main', get_template_directory_uri().'/dist/assets/css/transition.min.css', [], _S_VERSION);
-    wp_enqueue_script('hatslogic-main', get_template_directory_uri().'/dist/assets/js/main.min.js', [], _S_VERSION,
+    wp_enqueue_style('hatslogic-transition-main', get_template_directory_uri() . '/dist/assets/css/transition.min.css', [], _S_VERSION);
+    wp_enqueue_script(
+        'hatslogic-main',
+        get_template_directory_uri() . '/dist/assets/js/main.min.js',
+        [],
+        _S_VERSION,
         [
             'in_footer' => true,
             'strategy' => 'async',
@@ -188,28 +193,28 @@ add_action('wp_enqueue_scripts', 'hatslogic_scripts');
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory().'/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory().'/inc/template-tags.php';
+require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require get_template_directory().'/inc/template-functions.php';
+require get_template_directory() . '/inc/template-functions.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory().'/inc/customizer.php';
+require get_template_directory() . '/inc/customizer.php';
 
 /*
  * Load Jetpack compatibility file.
  */
 if (defined('JETPACK__VERSION')) {
-    require get_template_directory().'/inc/jetpack.php';
+    require get_template_directory() . '/inc/jetpack.php';
 }
 
 /*
@@ -258,33 +263,33 @@ if (!function_exists('app_setup_theme')) {
     function app_setup_theme()
     {
         // Make this theme available for translation.
-        load_theme_textdomain('app', get_template_directory().'/languages');
+        load_theme_textdomain('app', get_template_directory() . '/languages');
 
-        $autoload_dir = APP_THEME_DIR.'lib/autoload.php';
+        $autoload_dir = APP_THEME_DIR . 'lib/autoload.php';
         include_once $autoload_dir;
 
         // Autoload dependencies
-        $autoload_dir = APP_THEME_DIR.'vendor/autoload.php';
+        $autoload_dir = APP_THEME_DIR . 'vendor/autoload.php';
         if (!is_readable($autoload_dir)) {
             wp_die(__('Please, run <code>composer install</code> to download and install the theme dependencies.', 'app'));
         }
         include_once $autoload_dir;
 
         // Additional libraries and includes
-        include_once APP_THEME_DIR.'includes/ajax.php';
-        include_once APP_THEME_DIR.'includes/admin-login.php';
+        include_once APP_THEME_DIR . 'includes/ajax.php';
+        include_once APP_THEME_DIR . 'includes/admin-login.php';
         // include_once APP_THEME_DIR.'includes/comments.php';
-        include_once APP_THEME_DIR.'includes/title.php';
+        include_once APP_THEME_DIR . 'includes/title.php';
         // include_once (APP_THEME_DIR . 'includes/gravity-forms.php');
-        include_once APP_THEME_DIR.'includes/helpers.php';
-        include_once APP_THEME_DIR.'includes/hooks.php';
-        include_once APP_THEME_DIR.'includes/acf.php';
+        include_once APP_THEME_DIR . 'includes/helpers.php';
+        include_once APP_THEME_DIR . 'includes/hooks.php';
+        include_once APP_THEME_DIR . 'includes/acf.php';
 
         // Custom Blocks
         // include_once( APP_THEME_DIR . 'options/acf-blocks.php' );
 
         // Custom Post Types
-        include_once APP_THEME_DIR.'options/post-types.php';
+        include_once APP_THEME_DIR . 'options/post-types.php';
 
         // Theme supports
         add_theme_support('automatic-feed-links');
@@ -311,10 +316,11 @@ if (!function_exists('app_setup_theme')) {
                 'hide-developer-menu' => __('Hire a Developer', 'app'),
                 'company-menu' => __('Company', 'app'),
                 'quick-links-menu' => __('Quick Links', 'app'),
-            ]);
+            ]
+        );
 
         // Attach custom shortcodes
-        include_once APP_THEME_DIR.'options/shortcodes.php';
+        include_once APP_THEME_DIR . 'options/shortcodes.php';
 
         // Add Actions
         add_action('widgets_init', 'app_widgets_init');
@@ -323,7 +329,7 @@ if (!function_exists('app_setup_theme')) {
         add_filter('excerpt_more', 'app_excerpt_more');
         add_filter('excerpt_length', 'app_excerpt_length', 999);
         add_filter('app_theme_favicon_uri', function () {
-            return get_template_directory_uri().'/dist/assets/img/cropped-favicon-32x32.png';
+            return get_template_directory_uri() . '/dist/assets/img/cropped-favicon-32x32.png';
         });
 
         // Image sizes
@@ -383,7 +389,7 @@ function webp($url)
 {
     if ($url && strpos($url, 'uploads') !== false) {
         $url = str_replace('uploads', 'webp-express/webp-images/uploads', $url);
-        $url = $url.'.webp';
+        $url = $url . '.webp';
     }
 
     return $url;
@@ -397,7 +403,9 @@ add_filter('big_image_size_threshold', '__return_false');
 add_filter('jpeg_quality', function ($arg) {
     return 100;
 });
-add_filter('wp_editor_set_quality', function($arg){ return 100; });
+add_filter('wp_editor_set_quality', function ($arg) {
+    return 100;
+});
 
 function wps_deregister_styles()
 {
@@ -489,9 +497,9 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
         $output .= "<li class=\"$li_classes$active_class\">";
 
         if ($item->url && $item->url != '#') {
-            $output .= '<a class="'.$a_classes.'" href="'.$item->url.'" aria-label="'.strtolower($item->title).'">';
+            $output .= '<a class="' . $a_classes . '" href="' . $item->url . '" aria-label="' . strtolower($item->title) . '">';
         } else {
-            if($args->walker->has_children && $depth === 0) {
+            if ($args->walker->has_children && $depth === 0) {
                 $output .= '<span class="mobile-toggle pt-30 pb-30 md:pt-8 md:pb-8 b-0 solid md:bb-0 md:w-100 uppercase md:capitalize md:fs-28 block md:flex md:justify-between md:align-center">';
             } else {
                 $output .= '<span>';
@@ -500,13 +508,13 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
 
         $output .= $item->title;
         if ($depth === 1) {
-            $output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">'.$item->description.'</span>';
+            $output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">' . $item->description . '</span>';
         }
 
         if ($item->url == '#' && $args->walker->has_children && $depth === 0) {
             $output .= '<i class="icomoon icon-expand_more ml-5 fs-12 md:fs-20"></i>';
         }
-        
+
         if ($item->url && $item->url != '#') {
             if ($args->walker->has_children && $depth === 0) {
                 $output .= '<i class="icomoon icon-expand_more ml-5 fs-12 md:fs-20"></i>';
@@ -526,9 +534,9 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
         // $output .= "$indent\t</li>\n";
         // $output .= "$indent</div></ul>\n";
 
-        $blog_url = home_url().'/blog';
-        $contact_url = home_url().'/contact';
-        $hire_developer_url = home_url().'/hire-dedicated-developers';
+        $blog_url = home_url() . '/blog';
+        $contact_url = home_url() . '/contact';
+        $hire_developer_url = home_url() . '/hire-dedicated-developers';
 
         if ($depth === 0) {
             if ($is_compact) {
@@ -547,10 +555,10 @@ class FOOTER_Menu_Walker extends Walker_Nav_Menu
     public function start_el(&$output, $item, $depth = 0, $args = [], $id = 0)
     {
         $active_class = $item->current ? ' active' : '';
-        $output .= "<li class='".$active_class."'>";
+        $output .= "<li class='" . $active_class . "'>";
 
         if ($item->url && $item->url != '#') {
-            $output .= '<a href="'.$item->url.'" aria-label="'.strtolower($item->title).'">';
+            $output .= '<a href="' . $item->url . '" aria-label="' . strtolower($item->title) . '">';
         } else {
             $output .= '<span>';
         }
@@ -576,10 +584,10 @@ function truncate_text($text, $max = 50, $append = '...')
     }
     $return = substr($text, 0, $max);
     if (strpos($text, ' ') === false) {
-        return $return.$append;
+        return $return . $append;
     }
 
-    return preg_replace('/\w+$/', '', $return).$append;
+    return preg_replace('/\w+$/', '', $return) . $append;
 }
 
 /**
@@ -614,7 +622,7 @@ add_action('init', 'disable_emojis');
 
 function itsme_disable_feed()
 {
-    wp_die(__('No feed available, please visit the <a href="'.esc_url(home_url('/')).'">homepage</a>!'));
+    wp_die(__('No feed available, please visit the <a href="' . esc_url(home_url('/')) . '">homepage</a>!'));
 }
 
 add_action('do_feed', 'itsme_disable_feed', 1);
@@ -634,14 +642,14 @@ function no_x_gravity_form_css()
     wp_dequeue_style('x-gravity-forms');
 }
 
-require get_template_directory().'/inc/minify-html.php';
+require get_template_directory() . '/inc/minify-html.php';
 
 // Function to calculate reading time
 function get_reading_time($post_id, $content)
 {
     // Check if content is empty and a custom reading time is set
     if (!$content && ($custom_reading_time = get_field('reading_time', $post_id))) {
-        return $custom_reading_time.' minute'.($custom_reading_time > 1 ? 's' : '');
+        return $custom_reading_time . ' minute' . ($custom_reading_time > 1 ? 's' : '');
     }
 
     // Return empty string if content is empty and no custom reading time is set
@@ -657,7 +665,7 @@ function get_reading_time($post_id, $content)
     if ($reading_time_minutes < 1) {
         $reading_time_seconds = ceil($word_count / (200 / 60));
 
-        return $reading_time_seconds.' second'.($reading_time_seconds > 1 ? 's' : '');
+        return $reading_time_seconds . ' second' . ($reading_time_seconds > 1 ? 's' : '');
     }
 
     // Calculate hours and remaining minutes if reading time is 60 minutes or more
@@ -667,10 +675,10 @@ function get_reading_time($post_id, $content)
     // Construct reading time text
     $reading_time_text = '';
     if ($reading_time_hours > 0) {
-        $reading_time_text .= $reading_time_hours.' hour'.($reading_time_hours > 1 ? 's' : '').' ';
+        $reading_time_text .= $reading_time_hours . ' hour' . ($reading_time_hours > 1 ? 's' : '') . ' ';
     }
     if ($reading_time_remaining_minutes > 0) {
-        $reading_time_text .= $reading_time_remaining_minutes.' minute'.($reading_time_remaining_minutes > 1 ? 's' : '');
+        $reading_time_text .= $reading_time_remaining_minutes . ' minute' . ($reading_time_remaining_minutes > 1 ? 's' : '');
     }
 
     return trim($reading_time_text);
@@ -832,7 +840,8 @@ function aw_custom_add_image_size_names($sizes)
     ]);
 }
 
-function replace_image_classes_with_ids_and_convert_to_picture($content) {
+function replace_image_classes_with_ids_and_convert_to_picture($content)
+{
     preg_match_all('/<img[^>]+>/i', $content, $matches);
     $images = $matches[0];
 
@@ -842,14 +851,14 @@ function replace_image_classes_with_ids_and_convert_to_picture($content) {
         $attributes = array_combine($attr_matches[1], $attr_matches[2]);
 
         if (!isset($attributes['src'])) continue;
-        
+
         $image_url = $attributes['src'];
         $clean_url = preg_replace('/-\d+x\d+(?=\.\w+$)/', '', $image_url);
         $attachment_id = attachment_url_to_postid($clean_url);
-        
+
         if (!$attachment_id) continue;
 
-		preg_match('/wp-image-\d+/', $img, $class_match);
+        preg_match('/wp-image-\d+/', $img, $class_match);
 
         // If an attachment ID was found, extract the old class
         $new_class = '';
@@ -859,14 +868,14 @@ function replace_image_classes_with_ids_and_convert_to_picture($content) {
         }
         // Get and process srcset
         $srcset_sources = get_custom_srcset_sources($attachment_id);
-        
+
         $full_size_url = $srcset_sources['fallback_image']['url'];
         $metadata = $srcset_sources['fallback_image']['sizes'];
         unset($srcset_sources['fallback_image']);
 
         // Start building picture tag
         $picture_tag = '<picture>';
-        
+
         // Add WebP and original sources
         foreach ($srcset_sources as $source) {
             // WebP version
@@ -874,32 +883,32 @@ function replace_image_classes_with_ids_and_convert_to_picture($content) {
             if ($webp_url !== $source['url']) {
                 $picture_tag .= sprintf(
                     '<source %s srcset="%s" type="image/webp">',
-					esc_attr($source['descriptor']),
+                    esc_attr($source['descriptor']),
                     esc_attr($webp_url)
                 );
             }
-            
+
             // Original version
             $picture_tag .= sprintf(
                 '<source %s srcset="%s" type="%s">',
-				esc_attr($source['descriptor']),
+                esc_attr($source['descriptor']),
                 esc_attr($source['url']),
                 wp_get_image_mime($source['url'])
             );
         }
-        
+
         // Add width/height if missing
         if (!isset($attributes['width']) && isset($metadata['width'])) {
             $attributes['width'] = $metadata['width'];
-        }else{
+        } else {
             $attributes['width'] = 750;
         }
         if (!isset($attributes['height']) && isset($metadata['height'])) {
             $attributes['height'] = $metadata['height'];
-        }else{
-            $attributes['height'] = 350; 
+        } else {
+            $attributes['height'] = 350;
         }
-        
+
         // Add fallback img
         $img_attributes = '';
         $attributes['loading'] = 'lazy';
@@ -914,47 +923,48 @@ function replace_image_classes_with_ids_and_convert_to_picture($content) {
                 $img_attributes .= sprintf(' %s="%s"', $name, esc_attr($value));
             }
         }
-        
+
         // Use full size image for fallback
         $picture_tag .= sprintf(
             '<img src="%s"%s>',
             esc_url($full_size_url),
             $img_attributes
         );
-        
+
         $picture_tag .= '</picture>';
-        
+
         // Replace in content
         $content = str_replace($img, $picture_tag, $content);
     }
-    
+
     return $content;
 }
 add_filter('the_content', 'replace_image_classes_with_ids_and_convert_to_picture');
 
-function get_custom_srcset_sources($attachment_id) {
+function get_custom_srcset_sources($attachment_id)
+{
     $sources = [];
-    
+
     // Get all available image sizes for this attachment
     $metadata = wp_get_attachment_metadata($attachment_id);
     if (empty($metadata['sizes'])) {
         return $sources;
     }
-    
+
     // Base URL without size suffix
     $base_url = wp_get_attachment_image_url($attachment_id, 'full');
     $base_url = preg_replace('/-\d+x\d+(?=\.\w+$)/', '', $base_url);
-    
+
     // Find our two target sizes
     $target_sizes = [
         '1024' => false,
         '640' => false
     ];
-    
+
     // Check all available sizes
     foreach ($metadata['sizes'] as $size_name => $size_data) {
         $width = $size_data['width'];
-        
+
         // Check for exact matches first
         if ($width == 1024) {
             $target_sizes['1024'] = $size_name;
@@ -962,7 +972,7 @@ function get_custom_srcset_sources($attachment_id) {
             $target_sizes['640'] = $size_name;
         }
     }
-    
+
     // If we didn't find exact matches, find the closest sizes
     if (!$target_sizes['1024']) {
         $closest = null;
@@ -973,7 +983,7 @@ function get_custom_srcset_sources($attachment_id) {
             }
         }
     }
-    
+
     if (!$target_sizes['640']) {
         $closest = null;
         foreach ($metadata['sizes'] as $size_name => $size_data) {
@@ -983,29 +993,29 @@ function get_custom_srcset_sources($attachment_id) {
             }
         }
     }
-	 // Build the sources array
+    // Build the sources array
     if ($target_sizes['640']) {
         $url = wp_get_attachment_image_url($attachment_id, $target_sizes['640']);
         $sources[] =  [
-			'url' => $url,
-			'descriptor' => 'media=(max-width:768px)'
-		];
+            'url' => $url,
+            'descriptor' => 'media=(max-width:768px)'
+        ];
     }
-   
+
     if ($target_sizes['1024']) {
         $url = wp_get_attachment_image_url($attachment_id, $target_sizes['1024']);
         $sources[] = [
-			'url' => $url,
-			'descriptor' => 'media=(min-width:769px)'
-		];
+            'url' => $url,
+            'descriptor' => 'media=(min-width:769px)'
+        ];
         $sources['fallback_image'] = [
             'url' => $url,
-            'sizes' =>$target_sizes['1024']
+            'sizes' => $target_sizes['1024']
         ];
     }
-    
-    
-    
+
+
+
     return $sources;
 }
 
@@ -1019,10 +1029,10 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
     $picturetag_class = $attributes['picturetag_class'] ?? '';
     unset($attributes['picturetag_class']);
 
-    $img_attributes = array_map(fn ($key, $value) => "$key='$value'", array_keys($attributes), $attributes);
+    $img_attributes = array_map(fn($key, $value) => "$key='$value'", array_keys($attributes), $attributes);
     $img_attributes = implode(' ', $img_attributes);
 
-    $picture = '<picture '.($picturetag_class ? "class='$picturetag_class'" : '').'>';
+    $picture = '<picture ' . ($picturetag_class ? "class='$picturetag_class'" : '') . '>';
 
     foreach ($breakpoints as $media_query => $image_size) {
         $imageId = $image_id;
@@ -1038,8 +1048,8 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
             $webp_src = webp(esc_url($image_src['src']));
             $webp_src_2x = webp(esc_url($image_src_2x['src']));
 
-            $source_tag = "<source srcset='$webp_src 1x, $webp_src_2x 2x' type='image/webp' media='".esc_attr($media_query)."'>
-			<source srcset='".esc_url($image_src['src']).' 1x, '.esc_url($image_src_2x['src'])." 2x' media='".esc_attr($media_query)."'>";
+            $source_tag = "<source srcset='$webp_src 1x, $webp_src_2x 2x' type='image/webp' media='" . esc_attr($media_query) . "'>
+			<source srcset='" . esc_url($image_src['src']) . ' 1x, ' . esc_url($image_src_2x['src']) . " 2x' media='" . esc_attr($media_query) . "'>";
 
             $picture .= $source_tag;
         }
@@ -1053,7 +1063,7 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
         $alt_text = esc_attr(get_post_meta($image_id, '_wp_attachment_image_alt', true));
         $width = $largest_size[0];
         $height = $largest_size[1];
-        $picture .= "<img src='".esc_url($fallback_image_src['src'])."' $img_attributes alt='$alt_text' width='$width' height='$height'>";
+        $picture .= "<img src='" . esc_url($fallback_image_src['src']) . "' $img_attributes alt='$alt_text' width='$width' height='$height'>";
     }
 
     $picture .= '</picture>';
@@ -1067,7 +1077,7 @@ function short_content($num)
     $length = count($content);
     if ($length >= $num) {
         $content = array_slice($content, 0, $num);
-        $content = implode('', $content).'...';
+        $content = implode('', $content) . '...';
         echo strip_tags($content);
     } else {
         strip_tags(the_content());
@@ -1095,7 +1105,7 @@ function disable_comments_post_types_support()
         }
     }
 }
-add_action('admin_init', 'disable_comments_post_types_support'); 
+add_action('admin_init', 'disable_comments_post_types_support');
 
 // Close comments on the front-end 
 function disable_comments_status()
@@ -1103,7 +1113,7 @@ function disable_comments_status()
     return false;
 }
 add_filter('comments_open', 'disable_comments_status', 20, 2);
-add_filter('pings_open', 'disable_comments_status', 20, 2); 
+add_filter('pings_open', 'disable_comments_status', 20, 2);
 
 // Hide existing comments 
 function disable_comments_hide_existing_comments($comments)
@@ -1111,14 +1121,14 @@ function disable_comments_hide_existing_comments($comments)
     $comments = array();
     return $comments;
 }
-add_filter('comments_array', 'disable_comments_hide_existing_comments', 10, 2); 
+add_filter('comments_array', 'disable_comments_hide_existing_comments', 10, 2);
 
 // Remove comments page in menu 
 function disable_comments_admin_menu()
 {
     remove_menu_page('edit-comments.php');
 }
-add_action('admin_menu', 'disable_comments_admin_menu'); 
+add_action('admin_menu', 'disable_comments_admin_menu');
 
 // Redirect any user trying to access comments page 
 function disable_comments_admin_menu_redirect()
@@ -1129,7 +1139,7 @@ function disable_comments_admin_menu_redirect()
         exit;
     }
 }
-add_action('admin_init', 'disable_comments_admin_menu_redirect'); 
+add_action('admin_init', 'disable_comments_admin_menu_redirect');
 
 // Remove comments metabox from dashboard 
 function disable_comments_dashboard()
@@ -1139,9 +1149,10 @@ function disable_comments_dashboard()
 add_action('admin_init', 'disable_comments_dashboard');
 
 
-function remove_unwanted_tags_and_styles($content) {
+function remove_unwanted_tags_and_styles($content)
+{
 
-    if(!is_singular('post')){
+    if (!is_singular('post')) {
         return $content;
     }
 
@@ -1153,7 +1164,7 @@ function remove_unwanted_tags_and_styles($content) {
         $content = preg_replace('/<script[^>]*>(.*?)<\/script>/is', '', $content);
         $content = preg_replace('/<style[^>]*>(.*?)<\/style>/is', '', $content);
         $content = preg_replace('/<iframe[^>]*>(.*?)<\/iframe>/is', '', $content);
-    
+
         // Remove inline styles
         $content = preg_replace('/ style="[^"]*"/', '', $content);
 
@@ -1164,9 +1175,8 @@ function remove_unwanted_tags_and_styles($content) {
         $content = preg_replace('/<strong[^>]*>(.*?)<\/strong>/is', '$1', $content);
         $content = preg_replace('/<b[^>]*>(.*?)<\/b>/is', '$1', $content);
     }
-  
-    return $content;
 
+    return $content;
 }
 add_filter('the_content', 'remove_unwanted_tags_and_styles');
 add_filter('site_transient_update_plugins', 'disable_specific_plugin_updates');
@@ -1181,18 +1191,21 @@ function disable_specific_plugin_updates($value)
 }
 
 /** functions to redirect to seo tools page */
-function custom_seo_tool_rewrite() {
+function custom_seo_tool_rewrite()
+{
     add_rewrite_rule('^seo-tool/?$', 'index.php?seo_tool=1', 'top');
 }
 add_action('init', 'custom_seo_tool_rewrite');
 
-function custom_seo_tool_query_vars($query_vars) {
+function custom_seo_tool_query_vars($query_vars)
+{
     $query_vars[] = 'seo_tool';
     return $query_vars;
 }
 add_filter('query_vars', 'custom_seo_tool_query_vars');
 
-function custom_seo_tool_template_include($template) {
+function custom_seo_tool_template_include($template)
+{
     if (get_query_var('seo_tool')) {
         return get_template_directory() . '/template-custom-seo-tool.php';
     }
@@ -1201,10 +1214,11 @@ function custom_seo_tool_template_include($template) {
 add_filter('template_include', 'custom_seo_tool_template_include');
 
 /** Enqueue script files for SEO Tool */
-function enqueue_seo_tool_script() {
+function enqueue_seo_tool_script()
+{
 
     if (get_query_var('seo_tool')) {
-        
+
         wp_enqueue_script('seo-tool-script', get_template_directory_uri() . '/src/assets/js/seo-tool.js', array(), null, true);
 
         // Check if constants are defined, otherwise provide empty values
@@ -1228,7 +1242,8 @@ add_action('wp_enqueue_scripts', 'enqueue_seo_tool_script');
 add_action('wp_ajax_nopriv_set_user_submitted_cookie', 'wp_set_user_submitted_cookie');
 add_action('wp_ajax_set_user_submitted_cookie', 'wp_set_user_submitted_cookie');
 
-function wp_set_user_submitted_cookie() {
+function wp_set_user_submitted_cookie()
+{
     // Validate and sanitize the data
     $username = isset($_POST['username']) ? sanitize_text_field($_POST['username']) : '';
     $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
@@ -1236,14 +1251,14 @@ function wp_set_user_submitted_cookie() {
     if (!empty($username) && !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
         // Return a success response
         setcookie('seo-tool-user-submitted', 'true', time() + (7 * 24 * 60 * 60), "/"); // Cookie expires in 7 days
-        
-        $usersList = get_option( 'seo_tool_users_list', array());
+
+        $usersList = get_option('seo_tool_users_list', array());
 
         if (!array_key_exists($email, $usersList)) {
-          $usersList[$email] = array(
-            'name' => $username,
-            'date' => date('Y-m-d H:i:sa')
-          );
+            $usersList[$email] = array(
+                'name' => $username,
+                'date' => date('Y-m-d H:i:sa')
+            );
         }
 
         wp_send_json_success(['message' => 'User details submitted']);
@@ -1255,9 +1270,10 @@ function wp_set_user_submitted_cookie() {
 }
 
 //Adding block editor styles support
-add_theme_support( 'wp-block-styles' );
+add_theme_support('wp-block-styles');
 
-function remove_plugin_styles_frontend() {
+function remove_plugin_styles_frontend()
+{
     // Only run this on the frontend
     if (!is_admin()) {
         // Example: Remove styles from a specific plugin
@@ -1268,33 +1284,34 @@ function remove_plugin_styles_frontend() {
     }
 }
 add_action('wp_enqueue_scripts', 'remove_plugin_styles_frontend', 100);
-add_filter( 'should_load_separate_core_block_assets', '__return_true' );
-add_action('wp_head', function() {
-    ob_start(function($html) {
-        
+add_filter('should_load_separate_core_block_assets', '__return_true');
+add_action('wp_head', function () {
+    ob_start(function ($html) {
+
         $html = preg_replace(
-            '/<link[^>]*?id=[\'"](ub-extension-style-css-css|urvanov_syntax_highlighter-css|crayon-theme-classic-css|crayon-font-monaco-css)[\'"][^>]*?>/', 
+            '/<link[^>]*?id=[\'"](ub-extension-style-css-css|urvanov_syntax_highlighter-css|crayon-theme-classic-css|crayon-font-monaco-css)[\'"][^>]*?>/',
             '',
             $html
         );
-        
+
         // Remove the script with ID 'cookie-law-info-js'
         $html = preg_replace(
             '/<script[^>]*?id=[\'"]cookie-law-info-js[\'"][^>]*?>.*?<\/script>/s',
             '',
             $html
         );
-       
+
         return $html;
     });
 }, 1);
 
-add_action('wp_footer', function() {
+add_action('wp_footer', function () {
     ob_end_flush();
 }, 999);
 
-function filter_featured_image_admin_text( $content, $post_id, $thumbnail_id ){
-	// Only for posts and for non-administrators
+function filter_featured_image_admin_text($content, $post_id, $thumbnail_id)
+{
+    // Only for posts and for non-administrators
     if ('post' !== get_post_type($post_id)) {
         return $content;
     }
@@ -1302,14 +1319,15 @@ function filter_featured_image_admin_text( $content, $post_id, $thumbnail_id ){
     $help_text = '<div id="featured-image-help-text" style="padding:12px; margin-top:10px; background:#f0f0f1; border-left:4px solid #3858e9;"><p><strong>Featured Image Guidelines:</strong></p><ul style="margin-left:16px;list-style-type:disc;"><li>Recommended size: 2050x1038 pixels</li><li>Compress image before uploading (https://tinypng.com/)</li></ul></div>';
     return $help_text . $content;
 }
-add_filter( 'admin_post_thumbnail_html', 'filter_featured_image_admin_text', 10, 3 );
+add_filter('admin_post_thumbnail_html', 'filter_featured_image_admin_text', 10, 3);
 
 // Add help text to Featured Image in Block Editor
 add_action('admin_footer', 'add_featured_image_help_to_block_editor');
 
-function add_featured_image_help_to_block_editor() {
+function add_featured_image_help_to_block_editor()
+{
     global $post;
-    
+
     // Only for posts in block editor
     if (!$post || 'post' !== $post->post_type || !function_exists('get_current_screen') || !get_current_screen()->is_block_editor()) {
         return;
@@ -1331,3 +1349,15 @@ function add_featured_image_help_to_block_editor() {
     </script>
     ';
 }
+
+function custom_author_post_pagination($query)
+{
+    if (
+        ! is_admin() &&
+        $query->is_main_query() &&
+        $query->is_author()
+    ) {
+        $query->set('posts_per_page', 9);
+    }
+}
+add_action('pre_get_posts', 'custom_author_post_pagination');
