@@ -380,8 +380,8 @@ if (!function_exists('app_setup_theme')) {
         add_image_size('img_238x288', 238, 288, true);
         add_image_size('img_818x464', 818, 464, true);
 
-        add_image_size('img_400x400', 475, 475, true);
-        add_image_size('img_744x744', 1000, 1000, true);
+        add_image_size('img_475x475', 475, 475, true);
+        add_image_size('img_1000x1000', 1000, 1000, true);
     }
 }
 
