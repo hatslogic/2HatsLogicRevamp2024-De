@@ -24,9 +24,9 @@ $disable_css = get_field('disable_css', get_the_ID());
 							$featured_image_id = get_post_thumbnail_id(get_the_ID());
 
 							$cropOptions = [
-								'(max-width: 768px)' => [390, 200],
-								'(min-width: 769px)' => [1025, 519],
-							];
+                                '(max-width: 768px)' => [390, 200],
+                                '(min-width: 769px)' => [1025, 519],
+                            ];
 							$attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high', 'picturetag_class' => 'loader'];
 							?>
 							<?php echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); ?>
@@ -118,19 +118,19 @@ if (get_field('show_callout')) {
 
 
 <script>
-	let idleTimer;
-	const idleTime = 9000;
+	let idleTimerBlog;
+	const idleTimeBlog = 9000;
 
 	function checkIdleTime() {
 		if (getCookie("modalClosed") !== "true") {
-			idleTimer = setTimeout(() => {
+			idleTimerBlog = setTimeout(() => {
 				openModal("newsletter-subscription");
-			}, idleTime);
+			}, idleTimeBlog);
 		}
 	}
 
 	function resetIdleTimer() {
-		clearTimeout(idleTimer);
+		clearTimeout(idleTimerBlog);
 		checkIdleTime();
 	}
 

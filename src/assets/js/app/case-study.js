@@ -85,3 +85,33 @@ if(caseStudySlider !== null){
         [dots]
     )
 }
+
+const buttons = document.querySelectorAll('.case-study-btn');
+const cards = document.querySelectorAll('.case-study-card');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+      const previousActive = document.querySelector('.active');
+      if (previousActive) {
+          previousActive.classList.remove('active');
+      }
+      button.classList.add('active');
+      const category = button.getAttribute('data-category');
+      caseStudyFilterFunction(category);
+  });
+});
+function caseStudyFilterFunction(category) {
+  cards.forEach(card => {
+      const categories = card.getAttribute('data-category')?.split(/\s*,\s*|\s+/) || []; // Split by comma or space
+
+      if (category === "all" || !category || categories.includes(category)) {
+          card.classList.remove('hidden'); // Remove hidden to start fade-in
+          void card.offsetWidth; // Force reflow to restart animation
+          card.classList.add('animate');
+      } else {
+          card.classList.remove('animate'); // Remove animate first
+          card.classList.add('hidden'); // Apply fade-out
+      }
+  });
+}
+

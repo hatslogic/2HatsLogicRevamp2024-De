@@ -91,6 +91,11 @@ $transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
             transform: translateY(0) !important;
             opacity: 1 !important;
         }
+        &.hidden {
+            opacity: 0 !important;
+            transform: translateY($traslate-y) !important; // Move back down
+            transition: transform $transform-duration, opacity $opacity-duration;
+        }
     }
 
     footer{
@@ -115,4 +120,20 @@ $transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
         }
     }
 
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50%{
+        opacity: .5;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
