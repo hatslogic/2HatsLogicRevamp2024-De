@@ -141,6 +141,13 @@
                 "operator": "==",
                 "value": "post"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "products"
+            }
         ]
     ],
     "menu_order": 0,

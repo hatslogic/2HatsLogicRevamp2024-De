@@ -1269,7 +1269,6 @@ function wp_set_user_submitted_cookie()
     wp_die();
 }
 
-//Adding block editor styles support
 add_theme_support('wp-block-styles');
 
 function remove_plugin_styles_frontend()
