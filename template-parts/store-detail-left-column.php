@@ -12,7 +12,7 @@ $image_gallery = get_field('plugin_screenshots');
                     '(max-width: 768px)' => [475, 475],
                     '(min-width: 769px)' => [1000, 1000],
                 ];
-                $attributes = ['loading' => 'eager'];
+                $attributes = ['loading' => 'eager', "id" => "main-image"];
                 ?>
                 <?php echo hatslogic_get_attachment_picture($mainImage['ID'], $cropOptions, $attributes); ?>
                 <button id="prev-btn" type="button"

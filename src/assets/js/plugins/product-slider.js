@@ -20,10 +20,10 @@ function changeImage(index) {
     thumbnails[currentIndex].classList.add('active');
 
     // Scroll the thumbnails into view
-    thumbnails[currentIndex].scrollIntoView({
-        behavior: 'smooth',
-        inline: 'center'
-    });
+    // thumbnails[currentIndex].scrollIntoView({
+    //     behavior: 'smooth',
+    //     inline: 'center'
+    // });
 
     // Prevent focus causing scroll jump
     document.activeElement.blur();
