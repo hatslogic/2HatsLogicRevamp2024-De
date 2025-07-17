@@ -10,7 +10,7 @@ let currentIndex = 0;
 
 // Function to update the main image and active class
 function changeImage(index) {
-    currentIndex = index;
+    currentIndex = index; 
     mainImage.src = thumbnails[currentIndex].getAttribute('href');
 
     // Remove active class from all thumbnails
