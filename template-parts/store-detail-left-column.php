@@ -15,19 +15,19 @@ $image_gallery = get_field('plugin_screenshots');
                 $attributes = ['loading' => 'eager', "id" => "main-image"];
                 ?>
                 <?php echo hatslogic_get_attachment_picture($mainImage['ID'], $cropOptions, $attributes); ?>
-                <button id="prev-btn" type="button"
+                <!--<button id="prev-btn" type="button"
                     class="nav-btn">&#10094;</button>
                 <button id="next-btn" type="button"
-                    class="nav-btn">&#10095;</button>
+                    class="nav-btn">&#10095;</button> -->
             </div>
-            <div class="thumbnails">
-                <?php foreach ($image_gallery as $imageRow): ?>
+            <!--<div class="thumbnails">
+                <?php /* foreach ($image_gallery as $imageRow): ?>
                     <a href="<?php echo wp_get_attachment_image_url($imageRow['ID']) ?>">
                         <?php echo wp_get_attachment_image($imageRow['ID']); ?>
                     </a>
-                <?php endforeach; ?>
-                <!-- Add more thumbnails as needed -->
-            </div>
+                <?php endforeach; */ ?>
+               
+        </div>-->
         </div>
     <?php endif; ?>
 
