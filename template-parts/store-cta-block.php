@@ -2,7 +2,7 @@
 
 <section class="get-start relative overflow-hidden">
     <div class="get-start-bg absolute w-100 h-100">
-        <?php if($footer_cta_block['background_image']): ?>
+        <?php if ($footer_cta_block['background_image']): ?>
             <?php $cropOptions = [
                 '(max-width: 768px)' => [1920, 461],
                 '(min-width: 769px)' => [1920, 461],
@@ -18,9 +18,11 @@
                 <h3 class="h1-sml"><?php echo $footer_cta_block['headline']; ?></h3>
                 <p><?php echo $footer_cta_block['sub_headline']; ?></p>
             </div>
-            <?php if($footer_cta_block['button']): ?>
+            <?php if ($footer_cta_block['button']): ?>
                 <div class="btn-group">
-                    <button type="submit" aria-label="submit" class="btn btn-light"><?php echo $footer_cta_block['button']['title'] ?></button>
+                    <a href="<?php echo site_url() ?>/contact">
+                        <button aria-label="submit" class="btn btn-light"><?php echo $footer_cta_block['button']['title'] ?></button>
+                    </a>
                 </div>
             <?php endif; ?>
         </div>

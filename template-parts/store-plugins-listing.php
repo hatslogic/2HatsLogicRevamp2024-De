@@ -7,13 +7,11 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
     <div class="container">
         <div class="filterbar flex justify-between wrap">
             <div class="filter flex xs:mb-20 min-w-px-350 xs:w-100">
-                <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url('/store/'); ?>">
+                <form role="search" method="get" id="searchform" class="searchform flex" action="<?php echo home_url('/store/'); ?>">
                     <input type="search" placeholder="Search plugins..." class="p-10 b-1 solid border-grey-2 fs-14 w-100"
                         value="<?php echo get_search_query(); ?>" name="search" aria-label="Search">
-                    <button type="submit">
-                        <span class="fs-20 c-black bg-orange px-20 py-10 -ml-1">
-                            <i class="icomoon icon-search flex"></i>
-                        </span>
+                    <button type="submit" class="fs-20 c-black bg-orange px-20 py-10 -ml-1  b-0">
+                        <i class="icomoon icon-search "></i>
                     </button>
                 </form>
             </div>
@@ -99,13 +97,16 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                         <div class="info w-80 pl-20 flex column justify-between">
                             <div class="content">
                                 <h5 class="fs-18 c-secondary mb-16 "><?php echo get_the_title(get_the_ID()) ?></h5>
+
                                 <?php
-                                $tags = wp_get_post_terms(get_the_ID(), "product_tag");
-                                if (! empty($tags)) {
-                                    foreach ($tags as $tag) {
-                                        echo "<label style='border: 1px solid; padding: 3px 5px; margin-right: 3px;' class='tag'>" . $tag->name . '</label>';
-                                    }
-                                }
+                                // $tags = wp_get_post_terms(get_the_ID(), "product_tag");
+
+                                // if (! empty($tags)) {
+                                //     foreach ($tags as $tag) {
+                                //         echo "<label style='border: 1px solid; padding: 3px 5px; margin-right: 3px;' class='tag'>" . $tag->name . '</label>';
+                                //     }
+                                // }
+
                                 ?>
                                 <div class="w-100 flex align-center mb-15 md:mb-10">
                                     <?php if (has_term('new', 'product_tag')) { ?>
