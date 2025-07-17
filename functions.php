@@ -379,6 +379,9 @@ if (!function_exists('app_setup_theme')) {
         add_image_size('img_500x599', 500, 599, true);
         add_image_size('img_238x288', 238, 288, true);
         add_image_size('img_818x464', 818, 464, true);
+
+        add_image_size('img_400x400', 400, 400, true);
+        add_image_size('img_744x744', 744, 744, true);
     }
 }
 
