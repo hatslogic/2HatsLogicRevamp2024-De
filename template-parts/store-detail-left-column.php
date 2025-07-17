@@ -9,8 +9,8 @@ $image_gallery = get_field('plugin_screenshots');
                 <?php $mainImage = $image_gallery[0]; ?>
                 <?php
                 $cropOptions = [
-                    '(max-width: 768px)' => [400, 400],
-                    '(min-width: 769px)' => [744, 744],
+                    '(max-width: 768px)' => [475, 475],
+                    '(min-width: 769px)' => [1000, 1000],
                 ];
                 $attributes = ['loading' => 'eager'];
                 ?>
