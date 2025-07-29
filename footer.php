@@ -8,9 +8,6 @@
  * @see https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 ?>
-<!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5529413.js"></script>
-<!-- End of HubSpot Embed Code -->
 <footer class="footer sm:mb-80 xs:mb-0">
     <div class="container">
         <div class="footer-top py-80 flex nowrap justify-between md:wrap xs:py-60">
