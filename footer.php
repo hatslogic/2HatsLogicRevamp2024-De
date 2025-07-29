@@ -240,9 +240,17 @@ if ($offer_modal_enable) {
             }
         });
         require([
-            "<?php echo plugins_url('cookie-law-info/lite/frontend/js/script.min.js?ver=' . get_bloginfo('version')); ?>"
+        "<?php echo plugins_url('cookie-law-info/lite/frontend/js/script.min.js?ver=' . get_bloginfo('version')); ?>"
         ], function() {
-            _ckyInit();
+            if (typeof _ckyInit === 'function') {
+                _ckyInit();
+            } else {
+                setTimeout(function() {
+                    if (typeof _ckyInit === 'function') {
+                        _ckyInit();
+                    }
+                }, 100);
+            }
         });
         var styles = ["<?php echo get_template_directory_uri(); ?>/dist/assets/css/wp.min.css?ver=3.6.9",
             "<?php echo includes_url("css/dist/block-library/style.min.css?ver=" . get_bloginfo('version')); ?>",

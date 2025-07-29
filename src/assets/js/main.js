@@ -1,6 +1,5 @@
 //=require variables.js
 //=require plugins/hats-slider.js
-//=require plugins/product-slider.js
 //=require app/case-study.js
 //=require app/hero.js
 //=require app/menu.js

@@ -12,4 +12,3 @@
 //=require app/contact.js
 //=require app/case-study.js
 //=require app/team.js
-//=require plugins/product-slider.js
