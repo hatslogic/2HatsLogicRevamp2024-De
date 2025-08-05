@@ -40,18 +40,20 @@
                         } ?>
                         
                         <a href="<?php echo $pluginStoreLink; ?>" class="item flex justify-content-start">
-                            <?php
-                            if (has_post_thumbnail()) {
-                                $featured_image_id = get_post_thumbnail_id(get_the_ID());
-                            
-                                $cropOptions = [
-                                    '(max-width: 768px)' => [84, 84],
-                                    '(min-width: 769px)' => [84, 84],
-                                ];
+                            <div class="plugin-thumb-wrap">
+                                <?php
+                                if (has_post_thumbnail()) {
+                                    $featured_image_id = get_post_thumbnail_id(get_the_ID());
+                                
+                                    $cropOptions = [
+                                        '(max-width: 768px)' => [84, 84],
+                                        '(min-width: 769px)' => [84, 84],
+                                    ];
 
-                                $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader w-20'];
-                                echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); 
-                            }?>
+                                    $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader w-100'];
+                                    echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); 
+                                }?>
+                            </div>
 
                             <div class="info w-80 pl-20 c-secondary">
                                 <h6 class="fs-18 lh-1-5 mb-10 hover:text-decoration-underline"><?php echo get_the_title( get_the_ID() ) ?></h6>
