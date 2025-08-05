@@ -22,7 +22,7 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                     <div class="dropdown relative ml-10">
                         <form role="search" method="get" action="<?php echo home_url('/store/'); ?>">
 
-                            <select name="category" id="" class="flex align-center justify-between b-1 solid border-grey-2 c-secondary bg-white p-10 min-w-px-150" onchange="this.form.submit()">
+                            <select name="category" id="" class="flex align-center justify-between b-1 solid border-grey-2 c-secondary bg-white p-10 min-w-px-150 fs-14" onchange="this.form.submit()">
                                 <option value="">Select</option>
                                 <?php $categories = get_terms(array(
                                     'taxonomy'   => 'product_category',
