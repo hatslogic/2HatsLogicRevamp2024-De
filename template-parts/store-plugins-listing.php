@@ -6,8 +6,8 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
 <section class="plugin-list overflow-hidden relative pt-60 pb-30">
     <div class="container">
         <div class="filterbar flex justify-between wrap">
-            <div class="filter flex xs:mb-20 min-w-px-350 xs:w-100">
-                <form role="search" method="get" id="searchform" class="searchform flex" action="<?php echo home_url('/store/'); ?>">
+            <div class="search-box">
+                <form role="search" method="get" id="searchform" class="searchform filter flex xs:mb-20 min-w-px-350 xs:w-100" action="<?php echo home_url('/store/'); ?>">
                     <input type="search" placeholder="Search plugins..." class="p-10 b-1 solid border-grey-2 fs-14 w-100"
                         value="<?php echo get_search_query(); ?>" name="search" aria-label="Search">
                     <button type="submit" class="fs-20 c-black bg-orange px-20 py-10 -ml-1  b-0">
