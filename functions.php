@@ -900,18 +900,6 @@ function replace_image_classes_with_ids_and_convert_to_picture($content)
             );
         }
 
-        // Add width/height if missing
-        if (!isset($attributes['width']) && isset($metadata['width'])) {
-            $attributes['width'] = $metadata['width'];
-        } else {
-            $attributes['width'] = 750;
-        }
-        if (!isset($attributes['height']) && isset($metadata['height'])) {
-            $attributes['height'] = $metadata['height'];
-        } else {
-            $attributes['height'] = 350;
-        }
-
         // Add fallback img
         $img_attributes = '';
         $attributes['loading'] = 'lazy';
@@ -960,8 +948,8 @@ function get_custom_srcset_sources($attachment_id)
 
     // Find our two target sizes
     $target_sizes = [
-        '1024' => false,
-        '640' => false
+        '812' => false,
+        '812' => false
     ];
 
     // Check all available sizes
@@ -969,51 +957,51 @@ function get_custom_srcset_sources($attachment_id)
         $width = $size_data['width'];
 
         // Check for exact matches first
-        if ($width == 1024) {
-            $target_sizes['1024'] = $size_name;
+        if ($width == 812) {
+            $target_sizes['812'] = $size_name;
         } elseif ($width == 300) {
-            $target_sizes['640'] = $size_name;
+            $target_sizes['300'] = $size_name;
         }
     }
 
     // If we didn't find exact matches, find the closest sizes
-    if (!$target_sizes['1024']) {
+    if (!$target_sizes['812']) {
         $closest = null;
         foreach ($metadata['sizes'] as $size_name => $size_data) {
-            if (!$closest || abs(1024 - $size_data['width']) < abs(1024 - $closest['width'])) {
+            if (!$closest || abs(812 - $size_data['width']) < abs(812 - $closest['width'])) {
                 $closest = $size_data;
-                $target_sizes['1024'] = $size_name;
+                $target_sizes['812'] = $size_name;
             }
         }
     }
 
-    if (!$target_sizes['640']) {
+    if (!$target_sizes['300']) {
         $closest = null;
         foreach ($metadata['sizes'] as $size_name => $size_data) {
-            if (!$closest || abs(640 - $size_data['width']) < abs(640 - $closest['width'])) {
+            if (!$closest || abs(300 - $size_data['width']) < abs(300 - $closest['width'])) {
                 $closest = $size_data;
-                $target_sizes['640'] = $size_name;
+                $target_sizes['300'] = $size_name;
             }
         }
     }
     // Build the sources array
-    if ($target_sizes['640']) {
-        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['640']);
+    if ($target_sizes['300']) {
+        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['300']);
         $sources[] =  [
             'url' => $url,
-            'descriptor' => 'media=(max-width:768px)'
+            'descriptor' => 'media=(max-width:300px)'
         ];
     }
 
-    if ($target_sizes['1024']) {
-        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['1024']);
+    if ($target_sizes['812']) {
+        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['812']);
         $sources[] = [
             'url' => $url,
             'descriptor' => 'media=(min-width:769px)'
         ];
         $sources['fallback_image'] = [
             'url' => $url,
-            'sizes' => $target_sizes['1024']
+            'sizes' => $target_sizes['1000']
         ];
     }
 
@@ -1052,7 +1040,7 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
             $webp_src_2x = webp(esc_url($image_src_2x['src']));
 
             $source_tag = "<source srcset='$webp_src 1x, $webp_src_2x 2x' type='image/webp' media='" . esc_attr($media_query) . "'>
-			<source srcset='" . esc_url($image_src['src']) . ' 1x, ' . esc_url($image_src_2x['src']) . " 2x' media='" . esc_attr($media_query) . "'>";
+            <source srcset='" . esc_url($image_src['src']) . ' 1x, ' . esc_url($image_src_2x['src']) . " 2x' media='" . esc_attr($media_query) . "'>";
 
             $picture .= $source_tag;
         }
