@@ -907,7 +907,7 @@ function replace_image_classes_with_ids_and_convert_to_picture($content)
             if ($name === 'class' && $new_class) {
                 // Replace the old class with the new one
                 $value = str_replace($old_class, $new_class, $value);
-                $value = $value . ' w-auto max-w-100';
+                $value = $value . ' w-auto ml-0 mr-auto max-w-100';
             }
             // Remove srcset/sizes as they're now in sources
             if ($name !== 'srcset' && $name !== 'sizes' && $name !== 'decoding') {
