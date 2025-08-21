@@ -9,7 +9,7 @@ define('APP_THEME_DIR', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
-    define('_S_VERSION', '2.4.1');
+    define('_S_VERSION', '2.4.2');
 }
 
 function my_acf_add_local_field_groups()
@@ -938,6 +938,9 @@ function get_custom_srcset_sources($attachment_id)
 
     // Get all available image sizes for this attachment
     $metadata = wp_get_attachment_metadata($attachment_id);
+    // print_r($metadata);
+
+
     if (empty($metadata['sizes'])) {
         return $sources;
     }
@@ -948,53 +951,55 @@ function get_custom_srcset_sources($attachment_id)
 
     // Find our two target sizes
     $target_sizes = [
-        '812' => false,
-        '812' => false
+        '768' => false,
+        '768' => false
     ];
+
+    // print_r($metadata['sizes']);
 
     // Check all available sizes
     foreach ($metadata['sizes'] as $size_name => $size_data) {
         $width = $size_data['width'];
 
         // Check for exact matches first
-        if ($width == 812) {
-            $target_sizes['812'] = $size_name;
-        } elseif ($width == 300) {
-            $target_sizes['300'] = $size_name;
+        if ($width == 768) {
+            $target_sizes['768'] = $size_name;
+        } elseif ($width == 450) {
+            $target_sizes['450'] = $size_name;
         }
     }
 
     // If we didn't find exact matches, find the closest sizes
-    if (!$target_sizes['812']) {
+    if (!$target_sizes['768']) {
         $closest = null;
         foreach ($metadata['sizes'] as $size_name => $size_data) {
-            if (!$closest || abs(812 - $size_data['width']) < abs(812 - $closest['width'])) {
+            if (!$closest || abs(768 - $size_data['width']) < abs(768 - $closest['width'])) {
                 $closest = $size_data;
-                $target_sizes['812'] = $size_name;
+                $target_sizes['768'] = $size_name;
             }
         }
     }
 
-    if (!$target_sizes['300']) {
+    if (!$target_sizes['450']) {
         $closest = null;
         foreach ($metadata['sizes'] as $size_name => $size_data) {
-            if (!$closest || abs(300 - $size_data['width']) < abs(300 - $closest['width'])) {
+            if (!$closest || abs(450 - $size_data['width']) < abs(450 - $closest['width'])) {
                 $closest = $size_data;
-                $target_sizes['300'] = $size_name;
+                $target_sizes['450'] = $size_name;
             }
         }
     }
     // Build the sources array
-    if ($target_sizes['300']) {
-        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['300']);
+    if ($target_sizes['450']) {
+        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['450']);
         $sources[] =  [
             'url' => $url,
-            'descriptor' => 'media=(max-width:300px)'
+            'descriptor' => 'media=(max-width:450px)'
         ];
     }
 
-    if ($target_sizes['812']) {
-        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['812']);
+    if ($target_sizes['768']) {
+        $url = wp_get_attachment_image_url($attachment_id, $target_sizes['768']);
         $sources[] = [
             'url' => $url,
             'descriptor' => 'media=(min-width:769px)'
