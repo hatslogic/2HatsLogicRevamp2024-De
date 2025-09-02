@@ -1,4 +1,4 @@
-[100, 100][100, 100]<?php $latest_plugins_block_fields = get_field('latest_plugins_block');?>
+<?php $latest_plugins_block_fields = get_field('latest_plugins_block');?>
 <section class="latest-plugin relative pt-30 pb-60">
     <div class="container relative z-1">
         <div class="title mb-40">
