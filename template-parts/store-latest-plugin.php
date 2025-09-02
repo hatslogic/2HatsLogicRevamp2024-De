@@ -11,8 +11,8 @@
                     <?php 
                     $cover_image = $latest_plugins_block_fields['cover_image']; 
                     $cropOptions = [
-                        '(max-width: 768px)' => [500, 350],
-                        '(min-width: 769px)' => [500, 350],
+                        '(max-width: 768px)' => [100, 100],
+                        '(min-width: 769px)' => [150, 150],
                     ];
                     $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high', 'picturetag_class' => 'loader'];
                     ?>
@@ -65,8 +65,8 @@
                                 $featured_image_id = get_post_thumbnail_id(get_the_ID());
                             
                                 $cropOptions = [
-                                    '(max-width: 768px)' => [84, 84],
-                                    '(min-width: 769px)' => [84, 84],
+                                    '(max-width: 768px)' => [100, 100],
+                                    '(min-width: 769px)' => [150, 150],
                                 ];
 
                                 $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader w-20'];
