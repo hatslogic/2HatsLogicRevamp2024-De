@@ -85,9 +85,9 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                             if (has_post_thumbnail()) {
                                 $featured_image_id = get_post_thumbnail_id(get_the_ID());
 
-                                $cropOptions = [
-                                    '(max-width: 768px)' => [84, 84],
-                                    '(min-width: 769px)' => [84, 84],
+                                $$cropOptions = [
+                                    '(max-width: 768px)' => [100, 100],
+                                    '(min-width: 769px)' => [150, 150],
                                 ];
 
                                 $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
