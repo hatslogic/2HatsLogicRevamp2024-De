@@ -1,4 +1,4 @@
-<?php $latest_plugins_block_fields = get_field('latest_plugins_block');?>
+[100, 100][100, 100]<?php $latest_plugins_block_fields = get_field('latest_plugins_block');?>
 <section class="latest-plugin relative pt-30 pb-60">
     <div class="container relative z-1">
         <div class="title mb-40">
@@ -11,8 +11,8 @@
                     <?php 
                     $cover_image = $latest_plugins_block_fields['cover_image']; 
                     $cropOptions = [
-                        '(max-width: 768px)' => [500, 350],
-                        '(min-width: 769px)' => [500, 350],
+                        '(max-width: 768px)' => [100, 100],
+                        '(min-width: 769px)' => [150, 150],
                     ];
                     $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high', 'picturetag_class' => 'loader'];
                     ?>
@@ -66,7 +66,7 @@
                             
                                 $cropOptions = [
                                     '(max-width: 768px)' => [100, 100],
-                                    '(min-width: 769px)' => [100, 100],
+                                    '(min-width: 769px)' => [150, 150],
                                 ];
 
                                 $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader w-20'];

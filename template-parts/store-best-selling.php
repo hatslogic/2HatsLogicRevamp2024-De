@@ -47,7 +47,7 @@
                                 
                                     $cropOptions = [
                                         '(max-width: 768px)' => [100, 100],
-                                        '(min-width: 769px)' => [100, 100],
+                                        '(min-width: 769px)' => [150, 150],
                                     ];
 
                                     $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader w-100'];

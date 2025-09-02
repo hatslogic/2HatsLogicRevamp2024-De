@@ -1,4 +1,4 @@
-<?php
+[100, 100][100, 100]<?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $search = isset($_GET['search']) ? sanitize_text_field($_GET['search']) : '';
 $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? sanitize_text_field($_GET['category']) : '';
@@ -85,9 +85,9 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                             if (has_post_thumbnail()) {
                                 $featured_image_id = get_post_thumbnail_id(get_the_ID());
 
-                                $cropOptions = [
+                                $$cropOptions = [
                                     '(max-width: 768px)' => [100, 100],
-                                    '(min-width: 769px)' => [100, 100],
+                                    '(min-width: 769px)' => [150, 150],
                                 ];
 
                                 $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
