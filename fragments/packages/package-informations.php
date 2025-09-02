@@ -8,9 +8,6 @@
             <div class="col w-50 md:w-100">
                 <div class="service-header">
                     <div class="headline">
-                        <?php if ($headline['subtitle']) : ?>
-                            <span class="headline c-primary font-bold"><?php echo $headline['subtitle']; ?></span>
-                        <?php endif; ?>
                         <h1 class="h1-sml"><?php echo $headline['title']; ?></h1>
                         <?php if($content) : ?>
                         <p class="mt-30"><?php echo $content; ?></p>
@@ -28,7 +25,7 @@
                 foreach ($packages as $package) :
                 $isHighlighted = $package['highlight_package'];
             ?>
-                <div class="package-item w-100 flex column max-w-px-520 md:max-w-100 b-1 solid h-full hover:bc-primary transition <?php echo $isHighlighted ? 'bc-primary' : 'bc-hash'; ?>">
+            <div class="package-item bg-white w-100 flex column max-w-px-520 md:max-w-100 b-1 solid h-full hover:bc-primary transition <?php echo $isHighlighted ? 'bc-primary' : 'bc-hash'; ?>">
                 <div class="package-item-header p-34 md:p-24 <?php echo $isHighlighted ? 'bg-primary-light c-white' : 'bg-light-grey c-black'; ?>">
                         <?php if($package['name']) : ?>
                         <h2 class="h4 fs-26 uppercase flex align-center gap-14">
@@ -53,9 +50,9 @@
                     <?php endif; ?>
                     <?php if($package['package_details']['package_details']) : ?>
                     <ul class="no-bullets lh-1-2 mt-14 fs-17">
-                        <?php foreach($package['package_details']['package_details'] as $package_detail) : ?>
+                        <?php foreach($package['package_details']['package_details'] as $index => $package_detail) : ?>
                             <?php if($package_detail['benefit']) : ?>
-                            <li class="relative block"> 
+                            <li class="relative block<?php echo $index > 0 ? ' mt-12' : ''; ?>"> 
                                 <i class="icomoon icon-done c-primary fs-16 absolute left-0 top-4"></i>
                                 <span class="inline-block ml-24"><?php echo $package_detail['benefit']; ?></span>
                             </li>
