@@ -1,4 +1,4 @@
-<?php
+[100, 100][100, 100]<?php
 // $relatedCategories = get_the_terms(get_the_ID(), 'product_category');
 // $relatedCategoriesIds = wp_list_pluck($relatedCategories, 'term_id');
 $args = array(

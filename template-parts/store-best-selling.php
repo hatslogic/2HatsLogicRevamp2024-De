@@ -1,4 +1,4 @@
-<?php $best_selling_block_fields = get_field('best_selling_plugins_block');?>
+[100, 100][100, 100]<?php $best_selling_block_fields = get_field('best_selling_plugins_block');?>
 <section class="best-selling relative pt-30 pb-30">
     <div class="container relative z-1">
         <div class="title mb-40">

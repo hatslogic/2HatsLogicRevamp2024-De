@@ -1,4 +1,4 @@
-<?php
+[100, 100][100, 100]<?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $search = isset($_GET['search']) ? sanitize_text_field($_GET['search']) : '';
 $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? sanitize_text_field($_GET['category']) : '';
