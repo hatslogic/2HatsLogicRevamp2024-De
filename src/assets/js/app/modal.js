@@ -63,8 +63,23 @@ function openModal(name) {
 let packageModalShown = false;
 
 function openPackageModal() {
-  // Check if the package modal has already been shown using cookies
-  if (packageModalShown || getCookie("packageModalShown")) return;
+  // Check if the package modal has already been shown using sessionStorage with 7-day expiration
+  const packageModalData = sessionStorage.getItem("packageModalShown");
+  if (packageModalShown || packageModalData) {
+    // Check if the stored timestamp is less than 7 days old
+    if (packageModalData) {
+      const storedTime = parseInt(packageModalData);
+      const currentTime = Date.now();
+      const sevenDaysInMs = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+      
+      if (currentTime - storedTime < sevenDaysInMs) {
+        return; // Modal was closed within the last 7 days
+      } else {
+        // Clear expired session storage
+        sessionStorage.removeItem("packageModalShown");
+      }
+    }
+  }
 
   const modal = document.getElementById('packages');
   if (!modal) return;
@@ -72,9 +87,6 @@ function openPackageModal() {
   modal.classList.add("show");
   overlayModal.classList.add("active");
   body.classList.add("disable-scroll");
-
-  // Store in cookie that the package modal has been shown (7 days)
-  setCookie("packageModalShown", "true", 7);
 
   // close modal on escape
   window.addEventListener("keyup", function (e) {
@@ -92,8 +104,8 @@ function closePackageModal() {
   overlayModal.classList.remove("active");
   body.classList.remove("disable-scroll");
 
-  // Set cookie to prevent showing again for 7 days
-  setCookie("packageModalShown", "true", 7);
+  // Store current timestamp in sessionStorage (will expire after 7 days)
+  sessionStorage.setItem("packageModalShown", Date.now().toString());
 }
 
 // Open package modal after 5 seconds
