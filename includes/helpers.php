@@ -348,3 +348,16 @@ function app_render_page_single_help_desk()
         app_render_fragment('single_help_desk'.DIRECTORY_SEPARATOR.$section_slug, compact('section_index', 'section_slug', 'section'));
     }
 }
+
+function app_render_page_packages()
+{
+    if (!$sections = get_field('packages')) {
+        return;
+    }
+
+    foreach ($sections as $section_index => $section) {
+        $section_slug = str_replace('_', '-', $section['acf_fc_layout']);
+
+        app_render_fragment('packages'.DIRECTORY_SEPARATOR.$section_slug, compact('section_index', 'section_slug', 'section'));
+    }
+}
