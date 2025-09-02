@@ -68,7 +68,7 @@
                     $button = $package['button'];
                     ?>
                     <a href="<?php echo $button['url']; ?>" target="<?php echo $button['target']; ?>" class="btn orange-btn w-100" aria-label="get a quote">
-                        <?php echo $button['title']; ?>
+                        <?php // echo $button['title']; ?> Subscribe
                     </a>
                     <?php endif;
                     ?>
@@ -78,7 +78,7 @@
                     if($action === 'modal') : 
                     $modal = $package['modal'];
                     ?>
-                    <button onclick="openModal('<?php echo $modal['value']; ?>')" aria-label="<?php echo $modal['label']; ?>" class="btn orange-btn w-100"><?php echo $modal['label']; ?></button>
+                    <button onclick="openModal('<?php echo $modal['value']; ?>')" aria-label="<?php echo $modal['label']; ?>" class="btn orange-btn w-100"><?php // echo $modal['label']; ?>Subscribe</button>
                     <?php endif; ?>
                 </div>
             </div>
