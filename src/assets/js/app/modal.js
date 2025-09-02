@@ -1,3 +1,17 @@
+// Cookie utility functions
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+  return null;
+}
+
+function setCookie(name, value, days) {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
+
 // let modalClosed = getCookie("modalClosed") === "true";
 let modalClosed = false;
 let idleTimer;
@@ -45,6 +59,45 @@ function openModal(name) {
   });
 }
 
+// Package modal functionality
+let packageModalShown = false;
+
+function openPackageModal() {
+  // Check if the package modal has already been shown using cookies
+  if (packageModalShown || getCookie("packageModalShown")) return;
+
+  const modal = document.getElementById('packages');
+  if (!modal) return;
+  
+  modal.classList.add("show");
+  overlayModal.classList.add("active");
+  body.classList.add("disable-scroll");
+
+  // Store in cookie that the package modal has been shown (7 days)
+  setCookie("packageModalShown", "true", 7);
+
+  // close modal on escape
+  window.addEventListener("keyup", function (e) {
+    if (e.key === "Escape") closePackageModal();
+  });
+
+  packageModalShown = true;
+}
+
+function closePackageModal() {
+  const modal = document.getElementById('packages');
+  if (!modal) return;
+  
+  modal.classList.remove("show");
+  overlayModal.classList.remove("active");
+  body.classList.remove("disable-scroll");
+
+  // Set cookie to prevent showing again for 7 days
+  setCookie("packageModalShown", "true", 7);
+}
+
+// Open package modal after 5 seconds
+setTimeout(openPackageModal, 5000);
 
 if (!modalClosed) {
   document.addEventListener("mousemove", resetIdleTimer);
@@ -68,23 +121,16 @@ function closeModal(name) {
   }
 }
 
-
-
 function resetIdleTimer() {
   clearTimeout(idleTimer); // This removes any previous timer
-
 }
-
 
 function openNewsletterModal() {
   // Replace this with the actual function call to open your modal
   openModal("newsletter-subscription");
 }
 
-
-
 let offerModalShown = false;
-
 
 function openOfferModal() {
   // Check if the offer modal has already been shown using sessionStorage
@@ -113,8 +159,11 @@ function closeOfferModal() {
   modal.classList.remove("show");
   overlayModal.classList.remove("active");
   body.classList.remove("disable-scroll");
-
 }
 
 // Open modal after 6 seconds
 setTimeout(openOfferModal, 6000);
+
+function redirectToPackages(url) {
+  window.location.href = url;
+}
