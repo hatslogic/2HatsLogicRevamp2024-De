@@ -40,7 +40,7 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
             </div>
         </div>
 
-        <div class="grid grid-3 md:grid-2 xs:grid-1 mt-40 w-100">
+        <div class="grid grid-3 md:grid-2 xs:grid-1 mt-40 -ml-20 -mr-20">
 
             <?php
             $posts_per_page = 6;
