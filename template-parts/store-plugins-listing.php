@@ -40,7 +40,7 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
             </div>
         </div>
 
-        <div class="grid grid-3 md:grid-2 xs:grid-1 mt-40 md:mt-0 -ml-20 -mr-20">
+        <div class="grid grid-3 md:grid-2 xs:grid-1 mt-40 md:mt-0">
 
             <?php
             $posts_per_page = 6;
@@ -78,7 +78,7 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                     $pluginPrice = get_field('plugin_price', get_the_ID());
                     $pluginStoreLink = get_field('shopware_store_url', get_the_ID());
             ?>
-                    <div class="col card flex b-0 bt-1 br-1 solid border-grey-2 p-30 xs:p-20">
+                    <div class="col card flex b-0 bt-1 br-1 solid border-grey-2 p-30 xs:p-20 hover:bg-light-grey">
                         <div class="img-wrap w-20 h-20">
                             <a href="<?php echo get_permalink() ?>" class="w-100 aspect-square block">
                                 <?php
