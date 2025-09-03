@@ -20,7 +20,7 @@ $query = new WP_Query($args);
 <section>
     <div class="container">
         <div class="w-100 mt-70 mb-50">
-            <div class="title mb-40 flex align-center justify-between wrap">
+            <div class="title mb-40 md:mb-30 flex align-center justify-between wrap">
                 <h2>Recommended for you</h2>
                 <a href="<?php echo site_url( 'store' ) ?>" aria-label="show-full-description" class="link link-primary underline block md:mt-16">View More</a>
             </div>

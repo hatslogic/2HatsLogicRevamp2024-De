@@ -11,7 +11,7 @@ $testimonials = get_field('testimonials_with_rating');
                 <h2><?php echo $testimonials['title'] ?></h2>
             </div>
 
-            <div class="grid grid-4 sm:flex sm:flex-wrap sm:overflow-auto lg:grid-3 xl:grid-4 rg-40 cg-20 p-60 xs:p-30 relative review-clients scroll-snap b-1 solid border-grey-2 bg-grey-2">
+            <div class="grid grid-4 sm:flex sm:flex-wrap sm:overflow-auto lg:grid-3 xl:grid-4 rg-40 cg-20 p-60 xs:p-20 relative review-clients scroll-snap b-1 solid border-grey-2 bg-grey-2 xs:-ml-20 xs:-mr-20 xs:w-auto">
                 <?php   
                 foreach ($testimonials['posts'] as $post):
                     setup_postdata($post);

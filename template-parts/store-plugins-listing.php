@@ -7,7 +7,7 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
     <div class="container">
         <div class="filterbar flex justify-between wrap">
             <div class="search-box">
-                <form role="search" method="get" id="searchform" class="searchform filter flex xs:mb-20 min-w-px-350 xs:w-100" action="<?php echo home_url('/store/'); ?>">
+                <form role="search" method="get" id="searchform" class="searchform filter flex xs:mb-20 xs:w-100" action="<?php echo home_url('/store/'); ?>">
                     <input type="search" placeholder="Search plugins..." class="p-10 b-1 solid border-grey-2 fs-14 w-100"
                         value="<?php echo get_search_query(); ?>" name="search" aria-label="Search">
                     <button type="submit" class="fs-20 c-black bg-orange px-20 py-10 -ml-1  b-0">
@@ -16,7 +16,7 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                 </form>
             </div>
 
-            <div class="sorting c-secondary fs-14 flex justify-end xs:w-100">
+            <div class="sorting c-secondary fs-14 flex xs:hidden justify-end xs:w-100">
                 <div class="flex align-center">
                     <span>Filter</span>
                     <div class="dropdown relative ml-10">
@@ -40,7 +40,7 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
             </div>
         </div>
 
-        <div class="grid grid-3 md:grid-2 xs:grid-1 mt-40 -ml-20 -mr-20">
+        <div class="grid grid-3 md:grid-2 xs:grid-1 mt-40 md:mt-0 -ml-20 -mr-20">
 
             <?php
             $posts_per_page = 6;

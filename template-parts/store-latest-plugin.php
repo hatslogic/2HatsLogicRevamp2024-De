@@ -1,7 +1,7 @@
 <?php $latest_plugins_block_fields = get_field('latest_plugins_block');?>
 <section class="latest-plugin relative pt-30 pb-60">
     <div class="container relative z-1">
-        <div class="title mb-40">
+        <div class="title mb-40 md:mb-30">
             <h2><?php echo $latest_plugins_block_fields['headline'] ? $latest_plugins_block_fields['headline'] : 'Latest Plugins' ?></h2>
         </div>
         
@@ -25,7 +25,7 @@
             </div>
 
             
-            <div class="w-70 lg:w-100 grid grid-2 md:grid-1 cg-40 rg-30 bg-grey-2 p-30">
+            <div class="w-70 lg:w-100 grid grid-2 md:grid-1 cg-40 rg-30 bg-grey-2 p-30 md:p-20">
                 <?php
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 $posts_per_page = 6;
