@@ -79,14 +79,14 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                     $pluginStoreLink = get_field('shopware_store_url', get_the_ID());
             ?>
                     <div class="col card flex b-0 bt-1 br-1 solid border-grey-2 p-20">
-                        <div class="img-wrap">
-                            <a href="<?php echo get_permalink() ?>" class="w-20">
+                        <div class="img-wrap w-20 h-20">
+                            <a href="<?php echo get_permalink() ?>" class="w-100 aspect-square block">
                                 <?php
 
                                 if (has_post_thumbnail()) {
                                     $featured_image_id = get_post_thumbnail_id(get_the_ID());
 
-                                    $$cropOptions = [
+                                    $cropOptions = [
                                         '(max-width: 768px)' => [100, 100],
                                         '(min-width: 769px)' => [150, 150],
                                     ];
@@ -110,12 +110,13 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                                 // }
 
                                 ?>
+
+                                <?php if (has_term('new', 'product_tag')) { ?>
                                 <div class="w-100 flex align-center mb-15 md:mb-10">
-                                    <?php if (has_term('new', 'product_tag')) { ?>
                                         <span class="c-white fs-12 font-bold px-10 py-5 bg-red">New</span>
-                                    <?php } ?>
                                     <!-- <span class="c-primary fs-14">Free trial available.</span> -->
                                 </div>
+                                <?php } ?>
                                 <p class="c-secondary m-0"><?php echo get_the_content(get_the_ID()) ?></p>
                             </div>
                             <?php if (!empty($pluginPrice) && !empty($pluginStoreLink)) { ?>
