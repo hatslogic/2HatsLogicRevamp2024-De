@@ -31,7 +31,7 @@ $query = new WP_Query($args);
                         $query->the_post();
                         $shortDescription = get_field('short_description',get_the_ID() ); ?>
         
-                        <a href="#" class="item flex justify-content-start">
+                        <a href="<?php echo get_the_permalink() ?>" class="item flex justify-content-start">
                             <div class="img-wrap w-20 h-20">
                                 <div class="w-100 aspect-square block">
                                 <?php
