@@ -22,7 +22,9 @@
                     <?php 
                     if($action === 'modal' && $modal) : 
                     ?>
-                    <button onclick="openModal('<?php echo $modal['value']; ?>')" aria-label="<?php echo $modal['label']; ?>" class="btn orange-btn"><?php echo $modal['label']; ?></button>
+                    <button onclick="openModal('<?php echo $modal['value']; ?>')" aria-label="<?php echo $modal['label']; ?>" class="btn orange-btn">
+                        KONTAKT
+                    </button>
                     <?php endif; ?>
                 </div>
             </div>

@@ -78,7 +78,9 @@
                     if($action === 'modal') : 
                     $modal = $package['modal'];
                     ?>
-                    <button onclick="openModal('<?php echo $modal['value']; ?>'); updatePackageOption('<?php echo $package['name']; ?>')" aria-label="<?php echo $modal['label']; ?>" class="btn orange-btn w-100"><?php echo $modal['label']; ?></button>
+                    <button onclick="openModal('<?php echo $modal['value']; ?>'); updatePackageOption('<?php echo $package['name']; ?>')" aria-label="<?php echo $modal['label']; ?>" class="btn orange-btn w-100">
+                        ABONNIEREN
+                    </button>
                     <?php endif; ?>
                 </div>
             </div>
