@@ -122,13 +122,9 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                                     <?php echo strlen($shortDescription) > 100 ? substr($shortDescription, 0, 100) . '...' : $shortDescription ?>
                                 </p>
                             </div>
-                            <?php if (!empty($pluginPrice) && !empty($pluginStoreLink)) { ?>
-                                <div class="btn-group mt-20">
-                                    <a href="<?php echo $pluginStoreLink ?>" class="btn orange-btn-outline">Buy From €<?php echo $pluginPrice ?></a>
-                                </div>
-                            <?php } else { ?>
+                            <div class="btn-group mt-20">
                                 <a href="<?php echo get_the_permalink(get_the_ID()) ?>" class="btn orange-btn-outline">Learn More</a>
-                            <?php } ?>
+                            </div>
                         </div>
                     </div>
             <?php }
