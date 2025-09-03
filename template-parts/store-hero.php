@@ -11,7 +11,7 @@ $sub_headline = get_field('sub_headline');
                 '(max-width: 768px)' => [1920, 461],
                 '(min-width: 769px)' => [1920, 461],
             ];
-            $attributes = ['class' => 'transition', 'loading' => 'eager', 'fetchPriority' => 'high', 'picturetag_class' => 'loader'];
+            $attributes = ['class' => 'transition cover w-100 h-100', 'loading' => 'eager', 'fetchPriority' => 'high', 'picturetag_class' => 'loader h-100 cover'];
             ?>
             <?php echo hatslogic_get_attachment_picture($hero_image['ID'], $cropOptions, $attributes); ?>
         <?php endif; ?>
