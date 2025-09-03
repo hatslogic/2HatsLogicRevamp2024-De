@@ -17,7 +17,7 @@ $identifier = get_field('identifier');
                         <?php if (isset($description_tab['about_the_extension'])): ?>
                             <div class="col w-60 md:w-100 md:order-2 md:mt-40">
                                 <div class="form-wrap">
-                                    <div>
+                                    <div class="editor-content">
                                         <h2 class="h3 mb-20">About the Extension</h2>
                                         <?php echo $description_tab['about_the_extension']; ?>
                                     </div>
