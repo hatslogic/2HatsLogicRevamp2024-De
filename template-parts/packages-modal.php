@@ -12,7 +12,7 @@ $packages_modal_button_link = get_field('packages_modal_button_link', 'option');
 <div id="packages" class="modal fixed packages bg-overlay inset-0 z-14 h-100 w-100 transition">
     <div class="container h-100 xs:p-0">
         <div class="flex align-center justify-start md:align-start h-100">
-            <div class="flex xs:wrap w-100 h-75 xs:h-100 align-center justify-start row md:column md:align-start relative bg-white z-1 xs:scroll-y">
+            <div class="flex xs:wrap w-100 h-75 xs:h-100 align-center justify-start md:align-start relative bg-white z-1 xs:scroll-y">
                 <button class="btn btn-secondary absolute xs:fixed z-1 top-20 right-20 close" onclick="closePackageModal()">
                     <i class="icomoon icon-close"></i>
                 </button>
