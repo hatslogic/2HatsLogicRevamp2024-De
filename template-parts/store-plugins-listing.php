@@ -133,49 +133,47 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
             wp_reset_postdata();
             ?>
 
-            <?php
-            $paginate_links = paginate_links(
-                [
-                    'format' => '?paged=%#%',
-                    'current' => max(1, get_query_var('paged')),
-                    'total' => $productsQuery->max_num_pages,
-                    'prev_class' => 'prev',
-                    'next_class' => 'nexts',
-                    'prev_text' => '<i class="icomoon icon-chevron_left"></i>',
-                    'next_text' => '<i class="icomoon icon-chevron_right"></i>',
-                    'type' => 'array',
-                ]
-            );
-
-            if ($paginate_links) {
-            ?>
-                <nav class="pagination w-100 mt-40 flex justify-center">
-                    <ul class="mx-auto no-bullets flex fs-16 align-center">
-                        <?php foreach ($paginate_links as $link) { ?>
-                            <!--Add new classes for links -->
-                            <li class="px-10">
-                                <?php
-                                $paginate_link = '';
-                                if (strpos($link, 'prev') !== false || strpos($link, 'next') !== false) {
-                                    $paginate_link = str_replace('page-numbers', 'page-link slider-prev flex align-center justify-center transition no-decoration', $link);
-                                } elseif (strpos($link, 'current') !== false) {
-                                    $paginate_link = str_replace('page-numbers', 'page-link current', $link);
-                                    $paginate_link = str_replace('<span', '<a', $paginate_link);
-                                    $paginate_link = str_replace('</span>', '</a>', $paginate_link);
-                                } else {
-                                    $paginate_link = str_replace('page-numbers', 'page-link no-decoration', $link);
-                                }
-                                echo $paginate_link;
-                                ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </nav>
-
-            <?php } ?>
-
-
         </div>
-        <partial src="components/pagination.html"></partial>
+
+        <?php
+        $paginate_links = paginate_links(
+            [
+                'format' => '?paged=%#%',
+                'current' => max(1, get_query_var('paged')),
+                'total' => $productsQuery->max_num_pages,
+                'prev_class' => 'prev',
+                'next_class' => 'nexts',
+                'prev_text' => '<i class="icomoon icon-chevron_left"></i>',
+                'next_text' => '<i class="icomoon icon-chevron_right"></i>',
+                'type' => 'array',
+            ]
+        );
+
+        if ($paginate_links) {
+        ?>
+            <nav class="pagination w-100 mt-40 flex justify-center">
+                <ul class="mx-auto no-bullets flex fs-16 align-center">
+                    <?php foreach ($paginate_links as $link) { ?>
+                        <!--Add new classes for links -->
+                        <li class="px-10">
+                            <?php
+                            $paginate_link = '';
+                            if (strpos($link, 'prev') !== false || strpos($link, 'next') !== false) {
+                                $paginate_link = str_replace('page-numbers', 'page-link slider-prev flex align-center justify-center transition no-decoration', $link);
+                            } elseif (strpos($link, 'current') !== false) {
+                                $paginate_link = str_replace('page-numbers', 'page-link current', $link);
+                                $paginate_link = str_replace('<span', '<a', $paginate_link);
+                                $paginate_link = str_replace('</span>', '</a>', $paginate_link);
+                            } else {
+                                $paginate_link = str_replace('page-numbers', 'page-link no-decoration', $link);
+                            }
+                            echo $paginate_link;
+                            ?>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </nav>
+
+        <?php } ?>
     </div>
 </section>
