@@ -20,8 +20,8 @@
             </div>
             <?php if ($footer_cta_block['button']): ?>
                 <div class="btn-group">
-                    <a href="<?php echo site_url() ?>/contact">
-                        <button aria-label="submit" class="btn btn-light"><?php echo $footer_cta_block['button']['title'] ?></button>
+                    <a href="<?php echo site_url() ?>/contact" class="btn btn-light">
+                        <?php echo $footer_cta_block['button']['title'] ?>
                     </a>
                 </div>
             <?php endif; ?>
