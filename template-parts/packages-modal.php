@@ -11,12 +11,12 @@ $packages_modal_button_link = get_field('packages_modal_button_link', 'option');
 <?php if($packages_modal_enable): ?>
 <div id="packages" class="modal fixed packages bg-overlay inset-0 z-14 h-100 w-100 transition">
     <div class="container h-100 xs:p-0">
-        <div class="flex align-center h-100">
-            <div class="flex xs:wrap w-100 h-80 xs:h-100 align-center relative bg-white z-1 xs:scroll-y">
+        <div class="flex align-center justify-start md:align-start h-100">
+            <div class="flex xs:wrap w-100 h-75 xs:h-100 align-center justify-start row md:column md:align-start relative bg-white z-1 xs:scroll-y">
                 <button class="btn btn-secondary absolute xs:fixed z-1 top-20 right-20 close" onclick="closePackageModal()">
                     <i class="icomoon icon-close"></i>
                 </button>
-                <div class="col w-50 h-100 xs:w-100 xs:h-50 md:hidden xs:visible">
+                <div class="col w-50 h-100 xs:w-100 xs:h-37 md:hidden xs:visible">
                     <?php if ($packages_modal_image && $packages_modal_image_mobile) { ?>
                     
                     <?php
@@ -37,7 +37,7 @@ $packages_modal_button_link = get_field('packages_modal_button_link', 'option');
 
                     <?php } ?>
                 </div>
-                <div class="col w-50 h-100 xs:h-auto md:w-100 md:h-auto p-60 md:px-20 xs:py-60 flex align-center">
+                <div class="col w-50 h-100 xs:h-auto md:w-100 md:h-auto p-60 md:px-20 xs:py-40 flex align-center">
                     <div class="form-wrap">
                         <?php if($packages_modal_title): ?>
                         <div class="title">
@@ -47,7 +47,7 @@ $packages_modal_button_link = get_field('packages_modal_button_link', 'option');
                         <?php endif; ?>
                         <div class="content">
                             <?php if($packages_modal_offers): ?>
-                            <ul class="no-bullets lh-1-2 mt-40 fs-17">
+                            <ul class="no-bullets lh-1-2 mt-40 md:mt-30 fs-17">
                                 <?php foreach($packages_modal_offers as $index => $offer): ?>
                                 <li class="relative block<?php echo $index > 0 ? ' mt-12' : ''; ?>">
                                     <i class="icomoon icon-done c-primary fs-16 absolute left-0 top-4"></i>
