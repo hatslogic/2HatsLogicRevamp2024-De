@@ -79,21 +79,23 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                     $pluginStoreLink = get_field('shopware_store_url', get_the_ID());
             ?>
                     <div class="col card flex b-0 bt-1 br-1 solid border-grey-2 p-20">
-                        <a href="<?php echo get_permalink() ?>" class="w-20">
-                            <?php
+                        <div class="img-wrap">
+                            <a href="<?php echo get_permalink() ?>" class="w-20">
+                                <?php
 
-                            if (has_post_thumbnail()) {
-                                $featured_image_id = get_post_thumbnail_id(get_the_ID());
+                                if (has_post_thumbnail()) {
+                                    $featured_image_id = get_post_thumbnail_id(get_the_ID());
 
-                                $$cropOptions = [
-                                    '(max-width: 768px)' => [100, 100],
-                                    '(min-width: 769px)' => [150, 150],
-                                ];
+                                    $$cropOptions = [
+                                        '(max-width: 768px)' => [100, 100],
+                                        '(min-width: 769px)' => [150, 150],
+                                    ];
 
-                                $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
-                                echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes);
-                            } ?>
-                        </a>
+                                    $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader'];
+                                    echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes);
+                                } ?>
+                            </a>
+                        </div>
                         <div class="info w-80 pl-20 flex column justify-between">
                             <div class="content">
                                 <h5 class="fs-18 c-secondary mb-16 "><?php echo get_the_title(get_the_ID()) ?></h5>
