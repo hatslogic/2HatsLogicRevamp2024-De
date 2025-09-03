@@ -117,7 +117,10 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                                     <!-- <span class="c-primary fs-14">Free trial available.</span> -->
                                 </div>
                                 <?php } ?>
-                                <p class="c-secondary m-0"><?php echo get_the_content(get_the_ID()) ?></p>
+                                <p class="c-secondary m-0">
+                                    <?php $shortDescription = get_the_content(get_the_ID()); ?>
+                                    <?php echo strlen($shortDescription) > 100 ? substr($shortDescription, 0, 100) . '...' : $shortDescription ?>
+                                </p>
                             </div>
                             <?php if (!empty($pluginPrice) && !empty($pluginStoreLink)) { ?>
                                 <div class="btn-group mt-20">

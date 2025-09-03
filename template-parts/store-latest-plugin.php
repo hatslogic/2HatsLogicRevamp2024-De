@@ -79,7 +79,7 @@
 
                             <div class="info w-80 pl-20 c-secondary">
                                 <h6 class="fs-18 lh-1-5 mb-10 hover:text-decoration-underline"><?php echo get_the_title( get_the_ID() ) ?></h6>
-                                <p class="fs-16 m-0"><?php echo $shortDescription ?></p>
+                                <p class="fs-16 m-0"><?php echo strlen($shortDescription) > 100 ? substr($shortDescription, 0, 100) . '...' : $shortDescription ?></p>
                             </div>
                         </a>
                     <?php }
