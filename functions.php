@@ -1028,6 +1028,10 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
     $img_attributes = array_map(fn($key, $value) => "$key='$value'", array_keys($attributes), $attributes);
     $img_attributes = implode(' ', $img_attributes);
 
+    // Check if the original image is already in WebP format
+    $original_file = get_attached_file($image_id);
+    $is_original_webp = pathinfo($original_file, PATHINFO_EXTENSION) === 'webp';
+
     $picture = '<picture ' . ($picturetag_class ? "class='$picturetag_class'" : '') . '>';
 
     foreach ($breakpoints as $media_query => $image_size) {
@@ -1041,11 +1045,17 @@ function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = []
             $image_src_2x = bis_get_attachment_image_src($imageId, [$image_size[0] * 2, $image_size[1] * 2], true);
         }
         if ($image_src && !empty($image_src['src'])) {
-            $webp_src = webp(esc_url($image_src['src']));
-            $webp_src_2x = webp(esc_url($image_src_2x['src']));
+            if ($is_original_webp) {
+                // If original is WebP, only use the original source without WebP conversion
+                $source_tag = "<source srcset='" . esc_url($image_src['src']) . ' 1x, ' . esc_url($image_src_2x['src']) . " 2x' media='" . esc_attr($media_query) . "'>";
+            } else {
+                // If original is not WebP, provide both WebP and original sources
+                $webp_src = webp(esc_url($image_src['src']));
+                $webp_src_2x = webp(esc_url($image_src_2x['src']));
 
-            $source_tag = "<source srcset='$webp_src 1x, $webp_src_2x 2x' type='image/webp' media='" . esc_attr($media_query) . "'>
-            <source srcset='" . esc_url($image_src['src']) . ' 1x, ' . esc_url($image_src_2x['src']) . " 2x' media='" . esc_attr($media_query) . "'>";
+                $source_tag = "<source srcset='$webp_src 1x, $webp_src_2x 2x' type='image/webp' media='" . esc_attr($media_query) . "'>
+                <source srcset='" . esc_url($image_src['src']) . ' 1x, ' . esc_url($image_src_2x['src']) . " 2x' media='" . esc_attr($media_query) . "'>";
+            }
 
             $picture .= $source_tag;
         }
