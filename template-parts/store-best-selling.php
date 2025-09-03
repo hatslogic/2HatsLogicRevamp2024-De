@@ -40,7 +40,7 @@
                         } ?>
                         
                         <a href="<?php echo $pluginStoreLink; ?>" class="item flex justify-content-start">
-                            <div class="plugin-thumb-wrap">
+                            <div class="plugin-thumb-wrap w-20">
                                 <?php
                                 if (has_post_thumbnail()) {
                                     $featured_image_id = get_post_thumbnail_id(get_the_ID());
@@ -50,7 +50,7 @@
                                         '(min-width: 769px)' => [150, 150],
                                     ];
 
-                                    $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader w-100'];
+                                    $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader w-100 aspect-square'];
                                     echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); 
                                 }?>
                             </div>
