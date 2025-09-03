@@ -32,18 +32,22 @@ $query = new WP_Query($args);
                         $shortDescription = get_field('short_description',get_the_ID() ); ?>
         
                         <a href="#" class="item flex justify-content-start">
-                        <?php
-                            if (has_post_thumbnail()) {
-                                $featured_image_id = get_post_thumbnail_id(get_the_ID());
-                            
-                                $cropOptions = [
-                                    '(max-width: 768px)' => [100, 100],
-                                    '(min-width: 769px)' => [150, 150],
-                                ];
+                            <div class="img-wrap w-20 h-20">
+                                <div class="w-100 aspect-square block">
+                                <?php
+                                if (has_post_thumbnail()) {
+                                    $featured_image_id = get_post_thumbnail_id(get_the_ID());
+                                
+                                    $cropOptions = [
+                                        '(max-width: 768px)' => [100, 100],
+                                        '(min-width: 769px)' => [150, 150],
+                                    ];
 
-                                $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader w-20'];
-                                echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); 
-                            }?>
+                                    $attributes = ['class' => 'transition', 'loading' => 'lazy', 'picturetag_class' => 'loader w-20'];
+                                    echo hatslogic_get_attachment_picture($featured_image_id, $cropOptions, $attributes); 
+                                }?>
+                                </div>
+                            </div>
                             <div class="info w-80 pl-20 c-secondary">
                                 <h6 class="fs-18 lh-1-5 mb-10 hover:text-decoration-underline"><?php echo get_the_title() ?></h6>
                                 <p class="fs-16 m-0"><?php echo strlen($shortDescription) > 100 ? substr($shortDescription, 0, 100) . '...' : $shortDescription ?></p>
