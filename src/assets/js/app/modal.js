@@ -179,3 +179,12 @@ setTimeout(openOfferModal, 6000);
 function redirectToPackages(url) {
   window.location.href = url;
 }
+
+
+function updatePackageOption(packageName) {
+  const modal = document.getElementById('subscribe');
+  if (!modal) return;
+  const packageOption = modal.querySelector('#packageOption');
+  if (!packageOption) return;
+  packageOption.value = packageName;
+}

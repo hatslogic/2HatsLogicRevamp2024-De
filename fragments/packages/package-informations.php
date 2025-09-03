@@ -22,7 +22,7 @@
         <?php $totalPackages = count($packages); ?>
         <div class="packages-wrapper animate mt-50 md:mt-30 gap-30 <?php if($totalPackages > 2) : ?>grid md:grid-1 lg:grid-2 grid-3<?php else : ?>flex row md:column<?php endif; ?>">
             <?php 
-                foreach ($packages as $package) :
+                foreach ($packages as $index => $package) :
                 $isHighlighted = $package['highlight_package'];
             ?>
             <div class="package-item bg-white w-100 flex column max-w-px-520 md:max-w-100 b-1 solid h-full hover:bc-primary transition <?php echo $isHighlighted ? 'bc-primary' : 'bc-hash'; ?>">
@@ -68,7 +68,7 @@
                     $button = $package['button'];
                     ?>
                     <a href="<?php echo $button['url']; ?>" target="<?php echo $button['target']; ?>" class="btn orange-btn w-100" aria-label="get a quote">
-                        <?php // echo $button['title']; ?> Subscribe
+                        <?php echo $button['title']; ?>
                     </a>
                     <?php endif;
                     ?>
@@ -78,7 +78,7 @@
                     if($action === 'modal') : 
                     $modal = $package['modal'];
                     ?>
-                    <button onclick="openModal('<?php echo $modal['value']; ?>')" aria-label="<?php echo $modal['label']; ?>" class="btn orange-btn w-100"><?php // echo $modal['label']; ?>Subscribe</button>
+                    <button onclick="openModal('<?php echo $modal['value']; ?>'); updatePackageOption('<?php echo $package['name']; ?>')" aria-label="<?php echo $modal['label']; ?>" class="btn orange-btn w-100"><?php echo $modal['label']; ?></button>
                     <?php endif; ?>
                 </div>
             </div>

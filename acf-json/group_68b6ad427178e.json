@@ -414,9 +414,10 @@
                                         "get-a-quote": "Get a free quote",
                                         "free-consultation": "Free consultation",
                                         "hire-now": "Hire now",
-                                        "contact-us": "Contact us"
+                                        "contact-us": "Contact us",
+                                        "subscribe": "Subscribe"
                                     },
-                                    "default_value": "get-a-quote",
+                                    "default_value": "subscribe",
                                     "return_format": "array",
                                     "multiple": 0,
                                     "allow_null": 0,
@@ -667,5 +668,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1756812396
+    "modified": 1756875891
 }
