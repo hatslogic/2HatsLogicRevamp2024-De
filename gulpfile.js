@@ -33,7 +33,6 @@ const paths = {
             telInput: 'src/assets/js/plugins/tel-input.js',
             rellax: 'src/assets/js/plugins/rellax.js',
             lenis: 'src/assets/js/plugins/lenis.js',
-            smoothScroll: 'src/assets/js/plugins/smooth-scroll.js',
             utils: 'src/assets/js/utils.js'
         },
         fonts: 'src/assets/fonts/**/*',
@@ -140,7 +139,6 @@ const jsTask = gulp.parallel(
     compileJS.bind(null, paths.src.js.main, 'main.min.js'),
     compileJS.bind(null, paths.src.js.telInput, 'tel-input.js'),
     compileJS.bind(null, paths.src.js.rellax, 'rellax.js'),
-    compileJS.bind(null, paths.src.js.smoothScroll, 'smooth-scroll.js'),
     compileJS.bind(null, paths.src.js.lenis, 'lenis.js'),
     compileJS.bind(null, paths.src.js.utils, 'utils.js')
 );

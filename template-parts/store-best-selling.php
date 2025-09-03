@@ -40,7 +40,7 @@
                         } ?>
                         
                         <a href="<?php echo $pluginStoreLink; ?>" class="item flex justify-content-start">
-                            <div class="plugin-thumb-wrap w-20">
+                            <div class="plugin-thumb-wrap aspect-square w-20">
                                 <?php
                                 if (has_post_thumbnail()) {
                                     $featured_image_id = get_post_thumbnail_id(get_the_ID());
