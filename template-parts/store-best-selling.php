@@ -39,7 +39,7 @@
                             $pluginStoreLink = get_permalink(get_the_ID());
                         } ?>
                         
-                        <a href="<?php echo $pluginStoreLink; ?>" class="item flex justify-content-start">
+                        <a href="<?php echo get_permalink(get_the_ID()); ?>" class="item flex justify-content-start">
                             <div class="plugin-thumb-wrap w-20">
                                 <?php
                                 if (has_post_thumbnail()) {

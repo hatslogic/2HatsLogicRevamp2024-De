@@ -59,7 +59,7 @@
                         } 
                         ?>
 
-                        <a href="<?php echo $pluginStoreLink; ?>" class="item flex justify-content-start">
+                        <a href="<?php echo get_permalink(get_the_ID()); ?>" class="item flex justify-content-start">
                             <div class="img-wrap w-20 h-20">
                                 <div class="w-100 aspect-square block">
                                     <?php
