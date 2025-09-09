@@ -14,8 +14,8 @@
                 $args = [
                     'post_type' => 'products',
                     'posts_per_page' => $posts_per_page,
-                    'paged' => $paged,
-                    'offset' => $offset,
+                    // 'paged' => $paged,
+                    // 'offset' => $offset,
                     'orderby' => 'date',
                     'order' => 'DESC',
                     'tax_query' => [
