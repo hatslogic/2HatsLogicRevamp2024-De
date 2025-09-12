@@ -79,7 +79,7 @@
                     $modal = $package['modal'];
                     ?>
                     <button onclick="openModal('<?php echo $modal['value']; ?>'); updatePackageOption('<?php echo $package['name']; ?>')" aria-label="<?php echo $modal['label']; ?>" class="btn orange-btn w-100">
-                        ABONNIEREN
+                        SUBSCRIBE
                     </button>
                     <?php endif; ?>
                 </div>

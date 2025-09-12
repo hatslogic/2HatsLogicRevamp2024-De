@@ -60,7 +60,7 @@ $packages_modal_button_link = get_field('packages_modal_button_link', 'option');
                             <?php if($packages_modal_button_link): ?>
                             <div class="btn-wrap mt-40">
                                 <button onclick="closePackageModal(); redirectToPackages('<?php echo $packages_modal_button_link; ?>')" aria-label="packages" class="btn orange-btn">
-                                    SIEHE UNSERE PLÄNE
+                                    SEE OUR PLANS
                                 </button>
                             </div>
                             <?php endif; ?>
