@@ -1,3 +1,17 @@
+// Cookie utility functions
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+  return null;
+}
+
+function setCookie(name, value, days) {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
+
 // let modalClosed = getCookie("modalClosed") === "true";
 let modalClosed = false;
 let idleTimer;
@@ -45,6 +59,57 @@ function openModal(name) {
   });
 }
 
+// Package modal functionality
+let packageModalShown = false;
+
+function openPackageModal() {
+  // Check if the package modal has already been shown using sessionStorage with 7-day expiration
+  const packageModalData = sessionStorage.getItem("packageModalShown");
+  if (packageModalShown || packageModalData) {
+    // Check if the stored timestamp is less than 7 days old
+    if (packageModalData) {
+      const storedTime = parseInt(packageModalData);
+      const currentTime = Date.now();
+      const sevenDaysInMs = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+      
+      if (currentTime - storedTime < sevenDaysInMs) {
+        return; // Modal was closed within the last 7 days
+      } else {
+        // Clear expired session storage
+        sessionStorage.removeItem("packageModalShown");
+      }
+    }
+  }
+
+  const modal = document.getElementById('packages');
+  if (!modal) return;
+  
+  modal.classList.add("show");
+  overlayModal.classList.add("active");
+  body.classList.add("disable-scroll");
+
+  // close modal on escape
+  window.addEventListener("keyup", function (e) {
+    if (e.key === "Escape") closePackageModal();
+  });
+
+  packageModalShown = true;
+}
+
+function closePackageModal() {
+  const modal = document.getElementById('packages');
+  if (!modal) return;
+  
+  modal.classList.remove("show");
+  overlayModal.classList.remove("active");
+  body.classList.remove("disable-scroll");
+
+  // Store current timestamp in sessionStorage (will expire after 7 days)
+  sessionStorage.setItem("packageModalShown", Date.now().toString());
+}
+
+// Open package modal after 5 seconds
+setTimeout(openPackageModal, 5000);
 
 if (!modalClosed) {
   document.addEventListener("mousemove", resetIdleTimer);
@@ -68,23 +133,16 @@ function closeModal(name) {
   }
 }
 
-
-
 function resetIdleTimer() {
   clearTimeout(idleTimer); // This removes any previous timer
-
 }
-
 
 function openNewsletterModal() {
   // Replace this with the actual function call to open your modal
   openModal("newsletter-subscription");
 }
 
-
-
 let offerModalShown = false;
-
 
 function openOfferModal() {
   // Check if the offer modal has already been shown using sessionStorage
@@ -113,8 +171,20 @@ function closeOfferModal() {
   modal.classList.remove("show");
   overlayModal.classList.remove("active");
   body.classList.remove("disable-scroll");
-
 }
 
 // Open modal after 6 seconds
 setTimeout(openOfferModal, 6000);
+
+function redirectToPackages(url) {
+  window.location.href = url;
+}
+
+
+function updatePackageOption(packageName) {
+  const modal = document.getElementById('subscribe');
+  if (!modal) return;
+  const packageOption = modal.querySelector('#packageOption');
+  if (!packageOption) return;
+  packageOption.value = packageName;
+}

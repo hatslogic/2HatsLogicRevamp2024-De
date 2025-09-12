@@ -176,6 +176,7 @@ if (!is_singular('help-desk') && !$disable_modals) {
     get_template_part('template-parts/get-a-quote');
     get_template_part('template-parts/hire-now');
     get_template_part('template-parts/contact-us-modal');
+    get_template_part('template-parts/packages-modal');
 }
 if ($offer_modal_enable) {
     get_template_part('template-parts/offer-modal');
