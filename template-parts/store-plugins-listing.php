@@ -43,7 +43,7 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
         <div class="grid grid-3 md:grid-2 xs:grid-1 mt-40 md:mt-0">
 
             <?php
-            $posts_per_page = 6;
+            $posts_per_page = 12;
             $offset = ($paged - 1) * $posts_per_page;
             $args = [
                 'post_type' => 'products',
@@ -98,8 +98,9 @@ $category_slug = isset($_GET['category']) && ($_GET['category'] !== 'Select') ? 
                         </div>
                         <div class="info w-80 pl-20 flex column justify-between">
                             <div class="content">
-                                <h5 class="fs-18 c-secondary mb-16 "><?php echo get_the_title(get_the_ID()) ?></h5>
-
+                                <a href="<?php echo get_permalink() ?>">
+                                    <h5 class="fs-18 c-secondary mb-16 hover:text-decoration-underline"><?php echo get_the_title(get_the_ID()) ?></h5>
+                                </a>
                                 <?php
                                 // $tags = wp_get_post_terms(get_the_ID(), "product_tag");
 
