@@ -9,9 +9,7 @@
                 <div class="service-header">
                     <div class="headline">
                         <h2 class="h2"><?php echo $headline['title']; ?></h1>
-                        <?php if($content) : ?>
                         <p class="mt-20 mb-20"><?php echo $content; ?></p>
-                        <?php endif; ?>
                     </div>
                 </div>
             </div>
