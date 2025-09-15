@@ -10,7 +10,7 @@
                     <div class="headline">
                         <h2 class="h2"><?php echo $headline['title']; ?></h1>
                         <?php if($content) : ?>
-                        <p class="mt-20"><?php echo $content; ?></p>
+                        <p class="mt-20 mb-20"><?php echo $content; ?></p>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -25,13 +25,13 @@
                 foreach ($packages as $index => $package) :
             ?>
             <div class="package-item bg-white w-100 flex column max-w-px-520 md:max-w-100 b-1 solid h-full hover:bc-primary transition bc-hash">
+                <?php if($package['name']) : ?>
                 <div class="package-item-header p-34 md:p-24 pb-0">
-                    <?php if($package['name']) : ?>
                     <h2 class="h4 fs-26 flex align-center gap-14">
                     <?php echo $package['description']; ?>
                     </h2>
-                    <?php endif; ?>
                 </div>
+                <?php endif; ?>
                 <div class="package-item-content bg-white p-34 md:p-24">
                     <?php if($package['package_details']) : ?>
                     <h3 class="h4"><?php echo $package['package_details']['title']; ?></h3>
