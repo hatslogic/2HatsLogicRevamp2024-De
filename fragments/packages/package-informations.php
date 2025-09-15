@@ -27,22 +27,23 @@
             ?>
             <div class="package-item bg-white w-100 flex column max-w-px-520 md:max-w-100 b-1 solid h-full hover:bc-primary transition <?php echo $isHighlighted ? 'bc-primary' : 'bc-hash'; ?>">
                 <div class="package-item-header p-34 md:p-24 <?php echo $isHighlighted ? 'bg-primary-light c-white' : 'bg-light-grey c-black'; ?>">
-                        <?php if($package['name']) : ?>
-                        <h2 class="h4 fs-26 uppercase flex align-center gap-14">
-                            <?php echo $package['name']; ?>
-                            <?php if($isHighlighted) : ?>
-                                <span class="bg-orange py-2 px-4 fs-12 c-black capitalize"><?php echo $package['badge']; ?></span>
-                            <?php endif; ?>
-                        </h2>
+                    <?php if($package['name']) : ?>
+                    <h2 class="h4 fs-26 uppercase flex align-center gap-14">
+                        <?php echo $package['name']; ?>
+                        <?php if($isHighlighted) : ?>
+                            <span class="bg-orange py-2 px-4 fs-12 c-black capitalize"><?php echo $package['badge']; ?></span>
                         <?php endif; ?>
-                        <?php if($package['description']) : ?>
-                        <p class="mt-10"><?php echo $package['description']; ?></p>
-                        <?php endif; ?>
-                        <?php if($package['price']) : ?>
-                            <div class="price"> <span class="fs-42 font-bold"><?php echo $package['price']['amount']; ?></span>
+                    </h2>
+                    <?php endif; ?>
+                    <?php if($package['description']) : ?>
+                    <p class="mt-10"><?php echo $package['description']; ?></p>
+                    <?php endif; ?>
+                    <?php if($package['price']) : ?>
+                        <div class="price">
+                            <span class="fs-42 font-bold"><?php echo $package['price']['amount']; ?></span>
                             <span class="fs-20"><?php echo $package['price']['suffix']; ?></span>
-                        <?php endif; ?>
-                    </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="package-item-content bg-white p-34 md:p-24">
                     <?php if($package['package_details']) : ?>
@@ -55,6 +56,11 @@
                             <li class="relative block<?php echo $index > 0 ? ' mt-12' : ''; ?>"> 
                                 <i class="icomoon icon-done c-primary fs-16 absolute left-0 top-4"></i>
                                 <span class="inline-block ml-24"><?php echo $package_detail['benefit']; ?></span>
+                                <?php if($package_detail['link']) : ?>
+                                    <a href="#packageDetails" class="link-primary underline">
+                                        <?php echo $package_detail['link_text']; ?>
+                                    </a>
+                                <?php endif; ?>
                             </li>
                             <?php endif; ?>
                         <?php endforeach; ?>
