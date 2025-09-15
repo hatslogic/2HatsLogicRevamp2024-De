@@ -23,10 +23,10 @@
                 foreach ($packages as $index => $package) :
             ?>
             <div class="package-item bg-white w-100 flex column max-w-px-520 md:max-w-100 b-1 solid h-full hover:bc-primary transition bc-hash">
-                <?php if($package['name']) : ?>
+                <?php if($package['description']) : ?>
                 <div class="package-item-header p-34 md:p-24 pb-0">
                     <h2 class="h4 fs-26 flex align-center gap-14">
-                    <?php echo $package['description']; ?>
+                        <?php echo $package['description']; ?>
                     </h2>
                 </div>
                 <?php endif; ?>
@@ -35,7 +35,7 @@
                     <h3 class="h4"><?php echo $package['package_details']['title']; ?></h3>
                     <?php endif; ?>
                     <?php if($package['package_details']['package_details']) : ?>
-                    <ul class="no-bullets lh-1-2 mt-14 fs-17">
+                    <ul class="no-bullets lh-1-2 mt-20 fs-17">
                         <?php foreach($package['package_details']['package_details'] as $index => $package_detail) : ?>
                             <?php if($package_detail['benefit']) : ?>
                             <li class="relative block<?php echo $index > 0 ? ' mt-12' : ''; ?>"> 
@@ -65,7 +65,7 @@
                     $modal = $package['modal'];
                     ?>
                     <button onclick="openModal('<?php echo $modal['value']; ?>'); updatePackageOption('<?php echo $package['name']; ?>')" aria-label="<?php echo $modal['label']; ?>" class="btn orange-btn w-100">
-                        SUBSCRIBE
+                        SUBSCRIBE FOR <?php echo $package['name']; ?>
                     </button>
                     <?php endif; ?>
                 </div>

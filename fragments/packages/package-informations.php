@@ -50,7 +50,7 @@
                     <h3 class="h4"><?php echo $package['package_details']['title']; ?></h3>
                     <?php endif; ?>
                     <?php if($package['package_details']['package_details']) : ?>
-                    <ul class="no-bullets lh-1-2 mt-14 fs-17">
+                    <ul class="no-bullets lh-1-2 mt-20 fs-17">
                         <?php foreach($package['package_details']['package_details'] as $index => $package_detail) : ?>
                             <?php if($package_detail['benefit']) : ?>
                             <li class="relative block<?php echo $index > 0 ? ' mt-12' : ''; ?>"> 
