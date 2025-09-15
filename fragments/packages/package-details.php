@@ -18,7 +18,7 @@
 
         <?php if ($packages) : ?>
         <?php $totalPackages = count($packages); ?>
-        <div class="packages-details-wrapper animate mt-20 gap-30 <?php if($totalPackages > 2) : ?>grid md:grid-1 lg:grid-2 grid-3<?php else : ?>flex row md:column<?php endif; ?>">
+        <div class="packages-details-wrapper animate gap-30 <?php if($totalPackages > 2) : ?>grid md:grid-1 lg:grid-2 grid-3<?php else : ?>flex row md:column<?php endif; ?>">
             <?php 
                 foreach ($packages as $index => $package) :
             ?>
