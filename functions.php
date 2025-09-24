@@ -197,6 +197,11 @@ require get_template_directory().'/inc/template-functions.php';
  */
 require get_template_directory().'/inc/customizer.php';
 
+/**
+ * Load custom shortcodes
+ */
+require_once get_template_directory() . '/includes/shortcodes/shortcodes.php';
+
 /*
  * Load Jetpack compatibility file.
  */
