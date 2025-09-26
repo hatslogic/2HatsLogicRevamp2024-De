@@ -108,8 +108,8 @@ function closePackageModal() {
   sessionStorage.setItem("packageModalShown", Date.now().toString());
 }
 
-// Open package modal after 5 seconds
-setTimeout(openPackageModal, 5000);
+// Open package modal after 8 seconds
+setTimeout(openPackageModal, 8000);
 
 if (!modalClosed) {
   document.addEventListener("mousemove", resetIdleTimer);
