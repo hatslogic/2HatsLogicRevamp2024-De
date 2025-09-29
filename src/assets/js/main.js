@@ -15,3 +15,4 @@
 //=require app/team.js
 //=require app/toggle-transform.js
 //=require app/case-study.js
+//=require app/package.js
