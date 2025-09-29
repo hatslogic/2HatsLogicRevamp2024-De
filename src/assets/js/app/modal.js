@@ -108,6 +108,7 @@ function closePackageModal() {
   sessionStorage.setItem("packageModalShown", Date.now().toString());
 }
 
+
 // Open package modal after 8 seconds
 setTimeout(openPackageModal, 8000);
 
