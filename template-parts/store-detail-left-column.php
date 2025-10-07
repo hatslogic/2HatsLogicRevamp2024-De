@@ -10,7 +10,7 @@ $image_gallery = get_field('plugin_screenshots');
                 <?php
                 $cropOptions = [
                     '(max-width: 768px)' => [475, 475],
-                    '(min-width: 769px)' => [1000, 1000],
+                    '(min-width: 769px)' => [720, 720],
                 ];
                 $attributes = ['loading' => 'eager', "id" => "main-image"];
                 ?>
