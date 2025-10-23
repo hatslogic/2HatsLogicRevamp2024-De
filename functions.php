@@ -502,7 +502,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
             }
         } elseif ($depth === 2) {
             // Children under columns (the actual list items)
-            $li_classes = 'depth-1 w-100 mt-5';
+            $li_classes = 'depth-1 w-100 mt-10';
             $a_classes = 'inline-block w-100';
             $output .= "<li class=\"$li_classes$active_class\">";
             if ($item->url && $item->url != '#') {
