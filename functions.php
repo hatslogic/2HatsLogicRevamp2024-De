@@ -411,7 +411,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
         $indent = str_repeat("\t", $depth);
         // Special multi-column grid only for Leistungen children
         if ($depth === 0 && isset($this->curItem->classes) && in_array('multi-column', $this->curItem->classes)) {
-            $output .= "\n$indent<ul class=\"arrow-top no-bullets absolute min-w-px-640 md:min-w-auto md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0\">\n";
+            $output .= "\n$indent<ul class=\"arrow-top no-bullets absolute min-w-px-630 md:min-w-auto md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0\">\n";
             $output .= "$indent\t<li class=\"bg-white absolute mt-20 no-bullets absolute md:relative w-100 left-0 right-0 md:top-0 transition md:bt-0 -ml-20 md:ml-0\">\n";
             $output .= "$indent\t\t<ul class=\"flex justify-content p-0 xs:column lh-2\">\n";
         } elseif ($depth === 1 && isset($this->curItem->classes) && in_array('column-parent', $this->curItem->classes)) {
@@ -419,7 +419,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
             $output .= "\n$indent<ul class=\"flex column justify-between md:column md:pt-10 md:pb-20 md:pl-0 md:pr-0 pr-20 no-bullets font-regular mt-10 md:mt-5\">\n";
         } elseif ($depth === 0 && isset($this->curItem->classes) && in_array('compact', $this->curItem->classes)) {
             // Compact single-column layout (e.g., Über)
-            $output .= "\n$indent<ul class=\"arrow-top no-bullets absolute min-w-px-450 md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0\">\n";
+            $output .= "\n$indent<ul class=\"arrow-top no-bullets absolute min-w-px-340 md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0\">\n";
             $output .= "$indent\t<li class=\"flex justify-between bg-white p-40 md:p-0 mt-20 md:mt-0 md:pt-0\">\n";
             $output .= "$indent\t\t<ul class=\"no-bullets flex column justify-between md:column gap-20 md:gap-15 md:mt-5 md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
         } else {
