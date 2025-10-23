@@ -420,7 +420,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
         } elseif ($depth === 0 && isset($this->curItem->classes) && in_array('compact', $this->curItem->classes)) {
             // Compact single-column layout (e.g., Über)
             $output .= "\n$indent<ul class=\"arrow-top no-bullets absolute min-w-px-450 md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0\">\n";
-            $output .= "$indent\t<li class=\"flex justify-between bg-white p-40 mt-20 md:pt-0\">\n";
+            $output .= "$indent\t<li class=\"flex justify-between bg-white p-40 md:p-0 mt-20 md:mt-0 md:pt-0\">\n";
             $output .= "$indent\t\t<ul class=\"no-bullets flex column justify-between md:column gap-20 md:gap-15 md:mt-5 md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
         } else {
             $output .= "\n$indent<ul>\n";
@@ -502,7 +502,10 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
             }
         } elseif ($depth === 2) {
             // Children under columns (the actual list items)
-            $li_classes = 'depth-1 w-100 mt-10';
+            $no_mt = in_array('no-mt', $item->classes);
+            
+            $li_classes = $no_mt ? 'depth-1 w-100' : 'depth-1 w-100 mt-10';
+            
             $a_classes = 'inline-block w-100';
             $output .= "<li class=\"$li_classes$active_class\">";
             if ($item->url && $item->url != '#') {
