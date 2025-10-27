@@ -511,7 +511,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
             
             $li_classes = $no_mt ? 'depth-1 w-100' : 'depth-1 w-100 mt-11';
             
-            $a_classes = 'inline-block w-100 mt-11';
+            $a_classes = 'inline-block w-100';
             $output .= "<li class=\"$li_classes$active_class\">";
             if ($item->url && $item->url != '#') {
                 $output .= '<a class="'.$a_classes.'" href="'.$item->url.'" aria-label="'.esc_attr(strtolower($item->title)).'">'.$item->title;
