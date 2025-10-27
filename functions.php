@@ -486,7 +486,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
                 // Don't close - children rendered inside
             } else {
                 // Simple items (Über uns etc)
-                $li_classes = 'depth-1 w-100';
+                $li_classes = 'depth-1 w-100 ';
                 $a_classes = 'h4 inline-block font-bold w-100';
                 $output .= "<li class=\"$li_classes$active_class\">";
                 if ($item->url && $item->url != '#') {
@@ -504,9 +504,9 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
             // Children under columns (the actual list items)
             $no_mt = in_array('no-mt', $item->classes);
             
-            $li_classes = $no_mt ? 'depth-1 w-100' : 'depth-1 w-100 mt-10';
+            $li_classes = $no_mt ? 'depth-1 w-100' : 'depth-1 w-100 mt-11';
             
-            $a_classes = 'inline-block w-100';
+            $a_classes = 'inline-block w-100 mt-11';
             $output .= "<li class=\"$li_classes$active_class\">";
             if ($item->url && $item->url != '#') {
                 $output .= '<a class="'.$a_classes.'" href="'.$item->url.'" aria-label="'.esc_attr(strtolower($item->title)).'">'.$item->title;
