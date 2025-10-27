@@ -480,7 +480,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
             // Direct children of Leistungen ("Shopware Agentur", "AI & Data Solutions") or simple items under Über
             if ($is_column_parent) {
                 // Column parent (2 columns)
-                $li_classes = 'flex-1 flex column p-40 align-start xs:column md:p-0';
+                $li_classes = 'flex-1 flex column p-40 align-start xs:column md:p-0 pr-0';
                 $a_classes = 'h4 inline-block font-bold';
                 $output .= "<li class=\"$li_classes$active_class\">";
                 if ($item->url && $item->url != '#') {
