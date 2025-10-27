@@ -30,7 +30,7 @@
                     <div class="package-item bg-white w-100 flex column max-w-px-520 lg:max-w-100 b-1 solid h-full hover:bc-primary transition <?php echo $isHighlighted ? 'bc-primary' : 'bc-hash'; ?>">
                         <div class="package-item-header p-34 xl-p-20 md:p-24 <?php echo $isHighlighted ? 'bg-primary-light c-white' : 'bg-light-grey c-black'; ?>"> 
                             <?php if($package['name']) : ?>
-                                <h2 class="h4 fs-26 uppercase flex align-center gap-14 xl-column">  
+                                <h2 class="h4 fs-26 uppercase flex align-center gap-10 xl-column">  
                                     <?php echo $package['name']; ?>
                                     <?php if($package['badge']) : ?>
                                         <span class="bg-orange py-2 px-4 fs-16 c-black capitalize xxl-fs-10"><?php echo $package['badge']; ?></span>
