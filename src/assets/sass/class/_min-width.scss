@@ -4,7 +4,7 @@
 
 @media (max-width: 64rem) {
     .md\:min-w-auto{
-        min-width: auto;
+        min-width: auto !important;
     }
 }
 @for $i from 0 through 500 {
