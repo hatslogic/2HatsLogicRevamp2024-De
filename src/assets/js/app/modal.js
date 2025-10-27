@@ -110,7 +110,7 @@ function closePackageModal() {
 
 
 // Open package modal after 8 seconds
-setTimeout(openPackageModal, 8000);
+setTimeout(openPackageModal, 12000);
 
 if (!modalClosed) {
   document.addEventListener("mousemove", resetIdleTimer);
