@@ -864,6 +864,37 @@ function replace_image_classes_with_ids($content)
 }
 add_filter('the_content', 'replace_image_classes_with_ids');
 
+// Expose modal config early in body: pageId and disablePackageModal (page-level or global option)
+add_action('wp_body_open', function () {
+    $page_id = get_queried_object_id();
+    $disable = function_exists('get_field') ? is_package_modal_disabled_for_current_page($page_id) : false;
+    echo '<script>window.pageId='.(int) $page_id.';window.disablePackageModal='.($disable ? 'true' : 'false').';</script>';
+});
+
+// Add body class when ACF toggle is enabled to suppress the Packages modal
+add_filter('body_class', function ($classes) {
+    $page_id = get_queried_object_id();
+    if (function_exists('get_field') && is_package_modal_disabled_for_current_page($page_id)) {
+        $classes[] = 'disable-package-modal';
+    }
+    return $classes;
+});
+
+// Helper: single source of truth for deciding if package modal is disabled
+function is_package_modal_disabled_for_current_page($page_id)
+{
+    $page_toggle = $page_id ? (bool) get_field('disable_package_modal', $page_id) : false;
+    $global_toggle = (bool) get_field('disable_package_modal', 'option');
+    $selected_pages = (array) get_field('select_pages', 'option');
+    // If relationship returns objects, pluck IDs; if it returns IDs, pass-through
+    if (!empty($selected_pages) && is_object(reset($selected_pages))) {
+        $selected_pages = wp_list_pluck($selected_pages, 'ID');
+    }
+    $selected_ids = array_map('intval', (array) $selected_pages);
+    $in_selected = $page_id && in_array((int) $page_id, $selected_ids, true);
+    return $page_toggle || ($global_toggle && $in_selected);
+}
+
 // Crop Images Dynamically based on the aspect ratio and use in picture tags
 function hatslogic_get_attachment_picture(int $image_id, array $breakpoints = [], array $attributes = []): ?string
 {

@@ -12,6 +12,16 @@ function setCookie(name, value, days) {
   document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
 }
 
+// Debug: print disable status and page id
+if (typeof window !== 'undefined') {
+  try {
+    console.log('[ModalConfig]', {
+      pageId: window.pageId || null,
+      disablePackageModal: window.disablePackageModal === true
+    });
+  } catch (e) {}
+}
+
 // let modalClosed = getCookie("modalClosed") === "true";
 let modalClosed = false;
 let idleTimer;
@@ -63,6 +73,9 @@ function openModal(name) {
 let packageModalShown = false;
 
 function openPackageModal() {
+  if (typeof window !== 'undefined' && window.disablePackageModal === true) {
+    return;
+  }
   // Check if the package modal has already been shown using sessionStorage with 7-day expiration
   const packageModalData = sessionStorage.getItem("packageModalShown");
   if (packageModalShown || packageModalData) {
