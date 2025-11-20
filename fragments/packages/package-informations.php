@@ -114,7 +114,7 @@
                                     <a href="<?php echo esc_url($button); ?>" 
                                     class="btn orange-btn w-100" 
                                     aria-label="get a quote">
-                                    ABONNIEREN
+                                    Lasst uns diskutieren
                                     </a>
                                 <?php endif; 
                                 elseif ($action === 'modal') : 
@@ -122,7 +122,7 @@
                                 <button onclick="openModal('<?php echo esc_js($modal['value']); ?>'); updatePackageOption('<?php echo esc_js($package['name']); ?>')" 
                                         aria-label="<?php echo esc_attr($modal['label']); ?>" 
                                         class="btn orange-btn w-100">
-                                        ABONNIEREN
+                                        Lasst uns diskutieren
                                 </button>
                                 <?php endif; 
                                 ?>
