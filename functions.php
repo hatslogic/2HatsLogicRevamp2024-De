@@ -419,12 +419,12 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
 
         if ($depth === 0) {
             if ($is_compact) {
-                $ul_classes = 'arrow-top no-bullets absolute min-w-px-350 md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0';
+                $ul_classes = 'arrow-top no-bullets absolute min-w-px-260 md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0';
             } else {
                 $ul_classes = 'no-bullets fixed md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-light-grey md:bt-0';
             }
         } elseif ($depth === 1) {
-            $ul_classes = 'no-bullets font-regular mt-20 md:mt-5 lh-2';
+            $ul_classes = 'no-bullets font-regular mt-5 md:mt-5 lh-2';
         } elseif ($depth === 2) {
             $ul_classes = 'submenu-level-2';
         }
@@ -433,7 +433,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
             if ($is_compact) {
                 $output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex column justify-between md:column gap-20 md:gap-15 py-40 mt-20 md:mt-5 bg-white md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
             } else {
-                $output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex justify-between md:column gap-30 md:gap-20 py-40 md:pt-20 md:pb-20 md:pl-0 md:pr-0\">\n";
+                $output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"menu-columns container block md:flex md:justify-between md:column gap-30 md:gap-20 py-40 md:pt-20 md:pb-20 md:pl-0 md:pr-0\">\n";
             }
         } else {
             $output .= "\n$indent<ul class=\"$ul_classes\">\n";
@@ -472,7 +472,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
             if ($is_compact) {
                 $a_classes = 'h4 inline-block font-bold w-100';
             } else {
-                $a_classes = 'h4 inline-block font-bold b-0 bb-1 bc-hash solid pb-20 md:bb-0 md:pb-0';
+                $a_classes = 'h4 inline-block font-bold';
             }
         } elseif ($depth === 2) {
             $li_classes = 'depth-2';
