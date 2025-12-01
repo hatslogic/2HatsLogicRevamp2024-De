@@ -144,3 +144,88 @@ $transition-timing-function: ease-in-out;
         }
     }
 }
+@media (min-width: 1024px) {
+    .top-menu {
+        >ul.main-menu>li {
+            >ul> {
+
+                /* container -> 4 columns, with gaps matching your design */
+                .menu-columns {
+                    display: block;
+                    -webkit-column-count: 4;
+                    -moz-column-count: 4;
+                    column-count: 4;
+
+                    -webkit-column-gap: 30px;
+                    -moz-column-gap: 30px;
+                    column-gap: 30px;
+                    > li > ul{
+                        margin-top: 12px;
+                        line-height: 0;
+                        & > li + li{
+                            margin-top: 12px;
+                        }
+                    }
+                    a{
+                        line-height: 1.4;
+                    }
+                }
+
+                /* each depth-1 should occupy full column width */
+                .menu-columns>.depth-1 {
+                    /* inline-block + width:100% prevents column-splitting and ensures block-like layout */
+                    width: 100%;
+                    vertical-align: top;
+
+                    /* avoid splitting an element across columns */
+                    break-inside: avoid;
+                    -webkit-column-break-inside: avoid;
+                    page-break-inside: avoid;
+
+                    /* remove bottom margin that can create white gaps (adjust if you need spacing) */
+                    margin: 0 0 0 0;
+                    padding: 0;
+                }
+
+                .menu-columns > .depth-1:nth-child(1),
+                .menu-columns > .depth-1:nth-child(2) {
+                    height: 100%;
+                }
+
+                .menu-columns > .depth-1:nth-child(4),
+                .menu-columns > .depth-1:nth-child(6) {
+                    margin-top: 40px; // adjust spacing as needed
+                }
+
+                /* force these children to start a NEW column:
+            - nth-child(2) → column 2
+            - nth-child(3) → column 3 (so 3 + 4 are in same column)
+            - nth-child(5) → column 4 (so 5 + 6 are in same column) */
+                .menu-columns>.depth-1:nth-child(2),
+                .menu-columns>.depth-1:nth-child(3),
+                .menu-columns>.depth-1:nth-child(5) {
+                    break-before: column;
+                    -webkit-column-break-before: always;
+                    page-break-before: always;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .top-menu {
+        >ul.main-menu>li {
+            >ul {
+
+                /* container -> 4 columns, with gaps matching your design */
+                .menu-columns {
+                    display: flex;
+                }
+            }
+        }
+    }
+    .main-menu a {
+        line-height: 1.35;
+    }
+}

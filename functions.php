@@ -414,115 +414,104 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
     public function start_lvl(&$output, $depth = 0, $args = null)
     {
         $indent = str_repeat("\t", $depth);
-        // Special multi-column grid only for Leistungen children
-        if ($depth === 0 && isset($this->curItem->classes) && in_array('multi-column', $this->curItem->classes)) {
-            $output .= "\n$indent<ul class=\"arrow-top no-bullets absolute min-w-px-630 md:min-w-auto md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0\">\n";
-            $output .= "$indent\t<li class=\"bg-white absolute mt-20 no-bullets absolute md:relative w-100 left-0 right-0 md:top-0 transition md:bt-0 -ml-20 md:ml-0\">\n";
-            $output .= "$indent\t\t<ul class=\"flex justify-content p-0 xs:column lh-2\">\n";
-        } elseif ($depth === 1 && isset($this->curItem->classes) && in_array('column-parent', $this->curItem->classes)) {
-            // Each column's submenu
-            $output .= "\n$indent<ul class=\"flex column justify-between md:column md:pt-10 md:pb-20 md:pl-0 md:pr-0 pr-20 no-bullets font-regular mt-10 md:mt-5\">\n";
-        } elseif ($depth === 0 && isset($this->curItem->classes) && in_array('compact', $this->curItem->classes)) {
-            // Compact single-column layout (e.g., Über)
-            $output .= "\n$indent<ul class=\"arrow-top no-bullets absolute min-w-px-340 md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0\">\n";
-            $output .= "$indent\t<li class=\"flex justify-between bg-white p-40 md:p-0 mt-20 md:mt-0 md:pt-0\">\n";
-            $output .= "$indent\t\t<ul class=\"no-bullets flex column justify-between md:column gap-20 md:gap-15 md:mt-5 md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
-        } else {
-            $output .= "\n$indent<ul>\n";
+        $is_compact = in_array('compact', $this->curItem->classes);
+        $ul_classes = '';
+
+        if ($depth === 0) {
+            if ($is_compact) {
+                $ul_classes = 'arrow-top no-bullets absolute min-w-px-260 md:relative z-2 w-100 left-0 right-0 top-82 md:top-0 transition md:bt-0 -ml-20 md:ml-0';
+            } else {
+                $ul_classes = 'no-bullets fixed md:relative z-2 bg-white w-100 left-0 right-0 top-82 md:top-0 transition b-0 bt-1 solid bc-light-grey md:bt-0';
+            }
+        } elseif ($depth === 1) {
+            $ul_classes = 'no-bullets font-regular mt-5 md:mt-5 lh-2';
+        } elseif ($depth === 2) {
+            $ul_classes = 'submenu-level-2';
         }
-    }
 
-    // End submenu (ul)
-    public function end_lvl(&$output, $depth = 0, $args = null)
-    {
-        $indent = str_repeat("\t", $depth);
-
-        if ($depth === 0 && isset($this->curItem->classes) && in_array('multi-column', $this->curItem->classes)) {
-            $output .= "$indent\t\t</ul>\n$indent\t</li>\n$indent</ul>\n";
-        } elseif ($depth === 1 && isset($this->curItem->classes) && in_array('column-parent', $this->curItem->classes)) {
-            $output .= "$indent</ul>\n$indent</li>\n";
-        } elseif ($depth === 0 && isset($this->curItem->classes) && in_array('compact', $this->curItem->classes)) {
-            $output .= "$indent\t\t</ul>\n$indent\t</li>\n$indent</ul>\n";
+        if ($depth === 0) {
+            if ($is_compact) {
+                $output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"container flex column justify-between md:column gap-20 md:gap-15 py-40 mt-20 md:mt-5 bg-white md:pt-10 md:pb-20 md:pl-0 md:pr-0\">\n";
+            } else {
+                $output .= "\n$indent<ul class=\"$ul_classes\"><div class=\"menu-columns container block md:flex md:justify-between md:column gap-30 md:gap-20 py-40 md:pt-20 md:pb-20 md:pl-0 md:pr-0\">\n";
+            }
         } else {
-            $output .= "$indent</ul>\n";
+            $output .= "\n$indent<ul class=\"$ul_classes\">\n";
         }
     }
 
     public function start_el(&$output, $item, $depth = 0, $args = [], $id = 0)
     {
+        // Add classes to <li> and <a>
         $this->curItem = $item;
 
         $is_compact = in_array('compact', $item->classes);
-        $is_multi_column = in_array('multi-column', $item->classes);
-        $is_column_parent = in_array('column-parent', $item->classes);
 
-        $active_class = $item->current || in_array('current-menu-parent', $item->classes) || in_array('current-menu-ancestor', $item->classes) ? ' active' : '';
+        $active_class = $item->current || in_array('current-menu-parent', $item->classes) || in_array('current-menu-ancestor', $item->classes)  ? ' active' : '';
+        $li_classes = '';
+        $a_classes = '';
 
         if ($depth === 0) {
-            // Root menu items: Über, Leistungen, Referenzen, Ressourcen
             $li_classes = 'ml-40 xl:ml-30 md:ml-0 inline-flex md:inline-block md:w-100';
-            if ($is_compact) $li_classes .= ' compact relative';
-            if ($args->walker->has_children) $li_classes .= ' has-child';
-            $a_classes = 'mobile-toggle pt-30 pb-30 md:pt-8 md:pb-8 b-0 md:bb-0 md:w-100 uppercase md:capitalize md:fs-28 block md:flex md:justify-between md:align-center';
-            $output .= "<li class=\"$li_classes$active_class\">";
-            if ($item->url && $item->url != '#') {
-                $output .= '<a class="'.$a_classes.'" href="'.$item->url.'" aria-label="'.esc_attr(strtolower($item->title)).'">';
-                $output .= $item->title;
-                if ($args->walker->has_children) $output .= '<i class="icomoon icon-expand_more ml-5 fs-12 md:fs-20"></i>';
-                $output .= '</a>';
-            } else {
-                $output .= '<span class="'.$a_classes.'">';
-                $output .= $item->title;
-                if ($args->walker->has_children) $output .= '<i class="icomoon icon-expand_more ml-5 fs-12 md:fs-20"></i>';
-                $output .= '</span>';
+
+            if ($is_compact) {
+                $li_classes .= ' compact relative';
             }
+
+            if ($args->walker->has_children) {
+                $li_classes .= ' has-child';
+            }
+
+            $a_classes = 'mobile-toggle pt-30 pb-30 md:pt-8 md:pb-8 b-0 bb-3 solid md:bb-0 md:w-100 uppercase md:capitalize md:fs-28 block md:flex md:justify-between md:align-center';
         } elseif ($depth === 1) {
-            // Direct children of Leistungen ("Shopware Agentur", "AI & Data Solutions") or simple items under Über
-            if ($is_column_parent) {
-                // Column parent (2 columns)
-                $li_classes = 'flex-1 flex column p-40 align-start xs:column md:p-0 pr-0';
-                $a_classes = 'h4 inline-block font-bold';
-                $output .= "<li class=\"$li_classes$active_class\">";
-                if ($item->url && $item->url != '#') {
-                    $output .= '<a class="'.$a_classes.'" href="'.$item->url.'" aria-label="'.esc_attr(strtolower($item->title)).'">'.$item->title.'<span class="block fs-15 lh-1-25 c-grey font-regular mt-5"></span></a>';
-                } else {
-                    $output .= '<span class="'.$a_classes.'">'.$item->title.'<span class="block fs-15 lh-1-25 c-grey font-regular mt-5"></span></span>';
-                }
-                // Don't close - children rendered inside
-            } else {
-                // Simple items (Über uns etc)
-                $li_classes = 'depth-1 w-100 ';
+            $li_classes = 'depth-1 w-100';
+            if ($args->walker->has_children) {
+                $li_classes .= ' has-child';
+            }
+
+            if ($is_compact) {
                 $a_classes = 'h4 inline-block font-bold w-100';
-                $output .= "<li class=\"$li_classes$active_class\">";
-                if ($item->url && $item->url != '#') {
-                    $output .= '<a class="'.$a_classes.'" href="'.$item->url.'" aria-label="'.esc_attr(strtolower($item->title)).'">'.$item->title;
-                    if ($item->description) $output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">'.$item->description.'</span>';
-                    $output .= '</a>';
-                } else {
-                    $output .= '<span class="'.$a_classes.'">'.$item->title;
-                    if ($item->description) $output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">'.$item->description.'</span>';
-                    $output .= '</span>';
-                }
-                $output .= "</li>\n";
+            } else {
+                $a_classes = 'h4 inline-block font-bold';
             }
         } elseif ($depth === 2) {
-            // Children under columns (the actual list items)
-            $no_mt = in_array('no-mt', $item->classes);
-            
-            $li_classes = $no_mt ? 'depth-1 w-100' : 'depth-1 w-100 mt-11';
-            
-            $a_classes = 'inline-block w-100';
-            $output .= "<li class=\"$li_classes$active_class\">";
-            if ($item->url && $item->url != '#') {
-                $output .= '<a class="'.$a_classes.'" href="'.$item->url.'" aria-label="'.esc_attr(strtolower($item->title)).'">'.$item->title;
-                if ($item->description) $output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">'.$item->description.'</span>';
-                $output .= '</a>';
-            } else {
-                $output .= '<span class="'.$a_classes.'">'.$item->title;
-                if ($item->description) $output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">'.$item->description.'</span>';
-                $output .= '</span>';
+            $li_classes = 'depth-2';
+            if ($args->walker->has_children) {
+                $li_classes .= ' has-child';
             }
-            $output .= "</li>\n";
+
+            $a_classes = 'depth-2 inline-block w-100';
+        }
+
+        $output .= "<li class=\"$li_classes$active_class\">";
+
+        if ($item->url && $item->url != '#') {
+            $output .= '<a class="' . $a_classes . '" href="' . $item->url . '" aria-label="' . strtolower($item->title) . '">';
+        } else {
+            if ($args->walker->has_children && $depth === 0) {
+                $output .= '<span class="mobile-toggle pt-30 pb-30 md:pt-8 md:pb-8 b-0 solid md:bb-0 md:w-100 uppercase md:capitalize md:fs-28 block md:flex md:justify-between md:align-center">';
+            } else {
+                $output .= '<span>';
+            }
+        }
+
+        $output .= $item->title;
+        if ($depth === 1) {
+            $output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">' . $item->description . '</span>';
+        }
+
+        if ($item->url == '#' && $args->walker->has_children && $depth === 0) {
+            $output .= '<i class="icomoon icon-expand_more ml-5 fs-12 md:fs-20"></i>';
+        }
+
+        if ($item->url && $item->url != '#') {
+            if ($args->walker->has_children && $depth === 0) {
+                $output .= '<i class="icomoon icon-expand_more ml-5 fs-12 md:fs-20"></i>';
+            }
+
+            $output .= '</a>';
+        } else {
+            $output .= '</span>';
         }
     }
 
