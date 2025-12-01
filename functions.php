@@ -410,9 +410,9 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
 {
     private $curItem;
 
+    // Start submenu (ul)
     public function start_lvl(&$output, $depth = 0, $args = null)
     {
-        // Add classes to <ul> based on depth
         $indent = str_repeat("\t", $depth);
         $is_compact = in_array('compact', $this->curItem->classes);
         $ul_classes = '';
@@ -486,9 +486,9 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
         $output .= "<li class=\"$li_classes$active_class\">";
 
         if ($item->url && $item->url != '#') {
-            $output .= '<a class="'.$a_classes.'" href="'.$item->url.'" aria-label="'.strtolower($item->title).'">';
+            $output .= '<a class="' . $a_classes . '" href="' . $item->url . '" aria-label="' . strtolower($item->title) . '">';
         } else {
-            if($args->walker->has_children && $depth === 0) {
+            if ($args->walker->has_children && $depth === 0) {
                 $output .= '<span class="mobile-toggle pt-30 pb-30 md:pt-8 md:pb-8 b-0 solid md:bb-0 md:w-100 uppercase md:capitalize md:fs-28 block md:flex md:justify-between md:align-center">';
             } else {
                 $output .= '<span>';
@@ -497,7 +497,7 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
 
         $output .= $item->title;
         if ($depth === 1) {
-            $output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">'.$item->description.'</span>';
+            $output .= '<span class="block fs-15 lh-1-25 c-grey font-regular mt-5">' . $item->description . '</span>';
         }
 
         if ($item->url == '#' && $args->walker->has_children && $depth === 0) {
@@ -515,28 +515,18 @@ class MAIN_Menu_Walker extends Walker_Nav_Menu
         }
     }
 
-    public function end_lvl(&$output, $depth = 0, $args = null)
+    public function end_el(&$output, $item, $depth = 0, $args = [])
     {
-        // End <li> and <ul> elements.
-        $is_compact = in_array('compact', $this->curItem->classes);
-        $indent = ($depth) ? str_repeat("\t", $depth) : '';
-        // $output .= "$indent\t</li>\n";
-        // $output .= "$indent</div></ul>\n";
-
-        $blog_url = home_url().'/blog';
-        $contact_url = home_url().'/contact';
-
-        if ($depth === 0) {
-            if ($is_compact) {
-                $output .= "$indent</div></ul>\n";
-            } else {
-                $output .= "$indent</div><div class=\"menu-end container flex md:hidden\"> <ul class=\"sub-menu no-bullets font-bold flex align-start b-0 bt-1 solid bc-hash w-100\"><li class=\"mt-30 mb-30\"> <a href=\"$blog_url\" class=\"inline-block\" aria-label=\"blog\">Blog</a></li><li class=\"mt-30 mb-30 ml-30 pl-30 b-0 bl-1 solid bc-hash\"> <a href=\"$contact_url\" class=\"inline-block\" aria-label=\"contact\">Contact</a></li></ul></div></ul>\n";
-            }
-        } else {
-            $output .= "$indent</ul>\n";
-        }
+        $is_column_parent = in_array('column-parent', $item->classes ?? []);
+        if ($depth === 0) $output .= "</li>\n";
+        elseif ($depth === 1 && !$is_column_parent) $output .= "";
+        elseif ($depth >= 2) $output .= "";
     }
 }
+
+
+
+
 
 class FOOTER_Menu_Walker extends Walker_Nav_Menu
 {

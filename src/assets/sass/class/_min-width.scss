@@ -2,13 +2,18 @@
     min-width: auto;
 }
 
+@media (max-width: 64rem) {
+    .md\:min-w-auto{
+        min-width: auto !important;
+    }
+}
 @for $i from 0 through 500 {
     .min-w-#{$i} {
         min-width: $i * 1%;
     }
 }
 
-@for $i from 0 through 500 {
+@for $i from 0 through 1000 {
     .min-w-px-#{$i} {
         min-width: rem($i);
     }
@@ -31,6 +36,7 @@ $breakpoints: (
             }
         }
     }
+
 }
 
 @each $breakpoint, $size in $breakpoints {
