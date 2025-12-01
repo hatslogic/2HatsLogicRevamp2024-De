@@ -152,9 +152,9 @@ $transition-timing-function: ease-in-out;
                 /* container -> 4 columns, with gaps matching your design */
                 .menu-columns {
                     display: block;
-                    -webkit-column-count: 4;
-                    -moz-column-count: 4;
-                    column-count: 4;
+                    -webkit-column-count: 2;
+                    -moz-column-count: 2;
+                    column-count: 2;
 
                     -webkit-column-gap: 30px;
                     -moz-column-gap: 30px;
